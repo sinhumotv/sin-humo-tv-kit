@@ -171,6 +171,49 @@
       return a > 0 ? lineaPanel(l, 862 + i * 50, a * alpha, dy + (1 - a) * 14) : '';
     }).join('');
   }
+  // Subtítulos karaoke: frase hablada en bloques de 2 líneas, palabra actual resaltada.
+  // Usa escenas[k].subtitulo (palabras clave entre *asteriscos* en dorado). Tiempos repartidos por longitud de palabra.
+  const KAR = {};
+  function bloquesKaraoke(k) {
+    if (KAR[k]) return KAR[k];
+    const T = window.TIEMPOS.escenas[k], E = window.PROY.escenas[k];
+    const txt = (E.subtitulo || E.hablado || '').replace(/sin humo te uve/gi, 'sin humo TV');
+    const pal = []; let clave = false;
+    for (const w of txt.split(/\s+/).filter(Boolean)) {
+      const empieza = w.startsWith('*'), limpio = w.replace(/\*/g, '');
+      if (empieza) clave = true;
+      pal.push({ w: limpio, clave, peso: (/\d/.test(limpio) ? limpio.replace(/\D/g, '').length * 2.6 + 3 : limpio.length) + 2 + (/[.,;:?!…]$/.test(limpio) ? 5 : 0) });
+      if (w.replace(/[.,;:?!…»"]+$/, '').endsWith('*')) clave = false;
+    }
+    const t0 = T.ini + .02, t1 = Math.max(t0 + .3, T.voz_fin - .05), tot = pal.reduce((a, b) => a + b.peso, 0) || 1;
+    let acc = 0; for (const p of pal) { p.a = t0 + (t1 - t0) * acc / tot; acc += p.peso; p.b = t0 + (t1 - t0) * acc / tot; }
+    // líneas de hasta ~19 caracteres, bloques de 2 líneas; corta bloque tras punto si ya hay contenido
+    const MAX = 19, bloques = []; let lin = [], lineas = [];
+    const cierra = () => { if (lin.length) lineas.push(lin); lin = []; };
+    const cierraBloque = () => { cierra(); if (lineas.length) bloques.push(lineas); lineas = []; };
+    for (const p of pal) {
+      const largo = lin.reduce((a, b) => a + b.w.length + 1, 0) + p.w.length;
+      if (lin.length && largo > MAX) { cierra(); if (lineas.length === 2) cierraBloque(); }
+      lin.push(p);
+      if (/[.?!…]$/.test(p.w) && (lineas.length >= 1 || lin.length >= 3)) cierraBloque();
+    }
+    cierraBloque();
+    return (KAR[k] = bloques.map(ls => ({ ls, a: ls[0][0].a, b: ls[ls.length - 1][ls[ls.length - 1].length - 1].b })));
+  }
+  function karaoke(k, t, alpha) {
+    const bl = bloquesKaraoke(k); if (!bl.length) return '';
+    let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
+    const B = bl[i], ent = cl((t - B.a) / .12) || (i === 0 ? 1 : 0), y0 = B.ls.length === 1 ? 912 : 884;
+    return B.ls.map((ln, j) => {
+      let x = 0; const ws = ln.map(p => { const o = { p, x }; x += p.w.length; return o; });
+      const tsp = ln.map(p => {
+        const ahora = t >= p.a && t < p.b, dicho = t >= p.b || t < .05;
+        const col = ahora ? ORA : p.clave ? ORO : CRE;
+        return `<tspan fill="${col}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w)}</tspan>`;
+      }).join(' ');
+      return `<text x="336" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="50" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
+    }).join('');
+  }
   function marcaFija() {
     return `<g>${nube(470, 724, 1)}<text x="630" y="732" font-family="Inter" font-weight="800" font-size="22" fill="${CRE}" fill-opacity=".75" stroke="${INK}" stroke-width="2" paint-order="stroke" text-anchor="end">sin humo TV</text></g>`;
   }
@@ -207,14 +250,17 @@
     const dibuja = (k, alpha, dy) => {
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1.5) : 0); // la escena 1 ya empieza avanzada: todo lo que entre antes de L=1,5 se ve en el fotograma 0
       const r = E[k](L, A, t) || {};
+      // cámara: acercamiento lento durante la escena (+4 %) para que nunca haya un plano quieto
+      const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + .04 * easeIO(cl((t - S.ini) / dur));
+      const kb = `translate(330 465) scale(${z.toFixed(4)}) translate(-330 -465)`;
       let lup = '';
       if (r.lupi) {
         const o = Object.assign({ t, id: 'L' + k }, r.lupi);
         if (o.lupa === true) o.lupa = { cx: o.x, cy: o.y };
-        if (o.lupa) o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / (o.s || 1)}) translate(${-o.lupa.cx} ${-o.lupa.cy})" filter="${filt}">${r.svg}</g>`;
+        if (o.lupa) o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / (o.s || 1)}) translate(${-o.lupa.cx} ${-o.lupa.cy})" filter="${filt}"><g transform="${kb}">${r.svg}</g></g>`;
         lup = lupi(o);
       }
-      capas.push({ k, alpha, dy, r, lup, L });
+      capas.push({ k, alpha, dy, r, lup, L, kb });
     };
     const S = T.escenas[e], dt = t - S.ini;
     if (e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -20 * p); dibuja(e, p, 20 * (1 - p)); }
@@ -223,7 +269,7 @@
     svg += `<image href="fondo.jpg" x="0" y="0" width="${W}" height="${H}"/>`;
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
-      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g filter="${filt}">${c.r.svg || ''}</g>${c.lup}</g>`;
+      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g transform="${c.kb}"><g filter="${filt}">${c.r.svg || ''}</g></g>${c.lup}</g>`;
       svg += `<g transform="translate(0 ${c.dy})">${titulo(tt, c.L, c.alpha)}</g>`;
       if (c.k === 0 && P.fecha) svg += `<g opacity="${c.alpha}" transform="translate(565 214) rotate(5)"><rect x="-74" y="-20" width="148" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
       if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="748" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;
@@ -233,8 +279,12 @@
     svg += marcaFija();
     svg += barra(t, D);
     svg += `<rect x="32" y="805" width="608" height="230" rx="24" fill="${INK}" fill-opacity=".93"/>`;
-    for (const c of capas) svg += panel(c.k, t, c.alpha, 0);
+    if (P.subtitulos === 'panel') { for (const c of capas) svg += panel(c.k, t, c.alpha, 0); }
+    else svg += karaoke(capas[capas.length - 1].k, t, 1);
     svg += `</svg>`;
+    // golpe de zoom al empezar (0,45 s): el primer fotograma ya se mueve y llama la atención
+    const g = P.golpe_inicial === false ? 0 : 1 - easeOut(t / .45);
+    if (g > 0) svg = svg.replace('<image href="fondo.jpg"', `<g transform="translate(360 640) scale(${(1 + .07 * g).toFixed(4)}) translate(-360 -640)"><image href="fondo.jpg"`).replace(/<\/svg>$/, '</g></svg>');
     document.getElementById('lienzo').innerHTML = svg;
     ultimo = svg;
     return true;

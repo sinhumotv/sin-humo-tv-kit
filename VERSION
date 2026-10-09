@@ -1,2 +1,3 @@
 v2 · 2026-10-09 · iconos nuevos (reloj, calendario, vela, escudo, casa, corona, olas, gente, cien, tachado, documento, edificio, coche, pin), A.miles/A.cuentaM, escena 1 completa en el fotograma 0 (adelanto 1,5 s), comprobar.py
 v3 · 2026-10-09 · arreglado el parpadeo: render.js espera a que el navegador pinte el fotograma entero antes de capturarlo; comprobar.py detecta fotogramas con parpadeo
+v4 · 2026-10-09 · subtítulos karaoke grandes (palabra actual resaltada; *clave* en dorado; usa escenas[].subtitulo, el panel de líneas queda opcional con "subtitulos":"panel"), cámara con acercamiento lento por escena ("camara":false para quitarlo), golpe de zoom inicial 0,45 s ("golpe_inicial":false), .srt sin asteriscos

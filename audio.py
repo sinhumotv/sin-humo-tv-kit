@@ -201,7 +201,7 @@ def bloques(texto):
 
 srt, n = [], 1
 for e, tm in enumerate(tiempos):
-    txt = ESC[e].get("subtitulo") or ESC[e]["hablado"].replace("sin humo te uve", "sin humo TV")
+    txt = (ESC[e].get("subtitulo") or ESC[e]["hablado"].replace("sin humo te uve", "sin humo TV")).replace("*", "")
     bl = bloques(txt)
     L = sum(len(b) for b in bl)
     vt = tm["voz_fin"] - tm["ini"]
