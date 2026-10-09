@@ -1,0 +1,85 @@
+{
+ "formato": "CORTO",
+ "fecha": "9 OCT 2026",
+ "titulo_noticia": "España crece más, pero la inflación empeora",
+ "fuentes": "ON Economía · EFE · Press Digital",
+ "tono": "tensa",
+ "mencion": 4,
+ "escenas": [
+  {
+   "titulo": "España crece más",
+   "color": "#2f7fd0",
+   "panel": [
+    "España crece *más*",
+    "de lo previsto…",
+    "y tú lo vas a",
+    "notar *menos*"
+   ],
+   "hablado": "España crece más de lo previsto. Y tú lo vas a notar menos.",
+   "subtitulo": "España crece más de lo previsto. Y tú lo vas a notar menos."
+  },
+  {
+   "titulo": "PIB: +2,6 %",
+   "color": "#2aa6a0",
+   "panel": [
+    "Banco de España:",
+    "economía *+2,6 %*",
+    "en 2026",
+    "(en junio: 2,3 %)"
+   ],
+   "hablado": "Hoy el Banco de España sube su previsión: la economía crecerá un dos coma seis por ciento este año.",
+   "subtitulo": "Hoy el Banco de España sube su previsión: la economía crecerá un 2,6 % este año."
+  },
+  {
+   "titulo": "Pero hay trampa",
+   "color": "#d94a3a",
+   "panel": [
+    "La inflación",
+    "también *empeora*:",
+    "*3,6 % → 3,9 %*"
+   ],
+   "hablado": "Pero hay trampa. La inflación también empeora: del tres coma seis al tres coma nueve por ciento.",
+   "subtitulo": "Pero hay trampa. La inflación también empeora: del 3,6 % al 3,9 %."
+  },
+  {
+   "titulo": "¿Qué significa?",
+   "color": "#f07d2a",
+   "panel": [
+    "Lo que hoy cuesta",
+    "*1.500 €*",
+    "costará unos",
+    "*58 € más*"
+   ],
+   "hablado": "¿Qué significa? Lo que hoy cuesta mil quinientos euros costará unos cincuenta y ocho euros más.",
+   "subtitulo": "¿Qué significa? Lo que hoy cuesta 1.500 euros costará unos 58 euros más."
+  },
+  {
+   "titulo": "Al grano",
+   "color": "#f2b632",
+   "panel": [
+    "En sin humo TV,",
+    "al grano:",
+    "*energía* y tensión",
+    "en *Oriente Medio*"
+   ],
+   "hablado": "En sin humo te uve, al grano: la energía y la tensión en Oriente Medio empujan los precios.",
+   "subtitulo": "En sin humo TV, al grano: la energía y la tensión en Oriente Medio empujan los precios."
+  },
+  {
+   "titulo": "¿Y si empeora?",
+   "color": "#d94a3a",
+   "panel": [
+    "Peor escenario:",
+    "inflación",
+    "*casi +1 punto*",
+    "¿Lo notas ya?"
+   ],
+   "hablado": "Y si el conflicto empeora, la inflación subiría casi un punto más. ¿Lo notas en tu compra? Porque España crece más de lo previsto.",
+   "subtitulo": "Y si el conflicto empeora, la inflación subiría casi un punto más. ¿Lo notas en tu compra? Porque España crece más de lo previsto."
+  }
+ ],
+ "zum": [
+  14.35,
+  24.76
+ ]
+}

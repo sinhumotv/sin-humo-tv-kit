@@ -1,0 +1,112 @@
+{
+ "formato": "LARGO",
+ "fecha": "8 OCT 2026",
+ "titulo_noticia": "Ceuta, dos meses después de la entrada de 72.000 personas",
+ "fuentes": "EFE · Infobae · AFP · BBC Mundo",
+ "tono": "grave",
+ "mencion": 7,
+ "escenas": [
+  {
+   "titulo": "72.000 en 2 días",
+   "panel": [
+    "*72.000 personas*",
+    "en *2 días*",
+    "Así empezó",
+    "la crisis de Ceuta"
+   ],
+   "hablado": "Setenta y dos mil personas en dos días. Así empezó la crisis de Ceuta.",
+   "subtitulo": "72.000 personas en dos días. Así empezó la crisis de Ceuta."
+  },
+  {
+   "titulo": "30 y 31 de julio",
+   "panel": [
+    "30 y 31 de julio:",
+    "desde *Marruecos*,",
+    "muchos *a nado*"
+   ],
+   "hablado": "Fue el treinta y el treinta y uno de julio. Entraron desde Marruecos, muchos a nado.",
+   "subtitulo": "Fue el 30 y el 31 de julio. Entraron desde Marruecos, muchos a nado."
+  },
+  {
+   "titulo": "1.500 por hora",
+   "panel": [
+    "Como si llegaran",
+    "*1.500 personas*",
+    "cada hora,",
+    "durante 2 días"
+   ],
+   "hablado": "Es como si llegaran mil quinientas personas cada hora, sin parar, durante dos días.",
+   "subtitulo": "Es como si llegaran 1.500 personas cada hora, sin parar, durante dos días."
+  },
+  {
+   "titulo": "70.000 volvieron",
+   "panel": [
+    "Gobierno: *70.000*",
+    "volvieron enseguida",
+    "Al menos *57*",
+    "personas murieron"
+   ],
+   "hablado": "El Gobierno dice que setenta mil volvieron enseguida. Pero hubo al menos cincuenta y siete muertos.",
+   "subtitulo": "El Gobierno dice que 70.000 volvieron enseguida. Pero hubo al menos 57 muertos."
+  },
+  {
+   "titulo": "11.000 retornos",
+   "panel": [
+    "Desde agosto:",
+    "*11.026* retornos",
+    "a Marruecos",
+    "Semana *récord*"
+   ],
+   "hablado": "Desde agosto, otros once mil han regresado a Marruecos. Esta semana, la cifra más alta.",
+   "subtitulo": "Desde agosto, otros 11.000 han regresado a Marruecos. Esta semana, la cifra más alta."
+  },
+  {
+   "titulo": "2.827 menores",
+   "panel": [
+    "*2.827 menores*",
+    "bajo protección",
+    "en Ceuta"
+   ],
+   "hablado": "Y lo más delicado: dos mil ochocientos veintisiete menores siguen bajo protección en Ceuta.",
+   "subtitulo": "Y lo más delicado: 2.827 menores siguen bajo protección en Ceuta."
+  },
+  {
+   "titulo": "Solo 173",
+   "panel": [
+    "Trasladados a otras",
+    "comunidades: *173*",
+    "*6 de cada 100*",
+    "Varias se niegan"
+   ],
+   "hablado": "¿Cuántos han ido a otras comunidades? Solo ciento setenta y tres. Apenas seis de cada cien. Varias comunidades se niegan a acogerlos.",
+   "subtitulo": "¿Cuántos han ido a otras comunidades? Solo 173. Apenas seis de cada cien. Varias comunidades se niegan a acogerlos."
+  },
+  {
+   "titulo": "Solo hechos",
+   "panel": [
+    "En sin humo TV,",
+    "solo hechos:",
+    "aún hay migrantes",
+    "*escondidos*"
+   ],
+   "hablado": "En sin humo te uve, solo hechos: el Gobierno admite que aún hay migrantes escondidos en la ciudad.",
+   "subtitulo": "En sin humo TV, solo hechos: el Gobierno admite que aún hay migrantes escondidos en la ciudad."
+  },
+  {
+   "titulo": "¿Y ahora?",
+   "panel": [
+    "El martes, visita",
+    "de los *Reyes*",
+    "¿Qué debería pasar",
+    "con los *menores*?"
+   ],
+   "hablado": "El martes, los Reyes visitan Ceuta. ¿Qué debería pasar con esos menores? Todo empezó con setenta y dos mil personas en dos días.",
+   "subtitulo": "El martes, los Reyes visitan Ceuta. ¿Qué debería pasar con esos menores? Todo empezó con 72.000 personas en dos días."
+  }
+ ],
+ "zum": [
+  12.57,
+  29.61,
+  43.42
+ ]
+}
