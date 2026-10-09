@@ -30,6 +30,19 @@ mb = int(fmt["size"]) / 1e6
 negros = sh(f'ffmpeg -v info -i "{V}" -vf blackdetect=d=0.1 -an -f null - 2>&1 | grep black_start').stdout.strip()
 if negros: avisos.append("fotogramas negros: " + negros[:120])
 
+# Parpadeos: zonas que cambian de golpe un solo fotograma y vuelven (capturas a medio pintar)
+import numpy as np
+pw, ph = 90, 160
+pr = subprocess.Popen(["ffmpeg", "-v", "error", "-i", V, "-vf", f"scale={pw}:{ph}", "-f", "rawvideo", "-pix_fmt", "gray", "-"], stdout=subprocess.PIPE)
+fr = []
+while True:
+    b = pr.stdout.read(pw * ph)
+    if len(b) < pw * ph: break
+    fr.append(np.frombuffer(b, np.uint8).reshape(16, 10, 10, 9).astype(np.int16).mean(axis=(1, 3)))
+fr = np.array(fr)
+parp = [i for i in range(1, len(fr) - 1) if ((np.abs(fr[i] - fr[i - 1]) > 35) & (np.abs(fr[i] - fr[i + 1]) > 35) & (np.abs(fr[i - 1] - fr[i + 1]) < 12)).any()]
+if parp: avisos.append(f"{len(parp)} fotogramas con parpadeo (p. ej. {', '.join(f'{i/30:.2f}s' for i in parp[:5])}): vuelve a renderizar")
+
 ts = [0.0] + [round((e["ini"] + e["voz_fin"]) / 2, 2) for e in T["escenas"]] + [round(dur - 0.1, 2)]
 tmp = os.path.join(D, "_rev")
 os.makedirs(tmp, exist_ok=True)

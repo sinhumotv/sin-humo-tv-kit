@@ -51,8 +51,14 @@ async function pagina(browser, url) {
   return pg;
 }
 
+// Dibuja el instante t y espera a que el navegador haya pintado todo (dos fotogramas de pantalla).
+// Sin esta espera, algunas capturas salían a medio pintar y el vídeo parpadeaba.
+async function dibujar(pg, t) {
+  await pg.evaluate(t => new Promise(ok => { window.render(t); requestAnimationFrame(() => requestAnimationFrame(() => ok())); }), t);
+}
+
 async function foto(pg, t, salida) {
-  await pg.evaluate(t => window.render(t), t);
+  await dibujar(pg, t);
   await pg.screenshot({ path: salida, type: 'png' });
 }
 
@@ -81,7 +87,7 @@ async function foto(pg, t, salida) {
       const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
         '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '10', '-pix_fmt', 'yuv420p', path.join(DIR, `_bloque${w}.mp4`)]);
       for (let f = a; f < b; f++) {
-        await pg.evaluate(t => window.render(t), f / FPS);
+        await dibujar(pg, f / FPS);
         const buf = await pg.screenshot({ type: 'jpeg', quality: 92 });
         if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
         if (w === 0 && (f - a) % 150 === 0) console.log(`bloque 0: ${f - a}/${b - a} (${((Date.now() - t0) / 1000).toFixed(0)} s)`);
