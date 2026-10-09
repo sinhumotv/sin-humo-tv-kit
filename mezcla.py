@@ -87,6 +87,10 @@ zl = int(.6 * SR); zt = np.arange(zl) / SR
 zum = np.sin(2 * np.pi * (200 + 500 * zt) * zt) * np.sin(np.pi * zt / .6) * .5
 pl = int(.08 * SR); pt = np.arange(pl) / SR
 pop = np.sin(2 * np.pi * 900 * pt * np.exp(-pt * 20)) * np.exp(-pt * 45)
+# impacto inicial (grave y corto) sincronizado con el golpe de zoom del fotograma 0
+il = int(.5 * SR); it = np.arange(il) / SR
+impacto = np.sin(2 * np.pi * (48 + 70 * np.exp(-it * 18)) * it) * np.exp(-it * 7) + rng.normal(0, 1, il) * np.exp(-it * 60) * .25
+if P.get("golpe_inicial", True): pon(impacto, 0, .9)
 for e in T["escenas"][1:]:
     pon(whoosh, e["ini"] - .3, .9)           # en el respiro entre escenas, no encima de palabras
 for z in P.get("zum", []):

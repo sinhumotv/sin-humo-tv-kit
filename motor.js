@@ -185,9 +185,9 @@
   function bloquesKaraoke(k) {
     if (KAR[k]) return KAR[k];
     const T = window.TIEMPOS.escenas[k], E = window.PROY.escenas[k];
-    const txt = (E.subtitulo || E.hablado || '').replace(/sin humo te uve/gi, 'sin humo TV');
+    const txt = (E.subtitulo || E.hablado || '').replace(/sin humo te uve/gi, 'sin humo TV').replace(/sin humo TV/g, 'sin\u2060humo\u2060TV'); // el nombre del canal no se parte
     const pal = []; let clave = false;
-    for (const w of txt.split(/\s+/).filter(Boolean)) {
+    for (const w of txt.split(/[ \t\n]+/).filter(Boolean)) {
       const empieza = w.startsWith('*'), limpio = w.replace(/\*/g, '');
       if (empieza) clave = true;
       pal.push({ w: limpio, clave, peso: (/\d/.test(limpio) ? limpio.replace(/\D/g, '').length * 2.6 + 3 : limpio.length) + 2 + (/[.,;:?!…]$/.test(limpio) ? 5 : 0) });
@@ -195,31 +195,58 @@
     }
     const t0 = T.ini + .02, t1 = Math.max(t0 + .3, T.voz_fin - .05), tot = pal.reduce((a, b) => a + b.peso, 0) || 1;
     let acc = 0; for (const p of pal) { p.a = t0 + (t1 - t0) * acc / tot; acc += p.peso; p.b = t0 + (t1 - t0) * acc / tot; }
-    // líneas de hasta ~19 caracteres, bloques de 2 líneas; corta bloque tras punto si ya hay contenido
-    const MAX = 19, bloques = []; let lin = [], lineas = [];
-    const cierra = () => { if (lin.length) lineas.push(lin); lin = []; };
-    const cierraBloque = () => { cierra(); if (lineas.length) bloques.push(lineas); lineas = []; };
-    for (const p of pal) {
-      const largo = lin.reduce((a, b) => a + b.w.length + 1, 0) + p.w.length;
-      if (lin.length && largo > MAX) { cierra(); if (lineas.length === 2) cierraBloque(); }
-      lin.push(p);
-      if (/[.?!…]$/.test(p.w) && (lineas.length >= 1 || lin.length >= 3)) cierraBloque();
+    // Bloques de hasta ~38 caracteres (2 líneas), cortando preferentemente tras puntuación,
+    // sin dejar restos de 1-2 palabras y sin acabar línea en "de", "la", "que"...
+    const DEBIL = /^(a|al|de|del|el|la|las|los|lo|un|una|y|e|o|u|que|en|con|por|para|su|sus|se|ni|ya|muy|más|tu|mi)$/i;
+    const largo = ws => ws.reduce((a, b) => a + b.w.length + 1, -1);
+    const frases = []; let fr = [];
+    for (const p of pal) { fr.push(p); if (/[.?!…:;]$/.test(p.w)) { frases.push(fr); fr = []; } }
+    if (fr.length) frases.push(fr);
+    const bloques = [];
+    for (const f of frases) {
+      const bs = []; let b = [];
+      for (const p of f) {
+        if (b.length && largo([...b, p]) > 38) {
+          let corte = b.length;                          // retrocede si el bloque acabaría en palabra débil o sin coma cerca
+          for (let c = b.length; c > Math.ceil(b.length / 2); c--) { if (/[,]$/.test(b[c - 1].w)) { corte = c; break; } }
+          while (corte > 1 && DEBIL.test(b[corte - 1].w.replace(/[^\wáéíóúñü]/gi, ''))) corte--;
+          bs.push(b.slice(0, corte)); b = b.slice(corte);
+        }
+        b.push(p);
+      }
+      if (b.length) bs.push(b);
+      // resto pequeño: pásale palabras del bloque anterior
+      const debilFin = b => b.length > 1 && DEBIL.test(b[b.length - 1].w.replace(/[^\wáéíóúñü]/gi, ''));
+      while (bs.length > 1 && (largo(bs[bs.length - 1]) < 14 || debilFin(bs[bs.length - 2])) && bs[bs.length - 2].length > 2) bs[bs.length - 1].unshift(bs[bs.length - 2].pop());
+      bloques.push(...bs);
     }
-    cierraBloque();
-    return (KAR[k] = bloques.map(ls => ({ ls, a: ls[0][0].a, b: ls[ls.length - 1][ls[ls.length - 1].length - 1].b })));
+    // frases muy cortas ("Te leo.") se unen al bloque anterior si caben
+    for (let i = bloques.length - 1; i > 0; i--) if (largo(bloques[i]) < 12 && largo(bloques[i - 1]) + largo(bloques[i]) + 1 <= 40) { bloques[i - 1].push(...bloques[i]); bloques.splice(i, 1); }
+    // cada bloque en 1 o 2 líneas equilibradas
+    const conLineas = bloques.map(b => {
+      if (largo(b) <= 20 || b.length < 2) return [b];
+      let mejor = 1, peor = 1e9;
+      for (let c = 1; c < b.length; c++) {
+        const m = Math.max(largo(b.slice(0, c)), largo(b.slice(c))) + (DEBIL.test(b[c - 1].w.replace(/[^\wáéíóúñü]/gi, '')) ? 6 : 0);
+        if (m < peor) { peor = m; mejor = c; }
+      }
+      return [b.slice(0, mejor), b.slice(mejor)];
+    });
+    return (KAR[k] = conLineas.map(ls => ({ ls, a: ls[0][0].a, b: ls[ls.length - 1][ls[ls.length - 1].length - 1].b })));
   }
   function karaoke(k, t, alpha) {
     const bl = bloquesKaraoke(k); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = cl((t - B.a) / .12) || (i === 0 ? 1 : 0), y0 = B.ls.length === 1 ? 912 : 884;
+    const maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1))), fs = Math.min(52, Math.floor(560 / (maxc * .56)));
     return B.ls.map((ln, j) => {
       let x = 0; const ws = ln.map(p => { const o = { p, x }; x += p.w.length; return o; });
       const tsp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b || t < .05;
-        const col = ahora ? ORA : p.clave ? ORO : CRE;
-        return `<tspan fill="${col}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w)}</tspan>`;
+        const col = ahora ? ORA : p.clave ? '#7fd8d2' : CRE;
+        return `<tspan fill="${col}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
       }).join(' ');
-      return `<text x="336" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="50" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
+      return `<text x="336" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
     }).join('');
   }
   function marcaFija() {
@@ -250,6 +277,33 @@
 
   // ---------- render ----------
   let ultimo = '';
+  // Encuadre automático: mide lo que ocupa la ilustración de cada escena (en su estado final, sin Lupi)
+  // y la amplía y centra para llenar la zona de dibujo. Se calcula una vez por escena: el plano no "baila".
+  const FIT = {}, ZONA = { x0: 34, x1: 626, y0: 205, y1: 728 };
+  function encuadre(k) {
+    if (FIT[k]) return FIT[k];
+    const P = window.PROY, T = window.TIEMPOS, S = T.escenas[k];
+    let f = { s: 1, tx: 0, ty: 0 };
+    if (P.encuadre !== false) {
+      try {
+        const Lref = (S.fin - S.ini) - .15 + (k === 0 ? (P.adelanto_inicio ?? 1.5) : 0);
+        const r = window.ESCENAS[k](Lref, A, S.fin - .15) || {};
+        const ns = 'http://www.w3.org/2000/svg', sv = document.createElementNS(ns, 'svg');
+        sv.setAttribute('width', W); sv.setAttribute('height', H); sv.style.cssText = 'position:absolute;left:-9999px;top:0';
+        sv.innerHTML = `<g>${r.svg || ''}</g>`; document.body.appendChild(sv);
+        const b = sv.firstChild.getBBox(); sv.remove();
+        if (b.width > 40 && b.height > 40) {
+          const zw = ZONA.x1 - ZONA.x0, zh = ZONA.y1 - ZONA.y0;
+          let sc = Math.min(zw / b.width, zh / b.height, P.encuadre_max || 1.45);
+          if (sc < 1.06 && sc > .97) sc = 1;            // ya está bien: no tocar
+          sc = Math.max(.8, sc);
+          const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
+          f = { s: sc, tx: (ZONA.x0 + zw / 2) - cx * sc, ty: (ZONA.y0 + zh / 2) - cy * sc };
+        }
+      } catch (e) { }
+    }
+    return (FIT[k] = f);
+  }
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, E = window.ESCENAS, D = T.duracion;
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;
@@ -260,14 +314,18 @@
       const r = E[k](L, A, t) || {};
       // cámara: acercamiento lento durante la escena (+4 %) para que nunca haya un plano quieto
       const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + .04 * easeIO(cl((t - S.ini) / dur));
-      const kb = `translate(330 465) scale(${z.toFixed(4)}) translate(-330 -465)`;
+      const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y;
+      const kb = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)}) translate(330 465) scale(${z.toFixed(4)}) translate(-330 -465)`;
       let lup = '';
       if (r.lupi) {
         const o = Object.assign({ t, id: 'L' + k }, r.lupi);
         if (o.lupa === true) o.lupa = { cx: o.x, cy: o.y };
-        if (o.lupa) o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / (o.s || 1)}) translate(${-o.lupa.cx} ${-o.lupa.cy})" filter="${filt}"><g transform="${kb}">${r.svg}</g></g>`;
+        // Lupi conserva su tamaño pero se mueve con el encuadre; el mango nunca baja de la barra
+        o.x = Math.max(80, Math.min(600, fx(o.x))); o.y = Math.max(205 + 100 * (o.s || 1), Math.min(fy(o.y), 740 - 156 * (o.s || 1)));
+        if (o.lupa) { const cx = fx(o.lupa.cx), cy = fy(o.lupa.cy); o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / (o.s || 1)}) translate(${-cx} ${-cy})" filter="${filt}"><g transform="${kb}">${r.svg}</g></g>`; }
         lup = lupi(o);
       }
+      if (r.evitar) r.evitar = r.evitar.map(([x, y, w, h]) => [fx(x), fy(y), w * F.s, h * F.s]);
       capas.push({ k, alpha, dy, r, lup, L, kb });
     };
     const S = T.escenas[e], dt = t - S.ini;
