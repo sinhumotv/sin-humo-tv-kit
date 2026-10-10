@@ -31,13 +31,14 @@
   function textoMultilinea(x, y, txt, size, n, fill = INK, anchor = 'middle', alpha = 1) {
     return partir(txt, n).map((l, i) => `<text x="${x}" y="${y + i * size * 1.18}" font-family="Inter" font-weight="900" font-size="${size}" fill="${fill}" text-anchor="${anchor}" opacity="${alpha}">${esc(l)}</text>`).join('');
   }
-  // Dibuja cualquier icono del kit por su nombre
+  // Dibuja cualquier icono del kit por su nombre (calendario: textos de la hoja en visual.cal = ["NOV", "29"])
+  let CAL = [];
   function icono(nombre, x, y, s, L, c) {
     const f = A[nombre];
     if (!f) return A.alerta(x, y, s);
     switch (nombre) {
       case 'reloj': case 'vela': return f(x, y, s, L);
-      case 'calendario': return f(x, y, s, 'HOY', '', c || ROJ);
+      case 'calendario': return f(x, y, s, (CAL[0] || ''), (CAL[1] || ''), c || ROJ);
       case 'termometro': return f(x, y, s, .7, c || ROJ);
       case 'casa': return f(x, y, s, 0, c || ROJ);
       case 'olas': return f(y, L, c || AZU, 600);
@@ -71,12 +72,14 @@
   const lupiDcha = (L, d, expr = 'curiosa', extra = {}) => Object.assign({ x: 1135, y: 400, s: .85, expr, mira: [-.8, -.3], brazos: L < d * .6 ? 'senala' : 'abajo' }, extra);
   const P_ = {
     // Gran cifra con contador, texto debajo e icono a la izquierda
-    cifra(L, d, v) {
+    cifra(L, d, v, k) {
+      CAL = v.cal || [];
       const c = col(v.color || 'rojo');
       const ic = v.icono ? A.esc_(260, 340, A.pop(L, .1), icono(v.icono, 260, 340, 1.5, L, v.color && col(v.color))) : '';
       const x = v.icono ? 690 : 550;
-      const num = A.esc_(x, 300, A.pop(L, .3), A.txtC(x, 340, contador(v.valor, L, .3, Math.min(1.6, d * .3)), 140, c, 'middle', 14));
-      const tx = L > .9 ? textoMultilinea(x, 430, v.texto || '', 46, 26, INK, 'middle', easeOut((L - .9) / .4)) : '';
+      // en la primera escena la cifra ya se ve entera en el fotograma 0 (es el gancho)
+      const num = A.esc_(x, 300, k === 0 ? 1 : A.pop(L, .3), A.txtC(x, 340, k === 0 ? String(v.valor) : contador(v.valor, L, .3, Math.min(1.6, d * .3)), 140, c, 'middle', 14));
+      const tx = k === 0 || L > .9 ? textoMultilinea(x, 430, v.texto || '', 46, 26, INK, 'middle', k === 0 ? 1 : easeOut((L - .9) / .4)) : '';
       return { svg: ic + num + A.destello(x, 300, L, .5 + Math.min(1.6, d * .3), 120, c) + tx, lupi: lupiDcha(L, d, 'sorprendida', L > 1.2 && L < 3 ? { x: x + 10, y: 330, lupa: { cx: x, cy: 300 } } : {}), evitar: [[x - 300, 220, 600, 260]] };
     },
     // Dos barras que crecen: a vs b
@@ -130,6 +133,7 @@
     },
     // Un icono grande y un texto (o una etiqueta)
     icono(L, d, v) {
+      CAL = v.cal || [];
       const ic = A.esc_(290, 350, A.pop(L, .05) * (1 + .03 * Math.sin(L * 2)), icono(v.icono || 'alerta', 290, 350, v.escala || 1.3, L, v.color && col(v.color)));
       const ls = partir(v.texto || '', 16), y0 = 330 - (ls.length - 1) * 32;
       const tx = L > .6 ? textoMultilinea(780, y0, v.texto || '', 54, 16, INK, 'middle', easeOut((L - .6) / .4)) : '';

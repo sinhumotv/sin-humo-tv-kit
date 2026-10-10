@@ -32,7 +32,8 @@ raw = np.fromfile(rawf, dtype=np.float32)
 DUR = len(raw) / SR
 
 # --- 2. Pausas con silencedetect ----------------------------------------------
-out = sh(f'ffmpeg -v info -i "{wav}" -af silencedetect=noise=-32dB:d=0.3 -f null -').stderr
+# En los vídeos largos la voz a veces encadena párrafos con pausas cortas: se detectan también pausas de 0,15 s
+out = sh(f'ffmpeg -v info -i "{wav}" -af silencedetect=noise=-32dB:d={0.15 if YOUTUBE else 0.3} -f null -').stderr
 ini = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", out)]
 fin = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", out)]
 pausas = []
