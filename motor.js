@@ -182,8 +182,9 @@
   // Subtítulos karaoke: frase hablada en bloques de 2 líneas, palabra actual resaltada.
   // Usa escenas[k].subtitulo (palabras clave entre *asteriscos* en dorado). Tiempos repartidos por longitud de palabra.
   const KAR = {};
-  function bloquesKaraoke(k) {
-    if (KAR[k]) return KAR[k];
+  function bloquesKaraoke(k, MAXB = 38, MAXL = 20) {
+    const ck = k + '|' + MAXB;
+    if (KAR[ck]) return KAR[ck];
     const T = window.TIEMPOS.escenas[k], E = window.PROY.escenas[k];
     const txt = (E.subtitulo || E.hablado || '').replace(/sin humo te uve/gi, 'sin humo TV').replace(/sin humo TV/g, 'sin\u2060humo\u2060TV'); // el nombre del canal no se parte
     const pal = []; let clave = false;
@@ -206,7 +207,7 @@
     for (const f of frases) {
       const bs = []; let b = [];
       for (const p of f) {
-        if (b.length && largo([...b, p]) > 38) {
+        if (b.length && largo([...b, p]) > MAXB) {
           let corte = b.length;                          // retrocede si el bloque acabaría en palabra débil o sin coma cerca
           for (let c = b.length; c > Math.ceil(b.length / 2); c--) { if (/[,]$/.test(b[c - 1].w)) { corte = c; break; } }
           while (corte > 1 && DEBIL.test(b[corte - 1].w.replace(/[^\wáéíóúñü]/gi, ''))) corte--;
@@ -221,10 +222,10 @@
       bloques.push(...bs);
     }
     // frases muy cortas ("Te leo.") se unen al bloque anterior si caben
-    for (let i = bloques.length - 1; i > 0; i--) if (largo(bloques[i]) < 12 && largo(bloques[i - 1]) + largo(bloques[i]) + 1 <= 40) { bloques[i - 1].push(...bloques[i]); bloques.splice(i, 1); }
+    for (let i = bloques.length - 1; i > 0; i--) if (largo(bloques[i]) < 12 && largo(bloques[i - 1]) + largo(bloques[i]) + 1 <= MAXB + 2) { bloques[i - 1].push(...bloques[i]); bloques.splice(i, 1); }
     // cada bloque en 1 o 2 líneas equilibradas
     const conLineas = bloques.map(b => {
-      if (largo(b) <= 20 || b.length < 2) return [b];
+      if (largo(b) <= MAXL || b.length < 2) return [b];
       let mejor = 1, peor = 1e9;
       for (let c = 1; c < b.length; c++) {
         const m = Math.max(largo(b.slice(0, c)), largo(b.slice(c))) + (DEBIL.test(b[c - 1].w.replace(/[^\wáéíóúñü]/gi, '')) ? 6 : 0);
@@ -232,7 +233,7 @@
       }
       return [b.slice(0, mejor), b.slice(mejor)];
     });
-    return (KAR[k] = conLineas.map(ls => ({ ls, a: ls[0][0].a, b: ls[ls.length - 1][ls[ls.length - 1].length - 1].b })));
+    return (KAR[ck] = conLineas.map(ls => ({ ls, a: ls[0][0].a, b: ls[ls.length - 1][ls[ls.length - 1].length - 1].b })));
   }
   function karaoke(k, t, alpha) {
     const bl = bloquesKaraoke(k); if (!bl.length) return '';
@@ -304,6 +305,8 @@
     }
     return (FIT[k] = f);
   }
+  // Exporta piezas para el motor horizontal (motor_h.js), sin cambiar nada de los shorts
+  window.SH = { A, lupi, nube, bloquesKaraoke, W, H };
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, E = window.ESCENAS, D = T.duracion;
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;

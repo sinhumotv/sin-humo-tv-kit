@@ -11,8 +11,10 @@ D = sys.argv[1]
 P = json.load(open(os.path.join(D, "proyecto.json"), encoding="utf-8"))
 ESC = P["escenas"]
 N = len(ESC)
-LARGO = P.get("formato", "LARGO").upper() == "LARGO"
-TMAX, TMIN = (60.0, 55.0) if LARGO else (40.0, 33.0)
+FORMATO = P.get("formato", "LARGO").upper()
+LARGO = FORMATO == "LARGO"
+YOUTUBE = FORMATO == "YOUTUBE"   # vídeo largo horizontal
+TMAX, TMIN = (900.0, 0.0) if YOUTUBE else (60.0, 55.0) if LARGO else (40.0, 33.0)
 SR = 48000
 RESPIRO = 0.25
 
@@ -56,12 +58,18 @@ vtot = sum(b - a for a, b in tramos)
 media = sum(chars) / vtot
 
 
-def voz_entre(i0, i1):  # segundos de voz de los tramos i0..i1 (inclusive)
-    return sum(tramos[k][1] - tramos[k][0] for k in range(i0, i1 + 1))
+_acum = [0.0]
+for _a, _b in tramos:
+    _acum.append(_acum[-1] + _b - _a)
+
+
+def voz_entre(i0, i1):  # segundos de voz de los tramos i0..i1 (inclusive), con sumas acumuladas
+    return _acum[i1 + 1] - _acum[i0]
 
 
 T = len(tramos)
 INF = 1e18
+VENTANA = T if N <= 12 else 60   # en los shorts, búsqueda completa (igual que antes)
 # dp[e][j] = coste mínimo con las escenas 0..e terminando en el tramo j
 dp = [[INF] * T for _ in range(N)]
 bk = [[-1] * T for _ in range(N)]
@@ -70,7 +78,7 @@ for j in range(T):
     dp[0][j] = (chars[0] / v / media - 1) ** 2
 for e in range(1, N):
     for j in range(e, T):
-        for i in range(e - 1, j):
+        for i in range(max(e - 1, j - VENTANA), j):   # una escena no abarca más de VENTANA tramos
             if dp[e - 1][i] >= INF:
                 continue
             v = voz_entre(i + 1, j)
@@ -114,8 +122,8 @@ def construir(g, max_pausa_int):
 palabras = sum(len(e["hablado"].split()) for e in ESC)
 vel = palabras / vtot
 atempo = 1.0
-if vel < 2.9:
-    atempo = min(1.15, 3.1 / vel)
+if vel < (2.6 if YOUTUBE else 2.9):   # en los largos, ritmo algo más pausado (se escucha 10 minutos)
+    atempo = min(1.15, (2.8 if YOUTUBE else 3.1) / vel)
 max_p = None
 
 
@@ -178,6 +186,14 @@ pcm.tofile(tmp)
 sh(f'ffmpeg -y -v error -f s16le -ar {SR} -ac 1 -i "{tmp}" "{os.path.join(D, "voz_final.wav")}"')
 json.dump({"duracion": total_s, "escenas": tiempos, "atempo": round(atempo, 3)},
           open(os.path.join(D, "tiempos.json"), "w"), indent=1)
+# Capítulos para la descripción de YouTube (0:00 Título…): necesita "capitulos" en proyecto.json
+if YOUTUBE and P.get("capitulos"):
+    caps = sorted(P["capitulos"], key=lambda c: c["desde"])
+    lin = []
+    for c in caps:
+        s0 = 0 if c["desde"] == 0 else tiempos[c["desde"]]["ini"]
+        lin.append(f"{int(s0 // 60)}:{int(s0 % 60):02d} {c['titulo']}")
+    open(os.path.join(D, "capitulos.txt"), "w", encoding="utf-8").write("\n".join(lin) + "\n")
 
 # --- 6. Subtítulos .srt ---------------------------------------------------------
 def fmt(s):

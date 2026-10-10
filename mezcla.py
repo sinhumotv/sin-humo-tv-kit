@@ -122,12 +122,25 @@ if SOLO_AUDIO:
 # ---------- vídeo final ----------
 tit = f'{P.get("titulo_noticia", "")} | sin humo TV'.replace('"', "'")
 salida = os.path.join(D, "video_final.mp4")
-sh(f'cd "{D}" && ffmpeg -y -v error -f concat -safe 0 -i _bloques.txt -i mezcla.wav -map 0:v -map 1:a '
-   f'-c:v libx264 -preset slow -crf 14 -pix_fmt yuv420p -r 30 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest '
-   f'-metadata title="{tit}" -metadata artist="sin humo TV" -metadata copyright="© sin humo TV" '
-   f'-metadata comment="Vídeo original de sin humo TV" "{salida}"')
+YOUTUBE = str(P.get("formato", "")).upper() == "YOUTUBE"
+# Vídeo largo: calidad alta pero tamaño razonable para subirlo (10 min ≈ 150-300 MB)
+CALIDAD = "-preset medium -crf 18 -maxrate 6M -bufsize 12M" if YOUTUBE else "-preset slow -crf 14"
+META = (f'-metadata title="{tit}" -metadata artist="sin humo TV" -metadata copyright="© sin humo TV" '
+        f'-metadata comment="Vídeo original de sin humo TV"')
+if YOUTUBE:
+    # Vídeo largo: dos pasadas con bitrate fijo para que pese ~88 MB (cabe en GitHub, límite 100 MB) sea cual sea la duración
+    kbps = int(min(6000, max(600, 88e6 * 8 / DUR / 1000 - 160)))
+    base = f'cd "{D}" && ffmpeg -y -v error -f concat -safe 0 -i _bloques.txt'
+    sh(f'{base} -c:v libx264 -preset medium -tune animation -b:v {kbps}k -pass 1 -passlogfile _x264 -pix_fmt yuv420p -r 30 -an -f mp4 /dev/null')
+    sh(f'{base} -i mezcla.wav -map 0:v -map 1:a -c:v libx264 -preset medium -tune animation -b:v {kbps}k -pass 2 -passlogfile _x264 '
+       f'-pix_fmt yuv420p -r 30 -c:a aac -b:a 128k -ar 48000 -movflags +faststart -shortest {META} "{salida}"')
+    sh(f'cd "{D}" && rm -f _x264*')
+else:
+    sh(f'cd "{D}" && ffmpeg -y -v error -f concat -safe 0 -i _bloques.txt -i mezcla.wav -map 0:v -map 1:a '
+       f'-c:v libx264 {CALIDAD} -pix_fmt yuv420p -r 30 -c:a aac -b:a 192k -ar 48000 -movflags +faststart -shortest '
+       f'{META} "{salida}"')
 mb = os.path.getsize(salida) / 1e6
-if mb > 30:
+if mb > 30 and not YOUTUBE:
     sh(f'ffmpeg -y -v error -i "{salida}" -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -c:a copy -movflags +faststart '
        f'-map_metadata 0 "{os.path.join(D, "video_movil.mp4")}"')
 print(f"MP4: {mb:.1f} MB")

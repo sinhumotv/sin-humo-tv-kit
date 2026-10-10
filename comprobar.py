@@ -7,7 +7,9 @@ D = sys.argv[1]
 V = os.path.join(D, "video_final.mp4")
 P = json.load(open(os.path.join(D, "proyecto.json"), encoding="utf-8"))
 T = json.load(open(os.path.join(D, "tiempos.json")))
-LARGO = P.get("formato", "LARGO").upper() == "LARGO"
+FORMATO = P.get("formato", "LARGO").upper()
+LARGO = FORMATO == "LARGO"
+YOUTUBE = FORMATO == "YOUTUBE"
 
 
 def sh(c):
@@ -20,10 +22,10 @@ vid = next(s for s in st if s["codec_type"] == "video")
 aud = [s for s in st if s["codec_type"] == "audio"]
 dur = float(fmt["duration"])
 avisos = []
-if (vid["width"], vid["height"]) != (1080, 1920): avisos.append(f"resolución {vid['width']}x{vid['height']}")
+if (vid["width"], vid["height"]) != ((1920, 1080) if YOUTUBE else (1080, 1920)): avisos.append(f"resolución {vid['width']}x{vid['height']}")
 if vid["r_frame_rate"] != "30/1": avisos.append(f"fps {vid['r_frame_rate']}")
 if not aud: avisos.append("sin audio")
-lo, hi = (55, 60.05) if LARGO else (33, 40.05)
+lo, hi = (300, 900) if YOUTUBE else (55, 60.05) if LARGO else (33, 40.05)
 if not lo <= dur <= hi: avisos.append(f"duración {dur:.1f}s fuera de {lo}-{hi:.0f}s")
 if fmt.get("tags", {}).get("artist") != "sin humo TV": avisos.append("faltan metadatos del canal")
 mb = int(fmt["size"]) / 1e6
@@ -32,18 +34,21 @@ if negros: avisos.append("fotogramas negros: " + negros[:120])
 
 # Parpadeos: zonas que cambian de golpe un solo fotograma y vuelven (capturas a medio pintar)
 import numpy as np
-pw, ph = 90, 160
+pw, ph = (160, 90) if YOUTUBE else (90, 160)
 pr = subprocess.Popen(["ffmpeg", "-v", "error", "-i", V, "-vf", f"scale={pw}:{ph}", "-f", "rawvideo", "-pix_fmt", "gray", "-"], stdout=subprocess.PIPE)
 fr = []
 while True:
     b = pr.stdout.read(pw * ph)
     if len(b) < pw * ph: break
-    fr.append(np.frombuffer(b, np.uint8).reshape(16, 10, 10, 9).astype(np.int16).mean(axis=(1, 3)))
+    fr.append(np.frombuffer(b, np.uint8).reshape(ph // 10, 10, pw // 10, 10).astype(np.int16).mean(axis=(1, 3)))
 fr = np.array(fr)
 parp = [i for i in range(1, len(fr) - 1) if ((np.abs(fr[i] - fr[i - 1]) > 35) & (np.abs(fr[i] - fr[i + 1]) > 35) & (np.abs(fr[i - 1] - fr[i + 1]) < 12)).any()]
 if parp: avisos.append(f"{len(parp)} fotogramas con parpadeo (p. ej. {', '.join(f'{i/30:.2f}s' for i in parp[:5])}): vuelve a renderizar")
 
 ts = [0.0] + [round((e["ini"] + e["voz_fin"]) / 2, 2) for e in T["escenas"]] + [round(dur - 0.1, 2)]
+if len(ts) > 26:
+    paso = len(ts) / 24
+    ts = [ts[int(i * paso)] for i in range(24)] + [ts[-1]]
 tmp = os.path.join(D, "_rev")
 os.makedirs(tmp, exist_ok=True)
 for i, t in enumerate(ts):

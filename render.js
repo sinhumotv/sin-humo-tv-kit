@@ -8,9 +8,13 @@ let pw;
 try { pw = require('playwright'); } catch { pw = require('/opt/npm-tools/node_modules/playwright'); }
 const KIT = __dirname, DIR = path.resolve(process.argv[2]), MODO = process.argv[3];
 const FPS = 30;
+const PJ = JSON.parse(fs.readFileSync(path.join(DIR, 'proyecto.json'), 'utf8'));
+const HOR = String(PJ.formato || '').toUpperCase() === 'YOUTUBE';   // vídeo largo horizontal 1920x1080
+const VW = HOR ? 1280 : 720, VH = HOR ? 720 : 1280;
 
 function preparar() {
   if (!fs.existsSync(path.join(KIT, 'fondo.jpg'))) require('child_process').execSync(`python3 "${path.join(KIT, 'fondo.py')}"`);
+  if (HOR && !fs.existsSync(path.join(KIT, 'fondo_h.jpg'))) require('child_process').execSync(`python3 "${path.join(KIT, 'fondo.py')}" h`);
   if (!fs.existsSync(path.join(KIT, 'fonts', 'Inter-Black.otf'))) {
     fs.mkdirSync(path.join(KIT, 'fonts'), { recursive: true });
     for (const f of ['Inter-ExtraBold.otf', 'Inter-Black.otf']) {
@@ -24,21 +28,22 @@ function html() {
   const P = fs.readFileSync(path.join(DIR, 'proyecto.json'), 'utf8');
   const T = fs.readFileSync(path.join(DIR, 'tiempos.json'), 'utf8');
   fs.copyFileSync(path.join(KIT, 'fondo.jpg'), path.join(DIR, 'fondo.jpg'));
+  if (HOR) fs.copyFileSync(path.join(KIT, 'fondo_h.jpg'), path.join(DIR, 'fondo_h.jpg'));
   const f = p => 'file://' + path.join(KIT, 'fonts', p);
   const h = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Inter;font-weight:800;src:url('${f('Inter-ExtraBold.otf')}')}
 @font-face{font-family:Inter;font-weight:900;src:url('${f('Inter-Black.otf')}')}
-html,body{margin:0;padding:0;background:#f6ebd0;overflow:hidden}#lienzo{width:720px;height:1280px}</style></head>
+html,body{margin:0;padding:0;background:#f6ebd0;overflow:hidden}#lienzo{width:${VW}px;height:${VH}px}</style></head>
 <body><div id="lienzo"></div><span style="font:900 1px Inter;position:absolute;opacity:0">a</span><span style="font:800 1px Inter;position:absolute;opacity:0">a</span>
 <script>window.PROY=${P};window.TIEMPOS=${T};</script>
-<script src="${path.join(DIR, 'escenas.js')}"></script><script src="${path.join(KIT, 'motor.js')}"></script></body></html>`;
+${fs.existsSync(path.join(DIR, 'escenas.js')) ? `<script src="${path.join(DIR, 'escenas.js')}"></script>` : '<script>window.ESCENAS=[]</script>'}<script src="${path.join(KIT, 'motor.js')}"></script>${HOR ? `<script src="${path.join(KIT, 'motor_h.js')}"></script>` : ''}</body></html>`;
   const out = path.join(DIR, '_motor.html');
   fs.writeFileSync(out, h);
   return 'file://' + out;
 }
 
 async function pagina(browser, url) {
-  const pg = await browser.newPage({ viewport: { width: 720, height: 1280 }, deviceScaleFactor: 1.5 });
+  const pg = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1.5 });
   const errores = [];
   pg.on('pageerror', e => errores.push(e.message));
   await pg.goto(url);
@@ -73,6 +78,7 @@ async function foto(pg, t, salida) {
     console.log('pruebas:', ts.length);
   } else if (MODO === 'foto') {
     const pg = await pagina(browser, url);
+    if (process.argv[6] === 'limpio') await pg.evaluate(() => { window.LIMPIO = true; });   // miniatura: sin subtítulos, barra ni cabecera
     await foto(pg, Number(process.argv[4]), process.argv[5]);
   } else if (MODO === 'video') {
     const T = JSON.parse(fs.readFileSync(path.join(DIR, 'tiempos.json')));
