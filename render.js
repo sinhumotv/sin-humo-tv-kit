@@ -84,24 +84,41 @@ async function foto(pg, t, salida) {
     const T = JSON.parse(fs.readFileSync(path.join(DIR, 'tiempos.json')));
     const total = Math.round(T.duracion * FPS);
     const nw = Math.max(1, Math.min(8, os.cpus().length));
-    const tam = Math.ceil(total / nw);
+    // v12: render en trozos de 30 s que se cierran al acabar; si la máquina se reinicia, se retoma desde
+    // el último trozo terminado (los que tienen _segN.ok). La firma invalida los trozos si cambia el vídeo.
+    const SEG = FPS * 30, nseg = Math.ceil(total / SEG);
+    const firma = ['proyecto.json', 'tiempos.json', 'escenas.js'].map(n => { try { return fs.statSync(path.join(DIR, n)).mtimeMs; } catch (e) { return 0; } }).join('|') + '|' + total;
+    const fFirma = path.join(DIR, '_seg_firma.txt');
+    if (!fs.existsSync(fFirma) || fs.readFileSync(fFirma, 'utf8') !== firma) {
+      fs.readdirSync(DIR).filter(n => /^_seg\d+\.(mp4|ok)$|^_seg\d+\.tmp\.mp4$/.test(n)).forEach(n => fs.unlinkSync(path.join(DIR, n)));
+      fs.writeFileSync(fFirma, firma);
+    }
+    const hechos = [...Array(nseg).keys()].filter(k => fs.existsSync(path.join(DIR, `_seg${k}.ok`))).length;
+    if (hechos) console.log(`retomando: ${hechos}/${nseg} trozos ya hechos`);
     const t0 = Date.now();
+    let listos = hechos;
     await Promise.all([...Array(nw).keys()].map(async w => {
-      const a = w * tam, b = Math.min(total, a + tam);
-      if (a >= b) return;
-      const pg = await pagina(browser, url);
-      const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
-        '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '10', '-pix_fmt', 'yuv420p', path.join(DIR, `_bloque${w}.mp4`)]);
-      for (let f = a; f < b; f++) {
-        await dibujar(pg, f / FPS);
-        const buf = await pg.screenshot({ type: 'jpeg', quality: 92 });
-        if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
-        if (w === 0 && (f - a) % 150 === 0) console.log(`bloque 0: ${f - a}/${b - a} (${((Date.now() - t0) / 1000).toFixed(0)} s)`);
+      let pg = null;
+      for (let k = w; k < nseg; k += nw) {
+        if (fs.existsSync(path.join(DIR, `_seg${k}.ok`))) continue;
+        if (!pg) pg = await pagina(browser, url);
+        const a = k * SEG, b = Math.min(total, a + SEG), tmp = path.join(DIR, `_seg${k}.tmp.mp4`);
+        const ff = spawn('ffmpeg', ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
+          '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '10', '-pix_fmt', 'yuv420p', tmp]);
+        for (let f = a; f < b; f++) {
+          await dibujar(pg, f / FPS);
+          const buf = await pg.screenshot({ type: 'jpeg', quality: 92 });
+          if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
+        }
+        ff.stdin.end();
+        await new Promise(r => ff.on('close', r));
+        fs.renameSync(tmp, path.join(DIR, `_seg${k}.mp4`));
+        fs.writeFileSync(path.join(DIR, `_seg${k}.ok`), '');
+        listos++;
+        console.log(`bloque 0: ${listos * SEG}/${nseg * SEG} · trozos ${listos}/${nseg} (${((Date.now() - t0) / 1000).toFixed(0)} s)`);
       }
-      ff.stdin.end();
-      await new Promise(r => ff.on('close', r));
     }));
-    fs.writeFileSync(path.join(DIR, '_bloques.txt'), [...Array(nw).keys()].filter(w => w * tam < total).map(w => `file '_bloque${w}.mp4'`).join('\n'));
+    fs.writeFileSync(path.join(DIR, '_bloques.txt'), [...Array(nseg).keys()].map(k => `file '_seg${k}.mp4'`).join('\n'));
     console.log(`render ${total} fotogramas en ${((Date.now() - t0) / 1000).toFixed(0)} s`);
   }
   await browser.close();
