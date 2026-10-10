@@ -2,7 +2,8 @@
 // titular enorme de 2 líneas, Lupi grande con expresión, un dato o icono protagonista y la marca.
 // Uso: node miniatura.js <carpeta> '<json>'
 //   json: {"l1":"ELECCIONES","l2":"29-N","sub":"Cómo votar por correo","dato":"29","dato_sub":"NOV",
-//          "icono":"calendario","color":"rojo","expr":"sorprendida","fondo":"oscuro|claro"}
+//          "icono":"calendario","color":"rojo","expr":"sorprendida","fondo":"oscuro|claro",
+//          "foto":"/ruta/absoluta.jpg","credito":"Foto: Autor · Wikimedia Commons · CC BY-SA 4.0"}  (foto real de fondo, opcional)
 // Crea <carpeta>/miniatura.jpg y miniatura.png
 const fs = require('fs'), path = require('path');
 let pw; try { pw = require('playwright'); } catch { pw = require('/opt/npm-tools/node_modules/playwright'); }
@@ -27,10 +28,13 @@ const s1=fit(O.l1||'',150,760), s2=fit(O.l2||'',190,760);
 let svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">';
 svg+=oscuro?'<rect width="1280" height="720" fill="#2a2433"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".25"/>'
            :'<image href="${path.join(KIT, 'fondo_h.jpg')}" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".18"/>';
+// foto real de fondo (v11): a sangre, oscurecida a la izquierda para que el titular se lea, crédito pequeño abajo
+if(O.foto){svg+='<defs><linearGradient id="osc" x1="0" x2="1"><stop offset="0" stop-color="#1d1824" stop-opacity=".82"/><stop offset=".5" stop-color="#1d1824" stop-opacity=".45"/><stop offset="1" stop-color="#1d1824" stop-opacity=".05"/></linearGradient></defs><image href="file://'+O.foto+'" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/><rect width="1280" height="720" fill="url(#osc)"/>';
+  if(O.credito)svg+='<text x="1268" y="712" font-family="Inter" font-weight="700" font-size="13" fill="#fff" opacity=".75" text-anchor="end">'+esc(O.credito)+'</text>';}
 // rayos detrás de Lupi (llaman la atención)
 for(let i=0;i<14;i++){const a=i*Math.PI/7;svg+='<path d="M1010 380 L'+(1010+600*Math.cos(a))+' '+(380+600*Math.sin(a))+' L'+(1010+600*Math.cos(a+.12))+' '+(380+600*Math.sin(a+.12))+'Z" fill="'+(oscuro?'#fff':A.INK)+'" opacity=".05"/>';}
 // titular
-svg+='<text x="60" y="'+(70+s1*.82)+'" font-family="Inter" font-weight="900" font-size="'+s1+'" fill="'+tinta+'" stroke="'+A.INK+'" stroke-width="'+(oscuro?0:10)+'" paint-order="stroke">'+esc(O.l1||'')+'</text>';
+svg+='<text x="60" y="'+(70+s1*.82)+'" font-family="Inter" font-weight="900" font-size="'+s1+'" fill="'+tinta+'" stroke="'+A.INK+'" stroke-width="'+(oscuro&&!O.foto?0:12)+'" paint-order="stroke">'+esc(O.l1||'')+'</text>';
 const y2=70+s1*.95+s2*.86;
 svg+='<text x="54" y="'+y2+'" font-family="Inter" font-weight="900" font-size="'+s2+'" fill="'+c+'" stroke="'+A.INK+'" stroke-width="14" paint-order="stroke">'+esc(O.l2||'')+'</text>';
 if(O.sub){const ss=fit(O.sub,56,680,34);svg+='<rect id="subr" x="50" y="'+(y2+30)+'" width="700" height="'+(ss+34)+'" rx="16" fill="'+A.ORO+'" stroke="'+A.INK+'" stroke-width="6"/><text id="subt" x="75" y="'+(y2+30+ss+6)+'" font-family="Inter" font-weight="900" font-size="'+ss+'" fill="'+A.INK+'">'+esc(O.sub)+'</text>';}
