@@ -310,12 +310,14 @@
   // Fotos reales "pegadas" sobre el dibujo (v10): marco blanco, contorno de tinta, sombra, dos tiras de cinta,
   // rótulo FOTO REAL y crédito de la licencia (obligatorio en CC BY / CC BY-SA). ruta = archivo absoluto.
   let _fclip = 0;
+  // v13: las fotos reales se dibujan QUIETAS: fuera del filtro de ondulación y sin el acercamiento lento de cámara
+  A.separaFotos = svg => { const f = []; const resto = String(svg || '').replace(/<!--FOTO-->([\s\S]*?)<!--\/FOTO-->/g, (m, g) => { f.push(g); return ''; }); return { fotos: f.join(''), resto }; };
   A.precarga = rutas => rutas.forEach(r => { const i = new Image(); i.src = 'file://' + r; });
   A.foto = (ruta, cx, cy, w, h, rot = 0, s = 1, credito = '') => {
     if (s <= 0.001) return '';
     const id = 'fclip' + (++_fclip), x = -w / 2, y = -h / 2, m = 12, mb = 32;
     const cinta = (tx, r) => `<rect x="${tx - 48}" y="${y - m - 16}" width="96" height="30" rx="3" fill="#efe2b8" opacity=".86" stroke="${INK}" stroke-width="2" transform="rotate(${r} ${tx} ${y - m})"/>`;
-    return `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${s})"><rect x="${x - m + 9}" y="${y - m + 11}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#000" opacity=".22"/><rect x="${x - m}" y="${y - m}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#fffdf6" stroke="${INK}" stroke-width="4"/><clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath><image href="file://${ruta}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${INK}" stroke-width="2"/><text x="${x + w}" y="${y + h + 23}" font-family="Inter" font-weight="700" font-size="14" text-anchor="end" fill="#6b6475">${credito}</text><text x="${x}" y="${y + h + 23}" font-family="Inter" font-weight="900" font-size="14" fill="${ROJ}">FOTO REAL</text>${cinta(x + 46, -8)}${cinta(x + w - 46, 7)}</g>`;
+    return '<!--FOTO-->' + `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${s})"><rect x="${x - m + 9}" y="${y - m + 11}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#000" opacity=".22"/><rect x="${x - m}" y="${y - m}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#fffdf6" stroke="${INK}" stroke-width="4"/><clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath><image href="file://${ruta}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${INK}" stroke-width="2"/><text x="${x + w}" y="${y + h + 23}" font-family="Inter" font-weight="700" font-size="14" text-anchor="end" fill="#6b6475">${credito}</text><text x="${x}" y="${y + h + 23}" font-family="Inter" font-weight="900" font-size="14" fill="${ROJ}">FOTO REAL</text>${cinta(x + 46, -8)}${cinta(x + w - 46, 7)}</g>` + '<!--/FOTO-->';
   };
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, E = window.ESCENAS, D = T.duracion;
@@ -339,7 +341,8 @@
         lup = lupi(o);
       }
       if (r.evitar) r.evitar = r.evitar.map(([x, y, w, h]) => [fx(x), fy(y), w * F.s, h * F.s]);
-      capas.push({ k, alpha, dy, r, lup, L, kb });
+      const kf = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)})`;
+      capas.push({ k, alpha, dy, r, lup, L, kb, kf });
     };
     const S = T.escenas[e], dt = t - S.ini;
     if (e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -20 * p); dibuja(e, p, 20 * (1 - p)); }
@@ -348,7 +351,8 @@
     svg += `<image href="fondo.jpg" x="0" y="0" width="${W}" height="${H}"/>`;
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
-      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g transform="${c.kb}"><g filter="${filt}">${c.r.svg || ''}</g></g>${c.lup}</g>`;
+      const SF = A.separaFotos(c.r.svg);
+      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
       svg += `<g transform="translate(0 ${c.dy})">${titulo(tt, c.L, c.alpha)}</g>`;
       if (c.k === 0 && P.fecha) svg += `<g opacity="${c.alpha}" transform="translate(565 214) rotate(5)"><rect x="-74" y="-20" width="148" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
       if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="748" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;

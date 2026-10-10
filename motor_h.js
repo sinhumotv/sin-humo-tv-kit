@@ -302,7 +302,8 @@
         lup = lupi(o);
       }
       if (r.evitar) r.evitar = r.evitar.map(([x, y, w, h]) => [fx(x), fy(y), w * F.s, h * F.s]);
-      capas.push({ k, alpha, dx, r, lup, L, kb });
+      const kf = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)})`;
+      capas.push({ k, alpha, dx, r, lup, L, kb, kf });
     };
     const S = T.escenas[e], dt = t - S.ini;
     if (e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -30 * p); dibuja(e, p, 30 * (1 - p)); }
@@ -310,7 +311,8 @@
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="fondo_h.jpg" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`;
     for (const c of capas) {
-      svg += `<g opacity="${c.alpha}" transform="translate(${c.dx} 0)"><g transform="${c.kb}"><g filter="${filt}">${c.r.svg || ''}</g></g>${c.lup}</g>`;
+      const SF = A.separaFotos(c.r.svg);
+      svg += `<g opacity="${c.alpha}" transform="translate(${c.dx} 0)"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
       if (!window.LIMPIO) svg += cabecera(c.k, c.L, c.alpha);
       if (c.k === 0 && P.fecha && !window.LIMPIO) svg += `<g opacity="${c.alpha}" transform="translate(1100 112) rotate(4)"><rect x="-80" y="-20" width="160" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
       if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="574" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;

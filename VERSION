@@ -9,3 +9,4 @@ v9 · 2026-10-10 · miniatura.js (miniatura de YouTube pensada para el CTR: titu
 v10 · 2026-10-10 · fotos reales: fotos.py (buscar y traer fotos de Wikimedia Commons con el navegador de la app y extraerlas) y A.foto/A.precarga en motor.js (foto pegada con cinta, rótulo FOTO REAL y crédito de licencia)
 v11 · 2026-10-10 · miniatura.js: foto real de fondo opcional ("foto" y "credito"), oscurecida a la izquierda y titular con contorno
 v12 · 2026-10-10 · render.js: vídeo en trozos de 30 s reanudables (si la máquina se reinicia, se retoma desde el último trozo terminado; basta relanzar el mismo comando)
+v13 · 2026-10-10 · fotos reales QUIETAS: lo que devuelve A.foto (marcado <!--FOTO-->) se dibuja fuera del filtro de ondulación y sin el acercamiento lento de cámara, en los dos motores
