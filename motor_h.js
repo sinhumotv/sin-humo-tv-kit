@@ -11,7 +11,7 @@
    Capítulos: proyecto.json "capitulos": [{"titulo": "...", "desde": <índice de escena>}, ...] (el primero desde 0). */
 (function () {
   if (!window.PROY || String(window.PROY.formato || '').toUpperCase() !== 'YOUTUBE') return;
-  const { A, lupi, nube, bloquesKaraoke } = window.SH;
+  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn } = window.SH;
   const { INK, ORA, AZU, VER, ORO, ROJ, CRE, cl, easeOut, easeIO, esc } = A;
   const W = 1280, H = 720;
   const ZONA = { x0: 60, x1: 1040, y0: 120, y1: 560 };
@@ -174,7 +174,8 @@
     // Cierre: pregunta para comentar, sello pequeño y guiño
     cierre(L, d, v) {
       const tx = textoMultilinea(560, 260, v.texto || '¿Tú qué opinas? Te leo.', 58, 19, INK, 'middle', easeOut((L - .2) / .5));
-      const se = L > d * .5 ? A.sello(560, 480, .8 * A.pop(L, d * .5), -4) : '';
+      const nl = partir(v.texto || '¿Tú qué opinas? Te leo.', 19).length;   // v16: con preguntas largas el sello bajaría encima del texto
+      const se = L > d * .5 && nl <= 3 ? A.sello(560, 260 + nl * 66 + 30, .8 * A.pop(L, d * .5), -4) : '';
       const grave = v.grave === true;
       return { svg: tx + se, lupi: { x: 1120, y: 400, s: .95, expr: grave ? 'seria' : (L > d * .5 ? 'guino' : 'curiosa'), mira: [-.8, -.2], brazos: !grave && L > d * .5 ? 'saluda' : 'abajo' }, evitar: [[300, 200, 520, 200]] };
     },
@@ -280,6 +281,32 @@
     return (FIT[k] = f);
   }
 
+  // v16: Lupi no tapa textos ni fotos (igual que en los shorts): recorrido suave por escena, salvo cuando hace de lupa
+  const sujetaH = (x, y, s) => [Math.max(90, Math.min(1190, x)), Math.max(120 + 100 * s, Math.min(y, 565 - 156 * s))];
+  const DESVH = {};
+  function desvioH(k) {
+    if (DESVH[k]) return DESVH[k];
+    const P = window.PROY, T = window.TIEMPOS, S = T.escenas[k];
+    let tr = [];
+    if (P.esquivar !== false && trayectoDesvio) {
+      try {
+        const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y, ad = k === 0 ? (P.adelanto_inicio ?? 1) : 0;
+        const kf = `translate(${F.tx} ${F.ty}) scale(${F.s})`;
+        tr = trayectoDesvio(ad - .3, ad + (S.fin - S.ini) + .3, L => {
+          const r = escena(k, L, S.ini + L - ad);
+          if (!r || !r.lupi) return null;
+          if (r.lupi.lupa) return { lupa: true };
+          const cajas = cajasProtegidas(r.svg, kf, W, H);
+          if (k === 0 && P.fecha) cajas.push([1016, 88, 168, 44]);
+          if (k === T.escenas.length - 1 && P.fuentes) cajas.push([56, 554, 900, 26]);
+          const dentro = r.lupi.x < ZONA.x1;
+          return { x: dentro ? fx(r.lupi.x) : r.lupi.x, y: dentro ? fy(r.lupi.y) : r.lupi.y, s: r.lupi.s || 1, cajas };
+        }, sujetaH);
+      } catch (e) { tr = []; }
+    }
+    return (DESVH[k] = tr);
+  }
+
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, D = T.duracion;
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;
@@ -297,7 +324,8 @@
         if (o.lupa === true) o.lupa = { cx: o.x, cy: o.y };
         // Lupi se mueve con el encuadre si está dentro del dibujo; si está a la derecha, se queda en su sitio
         if (o.x < ZONA.x1) { o.x = fx(o.x); o.y = fy(o.y); }
-        o.x = Math.max(90, Math.min(1190, o.x)); o.y = Math.max(120 + 100 * s, Math.min(o.y, 565 - 156 * s));
+        const dv = o.lupa ? { dx: 0, dy: 0 } : desvioEn(desvioH(k), L);
+        [o.x, o.y] = sujetaH(o.x + dv.dx, o.y + dv.dy, s);
         if (o.lupa) { const cx = fx(o.lupa.cx), cy = fy(o.lupa.cy); o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / s}) translate(${-cx} ${-cy})" filter="${filt}"><g transform="${kb}">${r.svg}</g></g>`; }
         lup = lupi(o);
       }
