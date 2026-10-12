@@ -170,7 +170,7 @@
   function lineaPanel(l, y, a, dy) {
     const partes = l.split('*');
     const ts = partes.map((s, i) => `<tspan fill="${i % 2 ? ORA : CRE}">${esc(s)}</tspan>`).join('');
-    return `<text x="56" y="${y + dy}" font-family="Inter" font-weight="800" font-size="42" opacity="${a}">${ts}</text>`;
+    return `<text x="80" y="${y + dy}" font-family="Inter" font-weight="800" font-size="42" opacity="${a}">${ts}</text>`;
   }
   function panel(e, t, alpha, dy) {
     const T = window.TIEMPOS.escenas[e], ls = window.PROY.escenas[e].panel || [];
@@ -247,11 +247,11 @@
         const col = ahora ? ORA : p.clave ? '#7fd8d2' : CRE;
         return `<tspan fill="${col}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
       }).join(' ');
-      return `<text x="336" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
+      return `<text x="360" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
     }).join('');
   }
   function marcaFija() {
-    return `<g>${nube(470, 724, 1)}<text x="630" y="732" font-family="Inter" font-weight="800" font-size="22" fill="${CRE}" fill-opacity=".75" stroke="${INK}" stroke-width="2" paint-order="stroke" text-anchor="end">sin humo TV</text></g>`;
+    return `<g>${nube(485, 724, 1)}<text x="645" y="732" font-family="Inter" font-weight="800" font-size="22" fill="${CRE}" fill-opacity=".75" stroke="${INK}" stroke-width="2" paint-order="stroke" text-anchor="end">sin humo TV</text></g>`;
   }
   const POS = [[90, 250], [400, 280], [80, 480], [410, 520], [110, 690], [380, 700]];
   function marcaMovil(t, evitar, oculta) {
@@ -268,10 +268,10 @@
     return `<text x="${x}" y="${y}" transform="rotate(-8 ${x} ${y})" font-family="Inter" font-weight="800" font-size="26" fill="${INK}" fill-opacity="${.14 * a}">sin humo TV</text>`;
   }
   function barra(t, D) {
-    const x = 60 + 570 * cl(t / D), seg = Math.min(Math.floor(t) + 1, Math.ceil(D - 1e-6));
+    const x = 75 + 570 * cl(t / D), seg = Math.min(Math.floor(t) + 1, Math.ceil(D - 1e-6));
     const ft = t % 1, flash = ft < .18 ? (1 - ft / .18) : 0, bote = Math.sin(t * Math.PI * 4) * 2;
-    return `<rect x="60" y="767" width="570" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>` +
-      `<rect x="60" y="767" width="${Math.max(0, x - 60)}" height="10" rx="5" fill="${ORA}"/>` +
+    return `<rect x="75" y="767" width="570" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>` +
+      `<rect x="75" y="767" width="${Math.max(0, x - 75)}" height="10" rx="5" fill="${ORA}"/>` +
       lupi({ x, y: 772 + bote, s: 22 / 60, rot: 90, mini: true, sinCara: true, t, texto: seg, fs: 20 / (22 / 60) * 1 }) +
       (flash > 0 ? `<circle cx="${x}" cy="${772 + bote}" r="${24 + 10 * (1 - flash)}" fill="none" stroke="#fff" stroke-width="3" opacity="${flash}"/>` : '');
   }
@@ -280,7 +280,7 @@
   let ultimo = '';
   // Encuadre automático: mide lo que ocupa la ilustración de cada escena (en su estado final, sin Lupi)
   // y la amplía y centra para llenar la zona de dibujo. Se calcula una vez por escena: el plano no "baila".
-  const FIT = {}, ZONA = { x0: 34, x1: 626, y0: 205, y1: 728 };
+  const FIT = {}, ZONA = { x0: 70, x1: 650, y0: 205, y1: 728 };
   function encuadre(k) {
     if (FIT[k]) return FIT[k];
     const P = window.PROY, T = window.TIEMPOS, S = T.escenas[k];
@@ -295,7 +295,7 @@
         const b = sv.firstChild.getBBox(); sv.remove();
         if (b.width > 40 && b.height > 40) {
           const zw = ZONA.x1 - ZONA.x0, zh = ZONA.y1 - ZONA.y0;
-          let sc = Math.min(zw / b.width, zh / b.height, P.encuadre_max || 1.45);
+          let sc = Math.min(zw / b.width, zh / b.height, P.encuadre_max || 1.15);
           if (sc < 1.06 && sc > .97) sc = 1;            // ya está bien: no tocar
           sc = Math.max(.8, sc);
           const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
@@ -405,7 +405,7 @@
     }
     return (DESV[k] = tr);
   }
-  function sujetaLupi(x, y, s) { return [Math.max(80, Math.min(600, x)), Math.max(205 + 100 * s, Math.min(y, 740 - 156 * s))]; }
+  function sujetaLupi(x, y, s) { return [Math.max(100, Math.min(620, x)), Math.max(205 + 100 * s, Math.min(y, 740 - 156 * s))]; }
   // Fotos reales "pegadas" sobre el dibujo (v10): marco blanco, contorno de tinta, sombra, dos tiras de cinta,
   // rótulo FOTO REAL y crédito de la licencia (obligatorio en CC BY / CC BY-SA). ruta = archivo absoluto.
   let _fclip = 0;
@@ -429,7 +429,7 @@
       // cámara: acercamiento lento durante la escena (+4 %) para que nunca haya un plano quieto
       const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + .04 * easeIO(cl((t - S.ini) / dur));
       const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y;
-      const kb = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)}) translate(330 465) scale(${z.toFixed(4)}) translate(-330 -465)`;
+      const kb = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)}) translate(360 465) scale(${z.toFixed(4)}) translate(-360 -465)`;
       let lup = '';
       if (r.lupi) {
         const o = Object.assign({ t, id: 'L' + k }, r.lupi);
@@ -455,14 +455,14 @@
       const SF = A.separaFotos(c.r.svg);
       svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
       svg += `<g transform="translate(0 ${c.dy})">${titulo(tt, c.L, c.alpha)}</g>`;
-      if (c.k === 0 && P.fecha) svg += `<g opacity="${c.alpha}" transform="translate(565 214) rotate(5)"><rect x="-74" y="-20" width="148" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
-      if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="748" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;
+      if (c.k === 0 && P.fecha) svg += `<g opacity="${c.alpha}" transform="translate(580 214) rotate(5)"><rect x="-74" y="-20" width="148" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
+      if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="75" y="748" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;
     }
     const ev = capas.length ? (capas[capas.length - 1].r.evitar || []) : [];
     svg += marcaMovil(t, ev, e === P.mencion);
     svg += marcaFija();
     svg += barra(t, D);
-    svg += `<rect x="32" y="805" width="608" height="230" rx="24" fill="${INK}" fill-opacity=".93"/>`;
+    svg += `<rect x="56" y="805" width="608" height="230" rx="24" fill="${INK}" fill-opacity=".93"/>`;
     if (P.subtitulos === 'panel') { for (const c of capas) svg += panel(c.k, t, c.alpha, 0); }
     else svg += karaoke(capas[capas.length - 1].k, t, 1);
     svg += `</svg>`;
