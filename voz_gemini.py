@@ -6,7 +6,7 @@ Lee <carpeta>/voz.txt (el texto hablado, escenas separadas por una línea en bla
 y deja <carpeta>/voz.mp3, listo para audio.py.
 
 La clave va en la variable GEMINI_API_KEY (o en ~/.gemini_key). Nunca la subas al kit.
-- Textos largos se parten en trozos de <= 1.200 caracteres por cambios de párrafo
+- Textos largos se parten en trozos de <= 1.800 caracteres por cambios de párrafo
   y se unen con 0,8 s de silencio (pausa clara para el corte por escenas).
 - Prueba varios modelos por si uno no responde o agota su cuota gratuita.
 - Sale con código 2 y el motivo si ninguno funciona (para pasar al plan B).
@@ -15,7 +15,7 @@ import base64, json, os, subprocess, sys, time, urllib.request, urllib.error, ss
 
 MODELOS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview",
            "gemini-2.5-flash-preview-tts", "gemini-3.8-flash-lite-tts"]
-MAX = 1200
+MAX = 1800  # menos peticiones: el plan gratis da 10 al día por modelo
 OBJ_CPS = 14.5
 ESTILO = {
     "normal": ("Presentador joven de noticias para redes sociales, acento castellano de España (la z y la c como en "
@@ -73,8 +73,10 @@ def generar(texto, voz, tono, k):
                 MODELOS.insert(0, m)  # el resto de trozos, con el mismo modelo (misma voz)
                 return base64.b64decode(parte["data"]), parte.get("mimeType", ""), m
             except urllib.error.HTTPError as e:
-                msg = e.read()[:300].decode(errors="ignore")
+                msg = e.read()[:1500].decode(errors="ignore")
                 errores.append(f"{m}: {e.code} {msg[:120]}")
+                if "PerDay" in msg or "per day" in msg.lower():
+                    break  # cupo diario de este modelo agotado (10 al día gratis): al siguiente sin esperar
                 if e.code in (429, 500, 502, 503, 504) and intento < 2:
                     time.sleep(20 * (intento + 1))
                     continue
