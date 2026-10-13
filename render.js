@@ -36,7 +36,7 @@ function html() {
 html,body{margin:0;padding:0;background:#f6ebd0;overflow:hidden}#lienzo{width:${VW}px;height:${VH}px}</style></head>
 <body><div id="lienzo"></div><span style="font:900 1px Inter;position:absolute;opacity:0">a</span><span style="font:800 1px Inter;position:absolute;opacity:0">a</span>
 <script>window.PROY=${P};window.TIEMPOS=${T};</script>
-${fs.existsSync(path.join(DIR, 'escenas.js')) ? `<script src="${path.join(DIR, 'escenas.js')}"></script>` : '<script>window.ESCENAS=[]</script>'}<script src="${path.join(KIT, 'motor.js')}"></script>${HOR ? `<script src="${path.join(KIT, 'motor_h.js')}"></script>` : ''}</body></html>`;
+${fs.existsSync(path.join(DIR, 'escenas.js')) ? `<script src="${path.join(DIR, 'escenas.js')}"></script>` : '<script>window.ESCENAS=[]</script>'}<script src="${path.join(KIT, 'motor.js')}"></script>${!HOR ? `<script src="${path.join(KIT, 'motor_v.js')}"></script>` : ''}${HOR ? `<script src="${path.join(KIT, 'motor_h.js')}"></script>` : ''}</body></html>`;
   const out = path.join(DIR, '_motor.html');
   fs.writeFileSync(out, h);
   return 'file://' + out;

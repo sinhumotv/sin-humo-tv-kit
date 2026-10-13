@@ -245,7 +245,8 @@
       const tsp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b || t < .05;
         const col = ahora ? ORA : p.clave ? '#7fd8d2' : CRE;
-        return `<tspan fill="${col}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
+        const pop = ahora && window.PROY.estilo !== 'clasico' ? ` font-size="${Math.round(fs * (1.04 + .06 * (1 - cl((t - p.a) / .18))))}"` : '';
+        return `<tspan fill="${col}"${pop} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="360" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
     }).join('');
@@ -423,7 +424,7 @@
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;
     const filt = `url(#w${Math.floor(t * 8) % 4})`;
     const capas = [];
-    const dibuja = (k, alpha, dy) => {
+    const dibuja = (k, alpha, dy, zs = 1) => {
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1.5) : 0); // la escena 1 ya empieza avanzada: todo lo que entre antes de L=1,5 se ve en el fotograma 0
       const r = E[k](L, A, t) || {};
       // cámara: acercamiento lento durante la escena (+4 %) para que nunca haya un plano quieto
@@ -443,17 +444,19 @@
       }
       if (r.evitar) r.evitar = r.evitar.map(([x, y, w, h]) => [fx(x), fy(y), w * F.s, h * F.s]);
       const kf = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)})`;
-      capas.push({ k, alpha, dy, r, lup, L, kb, kf });
+      capas.push({ k, alpha, dy, r, lup, L, kb, kf, zs });
     };
     const S = T.escenas[e], dt = t - S.ini;
-    if (e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -20 * p); dibuja(e, p, 20 * (1 - p)); }
+    const MOD = P.estilo !== 'clasico';   // v21: transición moderna (la escena que sale se acerca y la nueva llega desde un poco más lejos)
+    if (MOD && e > 0 && dt < .3) { const p = easeOut(dt / .3); dibuja(e - 1, 1 - p, 0, 1 + .09 * p); dibuja(e, p, 0, .9 + .1 * p); }
+    else if (!MOD && e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -20 * p); dibuja(e, p, 20 * (1 - p)); }
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="fondo.jpg" x="0" y="0" width="${W}" height="${H}"/>`;
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
       const SF = A.separaFotos(c.r.svg);
-      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy})"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
+      svg += `<g opacity="${c.alpha}" transform="translate(0 ${c.dy}) translate(360 465) scale(${(c.zs || 1).toFixed(4)}) translate(-360 -465)"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
       svg += `<g transform="translate(0 ${c.dy})">${titulo(tt, c.L, c.alpha)}</g>`;
       if (c.k === 0 && P.fecha) svg += `<g opacity="${c.alpha}" transform="translate(580 214) rotate(5)"><rect x="-74" y="-20" width="148" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
       if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="75" y="748" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;
