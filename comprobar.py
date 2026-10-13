@@ -26,6 +26,7 @@ if (vid["width"], vid["height"]) != ((1920, 1080) if YOUTUBE else (1080, 1920)):
 if vid["r_frame_rate"] != "30/1": avisos.append(f"fps {vid['r_frame_rate']}")
 if not aud: avisos.append("sin audio")
 lo, hi = (300, 900) if YOUTUBE else (55, 60.05) if LARGO else (33, 40.05)
+if "duracion_max" in P: lo, hi = float(P.get("duracion_min", 0)), float(P["duracion_max"]) + 0.05
 if not lo <= dur <= hi: avisos.append(f"duración {dur:.1f}s fuera de {lo}-{hi:.0f}s")
 if fmt.get("tags", {}).get("artist") != "sin humo TV": avisos.append("faltan metadatos del canal")
 mb = int(fmt["size"]) / 1e6

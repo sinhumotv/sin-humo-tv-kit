@@ -18,3 +18,4 @@ v18 · 2026-10-13 · voz_gemini.py: voz GRATIS con Gemini (Puck, acento de Espa�
 v19 · 2026-10-13 · voz_gemini.py: trozos de 1.800 caracteres (un largo ≈ 5 peticiones) y salto inmediato al siguiente modelo cuando se agota el cupo diario gratis (10 peticiones al día por modelo)
 v20 · 2026-10-13 · voz_gemini.py: limpia la clave leída del Google Doc (Drive la devuelve con \_ y espacios)
 v21 · 2026-10-13 · PLANTILLAS VERTICALES (motor_v.js): un short se hace sin escribir escenas.js, poniendo escenas[k].visual en proyecto.json (titular, cifra, foto a sangre con movimiento, comparar, lista, frase, linea, icono, grafico, pregunta, mencion, cierre); estilo moderno: transición con zoom, palabra activa del karaoke con pop, cifras con golpe; "estilo":"clasico" lo desactiva
+v22 · 2026-10-13 · duración libre en shorts: "duracion_max" y "duracion_min" en proyecto.json mandan sobre el formato en audio.py y comprobar.py (antes CORTO se forzaba a 33-40 s)

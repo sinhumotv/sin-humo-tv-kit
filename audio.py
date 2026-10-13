@@ -15,6 +15,9 @@ FORMATO = P.get("formato", "LARGO").upper()
 LARGO = FORMATO == "LARGO"
 YOUTUBE = FORMATO == "YOUTUBE"   # vídeo largo horizontal
 TMAX, TMIN = (900.0, 0.0) if YOUTUBE else (60.0, 55.0) if LARGO else (40.0, 33.0)
+# Duración libre (desde v22): "duracion_max" y "duracion_min" en proyecto.json mandan sobre el formato
+if "duracion_max" in P:
+    TMAX, TMIN = float(P["duracion_max"]), float(P.get("duracion_min", 0))
 SR = 48000
 RESPIRO = 0.25
 
