@@ -136,8 +136,8 @@ while total(atempo, max_p) > TMAX and atempo < 1.15:
     atempo = min(1.15, atempo + 0.01)
 if total(atempo, max_p) > TMAX:
     max_p = 0.28
-if palabras / (vtot / atempo) > 3.4:
-    atempo = max(1.0, palabras / vtot / 3.4)
+if palabras / (vtot / atempo) > 3.4:   # demasiado rápido: no acelerar más (antes esta línea aceleraba)
+    atempo = max(1.0, min(atempo, 3.4 * vtot / palabras))
 
 
 def aplicar_atempo(x, f):
