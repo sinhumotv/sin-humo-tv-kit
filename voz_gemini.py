@@ -29,6 +29,8 @@ def clave():
     k = os.environ.get("GEMINI_API_KEY", "").strip()
     if not k and os.path.exists(os.path.expanduser("~/.gemini_key")):
         k = open(os.path.expanduser("~/.gemini_key")).read().strip()
+    # Drive devuelve el texto del documento con "\\_" en vez de "_" y espacios al final: se limpian
+    k = "".join(k.replace("\\", "").split())
     if not k:
         sys.exit("Falta la clave de Gemini (GEMINI_API_KEY)")
     return k
