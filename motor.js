@@ -322,7 +322,10 @@
     // el resto del dibujo (iconos, gráficos...) también se intenta no tapar, aunque con menos prioridad que textos y fotos
     sv.querySelectorAll('path,rect,circle,ellipse,polygon,polyline,line').forEach(el => {
       if (el.closest('text,clipPath,defs')) return;
-      const c = caja(el); if (c[2] * c[3] > 150 && c[2] * c[3] < W_ * H_ * .25) dibujo.push(c);
+      const cs = getComputedStyle(el), inv = (cs.fill === 'none' || +cs.fillOpacity === 0) && (cs.stroke === 'none' || +cs.strokeOpacity === 0);
+      if (inv || +cs.opacity === 0) return;   // rectángulos invisibles (límite del encuadre) no cuentan
+      // v23: también las tarjetas y fondos grandes del dibujo (antes se ignoraba todo lo que pasara del 25 %)
+      const c = caja(el); if (c[2] * c[3] > 150 && c[2] * c[3] < W_ * H_ * .6) dibujo.push(c);
     });
     sv.remove();
     cajas.dibujo = dibujo;
@@ -335,38 +338,42 @@
     return w > 0 && h > 0 ? w * h : 0;
   }
   // tapa de verdad un texto o foto si cubre más del 6 % de su caja o más de 300 px² (un roce en el borde no cuenta)
-  const tapa = (l, c) => { const o = solape(l, c); return o > Math.min(.06 * c[2] * c[3], 300) ? o : 0; };
+  const tapa = (l, c) => { const o = solape(l, c, 8); return o > Math.min(.04 * c[2] * c[3], 80) ? o : 0; };   // v23: más estricto y con 8 px de aire
   // Un instante: p = {x,y,s,cajas} en pantalla (ya encuadrado, antes de sujetar a la zona); prev = desvío del instante
   // anterior (para que Lupi no dé tumbos); sujeta(x,y,s) -> [x,y].
   // Prioridad: 1) no tapar ningún texto ni foto; 2) tapar lo menos posible del dibujo; 3) moverse poco y con suavidad.
-  function elegirDesvio(p, sujeta, prev = { dx: 0, dy: 0 }) {
+  // v23: además de no tapar textos ni fotos, Lupi tampoco se mete en el dibujo (iconos, barras, tarjetas): como mucho un
+  // 8 % de su caja. Devuelve también "limpio" (si ha encontrado un sitio que cumple las dos cosas).
+  function elegirDesvio(p, sujeta, prev = { dx: 0, dy: 0 }, f = 1) {
+    const s = p.s * f, lim = .08 * 140 * s * 245 * s;
     const cost = (dx, dy) => {
-      const [x, y] = sujeta(p.x + dx, p.y + dy, p.s), l = cajaLupi(x, y, p.s), br = cajaBrazos(x, y, p.s);
+      const [x, y] = sujeta(p.x + dx, p.y + dy, s), l = cajaLupi(x, y, s), br = cajaBrazos(x, y, s);
       let tx = 0, dw = 0;
       for (const c of p.cajas) tx += tapa(l, c) + tapa(br, c);
-      for (const c of (p.cajas.dibujo || [])) dw += solape(l, c, 0);
+      for (const c of (p.cajas.dibujo || [])) dw += solape(l, c, 10) + solape(br, c, 10);   // brazos incluidos y 10 px de aire
       return [tx, dw];
     };
-    const [t0] = cost(prev.dx, prev.dy);
-    if (t0 === 0 && cost(0, 0)[0] === 0) return { dx: 0, dy: 0 };
-    let mejor = null, mval = Infinity, minTx = Infinity, porTx = { dx: 0, dy: 0 };
+    const c0 = cost(prev.dx, prev.dy), c00 = cost(0, 0);
+    if (c00[0] === 0 && c00[1] <= lim && c0[0] === 0 && c0[1] <= lim) return { dx: 0, dy: 0, limpio: true };
+    let lp = null, lv = Infinity, mejor = null, mval = Infinity, minTx = Infinity, porTx = { dx: 0, dy: 0 };
     for (let dx = -560; dx <= 560; dx += 20) for (let dy = -420; dy <= 420; dy += 20) {
-      const [tx, dw] = cost(dx, dy);
-      if (tx === 0) { const v = dw + 6 * Math.hypot(dx, dy) + 4 * Math.hypot(dx - prev.dx, dy - prev.dy); if (v < mval) { mval = v; mejor = { dx, dy }; } }
-      else if (tx < minTx - 1) { minTx = tx; porTx = { dx, dy }; }
+      const [tx, dw] = cost(dx, dy), mov = 6 * Math.hypot(dx, dy) + 4 * Math.hypot(dx - prev.dx, dy - prev.dy);
+      if (tx === 0 && dw <= lim) { if (mov + dw < lv) { lv = mov + dw; lp = { dx, dy, limpio: true }; } }
+      else if (tx === 0) { const v = dw + mov; if (v < mval) { mval = v; mejor = { dx, dy, limpio: false }; } }
+      else if (tx < minTx - 1) { minTx = tx; porTx = { dx, dy, limpio: false }; }
     }
-    return mejor || porTx;
+    return lp || mejor || porTx;
   }
   // Recorre la escena en instantes (cada ~0,4 s) y devuelve [{L,dx,dy}]; en los instantes con lupa el desvío es 0.
   // muestra(L) -> null | {x,y,s,lupa,cajas}
-  function trayectoDesvio(L0, L1, muestra, sujeta) {
+  function trayectoDesvio(L0, L1, muestra, sujeta, f = 1) {
     const n = Math.max(6, Math.min(40, Math.ceil((L1 - L0) / .4))), out = [];
     let prev = { dx: 0, dy: 0 };
     for (let i = 0; i <= n; i++) {
       const L = L0 + (L1 - L0) * i / n, p = muestra(L);
-      let d = { dx: 0, dy: 0 };
-      if (p && !p.lupa) d = elegirDesvio(p, sujeta, prev);
-      out.push({ L, dx: d.dx, dy: d.dy, lupa: !!(p && p.lupa) }); prev = d;
+      let d = { dx: 0, dy: 0, limpio: true };
+      if (p && !p.lupa) d = elegirDesvio(p, sujeta, prev, f);
+      out.push({ L, dx: d.dx, dy: d.dy, lupa: !!(p && p.lupa), limpio: d.limpio !== false }); prev = d;
     }
     // justo antes y después de hacer de lupa va o viene del dato a propósito: ahí no se aparta (evita tirones)
     for (let i = 0; i < out.length; i++) if (!out[i].lupa && ((out[i - 1] && out[i - 1].lupa) || (out[i + 1] && out[i + 1].lupa))) { out[i].dx = 0; out[i].dy = 0; }
@@ -393,15 +400,24 @@
       try {
         const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y, ad = k === 0 ? (P.adelanto_inicio ?? 1.5) : 0;
         const kf = `translate(${F.tx} ${F.ty}) scale(${F.s})`;
-        tr = trayectoDesvio(ad - .3, ad + (S.fin - S.ini) + .3, L => {
+        const muestra = L => {
           const r = window.ESCENAS[k](L, A, S.ini + L - ad) || {};
           if (!r.lupi) return null;
           if (r.lupi.lupa) return { lupa: true };
           const cajas = cajasProtegidas(r.svg, kf, W, H);
           if (k === 0 && P.fecha) cajas.push([489, 192, 152, 40]);
+          cajas.push([465, 700, 190, 44]);   // v23: marca de agua fija (nube + sin humo TV)
           if (k === T.escenas.length - 1 && P.fuentes) cajas.push([56, 728, 580, 26]);
           return { x: fx(r.lupi.x), y: fy(r.lupi.y), s: r.lupi.s || 1, cajas };
-        }, sujetaLupi);
+        };
+        // v23: si en su tamaño no cabe sin tapar nada, prueba más pequeño; si ni así, Lupi no sale en esa escena
+        // (solo aparece, con fundido, en los momentos en que hace de lupa a propósito).
+        for (const f of [1, .8, .64]) {
+          tr = trayectoDesvio(ad - .3, ad + (S.fin - S.ini) + .3, muestra, sujetaLupi, f);
+          tr.f = f;
+          if (tr.every(m => m.lupa || m.limpio)) break;
+          if (f === .64) tr.oculto = true;
+        }
       } catch (e) { tr = []; }
     }
     return (DESV[k] = tr);
@@ -437,10 +453,13 @@
         if (o.lupa === true) o.lupa = { cx: o.x, cy: o.y };
         // Lupi conserva su tamaño pero se mueve con el encuadre; el mango nunca baja de la barra
         // v16: se aparta de textos y fotos con un recorrido suave (cuando hace de lupa, no: ahí pasa por encima a propósito)
-        const dv = o.lupa ? { dx: 0, dy: 0 } : desvioEn(desvioLupi(k), L);
+        const TR = desvioLupi(k), dv = o.lupa ? { dx: 0, dy: 0 } : desvioEn(TR, L);
+        if (!o.lupa && TR.f) o.s = (o.s || 1) * TR.f;
         [o.x, o.y] = sujetaLupi(fx(o.x) + dv.dx, fy(o.y) + dv.dy, o.s || 1);
+        var aLupi = 1;
+        if (TR.oculto) { const lp = TR.filter(m => m.lupa).map(m => Math.abs(m.L - L)); aLupi = lp.length ? cl(1 - (Math.min(...lp) - .15) / .3) : 0; }
         if (o.lupa) { const cx = fx(o.lupa.cx), cy = fy(o.lupa.cy); o.lente = `<g transform="rotate(${-(o.rot || 0)}) scale(${1.6 / (o.s || 1)}) translate(${-cx} ${-cy})" filter="${filt}"><g transform="${kb}">${r.svg}</g></g>`; }
-        lup = lupi(o);
+        lup = aLupi <= 0.01 ? '' : aLupi < 1 ? `<g opacity="${aLupi.toFixed(3)}">${lupi(o)}</g>` : lupi(o);
       }
       if (r.evitar) r.evitar = r.evitar.map(([x, y, w, h]) => [fx(x), fy(y), w * F.s, h * F.s]);
       const kf = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)})`;
