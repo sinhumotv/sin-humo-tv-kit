@@ -14,7 +14,7 @@ T = json.load(open(f"{D}/tiempos.json"))
 DUR = T["duracion"] + 0.4
 NF = int(DUR * FPS)
 FONT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", "pf.ttf")
-fnt = ImageFont.truetype(FONT, 74)
+fnt = ImageFont.truetype(FONT, 80)
 try:
     fnt.set_variation_by_name("Bold")
 except Exception:
@@ -31,6 +31,7 @@ for i in range(len(escenas)):
     # rellenar 9:16 a 1.25x para tener margen de zoom sin perder nitidez
     s = max(W * 1.25 / im.width, H * 1.25 / im.height)
     im = im.resize((math.ceil(im.width * s), math.ceil(im.height * s)), Image.LANCZOS)
+    im = im.filter(ImageFilter.UnsharpMask(radius=1.6, percent=70, threshold=2))
     imgs.append(im)
 # patrón de movimientos que varía: acercar, alejar, desplazar
 MOV = ["in", "out", "in_up", "out", "in", "pan", "in_up", "out"]
@@ -51,64 +52,117 @@ def cuadro(i, u):
         cx += (im.width - cw) * (e - 0.5) * 0.5
     x0, y0 = cx - cw / 2, cy - ch / 2
     a, b = cw / W, ch / H
-    return im.transform((W, H), Image.AFFINE, (a, 0, x0, 0, b, y0), resample=Image.BILINEAR)
+    return im.transform((W, H), Image.AFFINE, (a, 0, x0, 0, b, y0), resample=Image.BICUBIC)
 
 
-# ---------- subtítulos: palabras con tiempos proporcionales ----------
-trozos = []  # (t0, t1, [(palabra, clave)])
+# ---------- subtítulos karaoke: cada palabra se ilumina cuando se dice ----------
+def norm(w):
+    import unicodedata
+    w = unicodedata.normalize("NFD", w.lower())
+    return "".join(c for c in w if c.isalnum() and not unicodedata.combining(c))
+
+
+pals = []   # (palabra, escena)
+for k, e in enumerate(P["escenas"]):
+    for w in e["subtitulo"].split():
+        pals.append([w.replace("*", ""), k])
+# 1) tiempos aproximados (proporcionales dentro de cada escena)
+ini_p = [0.0] * len(pals)
 for k, (e, t) in enumerate(zip(P["escenas"], escenas)):
+    idx = [j for j, p in enumerate(pals) if p[1] == k]
     t0 = t["lineas"][0] if t.get("lineas") else t["ini"]
     t1 = t["voz_fin"]
-    pals = []
-    for w in e["subtitulo"].split():
-        clave = "*" in w
-        pals.append((w.replace("*", ""), clave))
-    pesos = np.array([len(re.sub(r"\W", "", w)) + 2 + (4 if re.search(r"[.,?!]$", w) else 0) for w, _ in pals], float)
-    bordes = t0 + np.concatenate([[0], np.cumsum(pesos)]) / pesos.sum() * (t1 - t0)
-    # agrupar en bloques de 2-3 palabras, cortando tras puntuación
-    grupo = []
-    for j, (w, c) in enumerate(pals):
-        grupo.append(j)
-        fin_frase = bool(re.search(r"[.,?!]$", w))
-        if len(grupo) == 3 or fin_frase or (len(grupo) == 2 and len(w) > 7) or j == len(pals) - 1:
-            trozos.append([bordes[grupo[0]], bordes[grupo[-1] + 1], [pals[g] for g in grupo]])
-            grupo = []
-for a, b in zip(trozos, trozos[1:]):  # sin huecos: cada bloque dura hasta el siguiente
-    if b[0] - a[1] < 0.6:
-        a[1] = b[0]
+    pes = np.array([len(norm(pals[j][0])) + 2 for j in idx], float)
+    acu = t0 + np.concatenate([[0], np.cumsum(pes)])[:-1] / pes.sum() * (t1 - t0)
+    for j, v in zip(idx, acu):
+        ini_p[j] = float(v)
+# 2) tiempos reales con reconocimiento de voz (si está disponible)
+try:
+    from faster_whisper import WhisperModel
+    import difflib
+    mod = WhisperModel(os.environ.get("WHISPER_MODELO", "base"), device="cpu", compute_type="int8")
+    pcm = subprocess.run(f'ffmpeg -v error -i "{D}/voz_final.wav" -ac 1 -ar 16000 -f f32le -', shell=True,
+                         capture_output=True).stdout
+    audio16 = np.frombuffer(pcm, np.float32)
+    segs, _ = mod.transcribe(audio16, language="es", word_timestamps=True,
+                             initial_prompt=" ".join(p[0] for p in pals))
+    rec = [(norm(w.word), w.start) for s_ in segs for w in s_.words]
+    sm = difflib.SequenceMatcher(None, [norm(p[0]) for p in pals], [r[0] for r in rec], autojunk=False)
+    real = {}
+    for blk in sm.get_matching_blocks():
+        for q in range(blk.size):
+            real[blk.a + q] = rec[blk.b + q][1]
+    if len(real) > 0.6 * len(pals):
+        # palabras sin casar: interpolar entre vecinas casadas
+        cas = sorted(real)
+        for j in range(len(pals)):
+            if j in real:
+                ini_p[j] = real[j]
+            else:
+                prev = max([c for c in cas if c < j], default=None)
+                nxt = min([c for c in cas if c > j], default=None)
+                if prev is not None and nxt is not None:
+                    ini_p[j] = real[prev] + (real[nxt] - real[prev]) * (j - prev) / (nxt - prev)
+        for j in range(1, len(pals)):
+            ini_p[j] = max(ini_p[j], ini_p[j - 1] + 0.05)
+        print(f"karaoke: {len(real)}/{len(pals)} palabras con tiempo real")
+    else:
+        print("karaoke: reconocimiento poco fiable, tiempos aproximados")
+except Exception as ex:
+    print("karaoke: sin reconocimiento de voz (" + str(ex)[:80] + "), tiempos aproximados")
 
+# 3) bloques de 2-3 palabras, cortando tras puntuación o cambio de escena
+trozos = []  # [t0, t1, [índices de palabra]]
+grupo = []
+for j, (w, k) in enumerate(pals):
+    grupo.append(j)
+    fin = (bool(re.search(r"[.,?!:;…]$", w)) or len(grupo) == 3 or (len(grupo) == 2 and len(w) > 8)
+           or j == len(pals) - 1 or pals[j + 1][1] != k)
+    if fin:
+        trozos.append([ini_p[grupo[0]], None, grupo])
+        grupo = []
+for q in range(len(trozos)):
+    sig = trozos[q + 1][0] if q + 1 < len(trozos) else T["duracion"] + 0.3
+    ult = trozos[q][2][-1]
+    fin_voz = ini_p[ult] + 0.25 + 0.06 * len(pals[ult][0])
+    trozos[q][1] = sig if sig - fin_voz < 0.7 else fin_voz + 0.3
+fin_pal = {j: (ini_p[j + 1] if j + 1 < len(pals) else 1e9) for j in range(len(pals))}
+
+Y_SUB = int(H * 0.69)   # más abajo, pero por encima de los textos de las redes
 cache = {}
 
 
-def capa_texto(idx):
-    if idx in cache:
-        return cache[idx]
-    pals = trozos[idx][2]
+def capa_texto(q, activa):
+    """Bloque q con la palabra 'activa' (índice global) iluminada en amarillo."""
+    key = (q, activa)
+    if key in cache:
+        return cache[key]
+    idxs = trozos[q][2]
     capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(capa)
-    esp = d.textlength(" ", font=fnt)
-    anchos = [d.textlength(w, font=fnt) for w, _ in pals]
-    total = sum(anchos) + esp * (len(pals) - 1)
-    # si no cabe en una línea, se parte en dos
-    lineas = [list(range(len(pals)))]
-    if total > W * 0.84 and len(pals) > 1:
-        lineas = [list(range(len(pals) - 1)), [len(pals) - 1]]
-    y = int(H * 0.60) - (len(lineas) - 1) * 50
     sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ds = ImageDraw.Draw(sombra)
+    esp = d.textlength(" ", font=fnt)
+    anchos = {j: d.textlength(pals[j][0], font=fnt) for j in idxs}
+    total = sum(anchos.values()) + esp * (len(idxs) - 1)
+    lineas = [idxs] if (total <= W * 0.86 or len(idxs) == 1) else [idxs[:-1], idxs[-1:]]
+    y = Y_SUB - (len(lineas) - 1) * 50
     for ln in lineas:
         tw = sum(anchos[j] for j in ln) + esp * (len(ln) - 1)
         x = (W - tw) / 2
         for j in ln:
-            w, c = pals[j]
-            ds.text((x + 3, y + 5), w, font=fnt, fill=(0, 0, 0, 200), anchor="ls")
-            d.text((x, y), w, font=fnt, fill=AMARILLO if c else (255, 255, 255),
-                   stroke_width=3, stroke_fill=(20, 14, 8), anchor="ls")
+            w = pals[j][0]
+            on = j == activa
+            ds.text((x + 3, y + 6), w, font=fnt, fill=(0, 0, 0, 210), anchor="ls")
+            if on:  # resplandor detrás de la palabra que suena
+                ds.text((x, y), w, font=fnt, fill=AMARILLO + (150,), anchor="ls", stroke_width=10, stroke_fill=AMARILLO + (110,))
+            d.text((x, y), w, font=fnt, fill=AMARILLO if on else (255, 255, 255),
+                   stroke_width=4, stroke_fill=(15, 10, 5), anchor="ls")
             x += anchos[j] + esp
         y += 100
-    sombra = sombra.filter(ImageFilter.GaussianBlur(6))
+    sombra = sombra.filter(ImageFilter.GaussianBlur(7))
     out = Image.alpha_composite(sombra, capa)
-    cache[idx] = out
+    cache[key] = out
     return out
 
 
@@ -153,7 +207,7 @@ FUEGO = set(P.get("fuego", []))
 
 ff = subprocess.Popen(
     f'ffmpeg -y -v error -f rawvideo -pix_fmt rgb24 -s {W}x{H} -r {FPS} -i - '
-    f'-c:v libx264 -preset veryfast -crf 17 -pix_fmt yuv420p "{D}/_video.mp4"', shell=True, stdin=subprocess.PIPE)
+    f'-c:v libx264 -preset faster -crf 16 -tune film -pix_fmt yuv420p "{D}/_video.mp4"', shell=True, stdin=subprocess.PIPE)
 for f in range(NF):
     t = f / FPS
     i = max(k for k, e in enumerate(escenas) if e["ini"] <= t + 1e-6) if t < escenas[-1]["fin"] else len(escenas) - 1
@@ -170,9 +224,12 @@ for f in range(NF):
     arr = (np.asarray(fr, np.float32) * vig * luz).clip(0, 255).astype(np.uint8)
     fr = Image.fromarray(arr).convert("RGBA")
     fr = particulas(fr, EFE[i], t)
-    for k, (a, b, _) in enumerate(trozos):
-        if a <= t < b + 0.05:
-            fr = Image.alpha_composite(fr, capa_texto(k))
+    for q, (a, b, idxs) in enumerate(trozos):
+        if a - 0.04 <= t < b:
+            act = next((j for j in idxs if ini_p[j] - 0.04 <= t < fin_pal[j]), None)
+            if act is None and t >= ini_p[idxs[-1]]:
+                act = idxs[-1] if t < fin_pal[idxs[-1]] else None
+            fr = Image.alpha_composite(fr, capa_texto(q, act))
             break
     ff.stdin.write(fr.convert("RGB").tobytes())
 ff.stdin.close()

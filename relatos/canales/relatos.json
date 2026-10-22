@@ -1,0 +1,17 @@
+{
+ "id": "relatos",
+ "nombre": "Relatos en Español",
+ "tema": "mitología griega: cada vídeo cuenta UN mito o episodio concreto (héroes, dioses, castigos, monstruos, amores y tragedias), en la versión clásica más conocida (Homero, Hesíodo, Ovidio, Apolodoro…), sin inventar hechos",
+ "ideas": "Perseo y Medusa, Teseo y el Minotauro, los doce trabajos de Heracles (uno por vídeo), Jasón y el vellocino, Odiseo y el cíclope, Aquiles y su talón, Prometeo, Sísifo, Tántalo, Aracne, Midas, Narciso y Eco, Pigmalión, Faetón, Ícaro y Dédalo, Psique y Eros, Hero y Leandro, Pandora, Deméter y Perséfone, Atalanta, Belerofonte y Pegaso, Edipo, Casandra, el caballo de Troya, Escila y Caribdis, las sirenas, Cerbero, Tifón, Cronos devorando a sus hijos, Medea, Ariadna, Hermes niño roba el ganado de Apolo, Apolo y Dafne, Acteón, Níobe, Filemón y Baucis, Orión, Calisto, Io, Europa y el toro, Hades y Perséfone, las Moiras, Némesis",
+ "estilo_imagen": "Cinematic photorealistic film still, ancient Greece, dramatic lighting, shallow depth of field, ultra detailed, 35mm film grain. ",
+ "voz": "Algenib",
+ "tono_voz": "relato",
+ "firma": "Relatos en Español",
+ "seguir": ["Síguenos para descubrir cada día un nuevo mito griego.", "Cada día, un mito griego contado como nunca.", "Síguenos: los dioses del Olimpo tienen más secretos."],
+ "hashtags_base": ["mitologiagriega", "mitologia", "historias"],
+ "youtube_categoria": "24",
+ "buffer_org": "6ada435146c9db96d31ed6e5",
+ "buffer_canales": {"youtube": "6ada43f0778b240e2f8f1982", "instagram": "6ada4504778b240e2f8f2814", "tiktok": "6ada4442778b240e2f8f1ded"},
+ "horas": ["08:00", "12:00", "15:00", "18:00", "21:00"],
+ "reglas_extra": "Nada de desnudos aunque el mito los tenga: ropa (túnicas, armaduras). La violencia se sugiere, nunca se muestra con sangre."
+}

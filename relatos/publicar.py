@@ -12,12 +12,14 @@ from zoneinfo import ZoneInfo
 D = os.path.abspath(sys.argv[1])
 HORA = sys.argv[2]
 H = json.load(open(f"{D}/historia.json", encoding="utf-8"))
-ORG = "6ada435146c9db96d31ed6e5"
-CANALES = {"youtube": "6ada43f0778b240e2f8f1982", "instagram": "6ada4504778b240e2f8f2814",
-           "tiktok": "6ada4442778b240e2f8f1ded"}
-KEY = open(os.path.expanduser("~/.buffer_relatos")).read().strip()
-REPO = "https://github.com/sinhumotv/sin-humo-tv-kit"
-RAMA = "rel-" + HORA.replace(":", "")
+CFG = json.load(open(sys.argv[3], encoding="utf-8")) if len(sys.argv) > 3 else \
+    json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "canales", "relatos.json"), encoding="utf-8"))
+CANALES = CFG["buffer_canales"]
+KEY = os.environ.get("BUFFER_KEY") or open(os.path.expanduser("~/.buffer_relatos")).read().strip()
+TOK = os.environ.get("GITHUB_TOKEN")
+REPO = (f"https://x-access-token:{TOK}@github.com/sinhumotv/sin-humo-tv-kit" if TOK
+        else "https://github.com/sinhumotv/sin-humo-tv-kit")
+RAMA = ("rel" if CFG["id"] == "relatos" else CFG["id"]) + "-" + HORA.replace(":", "")
 
 
 def sh(c, cwd=None):
@@ -29,12 +31,12 @@ video = f"{D}/video_final.mp4"
 tam = os.path.getsize(video)
 tmp = tempfile.mkdtemp()
 sh(f'git init -q && git checkout -q --orphan {RAMA} && cp "{video}" video.mp4 && git add video.mp4 && '
-   f'git -c user.name="Relatos en Español" -c user.email="sinhumotv@users.noreply.github.com" commit -qm "{RAMA}"', tmp)
+   f'git -c user.name="{CFG['nombre']}" -c user.email="sinhumotv@users.noreply.github.com" commit -qm "{RAMA}"', tmp)
 r = sh(f"git push -q --force {REPO} {RAMA}", tmp)
 url = f"https://raw.githubusercontent.com/sinhumotv/sin-humo-tv-kit/{RAMA}/video.mp4"
 chk = sh(f'curl -sI "{url}"').stdout
 if " 200" not in chk.splitlines()[0] or f"content-length: {tam}" not in chk.lower():
-    print("FALLO al subir el vídeo a GitHub:", r.stderr[-400:], chk[:200])
+    print("FALLO al subir el vídeo a GitHub:", r.stderr[-400:].replace(TOK or "~", "***"), chk[:200])
     sys.exit(1)
 print("vídeo alojado:", url)
 
@@ -54,13 +56,13 @@ modo = "customScheduled" if cuando - ahora > dt.timedelta(minutes=5) else "share
 tags = " ".join("#" + h.lstrip("#") for h in H["hashtags"])
 desc = H["descripcion"].strip()
 pregunta = H["pregunta"].strip()
-seguir = H.get("seguir", "Síguenos para descubrir cada día un nuevo mito griego.")
+seguir = H.get("seguir") or CFG["seguir"][0]
 cuerpo = f"{desc}\n\n{pregunta}\n\n{seguir}\n\n{tags}"
 offset = int(H.get("portada_s", 0.8) * 1000)
 
 posts = {
     "youtube": {"text": cuerpo, "assets": [{"video": {"url": url}}],
-                "metadata": {"youtube": {"title": H["titulo_youtube"][:100], "categoryId": "24", "privacy": "public",
+                "metadata": {"youtube": {"title": H["titulo_youtube"][:100], "categoryId": CFG.get("youtube_categoria", "24"), "privacy": "public",
                                          "madeForKids": False, "notifySubscribers": True, "isAiGenerated": True}}},
     "instagram": {"text": cuerpo, "assets": [{"video": {"url": url, "metadata": {"thumbnailOffset": offset}}}],
                   "metadata": {"instagram": {"type": "reel", "shouldShareToFeed": True, "isAiGenerated": True}}},
