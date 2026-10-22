@@ -12,8 +12,9 @@ GASTO MÍNIMO de uso de Claude: no narres, no leas archivos grandes, una sola re
 - Datos: `git clone -q --depth 1 https://github.com/sinhumotv/sin-humo-tv-datos /home/claude/datos` (contiene relatos.txt).
 - Claves (privadas: nunca en el repositorio, en mensajes ni en textos publicados): en Google Drive, carpeta
   "sin humo TV" (id 1P341VoGcSUI_frt7xhU7DFrkVUnqLZu7), lee con read_file_content el Doc "clave-gemini" (la clave
-  tal cual, quitando las barras invertidas de escape) y el Doc "claves-relatos" (líneas CF_ACCOUNT=, CF_TOKEN=,
-  BUFFER_RELATOS=). Guárdalas con permisos 600 en ~/.gemini_key, ~/.cf_account, ~/.cf_token y ~/.buffer_relatos
+  tal cual, quitando las barras invertidas de escape) y el Doc "Claves-relatos" (búscalo en todo el Drive con
+  search_files `title contains 'claves-relatos'`, está en la raíz; líneas CF_ACCOUNT=, CF_TOKEN=, BUFFER_RELATOS=;
+  quita las barras invertidas de escape, p. ej. "CF\_TOKEN" → "CF_TOKEN", y las líneas vacías). Guárdalas con permisos 600 en ~/.gemini_key, ~/.cf_account, ~/.cf_token y ~/.buffer_relatos
   (sin espacios ni saltos de línea). Si falta alguna, avisa con SendUserMessage y termina.
 - Comprueba: ffmpeg, python3 con numpy y PIL.
 
