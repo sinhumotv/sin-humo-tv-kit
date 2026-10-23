@@ -84,6 +84,9 @@ def siguiente_hueco():
 
 # ---------- proyecto en curso ----------
 rc, _ = sh(f"git clone -q --depth 1 --branch {RAMA} {REPO_URL} {P}", ok=True)
+if os.environ.get("REINICIAR") and not rc and estado().get("fase") != "hecho":
+    print("REINICIAR: se descarta el proyecto en curso y se empieza uno nuevo")
+    rc = 1
 if rc or not os.path.exists(f"{P}/estado.json") or estado().get("fase") == "hecho":
     shutil.rmtree(P, ignore_errors=True)
     os.makedirs(P)
