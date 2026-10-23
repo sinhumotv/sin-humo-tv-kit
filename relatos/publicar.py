@@ -19,7 +19,7 @@ KEY = os.environ.get("BUFFER_KEY") or open(os.path.expanduser("~/.buffer_relatos
 TOK = os.environ.get("GITHUB_TOKEN")
 REPO = (f"https://x-access-token:{TOK}@github.com/sinhumotv/sin-humo-tv-kit" if TOK
         else "https://github.com/sinhumotv/sin-humo-tv-kit")
-RAMA = ("rel" if CFG["id"] == "relatos" else CFG["id"]) + "-" + HORA.replace(":", "")
+RAMA = ("rel" if CFG["id"] == "relatos" else CFG["id"]) + "-" + os.environ.get("RAMA_HORA", HORA).replace(":", "")
 
 
 def sh(c, cwd=None):

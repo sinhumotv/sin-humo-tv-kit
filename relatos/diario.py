@@ -22,6 +22,15 @@ os.environ["GEMINI_API_KEY"] = os.environ.get("GEMINI_KEY", "")
 os.environ["AUTO"] = "1"
 
 
+def variar(hora, canal, dia, minutos=40):
+    """Hora con una variación de hasta ±minutos, distinta cada día y canal (y siempre la misma para ese día)."""
+    import hashlib
+    h, m = map(int, hora.split(":"))
+    v = int(hashlib.sha256(f"{canal}|{dia}|{hora}".encode()).hexdigest(), 16) % (2 * minutos + 1) - minutos
+    t = max(6 * 60 + 30, min(23 * 60 + 15, h * 60 + m + v))
+    return f"{t // 60:02d}:{t % 60:02d}"
+
+
 def sh(c, cwd=None, ok=False):
     r = subprocess.run(c, shell=True, capture_output=True, text=True, cwd=cwd)
     salida = (r.stdout + r.stderr).replace(TOK or "~~", "***")
@@ -55,7 +64,8 @@ for hora, sub in zip(HORAS, carpetas):
     try:
         for paso in ("voz", "imagenes", "montaje"):
             print(sh(f'python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
-        out = sh(f'python3 "{AQUI}/publicar.py" "{D}" {hora} "{CFG_P}"')
+        hora_real = variar(hora, CANAL, f"{HOY:%Y-%m-%d}")
+        out = sh(f'RAMA_HORA={hora} python3 "{AQUI}/publicar.py" "{D}" {hora_real} "{CFG_P}"')
         print(out[-800:])
         res = json.loads(out.strip().splitlines()[-1])["buffer"]
         ids = " ".join(f"{k[:2].upper()} {v}" for k, v in res.items())

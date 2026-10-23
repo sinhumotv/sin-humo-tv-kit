@@ -62,7 +62,7 @@ REGISTRO = [l.split("|") for l in open(REG, encoding="utf-8").read().splitlines(
 
 
 def huecos_ocupados():
-    return {r[0] for r in REGISTRO}
+    return {r[0][:10] for r in REGISTRO}   # un largo por día como mucho
 
 
 def siguiente_hueco():
@@ -70,8 +70,13 @@ def siguiente_hueco():
     hh, mm = map(int, L["hora"].split(":"))
     d = dt.datetime.fromisoformat(L["inicio"]).replace(hour=hh, minute=mm, tzinfo=MAD)
     paso = dt.timedelta(days=int(L.get("cada_dias", 2)))
-    while d < AHORA + dt.timedelta(minutes=30) or d.strftime("%Y-%m-%d %H:%M") in huecos_ocupados():
+    import hashlib
+    def variado(d):  # la hora cambia cada vez (hasta ±45 min), para que no se publique siempre a la misma
+        v = int(hashlib.sha256(f"{CANAL}|{d:%Y-%m-%d}".encode()).hexdigest(), 16) % 91 - 45
+        return d + dt.timedelta(minutes=v)
+    while variado(d) < AHORA + dt.timedelta(minutes=30) or d.strftime("%Y-%m-%d") in huecos_ocupados():
         d += paso
+    d = variado(d)
     if os.environ.get("AHORA") and not any(r[0] >= AHORA.strftime("%Y-%m-%d") for r in REGISTRO):
         d = AHORA + dt.timedelta(minutes=20)  # primera vez: publicar en cuanto esté
     return d
