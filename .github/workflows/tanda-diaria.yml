@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        canal: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', inputs.canal)) || fromJSON('["relatos","ano2100"]') }}
+        canal: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', inputs.canal)) || fromJSON('["relatos","ano2100","cajanegra"]') }}
     steps:
       - uses: actions/checkout@v4
       - name: Programas
