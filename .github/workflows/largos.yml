@@ -44,6 +44,7 @@ jobs:
           CF_TOKEN: ${{ secrets[format('{0}_CF_TOKEN', matrix.canal)] }}
           REFRESH: ${{ secrets[format('METRICOOL_{0}_REFRESH', matrix.canal)] }}
           GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+          PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORZAR: ${{ inputs.forzar }}
           AHORA: ${{ inputs.ahora }}

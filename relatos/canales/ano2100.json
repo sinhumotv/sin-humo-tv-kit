@@ -64,7 +64,9 @@
   "categoria": "SCIENCE_TECHNOLOGY",
   "tono": "divulgador científico apasionado, claro y con asombro, sin sensacionalismo",
   "real": "fotografías reales de la tecnología, laboratorios, robots, prototipos, lugares o científicos de los que se habla",
-  "reglas_reales": "Rechaza logotipos como protagonista, capturas de pantalla con mucho texto y montajes o memes."
+  "reglas_reales": "Rechaza logotipos como protagonista, capturas de pantalla con mucho texto y montajes o memes.",
+  "video": "robots, laboratorios, ordenadores y datos, ciudades modernas y futuristas, espacio y cohetes, energía, fábricas automatizadas, médicos y tecnología",
+  "max_ia": 2
  },
  "color_subtitulo": [
   40,

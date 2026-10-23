@@ -33,12 +33,15 @@ def valida(h):
         if re.search(r"\d", e.get("hablado", "")):
             errs.append(f"escena {i} tiene cifras: escríbelas en letra")
         im = e.get("imagen") or {}
-        if im.get("tipo") not in ("ia", "real"):
+        if im.get("tipo") not in ("ia", "real", "video"):
             errs.append(f"escena {i} sin imagen válida")
         elif im["tipo"] == "ia" and len(im.get("prompt", "")) < 40:
             errs.append(f"escena {i} sin prompt de imagen")
-        elif im["tipo"] == "real" and not im.get("busqueda"):
+        elif im["tipo"] in ("real", "video") and not im.get("busqueda"):
             errs.append(f"escena {i} real sin búsqueda")
+    n_ia = sum(1 for e in esc if (e.get("imagen") or {}).get("tipo") == "ia")
+    if n_ia > int(L.get("max_ia", 3)) + 2:
+        errs.append(f"{n_ia} escenas con imagen IA: como mucho {L.get('max_ia', 3)}; usa vídeo o foto real")
     caps = h.get("capitulos") or []
     if len(caps) < 4 or caps[0].get("escena") != 0:
         errs.append("faltan capítulos (mínimo 4, el primero en la escena 0)")
@@ -68,14 +71,19 @@ ESTRUCTURA PARA RETENER AL ESPECTADOR:
 
 ESCENAS: entre 40 y 52 escenas, 1350-1650 palabras en total. Cada escena = una idea y una imagen, de 20 a 45 palabras.
 - "hablado": texto exacto que leerá la voz. Números SIEMPRE en letra, sin siglas, sin emojis, sin comillas.
-- "imagen": una de estas dos:
+- "imagen": una de estas tres:
+  · {{"tipo": "video", "busqueda": "<2-4 palabras en inglés para buscar un clip de vídeo de stock real>",
+      "otras": ["<otra búsqueda más general>", "<otra aún más general>"], "descripcion": "<qué debe verse>"}}
+    Clip de vídeo REAL de archivo de stock (Pixabay): {L.get('video', 'lugares, objetos, ambientes y acciones reales')}.
+    Es la opción PRINCIPAL: úsala en la mayoría de escenas. Busca cosas genéricas que existan en vídeo (no personas
+    concretas ni hechos concretos): p. ej. "ancient temple ruins", "night city rain", "robot arm factory".
   · {{"tipo": "real", "busqueda": "<búsqueda en inglés para Wikimedia Commons, 2-5 palabras concretas>",
-      "otras": ["<otra búsqueda más general>", "<otra más general aún, p. ej. el personaje o el lugar>"], "descripcion": "<qué debe verse>"}}
-    para {L.get('real', 'fotografías o documentos reales de lo que se cuenta')}. Úsalo en la MAYORÍA de las escenas (unas dos de cada tres),
-    siempre que exista de verdad una imagen así (personajes, lugares, objetos, obras de arte, documentos de época).
-  · {{"tipo": "ia", "prompt": "<EN INGLÉS, 40-80 palabras>"}}: imagen horizontal fotorrealista de la escena. Describe a cada
-    personaje SIEMPRE con la misma frase (edad, pelo, ropa). Nada de texto en la imagen, nada de sangre, gore ni desnudos:
-    lo duro se sugiere. Sin caras reconocibles de personas reales.
+      "otras": ["<otra más general>", "<otra más general aún>"], "descripcion": "<qué debe verse>"}}
+    Foto o documento real CONCRETO de Wikimedia Commons: {L.get('real', 'fotografías o documentos reales de lo que se cuenta')}.
+    Úsala cuando la escena hable de una persona, objeto, lugar u obra concreta que exista en foto o cuadro.
+  · {{"tipo": "ia", "prompt": "<EN INGLÉS, 40-80 palabras>"}}: imagen generada, SOLO cuando no hay forma real de
+    mostrarlo; como mucho {L.get('max_ia', 3)} escenas en todo el vídeo. Fotorrealista, sin texto, sin sangre, gore ni desnudos,
+    sin caras reconocibles de personas reales.
 - "efecto": "polvo", "niebla", "brasas" o "nada".
 
 CAPÍTULOS: "capitulos": [{{"escena": <índice desde 0 de la escena donde empieza>, "titulo": "..."}}], el primero en la
@@ -136,6 +144,6 @@ h["voz"] = C.get("voz", "Algenib")
 h["estilo_imagen"] = L.get("estilo_imagen", C.get("estilo_imagen", ""))
 json.dump(h, open(os.path.join(OUT, "historia.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 tot = sum(palabras(e["hablado"]) for e in h["escenas"])
-reales = sum(1 for e in h["escenas"] if e["imagen"]["tipo"] == "real")
+reales = sum(1 for e in h["escenas"] if e["imagen"]["tipo"] != "ia")
 print(f"GUION LARGO · {h['titulo']} · «{h['titulo_youtube']}» · {len(h['escenas'])} escenas ({reales} reales) · "
       f"{tot} palabras · {len(h['capitulos'])} capítulos · {modelo}")

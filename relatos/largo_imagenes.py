@@ -200,6 +200,132 @@ def cloudflare(prompt, out, ancho=1536, alto=864):
     return "fallo"
 
 
+# ---------- clips de vídeo real (Pixabay, gratis, sin atribución obligatoria) ----------
+PIXA = os.environ.get("PIXABAY_KEY", "").strip()
+os.makedirs(f"{D}/clips", exist_ok=True)
+
+
+def pixabay(q):
+    if not PIXA:
+        return []
+    url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
+        {"key": PIXA, "q": q[:100], "per_page": 20, "safesearch": "true", "order": "popular"})
+    for intento in range(3):
+        try:
+            d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40))
+            break
+        except Exception as e:
+            print("pixabay:", str(e)[:80])
+            time.sleep(5)
+    else:
+        return []
+    out = []
+    for h in d.get("hits", []):
+        if h.get("duration", 0) < 5 or "ai generated" in h.get("tags", "").lower():
+            continue
+        v = h["videos"]
+        # el tamaño más pequeño que llegue a 1920 de ancho (o el mayor disponible)
+        opciones = sorted([x for x in v.values() if x.get("url")], key=lambda x: x.get("width", 0))
+        buena = next((x for x in opciones if x.get("width", 0) >= 1900), opciones[-1] if opciones else None)
+        if not buena or buena.get("width", 0) < 1200:
+            continue
+        thumb = (v.get("medium") or {}).get("thumbnail") or (v.get("small") or {}).get("thumbnail") \
+            or (v.get("tiny") or {}).get("thumbnail")
+        out.append({"id": h["id"], "url": buena["url"], "thumb": thumb, "tiny": (v.get("tiny") or {}).get("url"),
+                    "tags": h.get("tags", ""), "pagina": h.get("pageURL", "")})
+    return out
+
+
+def miniatura_clip(c):
+    if c.get("thumb"):
+        b = bajar(c["thumb"])
+        if b:
+            return b
+    if c.get("tiny"):  # sin miniatura: un fotograma del clip pequeño
+        tmp = f"{D}/_tiny.mp4"
+        b = bajar(c["tiny"])
+        if b:
+            open(tmp, "wb").write(b)
+            r = subprocess.run(f'ffmpeg -v error -ss 1 -i "{tmp}" -frames:v 1 -f image2pipe -vcodec mjpeg -', shell=True,
+                               capture_output=True)
+            os.remove(tmp)
+            return r.stdout or None
+    return None
+
+
+def bajar_clip(url, destino):
+    b = bajar(url)
+    if not b:
+        return False
+    open(destino, "wb").write(b)
+    # fotograma fijo de la escena (para fundidos, miniaturas y por si el clip falla)
+    r = subprocess.run(f'ffmpeg -v error -y -i "{destino}" -frames:v 1 -f image2pipe -vcodec mjpeg -', shell=True,
+                       capture_output=True)
+    if not r.stdout:
+        return False
+    componer(Image.open(io.BytesIO(r.stdout))).save(destino.replace("/clips/", "/imgs/").replace(".mp4", ".jpg"), quality=92)
+    return True
+
+
+def video(i, e):
+    im = e["imagen"]
+    usados = {x.get("imagen", {}).get("clip_id") for x in ESC}
+    cands, vistos = [], set(usados)
+    for q in [im["busqueda"]] + list(im.get("otras") or []):
+        for c in pixabay(q):
+            if c["id"] not in vistos:
+                vistos.add(c["id"])
+                cands.append(c)
+        if len(cands) >= 8:
+            break
+    ok = []
+    for c in cands[:6]:
+        b = miniatura_clip(c)
+        if b:
+            try:
+                t = Image.open(io.BytesIO(b)).convert("RGB")
+                t.thumbnail((480, 480))
+                buf = io.BytesIO()
+                t.save(buf, "JPEG", quality=80)
+                c["mini"] = buf.getvalue()
+                ok.append(c)
+            except Exception:
+                pass
+        if len(ok) == 4:
+            break
+    if not ok:
+        return False
+    q = f"""Vídeo documental de YouTube: "{H['titulo']}". Escena: «{e['hablado']}».
+Se busca un clip de vídeo real que acompañe: {im.get('descripcion', im['busqueda'])}.
+Te paso {len(ok)} fotogramas de clips candidatos (en orden, desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
+Elige el que mejor acompañe a la escena (vale algo relacionado con el lugar, el ambiente o la época, como en cualquier
+documental). Descarta los que no peguen nada, los que se vean de otra época que desentone o con texto en pantalla.
+{L.get('reglas_reales', '')} Si ninguno vale, elige -1. Devuelve SOLO JSON: {{"elegida": <número o -1>}}"""
+    try:
+        j, _ = pedir(q, temp=0.2, imagenes=[c["mini"] for c in ok], max_tokens=500)
+        k = j.get("elegida", -1) if isinstance(j, dict) else -1
+    except SystemExit:
+        k = 0  # Gemini no responde: el primero (es el más relacionado según Pixabay)
+    if not (isinstance(k, int) and 0 <= k < len(ok)):
+        return False
+    c = ok[k]
+    if not bajar_clip(c["url"], f"{D}/clips/{i:02d}.mp4"):
+        return False
+    im["clip"], im["clip_id"] = c["url"], c["id"]
+    CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+    return True
+
+
+for i, e in enumerate(ESC, 1):
+    if e["imagen"]["tipo"] != "video" or os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
+        continue
+    if video(i, e):
+        print(f"escena {i}: vídeo · {e['imagen']['clip_id']}")
+    else:
+        e["imagen"]["tipo"] = "real"   # sin clip: se intenta con una foto real
+        print(f"escena {i}: sin clip de vídeo -> foto real")
+    guardar()
+
 # 1) material real (no gasta cuota de Cloudflare)
 for i, e in enumerate(ESC, 1):
     if e["imagen"]["tipo"] != "real" or os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
@@ -255,5 +381,6 @@ faltan = [i for i in range(1, len(ESC) + 1) if not os.path.exists(f"{D}/imgs/{i:
 if faltan:
     print("faltan imágenes:", faltan)
     sys.exit(3)
+n_vid = sum(1 for e in ESC if e["imagen"]["tipo"] == "video")
 n_real = sum(1 for e in ESC if e["imagen"]["tipo"] == "real")
-print(f"IMÁGENES OK · {len(ESC)} ({n_real} reales, {len(ESC) - n_real} IA) · hoy {hechas} de IA")
+print(f"IMÁGENES OK · {len(ESC)} escenas ({n_vid} vídeo, {n_real} fotos reales, {len(ESC) - n_vid - n_real} IA) · hoy {hechas} de IA")

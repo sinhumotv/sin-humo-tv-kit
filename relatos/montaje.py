@@ -36,13 +36,30 @@ for i in range(len(escenas)):
     imgs.append(im)
 # patrón de movimientos que varía: acercar, alejar, desplazar
 MOV = ["in", "out", "in_up", "out", "in", "pan", "in_up", "out"]
+# clips de vídeo real (largos): {índice de escena: ruta del .mp4}
+CLIPS = {int(k): v for k, v in (P.get("clips") or {}).items() if os.path.exists(v)}
+LECT = {}
+
+
+def frame_clip(i):
+    """Siguiente fotograma del clip de la escena i, ya a W x H (en bucle si el clip es más corto que la escena)."""
+    if i not in LECT:
+        for k in list(LECT):
+            LECT.pop(k).kill()
+        LECT[i] = subprocess.Popen(
+            f'ffmpeg -v error -stream_loop -1 -i "{CLIPS[i]}" -an -vf "scale={W}:{H}:force_original_aspect_ratio=increase,'
+            f'crop={W}:{H},fps={FPS},format=rgb24" -f rawvideo -pix_fmt rgb24 -', shell=True, stdout=subprocess.PIPE)
+    b = LECT[i].stdout.read(W * H * 3)
+    if len(b) < W * H * 3:
+        return None
+    return Image.frombytes("RGB", (W, H), b)
 
 
 def cuadro(i, u):
     """Imagen i en el instante relativo u (0..1) con su movimiento."""
     im = imgs[i]
     e = u * u * (3 - 2 * u) * 0.6 + u * 0.4  # suave pero sin pararse
-    m = MOV[i % len(MOV)]
+    m = "in" if i in CLIPS else MOV[i % len(MOV)]
     z0, z1 = (1.0, 1.14) if m.startswith("in") else (1.14, 1.0) if m == "out" else (1.08, 1.08)
     z = z0 + (z1 - z0) * e
     cw, ch = im.width / 1.25 / z, im.height / 1.25 / z
@@ -244,7 +261,9 @@ for f in range(NF):
     e = escenas[i]
     ini, fin = e["ini"], (e["fin"] if i < len(escenas) - 1 else DUR)
     span = fin - ini + XF
-    fr = cuadro(i, min(1, (t - ini) / span))
+    fr = frame_clip(i) if i in CLIPS else None
+    if fr is None:
+        fr = cuadro(i, min(1, (t - ini) / span))
     if i + 1 < len(escenas) and t > fin - XF:  # fundido con la siguiente
         nxt = cuadro(i + 1, 0)
         fr = Image.blend(fr, nxt, (t - (fin - XF)) / XF * 0.999)

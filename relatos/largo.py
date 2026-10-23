@@ -40,7 +40,7 @@ def guardar_proyecto():
     """Guarda el proyecto (sin archivos pesados regenerables) en la rama largo-<canal>, en un único commit."""
     shutil.rmtree(f"{P}/.git", ignore_errors=True)
     sh(f"git init -q && git checkout -q --orphan {RAMA}", cwd=P)
-    open(f"{P}/.gitignore", "w").write("*.wav\n_*\nvideo_final.mp4\n*.raw\n")
+    open(f"{P}/.gitignore", "w").write("*.wav\n_*\nvideo_final.mp4\n*.raw\nclips/\n")
     sh(f'git add -A && git -c user.name="{C["nombre"]}" -c user.email="sinhumotv@users.noreply.github.com" '
        f'commit -qm "{RAMA} {AHORA:%Y-%m-%d %H:%M}" && git push -q --force {REPO_URL} {RAMA}', cwd=P)
 
@@ -109,7 +109,9 @@ def proyecto_json():
             if 0 <= c["escena"] < len(ESC)]
     json.dump({"formato": "YOUTUBE", "duracion_max": 900, "duracion_min": 0, "fecha": "", "fuentes": "",
                "titulo_noticia": H["titulo"], "tono": "grave", "mencion": 0, "zum": [],
-               "efectos": [e.get("efecto", "polvo") for e in ESC], "fuego": [],
+               "efectos": ["nada" if e["imagen"]["tipo"] == "video" else e.get("efecto", "polvo") for e in ESC],
+               "fuego": [],
+               "clips": {str(k): f"{P}/clips/{k + 1:02d}.mp4" for k, e in enumerate(ESC) if e["imagen"].get("clip")},
                "capitulos": caps,
                "color": C.get("color_subtitulo"),
                "escenas": [{"titulo": "", "hablado": e["hablado"], "subtitulo": e["subtitulo"]} for e in ESC]},
@@ -137,6 +139,17 @@ if E["fase"] == "imagenes":
     guardar_proyecto()
 
 if E["fase"] == "montaje":
+    # los clips de vídeo no se guardan entre días: se vuelven a bajar si faltan
+    import urllib.request
+    os.makedirs(f"{P}/clips", exist_ok=True)
+    for k, e in enumerate(ESC):
+        c, dst = e["imagen"].get("clip"), f"{P}/clips/{k + 1:02d}.mp4"
+        if c and not os.path.exists(dst):
+            try:
+                open(dst, "wb").write(urllib.request.urlopen(urllib.request.Request(
+                    c, headers={"User-Agent": "SinHumoTV-largos/1.0"}), timeout=120).read())
+            except Exception as ex:
+                print(f"clip {k + 1} no disponible ({str(ex)[:60]}): se usa su fotograma")
     proyecto_json()
     print(sh(f'python3 "{KIT}/audio.py" "{P}"')[1].strip().splitlines()[0])
     print(sh(f'python3 "{AQUI}/montaje.py" "{P}"')[1].strip()[-300:])
@@ -148,7 +161,7 @@ if E["fase"] == "montaje":
     tags = " ".join("#" + t.replace(" ", "").lower() for t in (C.get("hashtags_base") or [])[:3])
     desc = f"{H['descripcion'].strip()}\n\nCAPÍTULOS\n{caps}\n\n"
     desc += "Narración e imágenes de las escenas generadas con inteligencia artificial"
-    desc += (" y material de archivo de Wikimedia Commons." if cred else ".")
+    desc += (" y material real de archivo (Pixabay y Wikimedia Commons)." if cred else ".")
     desc += f"\n\nSuscríbete a {C['nombre']} para no perderte el próximo.\n\n{tags}"
     if cred:
         desc += "\n\nCRÉDITOS DE IMÁGENES\n" + "\n".join(sorted(set(v.rsplit(' · ', 1)[0] for v in cred.values())))
