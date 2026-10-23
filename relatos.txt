@@ -1,0 +1,5 @@
+2026-10-23|08:00|El rey Midas|increible|YO 6adaea8f9ef33e7811bb5152 IN 6adaea909ef33e7811bb518f TI 6adaea90cc1b7cdc08d01532
+2026-10-23|12:00|Ícaro y Dédalo|error|YO 6adaec7c535235087b822e37 IN 6adaec7c8d2197cb2a184f1b TI 6adaec7c8d2197cb2a184f57
+2026-10-23|15:00|El castigo de Sísifo|sabias|YO 6adaee0d535235087b828f44 IN 6adaee0d8d2197cb2a18ad10 TI 6adaee0ecc1b7cdc08d0fafb
+2026-10-23|18:00|Orfeo y Eurídice|consecuencia|YO 6adaef25535235087b82e2fb IN 6adaef26d447d56a647b0090 TI 6adaef27cc1b7cdc08d135bd
+2026-10-23|21:00|El mito de Medusa|nadie|YO 6adaf0c19ef33e7811bcb8a5 IN 6adaf0c19ef33e7811bcb8e3 TI 6adaf0c2cc1b7cdc08d18641
