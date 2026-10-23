@@ -31,6 +31,19 @@ def gemini(prompt, temp=0.95):
     cuerpo = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
               "generationConfig": {"temperature": temp, "responseMimeType": "application/json", "maxOutputTokens": 16000}}
     ultimo = None
+    for ronda in range(3):  # si Gemini está saturado, espera y vuelve a probar todos los modelos
+        if ronda:
+            print(f"Gemini saturado ({ultimo}); reintento en {120 * ronda} s", flush=True)
+            time.sleep(120 * ronda)
+        r = _ronda(cuerpo)
+        if r[0] is not None:
+            return r
+        ultimo = r[1]
+    raise SystemExit("Gemini no responde: " + str(ultimo))
+
+
+def _ronda(cuerpo):
+    ultimo = None
     for m in MODELOS:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={KEY}"
         for intento in range(2):
@@ -48,7 +61,7 @@ def gemini(prompt, temp=0.95):
             except Exception as e:
                 ultimo = f"{m}: {e}"
                 time.sleep(3)
-    raise SystemExit("Gemini no responde: " + str(ultimo))
+    return None, ultimo
 
 
 def palabras(t):
