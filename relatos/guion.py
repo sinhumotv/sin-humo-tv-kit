@@ -64,6 +64,63 @@ def _ronda(cuerpo):
     return None, ultimo
 
 
+def leer_noticias():
+    """Noticias reales y recientes de los feeds RSS del canal (gratis, sin buscador de pago)."""
+    cfg = C.get("noticias") or {}
+    if not cfg.get("por_dia"):
+        return []
+    import email.utils, datetime as dt, html, xml.etree.ElementTree as ET
+    limite = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=cfg.get("horas", 72))
+    filtro = re.compile(cfg.get("filtro", "."), re.I)
+    vistos_t = {u[2].lower() for u in USADOS}
+    salida, titulares = [], set()
+    for f in cfg.get("feeds", []):
+        try:
+            req = urllib.request.Request(f["url"], headers={"User-Agent": "Mozilla/5.0"})
+            raiz = ET.fromstring(urllib.request.urlopen(req, timeout=30).read())
+        except Exception as e:
+            print(f"noticias: {f['medio']} no responde ({str(e)[:60]})")
+            continue
+        for it in raiz.iter("item"):
+            tit = html.unescape(it.findtext("title") or "").strip()
+            txt = html.unescape(re.sub(r"<[^>]+>", " ", it.findtext("description") or ""))
+            txt = re.sub(r"\s+", " ", txt).strip()
+            try:
+                fecha = email.utils.parsedate_to_datetime(it.findtext("pubDate"))
+            except Exception:
+                continue
+            if fecha < limite or not tit or tit.lower() in titulares:
+                continue
+            if f.get("filtrar") and not filtro.search(tit + " " + txt[:600]):
+                continue
+            titulares.add(tit.lower())
+            salida.append({"fecha": fecha.strftime("%d/%m/%Y"), "medio": f["medio"], "titular": tit, "texto": txt[:1500]})
+    salida = [x for x in salida if x["titular"].lower() not in vistos_t][: cfg.get("max", 14)]
+    print(f"noticias reales leídas: {len(salida)}")
+    return salida
+
+
+NOTICIAS = leer_noticias()
+K_NOT = min(int((C.get("noticias") or {}).get("por_dia", 0)), len(NOTICIAS))
+
+
+def bloque_noticias(k):
+    if not k:
+        return ""
+    lista = "\n".join(f"[{i + 1}] {x['fecha']} · {x['medio']} · {x['titular']}\n    {x['texto']}" for i, x in enumerate(NOTICIAS))
+    return f"""
+NOTICIAS REALES DE LOS ÚLTIMOS DÍAS (leídas hoy de medios; son la ÚNICA fuente válida para los vídeos de noticias):
+{lista}
+
+Los vídeos 1 a {k} son VÍDEOS DE NOTICIA: cada uno cuenta UNA noticia distinta de esa lista (elige las de más impacto y
+más interesantes para el público general, y nunca una ya publicada). Cuenta SOLO lo que dice su texto: no añadas cifras,
+nombres, fechas ni detalles que no aparezcan. Puedes explicar en una frase qué significa para la gente, sin inventar.
+En esos vídeos, "titulo" es el tema de la noticia y la primera línea de "descripcion" dice el medio (p. ej. «Según Xataka, …»).
+Si una noticia es solo publicidad, rumores o no trata de verdad de IA o tecnología, descártala.
+El resto de vídeos son de los temas generales del canal, no de esta lista.
+"""
+
+
 def palabras(t):
     return len(re.findall(r"\w+", t))
 
@@ -89,14 +146,14 @@ def valida(h):
     return errs
 
 
-def instrucciones(n, tipos):
+def instrucciones(n, tipos, k=0):
     vistos = "; ".join(u[2] for u in USADOS[-150:]) or "(ninguno)"
     lista = "\n".join(f"- Vídeo {i + 1}: gancho «{t}»: {GANCHOS[t]}" for i, t in enumerate(tipos))
     return f"""Eres guionista de vídeos cortos verticales (Shorts, Reels, TikTok) del canal "{C['nombre']}".
 Tema del canal: {C['tema']}.
 Ideas posibles (no obligatorias): {C['ideas']}.
 YA PUBLICADOS (prohibido repetirlos, ni el mismo episodio con otro título): {vistos}.
-
+{bloque_noticias(k)}
 Escribe {n} guiones, cada uno sobre un tema DISTINTO y variados entre sí (no todos del mismo tipo).
 Reglas de cada guion (español de España, natural, frases cortas, tono de narrador intrigante):
 - 7 u 8 escenas; entre 85 y 100 palabras en total (unos 32-38 segundos de voz). Una idea y una imagen por escena.
@@ -125,7 +182,7 @@ tipos = [t for t in GANCHOS if t not in ult]
 random.shuffle(tipos)
 tipos = (tipos + [t for t in GANCHOS if t in ult])[:N]
 
-datos, modelo = gemini(instrucciones(N, tipos))
+datos, modelo = gemini(instrucciones(N, tipos, K_NOT))
 guiones = datos.get("guiones", []) if isinstance(datos, dict) else datos
 buenos = []
 for i in range(N):
@@ -137,7 +194,7 @@ for i in range(N):
         print(f"guion {i + 1}: {errs} -> lo pido de nuevo")
         extra = (f"\nCorrige este guion (errores: {errs}). Mantén el tema si es válido y el gancho «{tipos[i]}».\n"
                  f"{json.dumps(h, ensure_ascii=False) if h else ''}")
-        d2, _ = gemini(instrucciones(1, [tipos[i]]) + extra, temp=0.7)
+        d2, _ = gemini(instrucciones(1, [tipos[i]], 1 if i < K_NOT else 0) + extra, temp=0.7)
         g2 = d2.get("guiones", [d2]) if isinstance(d2, dict) else d2
         h = g2[0] if g2 else None
         errs = valida(h) if h else ["no generado"]
