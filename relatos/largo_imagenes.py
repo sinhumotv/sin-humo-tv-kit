@@ -31,35 +31,12 @@ def guardar():
 
 
 def componer(im):
-    """Encaja cualquier imagen en 1920x1080: recorte si ya es apaisada; si no, fondo difuminado + imagen entera."""
+    """Siempre a pantalla completa 1920x1080 (recorte centrado, sin bandas ni fondo difuminado)."""
     im = im.convert("RGB")
-    r = im.width / im.height
-    if 1.55 <= r <= 1.95:
-        s = max(W / im.width, HH / im.height)
-        im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
-        x, y = (im.width - W) // 2, (im.height - HH) // 2
-        return im.crop((x, y, x + W, y + HH))
-    s = max(W / im.width, HH / im.height)
-    fondo = im.resize((round(im.width * s), round(im.height * s))).crop((0, 0, W, HH)).filter(ImageFilter.GaussianBlur(40))
-    fondo = Image.eval(fondo, lambda v: int(v * 0.5))
-    s2 = min(W * 0.92 / im.width, HH * 0.94 / im.height)
-    pequena = s2 > 2.3   # foto de archivo pequeña: se muestra como copia en papel, sin ampliarla demasiado
-    if pequena:
-        s2 = min(s2, 2.3, HH * 0.82 / im.height)
-    fg = im.resize((round(im.width * s2), round(im.height * s2)), Image.LANCZOS)
-    if pequena:
-        fg = fg.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=3))
-        marco = Image.new("RGB", (fg.width + 28, fg.height + 28), (236, 230, 216))
-        marco.paste(fg, (14, 14))
-        sombra = Image.new("RGBA", (W, HH), (0, 0, 0, 0))
-        from PIL import ImageDraw
-        x0, y0 = (W - marco.width) // 2, (HH - marco.height) // 2
-        ImageDraw.Draw(sombra).rectangle((x0 + 12, y0 + 16, x0 + marco.width + 12, y0 + marco.height + 16), fill=(0, 0, 0, 170))
-        fondo = Image.alpha_composite(fondo.convert("RGBA"), sombra.filter(ImageFilter.GaussianBlur(14))).convert("RGB")
-        fondo.paste(marco, (x0, y0))
-        return fondo
-    fondo.paste(fg, ((W - fg.width) // 2, (HH - fg.height) // 2))
-    return fondo
+    s_ = max(W / im.width, HH / im.height)
+    im = im.resize((round(im.width * s_), round(im.height * s_)), Image.LANCZOS)
+    x, y = (im.width - W) // 2, (im.height - HH) // 2
+    return im.crop((x, y, x + W, y + HH))
 
 
 def licencia_ok(lic):
@@ -98,7 +75,7 @@ def commons(busqueda, n=6):
         ii = (p.get("imageinfo") or [{}])[0]
         md = ii.get("extmetadata", {})
         lic = (md.get("LicenseShortName") or {}).get("value", "")
-        if ii.get("mime") not in ("image/jpeg", "image/png") or ii.get("width", 0) < 280 or not licencia_ok(lic):
+        if ii.get("mime") not in ("image/jpeg", "image/png") or ii.get("width", 0) < 1600 or not 1.45 <= ii.get("width", 1) / max(1, ii.get("height", 1)) <= 2.1 or not licencia_ok(lic):
             continue
         out.append({"url": ii.get("thumburl") or ii["url"], "pagina": ii.get("descriptionurl", ""),
                     "titulo": p["title"].replace("File:", "").rsplit(".", 1)[0],
@@ -267,19 +244,33 @@ def bajar_clip(url, destino):
     return True
 
 
+def movimiento(ruta):
+    """Diferencia media entre dos fotogramas separados 1,5 s (clip casi quieto = número bajo)."""
+    fr = []
+    for t in (0.5, 2.0):
+        r = subprocess.run(f'ffmpeg -v error -ss {t} -i "{ruta}" -frames:v 1 -vf scale=160:90,format=gray -f rawvideo -',
+                           shell=True, capture_output=True)
+        fr.append(r.stdout)
+    if len(fr[0]) != 14400 or len(fr[1]) != 14400:
+        return 0
+    import numpy as np
+    return float(np.abs(np.frombuffer(fr[0], np.uint8).astype(float) - np.frombuffer(fr[1], np.uint8).astype(float)).mean())
+
+
 def video(i, e):
     im = e["imagen"]
     usados = {x.get("imagen", {}).get("clip_id") for x in ESC}
     cands, vistos = [], set(usados)
-    for q in [im["busqueda"]] + list(im.get("otras") or []):
+    genericas = list(L.get("video_generico") or [])
+    for q in [im["busqueda"]] + list(im.get("otras") or []) + genericas[(i * 3) % max(1, len(genericas)):][:3]:
         for c in pixabay(q):
             if c["id"] not in vistos:
                 vistos.add(c["id"])
                 cands.append(c)
-        if len(cands) >= 8:
+        if len(cands) >= 12:
             break
     ok = []
-    for c in cands[:6]:
+    for c in cands[:8]:
         b = miniatura_clip(c)
         if b:
             try:
@@ -291,7 +282,7 @@ def video(i, e):
                 ok.append(c)
             except Exception:
                 pass
-        if len(ok) == 4:
+        if len(ok) == 6:
             break
     if not ok:
         return False
@@ -300,20 +291,30 @@ Se busca un clip de vídeo real que acompañe: {im.get('descripcion', im['busque
 Te paso {len(ok)} fotogramas de clips candidatos (en orden, desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
 Elige el que mejor acompañe a la escena (vale algo relacionado con el lugar, el ambiente o la época, como en cualquier
 documental). Descarta los que no peguen nada, los que se vean de otra época que desentone o con texto en pantalla.
-{L.get('reglas_reales', '')} Si ninguno vale, elige -1. Devuelve SOLO JSON: {{"elegida": <número o -1>}}"""
+Prefiere clips con ACCIÓN o movimiento visible (gente, máquinas, vehículos, cámara que se mueve) frente a planos casi quietos.
+{L.get('reglas_reales', '')} Devuelve SOLO JSON con TODOS los que valen, del mejor al peor (lista vacía si ninguno):
+{{"validos": [<números>]}}"""
     try:
         j, _ = pedir(q, temp=0.2, imagenes=[c["mini"] for c in ok], max_tokens=500)
-        k = j.get("elegida", -1) if isinstance(j, dict) else -1
+        orden = [k for k in (j.get("validos") or []) if isinstance(k, int) and 0 <= k < len(ok)] if isinstance(j, dict) else []
     except SystemExit:
-        k = 0  # Gemini no responde: el primero (es el más relacionado según Pixabay)
-    if not (isinstance(k, int) and 0 <= k < len(ok)):
-        return False
-    c = ok[k]
-    if not bajar_clip(c["url"], f"{D}/clips/{i:02d}.mp4"):
-        return False
-    im["clip"], im["clip_id"] = c["url"], c["id"]
-    CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
-    return True
+        orden = list(range(len(ok)))  # Gemini no responde: en el orden de Pixabay
+    destino = f"{D}/clips/{i:02d}.mp4"
+    for k in orden:
+        c = ok[k]
+        if not bajar_clip(c["url"], destino):
+            continue
+        mov = movimiento(destino)
+        if mov < 3.0:   # casi quieto: parece una foto, se busca otro
+            print(f"  escena {i}: clip {c['id']} casi sin movimiento ({mov:.1f}), descartado")
+            continue
+        im["clip"], im["clip_id"] = c["url"], c["id"]
+        CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+        return True
+    for f in (destino, destino.replace("/clips/", "/imgs/").replace(".mp4", ".jpg")):
+        if os.path.exists(f):
+            os.remove(f)
+    return False
 
 
 for i, e in enumerate(ESC, 1):

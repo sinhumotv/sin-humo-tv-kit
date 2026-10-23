@@ -70,6 +70,18 @@
   "minutos": [
    11,
    13
+  ],
+  "video_generico": [
+   "robot arm factory",
+   "humanoid robot walking",
+   "scientist laboratory",
+   "data center servers",
+   "futuristic city traffic",
+   "rocket launch",
+   "drone flying",
+   "self driving car",
+   "circuit board macro",
+   "people using smartphones city"
   ]
  },
  "color_subtitulo": [

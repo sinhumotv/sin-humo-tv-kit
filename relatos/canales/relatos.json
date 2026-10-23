@@ -40,10 +40,22 @@
   "real": "pinturas, esculturas, vasijas y mosaicos clásicos o renacentistas que representen ese mito o a sus personajes, y lugares reales de Grecia (templos, ruinas, paisajes)",
   "reglas_reales": "Nada de desnudos explícitos; si la obra tiene desnudos, recházala.",
   "video": "ruinas y templos griegos, estatuas y esculturas clásicas, el mar, tormentas, fuego, antorchas, cuevas, cielos, olivos, barcos antiguos",
-  "max_ia": 8,
+  "max_ia": 2,
   "minutos": [
    14,
    16
+  ],
+  "video_generico": [
+   "ancient greek ruins",
+   "greek temple columns",
+   "stormy sea waves",
+   "burning torch fire",
+   "marble statue",
+   "lightning storm sky",
+   "mountain clouds timelapse",
+   "old olive trees wind",
+   "cave water drops",
+   "flock of birds flying"
   ]
  }
 }
