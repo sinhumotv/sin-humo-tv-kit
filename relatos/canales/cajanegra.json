@@ -40,7 +40,7 @@
   "real": "fotografías de archivo de la época, lugares reales, periódicos y documentos históricos del caso",
   "reglas_reales": "Rechaza imágenes con cadáveres, sangre, heridas o violencia explícita, y primeros planos de víctimas.",
   "video": "calles de época o de noche, lluvia, coches antiguos, máquinas de escribir, archivos y papeles, comisarías, luces de policía, puertos, playas, habitaciones vacías, relojes",
-  "max_ia": 2,
+  "max_ia": 0,
   "minutos": [
    14,
    16

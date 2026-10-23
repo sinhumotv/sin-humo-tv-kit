@@ -311,6 +311,16 @@ Prefiere clips con ACCIÓN o movimiento visible (gente, máquinas, vehículos, c
         im["clip"], im["clip_id"] = c["url"], c["id"]
         CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
         return True
+    # ningún clip aprobado: vídeo real de ambiente del canal (nunca una foto)
+    for q in genericas[i % max(1, len(genericas)):] + genericas:
+        for c in pixabay(q):
+            if c["id"] in usados or not bajar_clip(c["url"], destino):
+                continue
+            if movimiento(destino) >= 3.0:
+                im["clip"], im["clip_id"] = c["url"], c["id"]
+                CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+                print(f"  escena {i}: vídeo de ambiente ({q})")
+                return True
     for f in (destino, destino.replace("/clips/", "/imgs/").replace(".mp4", ".jpg")):
         if os.path.exists(f):
             os.remove(f)

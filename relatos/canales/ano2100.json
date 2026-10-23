@@ -66,7 +66,7 @@
   "real": "fotografías reales de la tecnología, laboratorios, robots, prototipos, lugares o científicos de los que se habla",
   "reglas_reales": "Rechaza logotipos como protagonista, capturas de pantalla con mucho texto y montajes o memes.",
   "video": "robots, laboratorios, ordenadores y datos, ciudades modernas y futuristas, espacio y cohetes, energía, fábricas automatizadas, médicos y tecnología",
-  "max_ia": 2,
+  "max_ia": 0,
   "minutos": [
    11,
    13

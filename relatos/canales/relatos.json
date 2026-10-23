@@ -40,7 +40,7 @@
   "real": "pinturas, esculturas, vasijas y mosaicos clásicos o renacentistas que representen ese mito o a sus personajes, y lugares reales de Grecia (templos, ruinas, paisajes)",
   "reglas_reales": "Nada de desnudos explícitos; si la obra tiene desnudos, recházala.",
   "video": "ruinas y templos griegos, estatuas y esculturas clásicas, el mar, tormentas, fuego, antorchas, cuevas, cielos, olivos, barcos antiguos",
-  "max_ia": 2,
+  "max_ia": 0,
   "minutos": [
    14,
    16
