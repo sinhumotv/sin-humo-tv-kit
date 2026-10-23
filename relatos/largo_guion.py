@@ -25,9 +25,13 @@ def valida(h):
     errs = []
     esc = h.get("escenas") or []
     tot = sum(palabras(e.get("hablado", "")) for e in esc)
-    if not 1300 <= tot <= 1750:
-        errs.append(f"el texto hablado suma {tot} palabras (debe estar entre 1350 y 1650)")
-    if not 36 <= len(esc) <= 58:
+    if tot < 1250:
+        errs.append(f"el texto hablado suma solo {tot} palabras y debe llegar a 1400-1600: FALTAN {1450 - tot} PALABRAS. "
+                    f"Añade unas {max(6, (1450 - tot) // 30)} escenas NUEVAS en los capítulos centrales con más detalles, contexto, "
+                    f"datos curiosos y tensión (no alargues las frases: añade escenas), y devuelve el guion COMPLETO")
+    elif tot > 1800:
+        errs.append(f"el texto hablado suma {tot} palabras: recórtalo a unas 1600")
+    if not 36 <= len(esc) <= 64:
         errs.append(f"{len(esc)} escenas (deben ser entre 40 y 52)")
     for i, e in enumerate(esc, 1):
         if re.search(r"\d", e.get("hablado", "")):
@@ -107,7 +111,7 @@ Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}},
 
 h, modelo = pedir(PROMPT, temp=0.9)
 errs = valida(h)
-for intento in range(2):
+for intento in range(3):
     if not errs:
         break
     print(f"guion largo: {errs} -> corrijo")
