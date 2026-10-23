@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""Guion de un vídeo LARGO horizontal (8-10 min) con Gemini (gratis), sin Claude.
+
+Uso: python3 largo_guion.py <canal.json> <usados_largos.txt> <carpeta_salida>
+Deja <carpeta_salida>/historia.json con escenas (texto + imagen IA o real), capítulos, título y miniatura.
+"""
+import json, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gem import pedir
+
+C = json.load(open(sys.argv[1], encoding="utf-8"))
+L = C.get("largo", {})
+USADOS = [l.split("|") for l in open(sys.argv[2], encoding="utf-8").read().splitlines() if l.count("|") >= 2] \
+    if os.path.exists(sys.argv[2]) else []
+OUT = sys.argv[3]
+os.makedirs(OUT, exist_ok=True)
+
+
+def palabras(t):
+    return len(re.findall(r"\w+", t))
+
+
+def valida(h):
+    errs = []
+    esc = h.get("escenas") or []
+    tot = sum(palabras(e.get("hablado", "")) for e in esc)
+    if not 1300 <= tot <= 1750:
+        errs.append(f"el texto hablado suma {tot} palabras (debe estar entre 1350 y 1650)")
+    if not 36 <= len(esc) <= 58:
+        errs.append(f"{len(esc)} escenas (deben ser entre 40 y 52)")
+    for i, e in enumerate(esc, 1):
+        if re.search(r"\d", e.get("hablado", "")):
+            errs.append(f"escena {i} tiene cifras: escríbelas en letra")
+        im = e.get("imagen") or {}
+        if im.get("tipo") not in ("ia", "real"):
+            errs.append(f"escena {i} sin imagen válida")
+        elif im["tipo"] == "ia" and len(im.get("prompt", "")) < 40:
+            errs.append(f"escena {i} sin prompt de imagen")
+        elif im["tipo"] == "real" and not im.get("busqueda"):
+            errs.append(f"escena {i} real sin búsqueda")
+    caps = h.get("capitulos") or []
+    if len(caps) < 4 or caps[0].get("escena") != 0:
+        errs.append("faltan capítulos (mínimo 4, el primero en la escena 0)")
+    if len(h.get("titulos") or []) < 6:
+        errs.append("faltan títulos candidatos (10)")
+    return errs[:12]
+
+
+vistos = "; ".join(u[1] for u in USADOS[-200:]) or "(ninguno)"
+PROMPT = f"""Eres guionista jefe de un canal de YouTube en español de España de vídeos largos narrados: "{C['nombre']}".
+Tema del canal: {L.get('tema', C['tema'])}.
+Ideas posibles (no obligatorias): {L.get('ideas', C['ideas'])}.
+YA PUBLICADOS EN VÍDEO LARGO (prohibido repetirlos, ni el mismo caso con otro título): {vistos}.
+
+Elige UN tema con mucho interés de búsqueda y potencial de clics (casos o historias conocidas que la gente busca, con un
+misterio, un giro o un dato increíble), y escribe el guion completo de un vídeo HORIZONTAL de 9 a 10 minutos.
+
+ESTRUCTURA PARA RETENER AL ESPECTADOR:
+- Escenas 1-3 (unos 25 segundos): el GANCHO. Empieza con lo más impactante o con la pregunta clave, promete algo concreto
+  que solo se revela al final y di en una frase qué va a descubrir quien se quede. Nada de saludos ni de "en este vídeo".
+- Después, de 5 a 7 capítulos con nombre propio (corto y con intriga). Cada capítulo cierra con un pequeño gancho hacia el
+  siguiente ("pero lo peor aún no había llegado…"). Cada minuto y medio, un reenganche o una revelación.
+- Final: se cumple la promesa del gancho con el giro más fuerte, una reflexión breve y una pregunta para comentarios.
+- Tono: {L.get('tono', 'narrador de documental, intrigante y cercano')}. Frases cortas y claras, como se habla.
+- {C.get('reglas_extra', '')}
+- Hechos reales y fieles a la versión más conocida. No inventes datos; si algo es dudoso, dilo como teoría.
+
+ESCENAS: entre 40 y 52 escenas, 1350-1650 palabras en total. Cada escena = una idea y una imagen, de 20 a 45 palabras.
+- "hablado": texto exacto que leerá la voz. Números SIEMPRE en letra, sin siglas, sin emojis, sin comillas.
+- "imagen": una de estas dos:
+  · {{"tipo": "real", "busqueda": "<búsqueda en inglés para Wikimedia Commons, 2-5 palabras muy concretas>", "descripcion": "<qué debe verse>"}}
+    para {L.get('real', 'fotografías o documentos reales de lo que se cuenta')}. Úsalo en la MAYORÍA de las escenas (unas dos de cada tres),
+    siempre que exista de verdad una imagen así (personajes, lugares, objetos, obras de arte, documentos de época).
+  · {{"tipo": "ia", "prompt": "<EN INGLÉS, 40-80 palabras>"}}: imagen horizontal fotorrealista de la escena. Describe a cada
+    personaje SIEMPRE con la misma frase (edad, pelo, ropa). Nada de texto en la imagen, nada de sangre, gore ni desnudos:
+    lo duro se sugiere. Sin caras reconocibles de personas reales.
+- "efecto": "polvo", "niebla", "brasas" o "nada".
+
+CAPÍTULOS: "capitulos": [{{"escena": <índice desde 0 de la escena donde empieza>, "titulo": "..."}}], el primero en la
+escena 0 con el título "Introducción" o similar.
+
+TÍTULO Y MINIATURA (lo MÁS importante: de ellos depende que hagan clic):
+- "titulos": 10 títulos distintos de máximo 60 caracteres: palabras que la gente busca + curiosidad o emoción fuerte
+  + promesa concreta y CIERTA. Variados: pregunta, dato increíble, "la verdad sobre…", consecuencia, número… Sin
+  mayúsculas enteras salvo una palabra, sin emojis, sin mentir.
+- "miniatura": {{"texto": "<2 a 4 palabras en MAYÚSCULAS que complementen al título, sin repetirlo>",
+  "clave": "<la palabra del texto que irá en amarillo>",
+  "prompt": "<EN INGLÉS, 50-90 palabras: imagen horizontal muy llamativa para la miniatura: UN solo protagonista o objeto
+  grande en la mitad derecha, emoción intensa o tensión, alto contraste, colores saturados, fondo simple y oscuro en la
+  mitad izquierda para el texto; sin texto, sin sangre>"}}
+- "descripcion": 2 párrafos para YouTube (el primero repite el gancho con otras palabras e incluye las palabras clave de
+  búsqueda; el segundo resume de qué trata sin destripar el final). "etiquetas": 12 etiquetas de búsqueda.
+- "titulo": nombre corto del tema (para el registro).
+
+Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}}, "descripcion": "...", "etiquetas": ["..."],
+"capitulos": [...], "escenas": [{{"hablado": "...", "imagen": {{...}}, "efecto": "polvo"}}]}}"""
+
+h, modelo = pedir(PROMPT, temp=0.9)
+errs = valida(h)
+for intento in range(2):
+    if not errs:
+        break
+    print(f"guion largo: {errs} -> corrijo")
+    h2, modelo = pedir(PROMPT + f"\n\nCorrige este guion (errores: {errs}). Mantén el tema.\n" + json.dumps(h, ensure_ascii=False), temp=0.6)
+    if isinstance(h2, dict):
+        h = h2
+    errs = valida(h)
+if errs:
+    sys.exit(f"guion largo no válido: {errs}")
+if h["titulo"].lower() in {u[1].lower() for u in USADOS}:
+    sys.exit(f"tema repetido: {h['titulo']}")
+
+# ---- elegir el título y el texto de la miniatura con más probabilidad de clic ----
+JUEZ = f"""Eres experto en CTR de YouTube en español. Canal: "{C['nombre']}". Vídeo: {h['titulo']}.
+Resumen: {h['descripcion'][:600]}
+Títulos candidatos: {json.dumps(h['titulos'], ensure_ascii=False)}
+Texto de miniatura propuesto: {h['miniatura'].get('texto')}
+
+Elige el título con MÁS probabilidad de clic sin ser engañoso (curiosidad, emoción, palabras que se buscan al principio,
+máximo 60 caracteres, fácil de leer en el móvil). Puedes mejorarlo un poco. Luego propone el texto de la miniatura
+(2-4 palabras en MAYÚSCULAS) que COMPLEMENTE al título sin repetir sus palabras, y la palabra clave que irá en amarillo.
+Devuelve SOLO JSON: {{"titulo_youtube": "...", "texto_miniatura": "...", "clave": "...", "motivo": "..."}}"""
+try:
+    j, _ = pedir(JUEZ, temp=0.4)
+    h["titulo_youtube"] = j["titulo_youtube"][:100]
+    h["miniatura"]["texto"] = j.get("texto_miniatura") or h["miniatura"]["texto"]
+    h["miniatura"]["clave"] = j.get("clave") or h["miniatura"].get("clave", "")
+    print("título elegido:", h["titulo_youtube"], "·", j.get("motivo", "")[:160])
+except SystemExit:
+    h["titulo_youtube"] = h["titulos"][0]
+for e in h["escenas"]:
+    e["subtitulo"] = e["hablado"]
+h["voz"] = C.get("voz", "Algenib")
+h["estilo_imagen"] = L.get("estilo_imagen", C.get("estilo_imagen", ""))
+json.dump(h, open(os.path.join(OUT, "historia.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+tot = sum(palabras(e["hablado"]) for e in h["escenas"])
+reales = sum(1 for e in h["escenas"] if e["imagen"]["tipo"] == "real")
+print(f"GUION LARGO · {h['titulo']} · «{h['titulo_youtube']}» · {len(h['escenas'])} escenas ({reales} reales) · "
+      f"{tot} palabras · {len(h['capitulos'])} capítulos · {modelo}")

@@ -31,5 +31,13 @@
   "18:00",
   "21:00"
  ],
- "reglas_extra": "Solo hechos reales y comprobados; si un dato es dudoso, preséntalo como teoría o no lo pongas. Tono de documental serio, sin morbo ni detalles escabrosos: la violencia se sugiere (sombras, objetos, lugares vacíos), nunca se describe ni se muestra con sangre o cadáveres. PROHIBIDO: suicidios, autolesiones, crímenes contra niños o abusos sexuales, y explicar cómo se comete un delito o cómo fabricar armas o venenos. En las imágenes, nada de caras de víctimas o asesinos reales reconocibles (figuras de espaldas, en sombra o a contraluz), nada de sangre, cadáveres ni armas apuntando. Como efecto usa \"polvo\" o \"niebla\" y \"fuego\": false salvo que haya fuego en la escena."
+ "reglas_extra": "Solo hechos reales y comprobados; si un dato es dudoso, preséntalo como teoría o no lo pongas. Tono de documental serio, sin morbo ni detalles escabrosos: la violencia se sugiere (sombras, objetos, lugares vacíos), nunca se describe ni se muestra con sangre o cadáveres. PROHIBIDO: suicidios, autolesiones, crímenes contra niños o abusos sexuales, y explicar cómo se comete un delito o cómo fabricar armas o venenos. En las imágenes, nada de caras de víctimas o asesinos reales reconocibles (figuras de espaldas, en sombra o a contraluz), nada de sangre, cadáveres ni armas apuntando. Como efecto usa \"polvo\" o \"niebla\" y \"fuego\": false salvo que haya fuego en la escena.",
+ "largo": {
+  "hora": "21:30",
+  "inicio": "2026-10-25",
+  "categoria": "PEOPLE_BLOGS",
+  "tono": "narrador de documental de true crime, serio, intrigante y respetuoso con las víctimas",
+  "real": "fotografías de archivo de la época, lugares reales, periódicos y documentos históricos del caso",
+  "reglas_reales": "Rechaza imágenes con cadáveres, sangre, heridas o violencia explícita, y primeros planos de víctimas."
+ }
 }

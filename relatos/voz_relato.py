@@ -15,6 +15,8 @@ import base64, json, os, subprocess, sys, time, urllib.request, urllib.error, ss
 
 MODELOS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview",
            "gemini-2.5-flash-preview-tts", "gemini-3.8-flash-lite-tts"]
+if os.environ.get("TTS_MODELOS"):  # p. ej. los largos empiezan por otro modelo para no gastar el cupo de los cortos
+    MODELOS = os.environ["TTS_MODELOS"].split(",")
 MAX = 1800  # menos peticiones: el plan gratis da 10 al día por modelo
 OBJ_CPS = 12.5
 ESTILO = {

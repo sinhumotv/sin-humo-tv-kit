@@ -8,13 +8,14 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 D = sys.argv[1]
-W, H, FPS = 1080, 1920, 30
 P = json.load(open(f"{D}/proyecto.json", encoding="utf-8"))
+YT = str(P.get("formato", "")).upper() == "YOUTUBE"   # vídeo largo horizontal
+W, H, FPS = (1920, 1080, 25) if YT else (1080, 1920, 30)
 T = json.load(open(f"{D}/tiempos.json"))
 DUR = T["duracion"] + 0.4
 NF = int(DUR * FPS)
 FONT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", "pf.ttf")
-fnt = ImageFont.truetype(FONT, 80)
+fnt = ImageFont.truetype(FONT, 66 if YT else 80)
 try:
     fnt.set_variation_by_name("Bold")
 except Exception:
@@ -128,7 +129,8 @@ for q in range(len(trozos)):
     trozos[q][1] = sig if sig - fin_voz < 0.7 else fin_voz + 0.3
 fin_pal = {j: (ini_p[j + 1] if j + 1 < len(pals) else 1e9) for j in range(len(pals))}
 
-Y_SUB = int(H * 0.69)   # más abajo, pero por encima de los textos de las redes
+Y_SUB = int(H * (0.885 if YT else 0.69))   # más abajo, pero por encima de los textos de las redes
+LH = 84 if YT else 100
 cache = {}
 
 
@@ -146,7 +148,7 @@ def capa_texto(q, activa):
     anchos = {j: d.textlength(pals[j][0], font=fnt) for j in idxs}
     total = sum(anchos.values()) + esp * (len(idxs) - 1)
     lineas = [idxs] if (total <= W * 0.86 or len(idxs) == 1) else [idxs[:-1], idxs[-1:]]
-    y = Y_SUB - (len(lineas) - 1) * 50
+    y = Y_SUB - (len(lineas) - 1) * LH // 2
     for ln in lineas:
         tw = sum(anchos[j] for j in ln) + esp * (len(ln) - 1)
         x = (W - tw) / 2
@@ -159,7 +161,7 @@ def capa_texto(q, activa):
             d.text((x, y), w, font=fnt, fill=AMARILLO if on else (255, 255, 255),
                    stroke_width=4, stroke_fill=(15, 10, 5), anchor="ls")
             x += anchos[j] + esp
-        y += 100
+        y += LH
     sombra = sombra.filter(ImageFilter.GaussianBlur(7))
     out = Image.alpha_composite(sombra, capa)
     cache[key] = out
@@ -205,9 +207,37 @@ def particulas(fr, tipo, t):
     return Image.alpha_composite(fr, capa)
 FUEGO = set(P.get("fuego", []))
 
+# ---------- rótulo de capítulo (vídeo largo) ----------
+CAPS = []
+if YT:
+    negra = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "fonts", "Inter-Black.otf")
+    f1, f2 = ImageFont.truetype(negra, 30), ImageFont.truetype(negra, 58)
+    for n, c in enumerate(P.get("capitulos", [])):
+        if n == 0 or c["escena"] >= len(escenas):
+            continue
+        capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(capa)
+        tit = c["titulo"].upper()
+        tw = max(d.textlength(tit, font=f2), d.textlength(f"CAPÍTULO {n}", font=f1))
+        d.rounded_rectangle((70, 70, 70 + tw + 70, 70 + 150), 18, fill=(10, 8, 6, 175))
+        d.rectangle((70, 70, 80, 220), fill=AMARILLO + (255,))
+        d.text((110, 92), f"CAPÍTULO {n}", font=f1, fill=AMARILLO + (255,))
+        d.text((110, 132), tit, font=f2, fill=(255, 255, 255, 255))
+        CAPS.append((escenas[c["escena"]]["ini"] + 0.3, capa))
+
+
+def rotulo(fr, t):
+    for t0, capa in CAPS:
+        if t0 <= t < t0 + 4.0:
+            a = min(1, (t - t0) / 0.4, (t0 + 4.0 - t) / 0.4)
+            if a < 1:
+                capa = capa.copy(); capa.putalpha(capa.getchannel("A").point(lambda v: int(v * a)))
+            return Image.alpha_composite(fr, capa)
+    return fr
+
 ff = subprocess.Popen(
     f'ffmpeg -y -v error -f rawvideo -pix_fmt rgb24 -s {W}x{H} -r {FPS} -i - '
-    f'-c:v libx264 -preset faster -crf 16 -tune film -pix_fmt yuv420p "{D}/_video.mp4"', shell=True, stdin=subprocess.PIPE)
+    f'-c:v libx264 -preset faster -crf {20 if YT else 16} -tune film -pix_fmt yuv420p "{D}/_video.mp4"', shell=True, stdin=subprocess.PIPE)
 for f in range(NF):
     t = f / FPS
     i = max(k for k, e in enumerate(escenas) if e["ini"] <= t + 1e-6) if t < escenas[-1]["fin"] else len(escenas) - 1
@@ -224,6 +254,7 @@ for f in range(NF):
     arr = (np.asarray(fr, np.float32) * vig * luz).clip(0, 255).astype(np.uint8)
     fr = Image.fromarray(arr).convert("RGBA")
     fr = particulas(fr, EFE[i], t)
+    fr = rotulo(fr, t)
     for q, (a, b, idxs) in enumerate(trozos):
         if a - 0.04 <= t < b:
             act = next((j for j in idxs if ini_p[j] - 0.04 <= t < fin_pal[j]), None)

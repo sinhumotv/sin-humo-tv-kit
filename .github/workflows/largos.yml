@@ -1,0 +1,54 @@
+# Vídeos LARGOS (uno cada 2 días por canal) SIN Claude: guion y voz con Gemini, material real de Wikimedia Commons,
+# imágenes de IA con la cuota de Cloudflare que dejan libre los cortos, y programación en YouTube con Metricool.
+name: Videos largos
+
+on:
+  schedule:
+    - cron: "47 19 * * *"   # por la tarde: usa la cuota de Cloudflare que sobra tras los cortos del día
+  workflow_dispatch:
+    inputs:
+      canal:
+        description: "relatos, cajanegra, ano2100 o todos"
+        default: "todos"
+      forzar:
+        description: "1 = no esperar a otro día si se acaba la cuota de imágenes"
+        default: ""
+      ahora:
+        description: "1 = publicar en cuanto esté (solo el primero)"
+        default: ""
+      no_publicar:
+        description: "1 = solo fabricar y alojar, sin programar"
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  largo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        canal: ${{ (github.event_name == 'workflow_dispatch' && inputs.canal != 'todos') && fromJSON(format('["{0}"]', inputs.canal)) || fromJSON('["relatos","cajanegra","ano2100"]') }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow faster-whisper
+      - name: Fabricar y programar el largo
+        env:
+          GEMINI_KEY: ${{ secrets[format('{0}_GEMINI_KEY', matrix.canal)] || secrets.GEMINI_KEY }}
+          CF_ACCOUNT: ${{ secrets[format('{0}_CF_ACCOUNT', matrix.canal)] }}
+          CF_TOKEN: ${{ secrets[format('{0}_CF_TOKEN', matrix.canal)] }}
+          REFRESH: ${{ secrets[format('METRICOOL_{0}_REFRESH', matrix.canal)] }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORZAR: ${{ inputs.forzar }}
+          AHORA: ${{ inputs.ahora }}
+          NO_PUBLICAR: ${{ inputs.no_publicar }}
+          WHISPER_MODELO: base
+        run: |
+          for v in FORZAR AHORA NO_PUBLICAR; do [ -z "${!v}" ] && unset $v; done
+          python3 relatos/largo.py ${{ matrix.canal }}
