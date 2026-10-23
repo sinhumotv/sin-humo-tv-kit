@@ -30,7 +30,7 @@ def valida(h):
     esc = h.get("escenas") or []
     tot = sum(palabras(e.get("hablado", "")) for e in esc)
     if MINUTOS:
-        if tot < OBJETIVO * 0.82:
+        if tot < OBJETIVO * 0.75:
             errs.append(f"solo {tot} palabras de {OBJETIVO}")
     elif tot < 1250:
         errs.append(f"el texto hablado suma solo {tot} palabras y debe llegar a 1400-1600: FALTAN {1450 - tot} PALABRAS. "
@@ -137,7 +137,8 @@ Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}},
     resumen = json.dumps([{"titulo": c["titulo"], "resumen": c["resumen"]} for c in caps], ensure_ascii=False)
     escenas, indices, ultimo = [], [], ""
     for k, c in enumerate(caps):
-        obj = int(c.get("palabras") or OBJETIVO / len(caps))
+        obj = round(OBJETIVO / len(caps))
+        n_esc = max(5, round(obj / 32))
         pos = ("Es el COMIENZO del vídeo: aplica las reglas del GANCHO." if k == 0 else
                f"Continúa justo donde terminó el capítulo anterior (su última frase: «{ultimo}»). No repitas nada ya contado.")
         if k == len(caps) - 1:
@@ -146,7 +147,8 @@ Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}},
 ESQUEMA COMPLETO DEL VÍDEO «{E['titulo']}»: {resumen}
 
 PASO 2: escribe AHORA SOLO el capítulo {k + 1} de {len(caps)}: «{c['titulo']}» ({c['resumen']}).
-Unas {obj} palabras habladas (MÍNIMO {int(obj * 0.85)}), repartidas en escenas de 20 a 45 palabras. {pos}
+EXACTAMENTE {n_esc} escenas, cada una de 28 a 40 palabras (unas {obj} palabras en total). Desarrolla con detalle:
+hechos, contexto, ejemplos concretos, datos curiosos y tensión; nada de frases de relleno. {pos}
 {reglas}
 Devuelve SOLO JSON: {{"escenas": [{{"hablado": "...", "imagen": {{...}}, "efecto": "polvo"}}]}}"""
         esc = []
@@ -155,9 +157,11 @@ Devuelve SOLO JSON: {{"escenas": [{{"hablado": "...", "imagen": {{...}}, "efecto
             esc = j.get("escenas", []) if isinstance(j, dict) else []
             n = sum(palabras(e.get("hablado", "")) for e in esc)
             malas = [e for e in esc if re.search(r"\d", e.get("hablado", "")) or (e.get("imagen") or {}).get("tipo") not in ("ia", "real", "video")]
-            if n >= obj * 0.8 and not malas:
+            if n >= obj * 0.8 and len(esc) >= n_esc - 1 and not malas:
                 break
-            cp += f"\n\nTu respuesta anterior tenía {n} palabras{' y escenas con cifras o sin imagen válida' if malas else ''}: corrígelo (mínimo {int(obj * 0.85)} palabras, números en letra)."
+            cp += (f"\n\nTu respuesta anterior tenía {len(esc)} escenas y {n} palabras"
+                   f"{' y escenas con cifras o sin imagen válida' if malas else ''}: repítela con EXACTAMENTE {n_esc} escenas "
+                   f"de 28 a 40 palabras cada una, números en letra.")
         indices.append(len(escenas))
         escenas += esc
         ultimo = esc[-1]["hablado"] if esc else ultimo
