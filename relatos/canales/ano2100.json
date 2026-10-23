@@ -3,15 +3,33 @@
  "nombre": "Año 2100",
  "tema": "la inteligencia artificial y el futuro: avances reales de la IA y la tecnología (qué ya puede hacer, cómo funciona, cómo cambia el trabajo y la vida diaria) y cómo podría ser el mundo en el año 2100 según lo que hoy proyectan científicos, ingenieros y estudios serios (ciudades, medicina, energía, espacio, robots, clima). Mezcla vídeos de IA actual y vídeos de futuro, contados con asombro pero sin sensacionalismo",
  "ideas": "robots humanoides en casa, coches sin conductor, IA que diagnostica enfermedades, implantes cerebrales, ciudades flotantes, ascensor espacial, energía de fusión, la primera colonia en Marte, trabajos que desaparecerán y trabajos nuevos, la IA que escribe música o pinta, deepfakes y cómo detectarlos, ordenadores cuánticos, carne cultivada en laboratorio, vivir hasta los ciento veinte años, el clima en 2100, ciudades sin coches, traductores instantáneos, la IA en la escuela, granjas verticales, trenes de vacío, el internet del futuro, asistentes de IA personales, robots cirujanos, exoesqueletos, la IA en el ejército, ciudades inteligentes que se vigilan solas, qué es una IA general, por qué las IA se equivocan, cómo aprende una IA",
- "estilo_imagen": "Cinematic photorealistic film still, near-future and futuristic world, sleek technology, soft neon and natural light, clean modern design, shallow depth of field, ultra detailed, 35mm film grain. ",
+ "estilo_imagen": "Ultra realistic photograph, real-world photojournalism look of a believable near future: futuristic technology integrated into everyday places, natural daylight or soft practical lighting, true-to-life skin and materials, subtle sci-fi details (holographic displays, sleek robots, advanced vehicles), sharp focus, shallow depth of field, shot on a full-frame camera, 35mm lens. ",
  "voz": "Algenib",
  "tono_voz": "relato",
  "firma": "Año 2100",
- "seguir": ["Síguenos para descubrir cada día cómo será el futuro.", "Cada día, un vistazo al mundo que viene.", "Síguenos: el futuro llega antes de lo que crees."],
- "hashtags_base": ["inteligenciaartificial", "futuro", "tecnologia"],
+ "seguir": [
+  "Síguenos para descubrir cada día cómo será el futuro.",
+  "Cada día, un vistazo al mundo que viene.",
+  "Síguenos: el futuro llega antes de lo que crees."
+ ],
+ "hashtags_base": [
+  "inteligenciaartificial",
+  "futuro",
+  "tecnologia"
+ ],
  "youtube_categoria": "28",
  "buffer_org": "6adb0e1107f5b268ec22bbaa",
- "buffer_canales": {"youtube": "6adb0edd778b240e2f9a2f7e", "instagram": "6adb19e5778b240e2f9a8f5c", "tiktok": "6adb1a38778b240e2f9a9198"},
- "horas": ["08:00", "12:00", "15:00", "18:00", "21:00"],
+ "buffer_canales": {
+  "youtube": "6adb0edd778b240e2f9a2f7e",
+  "instagram": "6adb19e5778b240e2f9a8f5c",
+  "tiktok": "6adb1a38778b240e2f9a9198"
+ },
+ "horas": [
+  "08:00",
+  "12:00",
+  "15:00",
+  "18:00",
+  "21:00"
+ ],
  "reglas_extra": "Nada de inventar: los datos de IA actual tienen que ser reales y conocidos (si no estás seguro de un dato, no lo pongas); no cites fechas, empresas ni cifras concretas de noticias de las que no estés seguro. Lo del año 2100 se presenta como previsión o posibilidad («podría», «según los expertos»), nunca como hecho seguro. Sin alarmismo ni conspiraciones. En las imágenes, nada de logotipos ni marcas reales ni caras de personas famosas. Como efecto usa sobre todo \"polvo\" o \"nada\" (nunca \"brasas\" salvo que haya fuego) y \"fuego\": false."
 }
