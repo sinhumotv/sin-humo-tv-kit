@@ -1,0 +1,30 @@
+# Conecta (o reconecta) las cuentas de Metricool de cada canal. Los accesos quedan solo en los secretos de GitHub.
+name: Conectar Metricool
+
+on:
+  workflow_dispatch:
+    inputs:
+      paso:
+        description: "enlaces | canjear | probar"
+        default: "enlaces"
+      canal:
+        description: "relatos, cajanegra o ano2100 (en enlaces: varios separados por espacios)"
+        default: "relatos cajanegra ano2100"
+      code:
+        description: "Dirección de localhost que sale tras autorizar (solo en canjear)"
+        default: ""
+
+jobs:
+  conectar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Metricool
+        env:
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+          PKCE: ${{ inputs.paso == 'canjear' && secrets[format('METRICOOL_{0}_PKCE', inputs.canal)] || '' }}
+          REFRESH: ${{ inputs.paso == 'probar' && secrets[format('METRICOOL_{0}_REFRESH', inputs.canal)] || '' }}
+          CODE: ${{ inputs.code }}
+        run: |
+          if [ "${{ inputs.paso }}" = canjear ]; then python3 metricool/mc.py canjear "${{ inputs.canal }}" "$CODE"
+          else python3 metricool/mc.py ${{ inputs.paso }} ${{ inputs.canal }}; fi
