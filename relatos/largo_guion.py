@@ -21,17 +21,24 @@ def palabras(t):
     return len(re.findall(r"\w+", t))
 
 
+MINUTOS = L.get("minutos")   # [mín, máx] -> guion por capítulos
+OBJETIVO = int(sum(MINUTOS) / 2 * 60 * 2.65) if MINUTOS else 1450
+
+
 def valida(h):
     errs = []
     esc = h.get("escenas") or []
     tot = sum(palabras(e.get("hablado", "")) for e in esc)
-    if tot < 1250:
+    if MINUTOS:
+        if tot < OBJETIVO * 0.82:
+            errs.append(f"solo {tot} palabras de {OBJETIVO}")
+    elif tot < 1250:
         errs.append(f"el texto hablado suma solo {tot} palabras y debe llegar a 1400-1600: FALTAN {1450 - tot} PALABRAS. "
                     f"Añade unas {max(6, (1450 - tot) // 30)} escenas NUEVAS en los capítulos centrales con más detalles, contexto, "
                     f"datos curiosos y tensión (no alargues las frases: añade escenas), y devuelve el guion COMPLETO")
     elif tot > 1800:
         errs.append(f"el texto hablado suma {tot} palabras: recórtalo a unas 1600")
-    if not 36 <= len(esc) <= 64:
+    if not 36 <= len(esc) <= (140 if MINUTOS else 64):
         errs.append(f"{len(esc)} escenas (deben ser entre 40 y 52)")
     for i, e in enumerate(esc, 1):
         if re.search(r"\d", e.get("hablado", "")):
@@ -109,9 +116,64 @@ TÍTULO Y MINIATURA (lo MÁS importante: de ellos depende que hagan clic):
 Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}}, "descripcion": "...", "etiquetas": ["..."],
 "capitulos": [...], "escenas": [{{"hablado": "...", "imagen": {{...}}, "efecto": "polvo"}}]}}"""
 
-h, modelo = pedir(PROMPT, temp=0.9)
+def por_capitulos():
+    """Vídeos de 11-16 min: primero el esquema (título, miniatura, capítulos) y luego cada capítulo por separado."""
+    cab = PROMPT[:PROMPT.index("ESCENAS:")]
+    reglas = PROMPT[PROMPT.index("ESCENAS:"):PROMPT.index("CAPÍTULOS:")]
+    reglas = re.sub(r"ESCENAS: entre 40 y 52 escenas, 1350-1650 palabras en total\.", "ESCENAS:", reglas)
+    tit = PROMPT[PROMPT.index("TÍTULO Y MINIATURA"):PROMPT.index("Devuelve SOLO JSON")]
+    esq_p = cab + f"""
+PASO 1, SOLO EL ESQUEMA de un vídeo de {MINUTOS[0]} a {MINUTOS[1]} minutos (unas {OBJETIVO} palabras habladas en total):
+"capitulos": de 8 a 10 capítulos: [{{"titulo": "<corto y con intriga>", "resumen": "<qué se cuenta: 4-6 frases con los
+hechos, nombres, fechas y datos clave, en orden>", "palabras": <número>}}]. El primero es el GANCHO más la introducción
+(unas 200 palabras); el último, el desenlace con el giro final, una reflexión y la pregunta para comentarios. Reparte
+bien la historia: cada capítulo aporta algo nuevo (nada de repetir). Las "palabras" deben sumar unas {OBJETIVO}.
+{tit}
+Devuelve SOLO JSON: {{"titulo": "...", "titulos": ["..."], "miniatura": {{...}}, "descripcion": "...", "etiquetas": ["..."], "capitulos": [...]}}"""
+    E, m = pedir(esq_p, temp=0.9)
+    caps = E.get("capitulos") or []
+    if len(caps) < 6:
+        sys.exit("esquema sin capítulos suficientes")
+    resumen = json.dumps([{"titulo": c["titulo"], "resumen": c["resumen"]} for c in caps], ensure_ascii=False)
+    escenas, indices, ultimo = [], [], ""
+    for k, c in enumerate(caps):
+        obj = int(c.get("palabras") or OBJETIVO / len(caps))
+        pos = ("Es el COMIENZO del vídeo: aplica las reglas del GANCHO." if k == 0 else
+               f"Continúa justo donde terminó el capítulo anterior (su última frase: «{ultimo}»). No repitas nada ya contado.")
+        if k == len(caps) - 1:
+            pos += " Es el FINAL: cumple la promesa del gancho con el giro final, una reflexión breve y una pregunta para comentarios."
+        cp = cab + f"""
+ESQUEMA COMPLETO DEL VÍDEO «{E['titulo']}»: {resumen}
+
+PASO 2: escribe AHORA SOLO el capítulo {k + 1} de {len(caps)}: «{c['titulo']}» ({c['resumen']}).
+Unas {obj} palabras habladas (MÍNIMO {int(obj * 0.85)}), repartidas en escenas de 20 a 45 palabras. {pos}
+{reglas}
+Devuelve SOLO JSON: {{"escenas": [{{"hablado": "...", "imagen": {{...}}, "efecto": "polvo"}}]}}"""
+        esc = []
+        for intento in range(3):
+            j, m = pedir(cp, temp=0.85)
+            esc = j.get("escenas", []) if isinstance(j, dict) else []
+            n = sum(palabras(e.get("hablado", "")) for e in esc)
+            malas = [e for e in esc if re.search(r"\d", e.get("hablado", "")) or (e.get("imagen") or {}).get("tipo") not in ("ia", "real", "video")]
+            if n >= obj * 0.8 and not malas:
+                break
+            cp += f"\n\nTu respuesta anterior tenía {n} palabras{' y escenas con cifras o sin imagen válida' if malas else ''}: corrígelo (mínimo {int(obj * 0.85)} palabras, números en letra)."
+        indices.append(len(escenas))
+        escenas += esc
+        ultimo = esc[-1]["hablado"] if esc else ultimo
+        print(f"capítulo {k + 1}/{len(caps)} «{c['titulo']}»: {len(esc)} escenas, {sum(palabras(e['hablado']) for e in esc)} palabras")
+    E["escenas"] = escenas
+    E["capitulos"] = [{"escena": i, "titulo": c["titulo"]} for i, c in zip(indices, caps)]
+    E["capitulos"][0]["escena"] = 0
+    return E, m
+
+
+if MINUTOS:
+    h, modelo = por_capitulos()
+else:
+    h, modelo = pedir(PROMPT, temp=0.9)
 errs = valida(h)
-for intento in range(3):
+for intento in range(0 if MINUTOS else 3):
     if not errs:
         break
     print(f"guion largo: {errs} -> corrijo")

@@ -110,7 +110,7 @@ ESC = H["escenas"]
 def proyecto_json():
     caps = [{"desde": c["escena"], "escena": c["escena"], "titulo": c["titulo"]} for c in H["capitulos"]
             if 0 <= c["escena"] < len(ESC)]
-    json.dump({"formato": "YOUTUBE", "duracion_max": 900, "duracion_min": 0, "fecha": "", "fuentes": "",
+    json.dump({"formato": "YOUTUBE", "duracion_max": 1500, "duracion_min": 0, "fecha": "", "fuentes": "",
                "titulo_noticia": H["titulo"], "tono": "grave", "mencion": 0, "zum": [],
                "efectos": ["nada" if e["imagen"]["tipo"] == "video" else e.get("efecto", "polvo") for e in ESC],
                "fuego": [],
@@ -124,7 +124,7 @@ def proyecto_json():
 if E["fase"] == "voz":
     proyecto_json()
     open(f"{P}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
-    env = "TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts"
+    env = "TTS_MAX=3000 TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts"
     print(sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}')[1].strip()[-400:])
     E = estado("imagenes")
     guardar_proyecto()
