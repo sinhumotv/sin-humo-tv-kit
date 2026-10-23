@@ -86,7 +86,8 @@ ESCENAS: entre 40 y 52 escenas, 1350-1650 palabras en total. Cada escena = una i
   · {{"tipo": "video", "busqueda": "<2-4 palabras en inglés para buscar un clip de vídeo de stock real>",
       "otras": ["<otra búsqueda más general>", "<otra aún más general>"], "descripcion": "<qué debe verse>"}}
     Clip de vídeo REAL de archivo de stock (Pixabay): {L.get('video', 'lugares, objetos, ambientes y acciones reales')}.
-    Es la opción OBLIGATORIA: úsala en TODAS las escenas salvo como mucho 2. Elige búsquedas de clips CON MOVIMIENTO o acción. Busca cosas genéricas que existan en vídeo (no personas
+    Es la opción OBLIGATORIA: úsala en TODAS las escenas salvo como mucho 2. Elige búsquedas de vídeo REAL y cotidiano, con movimiento y gente o lugares de verdad (p. ej. "people walking street",
+    "engineer working workshop", "hands typing laptop"); nunca "futuristic", "hologram", "3d" ni "digital". Busca cosas genéricas que existan en vídeo (no personas
     concretas ni hechos concretos): p. ej. "ancient temple ruins", "night city rain", "robot arm factory".
   · {{"tipo": "real", "busqueda": "<búsqueda en inglés para Wikimedia Commons, 2-5 palabras concretas>",
       "otras": ["<otra más general>", "<otra más general aún>"], "descripcion": "<qué debe verse>"}}

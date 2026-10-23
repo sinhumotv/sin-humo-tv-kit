@@ -186,7 +186,7 @@ def pixabay(q):
     if not PIXA:
         return []
     url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
-        {"key": PIXA, "q": q[:100], "per_page": 20, "safesearch": "true", "order": "popular"})
+        {"key": PIXA, "q": q[:100], "per_page": 20, "safesearch": "true", "video_type": "film"})
     for intento in range(3):
         try:
             d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40))
@@ -198,7 +198,9 @@ def pixabay(q):
         return []
     out = []
     for h in d.get("hits", []):
-        if h.get("duration", 0) < 5 or "ai generated" in h.get("tags", "").lower():
+        tags = h.get("tags", "").lower()
+        if h.get("duration", 0) < 5 or re.search(r"\bai\b|generated|3d|render|cgi|animation|abstract|digital art|"
+                                                     r"hologram|futuristic|sci-fi|motion graphic|loop|background|particles", tags):
             continue
         v = h["videos"]
         # el tamaño más pequeño que llegue a 1920 de ancho (o el mayor disponible)
@@ -291,7 +293,9 @@ Se busca un clip de vídeo real que acompañe: {im.get('descripcion', im['busque
 Te paso {len(ok)} fotogramas de clips candidatos (en orden, desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
 Elige el que mejor acompañe a la escena (vale algo relacionado con el lugar, el ambiente o la época, como en cualquier
 documental). Descarta los que no peguen nada, los que se vean de otra época que desentone o con texto en pantalla.
-Prefiere clips con ACCIÓN o movimiento visible (gente, máquinas, vehículos, cámara que se mueve) frente a planos casi quietos.
+Prefiere vídeo REAL y natural, como grabado con una cámara normal o un móvil: gente de verdad, calles, casas, trabajos,
+lugares y objetos reales, con movimiento visible. DESCARTA todo lo que parezca hecho por ordenador o con IA (renders 3D,
+animaciones, hologramas, efectos, ciudades o robots de ciencia ficción, fondos abstractos) y los planos casi quietos.
 {L.get('reglas_reales', '')} Devuelve SOLO JSON con TODOS los que valen, del mejor al peor (lista vacía si ninguno):
 {{"validos": [<números>]}}"""
     try:
