@@ -66,6 +66,7 @@ def huecos_ocupados():
 
 
 def siguiente_hueco():
+    AHORA = dt.datetime.now(MAD)   # la hora real del momento de programar (la ejecución puede llevar horas)
     """Primera fecha libre del calendario (cada 2 días desde 'inicio', a la hora del canal) con margen de 30 min."""
     hh, mm = map(int, L["hora"].split(":"))
     d = dt.datetime.fromisoformat(L["inicio"]).replace(hour=hh, minute=mm, tzinfo=MAD)
