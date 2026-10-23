@@ -215,6 +215,8 @@ for i in range(N):
     h["gancho_tipo"] = h.get("gancho_tipo") or tipos[i]
     h["portada_s"] = 0.8
     h["estilo_imagen"] = C.get("estilo_imagen", "")
+    if C.get("color_subtitulo"):
+        h["color"] = C["color_subtitulo"]
     buenos.append(h)
 
 for k, h in enumerate(buenos, 1):

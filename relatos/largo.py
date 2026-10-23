@@ -106,6 +106,7 @@ def proyecto_json():
                "titulo_noticia": H["titulo"], "tono": "grave", "mencion": 0, "zum": [],
                "efectos": [e.get("efecto", "polvo") for e in ESC], "fuego": [],
                "capitulos": caps,
+               "color": C.get("color_subtitulo"),
                "escenas": [{"titulo": "", "hablado": e["hablado"], "subtitulo": e["subtitulo"]} for e in ESC]},
               open(f"{P}/proyecto.json", "w"), ensure_ascii=False, indent=1)
 

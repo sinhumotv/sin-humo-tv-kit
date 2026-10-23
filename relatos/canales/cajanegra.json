@@ -39,5 +39,10 @@
   "tono": "narrador de documental de true crime, serio, intrigante y respetuoso con las víctimas",
   "real": "fotografías de archivo de la época, lugares reales, periódicos y documentos históricos del caso",
   "reglas_reales": "Rechaza imágenes con cadáveres, sangre, heridas o violencia explícita, y primeros planos de víctimas."
- }
+ },
+ "color_subtitulo": [
+  230,
+  38,
+  38
+ ]
 }

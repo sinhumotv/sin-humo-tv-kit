@@ -44,6 +44,8 @@ def voz():
          "efectos": [e.get("efecto", "polvo") for e in ESC],
          "fuego": [i for i, e in enumerate(ESC) if e.get("fuego")],
          "escenas": [{"titulo": "", "hablado": e["hablado"], "subtitulo": e["subtitulo"]} for e in ESC]}
+    if H.get("color"):
+        P["color"] = H["color"]
     json.dump(P, open(f"{D}/proyecto.json", "w"), ensure_ascii=False, indent=1)
     open(f"{D}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
     print(sh(f'python3 "{AQUI}/voz_relato.py" "{D}" --tono relato --voz {VOZ}').strip().splitlines()[-1])

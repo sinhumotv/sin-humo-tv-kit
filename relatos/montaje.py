@@ -20,7 +20,7 @@ try:
     fnt.set_variation_by_name("Bold")
 except Exception:
     pass
-AMARILLO = (242, 190, 70)
+AMARILLO = tuple(P.get("color") or (242, 190, 70))  # color de la palabra que suena (por canal)
 XF = 0.35  # fundido entre imágenes (s)
 
 # ---------- imágenes y movimiento ----------

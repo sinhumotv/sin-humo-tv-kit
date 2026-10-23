@@ -65,5 +65,10 @@
   "tono": "divulgador científico apasionado, claro y con asombro, sin sensacionalismo",
   "real": "fotografías reales de la tecnología, laboratorios, robots, prototipos, lugares o científicos de los que se habla",
   "reglas_reales": "Rechaza logotipos como protagonista, capturas de pantalla con mucho texto y montajes o memes."
- }
+ },
+ "color_subtitulo": [
+  40,
+  230,
+  120
+ ]
 }
