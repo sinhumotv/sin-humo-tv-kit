@@ -37,6 +37,15 @@ USADOS = os.path.join(DAT, CANAL + ".txt")
 if not os.path.exists(USADOS):
     open(USADOS, "w").close()
 
+# no repetir horas ya publicadas hoy; en la repesca, solo las horas que aún no han pasado
+HECHAS = {l.split("|")[1] for l in open(USADOS, encoding="utf-8") if l.startswith(f"{HOY:%Y-%m-%d}|")}
+HORAS = [h for h in HORAS if h not in HECHAS]
+if os.environ.get("REPESCA"):
+    HORAS = [h for h in HORAS if h >= (HOY + dt.timedelta(minutes=15)).strftime("%H:%M")]
+if not HORAS:
+    print("Nada pendiente hoy en", CANAL)
+    sys.exit(0)
+
 print(sh(f'python3 "{AQUI}/guion.py" "{CFG_P}" "{USADOS}" "{BASE}/guiones" {len(HORAS)}', ok=True))
 carpetas = sorted(os.listdir(f"{BASE}/guiones")) if os.path.isdir(f"{BASE}/guiones") else []
 resumen = []

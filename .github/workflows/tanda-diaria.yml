@@ -5,6 +5,7 @@ name: Tanda diaria de vídeos
 on:
   schedule:
     - cron: "17 4 * * *"   # 04:17 UTC = 05:17 (invierno) / 06:17 (verano) en Madrid
+    - cron: "17 9 * * *"   # repesca: rehace solo los vídeos que hayan fallado (horas aún por llegar)
   workflow_dispatch:
     inputs:
       canal:
@@ -39,6 +40,7 @@ jobs:
           BUFFER_KEY: ${{ secrets[format('{0}_BUFFER_KEY', matrix.canal)] }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           N: ${{ inputs.n }}
+          REPESCA: ${{ github.event.schedule == '17 9 * * *' && '1' || '' }}
           WHISPER_MODELO: base
         run: |
           [ -z "$N" ] && unset N
