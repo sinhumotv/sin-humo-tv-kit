@@ -31,7 +31,7 @@
   "18:00",
   "21:00"
  ],
- "reglas_extra": "Nada de inventar: los datos de IA actual tienen que ser reales y conocidos (si no estás seguro de un dato, no lo pongas); no cites fechas, empresas ni cifras concretas de noticias de las que no estés seguro. Lo del año 2100 se presenta como previsión o posibilidad («podría», «según los expertos»), nunca como hecho seguro. Sin alarmismo ni conspiraciones. En las imágenes, nada de logotipos ni marcas reales ni caras de personas famosas. Como efecto usa sobre todo \"polvo\" o \"nada\" (nunca \"brasas\" salvo que haya fuego) y \"fuego\": false.",
+ "reglas_extra": "Nada de inventar: los datos de IA actual tienen que ser reales y conocidos (si no estás seguro de un dato, no lo pongas); no cites fechas, empresas ni cifras concretas de noticias de las que no estés seguro. Lo del año 2100 se presenta como previsión o posibilidad («podría», «según los expertos»), nunca como hecho seguro; las cifras del futuro van siempre como estimación («podría reducir», «según algunos cálculos»). Sin alarmismo ni conspiraciones. En las imágenes, nada de logotipos ni marcas reales ni caras de personas famosas. Como efecto usa sobre todo \"polvo\" o \"nada\" (nunca \"brasas\" salvo que haya fuego) y \"fuego\": false.",
  "noticias": {
   "por_dia": 2,
   "horas": 72,

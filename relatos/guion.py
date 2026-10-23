@@ -115,6 +115,7 @@ NOTICIAS REALES DE LOS ÚLTIMOS DÍAS (leídas hoy de medios; son la ÚNICA fuen
 Los vídeos 1 a {k} son VÍDEOS DE NOTICIA: cada uno cuenta UNA noticia distinta de esa lista (elige las de más impacto y
 más interesantes para el público general, y nunca una ya publicada). Cuenta SOLO lo que dice su texto: no añadas cifras,
 nombres, fechas ni detalles que no aparezcan. Puedes explicar en una frase qué significa para la gente, sin inventar.
+No exageres: nada de absolutos («exacto», «siempre», «nunca», «para siempre») que el texto no diga.
 En esos vídeos, "titulo" es el tema de la noticia y la primera línea de "descripcion" dice el medio (p. ej. «Según Xataka, …»).
 Si una noticia es solo publicidad, rumores o no trata de verdad de IA o tecnología, descártala.
 El resto de vídeos son de los temas generales del canal, no de esta lista.
