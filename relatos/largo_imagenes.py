@@ -125,11 +125,16 @@ def bajar(url):
 def real(i, e):
     im = e["imagen"]
     cands = []
-    res = commons(im["busqueda"])
-    if not res and len(im["busqueda"].split()) > 2:
-        res = commons(" ".join(im["busqueda"].split()[:2]))
     usadas = {v.split(" · ")[-1] for v in CRED.values()}
-    for c in [c for c in res if c["pagina"] not in usadas]:
+    res, vistas = [], set(usadas)
+    for q in [im["busqueda"]] + list(im.get("otras") or []) + [" ".join(im["busqueda"].split()[:2])]:
+        for c in commons(q):
+            if c["pagina"] not in vistas:
+                vistas.add(c["pagina"])
+                res.append(c)
+        if len(res) >= 6:
+            break
+    for c in res:
         b = bajar(c["url"])
         if not b:
             continue
@@ -140,7 +145,7 @@ def real(i, e):
             continue
         c["pil"] = pil
         cands.append(c)
-        if len(cands) == 4:
+        if len(cands) == 6:
             break
     if not cands:
         return None
@@ -154,7 +159,9 @@ def real(i, e):
     q = f"""Vídeo de YouTube: "{H['titulo']}". Escena: «{e['hablado']}».
 Se busca una imagen real que muestre: {im.get('descripcion', im['busqueda'])}.
 Te paso {len(cands)} imágenes candidatas (en orden, desde 0). Títulos: {json.dumps([c['titulo'] for c in cands], ensure_ascii=False)}.
-Elige la que de verdad muestre eso y quede bien en un vídeo (buena calidad, nada de texto ilegible ni esquemas raros).
+Elige la que mejor acompañe a la escena y quede bien en un vídeo. No hace falta que sea exactamente esa escena: vale una
+obra de arte, foto o lugar real del mismo personaje, objeto, lugar o época (es un vídeo documental, el espectador lo
+entiende). Descártalas solo si no tienen relación, tienen mala calidad, texto ilegible o son esquemas raros.
 {L.get('reglas_reales', '')} Si ninguna encaja de verdad, elige -1 y escribe "prompt_ia": un prompt EN INGLÉS de 40-80
 palabras para generar una imagen horizontal fotorrealista de la escena (sin texto, sin sangre, sin caras de personas reales).
 Devuelve SOLO JSON: {{"elegida": <número o -1>, "prompt_ia": "..."}}"""
@@ -218,8 +225,9 @@ for k, (i, prompt, out) in enumerate(pend):
     if r == "cuota":
         print(f"CUOTA de Cloudflare agotada: {hechas} imágenes hoy, faltan {len(pend) - k}")
         guardar()
-        if not os.environ.get("FORZAR"):
-            sys.exit(3)
+        faltan_ia = [x for x in pend[k:] if isinstance(x[0], int)]
+        if not os.environ.get("FORZAR") or len(faltan_ia) > 3:
+            sys.exit(3)   # se sigue otro día con la cuota nueva (nunca rellenar un vídeo con imágenes repetidas)
         # FORZAR: completa con imágenes ya hechas (otro encuadre y en espejo) para no esperar al día siguiente
         hay = [j for j in range(1, len(ESC) + 1) if os.path.exists(f"{D}/imgs/{j:02d}.jpg")]
         if not hay:

@@ -69,7 +69,8 @@ ESTRUCTURA PARA RETENER AL ESPECTADOR:
 ESCENAS: entre 40 y 52 escenas, 1350-1650 palabras en total. Cada escena = una idea y una imagen, de 20 a 45 palabras.
 - "hablado": texto exacto que leerá la voz. Números SIEMPRE en letra, sin siglas, sin emojis, sin comillas.
 - "imagen": una de estas dos:
-  · {{"tipo": "real", "busqueda": "<búsqueda en inglés para Wikimedia Commons, 2-5 palabras muy concretas>", "descripcion": "<qué debe verse>"}}
+  · {{"tipo": "real", "busqueda": "<búsqueda en inglés para Wikimedia Commons, 2-5 palabras concretas>",
+      "otras": ["<otra búsqueda más general>", "<otra más general aún, p. ej. el personaje o el lugar>"], "descripcion": "<qué debe verse>"}}
     para {L.get('real', 'fotografías o documentos reales de lo que se cuenta')}. Úsalo en la MAYORÍA de las escenas (unas dos de cada tres),
     siempre que exista de verdad una imagen así (personajes, lugares, objetos, obras de arte, documentos de época).
   · {{"tipo": "ia", "prompt": "<EN INGLÉS, 40-80 palabras>"}}: imagen horizontal fotorrealista de la escena. Describe a cada
