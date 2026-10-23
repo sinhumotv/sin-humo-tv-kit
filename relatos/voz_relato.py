@@ -22,7 +22,8 @@ OBJ_CPS = 12.5
 ESTILO = {
     "normal": ("Presentador joven de noticias para redes sociales, acento castellano de España (la z y la c como en "
                "Madrid), cercano, enérgico y con intriga en las preguntas, ritmo ágil. Pausa corta y clara entre párrafos."),
-    "relato": ("Narrador de leyendas y mitología, voz grave, cálida y profunda, acento castellano de España (la z y la c como en Madrid, nada de acento latino), "
+    "relato": ("Lee en español de España, con acento castellano peninsular de Madrid: la z y la c se pronuncian como en España (cielo, cerveza, nación con el sonido de la z española) y la s es la de España. Nada de acento latinoamericano ni neutro. "
+               "Narrador de leyendas y mitología, voz grave, cálida y profunda, acento castellano de España (la z y la c como en Madrid, nada de acento latino), "
                "tono épico e intrigante, como quien cuenta una historia antigua al lado del fuego; ritmo pausado, con emoción contenida y pequeñas pausas dramáticas. Pausa corta y clara entre párrafos."),
     "grave": ("Presentador de noticias, acento castellano de España (la z y la c como en Madrid), tono serio, sobrio y "
               "respetuoso, ritmo pausado sin pausas largas. Pausa corta y clara entre párrafos."),
@@ -65,7 +66,8 @@ def generar(texto, voz, tono, k):
     body = {"contents": [{"parts": [{"text": "[Notas de dirección: " + ESTILO[tono]
                                              + " Lee solo el texto de TRANSCRIPCIÓN, sin añadir nada.]\nTRANSCRIPCIÓN:\n" + texto}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
-                                 "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voz}}}}}
+                                 "speechConfig": {"languageCode": "es-ES",  # español de España
+                                                  "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voz}}}}}
     errores = []
     for m in list(MODELOS):
         for intento in range(3):
