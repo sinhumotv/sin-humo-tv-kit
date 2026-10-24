@@ -47,6 +47,7 @@ jobs:
       - name: Fabricar y programar el largo
         env:
           GEMINI_KEY: ${{ secrets[format('{0}_GEMINI_KEY', matrix.canal)] || secrets.GEMINI_KEY }}
+          GEMINI_KEY_RESERVA: ${{ secrets.GEMINI_KEY_RESERVA }}
           CF_ACCOUNT: ${{ secrets[format('{0}_CF_ACCOUNT', matrix.canal)] }}
           CF_TOKEN: ${{ secrets[format('{0}_CF_TOKEN', matrix.canal)] }}
           REFRESH: ${{ secrets[format('METRICOOL_{0}_REFRESH', matrix.canal)] }}

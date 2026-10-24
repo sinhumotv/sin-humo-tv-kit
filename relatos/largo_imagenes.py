@@ -363,14 +363,68 @@ Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico 
     return False
 
 
-for i, e in enumerate(ESC, 1):
-    if e["imagen"]["tipo"] != "video" or os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
-        continue
-    if video(i, e):
-        print(f"escena {i}: vídeo · {e['imagen']['clip_id']}")
-    else:
-        e["imagen"]["tipo"] = "real"   # sin clip: se intenta con una foto real
-        print(f"escena {i}: sin clip de vídeo -> foto real")
+def ambiente(i, e):
+    """Vídeo real de ambiente del canal (cuando ningún clip concreto vale)."""
+    im, destino = e["imagen"], f"{D}/clips/{i:02d}.mp4"
+    usados = {str(x.get("imagen", {}).get("clip_id")) for x in ESC}
+    genericas = list(L.get("video_generico") or [])
+    for q in genericas[i % max(1, len(genericas)):] + genericas:
+        for c in pixabay(q):
+            if str(c["id"]) in usados or not bajar_clip(c["url"], destino):
+                continue
+            if movimiento(destino) >= 3.0:
+                im["clip"], im["clip_id"] = c["url"], c["id"]
+                CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+                print(f"  escena {i}: vídeo de ambiente ({q})")
+                return True
+    return False
+
+
+def lote(indices):
+    """Clips para varias escenas con UNA sola consulta a Gemini (antes era una por escena)."""
+    vistos = {str(x.get("imagen", {}).get("clip_id")) for x in ESC if x.get("imagen", {}).get("clip_id")}
+    gen = list(L.get("video_generico") or [])
+    items = []
+    for i in indices:
+        im = ESC[i - 1]["imagen"]
+        b = {"busqueda": im.get("busqueda", ""), "otras": list(im.get("otras") or [])}
+        c = stock.preparar(i, b, gen, vistos, maximo=6, buscador=candidatos)
+        vistos |= {str(x["id"]) for x in c}
+        items.append((i, ESC[i - 1]["hablado"], c))
+    orden = stock.elegir_lote(H["titulo"], items, L.get("reglas_reales", ""), C.get("visual", ""), "horizontal")
+    hechos = set()
+    for i, _, c in items:
+        im, destino = ESC[i - 1]["imagen"], f"{D}/clips/{i:02d}.mp4"
+        for k in orden.get(i, []):
+            cc = c[k]
+            if not (bajar_extra(cc, destino) if cc.get("fuente") else bajar_clip(cc["url"], destino)):
+                continue
+            if movimiento(destino) < 3.0:
+                continue
+            im["clip"], im["clip_id"] = cc["url"], cc["id"]
+            if cc.get("fuente"):
+                im["clip_ini"] = cc.get("inicio", 1)
+            CRED[f"{i:02d}"] = cc.get("credito") or f"Vídeo de Pixabay · {cc['pagina']}"
+            hechos.add(i)
+            break
+        if i not in hechos and ambiente(i, ESC[i - 1]):
+            hechos.add(i)
+        if i not in hechos:
+            for f in (destino, destino.replace("/clips/", "/imgs/").replace(".mp4", ".jpg")):
+                if os.path.exists(f):
+                    os.remove(f)
+    return hechos
+
+
+pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "video" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+for k in range(0, len(pend), 12):
+    hechos = lote(pend[k:k + 12])
+    for i in pend[k:k + 12]:
+        if i in hechos:
+            print(f"escena {i}: vídeo · {ESC[i - 1]['imagen']['clip_id']}")
+        else:
+            ESC[i - 1]["imagen"]["tipo"] = "real"   # sin clip: se intenta con una foto real
+            print(f"escena {i}: sin clip de vídeo -> foto real")
     guardar()
 
 # 1) material real (no gasta cuota de Cloudflare)
@@ -397,9 +451,11 @@ for i, e in enumerate(ESC, 1):
             "cinematic", "realistic", "image", "shot", "style", "showing", "at", "by", "for", "from", "to"}]
     im.setdefault("busqueda", " ".join(pal[:4]) or "dramatic sky clouds")
     im.setdefault("descripcion", im.get("prompt", ""))
-    if video(i, e):
-        im["tipo"] = "video"
-        print(f"escena {i}: vídeo real en vez de IA · {im['clip_id']}")
+pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "ia" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+for k in range(0, len(pend), 12):
+    for i in lote(pend[k:k + 12]):
+        ESC[i - 1]["imagen"]["tipo"] = "video"
+        print(f"escena {i}: vídeo real en vez de IA · {ESC[i - 1]['imagen']['clip_id']}")
     guardar()
 
 # 3) imagen base de la miniatura: un fotograma REAL del propio vídeo (lo elige Gemini). La IA solo si no hay nada.

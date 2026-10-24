@@ -75,9 +75,19 @@ def reales(indices):
         usados |= {x.strip() for x in open(os.environ["CLIPS_USADOS"], encoding="utf-8").read().splitlines() if x.strip()}
     info = H.setdefault("clips_info", {})
     sin = []
+    vistos = {str(x) for x in usados}
+    # 1) candidatos de todas las escenas, 2) UNA consulta a Gemini para elegir, 3) descargas
+    lote = []
     for i in indices:
-        r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"],
-                            (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""), fuentes)
+        c = stock.preparar(i, H["busquedas"][i - 1], gen, vistos, fuentes)
+        vistos |= {x["id"] for x in c}
+        lote.append((i, ESC[i - 1]["hablado"], c))
+    orden = stock.elegir_lote(H["titulo"], lote, (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""))
+    bajados = {str(x) for x in usados}
+    for i, _, c in lote:
+        r = stock.descargar(i, [x for x in c], orden.get(i, []), gen, bajados, f"{D}/clips", f"{D}/imgs", fuentes)
+        if r:
+            bajados.add(r["clip_id"])
         if not r:
             sin.append(i)
             continue

@@ -145,6 +145,12 @@ def main():
     partes, usados = [], []
     for i, t in enumerate(trozos(texto)):
         r = generar(t, voz, tono, k)
+        res = "".join(os.environ.get("GEMINI_KEY_RESERVA", "").split())
+        if r is None and res and k != res:   # clave del canal sin cuota hoy: misma voz con la clave de reserva
+            print("Voz: sigo con la clave de reserva de Gemini")
+            k = res
+            os.environ["GEMINI_KEY"] = os.environ["GEMINI_API_KEY"] = res
+            r = generar(t, voz, tono, k)
         if r is None:  # plan C para todo el texto (no mezclar voces)
             partes, usados = plan_c_piper(texto, tmp), ["PIPER sharvard (CC BY 3.0: citar en la descripción)"]
             voz = "Piper sharvard"

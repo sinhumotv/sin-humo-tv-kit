@@ -41,6 +41,7 @@ jobs:
       - name: Hacer y programar los vídeos
         env:
           GEMINI_KEY: ${{ secrets[format('{0}_GEMINI_KEY', matrix.canal)] || secrets.GEMINI_KEY }}
+          GEMINI_KEY_RESERVA: ${{ secrets.GEMINI_KEY_RESERVA }}
           CF_ACCOUNT: ${{ secrets[format('{0}_CF_ACCOUNT', matrix.canal)] }}
           CF_TOKEN: ${{ secrets[format('{0}_CF_TOKEN', matrix.canal)] }}
           BUFFER_KEY: ${{ secrets[format('{0}_BUFFER_KEY', matrix.canal)] }}

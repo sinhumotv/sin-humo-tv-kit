@@ -133,7 +133,8 @@ def nasa(q):
                      r"simulation|visualization|graphic", tit + " " + " ".join(dt_.get("keywords") or []), re.I):
             continue
         thumb = next((l["href"] for l in it.get("links", []) if l.get("render") == "image"), None)
-        out.append({"id": "nasa:" + dt_.get("nasa_id", ""), "coleccion": it.get("href"), "thumb": thumb, "inicio": 6,
+        esc = lambda u: u.replace(" ", "%20") if u else u
+        out.append({"id": "nasa:" + dt_.get("nasa_id", ""), "coleccion": esc(it.get("href")), "thumb": esc(thumb), "inicio": 6,
                     "tags": tit, "pagina": f"https://images.nasa.gov/details/{dt_.get('nasa_id', '')}",
                     "vertical": False, "fuente": "nasa",
                     "credito": f"Vídeo de la NASA · https://images.nasa.gov/details/{dt_.get('nasa_id', '')}"})
@@ -147,7 +148,7 @@ def archive(q):
     out = []
     for doc in ((d or {}).get("response") or {}).get("docs", []):
         ide = doc["identifier"]
-        out.append({"id": "ia:" + ide, "ia": ide, "thumb": None, "tags": doc.get("title", ""),
+        out.append({"id": "ia:" + ide, "ia": ide, "thumb": f"https://archive.org/services/img/{ide}", "tags": doc.get("title", ""),
                     "pagina": f"https://archive.org/details/{ide}", "vertical": False, "fuente": "archive",
                     "credito": f"Internet Archive (dominio público) · https://archive.org/details/{ide}"})
     return out
@@ -266,7 +267,7 @@ tecnología real de la que se habla), no un paisaje cualquiera. Varía: que no s
 Añade 2 alternativas un poco más generales pero del mismo tema. Nada de sangre, armas apuntando ni violencia explícita.
 Devuelve SOLO JSON: {{"escenas": [{{"busqueda": "...", "otras": ["...", "..."]}}, ...]}} (una por escena, en orden)."""
     try:
-        j, _ = pedir(q, temp=0.4, max_tokens=4000)
+        j, _ = pedir(q, temp=0.4, max_tokens=4000, ligero=True)
         es = j.get("escenas") if isinstance(j, dict) else None
         if isinstance(es, list) and len(es) >= len(escenas):
             return es[:len(escenas)]
@@ -336,6 +337,113 @@ Devuelve SOLO JSON con los válidos, del mejor al peor: {{"validos": [<números>
         if _bajar_clip(ok[k], mp4, jpg):
             return {"clip": mp4, "clip_id": ok[k]["id"], "credito": ok[k]["credito"], "atribucion": ok[k].get("atribucion", False)}
     # último recurso: vídeo de ambiente del canal
+    for q in gen[i % max(1, len(gen)):] + gen:
+        for c in buscar(q)[:4]:
+            if c["id"] not in vistos and _bajar_clip(c, mp4, jpg):
+                print(f"  escena {i}: vídeo de ambiente ({q})")
+                return {"clip": mp4, "clip_id": c["id"], "credito": c["credito"]}
+    for f in (mp4, jpg):
+        if os.path.exists(f):
+            os.remove(f)
+    return None
+
+
+# ---------- elección por lotes: UNA consulta a Gemini para todas las escenas (ahorra cuota) ----------
+def preparar(i, b, genericas, vistos, fuentes=("pixabay",), maximo=6, buscador=None):
+    """Candidatos con miniatura para la escena i (sin consultar a Gemini)."""
+    buscador = buscador or (lambda q: buscar_todo(q, fuentes))
+    vistos = {str(x) for x in vistos}
+    cands = []
+    gen = list(genericas or [])
+    for q in [b.get("busqueda", "")] + list(b.get("otras") or []) + gen[(i * 3) % max(1, len(gen)):][:2]:
+        if not q:
+            continue
+        for c in buscador(q):
+            if str(c["id"]) not in vistos and all(str(c["id"]) != str(x["id"]) for x in cands):
+                cands.append(c)
+        if len(cands) >= maximo * 2:
+            break
+    ok = []
+    for c in cands:
+        try:
+            t = miniatura(c)
+            im = Image.open(io.BytesIO(t)).convert("RGB") if t else None
+        except Exception:
+            im = None
+        if im is None:
+            continue
+        im.thumbnail((300, 300))
+        c["mini_im"] = im
+        ok.append(c)
+        if len(ok) == maximo:
+            break
+    return ok
+
+
+def _hoja(cands):
+    """Una imagen con los candidatos numerados (0, 1, 2...) para que Gemini los vea de un vistazo."""
+    from PIL import ImageDraw
+    n = len(cands)
+    cols = min(3, n)
+    filas = (n + cols - 1) // cols
+    W, H = 300, 300
+    hoja = Image.new("RGB", (cols * W, filas * H), (20, 20, 20))
+    d = ImageDraw.Draw(hoja)
+    for k, c in enumerate(cands):
+        im = c["mini_im"]
+        x, y = (k % cols) * W + (W - im.width) // 2, (k // cols) * H + (H - im.height) // 2
+        hoja.paste(im, (x, y))
+        d.rectangle(((k % cols) * W, (k // cols) * H, (k % cols) * W + 44, (k // cols) * H + 40), fill=(255, 220, 0))
+        d.text(((k % cols) * W + 12, (k // cols) * H + 6), str(k), fill=(0, 0, 0), font_size=28)
+    buf = io.BytesIO()
+    hoja.save(buf, "JPEG", quality=80)
+    return buf.getvalue()
+
+
+def elegir_lote(titulo, escenas, reglas="", visual="", formato="vertical"):
+    """escenas: lista de (i, texto_hablado, candidatos). Devuelve {i: [orden de candidatos válidos]}."""
+    from gem import pedir
+    con = [(i, t, c) for i, t, c in escenas if c]
+    if not con:
+        return {}
+    lineas = []
+    for n, (i, t, c) in enumerate(con):
+        lineas.append(f"IMAGEN {n} = escena {i}: «{t}» · títulos: {json.dumps([x['tags'][:60] for x in c], ensure_ascii=False)}")
+    corte = ("Se recortarán en VERTICAL por el centro: descarta los que pierdan lo importante al recortar."
+             if formato == "vertical" else "Se verán en horizontal a pantalla completa.")
+    q = f"""Vídeo "{titulo}". Te paso {len(con)} imágenes, una por escena; en cada una hay varios clips candidatos
+numerados en amarillo (0, 1, 2...). Para cada escena elige los clips que muestren de forma RECONOCIBLE lo que cuenta la
+escena y el tema del vídeo. Lo que tiene que verse en este canal: {visual}
+{corte} Pueden venir de un banco de vídeo moderno, de Wikimedia Commons, de la NASA o de archivo histórico (estos con
+calidad de época: valen si encajan con la época). Descarta los borrosos o pixelados, los que tengan texto o logotipos,
+los que parezcan hechos por ordenador, y un paisaje o cielo genérico si hay algo más concreto.
+Si la historia es antigua o de otra época, descarta gente con ropa, coches, móviles u objetos actuales. Descarta mascotas,
+animales graciosos, caras sonrientes a cámara, deporte, fiestas y cualquier cosa alegre o turística que rompa el tono.
+{reglas}
+Sé exigente: mejor ninguno que uno que desentone. Escenas:
+""" + "\n".join(lineas) + """
+Devuelve SOLO JSON: {"escenas": [{"imagen": <número de IMAGEN>, "validos": [<números de clip, del mejor al peor>]}, ...]}"""
+    try:
+        j, _ = pedir(q, temp=0.2, imagenes=[_hoja(c) for _, _, c in con], max_tokens=3000, ligero=True)
+    except SystemExit:
+        return {i: list(range(len(c))) for i, _, c in con}   # Gemini no responde: en el orden de búsqueda
+    out = {}
+    for e in (j.get("escenas") or []) if isinstance(j, dict) else []:
+        n = e.get("imagen")
+        if isinstance(n, int) and 0 <= n < len(con):
+            i, _, c = con[n]
+            out[i] = [k for k in (e.get("validos") or []) if isinstance(k, int) and 0 <= k < len(c)]
+    return out
+
+
+def descargar(i, cands, orden, genericas, vistos, dir_clips, dir_imgs, fuentes=("pixabay",)):
+    """Baja el primer clip aprobado (o uno de ambiente del canal). Devuelve dict o None."""
+    mp4, jpg = f"{dir_clips}/{i:02d}.mp4", f"{dir_imgs}/{i:02d}.jpg"
+    for k in orden:
+        if _bajar_clip(cands[k], mp4, jpg):
+            c = cands[k]
+            return {"clip": mp4, "clip_id": c["id"], "credito": c["credito"], "atribucion": c.get("atribucion", False)}
+    gen = list(genericas or [])
     for q in gen[i % max(1, len(gen)):] + gen:
         for c in buscar(q)[:4]:
             if c["id"] not in vistos and _bajar_clip(c, mp4, jpg):

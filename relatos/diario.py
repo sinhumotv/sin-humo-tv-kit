@@ -43,6 +43,26 @@ def sh(c, cwd=None, ok=False):
     return salida
 
 
+def con_reserva(c, ok=False):
+    """Ejecuta c; si falla porque la clave de Gemini del canal ya no tiene cuota hoy, lo repite con la de reserva."""
+    import re
+    try:
+        out = sh(c, ok=ok)
+        if not ok or not re.search(r"quota|RESOURCE_EXHAUSTED|PerDay|Gemini no responde", out):
+            return out
+    except RuntimeError as e:
+        out = str(e)
+        if not re.search(r"quota|RESOURCE_EXHAUSTED|PerDay|Gemini no responde|429", out):
+            raise
+    sys.path.insert(0, AQUI)
+    from gem import usar_reserva
+    if not usar_reserva():
+        if ok:
+            return out
+        raise RuntimeError(out)
+    return sh(c, ok=ok)
+
+
 # registro (rama datos)
 DAT = os.path.join(BASE, "datos")
 sh(f"git clone -q --depth 1 --branch datos {REPO} {DAT} || (mkdir -p {DAT} && cd {DAT} && git init -q && git checkout -q --orphan datos)", ok=True)
@@ -77,7 +97,7 @@ def modo_de(hora):
     return "real" if hora in REALES else "ia"
 
 
-print(sh(f'python3 "{AQUI}/guion.py" "{CFG_P}" "{USADOS}" "{BASE}/guiones" {len(HORAS)}', ok=True))
+print(con_reserva(f'python3 "{AQUI}/guion.py" "{CFG_P}" "{USADOS}" "{BASE}/guiones" {len(HORAS)}', ok=True))
 carpetas = sorted(os.listdir(f"{BASE}/guiones")) if os.path.isdir(f"{BASE}/guiones") else []
 resumen = []
 for hora, sub in zip(HORAS, carpetas):
@@ -85,7 +105,7 @@ for hora, sub in zip(HORAS, carpetas):
     H = json.load(open(f"{D}/historia.json", encoding="utf-8"))
     try:
         for paso in ("voz", "imagenes", "montaje"):
-            print(sh(f'MODO_IMG={modo_de(hora)} CANAL_JSON="{CFG_P}" CLIPS_USADOS="{CLIPS_USADOS}" python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
+            print(con_reserva(f'MODO_IMG={modo_de(hora)} CANAL_JSON="{CFG_P}" CLIPS_USADOS="{CLIPS_USADOS}" python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
         modo = open(f"{D}/modo_imagenes.txt").read().strip() if os.path.exists(f"{D}/modo_imagenes.txt") else "ia"
         ids_clips = [str(v["clip_id"]) for v in json.load(open(f"{D}/historia.json", encoding="utf-8")).get("clips_info", {}).values()]
         with open(CLIPS_USADOS, "a", encoding="utf-8") as f:
