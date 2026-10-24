@@ -65,5 +65,10 @@
   38
  ],
  "visual": "Que se VEA que es un caso criminal o una muerte histórica: cinta policial, coche de policía con luces, escena del crimen acordonada, investigadores, lupa y huellas, esposas, sala de juicios y mazo de juez, celda o cárcel, archivos y carpetas de casos, periódicos antiguos, máquina de escribir, mapas con chinchetas, interrogatorio, y el lugar o la época real del caso (barcos, trenes, ciudades antiguas...). Nada de cadáveres, sangre ni armas apuntando.",
- "prueba_real": 5
+ "prueba_real": 5,
+ "fuentes": [
+  "pixabay",
+  "commons",
+  "archive"
+ ]
 }

@@ -57,7 +57,9 @@ tags = " ".join("#" + h.lstrip("#") for h in H["hashtags"])
 desc = H["descripcion"].strip()
 pregunta = H["pregunta"].strip()
 seguir = H.get("seguir") or CFG["seguir"][0]
-cuerpo = f"{desc}\n\n{pregunta}\n\n{seguir}\n\n{tags}"
+atrib = sorted(set((H.get("creditos_atribucion") or {}).values()))
+creditos = ("\n\nVídeos: " + "; ".join(atrib)) if atrib else ""
+cuerpo = f"{desc}\n\n{pregunta}\n\n{seguir}{creditos}\n\n{tags}"
 offset = int(H.get("portada_s", 0.8) * 1000)
 
 posts = {
@@ -66,7 +68,7 @@ posts = {
                                          "madeForKids": False, "notifySubscribers": True, "isAiGenerated": True}}},
     "instagram": {"text": cuerpo, "assets": [{"video": {"url": url, "metadata": {"thumbnailOffset": offset}}}],
                   "metadata": {"instagram": {"type": "reel", "shouldShareToFeed": True, "isAiGenerated": True}}},
-    "tiktok": {"text": f"{H['titulo_tiktok']}\n\n{desc}\n\n{tags}"[:2200],
+    "tiktok": {"text": f"{H['titulo_tiktok']}\n\n{desc}{creditos}\n\n{tags}"[:2200],
                "assets": [{"video": {"url": url, "metadata": {"thumbnailOffset": offset}}}],
                "metadata": {"tiktok": {"title": H["titulo_tiktok"][:150], "isAiGenerated": True}}},
 }

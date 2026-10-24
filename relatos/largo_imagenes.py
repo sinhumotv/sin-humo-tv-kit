@@ -9,6 +9,7 @@ import base64, io, json, os, re, subprocess, sys, time, urllib.error, urllib.par
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gem import pedir
+import stock
 from PIL import Image, ImageFilter
 
 D = os.path.abspath(sys.argv[1])
@@ -246,6 +247,18 @@ def bajar_clip(url, destino):
     return True
 
 
+def bajar_extra(c, destino):
+    """Trozo de vídeo de Commons/NASA/Internet Archive + su fotograma a pantalla completa."""
+    if not stock.bajar_segmento(c, destino, segundos=20):
+        return False
+    r = subprocess.run(f'ffmpeg -v error -y -i "{destino}" -frames:v 1 -f image2pipe -vcodec mjpeg -', shell=True,
+                       capture_output=True)
+    if not r.stdout:
+        return False
+    componer(Image.open(io.BytesIO(r.stdout))).save(destino.replace("/clips/", "/imgs/").replace(".mp4", ".jpg"), quality=92)
+    return True
+
+
 def movimiento(ruta):
     """Diferencia media entre dos fotogramas separados 1,5 s (clip casi quieto = número bajo)."""
     fr = []
@@ -259,21 +272,35 @@ def movimiento(ruta):
     return float(np.abs(np.frombuffer(fr[0], np.uint8).astype(float) - np.frombuffer(fr[1], np.uint8).astype(float)).mean())
 
 
+def candidatos(q):
+    """Pixabay (horizontal, Full HD) + las demás fuentes del canal (Wikimedia Commons, NASA, Internet Archive)."""
+    out = pixabay(q)[:6]
+    for f in [f for f in (C.get("fuentes") or []) if f != "pixabay"]:
+        try:
+            out += {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive}[f](q)[:3]
+        except Exception as ex:
+            print("  fuente", f, str(ex)[:60])
+    return out
+
+
 def video(i, e):
     im = e["imagen"]
     usados = {x.get("imagen", {}).get("clip_id") for x in ESC}
     cands, vistos = [], set(usados)
     genericas = list(L.get("video_generico") or [])
     for q in [im["busqueda"]] + list(im.get("otras") or []) + genericas[(i * 3) % max(1, len(genericas)):][:3]:
-        for c in pixabay(q):
+        for c in candidatos(q):
             if c["id"] not in vistos:
                 vistos.add(c["id"])
                 cands.append(c)
         if len(cands) >= 12:
             break
     ok = []
-    for c in cands[:8]:
-        b = miniatura_clip(c)
+    for c in cands[:12]:
+        try:
+            b = stock.miniatura(c) if c.get("fuente") else miniatura_clip(c)
+        except Exception:
+            b = None
         if b:
             try:
                 t = Image.open(io.BytesIO(b)).convert("RGB")
@@ -284,13 +311,15 @@ def video(i, e):
                 ok.append(c)
             except Exception:
                 pass
-        if len(ok) == 6:
+        if len(ok) == 8:
             break
     if not ok:
         return False
     q = f"""Vídeo documental de YouTube: "{H['titulo']}". Escena: «{e['hablado']}».
 Se busca un clip de vídeo real que acompañe: {im.get('descripcion', im['busqueda'])}.
-Te paso {len(ok)} fotogramas de clips candidatos (en orden, desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
+Te paso {len(ok)} fotogramas de clips candidatos (en orden, desde 0). Etiquetas o títulos: {json.dumps([c['tags'][:80] for c in ok], ensure_ascii=False)}.
+Pueden venir de un banco de vídeo, de Wikimedia Commons, de la NASA o de archivo histórico (estos con calidad de época:
+valen si encajan con la época de lo que se cuenta). Descarta los muy borrosos o pixelados.
 Elige el que mejor acompañe a la escena (vale algo relacionado con el lugar, el ambiente o la época, como en cualquier
 documental). Descarta los que no peguen nada, los que se vean de otra época que desentone o con texto en pantalla.
 Prefiere vídeo REAL y natural, como grabado con una cámara normal o un móvil: gente de verdad, calles, casas, trabajos,
@@ -307,14 +336,16 @@ Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico 
     destino = f"{D}/clips/{i:02d}.mp4"
     for k in orden:
         c = ok[k]
-        if not bajar_clip(c["url"], destino):
+        if not (bajar_extra(c, destino) if c.get("fuente") else bajar_clip(c["url"], destino)):
             continue
         mov = movimiento(destino)
         if mov < 3.0:   # casi quieto: parece una foto, se busca otro
             print(f"  escena {i}: clip {c['id']} casi sin movimiento ({mov:.1f}), descartado")
             continue
         im["clip"], im["clip_id"] = c["url"], c["id"]
-        CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+        if c.get("fuente"):
+            im["clip_ini"] = c.get("inicio", 1)
+        CRED[f"{i:02d}"] = c.get("credito") or f"Vídeo de Pixabay · {c['pagina']}"
         return True
     # ningún clip aprobado: vídeo real de ambiente del canal (nunca una foto)
     for q in genericas[i % max(1, len(genericas)):] + genericas:

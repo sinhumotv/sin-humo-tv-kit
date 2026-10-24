@@ -56,13 +56,14 @@ def reales(indices):
     """Pone vídeo REAL de internet (Pixabay) en las escenas indicadas (1..n). Devuelve las que no se consiguieron."""
     sys.path.insert(0, AQUI)
     import stock
-    if not stock.clave():
-        print("sin PIXABAY_KEY: no se puede usar vídeo real")
-        return list(indices)
-    os.makedirs(f"{D}/clips", exist_ok=True)
     cfg = {}
     if os.environ.get("CANAL_JSON") and os.path.exists(os.environ["CANAL_JSON"]):
         cfg = json.load(open(os.environ["CANAL_JSON"], encoding="utf-8"))
+    fuentes = cfg.get("fuentes") or ["pixabay"]
+    if not stock.hay_fuentes(fuentes):
+        print("sin fuentes de vídeo real disponibles")
+        return list(indices)
+    os.makedirs(f"{D}/clips", exist_ok=True)
     gen = (cfg.get("largo") or {}).get("video_generico") or []
     if "busquedas" not in H:
         H["busquedas"] = stock.busquedas(H["titulo"], ESC, cfg.get("tema", ""), cfg.get("visual", ""))
@@ -71,18 +72,20 @@ def reales(indices):
     cred = H.setdefault("creditos_video", {})
     usados = {c.get("clip_id") for c in H.get("clips_info", {}).values()}
     if os.environ.get("CLIPS_USADOS") and os.path.exists(os.environ["CLIPS_USADOS"]):
-        usados |= {int(x) for x in open(os.environ["CLIPS_USADOS"]).read().split() if x.isdigit()}
+        usados |= {x.strip() for x in open(os.environ["CLIPS_USADOS"], encoding="utf-8").read().splitlines() if x.strip()}
     info = H.setdefault("clips_info", {})
     sin = []
     for i in indices:
         r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"],
-                            (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""))
+                            (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""), fuentes)
         if not r:
             sin.append(i)
             continue
         usados.add(r["clip_id"])
         info[str(i)] = {"clip_id": r["clip_id"]}
         cred[str(i)] = r["credito"]
+        if r.get("atribucion"):
+            H.setdefault("creditos_atribucion", {})[str(i)] = r["credito"].rsplit(" · ", 1)[0]
         clips[str(i - 1)] = r["clip"]
         P["efectos"][i - 1] = "nada"
         print(f"escena {i}: vídeo real · {r['clip_id']}")

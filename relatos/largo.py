@@ -164,7 +164,12 @@ if E["fase"] == "montaje":
     os.makedirs(f"{P}/clips", exist_ok=True)
     for k, e in enumerate(ESC):
         c, dst = e["imagen"].get("clip"), f"{P}/clips/{k + 1:02d}.mp4"
-        if c and not os.path.exists(dst):
+        if c and not os.path.exists(dst) and e["imagen"].get("clip_ini") is not None:
+            # trozo de Commons / NASA / Internet Archive
+            import stock
+            if not stock.bajar_segmento({"url": c, "inicio": e["imagen"]["clip_ini"]}, dst, segundos=20):
+                print(f"clip {k + 1} no disponible: se usa su fotograma")
+        elif c and not os.path.exists(dst):
             try:
                 open(dst, "wb").write(urllib.request.urlopen(urllib.request.Request(
                     c, headers={"User-Agent": "SinHumoTV-largos/1.0"}), timeout=120).read())

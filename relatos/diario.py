@@ -88,7 +88,7 @@ for hora, sub in zip(HORAS, carpetas):
             print(sh(f'MODO_IMG={modo_de(hora)} CANAL_JSON="{CFG_P}" CLIPS_USADOS="{CLIPS_USADOS}" python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
         modo = open(f"{D}/modo_imagenes.txt").read().strip() if os.path.exists(f"{D}/modo_imagenes.txt") else "ia"
         ids_clips = [str(v["clip_id"]) for v in json.load(open(f"{D}/historia.json", encoding="utf-8")).get("clips_info", {}).values()]
-        with open(CLIPS_USADOS, "a") as f:
+        with open(CLIPS_USADOS, "a", encoding="utf-8") as f:
             f.write("".join(x + "\n" for x in ids_clips))
         if PROBAR:
             os.makedirs("prueba", exist_ok=True)

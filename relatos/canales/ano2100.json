@@ -91,5 +91,10 @@
   120
  ],
  "visual": "Que se VEA exactamente lo que se cuenta, con tecnología REAL de hoy: si habla de elecciones, urnas y gente votando; de medicina, hospitales, médicos y escáneres; de trabajo, oficinas, fábricas y robots industriales reales; de chips, laboratorios y salas de servidores; de coches autónomos, tráfico y ciudades; de educación, aulas y estudiantes. Nada de ciencia ficción, hologramas ni renders.",
- "prueba_real": 5
+ "prueba_real": 5,
+ "fuentes": [
+  "pixabay",
+  "commons",
+  "nasa"
+ ]
 }
