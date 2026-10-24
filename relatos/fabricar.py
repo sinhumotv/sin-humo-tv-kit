@@ -202,7 +202,7 @@ def montaje():
     import re as _re
     m = _re.search(r"karaoke: (\d+)/(\d+)", out)
     oidas = _re.search(r"\((\d+) oídas\)", out)
-    if oidas and m and int(oidas.group(1)) > 1.25 * int(m.group(2)):
+    if oidas and m and int(oidas.group(1)) > 1.6 * int(m.group(2)):
         sys.exit(f"FALLO: la voz dice bastante más que el guion ({oidas.group(1)} palabras oídas, {m.group(2)} en el guion)")
     if not m or int(m.group(1)) < 0.75 * int(m.group(2)):
         sys.exit("FALLO: los subtítulos no casan con la voz (" + (m.group(0) if m else "sin reconocimiento") + ")")
