@@ -83,9 +83,21 @@ def reales(indices):
         vistos |= {x["id"] for x in c}
         lote.append((i, ESC[i - 1]["hablado"], c))
     orden = stock.elegir_lote(H["titulo"], lote, (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""))
+    sin_aprobar = [i for i, _, c in lote if not orden.get(i)]
+    if sin_aprobar and gen:
+        lote2 = []
+        for n, i in enumerate(sin_aprobar):
+            b2 = {"busqueda": gen[(i * 2) % len(gen)], "otras": [gen[(i * 2 + 1) % len(gen)], gen[(i * 2 + 5) % len(gen)]]}
+            c2 = stock.preparar(i, b2, [], vistos, fuentes)
+            vistos |= {x["id"] for x in c2}
+            lote2.append((i, ESC[i - 1]["hablado"], c2))
+        orden2 = stock.elegir_lote(H["titulo"], lote2, (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""))
+        lote = [x for x in lote if x[0] not in sin_aprobar] + [x for x in lote2]
+        orden.update(orden2)
+        lote.sort(key=lambda x: x[0])
     bajados = {str(x) for x in usados}
     for i, _, c in lote:
-        r = stock.descargar(i, [x for x in c], orden.get(i, []), gen, bajados, f"{D}/clips", f"{D}/imgs", fuentes)
+        r = stock.descargar(i, [x for x in c], orden.get(i, []), [], bajados, f"{D}/clips", f"{D}/imgs", fuentes)
         if r:
             bajados.add(r["clip_id"])
         if not r:

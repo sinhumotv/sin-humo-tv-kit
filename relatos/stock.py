@@ -148,6 +148,10 @@ def archive(q):
     out = []
     for doc in ((d or {}).get("response") or {}).get("docs", []):
         ide = doc["identifier"]
+        # fuera: películas educativas de "peligros" con accidentes, drogas o mensajes discriminatorios de su época
+        if re.search(r"beware|homosex|venereal|narcotic|drug|marihuana|signal ?30|wreck|crash|accident|wastage|"
+                     r"mechanized death|highways of agony|mental|sex|perversion|hygiene", ide + " " + doc.get("title", ""), re.I):
+            continue
         out.append({"id": "ia:" + ide, "ia": ide, "thumb": f"https://archive.org/services/img/{ide}", "tags": doc.get("title", ""),
                     "pagina": f"https://archive.org/details/{ide}", "vertical": False, "fuente": "archive",
                     "credito": f"Internet Archive (dominio público) · https://archive.org/details/{ide}"})
@@ -417,6 +421,10 @@ escena y el tema del vídeo. Lo que tiene que verse en este canal: {visual}
 {corte} Pueden venir de un banco de vídeo moderno, de Wikimedia Commons, de la NASA o de archivo histórico (estos con
 calidad de época: valen si encajan con la época). Descarta los borrosos o pixelados, los que tengan texto o logotipos,
 los que parezcan hechos por ordenador, y un paisaje o cielo genérico si hay algo más concreto.
+El clip tiene que tener que ver con ESA escena y con el tema del vídeo: gente o cosas cualquiera que no tienen relación
+(p. ej. un médico o una niña leyendo en un vídeo de huracanes) NO valen aunque el clip sea bonito.
+Descarta SIEMPRE: carteles, rótulos o intertítulos de texto (típicos de las películas antiguas), personas tiradas en el
+suelo, heridas o en peligro, cadáveres, armas apuntando, niños en situaciones de riesgo y cualquier cosa morbosa.
 Si la historia es antigua o de otra época, descarta gente con ropa, coches, móviles u objetos actuales. Descarta mascotas,
 animales graciosos, caras sonrientes a cámara, deporte, fiestas y cualquier cosa alegre o turística que rompa el tono.
 {reglas}
