@@ -1,0 +1,1085 @@
+{
+ "titulo": "IA y el futuro del transporte: de los vehículos autónomos a las ciudades de 2100",
+ "titulos": [
+  "¿Quién decide en un ACCIDENTE de IA?",
+  "La verdad sobre los COCHES sin conductor",
+  "Cómo la IA eliminará el TRÁFICO para siempre",
+  "El fin de los SEMÁFOROS: así será el futuro",
+  "¿Desaparecerán los coches privados en 2100?",
+  "Qué ocurre cuando una IA conduce por TI",
+  "Ciudades sin APARCAMIENTOS: la revolución de la IA",
+  "El dilema MORAL de los vehículos autónomos",
+  "Así viajaremos en el año 2100 gracias a la IA",
+  "El giro INESPERADO en el transporte del futuro"
+ ],
+ "miniatura": {
+  "texto": "DILEMA MORTAL",
+  "clave": "MORTAL",
+  "prompt": "A futuristic autonomous sleek vehicle gliding through a smart futuristic city street at night, close-up dynamic shot positioned on the right side. Glowing subtle neon sensor beams emit from the front bumper. The left half features a very dark, clean, cinematic background with soft cyan and deep navy lighting, high contrast, high detail, photo-realistic style, no text."
+ },
+ "descripcion": "¿Qué ocurre en el microsegundo exacto en que una Inteligencia Artificial al volante debe tomar una decisión crítica? Los vehículos autónomos ya están circulando en varias ciudades del mundo, cambiando nuestra forma de entender el transporte. En este vídeo analizamos cómo funcionan sus redes neuronales, los dilemas morales reales a los que se enfrentan los ingenieros y cómo la IA podría erradicar los accidentes de tráfico.\n\nViajamos también al año 2100 para descubrir un horizonte sin semáforos, sin aparcamientos y con ciudades completamente rediseñadas donde la propiedad del coche podría ser cosa del pasado. Explora el futuro de la movilidad humana, los nuevos empleos que surgirán y los grandes desafíos tecnológicos de la conducción autónoma.",
+ "etiquetas": [
+  "inteligencia artificial",
+  "coches autonomos",
+  "vehiculos autonomos",
+  "futuro 2100",
+  "tecnologia del futuro",
+  "ciudades inteligentes",
+  "dilema del tranvia",
+  "ia y transporte",
+  "robotaxis",
+  "tecnologia ia",
+  "futurismo",
+  "futuro de la movilidad"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El segundo decisivo"
+  },
+  {
+   "escena": 7,
+   "titulo": "Ojos de silicio"
+  },
+  {
+   "escena": 14,
+   "titulo": "El cálculo de la moral"
+  },
+  {
+   "escena": 21,
+   "titulo": "El fin de la propiedad"
+  },
+  {
+   "escena": 28,
+   "titulo": "Intersecciones fantasma"
+  },
+  {
+   "escena": 35,
+   "titulo": "Túneles de vacío y maglev"
+  },
+  {
+   "escena": 42,
+   "titulo": "La metamorfosis del empleo"
+  },
+  {
+   "escena": 49,
+   "titulo": "El talón de Aquiles conectivo"
+  },
+  {
+   "escena": 56,
+   "titulo": "La red invisible del siglo XXII"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Una carretera comarcal en mitad de la noche cerrada. De repente, un obstáculo surge entre la niebla a noventa kilómetros por hora. Un conductor humano tardaría casi un segundo en pisar el freno; una máquina lo resuelve en veinte milisegundos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night driving road",
+    "otras": [
+     "car headlights dark",
+     "foggy road night"
+    ],
+    "descripcion": "Vehículo circulando de noche por una carretera oscura con faros iluminando la niebla",
+    "clip": "https://cdn.pixabay.com/video/2015/10/16/1042-142621369_large.mp4",
+    "clip_id": 1042
+   },
+   "efecto": "niebla",
+   "subtitulo": "Una carretera comarcal en mitad de la noche cerrada. De repente, un obstáculo surge entre la niebla a noventa kilómetros por hora. Un conductor humano tardaría casi un segundo en pisar el freno; una máquina lo resuelve en veinte milisegundos."
+  },
+  {
+   "hablado": "Frente a un impacto inminente, el software calcula trayectorias alternativas mientras evalúa probabilidades matemáticas sobre la vida de ocupantes y transeúntes. ¿Es capaz un algoritmo de procesar la moral mejor que un reflejo biológico descontrolado bajo la presión del pánico?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "car interior steering",
+    "otras": [
+     "driving night car",
+     "modern car dashboard"
+    ],
+    "descripcion": "Primer plano del volante y panel de control de un coche moderno en movimiento",
+    "clip": "https://cdn.pixabay.com/video/2016/02/14/2165-155327596_medium.mp4",
+    "clip_id": 2165
+   },
+   "efecto": "nada",
+   "subtitulo": "Frente a un impacto inminente, el software calcula trayectorias alternativas mientras evalúa probabilidades matemáticas sobre la vida de ocupantes y transeúntes. ¿Es capaz un algoritmo de procesar la moral mejor que un reflejo biológico descontrolado bajo la presión del pánico?"
+  },
+  {
+   "hablado": "Al final de este recorrido descubrirás cómo las redes de inteligencia artificial hacia el año dos mil cien podrían erradicar los accidentes y hacer desaparecer los semáforos de nuestras vidas mediante una sincronización colectiva, invisible y matemáticamente perfecta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city traffic intersection",
+    "otras": [
+     "aerial traffic street",
+     "night crossroad cars"
+    ],
+    "descripcion": "Vista aérea de una intersección urbana con flujo continuo de vehículos",
+    "clip": "https://cdn.pixabay.com/video/2024/07/10/220487_large.mp4",
+    "clip_id": 220487
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al final de este recorrido descubrirás cómo las redes de inteligencia artificial hacia el año dos mil cien podrían erradicar los accidentes y hacer desaparecer los semáforos de nuestras vidas mediante una sincronización colectiva, invisible y matemáticamente perfecta."
+  },
+  {
+   "hablado": "La gran ventaja del vehículo automatizado no reside en su procesador aislado, sino en su memoria compartida. Cuando un solo coche comete un error en Tokio, millones de unidades conectadas en todo el planeta aprenden la lección de manera simultánea.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room flashing",
+    "otras": [
+     "data center hardware",
+     "network servers blinking"
+    ],
+    "descripcion": "Pasillo de centro de datos con luces parpadeantes en armarios de servidores",
+    "clip": "https://cdn.pixabay.com/video/2017/10/21/12543-239934681_large.mp4",
+    "clip_id": 12543
+   },
+   "efecto": "nada",
+   "subtitulo": "La gran ventaja del vehículo automatizado no reside en su procesador aislado, sino en su memoria compartida. Cuando un solo coche comete un error en Tokio, millones de unidades conectadas en todo el planeta aprenden la lección de manera simultánea."
+  },
+  {
+   "hablado": "Para lograr esta coordinación, cada unidad rastrea el entorno con sensores ópticos, radares térmicos y cámaras avanzadas. Juntos procesan gigabytes de información por segundo, traduciendo sombras, peatones y asfalto húmedo en precisos vectores espaciales sin margen de despiste.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "autonomous car camera",
+    "otras": [
+     "modern car sensors",
+     "electric vehicle testing"
+    ],
+    "descripcion": "Detalle de los sensores y cámaras montados en el exterior de un vehículo tecnológico",
+    "clip": "https://cdn.pixabay.com/video/2015/11/27/1406-147169807_medium.mp4",
+    "clip_id": 1406
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para lograr esta coordinación, cada unidad rastrea el entorno con sensores ópticos, radares térmicos y cámaras avanzadas. Juntos procesan gigabytes de información por segundo, traduciendo sombras, peatones y asfalto húmedo en precisos vectores espaciales sin margen de despiste."
+  },
+  {
+   "hablado": "Sin embargo, los modelos matemáticos perfeccionados en superordenadores chocan a menudo con la brutal realidad física. El hielo resbaladizo, los desprendimientos imprevistos y el comportamiento errático de los animales desafían constantemente la lógica calculada de cualquier programación teórica previa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "car driving rain",
+    "otras": [
+     "wet asphalt night",
+     "car splashing puddle"
+    ],
+    "descripcion": "Coche rodando sobre asfalto mojado bajo una intensa lluvia con salpicaduras",
+    "clip": "https://cdn.pixabay.com/video/2017/04/18/8735-214077245_large.mp4",
+    "clip_id": 8735
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, los modelos matemáticos perfeccionados en superordenadores chocan a menudo con la brutal realidad física. El hielo resbaladizo, los desprendimientos imprevistos y el comportamiento errático de los animales desafían constantemente la lógica calculada de cualquier programación teórica previa."
+  },
+  {
+   "hablado": "La verdadera prueba de fuego no se libra en laboratorios asépticos, sino sobre el asfalto real ante situaciones caóticas. Pero para comprender cómo reaccionan estas máquinas ante un peligro súbito, primero debemos descubrir exactamente de qué manera observan nuestro mundo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineers vehicle test",
+    "otras": [
+     "technicians car inspection",
+     "automotive research laboratory"
+    ],
+    "descripcion": "Ingenieros revisando componentes y telemetría de un vehículo en una pista de pruebas",
+    "clip": "https://cdn.pixabay.com/video/2026/01/02/325502_small.mp4",
+    "clip_id": 325502
+   },
+   "efecto": "nada",
+   "subtitulo": "La verdadera prueba de fuego no se libra en laboratorios asépticos, sino sobre el asfalto real ante situaciones caóticas. Pero para comprender cómo reaccionan estas máquinas ante un peligro súbito, primero debemos descubrir exactamente de qué manera observan nuestro mundo."
+  },
+  {
+   "hablado": "Un vehículo autónomo moderno no tiene ojos, sino una cúpula sensorial implacable. En su techo, emisores láser disparan millones de haces de luz invisibles por segundo para medir distancias exactas y crear un mapa tridimensional constante del entorno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "autonomous car roof sensor",
+    "otras": [
+     "car driving sensor",
+     "modern car test"
+    ],
+    "descripcion": "Vehículo moderno equipado con sensores de escaneo y cámaras en el techo rodando por una carretera.",
+    "clip": "https://cdn.pixabay.com/video/2015/09/20/800-139832676_medium.mp4",
+    "clip_id": 800
+   },
+   "efecto": "polvo",
+   "subtitulo": "Un vehículo autónomo moderno no tiene ojos, sino una cúpula sensorial implacable. En su techo, emisores láser disparan millones de haces de luz invisibles por segundo para medir distancias exactas y crear un mapa tridimensional constante del entorno."
+  },
+  {
+   "hablado": "A estos pulsos luminosos se suman cámaras ópticas de alta resolución y sensores de microondas capaces de penetrar la niebla más densa. Juntos capturan más de cuatro terabytes de datos brutos por cada hora de conducción en la ciudad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic camera intersection",
+    "otras": [
+     "city traffic rain",
+     "car dashboard driving"
+    ],
+    "descripcion": "Cámaras viales y sensores capturando el flujo de vehículos bajo condiciones climáticas adversas.",
+    "clip": "https://cdn.pixabay.com/video/2023/09/13/180386-864121573_small.mp4",
+    "clip_id": 180386
+   },
+   "efecto": "niebla",
+   "subtitulo": "A estos pulsos luminosos se suman cámaras ópticas de alta resolución y sensores de microondas capaces de penetrar la niebla más densa. Juntos capturan más de cuatro terabytes de datos brutos por cada hora de conducción en la ciudad."
+  },
+  {
+   "hablado": "Pero esos datos no significan nada por sí mismos. Potentes procesadores a bordo alimentan redes neuronales profundas que traducen cada grupo de puntos de luz en matrices matemáticas para distinguir un peatón desprevenido de una simple bolsa de plástico arrastrada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "computer server hardware",
+    "otras": [
+     "server room lights",
+     "data center rack"
+    ],
+    "descripcion": "Bastidores de servidores y procesadores informáticos con luces de lectura de datos parpadeando rápidamente.",
+    "clip": "https://cdn.pixabay.com/video/2017/12/18/13461-248644882_large.mp4",
+    "clip_id": 13461
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero esos datos no significan nada por sí mismos. Potentes procesadores a bordo alimentan redes neuronales profundas que traducen cada grupo de puntos de luz en matrices matemáticas para distinguir un peatón desprevenido de una simple bolsa de plástico arrastrada."
+  },
+  {
+   "hablado": "Sin embargo, la realidad urbana está repleta de trampas imprevistas que los ingenieros llaman casos límite. Un reflejo solar sobre un charco, una densa tormenta de nieve o una valla publicitaria pueden confundir por completo a los sensores ópticos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "heavy rain driving",
+    "otras": [
+     "wet road night",
+     "car driving storm"
+    ],
+    "descripcion": "Vehículo circulando sobre asfalto empapado con reflejos de luces de faros y lluvia intensa.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/15/30224-380473802_large.mp4",
+    "clip_id": 30224
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, la realidad urbana está repleta de trampas imprevistas que los ingenieros llaman casos límite. Un reflejo solar sobre un charco, una densa tormenta de nieve o una valla publicitaria pueden confundir por completo a los sensores ópticos."
+  },
+  {
+   "hablado": "A diferencia de un conductor humano, el sistema informático no comprende el contexto del mundo real. Solo calcula probabilidades geométricas sin descanso. Si un patrón visual no encaja con su entrenamiento previo, el coche puede dudar o frenar en seco.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pedestrians crossing street",
+    "otras": [
+     "city crosswalk crowd",
+     "people walking city"
+    ],
+    "descripcion": "Multitud de peatones cruzando un paso de cebra en una avenida transitada con coches detenidos.",
+    "clip": "https://cdn.pixabay.com/video/2023/07/26/173333-849202521_large.mp4",
+    "clip_id": 173333
+   },
+   "efecto": "nada",
+   "subtitulo": "A diferencia de un conductor humano, el sistema informático no comprende el contexto del mundo real. Solo calcula probabilidades geométricas sin descanso. Si un patrón visual no encaja con su entrenamiento previo, el coche puede dudar o frenar en seco."
+  },
+  {
+   "hablado": "Para superar estas trampas, cada vehículo envía sus anomalías a centros de cálculo donde los modelos se perfeccionan a diario. Lo que aprende un solo coche sobre una esquina compleja se transfiere al instante a miles de vehículos en todo el planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer computer monitor",
+    "otras": [
+     "software engineer typing",
+     "office programmer working"
+    ],
+    "descripcion": "Ingeniero informático frente a monitores analizando líneas de código y telemetría de navegación en una oficina.",
+    "clip": "https://upload.wikimedia.org/wikipedia/commons/b/bc/BurstCube_Completes_Magnetic_Calibration_%28SVS14487_-_BurstCube_MagneticCalibration1080%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "clip_id": "wc:File:BurstCube Completes Magnetic Calibration (SVS14487 - BurstCube MagneticCalibration1080).webm",
+    "clip_ini": 1
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para superar estas trampas, cada vehículo envía sus anomalías a centros de cálculo donde los modelos se perfeccionan a diario. Lo que aprende un solo coche sobre una esquina compleja se transfiere al instante a miles de vehículos en todo el planeta."
+  },
+  {
+   "hablado": "Perfeccionar la vista de las máquinas es solo una cuestión de tiempo y potencia de cálculo. La verdadera encrucijada surge cuando la física hace inevitable una colisión y el algoritmo se ve obligado a tomar una decisión sobre vidas humanas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "intersection traffic city",
+    "otras": [
+     "cars crossing intersection",
+     "night highway traffic"
+    ],
+    "descripcion": "Cruce de avenidas con tráfico continuo de vehículos cruzándose a gran velocidad durante el atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/10/220452_small.mp4",
+    "clip_id": 220452
+   },
+   "efecto": "nada",
+   "subtitulo": "Perfeccionar la vista de las máquinas es solo una cuestión de tiempo y potencia de cálculo. La verdadera encrucijada surge cuando la física hace inevitable una colisión y el algoritmo se ve obligado a tomar una decisión sobre vidas humanas."
+  },
+  {
+   "hablado": "Imagina un fallo repentino en los frenos a gran velocidad. El vehículo debe elegir en milésimas de segundo entre embestir a un grupo de peatones o desviarse y estrellarse contra un muro, sacrificando al propio ocupante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "car braking wet road",
+    "otras": [
+     "car driving night rain",
+     "traffic crossroad night"
+    ],
+    "descripcion": "Coche frenando bruscamente sobre el asfalto mojado de noche con luces reflejadas",
+    "clip": "https://cdn.pixabay.com/video/2026/09/19/377423_large.mp4",
+    "clip_id": 377423
+   },
+   "efecto": "niebla",
+   "subtitulo": "Imagina un fallo repentino en los frenos a gran velocidad. El vehículo debe elegir en milésimas de segundo entre embestir a un grupo de peatones o desviarse y estrellarse contra un muro, sacrificando al propio ocupante."
+  },
+  {
+   "hablado": "Estudios universitarios globales recopilaron millones de respuestas ciudadanas sobre qué vidas priorizar. Los resultados mostraron que las preferencias morales varían profundamente según la cultura, la edad de los viandantes e incluso las leyes de cada país.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "university researchers computer screen",
+    "otras": [
+     "scientists analyzing data",
+     "office people talking screen"
+    ],
+    "descripcion": "Investigadores en una sala de trabajo analizando gráficos y datos en monitores",
+    "clip": "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4",
+    "clip_id": 159029
+   },
+   "efecto": "polvo",
+   "subtitulo": "Estudios universitarios globales recopilaron millones de respuestas ciudadanas sobre qué vidas priorizar. Los resultados mostraron que las preferencias morales varían profundamente según la cultura, la edad de los viandantes e incluso las leyes de cada país."
+  },
+  {
+   "hablado": "Si dejamos esta elección en manos de las líneas de código, surge una pregunta perturbadora. ¿Quién es responsable de esas decisiones, el ingeniero que programó la función, la empresa fabricante o el propio pasajero que viaja dentro?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "software engineer typing keyboard",
+    "otras": [
+     "computer code screen close up",
+     "programmer working desk"
+    ],
+    "descripcion": "Primer plano de las manos de un programador escribiendo código en el teclado",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3174-166338976_large.mp4",
+    "clip_id": 3174
+   },
+   "efecto": "polvo",
+   "subtitulo": "Si dejamos esta elección en manos de las líneas de código, surge una pregunta perturbadora. ¿Quién es responsable de esas decisiones, el ingeniero que programó la función, la empresa fabricante o el propio pasajero que viaja dentro?"
+  },
+  {
+   "hablado": "Por eso varios gobiernos ya diseñan marcos legales estrictos. Prohíben expresamente que los algoritmos discriminen por edad, género o condición física, obligando a las compañías a auditar de manera pública cada línea de toma de decisiones críticas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "government building architecture exterior",
+    "otras": [
+     "law office desk documents",
+     "people walking modern court"
+    ],
+    "descripcion": "Fachada imponente de un edificio institucional con columnas y personas entrando",
+    "clip": "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_small.mp4",
+    "clip_id": 91744
+   },
+   "efecto": "nada",
+   "subtitulo": "Por eso varios gobiernos ya diseñan marcos legales estrictos. Prohíben expresamente que los algoritmos discriminen por edad, género o condición física, obligando a las compañías a auditar de manera pública cada línea de toma de decisiones críticas."
+  },
+  {
+   "hablado": "La solución de consenso entre los expertos actuales no consiste en elegir a quién dañar, sino en la anticipación matemática. El sistema reduce la velocidad antes de que el peligro sea visible y minimiza el impacto total.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern car test track",
+    "otras": [
+     "car driving empty highway",
+     "vehicle driving road sunny"
+    ],
+    "descripcion": "Vehículo moderno circulando con suavidad por una pista de pruebas despejada",
+    "clip": "https://cdn.pixabay.com/video/2024/01/20/197489-905015030_small.mp4",
+    "clip_id": 197489
+   },
+   "efecto": "polvo",
+   "subtitulo": "La solución de consenso entre los expertos actuales no consiste en elegir a quién dañar, sino en la anticipación matemática. El sistema reduce la velocidad antes de que el peligro sea visible y minimiza el impacto total."
+  },
+  {
+   "hablado": "Cuando cada automóvil se coordine al milisegundo con los demás vehículos del entorno, el dilema individual prácticamente desaparecerá. Las máquinas calcularán trayectorias compartidas en red para esquivarse mutuamente sin poner a nadie en peligro real.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "aerial view highway traffic",
+    "otras": [
+     "highway overpass cars moving",
+     "city road junction overhead"
+    ],
+    "descripcion": "Vista aérea cenital de una autopista con flujo continuo y ordenado de automóviles",
+    "clip": "https://cdn.pixabay.com/video/2022/03/05/109756-685086367_small.mp4",
+    "clip_id": 109756
+   },
+   "efecto": "nada",
+   "subtitulo": "Cuando cada automóvil se coordine al milisegundo con los demás vehículos del entorno, el dilema individual prácticamente desaparecerá. Las máquinas calcularán trayectorias compartidas en red para esquivarse mutuamente sin poner a nadie en peligro real."
+  },
+  {
+   "hablado": "Sin embargo, esta perfecta coordinación colectiva exigirá que los coches dejen de ser máquinas independientes con dueño propio. El siguiente paso transformará la economía mundial de una manera que muy pocos conductores sospechan hoy en día.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "busy city street pedestrians cars",
+    "otras": [
+     "people waiting taxi street",
+     "urban avenue traffic daylight"
+    ],
+    "descripcion": "Avenida urbana concurrida con personas esperando en la acera y tráfico fluido",
+    "clip": "https://cdn.pixabay.com/video/2015/10/16/1044-142621375_large.mp4",
+    "clip_id": 1044
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, esta perfecta coordinación colectiva exigirá que los coches dejen de ser máquinas independientes con dueño propio. El siguiente paso transformará la economía mundial de una manera que muy pocos conductores sospechan hoy en día."
+  },
+  {
+   "hablado": "Un vehículo privado convencional pasa más del noventa por ciento de su vida útil completamente inmóvil, ocupando valioso suelo urbano y perdiendo valor financiero. Mantener una tonelada de metal aparcada frente a casa resulta profundamente ineficiente para la economía moderna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "parking lot aerial",
+    "otras": [
+     "cars parked city",
+     "traffic parking"
+    ],
+    "descripcion": "Vista aérea de un gran aparcamiento urbano repleto de coches inmóviles",
+    "clip": "https://cdn.pixabay.com/video/2020/12/15/59354-491941548_large.mp4",
+    "clip_id": 59354
+   },
+   "efecto": "polvo",
+   "subtitulo": "Un vehículo privado convencional pasa más del noventa por ciento de su vida útil completamente inmóvil, ocupando valioso suelo urbano y perdiendo valor financiero. Mantener una tonelada de metal aparcada frente a casa resulta profundamente ineficiente para la economía moderna."
+  },
+  {
+   "hablado": "En varias metrópolis mundiales, flotas comerciales de vehículos autónomos ya prestan servicio ininterrumpido a miles de usuarios diarios. Al eliminar el coste del conductor humano, el transporte bajo demanda comienza a ser drásticamente más asequible que amortizar un coche propio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "autonomous car street",
+    "otras": [
+     "modern taxi city",
+     "car driving empty street"
+    ],
+    "descripcion": "Vehículo moderno circulando por una calle urbana con sensores en el techo",
+    "clip": "https://cdn.pixabay.com/video/2021/06/06/76683-559745363_large.mp4",
+    "clip_id": 76683
+   },
+   "efecto": "nada",
+   "subtitulo": "En varias metrópolis mundiales, flotas comerciales de vehículos autónomos ya prestan servicio ininterrumpido a miles de usuarios diarios. Al eliminar el coste del conductor humano, el transporte bajo demanda comienza a ser drásticamente más asequible que amortizar un coche propio."
+  },
+  {
+   "hablado": "El modelo de movilidad como servicio sustituye la compra tradicional por una tarifa por trayecto o una suscripción mensual. El usuario se desentiende de seguros, reparaciones, combustible y peajes, pagando exclusivamente por los kilómetros reales que recorre cada día.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person using smartphone street",
+    "otras": [
+     "mobile app booking",
+     "hands holding phone"
+    ],
+    "descripcion": "Una persona esperando en la acera mientras consulta una aplicación de transporte en su teléfono",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3176-166338965_large.mp4",
+    "clip_id": 3176
+   },
+   "efecto": "polvo",
+   "subtitulo": "El modelo de movilidad como servicio sustituye la compra tradicional por una tarifa por trayecto o una suscripción mensual. El usuario se desentiende de seguros, reparaciones, combustible y peajes, pagando exclusivamente por los kilómetros reales que recorre cada día."
+  },
+  {
+   "hablado": "Los estudios de ingeniería urbana estiman que un vehículo compartido y automatizado puede reemplazar entre cinco y diez coches particulares. La rotación constante optimiza los recursos energéticos y reduce drásticamente la congestión en las arterias principales de las grandes ciudades.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city traffic time lapse",
+    "otras": [
+     "busy street night",
+     "traffic moving smoothly"
+    ],
+    "descripcion": "Tráfico fluido en una avenida urbana filmado en cámara rápida al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2019/03/13/21985-323496013_large.mp4",
+    "clip_id": 21985
+   },
+   "efecto": "nada",
+   "subtitulo": "Los estudios de ingeniería urbana estiman que un vehículo compartido y automatizado puede reemplazar entre cinco y diez coches particulares. La rotación constante optimiza los recursos energéticos y reduce drásticamente la congestión en las arterias principales de las grandes ciudades."
+  },
+  {
+   "hablado": "La desaparición paulatina del vehículo en propiedad liberará una cantidad inmensa de espacio público. Hasta una tercera parte de la superficie de nuestras ciudades está dedicada a estacionamientos y garajes que pronto quedarán completamente vacíos y obsoletos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty parking garage",
+    "otras": [
+     "underground parking lot",
+     "empty urban space"
+    ],
+    "descripcion": "Interior de un amplio aparcamiento cubierto completamente vacío",
+    "clip": "https://cdn.pixabay.com/video/2021/02/01/63749-507811827_large.mp4",
+    "clip_id": 63749
+   },
+   "efecto": "polvo",
+   "subtitulo": "La desaparición paulatina del vehículo en propiedad liberará una cantidad inmensa de espacio público. Hasta una tercera parte de la superficie de nuestras ciudades está dedicada a estacionamientos y garajes que pronto quedarán completamente vacíos y obsoletos."
+  },
+  {
+   "hablado": "Los urbanistas ya proyectan la reconversión de esas áreas de asfalto en parques verdes, aceras peatonales más anchas y nuevas viviendas accesibles. Las ciudades del futuro dejarán de estar diseñadas para guardar máquinas y volverán a centrarse en las personas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking park city",
+    "otras": [
+     "urban green park",
+     "pedestrian area trees"
+    ],
+    "descripcion": "Peatones caminando tranquilamente por una amplia zona verde integrada en el centro de una ciudad",
+    "clip": "https://cdn.pixabay.com/video/2020/05/22/39836-424360861_small.mp4",
+    "clip_id": 39836
+   },
+   "efecto": "nada",
+   "subtitulo": "Los urbanistas ya proyectan la reconversión de esas áreas de asfalto en parques verdes, aceras peatonales más anchas y nuevas viviendas accesibles. Las ciudades del futuro dejarán de estar diseñadas para guardar máquinas y volverán a centrarse en las personas."
+  },
+  {
+   "hablado": "Pero prescindir de conductores individuales no solo vaciará los aparcamientos, sino que permitirá sincronizar cada trayecto con precisión milimétrica. De pronto, el elemento más antiguo de nuestras carreteras comenzará a carecer de sentido: los semáforos están a punto de extinguirse.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic light intersection",
+    "otras": [
+     "traffic signals crossroad",
+     "city intersection daylight"
+    ],
+    "descripcion": "Plano medio de un semáforo cambiando de luz en una encrucijada concurrida",
+    "clip": "https://cdn.pixabay.com/video/2020/08/18/47560-451606235_large.mp4",
+    "clip_id": 47560
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero prescindir de conductores individuales no solo vaciará los aparcamientos, sino que permitirá sincronizar cada trayecto con precisión milimétrica. De pronto, el elemento más antiguo de nuestras carreteras comenzará a carecer de sentido: los semáforos están a punto de extinguirse."
+  },
+  {
+   "hablado": "El primer semáforo del mundo se instaló en Londres en el siglo diecinueve para regular carruajes. Hacia el año dos mil cien, según proyectan los urbanistas, estas señales luminosas habrán desaparecido por completo de las grandes ciudades del planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic light city night",
+    "otras": [
+     "city street traffic lights",
+     "urban road crossing"
+    ],
+    "descripcion": "Semáforos cambiando de color en una avenida urbana por la noche con tráfico rodado.",
+    "clip": "https://cdn.pixabay.com/video/2019/02/01/21118-315137091_medium.mp4",
+    "clip_id": 21118
+   },
+   "efecto": "nada",
+   "subtitulo": "El primer semáforo del mundo se instaló en Londres en el siglo diecinueve para regular carruajes. Hacia el año dos mil cien, según proyectan los urbanistas, estas señales luminosas habrán desaparecido por completo de las grandes ciudades del planeta."
+  },
+  {
+   "hablado": "En su lugar funcionará la comunicación directa entre vehículos e infraestructuras. Los ordenadores a bordo negociarán el paso con milisegundos de antelación, reservando ranuras exactas en el tiempo y el espacio para cruzar sin detenerse jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic intersection aerial",
+    "otras": [
+     "busy crossroad top view",
+     "highway junction overhead"
+    ],
+    "descripcion": "Vista aérea cenital de una intersección urbana con vehículos circulando en varias direcciones de forma coordinada.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/24/248450_small.mp4",
+    "clip_id": 248450
+   },
+   "efecto": "polvo",
+   "subtitulo": "En su lugar funcionará la comunicación directa entre vehículos e infraestructuras. Los ordenadores a bordo negociarán el paso con milisegundos de antelación, reservando ranuras exactas en el tiempo y el espacio para cruzar sin detenerse jamás."
+  },
+  {
+   "hablado": "Para un observador humano del presente, la escena resultaría aterradora. Decenas de cápsulas autónomas cruzarán las intersecciones intercalándose a gran velocidad, separadas por escasos centímetros, como los dientes coordinados de una cremallera mecánica perfecta e invisible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "highway traffic timelapse",
+    "otras": [
+     "cars moving road stream",
+     "city avenue traffic flow"
+    ],
+    "descripcion": "Cámara rápida de vehículos circulando rápidamente por múltiples carriles de una vía urbana.",
+    "clip": "https://cdn.pixabay.com/video/2018/09/04/18082-288452962_large.mp4",
+    "clip_id": 18082
+   },
+   "efecto": "nada",
+   "subtitulo": "Para un observador humano del presente, la escena resultaría aterradora. Decenas de cápsulas autónomas cruzarán las intersecciones intercalándose a gran velocidad, separadas por escasos centímetros, como los dientes coordinados de una cremallera mecánica perfecta e invisible."
+  },
+  {
+   "hablado": "Esta sincronización continua podría eliminar por completo los atascos fantasma, provocados hoy por las frenadas bruscas humanas. Al suprimir las detenciones en cada esquina, el consumo de energía del transporte urbano podría reducirse más de un cuarenta por ciento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cars crossing bridge",
+    "otras": [
+     "fluid road traffic",
+     "vehicles driving avenue"
+    ],
+    "descripcion": "Tráfico fluido y ordenado de automóviles cruzando un puente moderno sin interrupciones ni paradas.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/28/43356-436041552_small.mp4",
+    "clip_id": 43356
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta sincronización continua podría eliminar por completo los atascos fantasma, provocados hoy por las frenadas bruscas humanas. Al suprimir las detenciones en cada esquina, el consumo de energía del transporte urbano podría reducirse más de un cuarenta por ciento."
+  },
+  {
+   "hablado": "Los peatones tampoco necesitarán esperar frente a un paso de cebra tradicional. Sensores térmicos y radares integrados en el pavimento detectarán la intención de cruzar de cualquier persona, ajustando la velocidad de la colmena rodante con total suavidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pedestrians crossing street",
+    "otras": [
+     "people walking crosswalk",
+     "crowd crossing road"
+    ],
+    "descripcion": "Grupo de peatones cruzando tranquilamente por un paso de peatones en una ciudad contemporánea.",
+    "clip": "https://cdn.pixabay.com/video/2025/01/08/251523_small.mp4",
+    "clip_id": 251523
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los peatones tampoco necesitarán esperar frente a un paso de cebra tradicional. Sensores térmicos y radares integrados en el pavimento detectarán la intención de cruzar de cualquier persona, ajustando la velocidad de la colmena rodante con total suavidad."
+  },
+  {
+   "hablado": "Las propias calles se transformarán físicamente. Al no requerir señales de tráfico, postes luminosos ni varios carriles de seguridad por calzada, el asfalto ocupará un tercio de su anchura actual, cediendo el resto del terreno a bosques urbanos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern green city street",
+    "otras": [
+     "trees urban boulevard",
+     "eco city architecture park"
+    ],
+    "descripcion": "Avenida urbana amplia flanqueada por hileras de árboles y vegetación cuidada entre edificios modernos.",
+    "clip": "https://cdn.pixabay.com/video/2019/05/03/23258-334228230_small.mp4",
+    "clip_id": 23258
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las propias calles se transformarán físicamente. Al no requerir señales de tráfico, postes luminosos ni varios carriles de seguridad por calzada, el asfalto ocupará un tercio de su anchura actual, cediendo el resto del terreno a bosques urbanos."
+  },
+  {
+   "hablado": "Pero optimizar los desplazamientos por la superficie es solo el primer paso de esta revolución. Cuando las distancias crecen entre continentes, la inteligencia artificial busca desafiar la resistencia del aire mediante túneles de baja presión que cambiarán el planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "high speed train tracks",
+    "otras": [
+     "train entering tunnel",
+     "railway speed motion"
+    ],
+    "descripcion": "Vías de ferrocarril de alta velocidad adentrándose en un túnel de hormigón a gran velocidad.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/18/221839_large.mp4",
+    "clip_id": 221839
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero optimizar los desplazamientos por la superficie es solo el primer paso de esta revolución. Cuando las distancias crecen entre continentes, la inteligencia artificial busca desafiar la resistencia del aire mediante túneles de baja presión que cambiarán el planeta."
+  },
+  {
+   "hablado": "La levitación magnética actual ya permite a trenes de alta velocidad deslizarse sin rozar las vías. Pero hacia el año dos mil cien, los ingenieros proyectan confinar estas cápsulas en enormes tubos sellados al vacío para eliminar la fricción del aire.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "high speed train",
+    "otras": [
+     "modern train railway",
+     "train passing station"
+    ],
+    "descripcion": "Tren moderno de alta velocidad circulando con rapidez por una vía despejada",
+    "clip": "https://cdn.pixabay.com/video/2022/07/23/125161-732837148_large.mp4",
+    "clip_id": 125161
+   },
+   "efecto": "nada",
+   "subtitulo": "La levitación magnética actual ya permite a trenes de alta velocidad deslizarse sin rozar las vías. Pero hacia el año dos mil cien, los ingenieros proyectan confinar estas cápsulas en enormes tubos sellados al vacío para eliminar la fricción del aire."
+  },
+  {
+   "hablado": "Al eliminar casi toda la atmósfera dentro del conducto, los vehículos podrían alcanzar más de mil kilómetros por hora consumiendo una fracción diminuta de electricidad. La inteligencia artificial calibrará milisegundo a milisegundo los campos electromagnéticos que sostienen y propulsan la nave.",
+   "imagen": {
+    "tipo": "real",
+    "busqueda": "SCMaglev Yamanashi test track",
+    "otras": [
+     "Maglev train test",
+     "high speed maglev"
+    ],
+    "descripcion": "Fotografía real del tren experimental de levitación magnética en su vía de pruebas"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al eliminar casi toda la atmósfera dentro del conducto, los vehículos podrían alcanzar más de mil kilómetros por hora consumiendo una fracción diminuta de electricidad. La inteligencia artificial calibrará milisegundo a milisegundo los campos electromagnéticos que sostienen y propulsan la nave."
+  },
+  {
+   "hablado": "Mantener el vacío en redes de miles de kilómetros representa un desafío colosal. Miles de sensores conectados a sistemas inteligentes vigilarán la presión constante, bombeando fugas microscópicas de aire y redistribuyendo la energía de frenado de vuelta hacia la red eléctrica compartida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer control room",
+    "otras": [
+     "industrial pipes valves",
+     "server room monitoring"
+    ],
+    "descripcion": "Operadores supervisando pantallas con métricas y paneles de control en una central técnica",
+    "clip": "https://cdn.pixabay.com/video/2026/04/25/348897_small.mp4",
+    "clip_id": 348897
+   },
+   "efecto": "nada",
+   "subtitulo": "Mantener el vacío en redes de miles de kilómetros representa un desafío colosal. Miles de sensores conectados a sistemas inteligentes vigilarán la presión constante, bombeando fugas microscópicas de aire y redistribuyendo la energía de frenado de vuelta hacia la red eléctrica compartida."
+  },
+  {
+   "hablado": "Los cálculos de los investigadores estiman que viajar entre capitales continentales costará menos tiempo que un vuelo comercial convencional. Las cápsulas saldrán cada pocos segundos en una sincronización perfecta, organizadas por algoritmos predictivos que anticipan la demanda de pasajeros con absoluta exactitud.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "commuters railway platform",
+    "otras": [
+     "people boarding train",
+     "subway passengers moving"
+    ],
+    "descripcion": "Pasajeros organizados subiendo de forma fluida a un tren de transporte rápido en una estación limpia",
+    "clip": "https://cdn.pixabay.com/video/2016/02/29/2340-157269921_large.mp4",
+    "clip_id": 2340
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los cálculos de los investigadores estiman que viajar entre capitales continentales costará menos tiempo que un vuelo comercial convencional. Las cápsulas saldrán cada pocos segundos en una sincronización perfecta, organizadas por algoritmos predictivos que anticipan la demanda de pasajeros con absoluta exactitud."
+  },
+  {
+   "hablado": "El transporte de mercancías vivirá una revolución idéntica. Los contenedores viajarán por estas arterias subterráneas automatizadas como paquetes de datos en una red óptica, descargándose en centros logísticos robotizados sin intervención humana y reduciendo el transporte pesado por carretera a mínimos históricos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "automated warehouse logistics",
+    "otras": [
+     "cargo container terminal",
+     "robotic distribution center"
+    ],
+    "descripcion": "Cintas transportadoras y brazos mecánicos moviendo mercancías en un almacén automatizado moderno",
+    "clip": "https://cdn.pixabay.com/video/2021/10/31/94063-641767740_large.mp4",
+    "clip_id": 94063
+   },
+   "efecto": "nada",
+   "subtitulo": "El transporte de mercancías vivirá una revolución idéntica. Los contenedores viajarán por estas arterias subterráneas automatizadas como paquetes de datos en una red óptica, descargándose en centros logísticos robotizados sin intervención humana y reduciendo el transporte pesado por carretera a mínimos históricos."
+  },
+  {
+   "hablado": "En este horizonte proyectado para finales de siglo, las distancias físicas prácticamente se diluyen. La inteligencia artificial transformará la geografía del planeta, permitiendo trabajar a cientos de kilómetros del hogar sin soportar atascos ni generar emisiones de efecto invernadero perjudiciales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city time lapse sunset",
+    "otras": [
+     "modern architecture buildings",
+     "urban cityscape aerial"
+    ],
+    "descripcion": "Vista aérea en cámara rápida de una metrópolis conectada al caer el sol",
+    "clip": "https://cdn.pixabay.com/video/2019/05/20/23796-337668530_large.mp4",
+    "clip_id": 23796
+   },
+   "efecto": "polvo",
+   "subtitulo": "En este horizonte proyectado para finales de siglo, las distancias físicas prácticamente se diluyen. La inteligencia artificial transformará la geografía del planeta, permitiendo trabajar a cientos de kilómetros del hogar sin soportar atascos ni generar emisiones de efecto invernadero perjudiciales."
+  },
+  {
+   "hablado": "La infraestructura global alcanzará una eficiencia que hoy parece de ciencia ficción gracias a la automatización absoluta de cada trayecto. Sin embargo, esta red impecable plantea una incógnita inevitable: ¿qué ocurrirá con los millones de personas que hasta ahora vivían de conducir?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "truck driver road",
+    "otras": [
+     "empty driver seat",
+     "steering wheel hands"
+    ],
+    "descripcion": "Conductor profesional al volante mirando hacia la carretera abierta desde su cabina",
+    "clip": "https://cdn.pixabay.com/video/2017/07/23/10822-226624975_large.mp4",
+    "clip_id": 10822
+   },
+   "efecto": "nada",
+   "subtitulo": "La infraestructura global alcanzará una eficiencia que hoy parece de ciencia ficción gracias a la automatización absoluta de cada trayecto. Sin embargo, esta red impecable plantea una incógnita inevitable: ¿qué ocurrirá con los millones de personas que hasta ahora vivían de conducir?"
+  },
+  {
+   "hablado": "La transición hacia el transporte autónomo transformará uno de los mayores motores de empleo del planeta. Millones de conductores profesionales de camiones, taxis y logística verán desaparecer sus oficios tradicionales frente a algoritmos incansables.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "truck driver highway",
+    "otras": [
+     "cargo truck driving",
+     "highway traffic night"
+    ],
+    "descripcion": "Camión de transporte de mercancías circulando por una autovía al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2022/12/17/143376-782178665_small.mp4",
+    "clip_id": 143376
+   },
+   "efecto": "polvo",
+   "subtitulo": "La transición hacia el transporte autónomo transformará uno de los mayores motores de empleo del planeta. Millones de conductores profesionales de camiones, taxis y logística verán desaparecer sus oficios tradicionales frente a algoritmos incansables."
+  },
+  {
+   "hablado": "Lejos de un vacío absoluto, surgirán nuevos perfiles técnicos. La gestión remota de flotas masivas, el mantenimiento electromecánico y la supervisión de teleoperación exigirán cuadrillas humanas altamente cualificadas para intervenir ante cualquier anomalía inesperada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer inspecting machine",
+    "otras": [
+     "robotics engineer workshop",
+     "technician server maintenance"
+    ],
+    "descripcion": "Ingeniero revisando componentes mecánicos y cableado en un taller técnico",
+    "clip": "https://cdn.pixabay.com/video/2020/05/05/38244-417752443_large.mp4",
+    "clip_id": 38244
+   },
+   "efecto": "nada",
+   "subtitulo": "Lejos de un vacío absoluto, surgirán nuevos perfiles técnicos. La gestión remota de flotas masivas, el mantenimiento electromecánico y la supervisión de teleoperación exigirán cuadrillas humanas altamente cualificadas para intervenir ante cualquier anomalía inesperada."
+  },
+  {
+   "hablado": "Las salas de control requerirán analistas de seguridad digital dedicados a monitorizar rutas y verificar que cada vehículo funcione con software certificado. Estos supervisores sustituirán el volante por paneles de diagnóstico avanzado en tiempo real.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "control room operators",
+    "otras": [
+     "data center monitors",
+     "security operations center"
+    ],
+    "descripcion": "Especialistas trabajando frente a múltiples pantallas con métricas y mapas",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3180-166339024_large.mp4",
+    "clip_id": 3180
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las salas de control requerirán analistas de seguridad digital dedicados a monitorizar rutas y verificar que cada vehículo funcione con software certificado. Estos supervisores sustituirán el volante por paneles de diagnóstico avanzado en tiempo real."
+  },
+  {
+   "hablado": "Pero el impacto laboral no será el único cambio drástico. Al no necesitar estacionamientos permanentes, hasta un tercio del espacio en las ciudades quedará completamente libre, abriendo paso a una histórica remodelación del suelo urbano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty parking lot",
+    "otras": [
+     "city parking aerial",
+     "urban street asphalt"
+    ],
+    "descripcion": "Plano aéreo de un amplio aparcamiento urbano pavimentado",
+    "clip": "https://cdn.pixabay.com/video/2023/03/01/152798-803733100_large.mp4",
+    "clip_id": 152798
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero el impacto laboral no será el único cambio drástico. Al no necesitar estacionamientos permanentes, hasta un tercio del espacio en las ciudades quedará completamente libre, abriendo paso a una histórica remodelación del suelo urbano."
+  },
+  {
+   "hablado": "Los antiguos aparcamientos de asfalto y gasolineras se reconvertirán progresivamente en amplios parques públicos, huertos comunitarios y nuevas viviendas sostenibles. Las urbes del futuro ganarán metros cuadrados de naturaleza donde antes solo reinaba el metal inmóvil.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern green city park",
+    "otras": [
+     "people walking city park",
+     "sustainable urban architecture"
+    ],
+    "descripcion": "Zona verde urbana moderna con árboles y peatones paseando tranquilamente",
+    "clip": "https://cdn.pixabay.com/video/2024/06/06/215475_small.mp4",
+    "clip_id": 215475
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los antiguos aparcamientos de asfalto y gasolineras se reconvertirán progresivamente en amplios parques públicos, huertos comunitarios y nuevas viviendas sostenibles. Las urbes del futuro ganarán metros cuadrados de naturaleza donde antes solo reinaba el metal inmóvil."
+  },
+  {
+   "hablado": "Esta metamorfosis promete vecindarios más limpios, saludables y silenciosos, aunque el verdadero reto residirá en absorber a toda la población trabajadora afectada mediante planes de formación que eviten una profunda fractura social y económica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street modern",
+    "otras": [
+     "crowd walking city",
+     "urban citizens street"
+    ],
+    "descripcion": "Multitud diversa de transeúntes caminando por una avenida amplia y peatonal",
+    "clip": "https://cdn.pixabay.com/video/2025/03/29/268448_small.mp4",
+    "clip_id": 268448
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta metamorfosis promete vecindarios más limpios, saludables y silenciosos, aunque el verdadero reto residirá en absorber a toda la población trabajadora afectada mediante planes de formación que eviten una profunda fractura social y económica."
+  },
+  {
+   "hablado": "Parecía el diseño perfecto para una civilización moderna, próspera y ecológica. Sin embargo, entregar el control del movimiento absoluto a una red digital invisible ocultaba una vulnerabilidad crítica capaz de paralizar el planeta entero.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room blinking lights",
+    "otras": [
+     "network cables data center",
+     "computer code screen"
+    ],
+    "descripcion": "Pasillo de centro de procesamiento de datos con luces indicadoras parpadeando",
+    "clip": "https://cdn.pixabay.com/video/2021/09/05/87593-602317653_small.mp4",
+    "clip_id": 87593
+   },
+   "efecto": "polvo",
+   "subtitulo": "Parecía el diseño perfecto para una civilización moderna, próspera y ecológica. Sin embargo, entregar el control del movimiento absoluto a una red digital invisible ocultaba una vulnerabilidad crítica capaz de paralizar el planeta entero."
+  },
+  {
+   "hablado": "Si millones de vehículos dependen de la nube central, una tormenta geomagnética solar masiva o un ciberataque sofisticado a las antenas de comunicación podría desorientar los sistemas de posicionamiento y detener el tráfico por completo en pocos segundos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room blinking lights",
+    "otras": [
+     "datacenter servers",
+     "computer server racks"
+    ],
+    "descripcion": "Pasillo de centro de datos con servidores y luces parpadeando",
+    "clip": "https://cdn.pixabay.com/video/2023/08/23/177412-857376808_large.mp4",
+    "clip_id": 177412
+   },
+   "efecto": "polvo",
+   "subtitulo": "Si millones de vehículos dependen de la nube central, una tormenta geomagnética solar masiva o un ciberataque sofisticado a las antenas de comunicación podría desorientar los sistemas de posicionamiento y detener el tráfico por completo en pocos segundos."
+  },
+  {
+   "hablado": "Las redes totalmente interconectadas sufren el peligro del colapso en cascada. Si un servidor central cae, el bloqueo repentino de información paralizaría avenidas completas a escala regional antes de que cualquier operador humano pudiera reaccionar manualmente ante la emergencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic monitoring control room",
+    "otras": [
+     "operations control room",
+     "security monitoring screens"
+    ],
+    "descripcion": "Operadores observando pantallas de control de tráfico en una sala de mando",
+    "clip": "https://cdn.pixabay.com/video/2019/06/23/24603-344986224_small.mp4",
+    "clip_id": 24603
+   },
+   "efecto": "nada",
+   "subtitulo": "Las redes totalmente interconectadas sufren el peligro del colapso en cascada. Si un servidor central cae, el bloqueo repentino de información paralizaría avenidas completas a escala regional antes de que cualquier operador humano pudiera reaccionar manualmente ante la emergencia."
+  },
+  {
+   "hablado": "Para evitar semejante catástrofe, los ingenieros desarrollan la computación en el borde. Cada vehículo procesa su entorno inmediato con procesadores locales de altísima potencia, sin depender permanentemente de servidores remotos ni de antenas de telecomunicación para circular con seguridad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "microchip engineer laboratory",
+    "otras": [
+     "cleanroom chip manufacturing",
+     "electronics laboratory microscope"
+    ],
+    "descripcion": "Ingeniero con bata y lupa electrónica examinando una placa de microchips",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3188-166339073_large.mp4",
+    "clip_id": 3188
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para evitar semejante catástrofe, los ingenieros desarrollan la computación en el borde. Cada vehículo procesa su entorno inmediato con procesadores locales de altísima potencia, sin depender permanentemente de servidores remotos ni de antenas de telecomunicación para circular con seguridad."
+  },
+  {
+   "hablado": "La arquitectura técnica aplica el principio de redundancia triple, heredado de la aviación comercial. Si falla un ordenador de a bordo, otros dos circuitos independientes contrastan las lecturas de los sensores en tiempo real para tomar el control inmediato.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane cockpit instruments",
+    "otras": [
+     "avionics testing laboratory",
+     "aircraft electronic systems"
+    ],
+    "descripcion": "Panel de instrumentos e indicadores técnicos de navegación en pruebas",
+    "clip": "https://cdn.pixabay.com/video/2022/12/17/143379-782178675_small.mp4",
+    "clip_id": 143379
+   },
+   "efecto": "nada",
+   "subtitulo": "La arquitectura técnica aplica el principio de redundancia triple, heredado de la aviación comercial. Si falla un ordenador de a bordo, otros dos circuitos independientes contrastan las lecturas de los sensores en tiempo real para tomar el control inmediato."
+  },
+  {
+   "hablado": "Incluso ante una pérdida eléctrica total, existen protocolos de degradación segura. Los vehículos activan frenos mecánicos de reserva y sistemas de dirección asistida pasiva para detenerse suavemente a los lados de la vía sin causar impacto alguno con otros usuarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "car brake inspection workshop",
+    "otras": [
+     "mechanic working automotive",
+     "vehicle chassis testing"
+    ],
+    "descripcion": "Mecánico inspeccionando el sistema de frenos de disco de un vehículo",
+    "clip": "https://cdn.pixabay.com/video/2016/10/30/6185-189700620_large.mp4",
+    "clip_id": 6185
+   },
+   "efecto": "polvo",
+   "subtitulo": "Incluso ante una pérdida eléctrica total, existen protocolos de degradación segura. Los vehículos activan frenos mecánicos de reserva y sistemas de dirección asistida pasiva para detenerse suavemente a los lados de la vía sin causar impacto alguno con otros usuarios."
+  },
+  {
+   "hablado": "La verdadera defensa frente a intrusiones informáticas reside en algoritmos de aprendizaje adaptativo continuo. Estas defensas detectan anomalías en el código en milisegundos y aíslan cualquier nodo sospechoso de inmediato, impidiendo que una alteración digital se transmita a otros coches.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "programmer coding computer screen",
+    "otras": [
+     "software developer typing",
+     "it professional coding office"
+    ],
+    "descripcion": "Manos de programador escribiendo código en teclado con monitores delante",
+    "clip": "https://cdn.pixabay.com/video/2024/03/04/202987-919379330_small.mp4",
+    "clip_id": 202987
+   },
+   "efecto": "nada",
+   "subtitulo": "La verdadera defensa frente a intrusiones informáticas reside en algoritmos de aprendizaje adaptativo continuo. Estas defensas detectan anomalías en el código en milisegundos y aíslan cualquier nodo sospechoso de inmediato, impidiendo que una alteración digital se transmita a otros coches."
+  },
+  {
+   "hablado": "La robustez técnica asegurará que nuestras ciudades continúen operando ante cualquier imprevisto. Pero resolver la seguridad de los coches solo era el paso previo para descubrir la mayor sorpresa urbanística que nos espera en el año dos mil cien.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city traffic sunset",
+    "otras": [
+     "urban highway traffic",
+     "city street aerial evening"
+    ],
+    "descripcion": "Vista aérea de tráfico fluido en una avenida urbana al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2020/08/18/47516-451623701_medium.mp4",
+    "clip_id": 47516
+   },
+   "efecto": "polvo",
+   "subtitulo": "La robustez técnica asegurará que nuestras ciudades continúen operando ante cualquier imprevisto. Pero resolver la seguridad de los coches solo era el paso previo para descubrir la mayor sorpresa urbanística que nos espera en el año dos mil cien."
+  },
+  {
+   "hablado": "La verdadera sorpresa de finales de siglo no consiste en ver automóviles flotando por las alturas, sino en dejar de verlos por completo. En el año dos mil cien, las grandes metrópolis habrán trasladado el tráfico rodado al subsuelo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "subway tunnel train",
+    "otras": [
+     "underground tunnel dark",
+     "metro train tracks"
+    ],
+    "descripcion": "Túnel subterráneo moderno iluminado con vías de transporte rápido.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/06/215471_small.mp4",
+    "clip_id": 215471
+   },
+   "efecto": "nada",
+   "subtitulo": "La verdadera sorpresa de finales de siglo no consiste en ver automóviles flotando por las alturas, sino en dejar de verlos por completo. En el año dos mil cien, las grandes metrópolis habrán trasladado el tráfico rodado al subsuelo."
+  },
+  {
+   "hablado": "Redes multinivel excavadas bajo tierra canalizarán tanto el transporte de viajeros como la logística pesada. Gobernadas por algoritmos centrales, estas cápsulas automatizadas circularán de forma ininterrumpida sin atascos, sin ruido y sin emitir partículas contaminantes al aire urbano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic tunnel lights",
+    "otras": [
+     "underground road cars",
+     "night tunnel driving"
+    ],
+    "descripcion": "Tráfico fluido avanzando por un túnel subterráneo bien iluminado.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/15/127958-739732528_large.mp4",
+    "clip_id": 127958
+   },
+   "efecto": "polvo",
+   "subtitulo": "Redes multinivel excavadas bajo tierra canalizarán tanto el transporte de viajeros como la logística pesada. Gobernadas por algoritmos centrales, estas cápsulas automatizadas circularán de forma ininterrumpida sin atascos, sin ruido y sin emitir partículas contaminantes al aire urbano."
+  },
+  {
+   "hablado": "Al liberar el asfalto tradicional, las calles principales volverán a ser territorio exclusivo para los ciudadanos. Las antiguas calzadas de cuatro carriles se transformarán en bulevares arbolados, parques comunitarios y zonas seguras donde caminar sin temor al atropello.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pedestrian street park",
+    "otras": [
+     "people walking trees",
+     "urban green park"
+    ],
+    "descripcion": "Zona peatonal arbolada donde personas pasean tranquilamente sin vehículos.",
+    "clip": "https://cdn.pixabay.com/video/2015/10/16/1035-142621331_large.mp4",
+    "clip_id": 1035
+   },
+   "efecto": "nada",
+   "subtitulo": "Al liberar el asfalto tradicional, las calles principales volverán a ser territorio exclusivo para los ciudadanos. Las antiguas calzadas de cuatro carriles se transformarán en bulevares arbolados, parques comunitarios y zonas seguras donde caminar sin temor al atropello."
+  },
+  {
+   "hablado": "Así se cumplirá la gran promesa del transporte inteligente: la desaparición definitiva de los semáforos no llegará por inventar coches más veloces, sino por haber creado un sistema logístico invisible que devuelve el espacio natural a la comunidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city intersection crosswalk",
+    "otras": [
+     "pedestrian crossing road",
+     "modern city boulevard"
+    ],
+    "descripcion": "Cruce urbano amplio rodeado de vegetación y personas caminando.",
+    "clip": "https://cdn.pixabay.com/video/2023/08/23/177415-857376819_large.mp4",
+    "clip_id": 177415
+   },
+   "efecto": "niebla",
+   "subtitulo": "Así se cumplirá la gran promesa del transporte inteligente: la desaparición definitiva de los semáforos no llegará por inventar coches más veloces, sino por haber creado un sistema logístico invisible que devuelve el espacio natural a la comunidad."
+  },
+  {
+   "hablado": "El mayor avance tecnológico de esta transición histórica no será la velocidad punta ni la potencia computacional, sino haber transformado el entorno urbano para priorizar el bienestar humano sobre las necesidades mecánicas del automóvil privado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people sitting park bench",
+    "otras": [
+     "family relaxing outdoor",
+     "urban garden people"
+    ],
+    "descripcion": "Personas descansando en un parque urbano rodeadas de plantas y árboles.",
+    "clip": "https://cdn.pixabay.com/video/2015/12/18/1694-149530466_large.mp4",
+    "clip_id": 1694
+   },
+   "efecto": "nada",
+   "subtitulo": "El mayor avance tecnológico de esta transición histórica no será la velocidad punta ni la potencia computacional, sino haber transformado el entorno urbano para priorizar el bienestar humano sobre las necesidades mecánicas del automóvil privado."
+  },
+  {
+   "hablado": "Delegar el control absoluto de nuestros desplazamientos en sistemas autónomos exige una confianza inédita en el software. Aceptar que las máquinas decidan cada trayecto cambiará para siempre nuestra noción de libertad y propiedad personal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room flashing lights",
+    "otras": [
+     "data center technician",
+     "network cables glowing"
+    ],
+    "descripcion": "Centro de datos con luces indicadoras parpadeando en la oscuridad.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/01/43559-436237492_large.mp4",
+    "clip_id": 43559
+   },
+   "efecto": "polvo",
+   "subtitulo": "Delegar el control absoluto de nuestros desplazamientos en sistemas autónomos exige una confianza inédita en el software. Aceptar que las máquinas decidan cada trayecto cambiará para siempre nuestra noción de libertad y propiedad personal."
+  },
+  {
+   "hablado": "El futuro ya se está construyendo en laboratorios y calzadas de prueba de todo el mundo. Cuéntanos en los comentarios: ¿estarías dispuesto a renunciar a tener un coche propio a cambio de una ciudad limpia y sin tráfico?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city sunset skyline",
+    "otras": [
+     "modern city aerial",
+     "urban landscape sunset"
+    ],
+    "descripcion": "Vista panorámica de una ciudad moderna durante la puesta de sol.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/07/126990-737419647_medium.mp4",
+    "clip_id": 126990
+   },
+   "efecto": "nada",
+   "subtitulo": "El futuro ya se está construyendo en laboratorios y calzadas de prueba de todo el mundo. Cuéntanos en los comentarios: ¿estarías dispuesto a renunciar a tener un coche propio a cambio de una ciudad limpia y sin tráfico?"
+  }
+ ],
+ "titulo_youtube": "¿Quién decide en un ACCIDENTE de IA?",
+ "voz": "Algenib",
+ "estilo_imagen": "Ultra realistic photograph, real-world photojournalism look of a believable near future: futuristic technology integrated into everyday places, natural daylight or soft practical lighting, true-to-life skin and materials, subtle sci-fi details (holographic displays, sleek robots, advanced vehicles), sharp focus, shallow depth of field, shot on a full-frame camera, 35mm lens. "
+}
