@@ -4,7 +4,8 @@ name: Videos largos
 
 on:
   schedule:
-    - cron: "47 19 * * *"   # por la tarde: usa la cuota de Cloudflare que sobra tras los cortos del día
+    - cron: "47 19 * * *"   # por la tarde
+    - cron: "47 8 * * *"    # y por la mañana: para llegar a 20 largos al mes por canal aunque alguno falle
   workflow_dispatch:
     inputs:
       canal:
@@ -30,6 +31,9 @@ jobs:
   largo:
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    concurrency:
+      group: largo-${{ matrix.canal }}   # nunca dos ejecuciones a la vez con el mismo proyecto
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:

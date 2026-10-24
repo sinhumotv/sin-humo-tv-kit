@@ -76,8 +76,23 @@ def siguiente_hueco():
     def variado(d):  # la hora cambia cada vez (hasta ±45 min), para que no se publique siempre a la misma
         v = int(hashlib.sha256(f"{CANAL}|{d:%Y-%m-%d}".encode()).hexdigest(), 16) % 91 - 45
         return d + dt.timedelta(minutes=v)
-    while variado(d) < AHORA + dt.timedelta(minutes=30) or d.strftime("%Y-%m-%d") in huecos_ocupados():
-        d += paso
+    por_mes = int(L.get("por_mes", 0))
+    if por_mes:
+        # X largos al mes (cupo gratis de Metricool: 20 publicaciones al mes por cuenta), repartidos por igual en el mes
+        import calendar
+        def toca(d):
+            n = calendar.monthrange(d.year, d.month)[1]
+            return int(d.day * por_mes / n) != int((d.day - 1) * por_mes / n)
+        def lleno(d):
+            return sum(1 for r in REGISTRO if r[0][:7] == d.strftime("%Y-%m")) >= por_mes
+        d = max(d, AHORA.replace(hour=hh, minute=mm, second=0, microsecond=0))
+        paso = dt.timedelta(days=1)
+        while (not toca(d) or lleno(d) or variado(d) < AHORA + dt.timedelta(minutes=30)
+               or d.strftime("%Y-%m-%d") in huecos_ocupados()):
+            d += paso
+    else:
+        while variado(d) < AHORA + dt.timedelta(minutes=30) or d.strftime("%Y-%m-%d") in huecos_ocupados():
+            d += paso
     d = variado(d)
     if os.environ.get("AHORA") and not any(r[0] >= AHORA.strftime("%Y-%m-%d") for r in REGISTRO):
         d = AHORA + dt.timedelta(minutes=20)  # primera vez: publicar en cuanto esté
