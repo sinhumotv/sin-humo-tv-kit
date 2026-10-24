@@ -354,7 +354,50 @@ for i, e in enumerate(ESC, 1):
         print(f"escena {i}: sin imagen real válida -> IA")
     guardar()
 
-# 2) imagen base de la miniatura (prioridad) y escenas de IA, hasta agotar la cuota del día
+# 2) regla del usuario: en los largos TODO es vídeo real de internet. Las escenas que el guion pedía con IA o que
+#    se han quedado sin foto real se buscan también en vídeo (y si no hay nada concreto, vídeo de ambiente del canal).
+for i, e in enumerate(ESC, 1):
+    if e["imagen"]["tipo"] != "ia" or os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
+        continue
+    im = e["imagen"]
+    pal = [w for w in re.findall(r"[A-Za-z]+", im.get("prompt", "")) if w.lower() not in
+           {"a", "an", "the", "of", "in", "on", "with", "and", "photo", "photograph", "documentary", "illustrating",
+            "cinematic", "realistic", "image", "shot", "style", "showing", "at", "by", "for", "from", "to"}]
+    im.setdefault("busqueda", " ".join(pal[:4]) or "dramatic sky clouds")
+    im.setdefault("descripcion", im.get("prompt", ""))
+    if video(i, e):
+        im["tipo"] = "video"
+        print(f"escena {i}: vídeo real en vez de IA · {im['clip_id']}")
+    guardar()
+
+# 3) imagen base de la miniatura: un fotograma REAL del propio vídeo (lo elige Gemini). La IA solo si no hay nada.
+if not os.path.exists(f"{D}/miniatura_base.jpg"):
+    cand = [i for i in range(1, len(ESC) + 1) if os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+    if cand:
+        paso_ = max(1, len(cand) // 10)
+        cand = cand[::paso_][:10]
+        minis = []
+        for i in cand:
+            t = Image.open(f"{D}/imgs/{i:02d}.jpg").convert("RGB")
+            t.thumbnail((480, 480))
+            buf = io.BytesIO()
+            t.save(buf, "JPEG", quality=80)
+            minis.append(buf.getvalue())
+        elegido = cand[0]
+        try:
+            j, _ = pedir(f"""Miniatura de YouTube para el vídeo "{H['titulo_youtube']}". Idea de la miniatura:
+{H['miniatura'].get('prompt', '')}. Te paso {len(cand)} fotogramas reales del vídeo (desde 0). Elige el que mejor
+funcionaría de fondo de miniatura: impactante, claro en pequeño, con un sujeto o lugar fuerte, buen contraste y sin
+texto. Devuelve SOLO JSON: {{"mejor": <número>}}""", temp=0.2, imagenes=minis, max_tokens=300)
+            k = j.get("mejor") if isinstance(j, dict) else None
+            if isinstance(k, int) and 0 <= k < len(cand):
+                elegido = cand[k]
+        except SystemExit:
+            pass
+        Image.open(f"{D}/imgs/{elegido:02d}.jpg").save(f"{D}/miniatura_base.jpg", quality=92)
+        print(f"miniatura: fondo real de la escena {elegido}")
+
+# 4) IA de Cloudflare solo para lo que no haya podido ser real (casi nunca), hasta agotar la cuota del día
 pend = []
 if not os.path.exists(f"{D}/miniatura_base.jpg"):
     pend.append(("miniatura", H["miniatura"]["prompt"], f"{D}/miniatura_base.jpg"))

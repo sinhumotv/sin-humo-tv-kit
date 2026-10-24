@@ -1,4 +1,4 @@
-# Tanda diaria de vídeos SIN Claude: guiones con Gemini, imágenes con Cloudflare, voz Gemini, publicación con Buffer.
+# Tanda diaria de vídeos SIN Claude: guiones con Gemini, imágenes con Cloudflare (o vídeo real de Pixabay), voz Gemini, publicación con Buffer.
 # Claves en Settings → Secrets and variables → Actions (nunca en el código).
 name: Tanda diaria de vídeos
 
@@ -14,6 +14,12 @@ on:
       n:
         description: "Número de vídeos (vacío = todos los del día)"
         default: ""
+      probar:
+        description: "1 = solo fabricar (sin publicar) y dejar el vídeo para revisarlo"
+        default: ""
+      modo:
+        description: "con probar: real (vídeo de Pixabay) o ia"
+        default: "real"
 
 permissions:
   contents: write
@@ -38,10 +44,20 @@ jobs:
           CF_ACCOUNT: ${{ secrets[format('{0}_CF_ACCOUNT', matrix.canal)] }}
           CF_TOKEN: ${{ secrets[format('{0}_CF_TOKEN', matrix.canal)] }}
           BUFFER_KEY: ${{ secrets[format('{0}_BUFFER_KEY', matrix.canal)] }}
+          PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           N: ${{ inputs.n }}
           REPESCA: ${{ github.event.schedule == '17 9 * * *' && '1' || '' }}
+          PROBAR: ${{ inputs.probar }}
+          MODO_PRUEBA: ${{ inputs.modo }}
           WHISPER_MODELO: base
         run: |
           [ -z "$N" ] && unset N
+          [ -z "$PROBAR" ] && unset PROBAR
           python3 relatos/diario.py ${{ matrix.canal }}
+      - name: Vídeo de prueba
+        if: ${{ inputs.probar == '1' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: prueba-${{ matrix.canal }}
+          path: prueba/

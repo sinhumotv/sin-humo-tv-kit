@@ -13,6 +13,7 @@ from zoneinfo import ZoneInfo
 AQUI = os.path.dirname(os.path.abspath(__file__))
 KIT = os.path.dirname(AQUI)
 sys.path.insert(0, os.path.join(KIT, "metricool"))
+sys.path.insert(0, AQUI)
 CANAL = sys.argv[1]
 CFG_P = os.path.join(AQUI, "canales", CANAL + ".json")
 C = json.load(open(CFG_P, encoding="utf-8"))
@@ -164,8 +165,9 @@ if E["fase"] == "montaje":
     cred = json.load(open(f"{P}/creditos.json", encoding="utf-8")) if os.path.exists(f"{P}/creditos.json") else {}
     tags = " ".join("#" + t.replace(" ", "").lower() for t in (C.get("hashtags_base") or [])[:3])
     desc = f"{H['descripcion'].strip()}\n\nCAPÍTULOS\n{caps}\n\n"
-    desc += "Narración e imágenes de las escenas generadas con inteligencia artificial"
-    desc += (" y material real de archivo (Pixabay y Wikimedia Commons)." if cred else ".")
+    n_ia = sum(1 for e in ESC if e["imagen"]["tipo"] == "ia")
+    desc += "Narración generada con inteligencia artificial. Imágenes: material real de archivo (Pixabay y Wikimedia Commons)"
+    desc += (" y algunas escenas generadas con IA." if n_ia else ".")
     desc += f"\n\nSuscríbete a {C['nombre']} para no perderte el próximo.\n\n{tags}"
     if cred:
         desc += "\n\nCRÉDITOS DE IMÁGENES\n" + "\n".join(sorted(set(v.rsplit(' · ', 1)[0] for v in cred.values())))
@@ -221,10 +223,10 @@ if E["fase"] == "publicar":
     if isinstance(res, dict):
         x = res.get("data", res)
         pid = str(x.get("id", "")) if isinstance(x, dict) else ""
-    with open(REG, "a", encoding="utf-8") as f:
-        f.write(f"{cuando:%Y-%m-%d %H:%M}|{H['titulo']}|{H['titulo_youtube']}|{pid}|{E['tag']}\n")
-    sh(f'git add largos_{CANAL}.txt && git -c user.name="{C["nombre"]}" -c user.email="sinhumotv@users.noreply.github.com" '
-       f'commit -qm "largo {CANAL} {cuando:%Y-%m-%d}" && git push -q {REPO_URL} HEAD:datos', cwd=DAT, ok=True)
+    import datos
+    datos.anadir(REPO_URL, f"largos_{CANAL}.txt",
+                 [f"{cuando:%Y-%m-%d %H:%M}|{H['titulo']}|{H['titulo_youtube']}|{pid}|{E['tag']}"],
+                 C["nombre"], f"largo {CANAL} {cuando:%Y-%m-%d}")
     estado("hecho", publicado=cuando.isoformat())
     guardar_proyecto()
     print(f"PROGRAMADO · {C['nombre']} · {cuando:%d/%m %H:%M} · «{H['titulo_youtube']}»")

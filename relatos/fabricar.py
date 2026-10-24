@@ -52,14 +52,65 @@ def voz():
     print(sh(f'python3 "{KIT}/audio.py" "{D}"').splitlines()[0])
 
 
+def reales(indices):
+    """Pone vídeo REAL de internet (Pixabay) en las escenas indicadas (1..n). Devuelve las que no se consiguieron."""
+    sys.path.insert(0, AQUI)
+    import stock
+    if not stock.clave():
+        print("sin PIXABAY_KEY: no se puede usar vídeo real")
+        return list(indices)
+    os.makedirs(f"{D}/clips", exist_ok=True)
+    cfg = {}
+    if os.environ.get("CANAL_JSON") and os.path.exists(os.environ["CANAL_JSON"]):
+        cfg = json.load(open(os.environ["CANAL_JSON"], encoding="utf-8"))
+    gen = (cfg.get("largo") or {}).get("video_generico") or []
+    if "busquedas" not in H:
+        H["busquedas"] = stock.busquedas(H["titulo"], ESC, cfg.get("tema", ""))
+    P = json.load(open(f"{D}/proyecto.json", encoding="utf-8"))
+    clips = P.get("clips") or {}
+    cred = H.setdefault("creditos_video", {})
+    usados = {c.get("clip_id") for c in H.get("clips_info", {}).values()}
+    info = H.setdefault("clips_info", {})
+    sin = []
+    for i in indices:
+        r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"])
+        if not r:
+            sin.append(i)
+            continue
+        usados.add(r["clip_id"])
+        info[str(i)] = {"clip_id": r["clip_id"]}
+        cred[str(i)] = r["credito"]
+        clips[str(i - 1)] = r["clip"]
+        P["efectos"][i - 1] = "nada"
+        print(f"escena {i}: vídeo real · {r['clip_id']}")
+    P["clips"] = clips
+    json.dump(P, open(f"{D}/proyecto.json", "w"), ensure_ascii=False, indent=1)
+    json.dump(H, open(f"{D}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return sin
+
+
 def imagenes():
+    os.makedirs(f"{D}/imgs", exist_ok=True)
+    modo = os.environ.get("MODO_IMG", "ia")
+    pendientes = [i for i in range(1, len(ESC) + 1) if not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+    con_video = []
+    if modo == "real" and pendientes:
+        # PRUEBA A/B: este corto se hace solo con vídeo real; lo que no se encuentre, con IA
+        sin = reales(pendientes)
+        con_video = [i for i in pendientes if i not in sin]
+        if len(con_video) < len(pendientes) / 2:
+            print("vídeo real insuficiente: este corto se hace con IA")
+            modo = "ia"
     A = os.environ.get("CF_ACCOUNT") or open(os.path.expanduser("~/.cf_account")).read().strip()
     T = os.environ.get("CF_TOKEN") or open(os.path.expanduser("~/.cf_token")).read().strip()
-    os.makedirs(f"{D}/imgs", exist_ok=True)
     fallos = []
+    sin_cuota = False
     for i, e in enumerate(ESC, 1):
         out = f"{D}/imgs/{i:02d}.jpg"
         if os.path.exists(out):
+            continue
+        if sin_cuota:   # sin cuota: no se sigue llamando a Cloudflare
+            fallos.append(i)
             continue
         ok = False
         for intento, (extra, (ww, hh)) in enumerate([("", (1024, 1792)), (SEGURO, (1024, 1792)), (SEGURO, (768, 1344))]):
@@ -75,10 +126,21 @@ def imagenes():
                 open(out, "wb").write(base64.b64decode(d["result"]["image"]))
                 ok = True
                 break
-            print(f"escena {i} intento {intento + 1}: {d.get('errors')}")
+            print(f"escena {i} intento {intento + 1}: {str(d.get('errors'))[:160]}")
+            if "4006" in str(d.get("errors")) or "neurons" in str(d.get("errors")):
+                sin_cuota = True
+                break
             time.sleep(2)
         if not ok:
             fallos.append(i)
+    if fallos:
+        # PLAN B: Cloudflare sin cuota o imagen rechazada -> vídeo real de internet para esas escenas
+        print("Cloudflare no ha podido con las escenas", fallos, "-> vídeo real")
+        sin = reales(fallos)
+        con_video += [i for i in fallos if i not in sin]
+        fallos = sin
+    n_vid = len([i for i in range(1, len(ESC) + 1) if os.path.exists(f"{D}/clips/{i:02d}.mp4")])
+    open(f"{D}/modo_imagenes.txt", "w").write("real" if n_vid == len(ESC) else "mixto" if n_vid else "ia")
     if fallos and os.environ.get("AUTO"):
         # modo automático: reutiliza la imagen de la escena vecina para no perder el vídeo
         for i in fallos:

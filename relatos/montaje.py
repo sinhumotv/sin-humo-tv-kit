@@ -156,6 +156,8 @@ def capa_texto(q, activa):
     key = (q, activa)
     if key in cache:
         return cache[key]
+    if cache and next(iter(cache))[0] != q:
+        cache.clear()   # solo se guarda el bloque actual (antes se guardaban todos: >20 GB en un largo de 15 min)
     idxs = trozos[q][2]
     capa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(capa)
