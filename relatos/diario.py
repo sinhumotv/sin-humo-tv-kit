@@ -75,6 +75,9 @@ if not os.path.exists(USADOS):
 # no repetir horas ya publicadas hoy; en la repesca, solo las horas que aún no han pasado
 HECHAS = set() if os.environ.get("PROBAR") else {l.split("|")[1] for l in open(USADOS, encoding="utf-8") if l.startswith(f"{HOY:%Y-%m-%d}|")}
 HORAS = [h for h in HORAS if h not in HECHAS]
+if os.environ.get("EXTRA"):
+    # vídeo EXTRA (petición del usuario): uno solo, con vídeo real, publicado en cuanto esté listo
+    HORAS = [(HOY + dt.timedelta(minutes=30)).strftime("%H:%M")]
 if os.environ.get("REPESCA"):
     HORAS = [h for h in HORAS if h >= (HOY + dt.timedelta(minutes=15)).strftime("%H:%M")]
 if not HORAS:
@@ -92,6 +95,8 @@ PROBAR = os.environ.get("PROBAR")   # 1 = solo fabricar (con vídeo real), sin p
 
 
 def modo_de(hora):
+    if os.environ.get("EXTRA"):
+        return "real"
     if PROBAR:
         return os.environ.get("MODO_PRUEBA", "real")
     return "real" if hora in REALES else "ia"
@@ -118,6 +123,8 @@ for hora, sub in zip(HORAS, carpetas):
             resumen.append(f"{hora} · {H['titulo']} · [{modo}] · PRUEBA (sin publicar)")
             continue
         hora_real = variar(hora, CANAL, f"{HOY:%Y-%m-%d}")
+        if os.environ.get("EXTRA"):
+            hora_real = (dt.datetime.now(ZoneInfo("Europe/Madrid")) + dt.timedelta(minutes=8)).strftime("%H:%M")
         out = sh(f'RAMA_HORA={hora} python3 "{AQUI}/publicar.py" "{D}" {hora_real} "{CFG_P}"')
         print(out[-800:])
         res = json.loads(out.strip().splitlines()[-1])["buffer"]
