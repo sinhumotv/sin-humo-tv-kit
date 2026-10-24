@@ -1,0 +1,566 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "El mito de Sísifo",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "niebla",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/01.mp4",
+  "2": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/03.mp4",
+  "3": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/04.mp4",
+  "4": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/05.mp4",
+  "5": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/06.mp4",
+  "6": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/07.mp4",
+  "8": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/09.mp4",
+  "9": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/10.mp4",
+  "10": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/11.mp4",
+  "11": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/12.mp4",
+  "12": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/13.mp4",
+  "13": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/14.mp4",
+  "14": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/15.mp4",
+  "15": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/16.mp4",
+  "16": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/17.mp4",
+  "17": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/18.mp4",
+  "18": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/19.mp4",
+  "19": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/20.mp4",
+  "20": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/21.mp4",
+  "22": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/23.mp4",
+  "23": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/24.mp4",
+  "24": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/25.mp4",
+  "25": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/26.mp4",
+  "26": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/27.mp4",
+  "27": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/28.mp4",
+  "28": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/29.mp4",
+  "29": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/30.mp4",
+  "30": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/31.mp4",
+  "31": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/32.mp4",
+  "32": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/33.mp4",
+  "33": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/34.mp4",
+  "34": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/35.mp4",
+  "36": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/37.mp4",
+  "37": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/38.mp4",
+  "38": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/39.mp4",
+  "39": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/40.mp4",
+  "40": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/41.mp4",
+  "41": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/42.mp4",
+  "42": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/43.mp4",
+  "43": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/44.mp4",
+  "44": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/45.mp4",
+  "45": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/46.mp4",
+  "46": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/47.mp4",
+  "47": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/48.mp4",
+  "48": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/49.mp4",
+  "49": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/50.mp4",
+  "50": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/51.mp4",
+  "51": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/52.mp4",
+  "52": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/53.mp4",
+  "53": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/54.mp4",
+  "54": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/55.mp4",
+  "55": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/56.mp4",
+  "56": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/57.mp4",
+  "57": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/58.mp4",
+  "58": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/59.mp4",
+  "59": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/60.mp4",
+  "60": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/61.mp4",
+  "61": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/62.mp4",
+  "62": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/63.mp4",
+  "63": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/64.mp4",
+  "64": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/65.mp4",
+  "65": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/66.mp4",
+  "66": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/67.mp4",
+  "67": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/68.mp4",
+  "68": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/69.mp4",
+  "69": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/70.mp4",
+  "70": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/71.mp4",
+  "71": "/tmp/largo-relatos-8smc9i0a/proyecto/clips/72.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "El peso de un castigo eterno"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "El astuto fundador de Éfira"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "El secreto del rey de los dioses"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "Tánatos en cadenas"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "Un mundo donde nadie muere"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "El engaño a la reina del Inframundo"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "La fugaz victoria sobre el destino"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "El castigo en la ladera del Tártaro"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "El sentido del trabajo inútil"
+  }
+ ],
+ "color": null,
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "Una roca colosal asciende por una ladera pedregosa mientras un hombre deja su aliento en cada palmo. Cuando la cima parece rozar sus manos, la piedra se precipita de nuevo hacia el abismo eterno.",
+   "subtitulo": "Una roca colosal asciende por una ladera pedregosa mientras un hombre deja su aliento en cada palmo. Cuando la cima parece rozar sus manos, la piedra se precipita de nuevo hacia el abismo eterno."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta condena en las sombras del Tártaro no castigó a un monstruo ni a un titán arrogante, sino al humano más astuto que pisó la tierra. Un soberano mortal que osó desafiar la autoridad del mismísimo Olimpo.",
+   "subtitulo": "Esta condena en las sombras del Tártaro no castigó a un monstruo ni a un titán arrogante, sino al humano más astuto que pisó la tierra. Un soberano mortal que osó desafiar la autoridad del mismísimo Olimpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel hombre llamado Sísifo logró lo inimaginable al engañar a las fuerzas del Inframundo dos veces consecutivas. Hoy descubrirás la trampa con la que detuvo a la propia Muerte, desatando una venganza divina sin precedentes.",
+   "subtitulo": "Aquel hombre llamado Sísifo logró lo inimaginable al engañar a las fuerzas del Inframundo dos veces consecutivas. Hoy descubrirás la trampa con la que detuvo a la propia Muerte, desatando una venganza divina sin precedentes."
+  },
+  {
+   "titulo": "",
+   "hablado": "Antes de convertirse en una sombra condenada al tormento perpetuo, Sísifo gobernaba con mano de hierro sobre el istmo griego. No dependía de la fuerza bruta, sino de un ingenio maquiavélico que asombraba a sus súbditos.",
+   "subtitulo": "Antes de convertirse en una sombra condenada al tormento perpetuo, Sísifo gobernaba con mano de hierro sobre el istmo griego. No dependía de la fuerza bruta, sino de un ingenio maquiavélico que asombraba a sus súbditos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ningún enigma escapaba a su perspicacia y ninguna ley parecía interponerse en sus ambiciones territoriales. Los caminos hacia su palacio acumulaban riquezas gracias a un comercio implacable y a secretos que arrebataba sin piedad a sus rivales.",
+   "subtitulo": "Ningún enigma escapaba a su perspicacia y ninguna ley parecía interponerse en sus ambiciones territoriales. Los caminos hacia su palacio acumulaban riquezas gracias a un comercio implacable y a secretos que arrebataba sin piedad a sus rivales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Creía firmemente que el intelecto de los hombres podía burlar el poder del destino y doblegar la voluntad celestial. Esa peligrosa vanidad lo empujó a vigilar los cielos, buscando cualquier debilidad en los actos de los dioses.",
+   "subtitulo": "Creía firmemente que el intelecto de los hombres podía burlar el poder del destino y doblegar la voluntad celestial. Esa peligrosa vanidad lo empujó a vigilar los cielos, buscando cualquier debilidad en los actos de los dioses."
+  },
+  {
+   "titulo": "",
+   "hablado": "Muy pronto, una oportunidad dorada cruzó ante sus ojos, permitiéndole sellar un pacto tan arriesgado como codicioso. Pero cruzar la línea contra el gobernante del trueno exigía un precio que ningún mortal estaba preparado para pagar.",
+   "subtitulo": "Muy pronto, una oportunidad dorada cruzó ante sus ojos, permitiéndole sellar un pacto tan arriesgado como codicioso. Pero cruzar la línea contra el gobernante del trueno exigía un precio que ningún mortal estaba preparado para pagar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda.",
+   "subtitulo": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda.",
+   "subtitulo": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sísifo fundó la gloriosa ciudad de Éfira, que más tarde sería conocida en todo el mundo antiguo como la próspera Corinto, convirtiéndola en un enclave estratégico para el comercio marítimo gracias a su talento administrativo.",
+   "subtitulo": "Sísifo fundó la gloriosa ciudad de Éfira, que más tarde sería conocida en todo el mundo antiguo como la próspera Corinto, convirtiéndola en un enclave estratégico para el comercio marítimo gracias a su talento administrativo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Gobernaba con una inteligencia verdaderamente prodigiosa, multiplicando las riquezas del reino con audaces rutas comerciales y atrayendo a mercaderes de tierras lejanas que admiraban el poder y la organización de sus puertos.",
+   "subtitulo": "Gobernaba con una inteligencia verdaderamente prodigiosa, multiplicando las riquezas del reino con audaces rutas comerciales y atrayendo a mercaderes de tierras lejanas que admiraban el poder y la organización de sus puertos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, toda aquella brillantez exterior estaba profundamente corrompida por una crueldad despiadada y un desprecio absoluto hacia las sagradas leyes de la hospitalidad que protegían a cualquier viajero en Grecia.",
+   "subtitulo": "Sin embargo, toda aquella brillantez exterior estaba profundamente corrompida por una crueldad despiadada y un desprecio absoluto hacia las sagradas leyes de la hospitalidad que protegían a cualquier viajero en Grecia."
+  },
+  {
+   "titulo": "",
+   "hablado": "El monarca tendía emboscadas mortales en los caminos y despeñaba a los extranjeros desde los acantilados para saquear sus pertenencias, acumulando una fortuna inmensa mientras se creía totalmente intocable.",
+   "subtitulo": "El monarca tendía emboscadas mortales en los caminos y despeñaba a los extranjeros desde los acantilados para saquear sus pertenencias, acumulando una fortuna inmensa mientras se creía totalmente intocable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su arrogancia creció de manera desmedida hasta el punto de convencerse de que su intelecto superaba con creces la sabiduría y las capacidades de los propios dioses que habitaban en la cumbre del monte Olimpo.",
+   "subtitulo": "Su arrogancia creció de manera desmedida hasta el punto de convencerse de que su intelecto superaba con creces la sabiduría y las capacidades de los propios dioses que habitaban en la cumbre del monte Olimpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desafiaba abiertamente las normas divinas convencido de que nadie poseía la astucia suficiente para castigar sus crímenes, viviendo en un peligroso estado de negación sobre las verdaderas fuerzas que gobernaban el cosmos.",
+   "subtitulo": "Desafiaba abiertamente las normas divinas convencido de que nadie poseía la astucia suficiente para castigar sus crímenes, viviendo en un peligroso estado de negación sobre las verdaderas fuerzas que gobernaban el cosmos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel afán enfermizo de control absoluto sobre su destino pronto lo llevaría a cruzarse sin remedio en el camino del mismísimo Zeus, desencadenando un conflicto irreversible y mortal.",
+   "subtitulo": "Aquel afán enfermizo de control absoluto sobre su destino pronto lo llevaría a cruzarse sin remedio en el camino del mismísimo Zeus, desencadenando un conflicto irreversible y mortal."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios fluvial Asopo recorría con desesperación los valles de Grecia buscando a su hermosa hija Egina. La joven ninfa había desaparecido súbitamente de las orillas sin dejar rastro alguno, sumiendo a su padre en una angustia desoladora.",
+   "subtitulo": "El dios fluvial Asopo recorría con desesperación los valles de Grecia buscando a su hermosa hija Egina. La joven ninfa había desaparecido súbitamente de las orillas sin dejar rastro alguno, sumiendo a su padre en una angustia desoladora."
+  },
+  {
+   "titulo": "",
+   "hablado": "El causante de aquella misteriosa desaparición era el propio soberano del Olimpo. Zeus, encaprichado con la doncella, se había transformado en una imponente águila para raptarla en secreto y llevarla a una remota isla solitaria en el golfo Sarónico.",
+   "subtitulo": "El causante de aquella misteriosa desaparición era el propio soberano del Olimpo. Zeus, encaprichado con la doncella, se había transformado en una imponente águila para raptarla en secreto y llevarla a una remota isla solitaria en el golfo Sarónico."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero ningún crimen permanece oculto para siempre. Desde las imponentes almenas del Acrocorinto, Sísifo había presenciado con sus propios ojos el vuelo del raptor celeste y reconoció de inmediato el poder desmedido que emanaba de la figura del dios supremo.",
+   "subtitulo": "Pero ningún crimen permanece oculto para siempre. Desde las imponentes almenas del Acrocorinto, Sísifo había presenciado con sus propios ojos el vuelo del raptor celeste y reconoció de inmediato el poder desmedido que emanaba de la figura del dios supremo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando el afligido Asopo llegó a las puertas de Corinto siguiendo el rastro del secuestrador, acudió al rey pidiendo auxilio. Sísifo no vio una tragedia ajena, sino una oportunidad irrepetible para enriquecer aún más su sediento reino mediante una astuta negociación.",
+   "subtitulo": "Cuando el afligido Asopo llegó a las puertas de Corinto siguiendo el rastro del secuestrador, acudió al rey pidiendo auxilio. Sísifo no vio una tragedia ajena, sino una oportunidad irrepetible para enriquecer aún más su sediento reino mediante una astuta negociación."
+  },
+  {
+   "titulo": "",
+   "hablado": "La ciudadela sufría por la escasez de agua potable. Por ello, el monarca impuso una condición implacable: únicamente revelaría el paradero exacto de la muchacha si el dios fluvial hacía brotar un manantial inagotable de agua dulce en la cima rocosa.",
+   "subtitulo": "La ciudadela sufría por la escasez de agua potable. Por ello, el monarca impuso una condición implacable: únicamente revelaría el paradero exacto de la muchacha si el dios fluvial hacía brotar un manantial inagotable de agua dulce en la cima rocosa."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desesperado por encontrar a su hija, Asopo golpeó la roca con su fuerza elemental e hizo surgir la célebre fuente Pirene. Al instante, un torrente cristalino y puro inundó la acrópolis, otorgando a Corinto una prosperidad hídrica que perduraría durante incontables siglos.",
+   "subtitulo": "Desesperado por encontrar a su hija, Asopo golpeó la roca con su fuerza elemental e hizo surgir la célebre fuente Pirene. Al instante, un torrente cristalino y puro inundó la acrópolis, otorgando a Corinto una prosperidad hídrica que perduraría durante incontables siglos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cumplido el pacto, Sísifo no titubeó en señalar con el dedo al mismísimo rey de los cielos, desvelando el escondite en la isla de Egina. Había cometido la mayor insolencia mortal: traicionar al padre de los dioses a cambio de beneficios terrenales.",
+   "subtitulo": "Cumplido el pacto, Sísifo no titubeó en señalar con el dedo al mismísimo rey de los cielos, desvelando el escondite en la isla de Egina. Había cometido la mayor insolencia mortal: traicionar al padre de los dioses a cambio de beneficios terrenales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás.",
+   "subtitulo": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás.",
+   "subtitulo": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios del trueno convocó a Tánatos, la temible personificación de la Muerte, un ser alado de mirada fría que camina silencioso entre los hombres para cortar el hilo de la vida con su afilada espada.",
+   "subtitulo": "El dios del trueno convocó a Tánatos, la temible personificación de la Muerte, un ser alado de mirada fría que camina silencioso entre los hombres para cortar el hilo de la vida con su afilada espada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tánatos descendió del Olimpo cruzando los cielos con paso firme, portando entre sus manos unas pesadas cadenas de hierro negro forjadas en el Tártaro específicamente para aprisionar al rey de Corinto.",
+   "subtitulo": "Tánatos descendió del Olimpo cruzando los cielos con paso firme, portando entre sus manos unas pesadas cadenas de hierro negro forjadas en el Tártaro específicamente para aprisionar al rey de Corinto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al cruzar las puertas del palacio real, el dios de la muerte encontró a Sísifo sentado en su trono, esperando con una sonrisa calculada y sin mostrar el menor ápice de temor o temblor.",
+   "subtitulo": "Al cruzar las puertas del palacio real, el dios de la muerte encontró a Sísifo sentado en su trono, esperando con una sonrisa calculada y sin mostrar el menor ápice de temor o temblor."
+  },
+  {
+   "titulo": "",
+   "hablado": "Lejos de suplicar piedad, el astuto monarca se levantó y comenzó a elogiar con falsos halagos la sublime maestría con la que se habían fabricado aquellos grilletes divinos de metal oscuro.",
+   "subtitulo": "Lejos de suplicar piedad, el astuto monarca se levantó y comenzó a elogiar con falsos halagos la sublime maestría con la que se habían fabricado aquellos grilletes divinos de metal oscuro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con tono sumiso, le pidió al dios que le demostrara personalmente cómo funcionaban el mecanismo de cierre y los complejos cerrojos de seguridad antes de colocar las cadenas sobre su propio cuerpo.",
+   "subtitulo": "Con tono sumiso, le pidió al dios que le demostrara personalmente cómo funcionaban el mecanismo de cierre y los complejos cerrojos de seguridad antes de colocar las cadenas sobre su propio cuerpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tánatos, cegado por la vanidad ante el elogio a su labor, cayó en la trampa y ajustó los grilletes alrededor de sus propias muñecas divinas sin sospechar la astuta jugada del mortal.",
+   "subtitulo": "Tánatos, cegado por la vanidad ante el elogio a su labor, cayó en la trampa y ajustó los grilletes alrededor de sus propias muñecas divinas sin sospechar la astuta jugada del mortal."
+  },
+  {
+   "titulo": "",
+   "hablado": "En un rápido movimiento, Sísifo cerró los cerrojos y encerró a la mismísima Muerte en una celda blindada bajo el palacio, dejando al mundo terrenal sin su implacable y necesaria guía.",
+   "subtitulo": "En un rápido movimiento, Sísifo cerró los cerrojos y encerró a la mismísima Muerte en una celda blindada bajo el palacio, dejando al mundo terrenal sin su implacable y necesaria guía."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con Tánatos prisionero en las mazmorras subterráneas de Corinto, una calma antinatural y desconcertante se extendió por toda la Hélade. De repente, los ancianos exhaustos por los años y los enfermos desahuciados dejaron de expirar su último aliento vital.",
+   "subtitulo": "Con Tánatos prisionero en las mazmorras subterráneas de Corinto, una calma antinatural y desconcertante se extendió por toda la Hélade. De repente, los ancianos exhaustos por los años y los enfermos desahuciados dejaron de expirar su último aliento vital."
+  },
+  {
+   "titulo": "",
+   "hablado": "En los campos de batalla, la tragedia adquirió un cariz grotesco e insoportable. Los guerreros atravesados por lanzas de bronce y espadas afiladas continuaban gimiendo sobre el fango, incapaces de cruzar el umbral hacia el eterno descanso prometido por el destino.",
+   "subtitulo": "En los campos de batalla, la tragedia adquirió un cariz grotesco e insoportable. Los guerreros atravesados por lanzas de bronce y espadas afiladas continuaban gimiendo sobre el fango, incapaces de cruzar el umbral hacia el eterno descanso prometido por el destino."
+  },
+  {
+   "titulo": "",
+   "hablado": "El orden cósmico comenzó a resquebrajarse en cada santuario de Grecia. Los sacerdotes intentaban degollar bueyes y corderos en los altares de piedra, pero las hojas afiladas no arrebataban la vida y el humo sagrado dejó de elevarse hacia las alturas.",
+   "subtitulo": "El orden cósmico comenzó a resquebrajarse en cada santuario de Grecia. Los sacerdotes intentaban degollar bueyes y corderos en los altares de piedra, pero las hojas afiladas no arrebataban la vida y el humo sagrado dejó de elevarse hacia las alturas."
+  },
+  {
+   "titulo": "",
+   "hablado": "La falta de holocaustos y el caos terrenal enfurecieron a los olímpicos, pero nadie sintió mayor cólera que Ares. El impetuoso dios de la guerra observaba atónito cómo sus sangrientos combates perdían todo sentido al desaparecer la gloriosa muerte en combate.",
+   "subtitulo": "La falta de holocaustos y el caos terrenal enfurecieron a los olímpicos, pero nadie sintió mayor cólera que Ares. El impetuoso dios de la guerra observaba atónito cómo sus sangrientos combates perdían todo sentido al desaparecer la gloriosa muerte en combate."
+  },
+  {
+   "titulo": "",
+   "hablado": "Incapaz de tolerar semejante burla a su dominio, Ares descendió de los cielos como una tempestad devastadora sobre Corinto. Su imponente presencia conmovió los cimientos de la ciudad mientras marchaba directamente hacia la fortaleza subterránea donde yacía cautivo el señor de las sombras.",
+   "subtitulo": "Incapaz de tolerar semejante burla a su dominio, Ares descendió de los cielos como una tempestad devastadora sobre Corinto. Su imponente presencia conmovió los cimientos de la ciudad mientras marchaba directamente hacia la fortaleza subterránea donde yacía cautivo el señor de las sombras."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin vacilar, la temible deidad de la guerra destrozó los cerrojos de hierro forjado de la mazmorra con su lanza divina. Liberado de sus cadenas mágicas, Tánatos desplegó de nuevo sus oscuras alas, ansioso por cobrar todas las vidas contenidas durante aquel cautiverio.",
+   "subtitulo": "Sin vacilar, la temible deidad de la guerra destrozó los cerrojos de hierro forjado de la mazmorra con su lanza divina. Liberado de sus cadenas mágicas, Tánatos desplegó de nuevo sus oscuras alas, ansioso por cobrar todas las vidas contenidas durante aquel cautiverio."
+  },
+  {
+   "titulo": "",
+   "hablado": "La primera alma que la Muerte exigió recuperar fue la del insolente soberano que se había atrevido a doblegarla. Ares y Tánatos acorralaron a Sísifo en su sala del trono, listos para arrastrarlo sin piedad hacia las tinieblas insondables del Tártaro.",
+   "subtitulo": "La primera alma que la Muerte exigió recuperar fue la del insolente soberano que se había atrevido a doblegarla. Ares y Tánatos acorralaron a Sísifo en su sala del trono, listos para arrastrarlo sin piedad hacia las tinieblas insondables del Tártaro."
+  },
+  {
+   "titulo": "",
+   "hablado": "El castigo parecía inevitable y cualquier otro monarca habría suplicado clemencia ante semejante poderío celestial. Sin embargo, el audaz Sísifo mantenía una gélida sonrisa, pues ya había susurrado a su esposa las secretas instrucciones de una estratagema aún más perversa.",
+   "subtitulo": "El castigo parecía inevitable y cualquier otro monarca habría suplicado clemencia ante semejante poderío celestial. Sin embargo, el audaz Sísifo mantenía una gélida sonrisa, pues ya había susurrado a su esposa las secretas instrucciones de una estratagema aún más perversa."
+  },
+  {
+   "titulo": "",
+   "hablado": "Antes de que Ares rompiera los cerrojos, Sísifo había urdido su jugada maestra. Llamó a su esposa Mérope y le ordenó que dejara su cuerpo sin enterrar, prohibiendo toda ofrenda fúnebre en las plazas de Corinto.",
+   "subtitulo": "Antes de que Ares rompiera los cerrojos, Sísifo había urdido su jugada maestra. Llamó a su esposa Mérope y le ordenó que dejara su cuerpo sin enterrar, prohibiendo toda ofrenda fúnebre en las plazas de Corinto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando Hermes y Tánatos lo arrastraron finalmente ante el sombrío trono del Inframundo, el rey no mostró miedo. Se presentó con la túnica desgarrada, fingiendo una profunda humillación y una ira contenida.",
+   "subtitulo": "Cuando Hermes y Tánatos lo arrastraron finalmente ante el sombrío trono del Inframundo, el rey no mostró miedo. Se presentó con la túnica desgarrada, fingiendo una profunda humillación y una ira contenida."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante la mismísima soberana Perséfone, Sísifo alzó la voz con falsa indignación. Acusó a su propia esposa de cometer el peor sacrilegio al negarle los rituales sagrados y dejar su alma vagando sin descanso.",
+   "subtitulo": "Ante la mismísima soberana Perséfone, Sísifo alzó la voz con falsa indignación. Acusó a su propia esposa de cometer el peor sacrilegio al negarle los rituales sagrados y dejar su alma vagando sin descanso."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con lágrimas fingidas que deslizaba por sus mejillas, suplicó clemencia a la reina. Le rogó que le concediera un permiso urgente de tres días para regresar al mundo de los vivos y castigar la impiedad.",
+   "subtitulo": "Con lágrimas fingidas que deslizaba por sus mejillas, suplicó clemencia a la reina. Le rogó que le concediera un permiso urgente de tres días para regresar al mundo de los vivos y castigar la impiedad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Perséfone, conmovida por el respeto que el rey exigía hacia las leyes de los dioses, creyó cada una de sus palabras. Ignoraba por completo que estaba siendo víctima de la mentira más audaz jamás contada.",
+   "subtitulo": "Perséfone, conmovida por el respeto que el rey exigía hacia las leyes de los dioses, creyó cada una de sus palabras. Ignoraba por completo que estaba siendo víctima de la mentira más audaz jamás contada."
+  },
+  {
+   "titulo": "",
+   "hablado": "La reina del Tártaro aceptó el trato y le otorgó el codiciado salvoconducto. Sísifo debía descender de nuevo al abismo transcurrido ese breve plazo, una promesa que jamás pensó cumplir.",
+   "subtitulo": "La reina del Tártaro aceptó el trato y le otorgó el codiciado salvoconducto. Sísifo debía descender de nuevo al abismo transcurrido ese breve plazo, una promesa que jamás pensó cumplir."
+  },
+  {
+   "titulo": "",
+   "hablado": "En un parpadeo, el monarca abandonó las sombras y abrió los ojos bajo el cálido sol de Corinto. Respiró el aire fresco sintiendo el triunfo absoluto de haber engañado a la mismísima muerte.",
+   "subtitulo": "En un parpadeo, el monarca abandonó las sombras y abrió los ojos bajo el cálido sol de Corinto. Respiró el aire fresco sintiendo el triunfo absoluto de haber engañado a la mismísima muerte."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre.",
+   "subtitulo": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre. Sísifo caminaba de nuevo por las calles de Corinto bajo la cálida luz del sol.",
+   "subtitulo": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre. Sísifo caminaba de nuevo por las calles de Corinto bajo la cálida luz del sol."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ignoró por completo las solemnes promesas que había hecho a la mismísima reina Perséfone en el fondo de la tierra. Para él, los juramentos dados a los muertos carecían de valor una vez que sus pies volvían a pisar el polvo de los vivos.",
+   "subtitulo": "Ignoró por completo las solemnes promesas que había hecho a la mismísima reina Perséfone en el fondo de la tierra. Para él, los juramentos dados a los muertos carecían de valor una vez que sus pies volvían a pisar el polvo de los vivos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los años pasaron plácidamente en su palacio real, rodeado de lujos y celebrando en secreto el haber burlado a la propia Muerte en dos ocasiones consecutivas. Ningún otro monarca mortal había logrado semejante hazaña en toda la historia.",
+   "subtitulo": "Los años pasaron plácidamente en su palacio real, rodeado de lujos y celebrando en secreto el haber burlado a la propia Muerte en dos ocasiones consecutivas. Ningún otro monarca mortal había logrado semejante hazaña en toda la historia."
+  },
+  {
+   "titulo": "",
+   "hablado": "En cada plaza y mercado, los ciudadanos admiraban con devoción al rey astuto que había desafiado las reglas impuestas desde los cielos. Su figura se convirtió en el símbolo máximo de la inteligencia humana frente al poder de los inmortales.",
+   "subtitulo": "En cada plaza y mercado, los ciudadanos admiraban con devoción al rey astuto que había desafiado las reglas impuestas desde los cielos. Su figura se convirtió en el símbolo máximo de la inteligencia humana frente al poder de los inmortales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, el tiempo fluye de manera muy diferente para quienes habitan en las cumbres celestiales del Olimpo. Los días de los mortales son apenas un suspiro, pero la memoria de las ofensas divinas permanece intacta e implacable.",
+   "subtitulo": "Sin embargo, el tiempo fluye de manera muy diferente para quienes habitan en las cumbres celestiales del Olimpo. Los días de los mortales son apenas un suspiro, pero la memoria de las ofensas divinas permanece intacta e implacable."
+  },
+  {
+   "titulo": "",
+   "hablado": "La tremenda arrogancia de Sísifo al creerse verdaderamente eterno cruzó la línea roja que separa la astucia de la pura insolencia. Los dioses decidieron que su osadía no quedaría impune bajo ningún concepto.",
+   "subtitulo": "La tremenda arrogancia de Sísifo al creerse verdaderamente eterno cruzó la línea roja que separa la astucia de la pura insolencia. Los dioses decidieron que su osadía no quedaría impune bajo ningún concepto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando finalmente le llegó la hora de expirar a una edad muy avanzada, la naturaleza ya no pudo protegerlo más contra su destino inevitable. El ciclo de las estaciones y de la vida cumplía su curso inexorable.",
+   "subtitulo": "Cuando finalmente le llegó la hora de expirar a una edad muy avanzada, la naturaleza ya no pudo protegerlo más contra su destino inevitable. El ciclo de las estaciones y de la vida cumplía su curso inexorable."
+  },
+  {
+   "titulo": "",
+   "hablado": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre.",
+   "subtitulo": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre.",
+   "subtitulo": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios del inframundo condujo al rey hasta el fondo del Tártaro, donde la luz del sol jamás penetraba. Allí le aguardaba un tormento diseñado a medida de su infinita soberbia.",
+   "subtitulo": "El dios del inframundo condujo al rey hasta el fondo del Tártaro, donde la luz del sol jamás penetraba. Allí le aguardaba un tormento diseñado a medida de su infinita soberbia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante sus ojos se alzaba una piedra colosal de granito bruto, áspera y extraordinariamente pesada. Su única tarea consistía en empujarla con sus propias manos hasta la cima de la montaña.",
+   "subtitulo": "Ante sus ojos se alzaba una piedra colosal de granito bruto, áspera y extraordinariamente pesada. Su única tarea consistía en empujarla con sus propias manos hasta la cima de la montaña."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sísifo aferró la roca con desesperación, apoyando el hombro y tensando cada músculo de su cuerpo. El sofocante calor abisal hacía que el sudor brotara de su frente sin descanso.",
+   "subtitulo": "Sísifo aferró la roca con desesperación, apoyando el hombro y tensando cada músculo de su cuerpo. El sofocante calor abisal hacía que el sudor brotara de su frente sin descanso."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante horas interminables subió por la empinada pendiente, ganando metro a metro con un sufrimiento titánico. Cada paso hacia arriba era una victoria arrancada al propio destino.",
+   "subtitulo": "Durante horas interminables subió por la empinada pendiente, ganando metro a metro con un sufrimiento titánico. Cada paso hacia arriba era una victoria arrancada al propio destino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al fin, tras un esfuerzo titánico, la cumbre quedaba a solo unos centímetros de distancia. La pesada roca rozaba la cima y parecía dispuesta a asentarse de una vez por todas.",
+   "subtitulo": "Al fin, tras un esfuerzo titánico, la cumbre quedaba a solo unos centímetros de distancia. La pesada roca rozaba la cima y parecía dispuesta a asentarse de una vez por todas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero justo en ese instante supremo, una fuerza invisible y cruel vencía su resistencia. La inercia y el peso hacían que la piedra girara bruscamente sobre sí misma ladera abajo.",
+   "subtitulo": "Pero justo en ese instante supremo, una fuerza invisible y cruel vencía su resistencia. La inercia y el peso hacían que la piedra girara bruscamente sobre sí misma ladera abajo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad.",
+   "subtitulo": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad."
+  },
+  {
+   "titulo": "",
+   "hablado": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad. Pero su castigo trascendió los límites del propio Inframundo para convertirse en la metáfora definitiva sobre la condición humana y la búsqueda de sentido en un universo indiferente a nuestro sufrimiento.",
+   "subtitulo": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad. Pero su castigo trascendió los límites del propio Inframundo para convertirse en la metáfora definitiva sobre la condición humana y la búsqueda de sentido en un universo indiferente a nuestro sufrimiento."
+  },
+  {
+   "titulo": "",
+   "hablado": "Siglos más tarde, el filósofo Albert Camus vio en este esfuerzo eterno el reflejo exacto de nuestras propias vidas. Cada mañana nos levantamos, acudimos a nuestros puestos de trabajo y realizamos las mismas tareas mecánicas una y otra vez sin un propósito final aparente que justifique tanto desgaste físico y mental.",
+   "subtitulo": "Siglos más tarde, el filósofo Albert Camus vio en este esfuerzo eterno el reflejo exacto de nuestras propias vidas. Cada mañana nos levantamos, acudimos a nuestros puestos de trabajo y realizamos las mismas tareas mecánicas una y otra vez sin un propósito final aparente que justifique tanto desgaste físico y mental."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, el verdadero giro de la leyenda no reside en la crueldad del tormento impuesto por Zeus, sino en el momento exacto en que el rey emprende el descenso. En esa pausa silenciosa, mientras camina de regreso hacia la roca, Sísifo es plenamente consciente de su destino trágico y lo acepta sin vacilar.",
+   "subtitulo": "Sin embargo, el verdadero giro de la leyenda no reside en la crueldad del tormento impuesto por Zeus, sino en el momento exacto en que el rey emprende el descenso. En esa pausa silenciosa, mientras camina de regreso hacia la roca, Sísifo es plenamente consciente de su destino trágico y lo acepta sin vacilar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ese instante de lucidez convierte al prisionero en el amo absoluto de su propio destino. Al conocer la inutilidad de su empresa y decidir empujar la piedra de todos modos, arrebata a los dioses el poder de destruirlo por completo mediante la desesperación o el llanto.",
+   "subtitulo": "Ese instante de lucidez convierte al prisionero en el amo absoluto de su propio destino. Al conocer la inutilidad de su empresa y decidir empujar la piedra de todos modos, arrebata a los dioses el poder de destruirlo por completo mediante la desesperación o el llanto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su gran truco final no consistió en encadenar a la Muerte ni en burlar a Perséfone con falsas promesas funerarias. El triunfo supremo de Sísifo fue transformar una condena eterna de puro sufrimiento en un acto perpetuo de absoluta rebeldía contra el orden establecido del Olimpo.",
+   "subtitulo": "Su gran truco final no consistió en encadenar a la Muerte ni en burlar a Perséfone con falsas promesas funerarias. El triunfo supremo de Sísifo fue transformar una condena eterna de puro sufrimiento en un acto perpetuo de absoluta rebeldía contra el orden establecido del Olimpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Debemos imaginar a Sísifo dichoso mientras baja la ladera para reencontrarse con su carga. Su lucha hacia las cumbres es suficiente para llenar un corazón humano, demostrando que la dignidad reside en combatir incluso cuando la victoria resulta totalmente imposible de alcanzar.",
+   "subtitulo": "Debemos imaginar a Sísifo dichoso mientras baja la ladera para reencontrarse con su carga. Su lucha hacia las cumbres es suficiente para llenar un corazón humano, demostrando que la dignidad reside en combatir incluso cuando la victoria resulta totalmente imposible de alcanzar."
+  },
+  {
+   "titulo": "",
+   "hablado": "¿Fue Sísifo un héroe valiente que desafió la tiranía de los dioses o un rey soberbio atrapado para siempre por su propio ego? Queremos conocer tu perspectiva sobre esta fascinante y compleja historia de la mitología griega clásica.",
+   "subtitulo": "¿Fue Sísifo un héroe valiente que desafió la tiranía de los dioses o un rey soberbio atrapado para siempre por su propio ego? Queremos conocer tu perspectiva sobre esta fascinante y compleja historia de la mitología griega clásica."
+  },
+  {
+   "titulo": "",
+   "hablado": "Déjanos tu opinión aquí abajo en los comentarios y suscríbete ahora mismo al canal para no perderte los próximos misterios y leyendas de la antigüedad. Nos vemos en el siguiente relato.",
+   "subtitulo": "Déjanos tu opinión aquí abajo en los comentarios y suscríbete ahora mismo al canal para no perderte los próximos misterios y leyendas de la antigüedad. Nos vemos en el siguiente relato."
+  }
+ ]
+}

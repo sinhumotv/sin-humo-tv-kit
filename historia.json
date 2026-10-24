@@ -1,0 +1,1227 @@
+{
+ "titulo": "El mito de Sísifo",
+ "titulos": [
+  "¿Por qué el hombre más LISTO desafió a la Muerte?",
+  "El engaño a los dioses que desató la peor CONDENA",
+  "El mortal que atrapó a la Muerte en CADENAS",
+  "Sísifo: la historia real del hombre que BURLÓ a Hades",
+  "El SECRETO del castigo eterno más famoso de la historia",
+  "¿Cómo logró un humano ENGAÑAR al dios del Inframundo?",
+  "El terrible ERROR de Sísifo que enfureció a Zeus",
+  "De rey sagaz a prisionero ETERNO: el mito de Sísifo",
+  "La VERDAD sobre Sísifo y su piedra sin fin",
+  "El mortal que engañó a la Muerte DOS veces"
+ ],
+ "miniatura": {
+  "texto": "BURLÓ A LOS DIOSES",
+  "clave": "CADENAS",
+  "prompt": "A dramatically lit cinematic artwork of Sisyphus, a muscular ancient Greek king in dark linen garments, straining with extreme determination as he pushes a massive rock up a steep ridge. Atmospheric rim lighting, intense shadow and high contrast. Dark mysterious cavern background on the left side for text layout. Deep warm orange and charcoal gray tones, epic mythological concept, hyper-detailed rendering."
+ },
+ "descripcion": "Sísifo es recordado como el rey de Corinto condenado a empujar eternamente una piedra colosal, pero muy pocos conocen la verdadera razón de su castigo. Burló a Zeus, encadenó al mismísimo dios de la muerte y escapó del Inframundo utilizando solo su astucia, desafiando las leyes universales del Olimpo.\n\nEn este vídeo descubriremos la historia completa según Ovidio y Apolodoro: cómo se fundó Corinto, las estratagemas de un monarca impiadoso y la paradoja de una condena eterna que oculta una profunda lección sobre la condición humana y la soberbia.",
+ "etiquetas": [
+  "mito de sisifo",
+  "mitologia griega",
+  "sisifo y la muerte",
+  "tanatos",
+  "hades",
+  "zeus",
+  "dioses olimpicos",
+  "historias de la mitologia",
+  "relatos en espanol",
+  "leyendas griegas",
+  "castigos de los dioses",
+  "mitos griegos"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El peso de un castigo eterno"
+  },
+  {
+   "escena": 8,
+   "titulo": "El astuto fundador de Éfira"
+  },
+  {
+   "escena": 16,
+   "titulo": "El secreto del rey de los dioses"
+  },
+  {
+   "escena": 24,
+   "titulo": "Tánatos en cadenas"
+  },
+  {
+   "escena": 32,
+   "titulo": "Un mundo donde nadie muere"
+  },
+  {
+   "escena": 40,
+   "titulo": "El engaño a la reina del Inframundo"
+  },
+  {
+   "escena": 48,
+   "titulo": "La fugaz victoria sobre el destino"
+  },
+  {
+   "escena": 56,
+   "titulo": "El castigo en la ladera del Tártaro"
+  },
+  {
+   "escena": 64,
+   "titulo": "El sentido del trabajo inútil"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Una roca colosal asciende por una ladera pedregosa mientras un hombre deja su aliento en cada palmo. Cuando la cima parece rozar sus manos, la piedra se precipita de nuevo hacia el abismo eterno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rock mountain steep",
+    "otras": [
+     "mountain boulder climb",
+     "steep rocky slope"
+    ],
+    "descripcion": "Plano cinematográfico de una ladera escarpada y árida con piedras bajo un cielo sombrío.",
+    "clip": "https://cdn.pixabay.com/video/2016/01/05/1842-150885302_medium.mp4",
+    "clip_id": 1842
+   },
+   "efecto": "polvo",
+   "subtitulo": "Una roca colosal asciende por una ladera pedregosa mientras un hombre deja su aliento en cada palmo. Cuando la cima parece rozar sus manos, la piedra se precipita de nuevo hacia el abismo eterno."
+  },
+  {
+   "hablado": "Esta condena en las sombras del Tártaro no castigó a un monstruo ni a un titán arrogante, sino al humano más astuto que pisó la tierra. Un soberano mortal que osó desafiar la autoridad del mismísimo Olimpo.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "A cinematic and dramatic wide shot of a muscular man struggling to push a massive, heavy boulder up a steep, dark mountain slope in the gloomy underworld of Tartarus. Moody lighting, high contrast, atmospheric fog, classical mythology aesthetic, highly detailed texture on the rock and skin, professional color grading, horizontal composition.",
+    "busqueda": "dramatic wide muscular man",
+    "descripcion": "A cinematic and dramatic wide shot of a muscular man struggling to push a massive, heavy boulder up a steep, dark mountain slope in the gloomy underworld of Tartarus. Moody lighting, high contrast, atmospheric fog, classical mythology aesthetic, highly detailed texture on the rock and skin, professional color grading, horizontal composition.",
+    "clip": "https://cdn.pixabay.com/video/2025/04/29/275633_large.mp4",
+    "clip_id": 275633
+   },
+   "efecto": "niebla",
+   "subtitulo": "Esta condena en las sombras del Tártaro no castigó a un monstruo ni a un titán arrogante, sino al humano más astuto que pisó la tierra. Un soberano mortal que osó desafiar la autoridad del mismísimo Olimpo."
+  },
+  {
+   "hablado": "Aquel hombre llamado Sísifo logró lo inimaginable al engañar a las fuerzas del Inframundo dos veces consecutivas. Hoy descubrirás la trampa con la que detuvo a la propia Muerte, desatando una venganza divina sin precedentes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave torches",
+    "otras": [
+     "mysterious dark tunnel",
+     "torch fire cave"
+    ],
+    "descripcion": "Interior de una caverna cavernosa y lúgubre iluminada tenuemente por el fuego de antorchas.",
+    "clip": "https://cdn.pixabay.com/video/2021/02/09/64745-510542361_large.mp4",
+    "clip_id": 64745
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aquel hombre llamado Sísifo logró lo inimaginable al engañar a las fuerzas del Inframundo dos veces consecutivas. Hoy descubrirás la trampa con la que detuvo a la propia Muerte, desatando una venganza divina sin precedentes."
+  },
+  {
+   "hablado": "Antes de convertirse en una sombra condenada al tormento perpetuo, Sísifo gobernaba con mano de hierro sobre el istmo griego. No dependía de la fuerza bruta, sino de un ingenio maquiavélico que asombraba a sus súbditos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins",
+    "otras": [
+     "corinth ruins temple",
+     "ancient stone columns"
+    ],
+    "descripcion": "Antiguas columnas dóricas de piedra griega bajo la luz dorada del sol mediterráneo.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/29/33068-394889770_large.mp4",
+    "clip_id": 33068
+   },
+   "efecto": "polvo",
+   "subtitulo": "Antes de convertirse en una sombra condenada al tormento perpetuo, Sísifo gobernaba con mano de hierro sobre el istmo griego. No dependía de la fuerza bruta, sino de un ingenio maquiavélico que asombraba a sus súbditos."
+  },
+  {
+   "hablado": "Ningún enigma escapaba a su perspicacia y ninguna ley parecía interponerse en sus ambiciones territoriales. Los caminos hacia su palacio acumulaban riquezas gracias a un comercio implacable y a secretos que arrebataba sin piedad a sus rivales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient merchant ship",
+    "otras": [
+     "old wooden sailing ship",
+     "sea sailing ancient"
+    ],
+    "descripcion": "Nave antigua de madera con velas navegando sobre aguas mediterráneas junto a la costa.",
+    "clip": "https://cdn.pixabay.com/video/2018/05/11/16160-269534741_large.mp4",
+    "clip_id": 16160
+   },
+   "efecto": "nada",
+   "subtitulo": "Ningún enigma escapaba a su perspicacia y ninguna ley parecía interponerse en sus ambiciones territoriales. Los caminos hacia su palacio acumulaban riquezas gracias a un comercio implacable y a secretos que arrebataba sin piedad a sus rivales."
+  },
+  {
+   "hablado": "Creía firmemente que el intelecto de los hombres podía burlar el poder del destino y doblegar la voluntad celestial. Esa peligrosa vanidad lo empujó a vigilar los cielos, buscando cualquier debilidad en los actos de los dioses.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dramatic stormy sky",
+    "otras": [
+     "thunderclouds lightning sky",
+     "dark clouds storm"
+    ],
+    "descripcion": "Densas nubes de tormenta en constante movimiento cubriendo de oscuridad el firmamento.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/05/38125-417752184_large.mp4",
+    "clip_id": 38125
+   },
+   "efecto": "niebla",
+   "subtitulo": "Creía firmemente que el intelecto de los hombres podía burlar el poder del destino y doblegar la voluntad celestial. Esa peligrosa vanidad lo empujó a vigilar los cielos, buscando cualquier debilidad en los actos de los dioses."
+  },
+  {
+   "hablado": "Muy pronto, una oportunidad dorada cruzó ante sus ojos, permitiéndole sellar un pacto tan arriesgado como codicioso. Pero cruzar la línea contra el gobernante del trueno exigía un precio que ningún mortal estaba preparado para pagar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lightning striking sky",
+    "otras": [
+     "thunderbolt night storm",
+     "lightning flash storm"
+    ],
+    "descripcion": "Descarga eléctrica iluminando el horizonte montañoso durante una intensa tempestad nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/23/125192-732837222_small.mp4",
+    "clip_id": 125192
+   },
+   "efecto": "brasas",
+   "subtitulo": "Muy pronto, una oportunidad dorada cruzó ante sus ojos, permitiéndole sellar un pacto tan arriesgado como codicioso. Pero cruzar la línea contra el gobernante del trueno exigía un precio que ningún mortal estaba preparado para pagar."
+  },
+  {
+   "hablado": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Ancient Corinth Acrocorinth ruins",
+    "otras": [
+     "Acrocorinth ruins landscape",
+     "Ancient Corinth landscape"
+    ],
+    "descripcion": "Vista panorámica de los restos arqueológicos de la antigua Corinto junto a la gran colina rocosa.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/23/213398_small.mp4",
+    "clip_id": 213398
+   },
+   "efecto": "polvo",
+   "subtitulo": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda."
+  },
+  {
+   "hablado": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins",
+    "otras": [
+     "greece old temple",
+     "historic stone ruins"
+    ],
+    "descripcion": "Ruinas de un templo antiguo bajo la luz del atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/29/33069-394889772_large.mp4",
+    "clip_id": 33069
+   },
+   "efecto": "polvo",
+   "subtitulo": "Su audacia despertó una furia cósmica y trazó el inicio de su perdición absoluta. Para comprender el origen de semejante soberbia, debemos retroceder hasta el nacimiento de su ciudad, donde comenzó a forjarse su temible leyenda."
+  },
+  {
+   "hablado": "Sísifo fundó la gloriosa ciudad de Éfira, que más tarde sería conocida en todo el mundo antiguo como la próspera Corinto, convirtiéndola en un enclave estratégico para el comercio marítimo gracias a su talento administrativo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek city",
+    "otras": [
+     "historic harbor town",
+     "mediterranean ancient port"
+    ],
+    "descripcion": "Puerto antiguo con barcos de madera atracados en la costa.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/01/137379-766338364_small.mp4",
+    "clip_id": 137379
+   },
+   "efecto": "nada",
+   "subtitulo": "Sísifo fundó la gloriosa ciudad de Éfira, que más tarde sería conocida en todo el mundo antiguo como la próspera Corinto, convirtiéndola en un enclave estratégico para el comercio marítimo gracias a su talento administrativo."
+  },
+  {
+   "hablado": "Gobernaba con una inteligencia verdaderamente prodigiosa, multiplicando las riquezas del reino con audaces rutas comerciales y atrayendo a mercaderes de tierras lejanas que admiraban el poder y la organización de sus puertos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient marketplace trade",
+    "otras": [
+     "historic market crowd",
+     "old city merchants"
+    ],
+    "descripcion": "Mercado antiguo bullicioso con personas comerciando.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/11/2121-155244120_large.mp4",
+    "clip_id": 2121
+   },
+   "efecto": "polvo",
+   "subtitulo": "Gobernaba con una inteligencia verdaderamente prodigiosa, multiplicando las riquezas del reino con audaces rutas comerciales y atrayendo a mercaderes de tierras lejanas que admiraban el poder y la organización de sus puertos."
+  },
+  {
+   "hablado": "Sin embargo, toda aquella brillantez exterior estaba profundamente corrompida por una crueldad despiadada y un desprecio absoluto hacia las sagradas leyes de la hospitalidad que protegían a cualquier viajero en Grecia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ancient corridor",
+    "otras": [
+     "stone castle hall",
+     "dimly lit ruins"
+    ],
+    "descripcion": "Pasillo de piedra oscuro y solitario con sombras.",
+    "clip": "https://cdn.pixabay.com/video/2019/01/19/20837-312432073_large.mp4",
+    "clip_id": 20837
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, toda aquella brillantez exterior estaba profundamente corrompida por una crueldad despiadada y un desprecio absoluto hacia las sagradas leyes de la hospitalidad que protegían a cualquier viajero en Grecia."
+  },
+  {
+   "hablado": "El monarca tendía emboscadas mortales en los caminos y despeñaba a los extranjeros desde los acantilados para saquear sus pertenencias, acumulando una fortuna inmensa mientras se creía totalmente intocable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cliff ocean waves",
+    "otras": [
+     "sea cliff drop",
+     "steep rocky shore"
+    ],
+    "descripcion": "Acantilado rocoso con olas rompiendo violentamente abajo.",
+    "clip": "https://cdn.pixabay.com/video/2016/01/08/1890-151167947_medium.mp4",
+    "clip_id": 1890
+   },
+   "efecto": "nada",
+   "subtitulo": "El monarca tendía emboscadas mortales en los caminos y despeñaba a los extranjeros desde los acantilados para saquear sus pertenencias, acumulando una fortuna inmensa mientras se creía totalmente intocable."
+  },
+  {
+   "hablado": "Su arrogancia creció de manera desmedida hasta el punto de convencerse de que su intelecto superaba con creces la sabiduría y las capacidades de los propios dioses que habitaban en la cumbre del monte Olimpo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mountain peak clouds",
+    "otras": [
+     "high mountain summit",
+     "sky above clouds"
+    ],
+    "descripcion": "Cima de una gran montaña rodeada de nubes altas.",
+    "clip": "https://cdn.pixabay.com/video/2025/04/09/270940_small.mp4",
+    "clip_id": 270940
+   },
+   "efecto": "niebla",
+   "subtitulo": "Su arrogancia creció de manera desmedida hasta el punto de convencerse de que su intelecto superaba con creces la sabiduría y las capacidades de los propios dioses que habitaban en la cumbre del monte Olimpo."
+  },
+  {
+   "hablado": "Desafiaba abiertamente las normas divinas convencido de que nadie poseía la astucia suficiente para castigar sus crímenes, viviendo en un peligroso estado de negación sobre las verdaderas fuerzas que gobernaban el cosmos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "king throne ancient",
+    "otras": [
+     "ancient ruler seat",
+     "historic stone throne"
+    ],
+    "descripcion": "Trono de piedra antiguo en una sala vacía.",
+    "clip": "https://cdn.pixabay.com/video/2020/09/29/51132-463106386_large.mp4",
+    "clip_id": 51132
+   },
+   "efecto": "brasas",
+   "subtitulo": "Desafiaba abiertamente las normas divinas convencido de que nadie poseía la astucia suficiente para castigar sus crímenes, viviendo en un peligroso estado de negación sobre las verdaderas fuerzas que gobernaban el cosmos."
+  },
+  {
+   "hablado": "Aquel afán enfermizo de control absoluto sobre su destino pronto lo llevaría a cruzarse sin remedio en el camino del mismísimo Zeus, desencadenando un conflicto irreversible y mortal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm lightning",
+    "otras": [
+     "heavy rain storm",
+     "thunderstorm sky"
+    ],
+    "descripcion": "Tormenta eléctrica oscura con rayos sobre el horizonte.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/25/45516-443134220_large.mp4",
+    "clip_id": 45516
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aquel afán enfermizo de control absoluto sobre su destino pronto lo llevaría a cruzarse sin remedio en el camino del mismísimo Zeus, desencadenando un conflicto irreversible y mortal."
+  },
+  {
+   "hablado": "El dios fluvial Asopo recorría con desesperación los valles de Grecia buscando a su hermosa hija Egina. La joven ninfa había desaparecido súbitamente de las orillas sin dejar rastro alguno, sumiendo a su padre en una angustia desoladora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "river flowing forest",
+    "otras": [
+     "mountain river water",
+     "wild river nature"
+    ],
+    "descripcion": "Un río de montaña con fuerte corriente de agua que fluye entre bosques y rocas brumosas.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/24/218059_small.mp4",
+    "clip_id": 218059
+   },
+   "efecto": "niebla",
+   "subtitulo": "El dios fluvial Asopo recorría con desesperación los valles de Grecia buscando a su hermosa hija Egina. La joven ninfa había desaparecido súbitamente de las orillas sin dejar rastro alguno, sumiendo a su padre en una angustia desoladora."
+  },
+  {
+   "hablado": "El causante de aquella misteriosa desaparición era el propio soberano del Olimpo. Zeus, encaprichado con la doncella, se había transformado en una imponente águila para raptarla en secreto y llevarla a una remota isla solitaria en el golfo Sarónico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "eagle flying sky",
+    "otras": [
+     "bird of prey soaring",
+     "stormy sky clouds"
+    ],
+    "descripcion": "Una gran águila majestuosa sobrevolando un cielo encapotado y escarpadas montañas.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/22/248314_small.mp4",
+    "clip_id": 248314
+   },
+   "efecto": "nada",
+   "subtitulo": "El causante de aquella misteriosa desaparición era el propio soberano del Olimpo. Zeus, encaprichado con la doncella, se había transformado en una imponente águila para raptarla en secreto y llevarla a una remota isla solitaria en el golfo Sarónico."
+  },
+  {
+   "hablado": "Pero ningún crimen permanece oculto para siempre. Desde las imponentes almenas del Acrocorinto, Sísifo había presenciado con sus propios ojos el vuelo del raptor celeste y reconoció de inmediato el poder desmedido que emanaba de la figura del dios supremo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient fortress ruins",
+    "otras": [
+     "acropolis ancient hill",
+     "ancient stone wall"
+    ],
+    "descripcion": "Murallas y almenas de piedra de una antigua fortaleza griega sobre una colina escarpada.",
+    "clip": "https://cdn.pixabay.com/video/2020/10/28/53610-475234168_small.mp4",
+    "clip_id": 53610
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero ningún crimen permanece oculto para siempre. Desde las imponentes almenas del Acrocorinto, Sísifo había presenciado con sus propios ojos el vuelo del raptor celeste y reconoció de inmediato el poder desmedido que emanaba de la figura del dios supremo."
+  },
+  {
+   "hablado": "Cuando el afligido Asopo llegó a las puertas de Corinto siguiendo el rastro del secuestrador, acudió al rey pidiendo auxilio. Sísifo no vio una tragedia ajena, sino una oportunidad irrepetible para enriquecer aún más su sediento reino mediante una astuta negociación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple columns",
+    "otras": [
+     "greek columns ruins",
+     "ancient stone building"
+    ],
+    "descripcion": "Grandes columnas dóricas de un templo griego bajo la intensa luz mediterránea.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/11/30096-379047838_large.mp4",
+    "clip_id": 30096
+   },
+   "efecto": "nada",
+   "subtitulo": "Cuando el afligido Asopo llegó a las puertas de Corinto siguiendo el rastro del secuestrador, acudió al rey pidiendo auxilio. Sísifo no vio una tragedia ajena, sino una oportunidad irrepetible para enriquecer aún más su sediento reino mediante una astuta negociación."
+  },
+  {
+   "hablado": "La ciudadela sufría por la escasez de agua potable. Por ello, el monarca impuso una condición implacable: únicamente revelaría el paradero exacto de la muchacha si el dios fluvial hacía brotar un manantial inagotable de agua dulce en la cima rocosa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "water spring rock",
+    "otras": [
+     "natural freshwater spring",
+     "water bubbling stones"
+    ],
+    "descripcion": "Agua fresca y cristalina brotando de las grietas de una formación rocosa natural.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/20/42704-432102898_large.mp4",
+    "clip_id": 42704
+   },
+   "efecto": "nada",
+   "subtitulo": "La ciudadela sufría por la escasez de agua potable. Por ello, el monarca impuso una condición implacable: únicamente revelaría el paradero exacto de la muchacha si el dios fluvial hacía brotar un manantial inagotable de agua dulce en la cima rocosa."
+  },
+  {
+   "hablado": "Desesperado por encontrar a su hija, Asopo golpeó la roca con su fuerza elemental e hizo surgir la célebre fuente Pirene. Al instante, un torrente cristalino y puro inundó la acrópolis, otorgando a Corinto una prosperidad hídrica que perduraría durante incontables siglos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Peirene fountain Corinth Greece",
+    "otras": [
+     "Ancient Corinth archaeological site",
+     "Peirene spring ruins"
+    ],
+    "descripcion": "Restos arqueológicos bien conservados de las arcadas de la fuente Pirene en la antigua Corinto.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/10/123660-728697987_small.mp4",
+    "clip_id": 123660
+   },
+   "efecto": "nada",
+   "subtitulo": "Desesperado por encontrar a su hija, Asopo golpeó la roca con su fuerza elemental e hizo surgir la célebre fuente Pirene. Al instante, un torrente cristalino y puro inundó la acrópolis, otorgando a Corinto una prosperidad hídrica que perduraría durante incontables siglos."
+  },
+  {
+   "hablado": "Cumplido el pacto, Sísifo no titubeó en señalar con el dedo al mismísimo rey de los cielos, desvelando el escondite en la isla de Egina. Había cometido la mayor insolencia mortal: traicionar al padre de los dioses a cambio de beneficios terrenales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy sea",
+    "otras": [
+     "dramatic ocean waves",
+     "storm clouds island"
+    ],
+    "descripcion": "Aguas agitadas de un mar tormentoso rompiendo contra acantilados rocosos bajo nubes oscuras.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/21/197525-905005651_large.mp4",
+    "clip_id": 197525
+   },
+   "efecto": "brasas",
+   "subtitulo": "Cumplido el pacto, Sísifo no titubeó en señalar con el dedo al mismísimo rey de los cielos, desvelando el escondite en la isla de Egina. Había cometido la mayor insolencia mortal: traicionar al padre de los dioses a cambio de beneficios terrenales."
+  },
+  {
+   "hablado": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lightning storm clouds",
+    "otras": [
+     "thunderstorm dark sky",
+     "thunderbolts flashing night"
+    ],
+    "descripcion": "Relámpagos violentos iluminando un cielo nocturno cargado de nubes negras de tormenta.",
+    "clip": "https://cdn.pixabay.com/video/2025/06/03/283428_small.mp4",
+    "clip_id": 283428
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás."
+  },
+  {
+   "hablado": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy sky",
+    "otras": [
+     "storm clouds",
+     "lightning strike"
+    ],
+    "descripcion": "Cielo oscuro y amenazante con nubes de tormenta.",
+    "clip": "https://cdn.pixabay.com/video/2024/09/08/230317_small.mp4",
+    "clip_id": 230317
+   },
+   "efecto": "niebla",
+   "subtitulo": "Aunque Asopo fue repelido por los rayos divinos en su intento de rescate, la cólera de Zeus apuntó directamente contra el insolente monarca. El soberano del Olimpo juró venganza, y ordenó una condena aterradora que ningún mortal vivo había conocido jamás."
+  },
+  {
+   "hablado": "El dios del trueno convocó a Tánatos, la temible personificación de la Muerte, un ser alado de mirada fría que camina silencioso entre los hombres para cortar el hilo de la vida con su afilada espada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ancient statue",
+    "otras": [
+     "stone sculpture face",
+     "mythology statue"
+    ],
+    "descripcion": "Estatua de piedra antigua en la penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/25/260895_small.mp4",
+    "clip_id": 260895
+   },
+   "efecto": "polvo",
+   "subtitulo": "El dios del trueno convocó a Tánatos, la temible personificación de la Muerte, un ser alado de mirada fría que camina silencioso entre los hombres para cortar el hilo de la vida con su afilada espada."
+  },
+  {
+   "hablado": "Tánatos descendió del Olimpo cruzando los cielos con paso firme, portando entre sus manos unas pesadas cadenas de hierro negro forjadas en el Tártaro específicamente para aprisionar al rey de Corinto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "heavy iron chains",
+    "otras": [
+     "metal chains hanging",
+     "dark metal lock"
+    ],
+    "descripcion": "Cadenas pesadas de metal colgadas en un muro.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/03/46308-447422960_large.mp4",
+    "clip_id": 46308
+   },
+   "efecto": "nada",
+   "subtitulo": "Tánatos descendió del Olimpo cruzando los cielos con paso firme, portando entre sus manos unas pesadas cadenas de hierro negro forjadas en el Tártaro específicamente para aprisionar al rey de Corinto."
+  },
+  {
+   "hablado": "Al cruzar las puertas del palacio real, el dios de la muerte encontró a Sísifo sentado en su trono, esperando con una sonrisa calculada y sin mostrar el menor ápice de temor o temblor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "king throne hall",
+    "otras": [
+     "ancient throne room",
+     "castle interior dark"
+    ],
+    "descripcion": "Salón de trono antiguo con iluminación tenue.",
+    "clip": "https://cdn.pixabay.com/video/2019/11/18/29224-374487088_large.mp4",
+    "clip_id": 29224
+   },
+   "efecto": "brasas",
+   "subtitulo": "Al cruzar las puertas del palacio real, el dios de la muerte encontró a Sísifo sentado en su trono, esperando con una sonrisa calculada y sin mostrar el menor ápice de temor o temblor."
+  },
+  {
+   "hablado": "Lejos de suplicar piedad, el astuto monarca se levantó y comenzó a elogiar con falsos halagos la sublime maestría con la que se habían fabricado aquellos grilletes divinos de metal oscuro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man looking closely",
+    "otras": [
+     "person inspecting object",
+     "hands examining metal"
+    ],
+    "descripcion": "Hombre examinando un objeto de metal de cerca.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/05/141673-778335004_small.mp4",
+    "clip_id": 141673
+   },
+   "efecto": "nada",
+   "subtitulo": "Lejos de suplicar piedad, el astuto monarca se levantó y comenzó a elogiar con falsos halagos la sublime maestría con la que se habían fabricado aquellos grilletes divinos de metal oscuro."
+  },
+  {
+   "hablado": "Con tono sumiso, le pidió al dios que le demostrara personalmente cómo funcionaban el mecanismo de cierre y los complejos cerrojos de seguridad antes de colocar las cadenas sobre su propio cuerpo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person locking mechanism",
+    "otras": [
+     "hands opening lock",
+     "metal key turning"
+    ],
+    "descripcion": "Manos manipulando un mecanismo de cierre antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/14/212001_medium.mp4",
+    "clip_id": 212001
+   },
+   "efecto": "polvo",
+   "subtitulo": "Con tono sumiso, le pidió al dios que le demostrara personalmente cómo funcionaban el mecanismo de cierre y los complejos cerrojos de seguridad antes de colocar las cadenas sobre su propio cuerpo."
+  },
+  {
+   "hablado": "Tánatos, cegado por la vanidad ante el elogio a su labor, cayó en la trampa y ajustó los grilletes alrededor de sus propias muñecas divinas sin sospechar la astuta jugada del mortal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "metal shackles locking",
+    "otras": [
+     "iron cuffs closing",
+     "hands chained"
+    ],
+    "descripcion": "Cierres metálicos ajustándose firmemente.",
+    "clip": "https://cdn.pixabay.com/video/2024/11/30/244065_small.mp4",
+    "clip_id": 244065
+   },
+   "efecto": "nada",
+   "subtitulo": "Tánatos, cegado por la vanidad ante el elogio a su labor, cayó en la trampa y ajustó los grilletes alrededor de sus propias muñecas divinas sin sospechar la astuta jugada del mortal."
+  },
+  {
+   "hablado": "En un rápido movimiento, Sísifo cerró los cerrojos y encerró a la mismísima Muerte en una celda blindada bajo el palacio, dejando al mundo terrenal sin su implacable y necesaria guía.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "iron cell door",
+    "otras": [
+     "prison bars closing",
+     "dark dungeon door"
+    ],
+    "descripcion": "Puerta de celda de hierro cerrándose en la oscuridad.",
+    "clip": "https://cdn.pixabay.com/video/2019/01/04/20459-309694545_large.mp4",
+    "clip_id": 20459
+   },
+   "efecto": "niebla",
+   "subtitulo": "En un rápido movimiento, Sísifo cerró los cerrojos y encerró a la mismísima Muerte en una celda blindada bajo el palacio, dejando al mundo terrenal sin su implacable y necesaria guía."
+  },
+  {
+   "hablado": "Con Tánatos prisionero en las mazmorras subterráneas de Corinto, una calma antinatural y desconcertante se extendió por toda la Hélade. De repente, los ancianos exhaustos por los años y los enfermos desahuciados dejaron de expirar su último aliento vital.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient ruins mist",
+    "otras": [
+     "foggy mountain valley",
+     "greek landscape ruins"
+    ],
+    "descripcion": "Ruinas de piedra en un valle griego cubiertas por una densa y misteriosa niebla matutina",
+    "clip": "https://cdn.pixabay.com/video/2023/05/24/164360-830461265_small.mp4",
+    "clip_id": 164360
+   },
+   "efecto": "niebla",
+   "subtitulo": "Con Tánatos prisionero en las mazmorras subterráneas de Corinto, una calma antinatural y desconcertante se extendió por toda la Hélade. De repente, los ancianos exhaustos por los años y los enfermos desahuciados dejaron de expirar su último aliento vital."
+  },
+  {
+   "hablado": "En los campos de batalla, la tragedia adquirió un cariz grotesco e insoportable. Los guerreros atravesados por lanzas de bronce y espadas afiladas continuaban gimiendo sobre el fango, incapaces de cruzar el umbral hacia el eterno descanso prometido por el destino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient battlefield landscape",
+    "otras": [
+     "storm over rocky plain",
+     "wind blowing grass field"
+    ],
+    "descripcion": "Llanura árida y desolada batida por el viento bajo un cielo plomizo y amenazante",
+    "clip": "https://cdn.pixabay.com/video/2024/02/03/199127-909835479_small.mp4",
+    "clip_id": 199127
+   },
+   "efecto": "polvo",
+   "subtitulo": "En los campos de batalla, la tragedia adquirió un cariz grotesco e insoportable. Los guerreros atravesados por lanzas de bronce y espadas afiladas continuaban gimiendo sobre el fango, incapaces de cruzar el umbral hacia el eterno descanso prometido por el destino."
+  },
+  {
+   "hablado": "El orden cósmico comenzó a resquebrajarse en cada santuario de Grecia. Los sacerdotes intentaban degollar bueyes y corderos en los altares de piedra, pero las hojas afiladas no arrebataban la vida y el humo sagrado dejó de elevarse hacia las alturas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "temple altar smoke fire",
+    "otras": [
+     "flames burning stones",
+     "ancient greek sanctuary"
+    ],
+    "descripcion": "Altar ceremonial de piedra antigua con brasas titilantes y restos de ofrendas apagadas",
+    "clip": "https://cdn.pixabay.com/video/2024/06/30/218910_small.mp4",
+    "clip_id": 218910
+   },
+   "efecto": "brasas",
+   "subtitulo": "El orden cósmico comenzó a resquebrajarse en cada santuario de Grecia. Los sacerdotes intentaban degollar bueyes y corderos en los altares de piedra, pero las hojas afiladas no arrebataban la vida y el humo sagrado dejó de elevarse hacia las alturas."
+  },
+  {
+   "hablado": "La falta de holocaustos y el caos terrenal enfurecieron a los olímpicos, pero nadie sintió mayor cólera que Ares. El impetuoso dios de la guerra observaba atónito cómo sus sangrientos combates perdían todo sentido al desaparecer la gloriosa muerte en combate.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Ares Ludovisi sculpture marble",
+    "otras": [
+     "Ares statue ancient Rome",
+     "Mars sculpture classical"
+    ],
+    "descripcion": "Estatua clásica en mármol del dios Ares sentado con semblante sombrío y pensativo",
+    "clip": "https://cdn.pixabay.com/video/2023/07/20/172469-847505237_small.mp4",
+    "clip_id": 172469
+   },
+   "efecto": "nada",
+   "subtitulo": "La falta de holocaustos y el caos terrenal enfurecieron a los olímpicos, pero nadie sintió mayor cólera que Ares. El impetuoso dios de la guerra observaba atónito cómo sus sangrientos combates perdían todo sentido al desaparecer la gloriosa muerte en combate."
+  },
+  {
+   "hablado": "Incapaz de tolerar semejante burla a su dominio, Ares descendió de los cielos como una tempestad devastadora sobre Corinto. Su imponente presencia conmovió los cimientos de la ciudad mientras marchaba directamente hacia la fortaleza subterránea donde yacía cautivo el señor de las sombras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm clouds timelapse",
+    "otras": [
+     "lightning storm over mountains",
+     "dramatic sky clouds timelapse"
+    ],
+    "descripcion": "Nubes de tormenta oscuras y amenazantes avanzando a gran velocidad sobre colinas pedregosas",
+    "clip": "https://cdn.pixabay.com/video/2022/02/10/107336-676158829_small.mp4",
+    "clip_id": 107336
+   },
+   "efecto": "niebla",
+   "subtitulo": "Incapaz de tolerar semejante burla a su dominio, Ares descendió de los cielos como una tempestad devastadora sobre Corinto. Su imponente presencia conmovió los cimientos de la ciudad mientras marchaba directamente hacia la fortaleza subterránea donde yacía cautivo el señor de las sombras."
+  },
+  {
+   "hablado": "Sin vacilar, la temible deidad de la guerra destrozó los cerrojos de hierro forjado de la mazmorra con su lanza divina. Liberado de sus cadenas mágicas, Tánatos desplegó de nuevo sus oscuras alas, ansioso por cobrar todas las vidas contenidas durante aquel cautiverio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dungeon chains torch dark",
+    "otras": [
+     "dark cave torchlight",
+     "rusty iron chains dungeon"
+    ],
+    "descripcion": "Interior de una cripta oscura de piedra iluminada por una antorcha con cadenas de hierro en el suelo",
+    "clip": "https://cdn.pixabay.com/video/2021/07/12/81173-576222171_large.mp4",
+    "clip_id": 81173
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin vacilar, la temible deidad de la guerra destrozó los cerrojos de hierro forjado de la mazmorra con su lanza divina. Liberado de sus cadenas mágicas, Tánatos desplegó de nuevo sus oscuras alas, ansioso por cobrar todas las vidas contenidas durante aquel cautiverio."
+  },
+  {
+   "hablado": "La primera alma que la Muerte exigió recuperar fue la del insolente soberano que se había atrevido a doblegarla. Ares y Tánatos acorralaron a Sísifo en su sala del trono, listos para arrastrarlo sin piedad hacia las tinieblas insondables del Tártaro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient stone palace interior",
+    "otras": [
+     "greek temple interior pillars",
+     "shadows on stone wall"
+    ],
+    "descripcion": "Columnas de piedra colosales dentro de una gran sala clásica donde se proyectan sombras imponentes",
+    "clip": "https://cdn.pixabay.com/video/2019/12/12/30123-380473642_large.mp4",
+    "clip_id": 30123
+   },
+   "efecto": "nada",
+   "subtitulo": "La primera alma que la Muerte exigió recuperar fue la del insolente soberano que se había atrevido a doblegarla. Ares y Tánatos acorralaron a Sísifo en su sala del trono, listos para arrastrarlo sin piedad hacia las tinieblas insondables del Tártaro."
+  },
+  {
+   "hablado": "El castigo parecía inevitable y cualquier otro monarca habría suplicado clemencia ante semejante poderío celestial. Sin embargo, el audaz Sísifo mantenía una gélida sonrisa, pues ya había susurrado a su esposa las secretas instrucciones de una estratagema aún más perversa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "whispering shadow night torch",
+    "otras": [
+     "ancient palace night torch",
+     "hooded figure stone hall"
+    ],
+    "descripcion": "Siluetas misteriosas junto a una antorcha encendida en un pasillo de piedra milenaria",
+    "clip": "https://cdn.pixabay.com/video/2021/04/26/72291-541967058_large.mp4",
+    "clip_id": 72291
+   },
+   "efecto": "brasas",
+   "subtitulo": "El castigo parecía inevitable y cualquier otro monarca habría suplicado clemencia ante semejante poderío celestial. Sin embargo, el audaz Sísifo mantenía una gélida sonrisa, pues ya había susurrado a su esposa las secretas instrucciones de una estratagema aún más perversa."
+  },
+  {
+   "hablado": "Antes de que Ares rompiera los cerrojos, Sísifo había urdido su jugada maestra. Llamó a su esposa Mérope y le ordenó que dejara su cuerpo sin enterrar, prohibiendo toda ofrenda fúnebre en las plazas de Corinto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "greek architecture",
+     "stone ruins"
+    ],
+    "descripcion": "Ruinas de un templo griego bajo la luz del sol",
+    "clip": "https://cdn.pixabay.com/video/2020/07/03/43748-436252242_large.mp4",
+    "clip_id": 43748
+   },
+   "efecto": "polvo",
+   "subtitulo": "Antes de que Ares rompiera los cerrojos, Sísifo había urdido su jugada maestra. Llamó a su esposa Mérope y le ordenó que dejara su cuerpo sin enterrar, prohibiendo toda ofrenda fúnebre en las plazas de Corinto."
+  },
+  {
+   "hablado": "Cuando Hermes y Tánatos lo arrastraron finalmente ante el sombrío trono del Inframundo, el rey no mostró miedo. Se presentó con la túnica desgarrada, fingiendo una profunda humillación y una ira contenida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave entrance fire",
+    "otras": [
+     "underground cave",
+     "dark tunnel"
+    ],
+    "descripcion": "Entrada a una cueva oscura iluminada por fuego",
+    "clip": "https://cdn.pixabay.com/video/2025/02/10/257593_small.mp4",
+    "clip_id": 257593
+   },
+   "efecto": "niebla",
+   "subtitulo": "Cuando Hermes y Tánatos lo arrastraron finalmente ante el sombrío trono del Inframundo, el rey no mostró miedo. Se presentó con la túnica desgarrada, fingiendo una profunda humillación y una ira contenida."
+  },
+  {
+   "hablado": "Ante la mismísima soberana Perséfone, Sísifo alzó la voz con falsa indignación. Acusó a su propia esposa de cometer el peor sacrilegio al negarle los rituales sagrados y dejar su alma vagando sin descanso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "statue face marble",
+    "otras": [
+     "ancient greek statue",
+     "marble sculpture"
+    ],
+    "descripcion": "Primer plano de una estatua de mármol con expresión seria",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34697-403408206_large.mp4",
+    "clip_id": 34697
+   },
+   "efecto": "nada",
+   "subtitulo": "Ante la mismísima soberana Perséfone, Sísifo alzó la voz con falsa indignación. Acusó a su propia esposa de cometer el peor sacrilegio al negarle los rituales sagrados y dejar su alma vagando sin descanso."
+  },
+  {
+   "hablado": "Con lágrimas fingidas que deslizaba por sus mejillas, suplicó clemencia a la reina. Le rogó que le concediera un permiso urgente de tres días para regresar al mundo de los vivos y castigar la impiedad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hands holding sand",
+    "otras": [
+     "person crying silhouette",
+     "sad person window"
+    ],
+    "descripcion": "Manos expresivas en un gesto de súplica",
+    "clip": "https://cdn.pixabay.com/video/2020/03/26/34309-400974311_large.mp4",
+    "clip_id": 34309
+   },
+   "efecto": "polvo",
+   "subtitulo": "Con lágrimas fingidas que deslizaba por sus mejillas, suplicó clemencia a la reina. Le rogó que le concediera un permiso urgente de tres días para regresar al mundo de los vivos y castigar la impiedad."
+  },
+  {
+   "hablado": "Perséfone, conmovida por el respeto que el rey exigía hacia las leyes de los dioses, creyó cada una de sus palabras. Ignoraba por completo que estaba siendo víctima de la mentira más audaz jamás contada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek vase art",
+    "otras": [
+     "classical painting museum",
+     "historic artwork"
+    ],
+    "descripcion": "Vasija antigua con detalles de arte clásico",
+    "clip": "https://cdn.pixabay.com/video/2020/07/29/45926-447070828_large.mp4",
+    "clip_id": 45926
+   },
+   "efecto": "nada",
+   "subtitulo": "Perséfone, conmovida por el respeto que el rey exigía hacia las leyes de los dioses, creyó cada una de sus palabras. Ignoraba por completo que estaba siendo víctima de la mentira más audaz jamás contada."
+  },
+  {
+   "hablado": "La reina del Tártaro aceptó el trato y le otorgó el codiciado salvoconducto. Sísifo debía descender de nuevo al abismo transcurrido ese breve plazo, una promesa que jamás pensó cumplir.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "light coming through cave",
+    "otras": [
+     "bright light beam",
+     "sunlight through clouds"
+    ],
+    "descripcion": "Haz de luz intensa cruzando la oscuridad",
+    "clip": "https://cdn.pixabay.com/video/2023/11/23/190332-887815676_small.mp4",
+    "clip_id": 190332
+   },
+   "efecto": "niebla",
+   "subtitulo": "La reina del Tártaro aceptó el trato y le otorgó el codiciado salvoconducto. Sísifo debía descender de nuevo al abismo transcurrido ese breve plazo, una promesa que jamás pensó cumplir."
+  },
+  {
+   "hablado": "En un parpadeo, el monarca abandonó las sombras y abrió los ojos bajo el cálido sol de Corinto. Respiró el aire fresco sintiendo el triunfo absoluto de haber engañado a la mismísima muerte.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sun over sea water",
+    "otras": [
+     "sunrise ocean waves",
+     "bright sunny day coast"
+    ],
+    "descripcion": "Amanecer luminoso sobre el mar Mediterráneo",
+    "clip": "https://cdn.pixabay.com/video/2025/04/29/275632_large.mp4",
+    "clip_id": 275632
+   },
+   "efecto": "nada",
+   "subtitulo": "En un parpadeo, el monarca abandonó las sombras y abrió los ojos bajo el cálido sol de Corinto. Respiró el aire fresco sintiendo el triunfo absoluto de haber engañado a la mismísima muerte."
+  },
+  {
+   "hablado": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm clouds sky",
+    "otras": [
+     "lightning storm sky",
+     "dark clouds moving"
+    ],
+    "descripcion": "Nubes oscuras de tormenta cubriendo el cielo",
+    "clip": "https://cdn.pixabay.com/video/2025/03/27/267960_small.mp4",
+    "clip_id": 267960
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre."
+  },
+  {
+   "hablado": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre. Sísifo caminaba de nuevo por las calles de Corinto bajo la cálida luz del sol.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins sunny",
+    "otras": [
+     "greece ruins",
+     "temple columns"
+    ],
+    "descripcion": "Ruinas de un templo griego bajo la luz brillante del sol.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/12/30124-380473635_large.mp4",
+    "clip_id": 30124
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero lo peor aún no había llegado, porque los dioses del Olimpo observaban cada uno de sus pasos con una paciencia que estaba a punto de agotarse para siempre. Sísifo caminaba de nuevo por las calles de Corinto bajo la cálida luz del sol."
+  },
+  {
+   "hablado": "Ignoró por completo las solemnes promesas que había hecho a la mismísima reina Perséfone en el fondo de la tierra. Para él, los juramentos dados a los muertos carecían de valor una vez que sus pies volvían a pisar el polvo de los vivos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking ancient street",
+    "otras": [
+     "person walking outdoors",
+     "ancient city street"
+    ],
+    "descripcion": "Un hombre caminando con túnica por una calle de piedra antigua.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/11/32249-390923740_large.mp4",
+    "clip_id": 32249
+   },
+   "efecto": "nada",
+   "subtitulo": "Ignoró por completo las solemnes promesas que había hecho a la mismísima reina Perséfone en el fondo de la tierra. Para él, los juramentos dados a los muertos carecían de valor una vez que sus pies volvían a pisar el polvo de los vivos."
+  },
+  {
+   "hablado": "Los años pasaron plácidamente en su palacio real, rodeado de lujos y celebrando en secreto el haber burlado a la propia Muerte en dos ocasiones consecutivas. Ningún otro monarca mortal había logrado semejante hazaña en toda la historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient palace interior",
+    "otras": [
+     "luxury ancient room",
+     "golden artifact museum"
+    ],
+    "descripcion": "Interior de un palacio antiguo con elementos de riqueza y piedra tallada.",
+    "clip": "https://cdn.pixabay.com/video/2023/07/26/173348-849202575_large.mp4",
+    "clip_id": 173348
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los años pasaron plácidamente en su palacio real, rodeado de lujos y celebrando en secreto el haber burlado a la propia Muerte en dos ocasiones consecutivas. Ningún otro monarca mortal había logrado semejante hazaña en toda la historia."
+  },
+  {
+   "hablado": "En cada plaza y mercado, los ciudadanos admiraban con devoción al rey astuto que había desafiado las reglas impuestas desde los cielos. Su figura se convirtió en el símbolo máximo de la inteligencia humana frente al poder de los inmortales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "crowd talking ancient market",
+    "otras": [
+     "people market square",
+     "ancient town square"
+    ],
+    "descripcion": "Gente reunida conversando en una plaza de estilo clásico.",
+    "clip": "https://cdn.pixabay.com/video/2015/12/11/1643-148614430_medium.mp4",
+    "clip_id": 1643
+   },
+   "efecto": "nada",
+   "subtitulo": "En cada plaza y mercado, los ciudadanos admiraban con devoción al rey astuto que había desafiado las reglas impuestas desde los cielos. Su figura se convirtió en el símbolo máximo de la inteligencia humana frente al poder de los inmortales."
+  },
+  {
+   "hablado": "Sin embargo, el tiempo fluye de manera muy diferente para quienes habitan en las cumbres celestiales del Olimpo. Los días de los mortales son apenas un suspiro, pero la memoria de las ofensas divinas permanece intacta e implacable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "clouds mountain peak sky",
+    "otras": [
+     "high mountain clouds",
+     "sky timelapse"
+    ],
+    "descripcion": "Cumbres montañosas elevadas sobre las nubes bajo un cielo amplio.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/09/44278-438661725_small.mp4",
+    "clip_id": 44278
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, el tiempo fluye de manera muy diferente para quienes habitan en las cumbres celestiales del Olimpo. Los días de los mortales son apenas un suspiro, pero la memoria de las ofensas divinas permanece intacta e implacable."
+  },
+  {
+   "hablado": "La tremenda arrogancia de Sísifo al creerse verdaderamente eterno cruzó la línea roja que separa la astucia de la pura insolencia. Los dioses decidieron que su osadía no quedaría impune bajo ningún concepto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm clouds sky",
+    "otras": [
+     "stormy weather sky",
+     "dark clouds moving"
+    ],
+    "descripcion": "Nubes oscuras y amenazantes cubriendo el cielo.",
+    "clip": "https://cdn.pixabay.com/video/2017/05/30/9451-219710504_small.mp4",
+    "clip_id": 9451
+   },
+   "efecto": "brasas",
+   "subtitulo": "La tremenda arrogancia de Sísifo al creerse verdaderamente eterno cruzó la línea roja que separa la astucia de la pura insolencia. Los dioses decidieron que su osadía no quedaría impune bajo ningún concepto."
+  },
+  {
+   "hablado": "Cuando finalmente le llegó la hora de expirar a una edad muy avanzada, la naturaleza ya no pudo protegerlo más contra su destino inevitable. El ciclo de las estaciones y de la vida cumplía su curso inexorable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old olive tree branches",
+    "otras": [
+     "dry tree trunk",
+     "ancient tree forest"
+    ],
+    "descripcion": "Un árbol viejo y nudoso en un paisaje árido.",
+    "clip": "https://cdn.pixabay.com/video/2025/01/19/253423_large.mp4",
+    "clip_id": 253423
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cuando finalmente le llegó la hora de expirar a una edad muy avanzada, la naturaleza ya no pudo protegerlo más contra su destino inevitable. El ciclo de las estaciones y de la vida cumplía su curso inexorable."
+  },
+  {
+   "hablado": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "statue wing figure sky",
+    "otras": [
+     "ancient statue detail",
+     "stone sculpture wing"
+    ],
+    "descripcion": "Escultura clásica de piedra con detalles alados contra el cielo.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/02/37857-415200822_large.mp4",
+    "clip_id": 37857
+   },
+   "efecto": "nada",
+   "subtitulo": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre."
+  },
+  {
+   "hablado": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue wings",
+    "otras": [
+     "ancient statue",
+     "marble sculpture"
+    ],
+    "descripcion": "Estatua clásica de Hermes con alas.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34695-403408188_large.mp4",
+    "clip_id": 34695
+   },
+   "efecto": "niebla",
+   "subtitulo": "En ese preciso instante, el mensajero alado Hermes descendió en persona desde las alturas para reclamar su alma sin posibilidad de escape. El tiempo de las burlas había terminado para siempre."
+  },
+  {
+   "hablado": "El dios del inframundo condujo al rey hasta el fondo del Tártaro, donde la luz del sol jamás penetraba. Allí le aguardaba un tormento diseñado a medida de su infinita soberbia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave rock",
+    "otras": [
+     "underground tunnel",
+     "stone wall"
+    ],
+    "descripcion": "Cueva oscura y profunda con paredes de roca.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/03/337794_small.mp4",
+    "clip_id": 337794
+   },
+   "efecto": "brasas",
+   "subtitulo": "El dios del inframundo condujo al rey hasta el fondo del Tártaro, donde la luz del sol jamás penetraba. Allí le aguardaba un tormento diseñado a medida de su infinita soberbia."
+  },
+  {
+   "hablado": "Ante sus ojos se alzaba una piedra colosal de granito bruto, áspera y extraordinariamente pesada. Su única tarea consistía en empujarla con sus propias manos hasta la cima de la montaña.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "huge stone boulder",
+    "otras": [
+     "rock mountain",
+     "stone pile"
+    ],
+    "descripcion": "Piedra gigante de granito en una pendiente.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/27/132745-754551954_large.mp4",
+    "clip_id": 132745
+   },
+   "efecto": "polvo",
+   "subtitulo": "Ante sus ojos se alzaba una piedra colosal de granito bruto, áspera y extraordinariamente pesada. Su única tarea consistía en empujarla con sus propias manos hasta la cima de la montaña."
+  },
+  {
+   "hablado": "Sísifo aferró la roca con desesperación, apoyando el hombro y tensando cada músculo de su cuerpo. El sofocante calor abisal hacía que el sudor brotara de su frente sin descanso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man pushing heavy stone",
+    "otras": [
+     "hard work physical",
+     "lifting heavy weight"
+    ],
+    "descripcion": "Persona empujando con esfuerzo un objeto pesado.",
+    "clip": "https://cdn.pixabay.com/video/2021/04/26/72295-541967042_large.mp4",
+    "clip_id": 72295
+   },
+   "efecto": "brasas",
+   "subtitulo": "Sísifo aferró la roca con desesperación, apoyando el hombro y tensando cada músculo de su cuerpo. El sofocante calor abisal hacía que el sudor brotara de su frente sin descanso."
+  },
+  {
+   "hablado": "Durante horas interminables subió por la empinada pendiente, ganando metro a metro con un sufrimiento titánico. Cada paso hacia arriba era una victoria arrancada al propio destino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mountain climbing struggle",
+    "otras": [
+     "hiking steep hill",
+     "walking rocky path"
+    ],
+    "descripcion": "Persona subiendo una cuesta empinada y rocosa.",
+    "clip": "https://cdn.pixabay.com/video/2023/07/11/171110-844787885_small.mp4",
+    "clip_id": 171110
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante horas interminables subió por la empinada pendiente, ganando metro a metro con un sufrimiento titánico. Cada paso hacia arriba era una victoria arrancada al propio destino."
+  },
+  {
+   "hablado": "Al fin, tras un esfuerzo titánico, la cumbre quedaba a solo unos centímetros de distancia. La pesada roca rozaba la cima y parecía dispuesta a asentarse de una vez por todas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mountain peak summit",
+    "otras": [
+     "high cliff edge",
+     "rocky top"
+    ],
+    "descripcion": "Cima de una montaña rocosa iluminada tenuemente.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/16/258649_small.mp4",
+    "clip_id": 258649
+   },
+   "efecto": "nada",
+   "subtitulo": "Al fin, tras un esfuerzo titánico, la cumbre quedaba a solo unos centímetros de distancia. La pesada roca rozaba la cima y parecía dispuesta a asentarse de una vez por todas."
+  },
+  {
+   "hablado": "Pero justo en ese instante supremo, una fuerza invisible y cruel vencía su resistencia. La inercia y el peso hacían que la piedra girara bruscamente sobre sí misma ladera abajo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rock falling down hill",
+    "otras": [
+     "stone rolling",
+     "landslide mountain"
+    ],
+    "descripcion": "Piedra rodando hacia abajo por una pendiente.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/28/330898_small.mp4",
+    "clip_id": 330898
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero justo en ese instante supremo, una fuerza invisible y cruel vencía su resistencia. La inercia y el peso hacían que la piedra girara bruscamente sobre sí misma ladera abajo."
+  },
+  {
+   "hablado": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty dark valley",
+    "otras": [
+     "gloomy landscape",
+     "dark horizon"
+    ],
+    "descripcion": "Valle oscuro y desolado bajo un cielo sombrío.",
+    "clip": "https://cdn.pixabay.com/video/2021/02/03/63970-509068415_small.mp4",
+    "clip_id": 63970
+   },
+   "efecto": "niebla",
+   "subtitulo": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad."
+  },
+  {
+   "hablado": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad. Pero su castigo trascendió los límites del propio Inframundo para convertirse en la metáfora definitiva sobre la condición humana y la búsqueda de sentido en un universo indiferente a nuestro sufrimiento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark mountain fog",
+    "otras": [
+     "mountain peak mist",
+     "gloomy landscape"
+    ],
+    "descripcion": "Paisaje montañoso oscuro y brumoso",
+    "clip": "https://cdn.pixabay.com/video/2024/06/06/215530_small.mp4",
+    "clip_id": 215530
+   },
+   "efecto": "niebla",
+   "subtitulo": "El trabajo de horas enteras se desvanecía en un abrir y cerrar de ojos. Sísifo debía descender de nuevo, sabiendo que su condena se repetiría por toda la eternidad. Pero su castigo trascendió los límites del propio Inframundo para convertirse en la metáfora definitiva sobre la condición humana y la búsqueda de sentido en un universo indiferente a nuestro sufrimiento."
+  },
+  {
+   "hablado": "Siglos más tarde, el filósofo Albert Camus vio en este esfuerzo eterno el reflejo exacto de nuestras propias vidas. Cada mañana nos levantamos, acudimos a nuestros puestos de trabajo y realizamos las mismas tareas mecánicas una y otra vez sin un propósito final aparente que justifique tanto desgaste físico y mental.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street",
+    "otras": [
+     "crowd walking city",
+     "busy urban life"
+    ],
+    "descripcion": "Gente caminando por una calle urbana",
+    "clip": "https://cdn.pixabay.com/video/2019/05/20/23796-337668530_large.mp4",
+    "clip_id": 23796
+   },
+   "efecto": "nada",
+   "subtitulo": "Siglos más tarde, el filósofo Albert Camus vio en este esfuerzo eterno el reflejo exacto de nuestras propias vidas. Cada mañana nos levantamos, acudimos a nuestros puestos de trabajo y realizamos las mismas tareas mecánicas una y otra vez sin un propósito final aparente que justifique tanto desgaste físico y mental."
+  },
+  {
+   "hablado": "Sin embargo, el verdadero giro de la leyenda no reside en la crueldad del tormento impuesto por Zeus, sino en el momento exacto en que el rey emprende el descenso. En esa pausa silenciosa, mientras camina de regreso hacia la roca, Sísifo es plenamente consciente de su destino trágico y lo acepta sin vacilar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking alone",
+    "otras": [
+     "lonely figure path",
+     "person walking hills"
+    ],
+    "descripcion": "Un hombre caminando solo por un sendero",
+    "clip": "https://cdn.pixabay.com/video/2024/03/03/202743-918944206_small.mp4",
+    "clip_id": 202743
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, el verdadero giro de la leyenda no reside en la crueldad del tormento impuesto por Zeus, sino en el momento exacto en que el rey emprende el descenso. En esa pausa silenciosa, mientras camina de regreso hacia la roca, Sísifo es plenamente consciente de su destino trágico y lo acepta sin vacilar."
+  },
+  {
+   "hablado": "Ese instante de lucidez convierte al prisionero en el amo absoluto de su propio destino. Al conocer la inutilidad de su empresa y decidir empujar la piedra de todos modos, arrebata a los dioses el poder de destruirlo por completo mediante la desesperación o el llanto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient statue stone",
+    "otras": [
+     "greek sculpture face",
+     "stone carving detail"
+    ],
+    "descripcion": "Detalle de una estatua de piedra antigua",
+    "clip": "https://cdn.pixabay.com/video/2020/11/16/56531-480428215_large.mp4",
+    "clip_id": 56531
+   },
+   "efecto": "nada",
+   "subtitulo": "Ese instante de lucidez convierte al prisionero en el amo absoluto de su propio destino. Al conocer la inutilidad de su empresa y decidir empujar la piedra de todos modos, arrebata a los dioses el poder de destruirlo por completo mediante la desesperación o el llanto."
+  },
+  {
+   "hablado": "Su gran truco final no consistió en encadenar a la Muerte ni en burlar a Perséfone con falsas promesas funerarias. El triunfo supremo de Sísifo fue transformar una condena eterna de puro sufrimiento en un acto perpetuo de absoluta rebeldía contra el orden establecido del Olimpo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple ruins",
+    "otras": [
+     "greek pillars stone",
+     "historic architecture"
+    ],
+    "descripcion": "Ruinas de un templo antiguo con columnas",
+    "clip": "https://cdn.pixabay.com/video/2020/04/10/35649-407113548_large.mp4",
+    "clip_id": 35649
+   },
+   "efecto": "brasas",
+   "subtitulo": "Su gran truco final no consistió en encadenar a la Muerte ni en burlar a Perséfone con falsas promesas funerarias. El triunfo supremo de Sísifo fue transformar una condena eterna de puro sufrimiento en un acto perpetuo de absoluta rebeldía contra el orden establecido del Olimpo."
+  },
+  {
+   "hablado": "Debemos imaginar a Sísifo dichoso mientras baja la ladera para reencontrarse con su carga. Su lucha hacia las cumbres es suficiente para llenar un corazón humano, demostrando que la dignidad reside en combatir incluso cuando la victoria resulta totalmente imposible de alcanzar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sunset mountain horizon",
+    "otras": [
+     "dusk sky clouds",
+     "sun over hills"
+    ],
+    "descripcion": "Atardecer sobre el horizonte de las montañas",
+    "clip": "https://cdn.pixabay.com/video/2017/01/18/7418-200092486_large.mp4",
+    "clip_id": 7418
+   },
+   "efecto": "nada",
+   "subtitulo": "Debemos imaginar a Sísifo dichoso mientras baja la ladera para reencontrarse con su carga. Su lucha hacia las cumbres es suficiente para llenar un corazón humano, demostrando que la dignidad reside en combatir incluso cuando la victoria resulta totalmente imposible de alcanzar."
+  },
+  {
+   "hablado": "¿Fue Sísifo un héroe valiente que desafió la tiranía de los dioses o un rey soberbio atrapado para siempre por su propio ego? Queremos conocer tu perspectiva sobre esta fascinante y compleja historia de la mitología griega clásica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old library books",
+    "otras": [
+     "ancient scrolls desk",
+     "historic study room"
+    ],
+    "descripcion": "Libros antiguos y pergaminos en una mesa",
+    "clip": "https://cdn.pixabay.com/video/2022/02/08/107189-678129960_large.mp4",
+    "clip_id": 107189
+   },
+   "efecto": "nada",
+   "subtitulo": "¿Fue Sísifo un héroe valiente que desafió la tiranía de los dioses o un rey soberbio atrapado para siempre por su propio ego? Queremos conocer tu perspectiva sobre esta fascinante y compleja historia de la mitología griega clásica."
+  },
+  {
+   "hablado": "Déjanos tu opinión aquí abajo en los comentarios y suscríbete ahora mismo al canal para no perderte los próximos misterios y leyendas de la antigüedad. Nos vemos en el siguiente relato.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "burning torch fire",
+    "otras": [
+     "flame in darkness",
+     "torch light wall"
+    ],
+    "descripcion": "Fuego de una antorcha en la oscuridad",
+    "clip": "https://cdn.pixabay.com/video/2016/01/24/1971-152947486_large.mp4",
+    "clip_id": 1971
+   },
+   "efecto": "brasas",
+   "subtitulo": "Déjanos tu opinión aquí abajo en los comentarios y suscríbete ahora mismo al canal para no perderte los próximos misterios y leyendas de la antigüedad. Nos vemos en el siguiente relato."
+  }
+ ],
+ "titulo_youtube": "El mortal que atrapó a la Muerte en CADENAS",
+ "voz": "Algenib",
+ "estilo_imagen": "Cinematic photorealistic film still, ancient Greece, dramatic lighting, shallow depth of field, ultra detailed, 35mm film grain. "
+}
