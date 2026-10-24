@@ -9,3 +9,4 @@
 2026-10-24|15:00|El castigo de Prometeo|cuenta|YO 6adc40666887a2efc19e4832 IN 6adc40668b3d437ddca1e599 TI 6adc4067bd33ce99c308d989
 2026-10-24|18:00|La caja de Pandora|sabias|YO 6adc4202bd33ce99c3090800 IN 6adc42038b3d437ddca212a9 TI 6adc4203e4be8a4d86416690
 2026-10-24|21:00|Apolo y Dafne|consecuencia|YO 6adc43a4e4be8a4d8641b6e5 IN 6adc43a58b3d437ddca25c5d TI 6adc43a5e4be8a4d8641b713
+2026-10-24|22:48|El mito de Narciso|pregunta|YO 6add15a66887a2efc1d46364 IN 6add15a68b3d437ddcd89220 TI 6add15a7bd33ce99c33f2b17|img=real|22:39
