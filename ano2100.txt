@@ -4,3 +4,4 @@
 2026-10-24|15:00|El ascensor espacial|consecuencia|YO 6adc3dbce4be8a4d8640c02d IN 6adc3dbd8b3d437ddca160a3 TI 6adc3dbd8b3d437ddca160d5
 2026-10-24|18:00|Vivir 120 años|final|YO 6adc3f1e0b5343d07068578e IN 6adc3f1e0b5343d0706857c4 TI 6adc3f1f0b5343d0706857f1
 2026-10-24|21:00|Ciudades flotantes|sabias|YO 6adc409b0b5343d07068a696 IN 6adc409c8b3d437ddca1eaa8 TI 6adc409ce4be8a4d86413c8e
+2026-10-24|22:32|Predicción de huracanes con IA|nadie|YO 6add10203d5b27036b9f487a IN 6add10200b5343d0709e3fb9 TI 6add10218b3d437ddcd7630f|img=mixto|22:15
