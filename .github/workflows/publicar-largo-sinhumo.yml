@@ -1,0 +1,23 @@
+# Programa en YouTube el vídeo largo de sin humo TV con su PROPIA cuenta de Metricool (la antigua queda para Pinterest).
+# Las tareas de Claude suben video.mp4, miniatura.jpg y publicacion.json a la rama pub-largo y lanzan este workflow.
+name: Publicar largo sin humo TV
+
+on:
+  workflow_dispatch:
+    inputs:
+      rama:
+        description: "Rama con publicacion.json"
+        default: "pub-largo"
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer publicacion.json
+        run: git fetch -q --depth 1 origin "${{ inputs.rama }}" && git show FETCH_HEAD:publicacion.json > /tmp/publicacion.json
+      - name: Programar en Metricool
+        env:
+          REFRESH: ${{ secrets.METRICOOL_SINHUMO_REFRESH }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+        run: python3 metricool/publicar_largo.py sinhumo /tmp/publicacion.json
