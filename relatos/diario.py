@@ -47,6 +47,8 @@ def sh(c, cwd=None, ok=False):
 DAT = os.path.join(BASE, "datos")
 sh(f"git clone -q --depth 1 --branch datos {REPO} {DAT} || (mkdir -p {DAT} && cd {DAT} && git init -q && git checkout -q --orphan datos)", ok=True)
 USADOS = os.path.join(DAT, CANAL + ".txt")
+CLIPS_USADOS = os.path.join(DAT, f"clips_{CANAL}.txt")   # clips de Pixabay ya usados (no se repiten entre vídeos)
+open(CLIPS_USADOS, "a").close()
 if not os.path.exists(USADOS):
     open(USADOS, "w").close()
 
@@ -83,8 +85,11 @@ for hora, sub in zip(HORAS, carpetas):
     H = json.load(open(f"{D}/historia.json", encoding="utf-8"))
     try:
         for paso in ("voz", "imagenes", "montaje"):
-            print(sh(f'MODO_IMG={modo_de(hora)} CANAL_JSON="{CFG_P}" python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
+            print(sh(f'MODO_IMG={modo_de(hora)} CANAL_JSON="{CFG_P}" CLIPS_USADOS="{CLIPS_USADOS}" python3 "{AQUI}/fabricar.py" "{D}" {paso}').strip()[-600:])
         modo = open(f"{D}/modo_imagenes.txt").read().strip() if os.path.exists(f"{D}/modo_imagenes.txt") else "ia"
+        ids_clips = [str(v["clip_id"]) for v in json.load(open(f"{D}/historia.json", encoding="utf-8")).get("clips_info", {}).values()]
+        with open(CLIPS_USADOS, "a") as f:
+            f.write("".join(x + "\n" for x in ids_clips))
         if PROBAR:
             os.makedirs("prueba", exist_ok=True)
             import shutil
@@ -103,6 +108,8 @@ for hora, sub in zip(HORAS, carpetas):
             f.write(linea + "\n")
         # se guarda en cuanto se publica (con reintentos), para que la repesca y los temas nunca lo pierdan
         datos.anadir(REPO, f"{CANAL}.txt", [linea], C["nombre"], f"{CANAL} {HOY:%Y-%m-%d} {hora}")
+        if ids_clips:
+            datos.anadir(REPO, f"clips_{CANAL}.txt", ids_clips, C["nombre"], f"clips {CANAL} {HOY:%Y-%m-%d} {hora}")
     except Exception as e:
         resumen.append(f"{hora} · {H.get('titulo')} · FALLO: {str(e)[-300:]}")
         print("FALLO", hora, str(e)[-1500:])

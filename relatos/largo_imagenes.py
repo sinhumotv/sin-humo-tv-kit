@@ -296,6 +296,7 @@ documental). Descarta los que no peguen nada, los que se vean de otra época que
 Prefiere vídeo REAL y natural, como grabado con una cámara normal o un móvil: gente de verdad, calles, casas, trabajos,
 lugares y objetos reales, con movimiento visible. DESCARTA todo lo que parezca hecho por ordenador o con IA (renders 3D,
 animaciones, hologramas, efectos, ciudades o robots de ciencia ficción, fondos abstractos) y los planos casi quietos.
+Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico solo si no hay nada más concreto.
 {L.get('reglas_reales', '')} Devuelve SOLO JSON con TODOS los que valen, del mejor al peor (lista vacía si ninguno):
 {{"validos": [<números>]}}"""
     try:

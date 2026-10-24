@@ -65,16 +65,18 @@ def reales(indices):
         cfg = json.load(open(os.environ["CANAL_JSON"], encoding="utf-8"))
     gen = (cfg.get("largo") or {}).get("video_generico") or []
     if "busquedas" not in H:
-        H["busquedas"] = stock.busquedas(H["titulo"], ESC, cfg.get("tema", ""))
+        H["busquedas"] = stock.busquedas(H["titulo"], ESC, cfg.get("tema", ""), cfg.get("visual", ""))
     P = json.load(open(f"{D}/proyecto.json", encoding="utf-8"))
     clips = P.get("clips") or {}
     cred = H.setdefault("creditos_video", {})
     usados = {c.get("clip_id") for c in H.get("clips_info", {}).values()}
+    if os.environ.get("CLIPS_USADOS") and os.path.exists(os.environ["CLIPS_USADOS"]):
+        usados |= {int(x) for x in open(os.environ["CLIPS_USADOS"]).read().split() if x.isdigit()}
     info = H.setdefault("clips_info", {})
     sin = []
     for i in indices:
         r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"],
-                            (cfg.get("largo") or {}).get("reglas_reales", ""))
+                            (cfg.get("largo") or {}).get("reglas_reales", ""), cfg.get("visual", ""))
         if not r:
             sin.append(i)
             continue

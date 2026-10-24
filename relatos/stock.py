@@ -91,17 +91,19 @@ def _bajar_clip(c, mp4, jpg):
     return _fotograma_vertical(mp4, jpg)
 
 
-def busquedas(titulo, escenas, tema=""):
+def busquedas(titulo, escenas, tema="", visual=""):
     """Una búsqueda en inglés (y 2 alternativas) por escena, pensadas para un banco de vídeo real. Usa Gemini."""
     from gem import pedir
     lista = "\n".join(f"{k}. {e['hablado']}" for k, e in enumerate(escenas))
     q = f"""Vídeo corto vertical de redes: "{titulo}" ({tema}). Escenas (lo que dice la voz):
 {lista}
 Para cada escena, escribe una búsqueda corta EN INGLÉS (2-4 palabras) para encontrar en Pixabay un clip de VÍDEO REAL
-(grabado con cámara, no animación) que acompañe a lo que se cuenta: un lugar, un ambiente, un objeto, una acción o gente
-real de espaldas o lejos. Piensa como un montador de documentales: si la escena es imposible de grabar (un dios, un
-monstruo, el futuro), busca algo real que la evoque (ruinas, tormenta, mar, fuego, laboratorio, ciudad de noche...).
-Añade 2 alternativas más generales. Nada de sangre, armas apuntando ni violencia explícita.
+(grabado con cámara, no animación) que muestre LO CONCRETO que se cuenta en esa escena, de forma que quien lo vea sin
+sonido reconozca el tema del vídeo. LO QUE TIENE QUE VERSE EN ESTE CANAL: {visual}
+Piensa como un montador de documentales: si la escena es imposible de grabar (un dios, un monstruo, el futuro), busca
+algo real y reconocible del tema que la represente (p. ej. la estatua o el templo de ese dios, el lugar del caso, la
+tecnología real de la que se habla), no un paisaje cualquiera. Varía: que no salgan dos escenas con lo mismo.
+Añade 2 alternativas un poco más generales pero del mismo tema. Nada de sangre, armas apuntando ni violencia explícita.
 Devuelve SOLO JSON: {{"escenas": [{{"busqueda": "...", "otras": ["...", "..."]}}, ...]}} (una por escena, en orden)."""
     try:
         j, _ = pedir(q, temp=0.4, max_tokens=4000)
@@ -114,7 +116,7 @@ Devuelve SOLO JSON: {{"escenas": [{{"busqueda": "...", "otras": ["...", "..."]}}
             for e in escenas]
 
 
-def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo, reglas=""):
+def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo, reglas="", visual=""):
     """Busca, elige y baja un clip para la escena i (1..n). Devuelve dict con clip/creditos o None."""
     from gem import pedir
     mp4, jpg = f"{dir_clips}/{i:02d}.mp4", f"{dir_imgs}/{i:02d}.jpg"
@@ -149,8 +151,9 @@ def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo, regl
     if ok:
         q = f"""Vídeo corto vertical: "{titulo}". Escena: «{escena['hablado']}».
 Te paso {len(ok)} fotogramas de clips de vídeo candidatos (desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
-Se recortarán en VERTICAL por el centro. Elige los que mejor acompañen a la escena (vale algo que evoque el lugar, el
-ambiente o la época, como en un documental). Descarta lo que no pegue nada, lo que tenga texto o logotipos, lo que
+Se recortarán en VERTICAL por el centro. Elige los que muestren de forma RECONOCIBLE lo que cuenta la escena y el tema
+del vídeo. Lo que tiene que verse en este canal: {visual}
+Un paisaje o un cielo genérico solo vale si de verdad no hay nada más concreto entre los candidatos. Descarta lo que no pegue nada, lo que tenga texto o logotipos, lo que
 parezca hecho por ordenador y los que pierdan lo importante al recortar el centro.
 MUY IMPORTANTE: si la historia es antigua o de otra época, descarta gente con ropa, peinados, coches, móviles u objetos
 actuales (mejor paisajes, ruinas, fuego, agua, cielo, manos, objetos antiguos). Descarta mascotas y animales graciosos,

@@ -41,13 +41,28 @@ CLIPS = {int(k): v for k, v in (P.get("clips") or {}).items() if os.path.exists(
 LECT = {}
 
 
+def dur_clip(ruta):
+    r = subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{ruta}"', shell=True,
+                       capture_output=True, text=True)
+    try:
+        return float(r.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
 def frame_clip(i):
-    """Siguiente fotograma del clip de la escena i, ya a W x H (en bucle si el clip es más corto que la escena)."""
+    """Siguiente fotograma del clip de la escena i, ya a W x H. El mismo lector sirve para el fundido de entrada y para
+    la escena, así el vídeo sigue sin saltos. Si el clip es más corto que la escena, se ralentiza (hasta x2) en vez de
+    volver a empezar de golpe; solo si ni así llega, se repite."""
     if i not in LECT:
-        for k in list(LECT):
+        for k in [k for k in LECT if k < i - 1]:
             LECT.pop(k).kill()
+        e = escenas[i]
+        necesita = (e["fin"] if i < len(escenas) - 1 else DUR) - e["ini"] + 2 * XF + 0.2
+        d = dur_clip(CLIPS[i])
+        lento = min(2.0, necesita / d) if 0 < d < necesita else 1.0
         LECT[i] = subprocess.Popen(
-            f'ffmpeg -v error -stream_loop -1 -i "{CLIPS[i]}" -an -vf "scale={W}:{H}:force_original_aspect_ratio=increase,'
+            f'ffmpeg -v error -stream_loop -1 -i "{CLIPS[i]}" -an -vf "setpts={lento:.3f}*PTS,scale={W}:{H}:force_original_aspect_ratio=increase,'
             f'crop={W}:{H},fps={FPS},format=rgb24" -f rawvideo -pix_fmt rgb24 -', shell=True, stdout=subprocess.PIPE)
     b = LECT[i].stdout.read(W * H * 3)
     if len(b) < W * H * 3:
@@ -267,7 +282,7 @@ for f in range(NF):
     if fr is None:
         fr = cuadro(i, min(1, (t - ini) / span))
     if i + 1 < len(escenas) and t > fin - XF:  # fundido con la siguiente
-        nxt = cuadro(i + 1, 0)
+        nxt = (frame_clip(i + 1) if i + 1 in CLIPS else None) or cuadro(i + 1, 0)
         fr = Image.blend(fr, nxt, (t - (fin - XF)) / XF * 0.999)
     luz = 1.0
     if i in FUEGO:
