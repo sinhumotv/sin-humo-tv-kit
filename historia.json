@@ -1,0 +1,1215 @@
+{
+ "titulo": "El misterio del Paso Diatlov",
+ "titulos": [
+  "¿Qué mató a 9 excursionistas en la montaña de los muertos?",
+  "El misterio del Paso Diátlov: la VERDAD 60 años después",
+  "Nueve montañeros huyen de noche a -30°C: el enigma Diátlov",
+  "Caso Diátlov: la extraña causa que la ciencia logró explicar",
+  "El archivo secreto del incidente del Paso Diátlov",
+  "¿Por qué rasgaron su propia tienda? El misterio de Diátlov",
+  "Noche fatal en los Urales: el enigma insondable de Diátlov",
+  "Paso Diátlov: las pruebas olvidadas de la tragedia soviética",
+  "La noche en que el frío y lo DESCONOCIDO borraron 9 vidas",
+  "Revelan la causa real tras el misterio del Paso Diátlov"
+ ],
+ "miniatura": {
+  "texto": "9 MUERTES EN LA NIEVE",
+  "clave": "Paso Diátlov",
+  "prompt": "A dramatic cinematic landscape of frozen snowy Ural mountains at night under a dark starry sky. On the right side, a solitary tattered vintage orange expedition tent stands half-buried in deep snow, glowing weakly from an internal light source, creating chilling high contrast shadows. The left side is dark and foggy, ideal for text placement. Photorealistic style, ominous cold mood, deep navy blue and stark white tones, cinematic lighting, 8k resolution."
+ },
+ "descripcion": "En febrero de 1959, nueve experimentados excursionistas soviéticos liderados por Igor Diátlov se adentraron en las heladas montañas de los Urales. Días después, sus cuerpos fueron hallados sin vida a kilómetros de su campamento, tras haber cortado la tienda desde el interior para huir en mitad de la noche hacia temperaturas de treinta grados bajo cero. Este caso de true crime e investigación histórica sigue siendo uno de los misterios insueltos más impactantes de la historia moderna.\n\nEn este documental examinamos las pruebas forenses originales, los archivos clasificados expedidos por las autoridades soviéticas y las teorías científicas más recientes. Descubre los desgarradores acontecimientos que marcaron esa fatídica noche y la explicación física que la ciencia tardó más de seis décadas en demostrar de forma definitiva.",
+ "etiquetas": [
+  "paso diatlov",
+  "incidente paso diatlov",
+  "misterios sin resolver",
+  "casos reales",
+  "documental true crime",
+  "misterios historicos",
+  "igor diatlov",
+  "montañas urales",
+  "misterios rusia",
+  "archivos secretos",
+  "investigacion policial",
+  "caja negra"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "Atrapados en la noche blanca"
+  },
+  {
+   "escena": 8,
+   "titulo": "Ruta hacia el Kholat Syakhl"
+  },
+  {
+   "escena": 16,
+   "titulo": "La alarma en Sverdlovsk"
+  },
+  {
+   "escena": 24,
+   "titulo": "El hallazgo del campamento"
+  },
+  {
+   "escena": 32,
+   "titulo": "Los primeros descubrimientos"
+  },
+  {
+   "escena": 40,
+   "titulo": "El abismo del barranco"
+  },
+  {
+   "escena": 48,
+   "titulo": "Archivos clasificados y misterios"
+  },
+  {
+   "escena": 56,
+   "titulo": "El avance de la simulación física"
+  },
+  {
+   "escena": 64,
+   "titulo": "El veredicto de la Montaña"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "En febrero de mil novecientos cincuenta y nueve, nueve expertos montañeros rajaron su propia tienda de campaña desde dentro y huyeron descalzos hacia una ventisca mortal a treinta grados bajo cero en los montes Urales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow blizzard mountain night",
+    "otras": [
+     "winter storm mountain",
+     "blizzard night wind"
+    ],
+    "descripcion": "Fuerte ventisca nocturna sobre una ladera montañosa cubierta de nieve y hielo",
+    "clip": "https://cdn.pixabay.com/video/2023/11/29/191288-889685041_small.mp4",
+    "clip_id": 191288
+   },
+   "efecto": "niebla",
+   "subtitulo": "En febrero de mil novecientos cincuenta y nueve, nueve expertos montañeros rajaron su propia tienda de campaña desde dentro y huyeron descalzos hacia una ventisca mortal a treinta grados bajo cero en los montes Urales."
+  },
+  {
+   "hablado": "Qué terror absoluto empujó a deportistas curtidos a arrojarse a una muerte segura en la llamada Montaña Muerta sin calzado ni ropa de abrigo. Los cuerpos aparecieron dispersos, algunos con inexplicables y demoledoras fracturas internas masivas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow footprints winter forest",
+    "otras": [
+     "footprints in snow",
+     "winter forest path"
+    ],
+    "descripcion": "Huellas solitarias marcadas en la nieve profunda adentrándose en un bosque frío",
+    "clip": "https://cdn.pixabay.com/video/2023/12/07/192357-892475199_small.mp4",
+    "clip_id": 192357
+   },
+   "efecto": "polvo",
+   "subtitulo": "Qué terror absoluto empujó a deportistas curtidos a arrojarse a una muerte segura en la llamada Montaña Muerta sin calzado ni ropa de abrigo. Los cuerpos aparecieron dispersos, algunos con inexplicables y demoledoras fracturas internas masivas."
+  },
+  {
+   "hablado": "Durante más de sesenta años, el enigma permaneció enterrado bajo sospechas de pruebas militares y leyendas oscuras. Al final descubriremos la insólita resolución física y científica que descifró por completo este legendario misterio forense.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "classified document archive vintage",
+    "otras": [
+     "old files desk vintage",
+     "vintage document library"
+    ],
+    "descripcion": "Manos hojeando carpetas de documentos antiguos y expedientes en un escritorio en penumbra",
+    "clip": "https://cdn.pixabay.com/video/2026/04/26/349087_small.mp4",
+    "clip_id": 349087
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante más de sesenta años, el enigma permaneció enterrado bajo sospechas de pruebas militares y leyendas oscuras. Al final descubriremos la insólita resolución física y científica que descifró por completo este legendario misterio forense."
+  },
+  {
+   "hablado": "La expedición estaba liderada por Igor Diátlov, un brillante estudiante de ingeniería de veintitrés años del Instituto Politécnico de los Urales. Junto a él viajaban ocho compañeros experimentados, decididos a obtener la máxima certificación deportiva soviética.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Dyatlov group photo 1959",
+    "otras": [
+     "Dyatlov pass expedition 1959",
+     "Dyatlov group Otorten"
+    ],
+    "descripcion": "Fotografía histórica de época en blanco y negro del grupo de excursionistas preparando su ruta",
+    "clip": "https://cdn.pixabay.com/video/2024/04/03/206779_small.mp4",
+    "clip_id": 206779
+   },
+   "efecto": "nada",
+   "subtitulo": "La expedición estaba liderada por Igor Diátlov, un brillante estudiante de ingeniería de veintitrés años del Instituto Politécnico de los Urales. Junto a él viajaban ocho compañeros experimentados, decididos a obtener la máxima certificación deportiva soviética."
+  },
+  {
+   "hablado": "El objetivo era alcanzar la cima de la montaña Otorten cruzando más de trescientos kilómetros de taiga salvaje en pleno invierno ruso. Llevaban esquís, suministros abundantes, diarios personales y cámaras fotográficas para registrar minuciosamente cada jornada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cross country skiing winter",
+    "otras": [
+     "backcountry ski touring snow",
+     "skiing snow mountain"
+    ],
+    "descripcion": "Figuras lejanas practicando esquí de travesía con mochilas pesadas en un páramo blanco",
+    "clip": "https://cdn.pixabay.com/video/2021/09/19/88998-610952395_large.mp4",
+    "clip_id": 88998
+   },
+   "efecto": "niebla",
+   "subtitulo": "El objetivo era alcanzar la cima de la montaña Otorten cruzando más de trescientos kilómetros de taiga salvaje en pleno invierno ruso. Llevaban esquís, suministros abundantes, diarios personales y cámaras fotográficas para registrar minuciosamente cada jornada."
+  },
+  {
+   "hablado": "La zona elegida pertenecía a los dominios ancestrales del pueblo mansi, donde las temperaturas gélidas se desplomaban sin previo aviso. Para cualquier aficionado habría sido letal, pero este grupo poseía los conocimientos técnicos para sobrevivir.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy pine forest aerial",
+    "otras": [
+     "taiga forest snow winter",
+     "pine trees winter storm"
+    ],
+    "descripcion": "Vista aérea de un espeso e interminable bosque de pinos cubierto por la nieve",
+    "clip": "https://cdn.pixabay.com/video/2017/01/13/7328-199383367_large.mp4",
+    "clip_id": 7328
+   },
+   "efecto": "niebla",
+   "subtitulo": "La zona elegida pertenecía a los dominios ancestrales del pueblo mansi, donde las temperaturas gélidas se desplomaban sin previo aviso. Para cualquier aficionado habría sido letal, pero este grupo poseía los conocimientos técnicos para sobrevivir."
+  },
+  {
+   "hablado": "Aquella tarde del primero de febrero, tras desviarse ligeramente por el empeoramiento del tiempo, los jóvenes montañeros decidieron plantar su tienda en la pendiente abierta y desolada del monte Kholat Syakhl, expuestos al viento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "winter camping tent snow",
+    "otras": [
+     "tent snow storm wind",
+     "mountain tent winter night"
+    ],
+    "descripcion": "Una tienda de campaña solitaria azotada por el viento en una ladera nevada al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2022/12/11/142579-780232342_large.mp4",
+    "clip_id": 142579
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquella tarde del primero de febrero, tras desviarse ligeramente por el empeoramiento del tiempo, los jóvenes montañeros decidieron plantar su tienda en la pendiente abierta y desolada del monte Kholat Syakhl, expuestos al viento."
+  },
+  {
+   "hablado": "Mientras cenaban resguardados de las ráfagas heladas, ninguno de los nueve sospechaba que un peligro letal ya se estaba gestando silenciosamente sobre sus cabezas. Pero lo peor de aquella larga noche todavía estaba a punto de comenzar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night snow blizzard dark",
+    "otras": [
+     "dark winter mountain night",
+     "snowstorm darkness winter"
+    ],
+    "descripcion": "Oscuridad total en la montaña mientras la nieve cae densa ante un haz de luz tenue",
+    "clip": "https://cdn.pixabay.com/video/2017/08/30/11721-231759067_large.mp4",
+    "clip_id": 11721
+   },
+   "efecto": "niebla",
+   "subtitulo": "Mientras cenaban resguardados de las ráfagas heladas, ninguno de los nueve sospechaba que un peligro letal ya se estaba gestando silenciosamente sobre sus cabezas. Pero lo peor de aquella larga noche todavía estaba a punto de comenzar."
+  },
+  {
+   "hablado": "A finales de enero de mil novecientos cincuenta y nueve, diez jóvenes apasionados del alpinismo partieron desde Sverdlovsk. Eran estudiantes y graduados del Instituto Politécnico, liderados por el experimentado montañero Igor Diátlov.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "winter train station snow",
+    "otras": [
+     "train platform winter",
+     "snowy railway station"
+    ],
+    "descripcion": "Un tren histórico avanzando bajo una nevada intensa en una estación antigua.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/28/205873_small.mp4",
+    "clip_id": 205873
+   },
+   "efecto": "niebla",
+   "subtitulo": "A finales de enero de mil novecientos cincuenta y nueve, diez jóvenes apasionados del alpinismo partieron desde Sverdlovsk. Eran estudiantes y graduados del Instituto Politécnico, liderados por el experimentado montañero Igor Diátlov."
+  },
+  {
+   "hablado": "El objetivo de la expedición era alcanzar la cumbre de la montaña Otorten, una ruta catalogada como de Categoría tres, la más difícil y exigente posible en aquella época del gélido invierno soviético.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow mountain trail peak",
+    "otras": [
+     "snowy mountain range winter",
+     "snow landscape mountains"
+    ],
+    "descripcion": "Vista panorámica de montañas cubiertas de nieve bajo un cielo plomizo.",
+    "clip": "https://cdn.pixabay.com/video/2025/04/09/270940_small.mp4",
+    "clip_id": 270940
+   },
+   "efecto": "niebla",
+   "subtitulo": "El objetivo de la expedición era alcanzar la cumbre de la montaña Otorten, una ruta catalogada como de Categoría tres, la más difícil y exigente posible en aquella época del gélido invierno soviético."
+  },
+  {
+   "hablado": "Al llegar al remoto asentamiento de Vizhai, el destino intervino. Yuri Yudin, uno de los integrantes, sufrió un severo ataque de ciática que le impedía caminar, obligándolo a abandonar la travesía entre lágrimas.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "A vintage documentary style historical photograph of a group of Soviet hikers with backpacks standing together in a snowy Russian settlement during winter in the 1950s, realistic black and white archival look, natural lighting, thoughtful expressions, snow-covered wooden cabins in the background, cinematic composition, authentic historical feel.",
+    "busqueda": "vintage historical group Soviet",
+    "descripcion": "A vintage documentary style historical photograph of a group of Soviet hikers with backpacks standing together in a snowy Russian settlement during winter in the 1950s, realistic black and white archival look, natural lighting, thoughtful expressions, snow-covered wooden cabins in the background, cinematic composition, authentic historical feel.",
+    "clip": "https://cdn.pixabay.com/video/2021/05/18/74388-552236080_large.mp4",
+    "clip_id": 74388
+   },
+   "efecto": "nada",
+   "subtitulo": "Al llegar al remoto asentamiento de Vizhai, el destino intervino. Yuri Yudin, uno de los integrantes, sufrió un severo ataque de ciática que le impedía caminar, obligándolo a abandonar la travesía entre lágrimas."
+  },
+  {
+   "hablado": "Yudin se despidió de sus nueve compañeros sin saber que jamás volvería a verlos con vida. Aquel problema de salud, que entonces vivió como una gran frustración, terminó salvando milagrosamente su propia existencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking snow forest",
+    "otras": [
+     "lonely man winter snow",
+     "walking in snowstorm"
+    ],
+    "descripcion": "Una persona caminando sola alejándose por un bosque nevado.",
+    "clip": "https://cdn.pixabay.com/video/2025/03/28/268251_small.mp4",
+    "clip_id": 268251
+   },
+   "efecto": "polvo",
+   "subtitulo": "Yudin se despidió de sus nueve compañeros sin saber que jamás volvería a verlos con vida. Aquel problema de salud, que entonces vivió como una gran frustración, terminó salvando milagrosamente su propia existencia."
+  },
+  {
+   "hablado": "Ya reducidos a nueve miembros, siete hombres y dos mujeres avanzaron con esquís por parajes inhóspitos. Registraron cada etapa del viaje utilizando sus cámaras fotográficas personales y detallados diarios de ruta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cross country skiing snow",
+    "otras": [
+     "skiers in winter forest",
+     "people skiing snow"
+    ],
+    "descripcion": "Un grupo de personas haciendo esquí de travesía entre árboles nevados.",
+    "clip": "https://cdn.pixabay.com/video/2017/01/18/7418-200092486_large.mp4",
+    "clip_id": 7418
+   },
+   "efecto": "niebla",
+   "subtitulo": "Ya reducidos a nueve miembros, siete hombres y dos mujeres avanzaron con esquís por parajes inhóspitos. Registraron cada etapa del viaje utilizando sus cámaras fotográficas personales y detallados diarios de ruta."
+  },
+  {
+   "hablado": "En sus anotaciones reflejaban un ambiente alegre y camaradería plena. Fotografiaban paisajes nevados y bromearon sobre las historias del pueblo mansi, los nativos locales que consideraban sagradas y peligrosas aquellas cumbres heladas.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "Documentary photograph illustrating: Fotografía en blanco y negro tomada por el propio grupo durante la caminata.",
+    "busqueda": "Fotograf en blanco y",
+    "descripcion": "Documentary photograph illustrating: Fotografía en blanco y negro tomada por el propio grupo durante la caminata.",
+    "clip": "https://cdn.pixabay.com/video/2016/06/27/3612-172488334_large.mp4",
+    "clip_id": 3612
+   },
+   "efecto": "polvo",
+   "subtitulo": "En sus anotaciones reflejaban un ambiente alegre y camaradería plena. Fotografiaban paisajes nevados y bromearon sobre las historias del pueblo mansi, los nativos locales que consideraban sagradas y peligrosas aquellas cumbres heladas."
+  },
+  {
+   "hablado": "El uno de febrero, la fuerte ventisca desvió su rumbo hacia las laderas del Kholat Syakhl. Para no perder la altitud ganada, Diátlov decidió acampar justo en la pendiente abierta y expuesta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowstorm mountain winter night",
+    "otras": [
+     "blizzard mountain snow",
+     "heavy snowstorm forest"
+    ],
+    "descripcion": "Una fuerte tormenta de nieve azotando la ladera de una montaña.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31140-384523216_large.mp4",
+    "clip_id": 31140
+   },
+   "efecto": "niebla",
+   "subtitulo": "El uno de febrero, la fuerte ventisca desvió su rumbo hacia las laderas del Kholat Syakhl. Para no perder la altitud ganada, Diátlov decidió acampar justo en la pendiente abierta y expuesta."
+  },
+  {
+   "hablado": "Cortaron la nieve para nivelar el terreno, montaron la gran tienda de campaña y cenaron tranquilamente resguardados del viento. Sin embargo, aquella pacífica velada ocultaba una amenaza inminente que destruiría sus vidas antes del amanecer.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "tent snow mountain night",
+    "otras": [
+     "camping winter snow night",
+     "tent blizzard mountain"
+    ],
+    "descripcion": "Una tienda de campaña iluminada por dentro en mitad de un paisaje helado de noche.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/19/111279-690770674_small.mp4",
+    "clip_id": 111279
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cortaron la nieve para nivelar el terreno, montaron la gran tienda de campaña y cenaron tranquilamente resguardados del viento. Sin embargo, aquella pacífica velada ocultaba una amenaza inminente que destruiría sus vidas antes del amanecer."
+  },
+  {
+   "hablado": "El doce de febrero era el día señalado para recibir noticias. Igor Diátlov había prometido enviar un telegrama urgente al club deportivo desde el asentamiento de Vizhai, pero la oficina de correos de Sverdlovsk permaneció en silencio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage telegraph office",
+    "otras": [
+     "old office desk",
+     "retro typewriter desk"
+    ],
+    "descripcion": "Un escritorio antiguo de madera con un aparato telegráfico y papeles apilados en penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/19/227318_small.mp4",
+    "clip_id": 227318
+   },
+   "efecto": "polvo",
+   "subtitulo": "El doce de febrero era el día señalado para recibir noticias. Igor Diátlov había prometido enviar un telegrama urgente al club deportivo desde el asentamiento de Vizhai, pero la oficina de correos de Sverdlovsk permaneció en silencio."
+  },
+  {
+   "hablado": "Al principio nadie se alarmó demasiado. En expediciones invernales de tanta dificultad técnica, los retrasos por ventiscas o desvíos eran habituales, e incluso el propio Yuri Yudin creyó que el grupo tardaría unos pocos días más en completar la ruta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow falling window",
+    "otras": [
+     "winter snowfall window",
+     "blizzard outside window"
+    ],
+    "descripcion": "Nieve densa cayendo intensamente a través del cristal de una ventana antigua de madera.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/24/201766-916357972_small.mp4",
+    "clip_id": 201766
+   },
+   "efecto": "niebla",
+   "subtitulo": "Al principio nadie se alarmó demasiado. En expediciones invernales de tanta dificultad técnica, los retrasos por ventiscas o desvíos eran habituales, e incluso el propio Yuri Yudin creyó que el grupo tardaría unos pocos días más en completar la ruta."
+  },
+  {
+   "hablado": "Sin embargo, las jornadas continuaron pasando sin una sola comunicación. La angustia comenzó a apoderarse de los familiares, quienes veían cómo el calendario avanzaba implacable mientras el frío siberiano azotaba con dureza las cordilleras del norte soviético.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage rotary telephone",
+    "otras": [
+     "old black telephone",
+     "antique telephone desk"
+    ],
+    "descripcion": "Un teléfono de disco negro antiguo sobre una mesa solitaria mientras suena sin ser atendido.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/14/204169-923568120_large.mp4",
+    "clip_id": 204169
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, las jornadas continuaron pasando sin una sola comunicación. La angustia comenzó a apoderarse de los familiares, quienes veían cómo el calendario avanzaba implacable mientras el frío siberiano azotaba con dureza las cordilleras del norte soviético."
+  },
+  {
+   "hablado": "Desesperados ante la inacción inicial, los padres de los muchachos acudieron a las oficinas del Instituto Politécnico exigiendo respuestas inmediatas. El ambiente festivo estudiantil dio paso a una tensa incertidumbre que obligó a los directivos a intervenir con urgencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "retro office corridor",
+    "otras": [
+     "vintage hallway walking",
+     "old building interior"
+    ],
+    "descripcion": "Siluetas de personas caminando apresuradas por el pasillo sobrio e iluminado de una institución oficial.",
+    "clip": "https://cdn.pixabay.com/video/2021/05/08/73531-548642354_medium.mp4",
+    "clip_id": 73531
+   },
+   "efecto": "niebla",
+   "subtitulo": "Desesperados ante la inacción inicial, los padres de los muchachos acudieron a las oficinas del Instituto Politécnico exigiendo respuestas inmediatas. El ambiente festivo estudiantil dio paso a una tensa incertidumbre que obligó a los directivos a intervenir con urgencia."
+  },
+  {
+   "hablado": "El veinte de febrero se organizó oficialmente la primera operación de auxilio. Compañeros de aula, profesores experimentados en montañismo y rastreadores locales formaron brigadas de voluntarios dispuestas a internarse en las zonas más agrestes de los montes Urales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hikers walking snow",
+    "otras": [
+     "winter mountain expedition",
+     "snowshoeing winter woods"
+    ],
+    "descripcion": "Un grupo de montañeros equipados con mochilas pesadas avanzando con esfuerzo entre la nieve profunda.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/12/188778-883818276_small.mp4",
+    "clip_id": 188778
+   },
+   "efecto": "niebla",
+   "subtitulo": "El veinte de febrero se organizó oficialmente la primera operación de auxilio. Compañeros de aula, profesores experimentados en montañismo y rastreadores locales formaron brigadas de voluntarios dispuestas a internarse en las zonas más agrestes de los montes Urales."
+  },
+  {
+   "hablado": "La gravedad del asunto movilizó de inmediato al ejército soviético y a la policía. Se estableció un centro de operaciones tácticas en la remota localidad de Ivdel, coordinando suministros, radios militares y guardias fronterizos entrenados para terrenos extremos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "military map planning",
+    "otras": [
+     "men looking map",
+     "vintage command center"
+    ],
+    "descripcion": "Manos trazando rutas con compás y regla sobre un mapa topográfico doblado en una mesa de campaña.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/04/33237-396487898_large.mp4",
+    "clip_id": 33237
+   },
+   "efecto": "polvo",
+   "subtitulo": "La gravedad del asunto movilizó de inmediato al ejército soviético y a la policía. Se estableció un centro de operaciones tácticas en la remota localidad de Ivdel, coordinando suministros, radios militares y guardias fronterizos entrenados para terrenos extremos."
+  },
+  {
+   "hablado": "Varios aviones y helicópteros militares sobrevolaron incansablemente valles desolados cubiertos de nieve virgen. Los pilotos escudriñaban cada claro del bosque boreal buscando restos de humo, huellas humanas o cualquier destello que indicara la presencia de los jóvenes desaparecidos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "helicopter aerial snow",
+    "otras": [
+     "aerial snowy mountains",
+     "winter mountain landscape"
+    ],
+    "descripcion": "Vista aérea desde el aire de cumbres montañosas cubiertas de nieve y extensos bosques de pinos helados.",
+    "clip": "https://cdn.pixabay.com/video/2023/12/09/192649-892970391_small.mp4",
+    "clip_id": 192649
+   },
+   "efecto": "niebla",
+   "subtitulo": "Varios aviones y helicópteros militares sobrevolaron incansablemente valles desolados cubiertos de nieve virgen. Los pilotos escudriñaban cada claro del bosque boreal buscando restos de humo, huellas humanas o cualquier destello que indicara la presencia de los jóvenes desaparecidos."
+  },
+  {
+   "hablado": "Durante casi una semana la búsqueda no arrojó resultados esperanzadores. Pero el veintiséis de febrero, un equipo en tierra divisó una sombra solitaria en la pendiente de la Montaña de la Muerte, donde comenzaría a desvelarse la pesadilla.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "Documentary photograph illustrating: Fotografía histórica en blanco y negro del equipo de rescate inspeccionando la ladera nevada en febrero de 1959.",
+    "busqueda": "Fotograf hist rica en",
+    "descripcion": "Documentary photograph illustrating: Fotografía histórica en blanco y negro del equipo de rescate inspeccionando la ladera nevada en febrero de 1959.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/11/123839-729019798_small.mp4",
+    "clip_id": 123839
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante casi una semana la búsqueda no arrojó resultados esperanzadores. Pero el veintiséis de febrero, un equipo en tierra divisó una sombra solitaria en la pendiente de la Montaña de la Muerte, donde comenzaría a desvelarse la pesadilla."
+  },
+  {
+   "hablado": "Durante casi una semana la búsqueda no arrojó resultados esperanzadores. Pero el veintiséis de febrero, un equipo en tierra divisó una sombra solitaria en la pendiente de la Montaña de la Muerte, donde comenzaría a desvelarse la pesadilla.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow mountain slope",
+    "otras": [
+     "winter snowy mountain",
+     "cold landscape"
+    ],
+    "descripcion": "Vista lejana de una ladera nevada y solitaria en invierno.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/24/342066_large.mp4",
+    "clip_id": 342066
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante casi una semana la búsqueda no arrojó resultados esperanzadores. Pero el veintiséis de febrero, un equipo en tierra divisó una sombra solitaria en la pendiente de la Montaña de la Muerte, donde comenzaría a desvelarse la pesadilla."
+  },
+  {
+   "hablado": "Al aproximarse al lugar, los rescatistas comprobaron que la tienda de campaña estaba semienterrada bajo una gruesa capa de nieve y completamente desierta, desafiando toda lógica en medio de aquel frío polar extremo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy mountain tent",
+    "otras": [
+     "winter camping snow",
+     "mountaineering camp"
+    ],
+    "descripcion": "Una tienda de campaña cubierta por la nieve en la montaña.",
+    "clip": "https://cdn.pixabay.com/video/2019/07/24/25477-350507890_medium.mp4",
+    "clip_id": 25477
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al aproximarse al lugar, los rescatistas comprobaron que la tienda de campaña estaba semienterrada bajo una gruesa capa de nieve y completamente desierta, desafiando toda lógica en medio de aquel frío polar extremo."
+  },
+  {
+   "hablado": "Una inspección detallada reveló un detalle profundamente inquietante: la lona impermeable había sido desgarrada desde el interior mediante cortes limpios realizados con un cuchillo, evidenciando una urgencia absoluta por salir.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cutting fabric close up",
+    "otras": [
+     "knife cutting cloth",
+     "fabric texture dark"
+    ],
+    "descripcion": "Primer plano de un tejido siendo cortado con un objeto afilado.",
+    "clip": "https://cdn.pixabay.com/video/2016/09/06/4973-181688494_large.mp4",
+    "clip_id": 4973
+   },
+   "efecto": "nada",
+   "subtitulo": "Una inspección detallada reveló un detalle profundamente inquietante: la lona impermeable había sido desgarrada desde el interior mediante cortes limpios realizados con un cuchillo, evidenciando una urgencia absoluta por salir."
+  },
+  {
+   "hablado": "Dentro de la estructura abandonada permanecían intactos todos los abrigos pesados, el valioso equipo técnico y las botas de los montañeros, un olvido inexplicable para quienes debían enfrentarse a temperaturas bajo cero.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty winter boots",
+    "otras": [
+     "winter clothes inside",
+     "abandoned camp interior"
+    ],
+    "descripcion": "Ropa de abrigo y botas de invierno en una estancia oscura.",
+    "clip": "https://cdn.pixabay.com/video/2026/05/16/353078_large.mp4",
+    "clip_id": 353078
+   },
+   "efecto": "polvo",
+   "subtitulo": "Dentro de la estructura abandonada permanecían intactos todos los abrigos pesados, el valioso equipo técnico y las botas de los montañeros, un olvido inexplicable para quienes debían enfrentarse a temperaturas bajo cero."
+  },
+  {
+   "hablado": "Alrededor de la tienda, la superficie blanca mostraba un rastro desconcertante de huellas humanas que descendían hacia el bosque cercano, la gran mayoría de ellas descalzas o con apenas calcetines.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "footprints in snow",
+    "otras": [
+     "snow footsteps trail",
+     "winter path tracks"
+    ],
+    "descripcion": "Huellas marcadas sobre la nieve profunda en un camino.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/11/142476-780030694_small.mp4",
+    "clip_id": 142476
+   },
+   "efecto": "niebla",
+   "subtitulo": "Alrededor de la tienda, la superficie blanca mostraba un rastro desconcertante de huellas humanas que descendían hacia el bosque cercano, la gran mayoría de ellas descalzas o con apenas calcetines."
+  },
+  {
+   "hablado": "Los expertos que examinaron el terreno notaron que las pisadas se alineaban de forma extrañamente ordenada, sugiriendo que los excursionistas no corrían presipitadamente, sino que caminaban con un propósito.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking snow line",
+    "otras": [
+     "winter footsteps trail",
+     "snow walking path"
+    ],
+    "descripcion": "Secuencia de pasos ordenados sobre una superficie nevada.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/23/329674_small.mp4",
+    "clip_id": 329674
+   },
+   "efecto": "nada",
+   "subtitulo": "Los expertos que examinaron el terreno notaron que las pisadas se alineaban de forma extrañamente ordenada, sugiriendo que los excursionistas no corrían presipitadamente, sino que caminaban con un propósito."
+  },
+  {
+   "hablado": "Siguiendo aquel camino helado, los rescatistas avanzaron con creciente inquietud hacia la espesura de los árboles, conscientes de que cada metro recorrido acercaba el grupo al misterio definitivo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pine forest winter snow",
+    "otras": [
+     "dark winter woods",
+     "snowy trees forest"
+    ],
+    "descripcion": "Un bosque de pinos cubierto de nieve bajo un cielo gris.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/12/200326-912384845_small.mp4",
+    "clip_id": 200326
+   },
+   "efecto": "niebla",
+   "subtitulo": "Siguiendo aquel camino helado, los rescatistas avanzaron con creciente inquietud hacia la espesura de los árboles, conscientes de que cada metro recorrido acercaba el grupo al misterio definitivo."
+  },
+  {
+   "hablado": "El silencio del paisaje alpino acompañaba cada paso de la patrulla mientras penetraban en la zona arbolada, temiendo descubrir el peor de los desenlaces posibles tras aquella huida nocturna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rescuers walking snow",
+    "otras": [
+     "people walking forest snow",
+     "winter search team"
+    ],
+    "descripcion": "Siluetas caminando con precaución por un terreno nevado.",
+    "clip": "https://cdn.pixabay.com/video/2019/02/21/21557-321866799_large.mp4",
+    "clip_id": 21557
+   },
+   "efecto": "polvo",
+   "subtitulo": "El silencio del paisaje alpino acompañaba cada paso de la patrulla mientras penetraban en la zona arbolada, temiendo descubrir el peor de los desenlaces posibles tras aquella huida nocturna."
+  },
+  {
+   "hablado": "Siguiendo las huellas heladas durante un kilómetro y medio ladera abajo, los rescatadores alcanzaron el límite del denso bosque. Allí, bajo un enorme cedro milenario, la nieve comenzaba a revelar los primeros indicios de la tragedia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy forest pine",
+    "otras": [
+     "snow forest tree",
+     "winter woods"
+    ],
+    "descripcion": "Bosque nevado con pinos altos y terreno helado.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/09/326786_small.mp4",
+    "clip_id": 326786
+   },
+   "efecto": "niebla",
+   "subtitulo": "Siguiendo las huellas heladas durante un kilómetro y medio ladera abajo, los rescatadores alcanzaron el límite del denso bosque. Allí, bajo un enorme cedro milenario, la nieve comenzaba a revelar los primeros indicios de la tragedia."
+  },
+  {
+   "hablado": "Junto a la base del tronco yacían cenizas apagadas y ramas secas quemadas. Sorprendentemente, las ramas inferiores del árbol aparecían partidas hasta los cinco metros de altura, sugiriendo que alguien trepó desesperadamente para otear la tienda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "campfire ashes snow",
+    "otras": [
+     "winter campfire",
+     "firewood snow"
+    ],
+    "descripcion": "Restos de una fogata apagada sobre la nieve en un entorno invernal.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/23/329770_large.mp4",
+    "clip_id": 329770
+   },
+   "efecto": "brasas",
+   "subtitulo": "Junto a la base del tronco yacían cenizas apagadas y ramas secas quemadas. Sorprendentemente, las ramas inferiores del árbol aparecían partidas hasta los cinco metros de altura, sugiriendo que alguien trepó desesperadamente para otear la tienda."
+  },
+  {
+   "hablado": "Junto al fuego hallaron los dos primeros cadáveres, pertenecientes a Yuri Krivoníschenko y Yuri Doroshenko. Vestían únicamente ropa interior deshilachada y carecían de calzado, congelados en medio de la fría noche a treinta grados bajo cero.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "A cinematic, photorealistic wide shot of a Soviet search and rescue team in heavy winter gear during the 1950s, navigating the snowy slopes of the Ural mountains at twilight. Dramatic overcast sky, deep snow, vintage film grain aesthetic, realistic cold atmosphere, no text, no blood, no visible faces.",
+    "busqueda": "photorealistic wide Soviet search",
+    "descripcion": "A cinematic, photorealistic wide shot of a Soviet search and rescue team in heavy winter gear during the 1950s, navigating the snowy slopes of the Ural mountains at twilight. Dramatic overcast sky, deep snow, vintage film grain aesthetic, realistic cold atmosphere, no text, no blood, no visible faces.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31138-384523227_large.mp4",
+    "clip_id": 31138
+   },
+   "efecto": "niebla",
+   "subtitulo": "Junto al fuego hallaron los dos primeros cadáveres, pertenecientes a Yuri Krivoníschenko y Yuri Doroshenko. Vestían únicamente ropa interior deshilachada y carecían de calzado, congelados en medio de la fría noche a treinta grados bajo cero."
+  },
+  {
+   "hablado": "Las manos de los fallecidos presentaban quemaduras superficiales, señal inequívoca de que intentaron aproximarse al fuego agonizante buscando un calor desesperado. Sin embargo, la intensa hipotermia venció la resistencia humana en cuestión de pocos minutos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "winter snow wind",
+    "otras": [
+     "blizzard cold weather",
+     "snowy storm background"
+    ],
+    "descripcion": "Viento gélido moviendo la nieve en un paisaje de montaña.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/28/63281-505964213_large.mp4",
+    "clip_id": 63281
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las manos de los fallecidos presentaban quemaduras superficiales, señal inequívoca de que intentaron aproximarse al fuego agonizante buscando un calor desesperado. Sin embargo, la intensa hipotermia venció la resistencia humana en cuestión de pocos minutos."
+  },
+  {
+   "hablado": "Inspeccionando el trayecto de regreso hacia el campamento, los rastreadores descubrieron el cuerpo del líder, Igor Diátlov. Se encontraba boca arriba, abrazado a una rama de abedul y orientado de forma clara hacia la tienda situada arriba.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow mountains wide",
+    "otras": [
+     "winter mountain slope",
+     "mountain winter wilderness"
+    ],
+    "descripcion": "Ladera montañosa nevada y solitaria en invierno.",
+    "clip": "https://cdn.pixabay.com/video/2025/05/06/277097_large.mp4",
+    "clip_id": 277097
+   },
+   "efecto": "polvo",
+   "subtitulo": "Inspeccionando el trayecto de regreso hacia el campamento, los rastreadores descubrieron el cuerpo del líder, Igor Diátlov. Se encontraba boca arriba, abrazado a una rama de abedul y orientado de forma clara hacia la tienda situada arriba."
+  },
+  {
+   "hablado": "Más arriba en la pendiente, alineados hacia el refugio, aparecieron Zinaida Kolmogórova y Rustem Slobodín. Sus posturas sugerían una agónica lucha por reptar cuesta arriba contra el viento helado antes de sucumbir a la helada nocturna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy hill slope",
+    "otras": [
+     "mountain snow field",
+     "winter landscape snow"
+    ],
+    "descripcion": "Vista de una ladera nevada barrida por el viento.",
+    "clip": "https://cdn.pixabay.com/video/2017/04/13/8669-213122471_small.mp4",
+    "clip_id": 8669
+   },
+   "efecto": "niebla",
+   "subtitulo": "Más arriba en la pendiente, alineados hacia el refugio, aparecieron Zinaida Kolmogórova y Rustem Slobodín. Sus posturas sugerían una agónica lucha por reptar cuesta arriba contra el viento helado antes de sucumbir a la helada nocturna."
+  },
+  {
+   "hablado": "La autopsia inicial determinó que estos cinco jóvenes murieron congelados sin violencia externa visible. Pero el misterio lejos de resolverse no hacía más que profundizarse, planteando interrogantes inquietantes que la policía soviética no lograba responder.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage typewriter paper",
+    "otras": [
+     "old document police",
+     "old desk paper writing"
+    ],
+    "descripcion": "Documento o informe antiguo sobre una mesa de madera.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/27/32975-394513987_large.mp4",
+    "clip_id": 32975
+   },
+   "efecto": "nada",
+   "subtitulo": "La autopsia inicial determinó que estos cinco jóvenes murieron congelados sin violencia externa visible. Pero el misterio lejos de resolverse no hacía más que profundizarse, planteando interrogantes inquietantes que la policía soviética no lograba responder."
+  },
+  {
+   "hablado": "Cinco cuerpos yacían en la ladera, pero la expedición estaba formada por nueve integrantes en el momento de la tragedia. ¿Dónde se encontraban los otros cuatro compañeros y qué terrible secreto ocultaba la nieve profunda del barranco?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep snow canyon",
+    "otras": [
+     "snow ravine winter",
+     "frozen valley snow"
+    ],
+    "descripcion": "Barranco helado cubierto por una densa capa de nieve.",
+    "clip": "https://cdn.pixabay.com/video/2017/12/17/13448-248520512_small.mp4",
+    "clip_id": 13448
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cinco cuerpos yacían en la ladera, pero la expedición estaba formada por nueve integrantes en el momento de la tragedia. ¿Dónde se encontraban los otros cuatro compañeros y qué terrible secreto ocultaba la nieve profunda del barranco?"
+  },
+  {
+   "hablado": "Cinco cuerpos yacían en la ladera, pero la expedición estaba formada por nueve integrantes en el momento de la tragedia. ¿Dónde se encontraban los otros cuatro compañeros y qué terrible secreto ocultaba la nieve profunda del barranco?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy mountain forest aerial",
+    "otras": [
+     "winter forest landscape",
+     "cold snowy woods"
+    ],
+    "descripcion": "Vista aérea de un denso bosque nevado bajo un cielo gris.",
+    "clip": "https://cdn.pixabay.com/video/2016/12/06/6683-194868574_large.mp4",
+    "clip_id": 6683
+   },
+   "efecto": "niebla",
+   "subtitulo": "Cinco cuerpos yacían en la ladera, pero la expedición estaba formada por nueve integrantes en el momento de la tragedia. ¿Dónde se encontraban los otros cuatro compañeros y qué terrible secreto ocultaba la nieve profunda del barranco?"
+  },
+  {
+   "hablado": "Las semanas pasaron y la llegada de la primavera a los Urales fundió lentamente el grueso manto blanco. La nieve acumulada durante el largo invierno comenzó a ceder, revelando por fin los rincones más inaccesibles del terreno montañoso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "melting snow spring mountain",
+    "otras": [
+     "spring forest snow",
+     "nature melting ice"
+    ],
+    "descripcion": "Paisaje montañoso con nieve derritiéndose bajo la luz tenue.",
+    "clip": "https://cdn.pixabay.com/video/2023/03/14/154726-808562497_small.mp4",
+    "clip_id": 154726
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las semanas pasaron y la llegada de la primavera a los Urales fundió lentamente el grueso manto blanco. La nieve acumulada durante el largo invierno comenzó a ceder, revelando por fin los rincones más inaccesibles del terreno montañoso."
+  },
+  {
+   "hablado": "A principios de mayo, los equipos de rescate volvieron a peinar la zona con desesperación. Sus pasos se dirigieron hacia un barranco natural situado a unos setenta y cinco metros del pino donde habían hallado la pequeña fogata.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rescuers walking in snow",
+    "otras": [
+     "people searching mountain",
+     "winter search party"
+    ],
+    "descripcion": "Grupo de rescatistas caminando por la ladera nevada con equipo.",
+    "clip": "https://cdn.pixabay.com/video/2022/01/04/103361-662525710_small.mp4",
+    "clip_id": 103361
+   },
+   "efecto": "niebla",
+   "subtitulo": "A principios de mayo, los equipos de rescate volvieron a peinar la zona con desesperación. Sus pasos se dirigieron hacia un barranco natural situado a unos setenta y cinco metros del pino donde habían hallado la pequeña fogata."
+  },
+  {
+   "hablado": "Bajo cuatro metros de nieve compacta, enterrados junto a un arroyo oculto, aparecieron por fin los cuatro excursionistas restantes. Estaban resguardados en un lecho improvisado con ramas de abeto que apenas resistió el peso del hielo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep snow ravine winter",
+    "otras": [
+     "snowy canyon woods",
+     "frozen creek winter"
+    ],
+    "descripcion": "Barranco profundo cubierto de nieve y árboles congelados.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/12/246391_small.mp4",
+    "clip_id": 246391
+   },
+   "efecto": "polvo",
+   "subtitulo": "Bajo cuatro metros de nieve compacta, enterrados junto a un arroyo oculto, aparecieron por fin los cuatro excursionistas restantes. Estaban resguardados en un lecho improvisado con ramas de abeto que apenas resistió el peso del hielo."
+  },
+  {
+   "hablado": "A diferencia de sus compañeros hallados en la ladera, estos cuatro jóvenes llevaban prendas de abrigo de gran calidad. Incluso algunos portaban ropa perteneciente a otros miembros del grupo, lo que evidenciaba un desesperado intercambio de última hora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "winter clothes hanging indoor",
+    "otras": [
+     "vintage winter coats",
+     "old woolen clothing"
+    ],
+    "descripcion": "Prendas de abrigo colgadas en una habitación oscura.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31136-384523234_large.mp4",
+    "clip_id": 31136
+   },
+   "efecto": "nada",
+   "subtitulo": "A diferencia de sus compañeros hallados en la ladera, estos cuatro jóvenes llevaban prendas de abrigo de gran calidad. Incluso algunos portaban ropa perteneciente a otros miembros del grupo, lo que evidenciaba un desesperado intercambio de última hora."
+  },
+  {
+   "hablado": "Sin embargo, el examen médico preliminar desató la máxima alarma entre los forenses soviéticos. Presentaban fracturas torácicas masivas y traumatismos craneales severos, con una fuerza equivalente a la de un choque automovilístico frontal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old medical laboratory vintage",
+    "otras": [
+     "scientific research room",
+     "vintage medical tools"
+    ],
+    "descripcion": "Laboratorio antiguo con instrumentos de análisis y frascos.",
+    "clip": "https://cdn.pixabay.com/video/2025/03/03/262188_small.mp4",
+    "clip_id": 262188
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, el examen médico preliminar desató la máxima alarma entre los forenses soviéticos. Presentaban fracturas torácicas masivas y traumatismos craneales severos, con una fuerza equivalente a la de un choque automovilístico frontal."
+  },
+  {
+   "hablado": "Lo más desconcertante y perturbador era que ninguno de ellos mostraba heridas externas en la piel ni hematomas superficiales. Sus cuerpos estaban intactos por fuera, pero destrozados por dentro, como si una presión invisible los hubiera aplastado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark empty room shadows",
+    "otras": [
+     "mysterious dark hallway",
+     "shadows on wall"
+    ],
+    "descripcion": "Habitación oscura con sombras alargadas proyectadas en la pared.",
+    "clip": "https://cdn.pixabay.com/video/2025/12/14/321986_small.mp4",
+    "clip_id": 321986
+   },
+   "efecto": "niebla",
+   "subtitulo": "Lo más desconcertante y perturbador era que ninguno de ellos mostraba heridas externas en la piel ni hematomas superficiales. Sus cuerpos estaban intactos por fuera, pero destrozados por dentro, como si una presión invisible los hubiera aplastado."
+  },
+  {
+   "hablado": "Ninguna caída accidental en la pendiente podía explicar semejantes lesiones internas sin dejar rastro en los tejidos blandos. El misterio médico se volvía impenetrable, pero lo peor aún no había llegado a los informes oficiales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old paper documents desk",
+    "otras": [
+     "vintage typewriter papers",
+     "historic files archive"
+    ],
+    "descripcion": "Papeles antiguos sobre una mesa de madera iluminada.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/04/41121-427876237_large.mp4",
+    "clip_id": 41121
+   },
+   "efecto": "polvo",
+   "subtitulo": "Ninguna caída accidental en la pendiente podía explicar semejantes lesiones internas sin dejar rastro en los tejidos blandos. El misterio médico se volvía impenetrable, pero lo peor aún no había llegado a los informes oficiales."
+  },
+  {
+   "hablado": "Ninguna caída accidental en la pendiente podía explicar semejantes lesiones internas sin dejar rastro en los tejidos blandos. El misterio médico se volvía impenetrable, pero lo peor aún no había llegado a los informes oficiales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage archive room papers",
+    "otras": [
+     "old documents desk",
+     "historical files room"
+    ],
+    "descripcion": "Archivos antiguos y documentos oficiales apilados en una mesa con luz tenue.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/14/207982_medium.mp4",
+    "clip_id": 207982
+   },
+   "efecto": "polvo",
+   "subtitulo": "Ninguna caída accidental en la pendiente podía explicar semejantes lesiones internas sin dejar rastro en los tejidos blandos. El misterio médico se volvía impenetrable, pero lo peor aún no había llegado a los informes oficiales."
+  },
+  {
+   "hablado": "La fiscalía soviética cerró la investigación de forma apresurada en mayo de mil novecientos cincuenta y nueve. El veredicto oficial dictaminó que una fuerza elemental e irresistible había causado aquellas muertes trágicas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old typewriter typing close up",
+    "otras": [
+     "detective writing report",
+     "vintage office desk"
+    ],
+    "descripcion": "Una máquina de escribir antigua tecleando documentos oficiales en una oficina oscura.",
+    "clip": "https://cdn.pixabay.com/video/2015/11/12/1334-145564293_large.mp4",
+    "clip_id": 1334
+   },
+   "efecto": "niebla",
+   "subtitulo": "La fiscalía soviética cerró la investigación de forma apresurada en mayo de mil novecientos cincuenta y nueve. El veredicto oficial dictaminó que una fuerza elemental e irresistible había causado aquellas muertes trágicas."
+  },
+  {
+   "hablado": "Esta vaga conclusión oficial no hizo más que alimentar las sospechas públicas. Surgieron multitud de teorías alternativas que intentaban explicar lo inexplicable en aquella remota región siberiana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night city snow storm",
+    "otras": [
+     "winter forest night",
+     "dark snowy landscape"
+    ],
+    "descripcion": "Un paisaje nevado y oscuro azotado por una ventisca nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/04/202877-919288692_small.mp4",
+    "clip_id": 202877
+   },
+   "efecto": "niebla",
+   "subtitulo": "Esta vaga conclusión oficial no hizo más que alimentar las sospechas públicas. Surgieron multitud de teorías alternativas que intentaban explicar lo inexplicable en aquella remota región siberiana."
+  },
+  {
+   "hablado": "Entre las hipótesis más comentadas figuraba el posible ataque de tribus locales mansi. Sin embargo, los investigadores descartaron esta idea al no encontrar huellas ajenas a los excursionistas en el campamento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pine forest winter snow",
+    "otras": [
+     "snowy woods trees",
+     "cold winter nature"
+    ],
+    "descripcion": "Un denso bosque de pinos cubierto de nieve bajo un cielo gris.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/27/209659_large.mp4",
+    "clip_id": 209659
+   },
+   "efecto": "polvo",
+   "subtitulo": "Entre las hipótesis más comentadas figuraba el posible ataque de tribus locales mansi. Sin embargo, los investigadores descartaron esta idea al no encontrar huellas ajenas a los excursionistas en el campamento."
+  },
+  {
+   "hablado": "Otra corriente de opinión apuntaba a pruebas secretas de armamento militar soviético. Muchos creían que los jóvenes presenciaron por error ensayos de misiles o explosivos en los Urales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage military office room",
+    "otras": [
+     "old factory interior",
+     "industrial machinery dark"
+    ],
+    "descripcion": "Una habitación industrial antigua con sombras y luces tenues.",
+    "clip": "https://cdn.pixabay.com/video/2023/07/06/170300-843059179_small.mp4",
+    "clip_id": 170300
+   },
+   "efecto": "niebla",
+   "subtitulo": "Otra corriente de opinión apuntaba a pruebas secretas de armamento militar soviético. Muchos creían que los jóvenes presenciaron por error ensayos de misiles o explosivos en los Urales."
+  },
+  {
+   "hablado": "Incluso se habló de fenómenos naturales insólitos, como esferas luminosas o fuertes vientos catabáticos capaces de desorientar por completo a los experimentados montañeros en plena noche.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark night sky clouds",
+    "otras": [
+     "stormy clouds night",
+     "dark atmosphere smoke"
+    ],
+    "descripcion": "Un cielo nocturno oscuro con nubes densas en movimiento.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/24/218016_small.mp4",
+    "clip_id": 218016
+   },
+   "efecto": "polvo",
+   "subtitulo": "Incluso se habló de fenómenos naturales insólitos, como esferas luminosas o fuertes vientos catabáticos capaces de desorientar por completo a los experimentados montañeros en plena noche."
+  },
+  {
+   "hablado": "Ante la presión social y el temor a filtraciones, el gobierno soviético tomó una drástica decisión. Los expedientes completos fueron clasificados como secreto y guardados bajo llave en archivos regionales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "locked metal safe box",
+    "otras": [
+     "vintage wooden cabinet",
+     "old library archives"
+    ],
+    "descripcion": "Un archivador metálico antiguo cerrado herméticamente.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31139-384523221_large.mp4",
+    "clip_id": 31139
+   },
+   "efecto": "niebla",
+   "subtitulo": "Ante la presión social y el temor a filtraciones, el gobierno soviético tomó una drástica decisión. Los expedientes completos fueron clasificados como secreto y guardados bajo llave en archivos regionales."
+  },
+  {
+   "hablado": "Durante décadas, el acceso a los documentos originales estuvo totalmente prohibido. Este hermetismo estatal convirtió el caso en uno de los grandes enigmas sin resolver de la historia moderna, pero el misterio aún guardaba un giro final.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "secret files room dark",
+    "otras": [
+     "old library books dark",
+     "mysterious corridor shadow"
+    ],
+    "descripcion": "Un pasillo oscuro con estanterías antiguas y sombras prolongadas.",
+    "clip": "https://cdn.pixabay.com/video/2015/09/27/846-140823862_medium.mp4",
+    "clip_id": 846
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante décadas, el acceso a los documentos originales estuvo totalmente prohibido. Este hermetismo estatal convirtió el caso en uno de los grandes enigmas sin resolver de la historia moderna, pero el misterio aún guardaba un giro final."
+  },
+  {
+   "hablado": "En dos mil diecinueve, sesenta años después de la tragedia, la fiscalía rusa reabrió oficialmente el caso ante la insistencia pública. Se buscaba una respuesta científica rigurosa que dejase atrás los mitos y las teorías conspirativas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lawyer office paperwork",
+    "otras": [
+     "office files archive",
+     "hands holding folder"
+    ],
+    "descripcion": "Un escritorio con carpetas antiguas de investigación y expedientes siendo revisados bajo una lámpara tenue.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/02/198890-909564521_small.mp4",
+    "clip_id": 198890
+   },
+   "efecto": "polvo",
+   "subtitulo": "En dos mil diecinueve, sesenta años después de la tragedia, la fiscalía rusa reabrió oficialmente el caso ante la insistencia pública. Se buscaba una respuesta científica rigurosa que dejase atrás los mitos y las teorías conspirativas."
+  },
+  {
+   "hablado": "Dos investigadores suizos, Johan Gaume y Alexander Puzrin, asumieron el reto aplicando ingeniería geotécnica avanzada y modelos de simulación por ordenador, inspirados incluso en animaciones digitales de nieve y pruebas de impacto automovilístico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer using computer",
+    "otras": [
+     "data analysis screen",
+     "hands typing laptop"
+    ],
+    "descripcion": "Científico trabajando en un laboratorio oscuro observando gráficas complejas y análisis de datos en pantallas.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/03/215189_small.mp4",
+    "clip_id": 215189
+   },
+   "efecto": "nada",
+   "subtitulo": "Dos investigadores suizos, Johan Gaume y Alexander Puzrin, asumieron el reto aplicando ingeniería geotécnica avanzada y modelos de simulación por ordenador, inspirados incluso en animaciones digitales de nieve y pruebas de impacto automovilístico."
+  },
+  {
+   "hablado": "Su estudio reveló un detalle clave ignorado. Al excavar la ladera para colocar la tienda protegida del viento, los jóvenes habían debilitado sin saberlo una capa crítica de nieve compacta sobre una pendiente aparentemente suave.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snowy mountain slope",
+    "otras": [
+     "winter mountain landscape",
+     "snow covered mountain"
+    ],
+    "descripcion": "Una ladera montañosa desolada y cubierta de capas de nieve bajo un cielo invernal encapotado.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/12/61774-500762256_small.mp4",
+    "clip_id": 61774
+   },
+   "efecto": "niebla",
+   "subtitulo": "Su estudio reveló un detalle clave ignorado. Al excavar la ladera para colocar la tienda protegida del viento, los jóvenes habían debilitado sin saberlo una capa crítica de nieve compacta sobre una pendiente aparentemente suave."
+  },
+  {
+   "hablado": "Durante las horas siguientes, vientos catabáticos helados arrastraron toneladas de nieve hacia esa zona, acumulando una sobrecarga invisible sobre el corte. El retraso entre la excavación y el colapso fue de varias horas críticas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "strong blizzard snow",
+    "otras": [
+     "winter storm wind",
+     "snow wind blowing"
+    ],
+    "descripcion": "Una feroz tormenta de nieve con ráfagas violentas de viento blanco que barren la superficie helada.",
+    "clip": "https://cdn.pixabay.com/video/2019/02/01/21116-315137080_medium.mp4",
+    "clip_id": 21116
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante las horas siguientes, vientos catabáticos helados arrastraron toneladas de nieve hacia esa zona, acumulando una sobrecarga invisible sobre el corte. El retraso entre la excavación y el colapso fue de varias horas críticas."
+  },
+  {
+   "hablado": "De madrugada, una pequeña avalancha de placa compacta se desprendió violentamente. No fue una gran masa rodante, sino un pesado bloque sólido que cayó directamente sobre el techo de la lona con fuerza demoledora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow avalanche mountain",
+    "otras": [
+     "heavy snow falling",
+     "snow sliding mountain"
+    ],
+    "descripcion": "Masa de nieve y hielo deslizándose abruptamente por una pendiente empinada en la montaña.",
+    "clip": "https://cdn.pixabay.com/video/2019/01/09/20579-311449636_small.mp4",
+    "clip_id": 20579
+   },
+   "efecto": "polvo",
+   "subtitulo": "De madrugada, una pequeña avalancha de placa compacta se desprendió violentamente. No fue una gran masa rodante, sino un pesado bloque sólido que cayó directamente sobre el techo de la lona con fuerza demoledora."
+  },
+  {
+   "hablado": "Bajo la nieve comprimida, los cuerpos de los excursionistas estaban tendidos sobre esquís rígidos. La simulación demostró que el impacto aplastó sus torsos contra el suelo duro, causando fracturas óseas masivas sin desgarrar la ropa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "computer simulation screen",
+    "otras": [
+     "engineer analyzing data",
+     "office computer work"
+    ],
+    "descripcion": "Pantalla que muestra gráficos técnicos de fuerzas de impacto y mediciones de presión estructural.",
+    "clip": "https://cdn.pixabay.com/video/2015/11/12/1336-145564324_large.mp4",
+    "clip_id": 1336
+   },
+   "efecto": "nada",
+   "subtitulo": "Bajo la nieve comprimida, los cuerpos de los excursionistas estaban tendidos sobre esquís rígidos. La simulación demostró que el impacto aplastó sus torsos contra el suelo duro, causando fracturas óseas masivas sin desgarrar la ropa."
+  },
+  {
+   "hablado": "Este modelo resolvió el mayor enigma forense del caso. Los severos traumatismos torácicos y craneales encontrados en el barranco coincidían con la fuerza de este alud laminar, descartando cualquier ataque humano o explosión militar misteriosa.",
+   "imagen": {
+    "tipo": "video",
+    "prompt": "Documentary photograph illustrating: Vista panorámica de la ladera desolada de Kholat Syakhl donde ocurrieron los hechos.",
+    "busqueda": "Vista panor mica de",
+    "descripcion": "Documentary photograph illustrating: Vista panorámica de la ladera desolada de Kholat Syakhl donde ocurrieron los hechos.",
+    "clip": "https://cdn.pixabay.com/video/2023/03/01/152798-803733100_large.mp4",
+    "clip_id": 152798
+   },
+   "efecto": "niebla",
+   "subtitulo": "Este modelo resolvió el mayor enigma forense del caso. Los severos traumatismos torácicos y craneales encontrados en el barranco coincidían con la fuerza de este alud laminar, descartando cualquier ataque humano o explosión militar misteriosa."
+  },
+  {
+   "hablado": "El misterio del daño físico quedaba finalmente aclarado por la física, pero la pesadilla apenas comenzaba para los jóvenes. Atrapados en la oscuridad bajo el manto helado, la desesperación les empujó hacia una decisión límite.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark winter forest",
+    "otras": [
+     "snowy night woods",
+     "walking in snow"
+    ],
+    "descripcion": "Bosque nevado tenebroso durante una noche cerrada con ramas cubiertas de escarcha y sombras alargadas.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/12/61818-500762371_large.mp4",
+    "clip_id": 61818
+   },
+   "efecto": "niebla",
+   "subtitulo": "El misterio del daño físico quedaba finalmente aclarado por la física, pero la pesadilla apenas comenzaba para los jóvenes. Atrapados en la oscuridad bajo el manto helado, la desesperación les empujó hacia una decisión límite."
+  },
+  {
+   "hablado": "El misterio del daño físico quedaba finalmente aclarado por la física, pero la pesadilla apenas comenzaba para los jóvenes. Atrapados en la oscuridad bajo el manto helado, la desesperación les empujó hacia una decisión límite.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snow storm mountains night",
+    "otras": [
+     "winter blizzard dark",
+     "snow falling night"
+    ],
+    "descripcion": "Tormenta de nieve en la montaña de noche con viento fuerte.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31137-384523232_large.mp4",
+    "clip_id": 31137
+   },
+   "efecto": "niebla",
+   "subtitulo": "El misterio del daño físico quedaba finalmente aclarado por la física, pero la pesadilla apenas comenzaba para los jóvenes. Atrapados en la oscuridad bajo el manto helado, la desesperación les empujó hacia una decisión límite."
+  },
+  {
+   "hablado": "Cortar la lona de la tienda desde el interior fue un acto de supervivencia desesperado. Salieron a treinta grados bajo cero sin tiempo para calzarse, huyendo de un peligro que consideraban inminente y mortal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "frozen tent winter",
+    "otras": [
+     "winter camping snow",
+     "cold wind mountains"
+    ],
+    "descripcion": "Tienda de campaña abandonada sobre la nieve en invierno.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/20/143683-784129669_small.mp4",
+    "clip_id": 143683
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cortar la lona de la tienda desde el interior fue un acto de supervivencia desesperado. Salieron a treinta grados bajo cero sin tiempo para calzarse, huyendo de un peligro que consideraban inminente y mortal."
+  },
+  {
+   "hablado": "En la oscuridad total, la disciplina del grupo se fracturó ante la crudeza del entorno. Intentaron organizarse para encender una hoguera y buscar refugio, pero el frío extremo y las graves lesiones internas fueron implacables.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark forest winter night",
+    "otras": [
+     "pine trees snow night",
+     "winter woods dark"
+    ],
+    "descripcion": "Bosque oscuro de pinos cubierto de nieve durante la noche.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/10/257593_small.mp4",
+    "clip_id": 257593
+   },
+   "efecto": "niebla",
+   "subtitulo": "En la oscuridad total, la disciplina del grupo se fracturó ante la crudeza del entorno. Intentaron organizarse para encender una hoguera y buscar refugio, pero el frío extremo y las graves lesiones internas fueron implacables."
+  },
+  {
+   "hablado": "Uno a uno, los nueve montañeros sucumbieron a la hipotermia en los Urales. Sus cuerpos quedaron esparcidos entre el bosque y el barranco, convirtiendo aquella expedición académica en uno de los enigmas más grandes de la historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty snowy landscape",
+    "otras": [
+     "winter mountains snow",
+     "cold wilderness"
+    ],
+    "descripcion": "Paisaje montañoso desierto y cubierto de nieve.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/24/205455-926967218_small.mp4",
+    "clip_id": 205455
+   },
+   "efecto": "nada",
+   "subtitulo": "Uno a uno, los nueve montañeros sucumbieron a la hipotermia en los Urales. Sus cuerpos quedaron esparcidos entre el bosque y el barranco, convirtiendo aquella expedición académica en uno de los enigmas más grandes de la historia."
+  },
+  {
+   "hablado": "Hoy rendimos tributo al coraje de estos jóvenes exploradores rusos. Su trágica expedición demostró la tremenda fragilidad del ser humano frente a las fuerzas implacables de la naturaleza en los entornos más hostiles del planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "memorial monument mountains",
+    "otras": [
+     "historical archive papers",
+     "old black and white photo"
+    ],
+    "descripcion": "Monumento conmemorativo en una zona montañosa nevada.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/12/142647-780599383_small.mp4",
+    "clip_id": 142647
+   },
+   "efecto": "nada",
+   "subtitulo": "Hoy rendimos tributo al coraje de estos jóvenes exploradores rusos. Su trágica expedición demostró la tremenda fragilidad del ser humano frente a las fuerzas implacables de la naturaleza en los entornos más hostiles del planeta."
+  },
+  {
+   "hablado": "La ciencia moderna ha logrado descifrar el mecanismo exacto de la tragedia tras décadas de especulaciones. La teoría de la avalancha de placa delgada encaja con cada una de las evidencias forenses recopiladas sobre el terreno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientific research desk",
+    "otras": [
+     "engineer working laptop",
+     "archive documents office"
+    ],
+    "descripcion": "Escritorio con documentos de investigación y mapas antiguos.",
+    "clip": "https://cdn.pixabay.com/video/2023/04/15/159029-818026300_large.mp4",
+    "clip_id": 159029
+   },
+   "efecto": "polvo",
+   "subtitulo": "La ciencia moderna ha logrado descifrar el mecanismo exacto de la tragedia tras décadas de especulaciones. La teoría de la avalancha de placa delgada encaja con cada una de las evidencias forenses recopiladas sobre el terreno."
+  },
+  {
+   "hablado": "A pesar de la resolución científica, el caso sigue fascinando a millones de personas en todo el mundo. Las incógnitas sobre los detalles exactos de aquella fatídica noche continúan alimentando debates en foros y documentales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old library books",
+    "otras": [
+     "mysterious dark room",
+     "vintage documents"
+    ],
+    "descripcion": "Estanterías de una biblioteca antigua con libros de misterio.",
+    "clip": "https://cdn.pixabay.com/video/2022/06/27/122232-724743707_small.mp4",
+    "clip_id": 122232
+   },
+   "efecto": "niebla",
+   "subtitulo": "A pesar de la resolución científica, el caso sigue fascinando a millones de personas en todo el mundo. Las incógnitas sobre los detalles exactos de aquella fatídica noche continúan alimentando debates en foros y documentales."
+  },
+  {
+   "hablado": "Crees que la hipótesis de la avalancha diferida resuelve por completo el enigma o consideras que aún quedan incógnitas sin responder en el Paso Diátlov? Déjalo en los comentarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person thinking dark room",
+    "otras": [
+     "night city window",
+     "question mark concept"
+    ],
+    "descripcion": "Persona pensativa mirando a través de una ventana oscura.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/10/38626-418875137_large.mp4",
+    "clip_id": 38626
+   },
+   "efecto": "nada",
+   "subtitulo": "Crees que la hipótesis de la avalancha diferida resuelve por completo el enigma o consideras que aún quedan incógnitas sin responder en el Paso Diátlov? Déjalo en los comentarios."
+  }
+ ],
+ "titulo_youtube": "¿Por qué rasgaron su propia tienda? Paso Diátlov",
+ "voz": "Algenib",
+ "estilo_imagen": "Analog film photograph, shot on 35mm Kodak Tri-X or Portra, visible film grain, muted desaturated colors, soft vignette, slight light leaks, documentary realism, period-accurate clothing and places, moody low-key lighting, vintage archival newspaper-era atmosphere. "
+}
