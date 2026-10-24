@@ -73,7 +73,8 @@ def reales(indices):
     info = H.setdefault("clips_info", {})
     sin = []
     for i in indices:
-        r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"])
+        r = stock.clip_para(i, ESC[i - 1], H["busquedas"][i - 1], gen, usados, f"{D}/clips", f"{D}/imgs", H["titulo"],
+                            (cfg.get("largo") or {}).get("reglas_reales", ""))
         if not r:
             sin.append(i)
             continue

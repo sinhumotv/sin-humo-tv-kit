@@ -114,7 +114,7 @@ Devuelve SOLO JSON: {{"escenas": [{{"busqueda": "...", "otras": ["...", "..."]}}
             for e in escenas]
 
 
-def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo):
+def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo, reglas=""):
     """Busca, elige y baja un clip para la escena i (1..n). Devuelve dict con clip/creditos o None."""
     from gem import pedir
     mp4, jpg = f"{dir_clips}/{i:02d}.mp4", f"{dir_imgs}/{i:02d}.jpg"
@@ -145,18 +145,23 @@ def clip_para(i, escena, b, genericas, usados, dir_clips, dir_imgs, titulo):
             pass
         if len(ok) == 6:
             break
-    orden = list(range(len(ok)))
-    if len(ok) > 1:
+    orden = []
+    if ok:
         q = f"""Vídeo corto vertical: "{titulo}". Escena: «{escena['hablado']}».
 Te paso {len(ok)} fotogramas de clips de vídeo candidatos (desde 0). Etiquetas: {json.dumps([c['tags'] for c in ok], ensure_ascii=False)}.
 Se recortarán en VERTICAL por el centro. Elige los que mejor acompañen a la escena (vale algo que evoque el lugar, el
 ambiente o la época, como en un documental). Descarta lo que no pegue nada, lo que tenga texto o logotipos, lo que
 parezca hecho por ordenador y los que pierdan lo importante al recortar el centro.
+MUY IMPORTANTE: si la historia es antigua o de otra época, descarta gente con ropa, peinados, coches, móviles u objetos
+actuales (mejor paisajes, ruinas, fuego, agua, cielo, manos, objetos antiguos). Descarta mascotas y animales graciosos,
+caras sonrientes a cámara, deporte, fiestas y cualquier cosa alegre o turística que rompa el tono del relato.
+{reglas}
+Sé exigente: es mejor no elegir ninguno que poner uno que desentone.
 Devuelve SOLO JSON con los válidos, del mejor al peor: {{"validos": [<números>]}}"""
         try:
             j, _ = pedir(q, temp=0.2, imagenes=[c["mini"] for c in ok], max_tokens=500)
             v = [k for k in (j.get("validos") or []) if isinstance(k, int) and 0 <= k < len(ok)] if isinstance(j, dict) else []
-            orden = v + [k for k in orden if k not in v]  # si ninguno convence, se prueba igual en orden
+            orden = v   # solo los aprobados; si ninguno convence, vídeo de ambiente del canal
         except SystemExit:
             pass
     for k in orden:
