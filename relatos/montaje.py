@@ -138,7 +138,7 @@ try:
                     ini_p[j] = real[prev] + (real[nxt] - real[prev]) * (j - prev) / (nxt - prev)
         for j in range(1, len(pals)):
             ini_p[j] = max(ini_p[j], ini_p[j - 1] + 0.05)
-        print(f"karaoke: {len(real)}/{len(pals)} palabras con tiempo real")
+        print(f"karaoke: {len(real)}/{len(pals)} palabras con tiempo real ({len(rec)} oídas)")
     else:
         print("karaoke: reconocimiento poco fiable, tiempos aproximados")
 except Exception as ex:

@@ -62,9 +62,11 @@ def trozos(texto):
     return out
 
 
-def generar(texto, voz, tono, k):
-    body = {"contents": [{"parts": [{"text": "[Notas de dirección: " + ESTILO[tono]
-                                             + " Lee solo el texto de TRANSCRIPCIÓN, sin añadir nada.]\nTRANSCRIPCIÓN:\n" + texto}]}],
+def generar(texto, voz, tono, k, notas=True):
+    # notas=False: solo el texto (cuando un modelo ha leído en voz alta las notas de dirección)
+    prompt = ("[Notas de dirección: " + ESTILO[tono] + " Lee solo el texto de TRANSCRIPCIÓN, sin añadir nada.]\nTRANSCRIPCIÓN:\n"
+              + texto) if notas else texto
+    body = {"contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"languageCode": "es-ES",  # español de España
                                                   "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voz}}}}}
@@ -143,8 +145,34 @@ def main():
     k = clave()
     tmp = tempfile.mkdtemp()
     partes, usados = [], []
+    def sin_bordes(w, w2):
+        subprocess.run(f'ffmpeg -y -v error -i "{w}" -af "silenceremove=start_periods=1:start_threshold=-45dB,'
+                       f'areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse" "{w2}"',
+                       shell=True, check=True)
+        return float(subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{w2}"',
+                                    shell=True, capture_output=True, text=True).stdout)
+
     for i, t in enumerate(trozos(texto)):
-        r = generar(t, voz, tono, k)
+        # CONTROL: si el audio dura mucho más de lo que da el texto (menos de 9 caracteres por segundo), el modelo ha
+        # leído también las notas de dirección o se ha ido por las ramas: se repite con otro modelo y, si no, sin notas
+        r = None
+        for intento in range(3):
+            r = generar(t, voz, tono, k, notas=intento < 2)
+            if r is None:
+                break
+            wtest = os.path.join(tmp, f"t{i}_{intento}.wav")
+            a_wav(r[0], r[1], wtest)
+            d_ = sin_bordes(wtest, wtest.replace(".wav", "_c.wav"))
+            cps_ = len("".join(t.split())) / max(d_, 0.1)
+            if cps_ >= 9.0:
+                break
+            print(f"trozo {i+1}: audio sospechoso ({cps_:.1f} car/s, {d_:.0f} s): lo repito", flush=True)
+            if r[2] in MODELOS:   # el siguiente intento, con otro modelo
+                MODELOS.remove(r[2])
+                MODELOS.append(r[2])
+            r = None if intento == 2 else r
+        if r is None and intento == 2:
+            sys.exit("FALLO: la voz no sale bien (lee las notas o va demasiado lenta) tras 3 intentos")
         res = "".join(os.environ.get("GEMINI_KEY_RESERVA", "").split())
         if r is None and res and k != res:   # clave del canal sin cuota hoy: misma voz con la clave de reserva
             print("Voz: sigo con la clave de reserva de Gemini")
@@ -170,7 +198,7 @@ def main():
         dur = float(subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{w2}"',
                                    shell=True, capture_output=True, text=True).stdout)
         cps = len("".join(t.split())) / dur
-        f = min(1.3, max(1.0, OBJ_CPS / cps))
+        f = min(1.08, max(1.0, OBJ_CPS / cps))   # como mucho un 8 % más rápido: que nunca suene acelerada
         if f > 1.02:
             w3 = os.path.join(tmp, f"r{i}.wav")
             subprocess.run(f'ffmpeg -y -v error -i "{w2}" -af atempo={f:.3f} "{w3}"', shell=True, check=True)

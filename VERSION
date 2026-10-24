@@ -24,3 +24,4 @@ v24 · 2026-10-22 · relatos/: canal Relatos en Español (mitología griega, im�
 v25 · 2026-10-22 · relatos: karaoke palabra a palabra, subtítulos más bajos, imágenes 1024x1792 más nítidas, guiones con Gemini (guion.py), tanda diaria sin Claude en GitHub Actions (diario.py + tanda-diaria.yml)
 2026-10-24 registro seguro (sin pérdidas en paralelo), cortos con vídeo real (plan B + prueba A/B), largos 100% vídeo real, montaje sin agotar memoria
 2026-10-24 fuentes Commons/NASA/Archive, elección de clips por lotes con Gemini lite, clave de reserva
+2026-10-24 control de voz (lee notas / lenta), aceleración máx 8 %, control de subtítulos

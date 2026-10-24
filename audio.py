@@ -127,7 +127,7 @@ palabras = sum(len(e["hablado"].split()) for e in ESC)
 vel = palabras / vtot
 atempo = 1.0
 if vel < (2.6 if YOUTUBE else 2.9):   # en los largos, ritmo algo más pausado (se escucha 10 minutos)
-    atempo = min(1.15, (2.8 if YOUTUBE else 3.1) / vel)
+    atempo = min(1.08, (2.8 if YOUTUBE else 3.1) / vel)
 max_p = None
 
 
@@ -135,8 +135,8 @@ def total(atempo, max_p):
     return sum(len(construir(g, max_p)) / SR / atempo + RESPIRO for g in grupos)
 
 
-while total(atempo, max_p) > TMAX and atempo < 1.15:
-    atempo = min(1.15, atempo + 0.01)
+while total(atempo, max_p) > TMAX and atempo < 1.08:
+    atempo = min(1.08, atempo + 0.01)
 if total(atempo, max_p) > TMAX:
     max_p = 0.28
 if palabras / (vtot / atempo) > 3.4:   # demasiado rápido: no acelerar más (antes esta línea aceleraba)
