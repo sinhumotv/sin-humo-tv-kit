@@ -1,1 +1,5 @@
 2026-10-23|08:00|La riada de melaza de Boston|increible|YO 6adb3d46e4169c55aac105d0 IN 6adb3d48e4169c55aac1064e TI 6adb3d5340662d30d7bdb905
+2026-10-24|08:00|La absurda muerte de Esquilo|nadie|YO 6adc3ab10b5343d0706731ee IN 6adc3ab10b5343d070673220 TI 6adc3ab2bd33ce99c3078c7a
+2026-10-24|12:00|El misterio de D. B. Cooper|pregunta|YO 6adc3c0f3d5b27036b6a242a IN 6adc3c10bd33ce99c307fcec TI 6adc3c10bd33ce99c307fd2f
+2026-10-24|15:00|El robo de la Mona Lisa|consecuencia|YO 6adc3d74e4be8a4d8640ad8a IN 6adc3d746887a2efc19dc613 TI 6adc3d74bd33ce99c3085bf3
+2026-10-24|18:00|El hombre de Somerton|final|YO 6adc3ee68b3d437ddca1968d IN 6adc3ee6bd33ce99c308967f TI 6adc3ee7bd33ce99c30896b3
