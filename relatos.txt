@@ -11,3 +11,4 @@
 2026-10-24|21:00|Apolo y Dafne|consecuencia|YO 6adc43a4e4be8a4d8641b6e5 IN 6adc43a58b3d437ddca25c5d TI 6adc43a5e4be8a4d8641b713
 2026-10-24|22:48|El mito de Narciso|pregunta|YO 6add15a66887a2efc1d46364 IN 6add15a68b3d437ddcd89220 TI 6add15a7bd33ce99c33f2b17|img=real|22:39
 2026-10-25|08:00|Psique y Eros|nadie|YO 6add8c408b3d437ddcf06b99 IN 6add8c41e4be8a4d868fe0f2 TI 6add8c41bd33ce99c356e368|img=mixto|07:50
+2026-10-25|15:00|Pigmalión y Galatea|increible|YO 6add8d888b3d437ddcf0d14c IN 6add8d886887a2efc1ec0a23 TI 6add8d89bd33ce99c3574828|img=mixto|14:46
