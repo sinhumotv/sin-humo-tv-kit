@@ -46,6 +46,23 @@ def guardar_proyecto():
        f'commit -qm "{RAMA} {AHORA:%Y-%m-%d %H:%M}" && git push -q --force {REPO_URL} {RAMA}', cwd=P)
 
 
+def comprimir(origen, destino, max_mb=430):
+    """Metricool rechaza vídeos muy pesados («Failed to normalize media»): si pasa de max_mb, se recodifica con la
+    tasa justa para quedar por debajo (misma imagen, 1080p). Devuelve True si ha tenido que comprimir."""
+    mb = os.path.getsize(origen) / 1e6
+    if mb <= max_mb:
+        if origen != destino:
+            shutil.copy(origen, destino)
+        return False
+    d = float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{origen}"')[1].strip())
+    kbps = int(max_mb * 0.85 * 8000 / d) - 160   # (audio y margen: x264 se pasa un poco de la tasa pedida)
+    sh(f'ffmpeg -y -v error -i "{origen}" -c:v libx264 -preset medium -b:v {kbps}k -maxrate {int(kbps * 1.4)}k '
+       f'-bufsize {kbps * 2}k -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart "{destino}.tmp.mp4"')
+    os.replace(f"{destino}.tmp.mp4", destino)
+    print(f"vídeo comprimido: {mb:.0f} MB -> {os.path.getsize(destino) / 1e6:.0f} MB")
+    return True
+
+
 def estado(fase=None, **kw):
     E = json.load(open(f"{P}/estado.json")) if os.path.exists(f"{P}/estado.json") else {}
     if fase:
@@ -318,7 +335,7 @@ if E["fase"] == "montaje":
     # alojar en una release de GitHub (admite archivos grandes)
     tag = f"largo-{CANAL}-{AHORA:%Y%m%d-%H%M}"
     env = {**os.environ, "GH_TOKEN": TOK}
-    shutil.copy(f"{P}/video_final.mp4", f"{BASE}/video.mp4")
+    comprimir(f"{P}/video_final.mp4", f"{BASE}/video.mp4")
     r = subprocess.run(["gh", "release", "create", tag, f"{BASE}/video.mp4", f"{P}/miniatura_A.jpg", f"{P}/miniatura_B.jpg",
                         f"{P}/miniatura_C.jpg", "-R", "sinhumotv/sin-humo-tv-kit", "--title",
                         f"{C['nombre']} · {H['titulo_youtube']}", "--notes", f"{T['duracion'] / 60:.1f} min"],
@@ -326,7 +343,7 @@ if E["fase"] == "montaje":
     if r.returncode:
         raise SystemExit("no se pudo crear la release: " + r.stderr[-400:])
     url = f"https://github.com/sinhumotv/sin-humo-tv-kit/releases/download/{tag}"
-    E = estado("publicar", tag=tag, video=f"{url}/video.mp4", miniatura=f"{url}/miniatura_A.jpg",
+    E = estado("publicar", comprimido=True, tag=tag, video=f"{url}/video.mp4", miniatura=f"{url}/miniatura_A.jpg",
                duracion=T["duracion"])
     guardar_proyecto()
     print("ALOJADO:", url)
@@ -335,6 +352,20 @@ if E["fase"] == "publicar":
     if os.environ.get("NO_PUBLICAR"):
         print("NO_PUBLICAR: listo para programar ·", E["video"])
         sys.exit(0)
+    if not E.get("comprimido"):
+        # vídeos alojados antes del límite de tamaño: se bajan, se comprimen y se sustituyen en la release
+        import urllib.request
+        crudo, fin = f"{BASE}/crudo.mp4", f"{BASE}/video.mp4"
+        with urllib.request.urlopen(urllib.request.Request(E["video"], headers={"User-Agent": "SinHumoTV"}), timeout=900) as r, \
+                open(crudo, "wb") as f:
+            shutil.copyfileobj(r, f)
+        if comprimir(crudo, fin):
+            r = subprocess.run(["gh", "release", "upload", E["tag"], fin, "--clobber", "-R", "sinhumotv/sin-humo-tv-kit"],
+                               env={**os.environ, "GH_TOKEN": TOK}, capture_output=True, text=True)
+            if r.returncode:
+                raise SystemExit("no se pudo sustituir el vídeo comprimido: " + r.stderr[-300:])
+        E = estado("publicar", comprimido=True)
+        guardar_proyecto()
     desc = open(f"{P}/descripcion.txt", encoding="utf-8").read()
     REH = E.get("rehacer")
     cuando = (dt.datetime.fromisoformat(E["publicado_antes"]).astimezone(MAD) if REH and E.get("publicado_antes")
