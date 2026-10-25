@@ -23,3 +23,8 @@ ia:0505_Safeguarding_Military_Information_10_01_02_05
 216500
 21698
 1336
+ia:205240_Lusinchi_Collection_071142
+183271
+203449
+38626
+87146
