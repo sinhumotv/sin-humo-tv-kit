@@ -62,10 +62,20 @@ def valida(h):
 
 
 vistos = "; ".join(u[1] for u in USADOS[-200:]) or "(ninguno)"
+# Lo que se aprende cada semana (tarea semanal con datos de YouTube): temas que están funcionando ahora en esta
+# temática y lecciones de retención de los propios vídeos del canal. Archivos de la rama datos.
+_dat = os.path.dirname(os.path.abspath(sys.argv[2]))
+def _leer(n):
+    f = os.path.join(_dat, f"{n}_{C['id']}.txt")
+    return open(f, encoding="utf-8").read().strip()[:3000] if os.path.exists(f) else ""
+TEMAS_SEMANA, LECCIONES = _leer("temas"), _leer("lecciones")
 PROMPT = f"""Eres guionista jefe de un canal de YouTube en español de España de vídeos largos narrados: "{C['nombre']}".
 Tema del canal: {L.get('tema', C['tema'])}.
 Ideas posibles (no obligatorias): {L.get('ideas', C['ideas'])}.
 YA PUBLICADOS EN VÍDEO LARGO (prohibido repetirlos, ni el mismo caso con otro título): {vistos}.
+
+{("TEMAS QUE ESTÁN FUNCIONANDO AHORA EN YOUTUBE (elige uno de estos si no está ya publicado; si no, uno parecido): " + TEMAS_SEMANA) if TEMAS_SEMANA else ""}
+{("LECCIONES DE NUESTROS PROPIOS VÍDEOS (aplícalas): " + LECCIONES) if LECCIONES else ""}
 
 Elige UN tema con mucho interés de búsqueda y potencial de clics (casos o historias conocidas que la gente busca, con un
 misterio, un giro o un dato increíble), y escribe el guion completo de un vídeo HORIZONTAL de 9 a 10 minutos.
@@ -191,6 +201,28 @@ if errs:
     sys.exit(f"guion largo no válido: {errs}")
 if h["titulo"].lower() in {u[1].lower() for u in USADOS}:
     sys.exit(f"tema repetido: {h['titulo']}")
+
+# ---- GANCHO: los primeros 30 segundos deciden si la gente se queda. Se revisan y, si flojean, se reescriben ----
+try:
+    ini = h["escenas"][:4]
+    GANCHO = f"""Eres experto en retención de YouTube. Canal "{C['nombre']}". Vídeo: «{h['titulo']}».
+Resumen del vídeo: {h['descripcion'][:700]}
+Estas son las {len(ini)} primeras escenas (los primeros ~30 segundos): {json.dumps([e['hablado'] for e in ini], ensure_ascii=False)}
+Puntúa de 1 a 10 el gancho: ¿empieza con lo más impactante (una imagen mental fuerte, un dato increíble o la pregunta
+clave), sin saludos ni introducciones, promete algo concreto que solo se revela al final y da una razón para quedarse?
+Si la nota es menor de 8, reescríbelas: MISMO número de escenas, cada una de 20 a 40 palabras, mismos hechos (no
+inventes nada), números en letra, frases cortas para leer en voz alta. Devuelve SOLO JSON:
+{{"nota": <número>, "escenas": ["<texto escena 1>", ...]}} (escenas vacía si no hace falta cambiarlas)"""
+    j, _ = pedir(GANCHO, temp=0.5)
+    nuevas = j.get("escenas") or [] if isinstance(j, dict) else []
+    print("gancho: nota", j.get("nota") if isinstance(j, dict) else "?")
+    if len(nuevas) == len(ini) and all(isinstance(t, str) and 12 <= palabras(t) <= 50 and not re.search(r"\d", t)
+                                       for t in nuevas):
+        for e, t in zip(ini, nuevas):
+            e["hablado"] = t.strip()
+        print("gancho reescrito")
+except SystemExit:
+    pass
 
 # ---- elegir el título y el texto de la miniatura con más probabilidad de clic ----
 JUEZ = f"""Eres experto en CTR de YouTube en español. Canal: "{C['nombre']}". Vídeo: {h['titulo']}.

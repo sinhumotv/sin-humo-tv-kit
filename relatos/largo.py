@@ -222,24 +222,6 @@ if E["fase"] == "montaje":
                    else bajar_url(c, dst))
             if not ok_ and dst.endswith(f"{n:02d}.mp4"):
                 sin_clip.append(n)
-        # varios clips en la misma escena: se unen con un fundido corto (sin cortes raros), todo a 1920x1080 y 30 fps
-        partes = [d for _, _, d in piezas if os.path.exists(d)]
-        full = f"{P}/clips/{n:02d}_full.mp4"
-        if len(partes) > 1 and n not in sin_clip and not os.path.exists(full):
-            norm = []
-            for j, d in enumerate(partes):
-                o = f"{P}/clips/_n{n:02d}_{j}.mp4"
-                sh(f'ffmpeg -y -v error -i "{d}" -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
-                   f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"')
-                norm.append(o)
-            cur = norm[0]
-            for j, o in enumerate(norm[1:], 1):
-                d0 = float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{cur}"')[1].strip())
-                nxt = f"{P}/clips/_x{n:02d}_{j}.mp4"
-                sh(f'ffmpeg -y -v error -i "{cur}" -i "{o}" -filter_complex "[0][1]xfade=transition=fade:duration=0.5:'
-                   f'offset={max(0.1, d0 - 0.5):.2f},format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{nxt}"')
-                cur = nxt
-            shutil.move(cur, full)
     if sin_clip:
         # NUNCA se monta con el fotograma quieto: esas escenas vuelven a buscar vídeo (y se sigue en esta ejecución
         # o en la próxima)
@@ -259,6 +241,34 @@ if E["fase"] == "montaje":
         sys.exit(0)   # se sigue en la próxima ejecución
     proyecto_json()
     print(sh(f'python3 "{KIT}/audio.py" "{P}"')[1].strip().splitlines()[0])
+    # RITMO (para que la gente se quede): un plano nuevo cada 5-6 s. Si la escena tiene varios clips, cada uno ocupa
+    # su parte de la escena (recortado a esa duración) y se unen con un fundido corto; todo a 1920x1080 y 30 fps.
+    TE = json.load(open(f"{P}/tiempos.json"))["escenas"]
+    for k, e in enumerate(ESC):
+        n, im = k + 1, e["imagen"]
+        partes = [f"{P}/clips/{n:02d}.mp4"] + [f"{P}/clips/{n:02d}_{j + 1}.mp4" for j in range(len(im.get("extra", [])))]
+        partes = [d for d in partes if os.path.exists(d)]
+        full = f"{P}/clips/{n:02d}_full.mp4"
+        if len(partes) < 2 or os.path.exists(full) or k >= len(TE):
+            continue
+        largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.5
+        seg = largo_esc / len(partes) + 0.5
+        norm = []
+        for j, d in enumerate(partes):
+            o = f"{P}/clips/_n{n:02d}_{j}.mp4"
+            ini = 0.5 if j else 0   # (el primero empieza desde el principio, para el fundido de entrada)
+            sh(f'ffmpeg -y -v error -ss {ini} -i "{d}" -t {seg:.2f} -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
+               f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"')
+            norm.append(o)
+        cur = norm[0]
+        for j, o in enumerate(norm[1:], 1):
+            d0 = float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{cur}"')[1].strip())
+            nxt = f"{P}/clips/_x{n:02d}_{j}.mp4"
+            sh(f'ffmpeg -y -v error -i "{cur}" -i "{o}" -filter_complex "[0][1]xfade=transition=fade:duration=0.5:'
+               f'offset={max(0.1, d0 - 0.5):.2f},format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{nxt}"')
+            cur = nxt
+        shutil.move(cur, full)
+    proyecto_json()
     print(sh(f'python3 "{AQUI}/montaje.py" "{P}"')[1].strip()[-300:])
     # CONTROL (regla del usuario: todo vídeo en movimiento): si algún tramo se queda quieto, esa escena se rehace
     rc_q, out_q = sh(f'python3 "{AQUI}/control_movimiento.py" "{P}/video_final.mp4" "{P}/tiempos.json"', ok=True)

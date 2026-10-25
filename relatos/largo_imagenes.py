@@ -469,7 +469,9 @@ def extras():
         im.setdefault("extra", [])
         total += sum(dur(f"{D}/clips/{i:02d}_{n + 1}.mp4") for n in range(len(im["extra"]))
                      if os.path.exists(f"{D}/clips/{i:02d}_{n + 1}.mp4"))
-        while total < necesita * 1.1 and len(im["extra"]) < 3:
+        # RITMO: un plano distinto cada ~5,5 s (y siempre clips suficientes para cubrir la escena sin congelar)
+        planos = min(4, max(1, int(-(-necesita // 5.5))))
+        while (total < necesita * 1.1 or 1 + len(im["extra"]) < planos) and len(im["extra"]) < 3:
             n = len(im["extra"]) + 1
             dst = f"{D}/clips/{i:02d}_{n}.mp4"
             qs = [im.get("busqueda", "")] + list(im.get("otras") or []) + list(L.get("video_generico") or [])
