@@ -62,8 +62,9 @@ def trozos(texto):
     return out
 
 
-def generar(texto, voz, tono, k, notas=True):
+def generar(texto, voz, tono, k, notas=True, solo=None):
     # notas=False: solo el texto (cuando un modelo ha leído en voz alta las notas de dirección)
+    # solo=<modelo>: SOLO ese modelo (vídeos largos: todos los trozos con el mismo modelo, misma voz)
     prompt = ("[Notas de dirección: " + ESTILO[tono] + " Lee solo el texto de TRANSCRIPCIÓN, sin añadir nada.]\nTRANSCRIPCIÓN:\n"
               + texto) if notas else texto
     body = {"contents": [{"parts": [{"text": prompt}]}],
@@ -71,7 +72,7 @@ def generar(texto, voz, tono, k, notas=True):
                                  "speechConfig": {"languageCode": "es-ES",  # español de España
                                                   "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voz}}}}}
     errores = []
-    for m in list(MODELOS):
+    for m in ([solo] if solo else list(MODELOS)):
         for intento in range(3):
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
@@ -79,7 +80,8 @@ def generar(texto, voz, tono, k, notas=True):
             try:
                 d = json.load(urllib.request.urlopen(req, context=ctx(), timeout=300))
                 parte = d["candidates"][0]["content"]["parts"][0]["inlineData"]
-                MODELOS.remove(m)
+                if m in MODELOS:
+                    MODELOS.remove(m)
                 MODELOS.insert(0, m)  # el resto de trozos, con el mismo modelo (misma voz)
                 return base64.b64decode(parte["data"]), parte.get("mimeType", ""), m
             except urllib.error.HTTPError as e:
@@ -224,5 +226,137 @@ def main():
     print(f"OK voz.mp3 · {float(dur):.1f} s · voz {voz} · modelos: {', '.join(sorted(set(usados)))} · 0 créditos")
 
 
+def rasgos(w):
+    """Tono medio (Hz) y brillo (centroide espectral, Hz) de una voz: para comprobar que todos los trozos suenan igual."""
+    import numpy as np
+    raw = subprocess.run(f'ffmpeg -v error -i "{w}" -ac 1 -ar 16000 -f s16le -', shell=True, capture_output=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(float) / 32768
+    sr, f0s = 16000, []
+    for i in range(0, len(x) - 640, 1600):
+        s = x[i:i + 640] - x[i:i + 640].mean()
+        if np.sqrt((s ** 2).mean()) < 0.02:
+            continue
+        c = np.correlate(s, s, "full")[639:]
+        k = 53 + int(np.argmax(c[53:228]))
+        if c[k] > 0.3 * c[0]:
+            f0s.append(sr / k)
+    sp = np.abs(np.fft.rfft(x[:sr * 60]))
+    fr = np.fft.rfftfreq(len(x[:sr * 60]), 1 / sr)
+    return (float(np.median(f0s)) if f0s else 0.0), float((sp * fr).sum() / max(sp.sum(), 1e-9))
+
+
+def main_largo():
+    """VÍDEOS LARGOS: la MISMA voz, el MISMO modelo, la MISMA velocidad y el MISMO volumen de principio a fin.
+    - El modelo del primer trozo es el de todo el vídeo (nunca se cambia a otro a mitad: cada modelo suena distinto).
+    - Si ese modelo se queda sin cupo, se sigue con la clave de reserva y ESE MISMO modelo; si tampoco, se guarda lo
+      hecho y sale con código 3 (la próxima ejecución continúa). Nunca Piper ni «sin notas» a mitad de vídeo.
+    - Cada trozo se compara con el primero (tono y timbre); si se aparta, se repite (hasta 3 veces, se queda el más
+      parecido).
+    - Todos los trozos se dejan exactamente a la misma velocidad (OBJ_CPS) y al mismo volumen (loudnorm)."""
+    D = sys.argv[1]
+    a = sys.argv[2:]
+    tono = a[a.index("--tono") + 1] if "--tono" in a else "relato"
+    voz = a[a.index("--voz") + 1] if "--voz" in a else "Algenib"
+    texto = open(os.path.join(D, "voz.txt"), encoding="utf-8").read()
+    k = clave()
+    res = "".join(os.environ.get("GEMINI_KEY_RESERVA", "").split())
+    tmp = tempfile.mkdtemp()
+    T = os.path.join(D, "voz_trozos")   # trozos ya hechos (se guardan en el proyecto para continuar otro día)
+    os.makedirs(T, exist_ok=True)
+    meta_p = os.path.join(T, "meta.json")
+    meta = json.load(open(meta_p)) if os.path.exists(meta_p) else {}
+    piezas = trozos(texto)
+    if meta.get("texto") != texto or meta.get("voz") != voz or meta.get("tono") != tono:
+        meta = {"texto": texto, "voz": voz, "tono": tono, "modelo": None, "ref": None, "hechos": {}}
+    def guardar_meta():
+        json.dump(meta, open(meta_p, "w"), ensure_ascii=False)
+
+    def limpio(datos, mime, nombre):
+        w = os.path.join(tmp, nombre + ".wav")
+        a_wav(datos, mime, w)
+        w2 = os.path.join(tmp, nombre + "_c.wav")
+        d = sin_bordes_(w, w2)
+        return w2, d
+
+    for i, t in enumerate(piezas):
+        if str(i) in meta["hechos"] and os.path.exists(os.path.join(T, f"{i:02d}.flac")):
+            continue
+        n_car = len("".join(t.split()))
+        mejor = None   # (distancia, wav)
+        for intento in range(3):
+            r = None
+            for kk in [k] + ([res] if res and res != k else []):
+                r = generar(t, voz, tono, kk, solo=meta["modelo"])
+                if r:
+                    k = kk
+                    break
+            if r is None:
+                guardar_meta()
+                print(f"VOZ PENDIENTE: el modelo {meta['modelo']} no responde hoy (trozo {i + 1} de {len(piezas)}); "
+                      "se continúa en la próxima ejecución con la misma voz")
+                sys.exit(3)
+            if meta["modelo"] is None:
+                meta["modelo"] = r[2]
+            w, d = limpio(r[0], r[1], f"t{i}_{intento}")
+            cps = n_car / max(d, 0.1)
+            if cps < 9.0:   # ha leído las notas o se ha ido por las ramas: se repite (mismo modelo)
+                print(f"trozo {i + 1}: audio sospechoso ({cps:.1f} car/s): lo repito", flush=True)
+                time.sleep(8)
+                continue
+            f0, cen = rasgos(w)
+            if meta["ref"] is None:
+                meta["ref"] = [f0, cen]
+            rf0, rcen = meta["ref"]
+            dist = abs(f0 - rf0) / max(rf0, 1) + 0.5 * abs(cen - rcen) / max(rcen, 1)
+            print(f"trozo {i + 1}: {meta['modelo']} · {cps:.1f} car/s · tono {f0:.0f} Hz (ref {rf0:.0f}) · "
+                  f"timbre {cen:.0f} Hz (ref {rcen:.0f}) · diferencia {dist:.2f}", flush=True)
+            if mejor is None or dist < mejor[0]:
+                mejor = (dist, w, cps)
+            if dist <= 0.10:
+                break
+            time.sleep(8)
+        if mejor is None:
+            sys.exit("FALLO: la voz no sale bien tras 3 intentos")
+        _, w, cps = mejor
+        # misma velocidad en TODOS los trozos (sin cambiar el tono) y mismo volumen: la del primer trozo (si es lento,
+        # un poco más ágil), y todos los demás se igualan a ella
+        if not meta.get("cps_ref"):
+            meta["cps_ref"] = min(max(cps, 11.5), 14.0)
+        f = min(1.10, max(0.90, meta["cps_ref"] / cps))
+        out = os.path.join(T, f"{i:02d}.flac")
+        subprocess.run(f'ffmpeg -y -v error -i "{w}" -af "atempo={f:.4f},loudnorm=I=-17:TP=-2:LRA=7" -ar 44100 -ac 1 '
+                       f'"{out}"', shell=True, check=True)
+        meta["hechos"][str(i)] = {"atempo": round(f, 3)}
+        guardar_meta()
+        if i < len(piezas) - 1:
+            time.sleep(8)   # límite por minuto del plan gratis
+    sil = os.path.join(tmp, "sil.wav")
+    subprocess.run(f'ffmpeg -y -v error -f lavfi -i anullsrc=r=44100:cl=mono -t 0.8 -c:a pcm_s16le "{sil}"', shell=True, check=True)
+    lista = os.path.join(tmp, "lista.txt")
+    with open(lista, "w") as fl:
+        for i in range(len(piezas)):
+            wv = os.path.join(tmp, f"u{i:02d}.wav")
+            subprocess.run(f'ffmpeg -y -v error -i "{os.path.join(T, f"{i:02d}.flac")}" -ac 1 -ar 44100 -c:a pcm_s16le "{wv}"',
+                           shell=True, check=True)
+            if i:
+                fl.write(f"file '{sil}'\n")
+            fl.write(f"file '{wv}'\n")
+    out = os.path.join(D, "voz.mp3")
+    subprocess.run(f'ffmpeg -y -v error -f concat -safe 0 -i "{lista}" -ac 1 -ar 44100 -b:a 192k "{out}"',
+                   shell=True, check=True)
+    dur = subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{out}"',
+                         shell=True, capture_output=True, text=True).stdout.strip()
+    print(f"OK voz.mp3 · {float(dur):.1f} s · voz {voz} · UN SOLO modelo: {meta['modelo']} · {len(piezas)} trozos "
+          f"igualados en velocidad y volumen · 0 créditos")
+
+
+def sin_bordes_(w, w2):
+    subprocess.run(f'ffmpeg -y -v error -i "{w}" -af "silenceremove=start_periods=1:start_threshold=-45dB,'
+                   f'areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse" "{w2}"',
+                   shell=True, check=True)
+    return float(subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{w2}"',
+                                shell=True, capture_output=True, text=True).stdout)
+
+
 if __name__ == "__main__":
-    main()
+    main_largo() if os.environ.get("VOZ_ESTRICTA") else main()

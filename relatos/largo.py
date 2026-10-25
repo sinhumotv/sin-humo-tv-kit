@@ -131,7 +131,8 @@ def proyecto_json():
                "titulo_noticia": H["titulo"], "tono": "grave", "mencion": 0, "zum": [],
                "efectos": ["nada" if e["imagen"]["tipo"] == "video" else e.get("efecto", "polvo") for e in ESC],
                "fuego": [],
-               "clips": {str(k): f"{P}/clips/{k + 1:02d}.mp4" for k, e in enumerate(ESC) if e["imagen"].get("clip")},
+               "clips": {str(k): (f"{P}/clips/{k + 1:02d}_full.mp4" if os.path.exists(f"{P}/clips/{k + 1:02d}_full.mp4")
+                                else f"{P}/clips/{k + 1:02d}.mp4") for k, e in enumerate(ESC) if e["imagen"].get("clip")},
                "capitulos": caps,
                "color": C.get("color_subtitulo"),
                "escenas": [{"titulo": "", "hablado": e["hablado"], "subtitulo": e["subtitulo"]} for e in ESC]},
@@ -141,8 +142,18 @@ def proyecto_json():
 if E["fase"] == "voz":
     proyecto_json()
     open(f"{P}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
-    env = "TTS_MAX=3000 TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts,gemini-3.8-flash-lite-tts"
-    print(sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}')[1].strip()[-400:])
+    # VOZ_ESTRICTA: un solo modelo para todo el vídeo, misma velocidad, mismo volumen y control de que todos los
+    # trozos suenan igual (regla del usuario: la voz no puede cambiar a mitad del vídeo). Nunca el modelo «lite».
+    env = ("VOZ_ESTRICTA=1 TTS_MAX=3000 "
+           "TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts")
+    rc, out = sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}', ok=True)
+    print(out.strip()[-1500:])
+    if rc == 3:
+        guardar_proyecto()
+        print("Voz pendiente: sigue en la próxima ejecución con el mismo modelo")
+        sys.exit(0)
+    if rc:
+        raise SystemExit("fallo en la voz")
     E = estado("imagenes")
     guardar_proyecto()
 
@@ -160,24 +171,97 @@ if E["fase"] == "imagenes":
 
 if E["fase"] == "montaje":
     # los clips de vídeo no se guardan entre días: se vuelven a bajar si faltan
-    import urllib.request
+    import urllib.request, time as _t
+    import stock
     os.makedirs(f"{P}/clips", exist_ok=True)
-    for k, e in enumerate(ESC):
-        c, dst = e["imagen"].get("clip"), f"{P}/clips/{k + 1:02d}.mp4"
-        if c and not os.path.exists(dst) and e["imagen"].get("clip_ini") is not None:
-            # trozo de Commons / NASA / Internet Archive
-            import stock
-            if not stock.bajar_segmento({"url": c, "inicio": e["imagen"]["clip_ini"]}, dst, segundos=20):
-                print(f"clip {k + 1} no disponible: se usa su fotograma")
-        elif c and not os.path.exists(dst):
+
+    def bajar_url(url, dst):
+        for intento in range(4):
             try:
                 open(dst, "wb").write(urllib.request.urlopen(urllib.request.Request(
-                    c, headers={"User-Agent": "SinHumoTV-largos/1.0"}), timeout=120).read())
+                    url, headers={"User-Agent": "SinHumoTV-largos/1.0"}), timeout=180).read())
+                if os.path.getsize(dst) > 50000:
+                    return True
             except Exception as ex:
-                print(f"clip {k + 1} no disponible ({str(ex)[:60]}): se usa su fotograma")
+                print(f"  descarga fallida ({str(ex)[:60]}), reintento {intento + 1}")
+            _t.sleep(10 * (intento + 1))
+        return False
+
+    sin_clip = []
+    for k, e in enumerate(ESC):
+        im, n = e["imagen"], k + 1
+        piezas = [(im.get("clip"), im.get("clip_ini"), f"{P}/clips/{n:02d}.mp4")]
+        piezas += [(x.get("clip"), x.get("clip_ini"), f"{P}/clips/{n:02d}_{j + 1}.mp4")
+                   for j, x in enumerate(im.get("extra", []))]
+        for c, ini, dst in piezas:
+            if not c or os.path.exists(dst):
+                continue
+            ok_ = (stock.bajar_segmento({"url": c, "inicio": ini}, dst, segundos=20) if ini is not None
+                   else bajar_url(c, dst))
+            if not ok_ and dst.endswith(f"{n:02d}.mp4"):
+                sin_clip.append(n)
+        # varios clips en la misma escena: se unen con un fundido corto (sin cortes raros), todo a 1920x1080 y 30 fps
+        partes = [d for _, _, d in piezas if os.path.exists(d)]
+        full = f"{P}/clips/{n:02d}_full.mp4"
+        if len(partes) > 1 and n not in sin_clip and not os.path.exists(full):
+            norm = []
+            for j, d in enumerate(partes):
+                o = f"{P}/clips/_n{n:02d}_{j}.mp4"
+                sh(f'ffmpeg -y -v error -i "{d}" -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
+                   f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"')
+                norm.append(o)
+            cur = norm[0]
+            for j, o in enumerate(norm[1:], 1):
+                d0 = float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{cur}"')[1].strip())
+                nxt = f"{P}/clips/_x{n:02d}_{j}.mp4"
+                sh(f'ffmpeg -y -v error -i "{cur}" -i "{o}" -filter_complex "[0][1]xfade=transition=fade:duration=0.5:'
+                   f'offset={max(0.1, d0 - 0.5):.2f},format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{nxt}"')
+                cur = nxt
+            shutil.move(cur, full)
+    if sin_clip:
+        # NUNCA se monta con el fotograma quieto: esas escenas vuelven a buscar vídeo (y se sigue en esta ejecución
+        # o en la próxima)
+        for n in sin_clip:
+            for f in (f"{P}/imgs/{n:02d}.jpg",):
+                if os.path.exists(f):
+                    os.remove(f)
+            ESC[n - 1]["imagen"].pop("clip", None)
+            ESC[n - 1]["imagen"].pop("extra", None)
+        json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        estado("imagenes")
+        guardar_proyecto()
+        print(f"clips que no se han podido bajar {sin_clip}: se buscan otros")
+        if int(os.environ.get("REPETIR_LARGO", "0")) < 2:
+            os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
+            os.execv(sys.executable, [sys.executable] + sys.argv)   # vuelve a empezar desde la fase de imágenes
+        sys.exit(0)   # se sigue en la próxima ejecución
     proyecto_json()
     print(sh(f'python3 "{KIT}/audio.py" "{P}"')[1].strip().splitlines()[0])
     print(sh(f'python3 "{AQUI}/montaje.py" "{P}"')[1].strip()[-300:])
+    # CONTROL (regla del usuario: todo vídeo en movimiento): si algún tramo se queda quieto, esa escena se rehace
+    rc_q, out_q = sh(f'python3 "{AQUI}/control_movimiento.py" "{P}/video_final.mp4" "{P}/tiempos.json"', ok=True)
+    print(out_q.strip()[-600:])
+    if rc_q == 4:
+        quietas = json.loads(out_q.strip().splitlines()[-1].split(" ", 1)[1] or "[]")
+        if int(os.environ.get("REPETIR_LARGO", "0")) >= 2 or not quietas:
+            print("NO SE PUBLICA: sigue habiendo tramos quietos tras rehacer las escenas")
+            guardar_proyecto()
+            sys.exit(1)
+        veto = set(H.get("vetados", []))
+        for n in quietas:
+            im = ESC[n - 1]["imagen"]
+            veto |= {str(im.get("clip_id"))} | {str(x.get("clip_id")) for x in im.get("extra", [])}
+            im.pop("clip", None); im.pop("extra", None); im["tipo"] = "video"
+            for f in [f"{P}/imgs/{n:02d}.jpg"] + [f"{P}/clips/{n:02d}{x}.mp4" for x in ("", "_1", "_2", "_3", "_full")]:
+                if os.path.exists(f):
+                    os.remove(f)
+        H["vetados"] = sorted(veto)
+        json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        estado("imagenes")
+        guardar_proyecto()
+        print(f"Escenas con imagen quieta {quietas}: se buscan otros clips y se vuelve a montar")
+        os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
+        os.execv(sys.executable, [sys.executable] + sys.argv)
     print(sh(f'python3 "{AQUI}/largo_miniatura.py" "{P}"')[1].strip()[-200:])
     T = json.load(open(f"{P}/tiempos.json"))
     # descripción: gancho + capítulos + créditos

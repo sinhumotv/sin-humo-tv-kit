@@ -158,6 +158,44 @@ def archive(q):
     return out
 
 
+def mixkit(q, maximo=6):
+    """Mixkit (vídeo real de stock, licencia gratuita que permite usarlo en vídeos de YouTube; 720p sin clave).
+    Se lee la lista de vídeos (JSON-LD) de su página de búsqueda; solo horizontales."""
+    import io
+    from PIL import Image
+    pal = [w for w in re.findall(r"[a-z]+", q.lower()) if len(w) > 2][:3]
+    out, vistos = [], set()
+    for slug in ["-".join(pal), "-".join(pal[:2]), pal[0] if pal else ""]:
+        if not slug or slug in vistos:
+            continue
+        vistos.add(slug)
+        try:
+            h = urllib.request.urlopen(urllib.request.Request(f"https://mixkit.co/free-stock-video/{slug}/",
+                                       headers={"User-Agent": "Mozilla/5.0"}), timeout=40).read().decode("utf-8", "ignore")
+        except Exception:
+            continue
+        for m in re.finditer(r'"@id":"(https://mixkit\.co/free-stock-video/[^"#]+)#video","name":"([^"]*)".*?'
+                             r'"thumbnailUrl":"([^"]+)".*?"contentUrl":"([^"]+-720\.mp4)"', h):
+            pag, nom, th, url = m.groups()
+            vid = "mixkit:" + url.rsplit("/", 1)[-1].split("-")[0]
+            if any(x["id"] == vid for x in out) or re.search(r"vertical|animation|3d|render", nom, re.I):
+                continue
+            b = bajar(th, 30)
+            try:
+                im = Image.open(io.BytesIO(b))
+                if im.height > im.width:
+                    continue
+            except Exception:
+                continue
+            out.append({"id": vid, "url": url, "thumb": th, "inicio": 0, "tags": nom, "pagina": pag,
+                        "vertical": False, "fuente": "mixkit", "credito": f"Vídeo de Mixkit · {pag}"})
+            if len(out) >= maximo:
+                return out
+        if out:
+            break
+    return out
+
+
 def _resolver(c):
     """URL directa del vídeo (NASA e Internet Archive la dan aparte) y punto de inicio del trozo."""
     if c.get("url"):
@@ -212,10 +250,10 @@ def buscar_todo(q, fuentes=("pixabay",)):
     listas = []
     for f in fuentes:
         try:
-            listas.append({"pixabay": buscar, "commons": commons, "nasa": nasa, "archive": archive}[f](q))
+            listas.append({"pixabay": buscar, "commons": commons, "nasa": nasa, "archive": archive, "mixkit": mixkit}[f](q))
         except Exception as e:
             print("  fuente", f, str(e)[:80])
-    cupo = {"pixabay": 5, "commons": 3, "nasa": 3, "archive": 2}
+    cupo = {"pixabay": 5, "mixkit": 4, "commons": 3, "nasa": 3, "archive": 2}
     out = []
     for k in range(max([len(l) for l in listas] or [0])):
         for l in listas:

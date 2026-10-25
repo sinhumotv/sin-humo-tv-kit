@@ -60,7 +60,7 @@ def frame_clip(i):
         e = escenas[i]
         necesita = (e["fin"] if i < len(escenas) - 1 else DUR) - e["ini"] + 2 * XF + 0.2
         d = dur_clip(CLIPS[i])
-        lento = min(2.0, necesita / d) if 0 < d < necesita else 1.0
+        lento = min(1.25, necesita / d) if 0 < d < necesita else 1.0   # nada de cámara lenta exagerada (parece una foto)
         LECT[i] = subprocess.Popen(
             f'ffmpeg -v error -stream_loop -1 -i "{CLIPS[i]}" -an -vf "setpts={lento:.3f}*PTS,scale={W}:{H}:force_original_aspect_ratio=increase,'
             f'crop={W}:{H},fps={FPS},format=rgb24" -f rawvideo -pix_fmt rgb24 -', shell=True, stdout=subprocess.PIPE)

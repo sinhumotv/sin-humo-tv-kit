@@ -63,6 +63,8 @@
  "prueba_real": 5,
  "fuentes": [
   "pixabay",
-  "commons"
+  "commons",
+  "mixkit",
+  "archive"
  ]
 }

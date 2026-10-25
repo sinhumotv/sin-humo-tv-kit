@@ -25,3 +25,4 @@ v25 · 2026-10-22 · relatos: karaoke palabra a palabra, subtítulos más bajos,
 2026-10-24 registro seguro (sin pérdidas en paralelo), cortos con vídeo real (plan B + prueba A/B), largos 100% vídeo real, montaje sin agotar memoria
 2026-10-24 fuentes Commons/NASA/Archive, elección de clips por lotes con Gemini lite, clave de reserva
 2026-10-24 control de voz (lee notas / lenta), aceleración máx 8 %, control de subtítulos
+2026-10-25 largos: voz única (un solo modelo, misma velocidad y volumen, control de tono) y solo vídeo en movimiento (sin fotos, clips extra, control de imagen quieta antes de publicar)

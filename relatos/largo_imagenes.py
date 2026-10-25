@@ -183,11 +183,11 @@ PIXA = os.environ.get("PIXABAY_KEY", "").strip()
 os.makedirs(f"{D}/clips", exist_ok=True)
 
 
-def pixabay(q):
+def pixabay(q, pagina=1):
     if not PIXA:
         return []
     url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
-        {"key": PIXA, "q": q[:100], "per_page": 20, "safesearch": "true", "video_type": "film"})
+        {"key": PIXA, "q": q[:100], "per_page": 30, "page": pagina, "safesearch": "true", "video_type": "film"})
     for intento in range(3):
         try:
             d = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40))
@@ -277,7 +277,8 @@ def candidatos(q):
     out = pixabay(q)[:6]
     for f in [f for f in (C.get("fuentes") or []) if f != "pixabay"]:
         try:
-            out += {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive}[f](q)[:3]
+            out += {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive,
+                    "mixkit": stock.mixkit}[f](q)[:4 if f == "mixkit" else 3]
         except Exception as ex:
             print("  fuente", f, str(ex)[:60])
     return out
@@ -366,7 +367,7 @@ Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico 
 def ambiente(i, e):
     """Vídeo real de ambiente del canal (cuando ningún clip concreto vale)."""
     im, destino = e["imagen"], f"{D}/clips/{i:02d}.mp4"
-    usados = {str(x.get("imagen", {}).get("clip_id")) for x in ESC}
+    usados = {str(x.get("imagen", {}).get("clip_id")) for x in ESC} | {str(x) for x in H.get("vetados", [])}
     genericas = list(L.get("video_generico") or [])
     for q in genericas[i % max(1, len(genericas)):] + genericas:
         for c in pixabay(q):
@@ -383,6 +384,7 @@ def ambiente(i, e):
 def lote(indices):
     """Clips para varias escenas con UNA sola consulta a Gemini (antes era una por escena)."""
     vistos = {str(x.get("imagen", {}).get("clip_id")) for x in ESC if x.get("imagen", {}).get("clip_id")}
+    vistos |= {str(x) for x in H.get("vetados", [])}
     gen = list(L.get("video_generico") or [])
     items = []
     for i in indices:
@@ -416,19 +418,101 @@ def lote(indices):
     return hechos
 
 
+# ---------- REGLA DEL USUARIO: en los largos TODO es vídeo en movimiento, nunca fotos ni imágenes fijas ----------
+def usados_ids():
+    ids = {str(x) for x in H.get("vetados", [])}   # clips que dieron imagen quieta: no se vuelven a usar
+    for x in ESC:
+        im_ = x.get("imagen", {})
+        ids.add(str(im_.get("clip_id")))
+        ids |= {str(y.get("clip_id")) for y in im_.get("extra", [])}
+    return ids
+
+
+def clip_pixabay(qs, destino, paginas=(1, 2)):
+    """Primer clip de Pixabay con movimiento de verdad para esas búsquedas, que no se haya usado ya en el vídeo."""
+    usados = usados_ids()
+    for pag in paginas:
+        for q in qs:
+            for c in pixabay(q, pag):
+                if str(c["id"]) in usados or not bajar_clip(c["url"], destino):
+                    continue
+                if movimiento(destino) >= 3.0:
+                    return c
+    return None
+
+
+def rescate(i):
+    """Escena sin clip concreto ni de ambiente: búsquedas más amplias (2 páginas) y, como último recurso, otro trozo de
+    un clip ya usado (con movimiento). NUNCA una foto."""
+    im, destino = ESC[i - 1]["imagen"], f"{D}/clips/{i:02d}.mp4"
+    pal = [w for w in re.findall(r"[A-Za-z]+", im.get("busqueda", "")) if len(w) > 3]
+    qs = pal[:2] + list(L.get("video_generico") or []) + list(L.get("video_rescate") or [])
+    c = clip_pixabay(qs, destino)
+    if c:
+        im.update(tipo="video", clip=c["url"], clip_id=c["id"])
+        im.pop("clip_ini", None)
+        CRED[f"{i:02d}"] = f"Vídeo de Pixabay · {c['pagina']}"
+        return True
+    return False
+
+
+def extras():
+    """Si el clip es más corto que lo que dura la escena, se le añaden más clips (hasta 3) en vez de ralentizarlo o
+    dejarlo congelado. La duración de la escena se calcula con el texto hablado (misma velocidad que la voz)."""
+    for i, e in enumerate(ESC, 1):
+        im = e["imagen"]
+        base = f"{D}/clips/{i:02d}.mp4"
+        if im.get("tipo") != "video" or not os.path.exists(base):
+            continue
+        necesita = len("".join(e["hablado"].split())) / 12.5 + 2.0
+        total = dur(base)
+        im.setdefault("extra", [])
+        total += sum(dur(f"{D}/clips/{i:02d}_{n + 1}.mp4") for n in range(len(im["extra"]))
+                     if os.path.exists(f"{D}/clips/{i:02d}_{n + 1}.mp4"))
+        while total < necesita * 1.1 and len(im["extra"]) < 3:
+            n = len(im["extra"]) + 1
+            dst = f"{D}/clips/{i:02d}_{n}.mp4"
+            qs = [im.get("busqueda", "")] + list(im.get("otras") or []) + list(L.get("video_generico") or [])
+            c = clip_pixabay([q for q in qs if q], dst, paginas=(1,))
+            if not c:
+                break
+            im["extra"].append({"clip": c["url"], "clip_id": c["id"]})
+            CRED[f"{i:02d}_{n}"] = f"Vídeo de Pixabay · {c['pagina']}"
+            total += dur(dst)
+            print(f"escena {i}: clip extra {n} ({c['id']}) para cubrir {necesita:.0f} s")
+        guardar()
+
+
+def dur(ruta):
+    r = subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{ruta}"', shell=True,
+                       capture_output=True, text=True)
+    try:
+        return float(r.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
 pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "video" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
 for k in range(0, len(pend), 12):
     hechos = lote(pend[k:k + 12])
     for i in pend[k:k + 12]:
         if i in hechos:
             print(f"escena {i}: vídeo · {ESC[i - 1]['imagen']['clip_id']}")
+        elif rescate(i):
+            print(f"escena {i}: vídeo de rescate · {ESC[i - 1]['imagen']['clip_id']}")
         else:
-            ESC[i - 1]["imagen"]["tipo"] = "real"   # sin clip: se intenta con una foto real
-            print(f"escena {i}: sin clip de vídeo -> foto real")
+            print(f"escena {i}: SIN VÍDEO (nunca se pone una foto): se reintenta en la próxima ejecución")
     guardar()
 
-# 1) material real (no gasta cuota de Cloudflare)
+# 1) (DESACTIVADO por orden del usuario: nada de fotos en los largos) las escenas que el guion pedía como foto
+#    real se buscan como vídeo, igual que las de IA (paso 2)
 for i, e in enumerate(ESC, 1):
+    if e["imagen"]["tipo"] == "real" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
+        e["imagen"]["tipo"] = "ia"
+        e["imagen"].setdefault("prompt", e["imagen"].get("descripcion", e["imagen"].get("busqueda", "")))
+for i, e in enumerate(ESC, 1):
+    if True:
+        continue
     if e["imagen"]["tipo"] != "real" or os.path.exists(f"{D}/imgs/{i:02d}.jpg"):
         continue
     r = real(i, e)
@@ -453,10 +537,13 @@ for i, e in enumerate(ESC, 1):
     im.setdefault("descripcion", im.get("prompt", ""))
 pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "ia" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
 for k in range(0, len(pend), 12):
-    for i in lote(pend[k:k + 12]):
-        ESC[i - 1]["imagen"]["tipo"] = "video"
-        print(f"escena {i}: vídeo real en vez de IA · {ESC[i - 1]['imagen']['clip_id']}")
+    hechos = lote(pend[k:k + 12])
+    for i in pend[k:k + 12]:
+        if i in hechos or rescate(i):
+            ESC[i - 1]["imagen"]["tipo"] = "video"
+            print(f"escena {i}: vídeo real · {ESC[i - 1]['imagen']['clip_id']}")
     guardar()
+extras()
 
 # 3) imagen base de la miniatura: un fotograma REAL del propio vídeo (lo elige Gemini). La IA solo si no hay nada.
 if not os.path.exists(f"{D}/miniatura_base.jpg"):
@@ -489,8 +576,7 @@ texto. Devuelve SOLO JSON: {{"mejor": <número>}}""", temp=0.2, imagenes=minis, 
 pend = []
 if not os.path.exists(f"{D}/miniatura_base.jpg"):
     pend.append(("miniatura", H["miniatura"]["prompt"], f"{D}/miniatura_base.jpg"))
-pend += [(i, e["imagen"]["prompt"], f"{D}/imgs/{i:02d}.jpg") for i, e in enumerate(ESC, 1)
-         if e["imagen"]["tipo"] == "ia" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+# (escenas con IA: desactivado, en los largos todo es vídeo real)
 hechas = 0
 for k, (i, prompt, out) in enumerate(pend):
     r = cloudflare(prompt, out)
@@ -523,9 +609,9 @@ for k, (i, prompt, out) in enumerate(pend):
                 print(f"escena {i}: bloqueada, reutilizo la {j}")
     hechas += 1
 guardar()
-faltan = [i for i in range(1, len(ESC) + 1) if not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+faltan = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] != "video" or not e["imagen"].get("clip")]
 if faltan:
-    print("faltan imágenes:", faltan)
+    print("escenas SIN VÍDEO (no se monta con fotos; se sigue en la próxima ejecución):", faltan)
     sys.exit(3)
 n_vid = sum(1 for e in ESC if e["imagen"]["tipo"] == "video")
 n_real = sum(1 for e in ESC if e["imagen"]["tipo"] == "real")
