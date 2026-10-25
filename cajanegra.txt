@@ -8,3 +8,4 @@
 2026-10-25|12:00|La epidemia de baile de 1518|cuenta|YO 6add8d583d5b27036bb88d0d IN 6add8d583d5b27036bb88d4e TI 6add8d598b3d437ddcf0bf2b|img=mixto|12:18
 2026-10-25|15:00|Las llaves del Titanic|error|YO 6add8e508b3d437ddcf1090f IN 6add8e503d5b27036bb8df4b TI 6add8e510b5343d070b76f59|img=mixto|15:35
 2026-10-25|18:00|La muerte de Edgar Allan Poe|sabias|YO 6add8f5f3d5b27036bb9171a IN 6add8f60bd33ce99c357c65a TI 6add8f600b5343d070b795e9|img=mixto|18:00
+2026-10-25|21:00|El misterio del Mary Celeste|consecuencia|YO 6add906e8b3d437ddcf15b18 IN 6add906e6887a2efc1ec9bf3 TI 6add906f0b5343d070b7b9ed|img=mixto|20:38
