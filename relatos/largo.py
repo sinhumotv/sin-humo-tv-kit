@@ -107,6 +107,10 @@ REH = os.environ.get("REHACER", "").strip()
 if REH and not rc and estado().get("fase") == "hecho" and not estado().get("rehacer"):
     print("REHACER: se rehace el largo programado", REH)
     Hh = json.load(open(f"{P}/historia.json", encoding="utf-8"))
+    # seguridad: el proyecto guardado tiene que ser ESE largo (si no, se sustituiría el post equivocado)
+    fila = next((r for r in REGISTRO if len(r) > 3 and r[3] == REH), None)
+    if not fila or fila[2].strip() != Hh.get("titulo_youtube", "").strip():
+        sys.exit(f"REHACER cancelado: el proyecto guardado («{Hh.get('titulo_youtube')}») no es el del post {REH}")
     for e in Hh["escenas"]:
         im = e["imagen"]
         for k in ("clip", "clip_id", "clip_ini", "extra"):
