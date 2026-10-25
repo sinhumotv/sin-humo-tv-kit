@@ -5,3 +5,4 @@
 2026-10-24|18:00|El hombre de Somerton|final|YO 6adc3ee68b3d437ddca1968d IN 6adc3ee6bd33ce99c308967f TI 6adc3ee7bd33ce99c30896b3
 2026-10-24|22:32|El falsificador que engañó a los nazis|sabias|YO 6add0fbb8b3d437ddcd748c4 IN 6add0fbbe4be8a4d8676cfc4 TI 6add0fbc8b3d437ddcd74905|img=real|22:14
 2026-10-25|08:00|La caída de Al Capone|increible|YO 6add8c71e4be8a4d868fe55d IN 6add8c726887a2efc1eb9db3 TI 6add8c72bd33ce99c356ea70|img=real|08:15
+2026-10-25|12:00|La epidemia de baile de 1518|cuenta|YO 6add8d583d5b27036bb88d0d IN 6add8d583d5b27036bb88d4e TI 6add8d598b3d437ddcf0bf2b|img=mixto|12:18
