@@ -101,6 +101,28 @@ def siguiente_hueco():
 
 # ---------- proyecto en curso ----------
 rc, _ = sh(f"git clone -q --depth 1 --branch {RAMA} {REPO_URL} {P}", ok=True)
+# REHACER=<id del post de Metricool>: rehace con el sistema nuevo un largo ya programado (mismo tema y guion, voz e
+# imagen nuevas) y SUSTITUYE ese post en Metricool, a la misma fecha y hora.
+REH = os.environ.get("REHACER", "").strip()
+if REH and not rc and estado().get("fase") == "hecho" and not estado().get("rehacer"):
+    print("REHACER: se rehace el largo programado", REH)
+    Hh = json.load(open(f"{P}/historia.json", encoding="utf-8"))
+    for e in Hh["escenas"]:
+        im = e["imagen"]
+        for k in ("clip", "clip_id", "clip_ini", "extra"):
+            im.pop(k, None)
+        im["tipo"] = "video"
+        im.setdefault("busqueda", im.get("descripcion", "")[:60] or "technology future")
+    json.dump(Hh, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    for d in ("imgs", "clips", "voz_trozos"):
+        shutil.rmtree(f"{P}/{d}", ignore_errors=True)
+    for f in ("voz.mp3", "miniatura_base.jpg", "creditos.json", "tiempos.json", "subtitulos.srt"):
+        if os.path.exists(f"{P}/{f}"):
+            os.remove(f"{P}/{f}")
+    E0 = estado()
+    json.dump({"empezado": AHORA.isoformat(), "fase": "voz", "rehacer": REH, "publicado_antes": E0.get("publicado")},
+              open(f"{P}/estado.json", "w"), ensure_ascii=False, indent=1)
+    guardar_proyecto()
 if os.environ.get("REINICIAR") and not rc and estado().get("fase") != "hecho":
     print("REINICIAR: se descarta el proyecto en curso y se empieza uno nuevo")
     rc = 1
@@ -300,7 +322,11 @@ if E["fase"] == "publicar":
         print("NO_PUBLICAR: listo para programar ·", E["video"])
         sys.exit(0)
     desc = open(f"{P}/descripcion.txt", encoding="utf-8").read()
-    cuando = siguiente_hueco()
+    REH = E.get("rehacer")
+    cuando = (dt.datetime.fromisoformat(E["publicado_antes"]).astimezone(MAD) if REH and E.get("publicado_antes")
+              else siguiente_hueco())
+    if REH and cuando < dt.datetime.now(MAD) + dt.timedelta(minutes=20):
+        cuando = dt.datetime.now(MAD) + dt.timedelta(minutes=30)
     import mc
     s = mc.Sesion(mc.acceso(CANAL))
     marca = mc.marca(s)
@@ -313,21 +339,44 @@ if E["fase"] == "publicar":
                             "tags": H.get("etiquetas", [])[:15], "category": L.get("categoria", "ENTERTAINMENT"),
                             "madeForKids": False, "isAiGeneratedContent": True}}
     args = {"date": cuando.isoformat(timespec="seconds"), "blogId": str(marca["id"]), "info": json.dumps(info, ensure_ascii=False)}
+    uuid_viejo = None
+    if REH:
+        lst = s.llamar("getScheduledPosts", {"brandId": str(marca["id"]), "timezone": "Europe/Madrid",
+                                             "fromDate": (cuando - dt.timedelta(days=3)).strftime("%Y-%m-%dT00:00:00+01:00"),
+                                             "toDate": (cuando + dt.timedelta(days=3)).strftime("%Y-%m-%dT23:59:59+01:00")})
+        txt_l = json.dumps(lst)
+        import re as _re
+        posts = lst.get("data", lst) if isinstance(lst, dict) else lst
+        for po in (posts if isinstance(posts, list) else []):
+            if str(po.get("id")) == str(REH):
+                uuid_viejo = po.get("uuid")
+        print("post a sustituir:", REH, "uuid:", uuid_viejo, "" if uuid_viejo else txt_l[:600])
     try:
-        res = s.llamar("createScheduledPost", args)
+        if uuid_viejo:
+            res = s.llamar("updateScheduledPost", {"id": str(REH), "uuid": uuid_viejo, "blogId": str(marca["id"]),
+                                                   "info": args["info"]})
+        else:
+            res = s.llamar("createScheduledPost", args)
     except RuntimeError as e:
         if "THUMBNAIL" not in str(e).upper():
             raise
         print("Metricool no acepta la miniatura (¿canal sin verificar por teléfono?): se publica sin ella")
         info.pop("videoThumbnailUrl")
         args["info"] = json.dumps(info, ensure_ascii=False)
-        res = s.llamar("createScheduledPost", args)
+        res = (s.llamar("updateScheduledPost", {"id": str(REH), "uuid": uuid_viejo, "blogId": str(marca["id"]),
+                                                "info": args["info"]}) if uuid_viejo
+               else s.llamar("createScheduledPost", args))
     print("METRICOOL:", json.dumps(res, ensure_ascii=False)[:400])
     pid = ""
     if isinstance(res, dict):
         x = res.get("data", res)
         pid = str(x.get("id", "")) if isinstance(x, dict) else ""
     import datos
+    if REH and uuid_viejo:   # el registro ya tiene esa fecha y ese título: no se duplica
+        estado("hecho", publicado=cuando.isoformat(), rehecho=pid)
+        guardar_proyecto()
+        print(f"REHECHO Y SUSTITUIDO · {C['nombre']} · {cuando:%d/%m %H:%M} · «{H['titulo_youtube']}»")
+        sys.exit(0)
     datos.anadir(REPO_URL, f"largos_{CANAL}.txt",
                  [f"{cuando:%Y-%m-%d %H:%M}|{H['titulo']}|{H['titulo_youtube']}|{pid}|{E['tag']}"],
                  C["nombre"], f"largo {CANAL} {cuando:%Y-%m-%d}")

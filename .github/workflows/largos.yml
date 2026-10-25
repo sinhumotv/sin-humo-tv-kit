@@ -23,6 +23,9 @@ on:
       reiniciar:
         description: "1 = descartar el largo en curso y empezar uno nuevo"
         default: ""
+      rehacer:
+        description: "id del post de Metricool: rehacer ese largo ya programado (mismo guion) y sustituirlo"
+        default: ""
 
 permissions:
   contents: write
@@ -58,7 +61,8 @@ jobs:
           AHORA: ${{ inputs.ahora }}
           NO_PUBLICAR: ${{ inputs.no_publicar }}
           REINICIAR: ${{ inputs.reiniciar }}
+          REHACER: ${{ inputs.rehacer }}
           WHISPER_MODELO: base
         run: |
-          for v in FORZAR AHORA NO_PUBLICAR REINICIAR; do [ -z "${!v}" ] && unset $v; done
+          for v in FORZAR AHORA NO_PUBLICAR REINICIAR REHACER; do [ -z "${!v}" ] && unset $v; done
           python3 relatos/largo.py ${{ matrix.canal }}
