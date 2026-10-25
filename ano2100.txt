@@ -9,3 +9,4 @@
 2026-10-25|12:00|Retirada de gafas inteligentes|cuenta|YO 6add8d4c6887a2efc1ebe9e7 IN 6add8d4c6887a2efc1ebea39 TI 6add8d4d8b3d437ddcf0b52c|img=real|11:56
 2026-10-25|15:00|Carne cultivada|increible|YO 6add8e0a0b5343d070b75e28 IN 6add8e0abd33ce99c357727e TI 6add8e0be4be8a4d86906e06|img=real|15:26
 2026-10-25|18:00|Trenes de vacío|pregunta|YO 6add8ed2bd33ce99c357a8eb IN 6add8ed2e4be8a4d86909b63 TI 6add8ed3bd33ce99c357a933|img=real|17:48
+2026-10-25|21:00|Granjas verticales|sabias|YO 6add8fa5bd33ce99c357ce22 IN 6add8fa50b5343d070b79ed0 TI 6add8fa6e4be8a4d8690b4df|img=mixto|20:51
