@@ -18,3 +18,8 @@ ia:CaughtMa1940
 276646
 197564
 11186
+374656
+ia:0505_Safeguarding_Military_Information_10_01_02_05
+216500
+21698
+1336
