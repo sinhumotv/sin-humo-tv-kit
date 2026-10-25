@@ -5,3 +5,4 @@
 2026-10-24|18:00|Vivir 120 años|final|YO 6adc3f1e0b5343d07068578e IN 6adc3f1e0b5343d0706857c4 TI 6adc3f1f0b5343d0706857f1
 2026-10-24|21:00|Ciudades flotantes|sabias|YO 6adc409b0b5343d07068a696 IN 6adc409c8b3d437ddca1eaa8 TI 6adc409ce4be8a4d86413c8e
 2026-10-24|22:32|Predicción de huracanes con IA|nadie|YO 6add10203d5b27036b9f487a IN 6add10200b5343d0709e3fb9 TI 6add10218b3d437ddcd7630f|img=mixto|22:15
+2026-10-25|08:00|Resúmenes de IA bajo sospecha|error|YO 6add8c9d3d5b27036bb83b84 IN 6add8c9dbd33ce99c356ed98 TI 6add8c9e6887a2efc1eba153|img=mixto|07:47
