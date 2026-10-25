@@ -1,0 +1,7 @@
+AVISO: esta semana no hay datos de retención propios. La cuenta de vidIQ conectada solo tiene autorizado el canal "Sin Humo TV"; este canal no aparece, así que no hay retención, minuto de abandono ni duración media vista. Lecciones basadas en lo publicado y en lo que funciona en la competencia:
+- Solo hay 2 largos publicados (Narciso y Eco, Sísifo): aún no se puede decir cuál va mejor.
+- Los títulos con castigo/condena eterna y una palabra en MAYÚSCULAS ("la Muerte en CADENAS") siguen el patrón de los vídeos que más destacan: mantenlo.
+- En la competencia, los recopilatorios largos ("para dormir", "completa", 1-3 h) dan 2x-29x: valorar de vez en cuando un largo que encadene varios mitos.
+- Monstruos y guerras de dioses (Titanomaquia) superan a los mitos de amor en vistas: alternar.
+- Abrir con el momento más dramático en los primeros 30 s y prometer el final trágico; retrasar la explicación del contexto.
+- No repetir mitos ya publicados (ver largos_relatos.txt).
