@@ -13,3 +13,4 @@
 2026-10-25|08:00|Psique y Eros|nadie|YO 6add8c408b3d437ddcf06b99 IN 6add8c41e4be8a4d868fe0f2 TI 6add8c41bd33ce99c356e368|img=mixto|07:50
 2026-10-25|15:00|Pigmalión y Galatea|increible|YO 6add8d888b3d437ddcf0d14c IN 6add8d886887a2efc1ec0a23 TI 6add8d89bd33ce99c3574828|img=mixto|14:46
 2026-10-25|18:00|El rapto de Perséfone|sabias|YO 6add8e308b3d437ddcf104c2 IN 6add8e306887a2efc1ec36cf TI 6add8e306887a2efc1ec36ff|img=mixto|18:25
+2026-10-25|21:00|El castigo de Acteón|consecuencia|YO 6add8eed6887a2efc1ec6433 IN 6add8eee0b5343d070b78758 TI 6add8eeebd33ce99c357af57|img=mixto|20:44
