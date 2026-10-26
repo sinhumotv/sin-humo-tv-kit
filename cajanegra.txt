@@ -10,3 +10,4 @@
 2026-10-25|18:00|La muerte de Edgar Allan Poe|sabias|YO 6add8f5f3d5b27036bb9171a IN 6add8f60bd33ce99c357c65a TI 6add8f600b5343d070b795e9|img=mixto|18:00
 2026-10-25|21:00|El misterio del Mary Celeste|consecuencia|YO 6add906e8b3d437ddcf15b18 IN 6add906e6887a2efc1ec9bf3 TI 6add906f0b5343d070b7b9ed|img=mixto|20:38
 2026-10-26|08:00|El crimen del expreso de Andalucía|final|YO 6adee5b26887a2efc1449278 IN 6adee5b28b3d437ddc48f0fd TI 6adee5b3e4be8a4d86e75441|img=mixto|07:55
+2026-10-26|12:00|La muerte de Napoleón|nadie|YO 6adee6478b3d437ddc49050c IN 6adee6470b5343d0700fecf4 TI 6adee6488b3d437ddc490545|img=real|12:26
