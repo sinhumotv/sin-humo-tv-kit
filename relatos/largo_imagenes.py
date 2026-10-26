@@ -494,7 +494,8 @@ def dur(ruta):
         return 0.0
 
 
-pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "video" and not os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+pend = [i for i, e in enumerate(ESC, 1) if e["imagen"]["tipo"] == "video" and
+        (not e["imagen"].get("clip") or not os.path.exists(f"{D}/imgs/{i:02d}.jpg"))]
 for k in range(0, len(pend), 12):
     hechos = lote(pend[k:k + 12])
     for i in pend[k:k + 12]:

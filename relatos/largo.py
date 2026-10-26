@@ -213,6 +213,9 @@ if E["fase"] == "imagenes":
     guardar_proyecto()
 
 if E["fase"] == "montaje":
+    # el guion se vuelve a leer: la fase de imágenes (otro proceso) le ha añadido los clips
+    H = json.load(open(f"{P}/historia.json", encoding="utf-8"))
+    ESC = H["escenas"]
     # los clips de vídeo no se guardan entre días: se vuelven a bajar si faltan
     import urllib.request, time as _t
     import stock
@@ -258,7 +261,7 @@ if E["fase"] == "montaje":
         print(f"clips que no se han podido bajar {sin_clip}: se buscan otros")
         if int(os.environ.get("REPETIR_LARGO", "0")) < 2:
             os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
-            os.execv(sys.executable, [sys.executable] + sys.argv)   # vuelve a empezar desde la fase de imágenes
+            sys.stdout.flush(); os.execv(sys.executable, [sys.executable] + sys.argv)   # vuelve a empezar desde la fase de imágenes
         sys.exit(0)   # se sigue en la próxima ejecución
     proyecto_json()
     print(sh(f'python3 "{KIT}/audio.py" "{P}"')[1].strip().splitlines()[0])
@@ -314,7 +317,7 @@ if E["fase"] == "montaje":
         guardar_proyecto()
         print(f"Escenas con imagen quieta {quietas}: se buscan otros clips y se vuelve a montar")
         os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
-        os.execv(sys.executable, [sys.executable] + sys.argv)
+        sys.stdout.flush(); os.execv(sys.executable, [sys.executable] + sys.argv)
     print(sh(f'python3 "{AQUI}/largo_miniatura.py" "{P}"')[1].strip()[-200:])
     T = json.load(open(f"{P}/tiempos.json"))
     # descripción: gancho + capítulos + créditos

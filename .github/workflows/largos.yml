@@ -63,6 +63,7 @@ jobs:
           REINICIAR: ${{ inputs.reiniciar }}
           REHACER: ${{ inputs.rehacer }}
           WHISPER_MODELO: base
+          PYTHONUNBUFFERED: "1"
         run: |
           for v in FORZAR AHORA NO_PUBLICAR REINICIAR REHACER; do [ -z "${!v}" ] && unset $v; done
           python3 relatos/largo.py ${{ matrix.canal }}
