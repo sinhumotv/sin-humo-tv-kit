@@ -187,7 +187,7 @@ if E["fase"] == "voz":
     open(f"{P}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
     # VOZ_ESTRICTA: un solo modelo para todo el vídeo, misma velocidad, mismo volumen y control de que todos los
     # trozos suenan igual (regla del usuario: la voz no puede cambiar a mitad del vídeo). Nunca el modelo «lite».
-    env = ("VOZ_ESTRICTA=1 TTS_MAX=3000 "
+    env = (f'VOZ_ESTRICTA=1 VOZ_REF="{DAT}/voz_ref_{CANAL}.txt" TTS_MAX=3000 '
            "TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts")
     rc, out = sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}', ok=True)
     print(out.strip()[-1500:])
@@ -197,6 +197,10 @@ if E["fase"] == "voz":
         sys.exit(0)
     if rc:
         raise SystemExit("fallo en la voz")
+    if os.path.exists(f"{P}/voz_ref_nueva.json"):   # primer largo con el sistema nuevo: fija la voz del canal
+        import datos
+        datos.anadir(REPO_URL, f"voz_ref_{CANAL}.txt", [open(f"{P}/voz_ref_nueva.json").read().strip()],
+                     C["nombre"], f"voz de referencia {CANAL}")
     E = estado("imagenes")
     guardar_proyecto()
 
@@ -268,30 +272,70 @@ if E["fase"] == "montaje":
     # RITMO (para que la gente se quede): un plano nuevo cada 5-6 s. Si la escena tiene varios clips, cada uno ocupa
     # su parte de la escena (recortado a esa duración) y se unen con un fundido corto; todo a 1920x1080 y 30 fps.
     TE = json.load(open(f"{P}/tiempos.json"))["escenas"]
+
+    def dur_(f):
+        try:
+            return float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{f}"')[1].strip())
+        except Exception:
+            return 0.0
+    cortas = []   # escenas cuyo material no llega: NUNCA se repite (bucle) un clip para rellenar
     for k, e in enumerate(ESC):
         n, im = k + 1, e["imagen"]
         partes = [f"{P}/clips/{n:02d}.mp4"] + [f"{P}/clips/{n:02d}_{j + 1}.mp4" for j in range(len(im.get("extra", [])))]
         partes = [d for d in partes if os.path.exists(d)]
         full = f"{P}/clips/{n:02d}_full.mp4"
-        if len(partes) < 2 or os.path.exists(full) or k >= len(TE):
+        if not partes or os.path.exists(full) or k >= len(TE):
             continue
-        largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.5
-        seg = largo_esc / len(partes) + 0.5
+        largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.6
+        durs = [dur_(d) - (0.5 if j else 0) for j, d in enumerate(partes)]
+        if sum(durs) - 0.5 * (len(partes) - 1) < largo_esc:
+            cortas.append((n, largo_esc))
+            continue
+        if len(partes) < 2:
+            continue
+        # reparto: cada clip su parte por igual; si uno es más corto, lo que le falta se lo dan los demás
+        objetivo = largo_esc + 0.5 * (len(partes) - 1)
+        seg = [0.0] * len(partes)
+        resto, libres = objetivo, list(range(len(partes)))
+        while libres:
+            cuota = resto / len(libres)
+            cortos = [j for j in libres if durs[j] < cuota]
+            if not cortos:
+                for j in libres:
+                    seg[j] = cuota
+                break
+            for j in cortos:
+                seg[j] = durs[j]
+                resto -= durs[j]
+                libres.remove(j)
         norm = []
         for j, d in enumerate(partes):
             o = f"{P}/clips/_n{n:02d}_{j}.mp4"
             ini = 0.5 if j else 0   # (el primero empieza desde el principio, para el fundido de entrada)
-            sh(f'ffmpeg -y -v error -ss {ini} -i "{d}" -t {seg:.2f} -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
+            sh(f'ffmpeg -y -v error -ss {ini} -i "{d}" -t {seg[j]:.2f} -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
                f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"')
             norm.append(o)
         cur = norm[0]
         for j, o in enumerate(norm[1:], 1):
-            d0 = float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{cur}"')[1].strip())
+            d0 = dur_(cur)
             nxt = f"{P}/clips/_x{n:02d}_{j}.mp4"
             sh(f'ffmpeg -y -v error -i "{cur}" -i "{o}" -filter_complex "[0][1]xfade=transition=fade:duration=0.5:'
                f'offset={max(0.1, d0 - 0.5):.2f},format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{nxt}"')
             cur = nxt
         shutil.move(cur, full)
+    if cortas:
+        print(f"escenas sin material suficiente {[n for n, _ in cortas]}: se buscan más clips (nunca se repite uno)")
+        if int(os.environ.get("REPETIR_LARGO", "0")) >= 3:
+            print("NO SE PUBLICA: no hay clips suficientes sin repetir")
+            guardar_proyecto()
+            sys.exit(1)
+        for n, need in cortas:
+            ESC[n - 1]["imagen"]["necesita"] = round(need + 1, 1)
+        json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        estado("imagenes")
+        guardar_proyecto()
+        os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
+        sys.stdout.flush(); os.execv(sys.executable, [sys.executable] + sys.argv)
     proyecto_json()
     print(sh(f'python3 "{AQUI}/montaje.py" "{P}"')[1].strip()[-300:])
     # CONTROL (regla del usuario: todo vídeo en movimiento): si algún tramo se queda quieto, esa escena se rehace

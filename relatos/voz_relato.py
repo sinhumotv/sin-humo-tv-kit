@@ -268,6 +268,16 @@ def main_largo():
     piezas = trozos(texto)
     if meta.get("texto") != texto or meta.get("voz") != voz or meta.get("tono") != tono:
         meta = {"texto": texto, "voz": voz, "tono": tono, "modelo": None, "ref": None, "hechos": {}}
+        # MISMA VOZ EN TODOS LOS VÍDEOS DEL CANAL (regla del usuario): modelo, tono, timbre y velocidad de referencia
+        # del canal, fijados con el primer largo y guardados en la rama datos (VOZ_REF = ruta del archivo)
+        rp = os.environ.get("VOZ_REF", "")
+        if rp and os.path.exists(rp):
+            lineas = [l for l in open(rp, encoding="utf-8").read().splitlines() if l.strip().startswith("{")]
+            if lineas:
+                R = json.loads(lineas[-1])
+                if R.get("voz") == voz:
+                    meta.update(modelo=R["modelo"], ref=[R["f0"], R["cen"]], cps_ref=R["cps"], ref_canal=True)
+                    print(f"voz de referencia del canal: {R['modelo']} · tono {R['f0']:.0f} Hz · {R['cps']:.1f} car/s")
     def guardar_meta():
         json.dump(meta, open(meta_p, "w"), ensure_ascii=False)
 
@@ -312,7 +322,7 @@ def main_largo():
                   f"timbre {cen:.0f} Hz (ref {rcen:.0f}) · diferencia {dist:.2f}", flush=True)
             if mejor is None or dist < mejor[0]:
                 mejor = (dist, w, cps)
-            if dist <= 0.10:
+            if dist <= 0.08:
                 break
             time.sleep(8)
         if mejor is None:
@@ -346,6 +356,9 @@ def main_largo():
                    shell=True, check=True)
     dur = subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{out}"',
                          shell=True, capture_output=True, text=True).stdout.strip()
+    if os.environ.get("VOZ_REF") and not meta.get("ref_canal"):
+        json.dump({"voz": voz, "modelo": meta["modelo"], "f0": meta["ref"][0], "cen": meta["ref"][1],
+                   "cps": meta["cps_ref"]}, open(os.path.join(D, "voz_ref_nueva.json"), "w"))
     print(f"OK voz.mp3 · {float(dur):.1f} s · voz {voz} · UN SOLO modelo: {meta['modelo']} · {len(piezas)} trozos "
           f"igualados en velocidad y volumen · 0 créditos")
 

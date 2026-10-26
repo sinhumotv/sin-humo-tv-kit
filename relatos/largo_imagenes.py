@@ -259,7 +259,52 @@ def bajar_extra(c, destino):
     return True
 
 
+_HUELLAS = {}
+
+
+def huellas(ruta):
+    """Huellas visuales (dHash de 64 bits) de 3 fotogramas del clip: sirven para detectar el MISMO plano aunque venga
+    con otro número o de otra web (regla del usuario: nunca repetir una escena en el mismo largo)."""
+    k = (ruta, os.path.getmtime(ruta) if os.path.exists(ruta) else 0)
+    if k in _HUELLAS:
+        return _HUELLAS[k]
+    import numpy as np
+    out = []
+    for t in (0.3, 2.5, 5.0):
+        r = subprocess.run(f'ffmpeg -v error -ss {t} -i "{ruta}" -frames:v 1 -vf scale=9:8,format=gray -f rawvideo -',
+                           shell=True, capture_output=True)
+        if len(r.stdout) == 72:
+            a = np.frombuffer(r.stdout, np.uint8).reshape(8, 9).astype(int)
+            out.append(int("".join("1" if x else "0" for x in (a[:, 1:] > a[:, :-1]).flatten()), 2))
+    _HUELLAS[k] = out
+    return out
+
+
+def repetido(ruta):
+    """True si el clip se parece a otro clip ya elegido para este vídeo (cualquier escena)."""
+    mias = huellas(ruta)
+    if not mias:
+        return False
+    for f in os.listdir(f"{D}/clips"):
+        otro = f"{D}/clips/{f}"
+        if not f.endswith(".mp4") or f.startswith("_") or f.endswith("_full.mp4") or os.path.abspath(otro) == os.path.abspath(ruta):
+            continue
+        for h1 in mias:
+            for h2 in huellas(otro):
+                if bin(h1 ^ h2).count("1") <= 8:
+                    return True
+    return False
+
+
 def movimiento(ruta):
+    """Movimiento del clip (0 = descartar: casi quieto o REPETIDO de otro clip del mismo vídeo)."""
+    if repetido(ruta):
+        print(f"  {os.path.basename(ruta)}: mismo plano que otro clip del vídeo, descartado")
+        return 0
+    return _movimiento(ruta)
+
+
+def _movimiento(ruta):
     """Diferencia media entre dos fotogramas separados 1,5 s (clip casi quieto = número bajo)."""
     fr = []
     for t in (0.5, 2.0):
@@ -464,18 +509,20 @@ def extras():
         base = f"{D}/clips/{i:02d}.mp4"
         if im.get("tipo") != "video" or not os.path.exists(base):
             continue
-        necesita = len("".join(e["hablado"].split())) / 12.5 + 2.0
+        # duración de la escena: la real si el montaje ya la midió, si no, estimada a velocidad de voz prudente
+        necesita = im.get("necesita") or len("".join(e["hablado"].split())) / 11.0 + 2.5
         total = dur(base)
         im.setdefault("extra", [])
         total += sum(dur(f"{D}/clips/{i:02d}_{n + 1}.mp4") for n in range(len(im["extra"]))
                      if os.path.exists(f"{D}/clips/{i:02d}_{n + 1}.mp4"))
         # RITMO: un plano distinto cada ~5,5 s (y siempre clips suficientes para cubrir la escena sin congelar)
         planos = min(4, max(1, int(-(-necesita // 5.5))))
-        while (total < necesita * 1.1 or 1 + len(im["extra"]) < planos) and len(im["extra"]) < 3:
+        tope = 6 if im.get("necesita") else 3
+        while (total < necesita * 1.15 or 1 + len(im["extra"]) < planos) and len(im["extra"]) < tope:
             n = len(im["extra"]) + 1
             dst = f"{D}/clips/{i:02d}_{n}.mp4"
             qs = [im.get("busqueda", "")] + list(im.get("otras") or []) + list(L.get("video_generico") or [])
-            c = clip_pixabay([q for q in qs if q], dst, paginas=(1,))
+            c = clip_pixabay([q for q in qs if q], dst, paginas=(1, 2) if im.get("necesita") else (1,))
             if not c:
                 break
             im["extra"].append({"clip": c["url"], "clip_id": c["id"]})
