@@ -11,3 +11,4 @@
 2026-10-25|18:00|Trenes de vacío|pregunta|YO 6add8ed2bd33ce99c357a8eb IN 6add8ed2e4be8a4d86909b63 TI 6add8ed3bd33ce99c357a933|img=real|17:48
 2026-10-25|21:00|Granjas verticales|sabias|YO 6add8fa5bd33ce99c357ce22 IN 6add8fa50b5343d070b79ed0 TI 6add8fa6e4be8a4d8690b4df|img=mixto|20:51
 2026-10-26|12:00|Ley contra deepfakes en Dinamarca|final|YO 6adee4c98b3d437ddc48b4cc IN 6adee4cae4be8a4d86e70c96 TI 6adee4ca3d5b27036b101fbc|img=real|11:20
+2026-10-26|15:00|El poder de la cuántica|nadie|YO 6adee575bd33ce99c3ae6954 IN 6adee576bd33ce99c3ae6990 TI 6adee5768b3d437ddc48e2b3|img=real|15:13
