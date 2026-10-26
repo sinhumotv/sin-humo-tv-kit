@@ -11,3 +11,4 @@
 2026-10-25|21:00|El misterio del Mary Celeste|consecuencia|YO 6add906e8b3d437ddcf15b18 IN 6add906e6887a2efc1ec9bf3 TI 6add906f0b5343d070b7b9ed|img=mixto|20:38
 2026-10-26|08:00|El crimen del expreso de Andalucía|final|YO 6adee5b26887a2efc1449278 IN 6adee5b28b3d437ddc48f0fd TI 6adee5b3e4be8a4d86e75441|img=mixto|07:55
 2026-10-26|12:00|La muerte de Napoleón|nadie|YO 6adee6478b3d437ddc49050c IN 6adee6470b5343d0700fecf4 TI 6adee6488b3d437ddc490545|img=real|12:26
+2026-10-26|15:00|El atraco al Banco Central de Fortaleza|pregunta|YO 6adee756a59aa33bb575ec8b IN 6adee756906a941b7222c9f4 TI 6adee7573c2b9287727baf9f|img=mixto|15:40
