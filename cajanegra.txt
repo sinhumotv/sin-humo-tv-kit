@@ -13,3 +13,4 @@
 2026-10-26|12:00|La muerte de Napoleón|nadie|YO 6adee6478b3d437ddc49050c IN 6adee6470b5343d0700fecf4 TI 6adee6488b3d437ddc490545|img=real|12:26
 2026-10-26|15:00|El atraco al Banco Central de Fortaleza|pregunta|YO 6adee756a59aa33bb575ec8b IN 6adee756906a941b7222c9f4 TI 6adee7573c2b9287727baf9f|img=mixto|15:40
 2026-10-26|18:00|El incidente del paso Diátlov|sabias|YO 6adee7e9a59aa33bb57605d6 IN 6adee7e914e7509845ace683 TI 6adee7e9467184a9e34905cd|img=real|18:10
+2026-10-26|21:00|La muerte de Tutankamón|consecuencia|YO 6adee8b114e7509845acfd54 IN 6adee8b13c2b9287727bf225 TI 6adee8b2a59aa33bb576251f|img=mixto|21:11
