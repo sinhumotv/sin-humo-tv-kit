@@ -13,3 +13,4 @@
 2026-10-26|12:00|Ley contra deepfakes en Dinamarca|final|YO 6adee4c98b3d437ddc48b4cc IN 6adee4cae4be8a4d86e70c96 TI 6adee4ca3d5b27036b101fbc|img=real|11:20
 2026-10-26|15:00|El poder de la cuántica|nadie|YO 6adee575bd33ce99c3ae6954 IN 6adee576bd33ce99c3ae6990 TI 6adee5768b3d437ddc48e2b3|img=real|15:13
 2026-10-26|18:00|Ciudades subterráneas en Marte|sabias|YO 6adee682e4be8a4d86e77958 IN 6adee6826887a2efc144aff4 TI 6adee6838b3d437ddc490de4|img=mixto|18:13
+2026-10-26|21:00|Robots cirujanos del futuro|pregunta|YO 6adee75db217de1f8054327d IN 6adee75d3c2b9287727bb03b TI 6adee75d906a941b7222cb1e|img=mixto|20:58
