@@ -1,0 +1,1 @@
+{"voz": "Algenib", "modelo": "gemini-2.5-flash-preview-tts", "f0": 90.3954802259887, "cen": 2670.9443560777227, "cps": 11.847471805289793}
