@@ -18,3 +18,4 @@
 2026-10-26|08:00|El mito de Faetón|error|YO 6adede998b3d437ddc476850 IN 6adede9a0b5343d0700e46a3 TI 6adede9b3d5b27036b0ef725|img=mixto|08:36
 2026-10-26|12:00|Odiseo y el Cíclope|cuenta|YO 6adedf990b5343d0700e99d3 IN 6adedf99e4be8a4d86e621ea TI 6adedf9a3d5b27036b0f4ca7|img=mixto|12:02
 2026-10-26|15:00|La maldición de Casandra|pregunta|YO 6adee0cae4be8a4d86e666d9 IN 6adee0cb8b3d437ddc480eb9 TI 6adee0cb0b5343d0700ee00d|img=mixto|14:32
+2026-10-26|18:00|Cronos devorando a sus hijos|sabias|YO 6adee232bd33ce99c3add4da IN 6adee2330b5343d0700f216f TI 6adee234bd33ce99c3add53d|img=mixto|17:42
