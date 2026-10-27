@@ -75,3 +75,9 @@ nasa:HD 049 Mercury_Gemini_Apollo_Resource Reel 1
 177415
 348897
 23796
+65306
+296958
+3180
+157990
+86867
+254787
