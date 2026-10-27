@@ -20,3 +20,4 @@
 2026-10-26|15:00|La maldición de Casandra|pregunta|YO 6adee0cae4be8a4d86e666d9 IN 6adee0cb8b3d437ddc480eb9 TI 6adee0cb0b5343d0700ee00d|img=mixto|14:32
 2026-10-26|18:00|Cronos devorando a sus hijos|sabias|YO 6adee232bd33ce99c3add4da IN 6adee2330b5343d0700f216f TI 6adee234bd33ce99c3add53d|img=mixto|17:42
 2026-10-26|21:00|El castigo de Tántalo|consecuencia|YO 6adee32abd33ce99c3adf32e IN 6adee32a3d5b27036b0fe820 TI 6adee32a6887a2efc1440cff|img=mixto|21:28
+2026-10-27|08:00|Belerofonte y Pegaso|final|YO 6ae035d7a6170f32b17bf38e IN 6ae035d805551cc35923411f TI 6ae035d8457d00458c1b79a5|img=mixto|08:33
