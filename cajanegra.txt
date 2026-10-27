@@ -14,3 +14,4 @@
 2026-10-26|15:00|El atraco al Banco Central de Fortaleza|pregunta|YO 6adee756a59aa33bb575ec8b IN 6adee756906a941b7222c9f4 TI 6adee7573c2b9287727baf9f|img=mixto|15:40
 2026-10-26|18:00|El incidente del paso Diátlov|sabias|YO 6adee7e9a59aa33bb57605d6 IN 6adee7e914e7509845ace683 TI 6adee7e9467184a9e34905cd|img=real|18:10
 2026-10-26|21:00|La muerte de Tutankamón|consecuencia|YO 6adee8b114e7509845acfd54 IN 6adee8b13c2b9287727bf225 TI 6adee8b2a59aa33bb576251f|img=mixto|21:11
+2026-10-27|08:00|La estafa de Ponzi|increible|YO 6ae031a5913aa340c53f6118 IN 6ae031a5913aa340c53f6144 TI 6ae031a505551cc35922758a|img=mixto|08:33
