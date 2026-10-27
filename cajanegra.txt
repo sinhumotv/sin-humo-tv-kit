@@ -17,3 +17,4 @@
 2026-10-27|08:00|La estafa de Ponzi|increible|YO 6ae031a5913aa340c53f6118 IN 6ae031a5913aa340c53f6144 TI 6ae031a505551cc35922758a|img=mixto|08:33
 2026-10-27|12:00|La tragedia de Courrières|error|YO 6ae0329e913aa340c53f9a79 IN 6ae0329f8f5aed9e2e39c842 TI 6ae0329fa6170f32b17b470f|img=mixto|11:38
 2026-10-27|15:00|El gran robo del tren|cuenta|YO 6ae033c005551cc35922e57f IN 6ae033c0a6170f32b17b8be9 TI 6ae033c1457d00458c1aff7d|img=mixto|14:39
+2026-10-27|18:00|El final de Rasputín|sabias|YO 6ae03484913aa340c5400334 IN 6ae03485457d00458c1b2c30 TI 6ae03485e322dad801256b5c|img=real|18:15
