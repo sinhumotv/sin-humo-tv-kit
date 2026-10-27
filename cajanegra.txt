@@ -15,3 +15,4 @@
 2026-10-26|18:00|El incidente del paso Diátlov|sabias|YO 6adee7e9a59aa33bb57605d6 IN 6adee7e914e7509845ace683 TI 6adee7e9467184a9e34905cd|img=real|18:10
 2026-10-26|21:00|La muerte de Tutankamón|consecuencia|YO 6adee8b114e7509845acfd54 IN 6adee8b13c2b9287727bf225 TI 6adee8b2a59aa33bb576251f|img=mixto|21:11
 2026-10-27|08:00|La estafa de Ponzi|increible|YO 6ae031a5913aa340c53f6118 IN 6ae031a5913aa340c53f6144 TI 6ae031a505551cc35922758a|img=mixto|08:33
+2026-10-27|12:00|La tragedia de Courrières|error|YO 6ae0329e913aa340c53f9a79 IN 6ae0329f8f5aed9e2e39c842 TI 6ae0329fa6170f32b17b470f|img=mixto|11:38
