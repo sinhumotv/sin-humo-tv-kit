@@ -16,3 +16,4 @@
 2026-10-26|21:00|Robots cirujanos del futuro|pregunta|YO 6adee75db217de1f8054327d IN 6adee75d3c2b9287727bb03b TI 6adee75d906a941b7222cb1e|img=mixto|20:58
 2026-10-27|08:00|Superchips de IA guardados en cajas|consecuencia|YO 6ae03196a6170f32b17b1249 IN 6ae0319705551cc3592271b4 TI 6ae03197a6170f32b17b1276|img=mixto|08:01
 2026-10-27|12:00|Desguace de tarjetas gráficas para IA|increible|YO 6ae0329e05551cc35922a7b4 IN 6ae0329e457d00458c1abeaa TI 6ae0329f8f5aed9e2e39c802|img=mixto|12:37
+2026-10-27|15:00|Ciudades sin coches privados|cuenta|YO 6ae0338a8f5aed9e2e39ef72 IN 6ae0338a457d00458c1af4c6 TI 6ae0338a05551cc35922dd35|img=mixto|15:32
