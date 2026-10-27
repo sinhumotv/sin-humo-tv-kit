@@ -22,3 +22,4 @@
 2026-10-26|21:00|El castigo de Tántalo|consecuencia|YO 6adee32abd33ce99c3adf32e IN 6adee32a3d5b27036b0fe820 TI 6adee32a6887a2efc1440cff|img=mixto|21:28
 2026-10-27|08:00|Belerofonte y Pegaso|final|YO 6ae035d7a6170f32b17bf38e IN 6ae035d805551cc35923411f TI 6ae035d8457d00458c1b79a5|img=mixto|08:33
 2026-10-27|12:00|El caballo de Troya|nadie|YO 6ae036a5913aa340c54058c2 IN 6ae036a5a6170f32b17c1185 TI 6ae036a6e322dad80125bb01|img=mixto|12:20
+2026-10-27|15:00|Atalanta y las manzanas|increible|YO 6ae03805457d00458c1bde76 IN 6ae03805a6170f32b17c5c57 TI 6ae0380605551cc35923aabe|img=mixto|15:10
