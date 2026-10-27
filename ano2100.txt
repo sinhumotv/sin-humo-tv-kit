@@ -17,3 +17,4 @@
 2026-10-27|08:00|Superchips de IA guardados en cajas|consecuencia|YO 6ae03196a6170f32b17b1249 IN 6ae0319705551cc3592271b4 TI 6ae03197a6170f32b17b1276|img=mixto|08:01
 2026-10-27|12:00|Desguace de tarjetas gráficas para IA|increible|YO 6ae0329e05551cc35922a7b4 IN 6ae0329e457d00458c1abeaa TI 6ae0329f8f5aed9e2e39c802|img=mixto|12:37
 2026-10-27|15:00|Ciudades sin coches privados|cuenta|YO 6ae0338a8f5aed9e2e39ef72 IN 6ae0338a457d00458c1af4c6 TI 6ae0338a05551cc35922dd35|img=mixto|15:32
+2026-10-27|18:00|Por qué alucina la inteligencia artificial|error|YO 6ae03496e322dad801256eb4 IN 6ae03497e322dad801256ee1 TI 6ae03497457d00458c1b317d|img=real|18:32
