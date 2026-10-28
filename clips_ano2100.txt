@@ -100,3 +100,8 @@ wc:File:Hunt and peck typing — Monkeytype benchmark.webm
 6387
 3741
 35590
+34797
+13461
+349089
+198890
+136554
