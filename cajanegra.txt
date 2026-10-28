@@ -19,3 +19,4 @@
 2026-10-27|15:00|El gran robo del tren|cuenta|YO 6ae033c005551cc35922e57f IN 6ae033c0a6170f32b17b8be9 TI 6ae033c1457d00458c1aff7d|img=mixto|14:39
 2026-10-27|18:00|El final de Rasputín|sabias|YO 6ae03484913aa340c5400334 IN 6ae03485457d00458c1b2c30 TI 6ae03485e322dad801256b5c|img=real|18:15
 2026-10-27|21:00|La emboscada a Bonnie y Clyde|consecuencia|YO 6ae035ab913aa340c54030e2 IN 6ae035ab913aa340c540310e TI 6ae035aca6170f32b17bec3c|img=mixto|20:46
+2026-10-28|08:00|El fin de Jack el Destripador|final|YO 6ae183cd1aac2b225f7ce661 IN 6ae183ce204613d2f1439e58 TI 6ae183ceb1bf2d292db65f28|img=mixto|08:25
