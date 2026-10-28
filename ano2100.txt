@@ -19,3 +19,4 @@
 2026-10-27|15:00|Ciudades sin coches privados|cuenta|YO 6ae0338a8f5aed9e2e39ef72 IN 6ae0338a457d00458c1af4c6 TI 6ae0338a05551cc35922dd35|img=mixto|15:32
 2026-10-27|18:00|Por qué alucina la inteligencia artificial|error|YO 6ae03496e322dad801256eb4 IN 6ae03497e322dad801256ee1 TI 6ae03497457d00458c1b317d|img=real|18:32
 2026-10-27|21:00|Robots humanoides en el hogar|sabias|YO 6ae035a005551cc3592334d4 IN 6ae035a0a6170f32b17beb0a TI 6ae035a0913aa340c5402f9c|img=mixto|20:21
+2026-10-28|08:00|Rechazo a centros de datos|final|YO 6ae182f6204613d2f1436d8c IN 6ae182f6204613d2f1436ddc TI 6ae182f756ec3750d253eb43|img=real|08:30
