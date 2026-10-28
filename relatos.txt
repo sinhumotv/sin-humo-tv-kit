@@ -27,3 +27,4 @@
 2026-10-27|21:00|El monstruo Escila|consecuencia|YO 6ae03abd8f5aed9e2e3b354b IN 6ae03abe05551cc35924120a TI 6ae03abe8f5aed9e2e3b3579|img=mixto|21:31
 2026-10-28|08:00|El talón de Aquiles|error|YO 6ae183e41b33b85d1be4694a IN 6ae183e51aac2b225f7cec79 TI 6ae183e5a48463c22755fc80|img=mixto|07:39
 2026-10-28|12:00|La Hidra de Lerna|cuenta|YO 6ae185b5a48463c227566a1e IN 6ae185b556ec3750d2547efd TI 6ae185b61b33b85d1be4d218|img=mixto|11:49
+2026-10-28|15:00|Hero y Leandro|pregunta|YO 6ae1868356ec3750d254b2d6 IN 6ae186831b33b85d1be50ba3 TI 6ae186841aac2b225f7d78d3|img=real|14:20
