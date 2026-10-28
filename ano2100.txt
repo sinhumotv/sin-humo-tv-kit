@@ -22,3 +22,4 @@
 2026-10-28|08:00|Rechazo a centros de datos|final|YO 6ae182f6204613d2f1436d8c IN 6ae182f6204613d2f1436ddc TI 6ae182f756ec3750d253eb43|img=real|08:30
 2026-10-28|12:00|La IA ya no se paga sola|nadie|YO 6ae183fdb1bf2d292db667bd IN 6ae183fd1aac2b225f7cf02a TI 6ae183fe1aac2b225f7cf09d|img=mixto|11:32
 2026-10-28|15:00|Energía de fusión nuclear|pregunta|YO 6ae185211aac2b225f7d2f29 IN 6ae1852156ec3750d2546b2d TI 6ae185221b33b85d1be4ba69|img=mixto|14:27
+2026-10-28|18:00|Cómo aprende una red neuronal|sabias|YO 6ae1860056ec3750d2549501 IN 6ae186011b33b85d1be4f42e TI 6ae186011aac2b225f7d5b92|img=real|17:41
