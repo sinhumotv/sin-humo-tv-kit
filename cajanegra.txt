@@ -21,3 +21,4 @@
 2026-10-27|21:00|La emboscada a Bonnie y Clyde|consecuencia|YO 6ae035ab913aa340c54030e2 IN 6ae035ab913aa340c540310e TI 6ae035aca6170f32b17bec3c|img=mixto|20:46
 2026-10-28|08:00|El fin de Jack el Destripador|final|YO 6ae183cd1aac2b225f7ce661 IN 6ae183ce204613d2f1439e58 TI 6ae183ceb1bf2d292db65f28|img=mixto|08:25
 2026-10-28|12:00|La muerte de Alejandro Magno|nadie|YO 6ae184caa48463c2275633f8 IN 6ae184ca1b33b85d1be49a87 TI 6ae184cb1aac2b225f7d18f3|img=mixto|11:53
+2026-10-28|15:00|El crimen de la calle Fuencarral|pregunta|YO 6ae185e8a48463c227567d39 IN 6ae185e956ec3750d254926a TI 6ae185e91b33b85d1be4efcd|img=mixto|14:58
