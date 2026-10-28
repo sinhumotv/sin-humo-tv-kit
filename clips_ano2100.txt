@@ -105,3 +105,9 @@ wc:File:Hunt and peck typing — Monkeytype benchmark.webm
 349089
 198890
 136554
+nasa:GSFC_20160624_IRIS_m12292_PlasmaRain
+6185
+192281
+268448
+137357
+285982
