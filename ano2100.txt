@@ -26,3 +26,4 @@
 2026-10-28|21:00|Coches sin volante en 2100|consecuencia|YO 6ae18703b1bf2d292db703f3 IN 6ae187041aac2b225f7d8d57 TI 6ae187041aac2b225f7d8d84|img=mixto|20:28
 2026-10-29|12:00|El auge de los oficios manuales|error|YO 6ae2d7bdc4bbd0de4b4e6a29 IN 6ae2d7bd6ffb9bb0dccfa062 TI 6ae2d7be2c7019aafe35c84c|img=mixto|11:30
 2026-10-29|15:00|Exoesqueletos mecánicos|cuenta|YO 6ae2d8dec4bbd0de4b4e97c9 IN 6ae2d8df02cc66e5339a7b23 TI 6ae2d8df6ffb9bb0dccfd4af|img=mixto|15:33
+2026-10-29|18:00|Traductores instantáneos universales|sabias|YO 6ae2d9d36ffb9bb0dccff9b6 IN 6ae2d9d4403488e83c9a393f TI 6ae2d9d402cc66e5339a9b5a|img=mixto|17:54
