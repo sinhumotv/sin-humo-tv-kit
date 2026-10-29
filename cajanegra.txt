@@ -26,3 +26,4 @@
 2026-10-28|21:00|Los crímenes de Burke y Hare|consecuencia|YO 6ae18859204613d2f1449992 IN 6ae1885956ec3750d255090e TI 6ae1885a56ec3750d2550985|img=mixto|20:46
 2026-10-29|08:00|La colonia perdida de Roanoke|cuenta|YO 6ae2d693c2255f48b9c8d946 IN 6ae2d69302cc66e5339a1c5e TI 6ae2d6932c7019aafe358dc6|img=mixto|07:28
 2026-10-29|12:00|La extraña muerte de Tycho Brahe|increible|YO 6ae2d873403488e83c99f728 IN 6ae2d874c4bbd0de4b4e836b TI 6ae2d8746ffb9bb0dccfc06d|img=mixto|12:17
+2026-10-29|15:00|El robo del Museo Gardner|error|YO 6ae2d9d3403488e83c9a3907 IN 6ae2d9d302cc66e5339a9af0 TI 6ae2d9d32c7019aafe362253|img=mixto|15:33
