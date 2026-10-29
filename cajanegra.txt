@@ -27,3 +27,4 @@
 2026-10-29|08:00|La colonia perdida de Roanoke|cuenta|YO 6ae2d693c2255f48b9c8d946 IN 6ae2d69302cc66e5339a1c5e TI 6ae2d6932c7019aafe358dc6|img=mixto|07:28
 2026-10-29|12:00|La extraña muerte de Tycho Brahe|increible|YO 6ae2d873403488e83c99f728 IN 6ae2d874c4bbd0de4b4e836b TI 6ae2d8746ffb9bb0dccfc06d|img=mixto|12:17
 2026-10-29|15:00|El robo del Museo Gardner|error|YO 6ae2d9d3403488e83c9a3907 IN 6ae2d9d302cc66e5339a9af0 TI 6ae2d9d32c7019aafe362253|img=mixto|15:33
+2026-10-29|18:00|La desaparición de Agatha Christie|sabias|YO 6ae2dad32c7019aafe365690 IN 6ae2dad32c7019aafe3656bc TI 6ae2dad3c2255f48b9c9ae57|img=mixto|18:26
