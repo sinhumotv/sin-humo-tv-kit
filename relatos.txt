@@ -34,3 +34,4 @@
 2026-10-29|12:00|Filemón y Baucis|final|YO 6ae2d94102cc66e5339a8705 IN 6ae2d942c2255f48b9c958b7 TI 6ae2d9422c7019aafe3603e7|img=mixto|11:57
 2026-10-29|18:00|Odiseo y las sirenas|sabias|YO 6ae2dc1e6ffb9bb0dcd079d2 IN 6ae2dc1f403488e83c9ab99d TI 6ae2dc1fc4bbd0de4b4f435b|img=mixto|17:24
 2026-10-29|15:00|El juicio de Paris|pregunta|YO 6ae31ed21db2603c2d97a508 IN 6ae31ed242a28ed29400cd1e TI 6ae31ed37b777f7b03c0be7b|img=mixto|15:13
+2026-10-29|21:00|Heracles y Cerbero|cuenta|YO 6ae3206d9ebbdfcb8db62f56 IN 6ae3206e7b777f7b03c15153 TI 6ae3206e07196764b3732340|img=mixto|20:56
