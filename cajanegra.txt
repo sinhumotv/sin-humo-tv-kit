@@ -24,3 +24,4 @@
 2026-10-28|15:00|El crimen de la calle Fuencarral|pregunta|YO 6ae185e8a48463c227567d39 IN 6ae185e956ec3750d254926a TI 6ae185e91b33b85d1be4efcd|img=mixto|14:58
 2026-10-28|18:00|El enigma del asesino del Zodiaco|sabias|YO 6ae186e6a48463c22756aeac IN 6ae186e71aac2b225f7d8a15 TI 6ae186e71b33b85d1be51c21|img=mixto|18:31
 2026-10-28|21:00|Los crímenes de Burke y Hare|consecuencia|YO 6ae18859204613d2f1449992 IN 6ae1885956ec3750d255090e TI 6ae1885a56ec3750d2550985|img=mixto|20:46
+2026-10-29|08:00|La colonia perdida de Roanoke|cuenta|YO 6ae2d693c2255f48b9c8d946 IN 6ae2d69302cc66e5339a1c5e TI 6ae2d6932c7019aafe358dc6|img=mixto|07:28
