@@ -37,3 +37,4 @@
 2026-10-29|21:00|Heracles y Cerbero|cuenta|YO 6ae3206d9ebbdfcb8db62f56 IN 6ae3206e7b777f7b03c15153 TI 6ae3206e07196764b3732340|img=mixto|20:56
 2026-10-30|08:00|Los dientes del dragón|increible|YO 6ae4271d6385db216a26de26 IN 6ae4271e6385db216a26de53 TI 6ae4271ea83a7fb63c962343|img=mixto|08:22
 2026-10-30|12:00|La túnica de Neso|error|YO 6ae4286a56e01b976389f55b IN 6ae4286b6385db216a2724f0 TI 6ae4286ba83a7fb63c9662b8|img=mixto|12:25
+2026-10-30|15:00|El castigo de Ío|consecuencia|YO 6ae429704b8768bfb2df39da IN 6ae429712782e7f331d38262 TI 6ae429712782e7f331d382a9|img=mixto|15:33
