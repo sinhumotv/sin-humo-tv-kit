@@ -33,3 +33,4 @@
 2026-10-30|12:00|El atraco de Niza|pregunta|YO 6ae42962ba1ca51fd3f83994 IN 6ae42963a83a7fb63c968c7c TI 6ae429634b8768bfb2df381b|img=mixto|11:32
 2026-10-30|15:00|El misterio de Flannan|final|YO 6ae42a8a6385db216a2784d0 IN 6ae42a8bba1ca51fd3f86c75 TI 6ae42a8b6385db216a278529|img=mixto|15:09
 2026-10-30|18:00|El caso Vallandigham|sabias|YO 6ae42be54b8768bfb2dfc0a9 IN 6ae42be64b8768bfb2dfc0d6 TI 6ae42be6ba1ca51fd3f8c921|img=mixto|17:25
+2026-10-30|21:00|El sastre volador|consecuencia|YO 6ae42cca56e01b97638ad7c6 IN 6ae42ccb6385db216a2804dd TI 6ae42ccba83a7fb63c975c59|img=mixto|20:43
