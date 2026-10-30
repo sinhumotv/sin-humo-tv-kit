@@ -29,3 +29,4 @@
 2026-10-29|15:00|El robo del Museo Gardner|error|YO 6ae2d9d3403488e83c9a3907 IN 6ae2d9d302cc66e5339a9af0 TI 6ae2d9d32c7019aafe362253|img=mixto|15:33
 2026-10-29|18:00|La desaparición de Agatha Christie|sabias|YO 6ae2dad32c7019aafe365690 IN 6ae2dad32c7019aafe3656bc TI 6ae2dad3c2255f48b9c9ae57|img=mixto|18:26
 2026-10-29|21:00|La insólita muerte de Pirro|consecuencia|YO 6ae2db8b403488e83c9aa3b3 IN 6ae2db8b02cc66e5339afbc2 TI 6ae2db8c2c7019aafe36764f|img=real|20:36
+2026-10-30|08:00|El entierro de Mozart|nadie|YO 6ae428734b8768bfb2df110e IN 6ae42874a83a7fb63c966462 TI 6ae42874ba1ca51fd3f811ed|img=mixto|07:41
