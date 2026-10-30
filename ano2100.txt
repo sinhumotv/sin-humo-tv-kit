@@ -31,3 +31,4 @@
 2026-10-30|08:00|Excavadoras autónomas con IA|nadie|YO 6ae4266f4b8768bfb2debd5e IN 6ae4267056e01b9763898eb5 TI 6ae426702782e7f331d2f9e8|img=mixto|08:21
 2026-10-30|12:00|Agentes de IA saturan la red|pregunta|YO 6ae4274c56e01b976389b654 IN 6ae4274d2782e7f331d3236d TI 6ae4274d4b8768bfb2deddf4|img=mixto|11:41
 2026-10-30|15:00|Enjambres de drones militares|final|YO 6ae42838ba1ca51fd3f803b3 IN 6ae4283956e01b976389eb4a TI 6ae428394b8768bfb2df0872|img=mixto|14:44
+2026-10-30|18:00|Geoingeniería solar planetaria|increible|YO 6ae42907a83a7fb63c968082 IN 6ae42907a83a7fb63c9680af TI 6ae429076385db216a273e97|img=mixto|18:09
