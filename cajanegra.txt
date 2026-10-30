@@ -31,3 +31,4 @@
 2026-10-29|21:00|La insólita muerte de Pirro|consecuencia|YO 6ae2db8b403488e83c9aa3b3 IN 6ae2db8b02cc66e5339afbc2 TI 6ae2db8c2c7019aafe36764f|img=real|20:36
 2026-10-30|08:00|El entierro de Mozart|nadie|YO 6ae428734b8768bfb2df110e IN 6ae42874a83a7fb63c966462 TI 6ae42874ba1ca51fd3f811ed|img=mixto|07:41
 2026-10-30|12:00|El atraco de Niza|pregunta|YO 6ae42962ba1ca51fd3f83994 IN 6ae42963a83a7fb63c968c7c TI 6ae429634b8768bfb2df381b|img=mixto|11:32
+2026-10-30|15:00|El misterio de Flannan|final|YO 6ae42a8a6385db216a2784d0 IN 6ae42a8bba1ca51fd3f86c75 TI 6ae42a8b6385db216a278529|img=mixto|15:09
