@@ -36,3 +36,4 @@
 2026-10-29|15:00|El juicio de Paris|pregunta|YO 6ae31ed21db2603c2d97a508 IN 6ae31ed242a28ed29400cd1e TI 6ae31ed37b777f7b03c0be7b|img=mixto|15:13
 2026-10-29|21:00|Heracles y Cerbero|cuenta|YO 6ae3206d9ebbdfcb8db62f56 IN 6ae3206e7b777f7b03c15153 TI 6ae3206e07196764b3732340|img=mixto|20:56
 2026-10-30|08:00|Los dientes del dragón|increible|YO 6ae4271d6385db216a26de26 IN 6ae4271e6385db216a26de53 TI 6ae4271ea83a7fb63c962343|img=mixto|08:22
+2026-10-30|12:00|La túnica de Neso|error|YO 6ae4286a56e01b976389f55b IN 6ae4286b6385db216a2724f0 TI 6ae4286ba83a7fb63c9662b8|img=mixto|12:25
