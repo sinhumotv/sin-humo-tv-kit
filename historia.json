@@ -1,0 +1,960 @@
+{
+ "titulo": "La IA y el fin del trabajo: del desempleo tecnológico al mundo de 2100",
+ "titulos": [
+  "¿El FIN del trabajo? Cómo la IA cambiará tu empleo",
+  "¿Hacia un mundo sin TRABAJO? El impacto de la IA",
+  "La verdad sobre la IA y el FUTURO del trabajo",
+  "¿Qué pasará cuando la IA haga TODO tu trabajo?",
+  "De 2024 a 2100: así DESAPARECERÁ el empleo tradicional",
+  "¿Puede la IA destruir la ECONOMÍA tal como la conocemos?",
+  "El futuro del empleo: ¿trabajarás en el año 2050?",
+  "¿Qué TRABAJOS sobrevivirán a la inteligencia artificial?",
+  "La gran TRANSICIÓN: el trabajo en la era de la IA",
+  "¿Viviremos sin TRABAJAR en el año 2100?"
+ ],
+ "miniatura": {
+  "texto": "¿FUTURO SIN EMPLEO?",
+  "clave": "SIN EMPLEO",
+  "prompt": "A cinematic realistic shot of a high-tech glowing robotic hand delicately placing a translucent digital hourglass onto a dark reflective desk, right half of the frame. The left half is dark, clean, and shadowy with subtle neon contrast, ideal for text placement. High resolution, dramatic lighting, rich saturated dark tones, futuristic atmosphere, photorealistic, 8k."
+ },
+ "descripcion": "¿Qué ocurrirá cuando la inteligencia artificial pueda realizar cualquier tarea humana mejor y más rápido que nosotros? A medida que los modelos de lenguaje y los agentes autónomos asumen tareas complejas de programación, análisis y diseño, el futuro del trabajo se enfrenta a la mayor reestructuración de la historia moderna. En este análisis exploramos cómo la automatización actual impacta en la fuerza laboral y qué escenarios proyectan los economistas y tecnólogos para los años 2030, 2050 y 2100.\n\nDesde el debate sobre la Renta Básica Universal hasta la posibilidad de una economía post-escasez, examinamos hechos reales de la tecnología actual y modelos hipotéticos del mañana. ¿Nos encaminamos hacia una crisis de empleo masiva o hacia un futuro donde el trabajo sea totalmente opcional?",
+ "etiquetas": [
+  "ia y el fin del trabajo",
+  "inteligencia artificial futuro",
+  "ia reemplaza trabajadores",
+  "futuro del empleo 2050",
+  "ia y economia 2100",
+  "renta basica universal ia",
+  "automatizacion ia",
+  "ia trabajos del futuro",
+  "como cambiara el trabajo la ia",
+  "superinteligencia artificial",
+  "año 2100 futuro",
+  "sociedad post trabajo"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El día que el trabajo cambió"
+  },
+  {
+   "escena": 7,
+   "titulo": "La primera ola: cuellos blancos"
+  },
+  {
+   "escena": 14,
+   "titulo": "El mito de la creatividad protegida"
+  },
+  {
+   "escena": 21,
+   "titulo": "Cuando la automatización falla"
+  },
+  {
+   "escena": 28,
+   "titulo": "Horizontes 2030: la gran transición"
+  },
+  {
+   "escena": 35,
+   "titulo": "Horizontes 2050: la economía del software"
+  },
+  {
+   "escena": 42,
+   "titulo": "El mundo de 2100: post-escasez"
+  },
+  {
+   "escena": 49,
+   "titulo": "La crisis de propósito"
+  },
+  {
+   "escena": 56,
+   "titulo": "El valor irreducible del ser humano"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "La inteligencia artificial ha comenzado un proceso inverso inquietante. Durante siglos, la tecnología sustituyó el trabajo físico en campos y fábricas. Hoy, la automatización asume primero la programación, el análisis y la creatividad humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "factory automated robot arm",
+    "otras": [
+     "industrial robot factory",
+     "factory production line"
+    ],
+    "descripcion": "Brazo robótico trabajando en una línea de montaje industrial."
+   },
+   "efecto": "nada",
+   "subtitulo": "La inteligencia artificial ha comenzado un proceso inverso inquietante. Durante siglos, la tecnología sustituyó el trabajo físico en campos y fábricas. Hoy, la automatización asume primero la programación, el análisis y la creatividad humana."
+  },
+  {
+   "hablado": "Las grandes empresas integran herramientas automáticas a una velocidad inédita. Tareas complejas de gestión, redacción y cálculo que exigían días de trabajo en equipo, hoy se ejecutan en cuestión de segundos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "office workers laptop meeting",
+    "otras": [
+     "people typing computer office",
+     "corporate office work"
+    ],
+    "descripcion": "Empleados de oficina trabajando rápidamente frente a ordenadores portátiles."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las grandes empresas integran herramientas automáticas a una velocidad inédita. Tareas complejas de gestión, redacción y cálculo que exigían días de trabajo en equipo, hoy se ejecutan en cuestión de segundos."
+  },
+  {
+   "hablado": "Esta transformación amenaza directamente la supervivencia del empleo asalariado tradicional. Al final de este recorrido descubrirás cuál es la única capacidad humana que ningún algoritmo podrá reemplazar jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "crowd people walking street",
+    "otras": [
+     "people commuting city street",
+     "pedestrians walking city"
+    ],
+    "descripcion": "Multitud de personas caminando apresuradamente por una calle de una gran ciudad."
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta transformación amenaza directamente la supervivencia del empleo asalariado tradicional. Al final de este recorrido descubrirás cuál es la única capacidad humana que ningún algoritmo podrá reemplazar jamás."
+  },
+  {
+   "hablado": "Los puestos de oficina, considerados invulnerables durante décadas, enfrentan una automatización acelerada. Diversos modelos informáticos redactan código, traducen idiomas al instante y analizan los mercados financieros con una precisión asombrosa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "programmer typing code screen",
+    "otras": [
+     "developer working computer",
+     "computer code screen"
+    ],
+    "descripcion": "Líneas de código informático ejecutándose rápidamente en la pantalla de un programador."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los puestos de oficina, considerados invulnerables durante décadas, enfrentan una automatización acelerada. Diversos modelos informáticos redactan código, traducen idiomas al instante y analizan los mercados financieros con una precisión asombrosa."
+  },
+  {
+   "hablado": "Incluso la frontera del arte y el diseño, que parecía reservada a la mente humana, se ha desplazado rápidamente. Los sistemas generativos producen composiciones musicales, imágenes complejas y textos estructurados en apenas unos instantes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "designer working computer graphic",
+    "otras": [
+     "artist editing video computer",
+     "creative professional computer"
+    ],
+    "descripcion": "Un diseñador gráfico trabajando en la edición digital frente al ordenador."
+   },
+   "efecto": "nada",
+   "subtitulo": "Incluso la frontera del arte y el diseño, que parecía reservada a la mente humana, se ha desplazado rápidamente. Los sistemas generativos producen composiciones musicales, imágenes complejas y textos estructurados en apenas unos instantes."
+  },
+  {
+   "hablado": "No obstante, la tecnología actual comete fallos imprevistos y carece de comprensión real del mundo. Por esa razón, la supervisión humana sigue siendo imprescindible para evitar errores graves en la toma de decisiones empresariales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "business person analyzing charts",
+    "otras": [
+     "professional reviewing documents laptop",
+     "person working screen concentration"
+    ],
+    "descripcion": "Un analista supervisando minuciosamente informes y datos en la pantalla de su ordenador."
+   },
+   "efecto": "polvo",
+   "subtitulo": "No obstante, la tecnología actual comete fallos imprevistos y carece de comprensión real del mundo. Por esa razón, la supervisión humana sigue siendo imprescindible para evitar errores graves en la toma de decisiones empresariales."
+  },
+  {
+   "hablado": "Sin embargo, los márgenes de error se reducen cada mes que pasa y el ritmo de adopción no se detiene. La brecha digital se estrecha rápidamente, pero lo peor para los trabajos de oficina aún no había llegado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "datacenter servers flashing lights",
+    "otras": [
+     "server room technology",
+     "network cables server rack"
+    ],
+    "descripcion": "Luces parpadeantes en los servidores de un centro de datos en pleno funcionamiento."
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, los márgenes de error se reducen cada mes que pasa y el ritmo de adopción no se detiene. La brecha digital se estrecha rápidamente, pero lo peor para los trabajos de oficina aún no había llegado."
+  },
+  {
+   "hablado": "Durante décadas pensamos que los trabajos administrativos y de oficina eran indestructibles. Hoy, los modelos de lenguaje redactan informes técnicos complejos y traducen documentos legales en apenas unos segundos, superando el ritmo de departamentos enteros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "corporate office workers",
+    "otras": [
+     "office computer work",
+     "people typing laptop"
+    ],
+    "descripcion": "Empleados trabajando en ordenadores dentro de una oficina moderna."
+   },
+   "efecto": "nada",
+   "subtitulo": "Durante décadas pensamos que los trabajos administrativos y de oficina eran indestructibles. Hoy, los modelos de lenguaje redactan informes técnicos complejos y traducen documentos legales en apenas unos segundos, superando el ritmo de departamentos enteros."
+  },
+  {
+   "hablado": "En el sector del software, la transformación es vertiginosa. Un solo programador equipado con asistentes de código avanzados puede escribir, revisar y corregir funciones enteras en una fracción del tiempo que requería un equipo tradicional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "programmer coding laptop",
+    "otras": [
+     "developer writing code",
+     "software engineer computer"
+    ],
+    "descripcion": "Primer plano de un programador escribiendo código fuente en la pantalla."
+   },
+   "efecto": "polvo",
+   "subtitulo": "En el sector del software, la transformación es vertiginosa. Un solo programador equipado con asistentes de código avanzados puede escribir, revisar y corregir funciones enteras en una fracción del tiempo que requería un equipo tradicional."
+  },
+  {
+   "hablado": "El análisis financiero también experimenta un vuelco sin precedentes. Algoritmos especializados procesan miles de balances corporativos en tiempo real, identificando riesgos y tendencias del mercado mucho antes de que un analista humano termine su primer borrador.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "financial analyst stock screen",
+    "otras": [
+     "trader looking monitors",
+     "stock market charts"
+    ],
+    "descripcion": "Un analista examinando gráficos y datos en múltiples monitores de oficina."
+   },
+   "efecto": "nada",
+   "subtitulo": "El análisis financiero también experimenta un vuelco sin precedentes. Algoritmos especializados procesan miles de balances corporativos en tiempo real, identificando riesgos y tendencias del mercado mucho antes de que un analista humano termine su primer borrador."
+  },
+  {
+   "hablado": "Informes de consultoras globales confirman que hasta un treinta por ciento de las tareas en puestos corporativos pueden automatizarse hoy mismo. Esto no significa la desaparición total del empleo, sino una reestructuración drástica de las plantillas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "business meeting team",
+    "otras": [
+     "corporate meeting room",
+     "executives presentation"
+    ],
+    "descripcion": "Reunión de ejecutivos revisando informes en una sala de conferencias."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Informes de consultoras globales confirman que hasta un treinta por ciento de las tareas en puestos corporativos pueden automatizarse hoy mismo. Esto no significa la desaparición total del empleo, sino una reestructuración drástica de las plantillas."
+  },
+  {
+   "hablado": "Muchas empresas han comenzado a reorganizar sus departamentos hacia esquemas hiperreducidos. En lugar de contratar a diez personas para coordinar proyectos, ahora operan con pequeños grupos apoyados por agentes autónomos de inteligencia artificial que gestionan la logística interna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "small team working laptop",
+    "otras": [
+     "coworking space group",
+     "colleagues discussion office"
+    ],
+    "descripcion": "Un equipo pequeño colaborando intensamente frente a un ordenador portátil."
+   },
+   "efecto": "nada",
+   "subtitulo": "Muchas empresas han comenzado a reorganizar sus departamentos hacia esquemas hiperreducidos. En lugar de contratar a diez personas para coordinar proyectos, ahora operan con pequeños grupos apoyados por agentes autónomos de inteligencia artificial que gestionan la logística interna."
+  },
+  {
+   "hablado": "Esta dinámica golpea con especial fuerza a los profesionales jóvenes. Las tareas de nivel inicial que antes servían de aprendizaje hoy son ejecutadas por software, lo que dificulta el acceso de nuevos talentos a la carrera profesional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "young worker desk thoughtful",
+    "otras": [
+     "person sitting computer office",
+     "young professional laptop"
+    ],
+    "descripcion": "Un joven profesional reflexivo frente a su ordenador de trabajo."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta dinámica golpea con especial fuerza a los profesionales jóvenes. Las tareas de nivel inicial que antes servían de aprendizaje hoy son ejecutadas por software, lo que dificulta el acceso de nuevos talentos a la carrera profesional."
+  },
+  {
+   "hablado": "El trabajo administrativo de escritorio está cambiando para siempre a una velocidad jamás vista en la historia industrial. La automatización avanza sin freno, pero el cambio no se detiene en los ordenadores.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty office desks night",
+    "otras": [
+     "office building exterior night",
+     "empty workplace computers"
+    ],
+    "descripcion": "Una oficina vacía con ordenadores encendidos durante la noche."
+   },
+   "efecto": "polvo",
+   "subtitulo": "El trabajo administrativo de escritorio está cambiando para siempre a una velocidad jamás vista en la historia industrial. La automatización avanza sin freno, pero el cambio no se detiene en los ordenadores."
+  },
+  {
+   "hablado": "Durante décadas pensamos que la creatividad humana era un refugio inalcanzable para las máquinas. Creíamos que pintar, componer música o diseñar requería un alma. Sin embargo, los modelos generativos rompieron ese mito en cuestión de meses.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "artist digital painting",
+    "otras": [
+     "designer laptop working",
+     "office computer screen"
+    ],
+    "descripcion": "Un diseñador trabajando en una pantalla digital en su estudio."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante décadas pensamos que la creatividad humana era un refugio inalcanzable para las máquinas. Creíamos que pintar, componer música o diseñar requería un alma. Sin embargo, los modelos generativos rompieron ese mito en cuestión de meses."
+  },
+  {
+   "hablado": "Hoy en día, un software entrenado con miles de millones de imágenes puede transformar una simple instrucción de texto en una ilustración compleja o una fotografía fotorrealista en apenas unos segundos de procesamiento digital.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "graphic design screen",
+    "otras": [
+     "computer visual edit",
+     "typing on laptop"
+    ],
+    "descripcion": "Una pantalla de ordenador mostrando la edición de gráficos e imágenes."
+   },
+   "efecto": "nada",
+   "subtitulo": "Hoy en día, un software entrenado con miles de millones de imágenes puede transformar una simple instrucción de texto en una ilustración compleja o una fotografía fotorrealista en apenas unos segundos de procesamiento digital."
+  },
+  {
+   "hablado": "El ámbito musical experimenta una transformación idéntica. Los nuevos algoritmos son capaces de componer bandas sonoras completas, imitar voces humanas con precisión asombrosa y adaptar estilos musicales sin necesidad de instrumentos ni estudios de grabación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "audio mixing console",
+    "otras": [
+     "music recording studio",
+     "sound engineer headphones"
+    ],
+    "descripcion": "Un estudio de grabación musical con una mesa de mezclas de sonido."
+   },
+   "efecto": "nada",
+   "subtitulo": "El ámbito musical experimenta una transformación idéntica. Los nuevos algoritmos son capaces de componer bandas sonoras completas, imitar voces humanas con precisión asombrosa y adaptar estilos musicales sin necesidad de instrumentos ni estudios de grabación."
+  },
+  {
+   "hablado": "Las agencias de publicidad y las empresas de diseño gráfico ya sienten este impacto. Tareas que antes exigían semanas de trabajo en equipo ahora las ejecuta un solo especialista apoyado por herramientas inteligentes de generación visual.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "advertising agency office",
+    "otras": [
+     "marketing team meeting",
+     "office workers creative"
+    ],
+    "descripcion": "Un equipo de trabajo en una agencia de publicidad reunido en una oficina."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las agencias de publicidad y las empresas de diseño gráfico ya sienten este impacto. Tareas que antes exigían semanas de trabajo en equipo ahora las ejecuta un solo especialista apoyado por herramientas inteligentes de generación visual."
+  },
+  {
+   "hablado": "La traducción profesional y la adaptación de contenidos audiovisuales también han dado un salto radical. Los sistemas lingüísticos actuales traducen libros enteros al instante conservando el tono y los matices culturales con sorprendente fidelidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hands typing laptop",
+    "otras": [
+     "person working computer",
+     "translator desk office"
+    ],
+    "descripcion": "Manos de una persona escribiendo rápidamente en un ordenador portátil."
+   },
+   "efecto": "nada",
+   "subtitulo": "La traducción profesional y la adaptación de contenidos audiovisuales también han dado un salto radical. Los sistemas lingüísticos actuales traducen libros enteros al instante conservando el tono y los matices culturales con sorprendente fidelidad."
+  },
+  {
+   "hablado": "La frontera del trabajo creativo se desplaza a una velocidad vertiginosa. El profesional humano pasa de crear desde una hoja en blanco a actuar como supervisor, corrector y editor final del trabajo generado por la máquina.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "video editor computer",
+    "otras": [
+     "designer working workstation",
+     "editing software screen"
+    ],
+    "descripcion": "Un profesional revisando y editando contenido visual frente al monitor."
+   },
+   "efecto": "polvo",
+   "subtitulo": "La frontera del trabajo creativo se desplaza a una velocidad vertiginosa. El profesional humano pasa de crear desde una hoja en blanco a actuar como supervisor, corrector y editor final del trabajo generado por la máquina."
+  },
+  {
+   "hablado": "Confiar ciegamente en estos sistemas parece una solución perfecta, pero los algoritmos carecen de comprensión real. Cuando la automatización se aplica sin control, comienzan a aparecer fallos imprevistos y alucinaciones digitales, pero lo peor aún no había llegado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room lights",
+    "otras": [
+     "computer data glitch",
+     "office stress worker"
+    ],
+    "descripcion": "Luces parpadeantes en servidores de un centro de procesamiento de datos."
+   },
+   "efecto": "nada",
+   "subtitulo": "Confiar ciegamente en estos sistemas parece una solución perfecta, pero los algoritmos carecen de comprensión real. Cuando la automatización se aplica sin control, comienzan a aparecer fallos imprevistos y alucinaciones digitales, pero lo peor aún no había llegado."
+  },
+  {
+   "hablado": "En los últimos años, varias empresas de transporte y atención al cliente sufrieron graves pérdidas cuando sus agentes virtuales prometieron promociones inexistentes o inventaron políticas de reembolso. Los algoritmos respondían con total seguridad, pero carecían de sentido común.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "office phone customer service",
+    "otras": [
+     "office work typing",
+     "call center operator"
+    ],
+    "descripcion": "Un trabajador de atención al cliente gestionando llamadas frente a un ordenador en una oficina"
+   },
+   "efecto": "nada",
+   "subtitulo": "En los últimos años, varias empresas de transporte y atención al cliente sufrieron graves pérdidas cuando sus agentes virtuales prometieron promociones inexistentes o inventaron políticas de reembolso. Los algoritmos respondían con total seguridad, pero carecían de sentido común."
+  },
+  {
+   "hablado": "Este fenómeno, conocido como alucinación digital, ocurre porque los modelos generativos no buscan verdades objetivas, sino probabilidades estadísticas. Si una respuesta suena coherente dentro de su estructura de datos, el programa la da por correcta aunque sea completamente falsa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room data center",
+    "otras": [
+     "computer server lights",
+     "data rack room"
+    ],
+    "descripcion": "Pasillo de servidores informáticos con luces de datos parpadeando en un centro de proceso"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Este fenómeno, conocido como alucinación digital, ocurre porque los modelos generativos no buscan verdades objetivas, sino probabilidades estadísticas. Si una respuesta suena coherente dentro de su estructura de datos, el programa la da por correcta aunque sea completamente falsa."
+  },
+  {
+   "hablado": "El problema se agrava en la gestión financiera y la selección de personal. En estos campos, programas de automatización descartaron miles de candidaturas válidas por sesgos imprevistos o desencadenaron ventas masivas en los mercados al malinterpretar titulares de prensa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "stock market office",
+    "otras": [
+     "financial charts trading",
+     "business people office"
+    ],
+    "descripcion": "Analistas financieros trabajando frente a pantallas con gráficos bursátiles en tiempo real"
+   },
+   "efecto": "nada",
+   "subtitulo": "El problema se agrava en la gestión financiera y la selección de personal. En estos campos, programas de automatización descartaron miles de candidaturas válidas por sesgos imprevistos o desencadenaron ventas masivas en los mercados al malinterpretar titulares de prensa."
+  },
+  {
+   "hablado": "Para evitar desastres mayores, las grandes compañías han instaurado la supervisión directa, un método llamado humano en el bucle. Especialistas de carne y hueso revisan las decisiones más delicadas del software antes de que lleguen a los clientes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "business meeting laptop",
+    "otras": [
+     "office team work",
+     "people reviewing documents"
+    ],
+    "descripcion": "Un equipo de supervisores revisando información y datos juntos en una mesa de reuniones"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para evitar desastres mayores, las grandes compañías han instaurado la supervisión directa, un método llamado humano en el bucle. Especialistas de carne y hueso revisan las decisiones más delicadas del software antes de que lleguen a los clientes."
+  },
+  {
+   "hablado": "Sin embargo, mantener personas verificando cada respuesta destruye la promesa de rapidez inmediata y frena la reducción de costes de las empresas. La industria tecnológica trabaja a marchas forzadas para eliminar gradualmente este cuello de botella humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "automated warehouse conveyor",
+    "otras": [
+     "factory automated robots",
+     "warehouse logistics"
+    ],
+    "descripcion": "Cintas de transporte totalmente automatizadas en un centro logístico sin presencia humana directa"
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, mantener personas verificando cada respuesta destruye la promesa de rapidez inmediata y frena la reducción de costes de las empresas. La industria tecnológica trabaja a marchas forzadas para eliminar gradualmente este cuello de botella humano."
+  },
+  {
+   "hablado": "Con cada actualización de los modelos, los márgenes de error se reducen a un ritmo vertiginoso. Las arquitecturas recientes incorporan verificación cruzada automática, lo que vuelve a los asistentes digitales cada día más fiables, precisos y difíciles de engañar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer testing microchip",
+    "otras": [
+     "laboratory technology work",
+     "electronics technician"
+    ],
+    "descripcion": "Un técnico analizando componentes electrónicos en un laboratorio de tecnología avanzada"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Con cada actualización de los modelos, los márgenes de error se reducen a un ritmo vertiginoso. Las arquitecturas recientes incorporan verificación cruzada automática, lo que vuelve a los asistentes digitales cada día más fiables, precisos y difíciles de engañar."
+  },
+  {
+   "hablado": "La tecnología está corrigiendo sus tropiezos a pasos agigantados y la brecha de fallos casi se ha cerrado. Con sistemas cada vez más impecables, la gran barrera técnica se disuelve, pero la gran sacudida laboral aún estaba por llegar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city skyline motion",
+    "otras": [
+     "city street traffic time lapse",
+     "urban architecture modern"
+    ],
+    "descripcion": "Vista en movimiento de un entorno urbano moderno con rascacielos y flujo constante de vehículos"
+   },
+   "efecto": "niebla",
+   "subtitulo": "La tecnología está corrigiendo sus tropiezos a pasos agigantados y la brecha de fallos casi se ha cerrado. Con sistemas cada vez más impecables, la gran barrera técnica se disuelve, pero la gran sacudida laboral aún estaba por llegar."
+  },
+  {
+   "hablado": "Al cruzar el umbral del año dos mil treinta, los analistas prevén una transformación sin precedentes. La automatización ya no destruirá empleos aislados, sino sectores enteros de forma simultánea en todo el planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty office desk",
+    "otras": [
+     "modern office building exterior",
+     "people leaving work"
+    ],
+    "descripcion": "Oficina moderna vacía con sillas y ordenadores apagados"
+   },
+   "efecto": "nada",
+   "subtitulo": "Al cruzar el umbral del año dos mil treinta, los analistas prevén una transformación sin precedentes. La automatización ya no destruirá empleos aislados, sino sectores enteros de forma simultánea en todo el planeta."
+  },
+  {
+   "hablado": "Los economistas se dividen en dos bandos. Algunos sostienen que nacerán profesiones inéditas, pero la velocidad del cambio actual supera con creces la capacidad de reciclar a millones de trabajadores a tiempo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "financial district people walking",
+    "otras": [
+     "crowd of commuters street",
+     "business people walking"
+    ],
+    "descripcion": "Multitud de trabajadores caminando por un distrito financiero de una gran ciudad"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los economistas se dividen en dos bandos. Algunos sostienen que nacerán profesiones inéditas, pero la velocidad del cambio actual supera con creces la capacidad de reciclar a millones de trabajadores a tiempo."
+  },
+  {
+   "hablado": "Para mitigar esta fricción, diversos gobiernos ya están realizando ensayos reales con la renta básica universal. Estos programas piloto buscan ofrecer un ingreso mínimo vital que garantice la estabilidad social mientras el mercado se reajusta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person signing documents office",
+    "otras": [
+     "hands typing keyboard office",
+     "money cash hands transfer"
+    ],
+    "descripcion": "Manos firmando documentos en una oficina administrativa de gobierno"
+   },
+   "efecto": "nada",
+   "subtitulo": "Para mitigar esta fricción, diversos gobiernos ya están realizando ensayos reales con la renta básica universal. Estos programas piloto buscan ofrecer un ingreso mínimo vital que garantice la estabilidad social mientras el mercado se reajusta."
+  },
+  {
+   "hablado": "La formación continua dejará de ser una opción personal para convertirse en una exigencia estatal. Las universidades y centros técnicos deberán rediseñar sus planes educativos cada pocos meses ante la obsolescencia constante del conocimiento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "students classroom university lecture",
+    "otras": [
+     "students studying library laptops",
+     "teacher classroom explanation"
+    ],
+    "descripcion": "Estudiantes universitarios escuchando atentos en un aula moderna con portátiles"
+   },
+   "efecto": "polvo",
+   "subtitulo": "La formación continua dejará de ser una opción personal para convertirse en una exigencia estatal. Las universidades y centros técnicos deberán rediseñar sus planes educativos cada pocos meses ante la obsolescencia constante del conocimiento."
+  },
+  {
+   "hablado": "Las empresas del futuro cercano operarán con plantillas extremadamente reducidas pero hiperproductivas. Un solo supervisor humano gestionará decenas de agentes digitales inteligentes capaces de realizar el trabajo de departamentos enteros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person working laptop modern office",
+    "otras": [
+     "single worker control room",
+     "man analyzing computer screens"
+    ],
+    "descripcion": "Un único profesional supervisando pantallas de ordenador en una oficina despejada"
+   },
+   "efecto": "nada",
+   "subtitulo": "Las empresas del futuro cercano operarán con plantillas extremadamente reducidas pero hiperproductivas. Un solo supervisor humano gestionará decenas de agentes digitales inteligentes capaces de realizar el trabajo de departamentos enteros."
+  },
+  {
+   "hablado": "Este fenómeno corre el riesgo de disparar la brecha de desigualdad social. Mientras el capital y la tecnología concentran las ganancias, la masa salarial tradicional perderá su capacidad de negociación en el mercado laboral.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern skyscraper city view",
+    "otras": [
+     "city landscape financial center",
+     "tall buildings skyline"
+    ],
+    "descripcion": "Vista panorámica de rascacielos corporativos en una gran metrópolis"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Este fenómeno corre el riesgo de disparar la brecha de desigualdad social. Mientras el capital y la tecnología concentran las ganancias, la masa salarial tradicional perderá su capacidad de negociación en el mercado laboral."
+  },
+  {
+   "hablado": "La década de dos mil treinta será un periodo de contención y parches temporales. Sin embargo, todos estos ajustes sociales solo servirán para amortiguar el golpe, porque la verdadera brecha económica comenzará a mitad de siglo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "time lapse highway night city lights",
+    "otras": [
+     "night city traffic motion",
+     "modern city lights night"
+    ],
+    "descripcion": "Secuencia acelerada de tráfico nocturno y luces de la ciudad representando el paso del tiempo"
+   },
+   "efecto": "polvo",
+   "subtitulo": "La década de dos mil treinta será un periodo de contención y parches temporales. Sin embargo, todos estos ajustes sociales solo servirán para amortiguar el golpe, porque la verdadera brecha económica comenzará a mitad de siglo."
+  },
+  {
+   "hablado": "Para el año dos mil cincuenta, las inteligencias artificiales habrán dejado de ser simples asistentes para convertirse en directoras ejecutivas. Surgirán corporaciones totalmente autónomas que operarán, invertirán y tomarán decisiones estratégicas en tiempo real sin intervención humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern office building",
+    "otras": [
+     "corporate skyscraper exterior",
+     "city business district"
+    ],
+    "descripcion": "Edificio corporativo moderno con fachadas de cristal y movimiento urbano exterior"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para el año dos mil cincuenta, las inteligencias artificiales habrán dejado de ser simples asistentes para convertirse en directoras ejecutivas. Surgirán corporaciones totalmente autónomas que operarán, invertirán y tomarán decisiones estratégicas en tiempo real sin intervención humana."
+  },
+  {
+   "hablado": "Esta automatización total multiplicará la productividad global a niveles jamás vistos en la historia. Sin embargo, se creará una paradoja inédita, pues la riqueza crecerá exponencialmente mientras los salarios tradicionales dejarán de ser el motor económico de las familias.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room lights",
+    "otras": [
+     "data center corridor",
+     "datacenter technology"
+    ],
+    "descripcion": "Pasillo de un centro de datos con servidores informáticos procesando información"
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta automatización total multiplicará la productividad global a niveles jamás vistos en la historia. Sin embargo, se creará una paradoja inédita, pues la riqueza crecerá exponencialmente mientras los salarios tradicionales dejarán de ser el motor económico de las familias."
+  },
+  {
+   "hablado": "Durante siglos, el trabajo fue el mecanismo principal para distribuir la riqueza entre la población. Al desaparecer los empleos masivos, los mercados financieros y la propiedad de los algoritmos concentrarán un capital colosal en muy pocas manos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "financial stock exchange",
+    "otras": [
+     "trading screen chart",
+     "stock market monitor"
+    ],
+    "descripcion": "Pantallas financieras con gráficos de bolsas de valores y datos bursátiles"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante siglos, el trabajo fue el mecanismo principal para distribuir la riqueza entre la población. Al desaparecer los empleos masivos, los mercados financieros y la propiedad de los algoritmos concentrarán un capital colosal en muy pocas manos."
+  },
+  {
+   "hablado": "Para evitar un colapso social profundo, economistas y gobiernos debatirán la implantación de impuestos directos a la automatización. Las empresas pagarán tasas elevadas por cada proceso robotizado, financiando así los servicios públicos y las coberturas globales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "government building exterior",
+    "otras": [
+     "parliament house exterior",
+     "city hall architecture"
+    ],
+    "descripcion": "Fachada de un edificio gubernamental oficial donde se debaten leyes y presupuestos"
+   },
+   "efecto": "nada",
+   "subtitulo": "Para evitar un colapso social profundo, economistas y gobiernos debatirán la implantación de impuestos directos a la automatización. Las empresas pagarán tasas elevadas por cada proceso robotizado, financiando así los servicios públicos y las coberturas globales."
+  },
+  {
+   "hablado": "Este nuevo modelo fiscal permitirá sostener infraestructuras públicas de salud, educación y vivienda sin depender de la tributación sobre las nóminas. El estado del bienestar se transformará radicalmente para adaptarse a una economía impulsada por software.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city park people walking",
+    "otras": [
+     "urban garden people",
+     "public park sunshine"
+    ],
+    "descripcion": "Gente paseando tranquilamente por un parque urbano rodeado de vegetación"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Este nuevo modelo fiscal permitirá sostener infraestructuras públicas de salud, educación y vivienda sin depender de la tributación sobre las nóminas. El estado del bienestar se transformará radicalmente para adaptarse a una economía impulsada por software."
+  },
+  {
+   "hablado": "De este modo, el trabajo asalariado dejará de ser una necesidad biológica para garantizar la supervivencia individual. Trabajar se convertirá en una elección política y social, redefiniendo el contrato que ha unido a las civilizaciones durante milenios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person sitting looking horizon",
+    "otras": [
+     "man contemplating outdoors",
+     "woman thinking bench"
+    ],
+    "descripcion": "Persona sentada en la ciudad observando el horizonte de forma reflexiva"
+   },
+   "efecto": "nada",
+   "subtitulo": "De este modo, el trabajo asalariado dejará de ser una necesidad biológica para garantizar la supervivencia individual. Trabajar se convertirá en una elección política y social, redefiniendo el contrato que ha unido a las civilizaciones durante milenios."
+  },
+  {
+   "hablado": "El debate económico del siglo veintiuno ya no girará en torno al pleno empleo, sino a la distribución justa del progreso tecnológico. Pero cuando la supervivencia material quede resuelta, surgirá un dilema aún más profundo que cambiará el destino humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline sunset",
+    "otras": [
+     "modern city night lights",
+     "urban landscape dusk"
+    ],
+    "descripcion": "Vista panorámica de una gran ciudad moderna durante el atardecer"
+   },
+   "efecto": "polvo",
+   "subtitulo": "El debate económico del siglo veintiuno ya no girará en torno al pleno empleo, sino a la distribución justa del progreso tecnológico. Pero cuando la supervivencia material quede resuelta, surgirá un dilema aún más profundo que cambiará el destino humano."
+  },
+  {
+   "hablado": "Al alcanzar el año dos mil cien, la automatización extrema podría reducir el coste marginal de casi todos los bienes básicos hasta niveles cercanos a cero, inaugurando formalmente una era económica de post escasez.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vertical farming indoor",
+    "otras": [
+     "automated agriculture greenhouse",
+     "hydroponic farm technology"
+    ],
+    "descripcion": "Instalaciones de agricultura vertical con iluminación especializada y cultivo automatizado sin mano de obra."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al alcanzar el año dos mil cien, la automatización extrema podría reducir el coste marginal de casi todos los bienes básicos hasta niveles cercanos a cero, inaugurando formalmente una era económica de post escasez."
+  },
+  {
+   "hablado": "En este escenario, las ciudades inteligentes gestionan redes de energía limpia y sistemas agrícolas verticales totalmente automatizados, capaces de alimentar y abastecer a millones de habitantes sin intervención de mano de obra humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "solar panel maintenance drone",
+    "otras": [
+     "renewable energy city aerial",
+     "modern city daylight view"
+    ],
+    "descripcion": "Vista aérea de paneles solares urbanos e infraestructura de energía renovable."
+   },
+   "efecto": "nada",
+   "subtitulo": "En este escenario, las ciudades inteligentes gestionan redes de energía limpia y sistemas agrícolas verticales totalmente automatizados, capaces de alimentar y abastecer a millones de habitantes sin intervención de mano de obra humana."
+  },
+  {
+   "hablado": "El transporte de mercancías, la construcción mediante robótica avanzada y la fabricación local funcionan de forma ininterrumpida, convirtiendo los bienes fundamentales de la vida en servicios públicos universales y de acceso directo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "warehouse robot automated",
+    "otras": [
+     "factory automation logistics",
+     "robotic arm manufacturing"
+    ],
+    "descripcion": "Brazos robóticos y plataformas de logística moviendo productos en un almacén automatizado."
+   },
+   "efecto": "polvo",
+   "subtitulo": "El transporte de mercancías, la construcción mediante robótica avanzada y la fabricación local funcionan de forma ininterrumpida, convirtiendo los bienes fundamentales de la vida en servicios públicos universales y de acceso directo."
+  },
+  {
+   "hablado": "Como consecuencia, la clásica pregunta sobre a qué te dedicas pierde todo su sentido social. En una sociedad post trabajo, la identidad personal deja de estar vinculada al puesto de empleo tradicional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people talking park bench",
+    "otras": [
+     "group of friends outdoors",
+     "city park relaxing people"
+    ],
+    "descripcion": "Grupo de personas conversando tranquilamente al aire libre en un parque urbano."
+   },
+   "efecto": "nada",
+   "subtitulo": "Como consecuencia, la clásica pregunta sobre a qué te dedicas pierde todo su sentido social. En una sociedad post trabajo, la identidad personal deja de estar vinculada al puesto de empleo tradicional."
+  },
+  {
+   "hablado": "Al no necesitar un salario para garantizar la supervivencia básica, el esfuerzo de las comunidades se orienta voluntariamente hacia la investigación científica, las artes creativas, la filosofía y la exploración del universo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist working lab",
+    "otras": [
+     "astronomy observatory telescope",
+     "artist painting studio room"
+    ],
+    "descripcion": "Un investigador analizando muestras en un laboratorio moderno sin prisas."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al no necesitar un salario para garantizar la supervivencia básica, el esfuerzo de las comunidades se orienta voluntariamente hacia la investigación científica, las artes creativas, la filosofía y la exploración del universo."
+  },
+  {
+   "hablado": "Sin embargo, los estudiosos del futurismo económico advierten que la eliminación del esfuerzo diario plantea un desafío inédito: la pérdida de objetivos estructurados y de motivación dentro de la rutina cotidiana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking window thoughtful",
+    "otras": [
+     "man window city view",
+     "thoughtful woman indoor"
+    ],
+    "descripcion": "Una persona contemplando la ciudad en silencio desde un gran ventanal."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, los estudiosos del futurismo económico advierten que la eliminación del esfuerzo diario plantea un desafío inédito: la pérdida de objetivos estructurados y de motivación dentro de la rutina cotidiana."
+  },
+  {
+   "hablado": "Cuando el trabajo ya no es necesario para sobrevivir, el mayor reto de la especie humana no será económico ni tecnológico, sino profundamente psicológico, abriendo la puerta a una inminente crisis de propósito.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street aerial",
+    "otras": [
+     "pedestrian city crowd daylight",
+     "person walking open space"
+    ],
+    "descripcion": "Toma aérea de transeúntes caminando despacio por una plaza espaciosa."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cuando el trabajo ya no es necesario para sobrevivir, el mayor reto de la especie humana no será económico ni tecnológico, sino profundamente psicológico, abriendo la puerta a una inminente crisis de propósito."
+  },
+  {
+   "hablado": "Durante siglos, el empleo articuló nuestras rutinas diarias, determinando la identidad y la posición social de cada individuo. Al desaparecer la jornada laboral de ocho horas, millones de personas experimentarán una desorientación profunda al perder su principal brújula vital.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking alone city",
+    "otras": [
+     "lonely street walk",
+     "person thinking park"
+    ],
+    "descripcion": "Un hombre camina lentamente por un parque o calle al atardecer, reflexionando solo"
+   },
+   "efecto": "nada",
+   "subtitulo": "Durante siglos, el empleo articuló nuestras rutinas diarias, determinando la identidad y la posición social de cada individuo. Al desaparecer la jornada laboral de ocho horas, millones de personas experimentarán una desorientación profunda al perder su principal brújula vital."
+  },
+  {
+   "hablado": "Diversos estudios sociológicos han demostrado que el desempleo, incluso cuando las necesidades materiales están totalmente cubiertas, incrementa el riesgo de depresión. La falta de metas estructuradas y la ausencia de retos cotidianos erosionan rápidamente la salud mental colectiva.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking out window",
+    "otras": [
+     "depressed person room",
+     "thoughtful woman inside"
+    ],
+    "descripcion": "Una persona mirando por la ventana de una habitación iluminada suavemente"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Diversos estudios sociológicos han demostrado que el desempleo, incluso cuando las necesidades materiales están totalmente cubiertas, incrementa el riesgo de depresión. La falta de metas estructuradas y la ausencia de retos cotidianos erosionan rápidamente la salud mental colectiva."
+  },
+  {
+   "hablado": "La pregunta tradicional de a qué te dedicas perderá por completo su sentido. La sociedad tendrá que aprender a valorar a los seres humanos por sus contribuciones comunitarias, su creatividad o su calidad humana, rompiendo el vínculo directo entre empleo y estatus.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people talking community center",
+    "otras": [
+     "group conversation park",
+     "friends discussion outdoors"
+    ],
+    "descripcion": "Un grupo de personas conversando animadamente en un espacio público o comunitario"
+   },
+   "efecto": "nada",
+   "subtitulo": "La pregunta tradicional de a qué te dedicas perderá por completo su sentido. La sociedad tendrá que aprender a valorar a los seres humanos por sus contribuciones comunitarias, su creatividad o su calidad humana, rompiendo el vínculo directo entre empleo y estatus."
+  },
+  {
+   "hablado": "La educación se transformará radicalmente, alejándose de la preparación para el mercado laboral. En las aulas del futuro, personas de todas las edades estudiarán ciencia, historia o filosofía simplemente por el placer de comprender el universo, alimentando la curiosidad natural.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "adults studying library",
+    "otras": [
+     "students reading books",
+     "classroom discussion elders"
+    ],
+    "descripcion": "Adultos de varias edades estudiando y conversando en una biblioteca luminosa"
+   },
+   "efecto": "nada",
+   "subtitulo": "La educación se transformará radicalmente, alejándose de la preparación para el mercado laboral. En las aulas del futuro, personas de todas las edades estudiarán ciencia, historia o filosofía simplemente por el placer de comprender el universo, alimentando la curiosidad natural."
+  },
+  {
+   "hablado": "Florecerá una época dorada para las artes y la artesanía manual. Liberadas de las urgencias económicas, las personas dedicarán años a perfeccionar la pintura, la música o la carpintería tradicional, buscando en la creación manual una profunda satisfacción personal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "artist painting studio",
+    "otras": [
+     "woodworker crafting workshop",
+     "musician playing acoustic"
+    ],
+    "descripcion": "Un artista pintando concentrado en su taller bañado de luz natural"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Florecerá una época dorada para las artes y la artesanía manual. Liberadas de las urgencias económicas, las personas dedicarán años a perfeccionar la pintura, la música o la carpintería tradicional, buscando en la creación manual una profunda satisfacción personal."
+  },
+  {
+   "hablado": "El voluntariado y el cuidado mutuo se convertirán en los pilares vertebradores del tejido social. Dedicar tiempo a cuidar a los ancianos, restaurar ecosistemas locales o enseñar a niños otorgará el reconocimiento social que antes concedía el éxito profesional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "volunteers planting trees",
+    "otras": [
+     "community garden people",
+     "volunteers working together"
+    ],
+    "descripcion": "Un grupo de voluntarios trabajando juntos en un jardín comunitario o reforestación"
+   },
+   "efecto": "nada",
+   "subtitulo": "El voluntariado y el cuidado mutuo se convertirán en los pilares vertebradores del tejido social. Dedicar tiempo a cuidar a los ancianos, restaurar ecosistemas locales o enseñar a niños otorgará el reconocimiento social que antes concedía el éxito profesional."
+  },
+  {
+   "hablado": "Reorganizar la civilización en torno a la realización personal y el bienestar comunitario requerirá una madurez colectiva sin precedentes. Sin embargo, para sostener este equilibrio, la humanidad deberá descubrir qué nos hace verdaderamente insustituibles en un planeta gobernado por la inteligencia artificial.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people looking horizon sunset",
+    "otras": [
+     "crowd watching city skyline",
+     "silhouettes sunset mountain"
+    ],
+    "descripcion": "Varias personas contemplando juntas el horizonte hacia un atardecer brillante"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Reorganizar la civilización en torno a la realización personal y el bienestar comunitario requerirá una madurez colectiva sin precedentes. Sin embargo, para sostener este equilibrio, la humanidad deberá descubrir qué nos hace verdaderamente insustituibles en un planeta gobernado por la inteligencia artificial."
+  },
+  {
+   "hablado": "Tras décadas analizando la evolución del mercado laboral, los economistas han llegado a una conclusión reveladora. La única capacidad que ninguna inteligencia artificial podrá replicar con valor genuino es la empatía humana sincera y la presencia real.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people talking cafe",
+    "otras": [
+     "two people talking coffee",
+     "friends talking street"
+    ],
+    "descripcion": "Dos personas conversando tranquilamente en una cafetería"
+   },
+   "efecto": "nada",
+   "subtitulo": "Tras décadas analizando la evolución del mercado laboral, los economistas han llegado a una conclusión reveladora. La única capacidad que ninguna inteligencia artificial podrá replicar con valor genuino es la empatía humana sincera y la presencia real."
+  },
+  {
+   "hablado": "Un algoritmo puede diagnosticar enfermedades con precisión impecable o redactar contratos complejos en milisegundos, pero jamás podrá sentir compasión al dar una noticia difícil ni ofrecer el consuelo auténtico de una mirada comprensiva.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "doctor holding patient hand",
+    "otras": [
+     "nurse comforting patient",
+     "hospital doctor patient"
+    ],
+    "descripcion": "Un profesional sanitario sosteniendo con amabilidad la mano de un paciente"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Un algoritmo puede diagnosticar enfermedades con precisión impecable o redactar contratos complejos en milisegundos, pero jamás podrá sentir compasión al dar una noticia difícil ni ofrecer el consuelo auténtico de una mirada comprensiva."
+  },
+  {
+   "hablado": "En esa economía del siglo veintiuno, las actividades dedicadas al cuidado personal, la educación presencial, el arte comunitario y la convivencia directa dejarán de ser profesiones secundarias para convertirse en el pilar central de la sociedad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "teacher with students classroom",
+    "otras": [
+     "teacher helping child",
+     "classroom students learning"
+    ],
+    "descripcion": "Una profesora enseñando y sonriendo junto a sus alumnos en un aula"
+   },
+   "efecto": "nada",
+   "subtitulo": "En esa economía del siglo veintiuno, las actividades dedicadas al cuidado personal, la educación presencial, el arte comunitario y la convivencia directa dejarán de ser profesiones secundarias para convertirse en el pilar central de la sociedad."
+  },
+  {
+   "hablado": "El gran reto de las próximas décadas no consistirá en competir contra los sistemas de automatización, sino en rediseñar nuestras estructuras económicas para que la tecnología trabaje activamente al servicio de las personas y no al revés.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking city street sunny",
+    "otras": [
+     "crowd walking city",
+     "people walking park"
+    ],
+    "descripcion": "Personas caminando relajadas por una calle arbolada y luminosa"
+   },
+   "efecto": "polvo",
+   "subtitulo": "El gran reto de las próximas décadas no consistirá en competir contra los sistemas de automatización, sino en rediseñar nuestras estructuras económicas para que la tecnología trabaje activamente al servicio de las personas y no al revés."
+  },
+  {
+   "hablado": "Si los agentes de software y la robótica asumen la producción de bienes materiales, el trabajo dejará de ser una obligación para la supervivencia diaria y se transformará en una elección libre basada en el propósito.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "artist painting canvas studio",
+    "otras": [
+     "artist painting",
+     "person crafting workshop"
+    ],
+    "descripcion": "Un artista concentrado pintando un lienzo en su taller"
+   },
+   "efecto": "nada",
+   "subtitulo": "Si los agentes de software y la robótica asumen la producción de bienes materiales, el trabajo dejará de ser una obligación para la supervivencia diaria y se transformará en una elección libre basada en el propósito."
+  },
+  {
+   "hablado": "Hacia el año dos mil cien, el avance de la superinteligencia no habrá destruido nuestra civilización, sino que nos habrá devuelto nuestro valor más profundo, recordando que la vulnerabilidad y la responsabilidad ética son irreemplazables.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sun rising over modern city skyline",
+    "otras": [
+     "city sunrise horizon",
+     "sunrise over city skyline"
+    ],
+    "descripcion": "El amanecer iluminando los edificios de una gran ciudad moderna"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hacia el año dos mil cien, el avance de la superinteligencia no habrá destruido nuestra civilización, sino que nos habrá devuelto nuestro valor más profundo, recordando que la vulnerabilidad y la responsabilidad ética son irreemplazables."
+  },
+  {
+   "hablado": "La gran pregunta del futuro ya no es qué empleos desaparecerán, sino qué haremos cuando la escasez sea historia. Si tuvieras el sustento garantizado hoy mismo, a qué dedicarías tu vida. Déjanos tu opinión en los comentarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking at horizon sunset",
+    "otras": [
+     "person outdoors sunset",
+     "looking at view sunset"
+    ],
+    "descripcion": "Una persona contemplando el horizonte durante un atardecer apacible"
+   },
+   "efecto": "nada",
+   "subtitulo": "La gran pregunta del futuro ya no es qué empleos desaparecerán, sino qué haremos cuando la escasez sea historia. Si tuvieras el sustento garantizado hoy mismo, a qué dedicarías tu vida. Déjanos tu opinión en los comentarios."
+  }
+ ],
+ "titulo_youtube": "¿Qué pasará cuando la IA haga TU TRABAJO?",
+ "voz": "Algenib",
+ "estilo_imagen": "Ultra realistic photograph, real-world photojournalism look of a believable near future: futuristic technology integrated into everyday places, natural daylight or soft practical lighting, true-to-life skin and materials, subtle sci-fi details (holographic displays, sleek robots, advanced vehicles), sharp focus, shallow depth of field, shot on a full-frame camera, 35mm lens. "
+}
