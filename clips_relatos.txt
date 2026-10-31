@@ -159,3 +159,9 @@ wc:File:PortraitMonument02.webmhd.webm
 130294
 225057
 203721
+200087
+wc:File:Lenticular cloud over Longs Peak, Colorado (time lapse).ogv
+214855
+360310
+272633
+145965
