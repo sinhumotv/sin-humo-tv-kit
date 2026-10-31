@@ -1,0 +1,2245 @@
+{
+ "titulo": "Orfeo y Eurídice",
+ "titulos": [
+  "Bajó al INFIERNO por amor y lo perdió TODO",
+  "Por qué Orfeo no debió mirar atrás jamás",
+  "La trágica historia del músico que retó a la Muerte",
+  "El día que la música hizo llorar al Inframundo",
+  "La regla de Hades que condenó a Eurídice",
+  "Lo que nadie cuenta del descenso de Orfeo al Hades",
+  "El mito de Orfeo y el error que destruyó su amor",
+  "¿Se pudo evitar la segunda muerte de Eurídice?",
+  "El músico que casi vence a la muerte con su lira",
+  "La fatal norma del dios del inframundo"
+ ],
+ "miniatura": {
+  "texto": "NO DEBÍA MIRAR",
+  "clave": "MIRAR",
+  "prompt": "Cinematic horizontal thumbnail, a Greek musician with a distressed expression reaching out to a translucent female figure dissolving into shadows inside a dark, cavernous underworld, dramatic side lighting, high contrast, saturated colors, dark empty space on the left side for typography, highly detailed, photorealistic fantasy art, no text, no blood"
+ },
+ "descripcion": "Sumérgete en la historia de Orfeo y Eurídice, el trágico mito griego sobre el músico capaz de amansar a las bestias con su lira que se atrevió a descender a los oscuros dominios de Hades y Perséfone para rescatar al amor de su vida. Una travesía prohibida donde una simple duda destruyó toda esperanza.\n\nEn este vídeo narrado en español de España exploramos paso a paso el viaje de Orfeo al Inframundo, las condiciones impuestas por el dios de los muertos, la belleza mortal de Eurídice y el fatídico giro final que selló su destino para siempre. No olvides dejar tu opinión en los comentarios.",
+ "etiquetas": [
+  "mitología griega",
+  "Orfeo y Eurídice",
+  "el inframundo griego",
+  "Hades y Perséfone",
+  "mitos griegos narrados",
+  "historias de la mitología",
+  "tragedias griegas",
+  "el mito de Orfeo",
+  "relatos en español",
+  "mitología clásica",
+  "dioses griegos",
+  "leyendas del inframundo"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El acorde prohibido"
+  },
+  {
+   "escena": 8,
+   "titulo": "Un músico capaz de mover las piedras"
+  },
+  {
+   "escena": 16,
+   "titulo": "La sombra en la hierba alta"
+  },
+  {
+   "escena": 24,
+   "titulo": "El descenso al reino sin retorno"
+  },
+  {
+   "escena": 32,
+   "titulo": "La súplica ante el trono de sombras"
+  },
+  {
+   "escena": 40,
+   "titulo": "La única condición de Hades"
+  },
+  {
+   "escena": 48,
+   "titulo": "El silencio que alimenta la sospecha"
+  },
+  {
+   "escena": 56,
+   "titulo": "El giro fatal"
+  },
+  {
+   "escena": 64,
+   "titulo": "El luto eterno del bardo"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Un hombre camina a ciegas por el reino de los muertos. A pocos pasos de su victoria, la sombra silenciosa de su amada le sigue entre la niebla. Un solo error lo destruirá todo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave mist",
+    "otras": [
+     "ancient cave darkness",
+     "misty stone cave"
+    ],
+    "descripcion": "Una cueva oscura envuelta en densa niebla y sombras misteriosas.",
+    "clip": "https://cdn.pixabay.com/video/2021/02/09/64745-510542361_large.mp4",
+    "clip_id": 64745,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/24/164360-830461265_small.mp4",
+      "clip_id": 164360
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/25/260895_small.mp4",
+      "clip_id": 260895
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Un hombre camina a ciegas por el reino de los muertos. A pocos pasos de su victoria, la sombra silenciosa de su amada le sigue entre la niebla. Un solo error lo destruirá todo."
+  },
+  {
+   "hablado": "El dios Hades impuso una norma cruel y absoluta. Orfeo podía rescatar a Eurídice del inframundo con una condición: jamás mirar atrás antes de pisar la luz del sol. Pero el silencio era asfixiante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus Eurydice relief",
+    "otras": [
+     "Orpheus Eurydice sculpture",
+     "ancient Greek relief Orpheus"
+    ],
+    "descripcion": "Relieve clásico griego en mármol representando a Orfeo y Eurídice junto a Hermes.",
+    "prompt": "Relieve clásico griego en mármol representando a Orfeo y Eurídice junto a Hermes.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/01/218941_small.mp4",
+    "clip_id": 218941,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/12/146281-788802250_medium.mp4",
+      "clip_id": 146281
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/10/44370-438662051_medium.mp4",
+      "clip_id": 44370
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/22/287292_small.mp4",
+      "clip_id": 287292
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El dios Hades impuso una norma cruel y absoluta. Orfeo podía rescatar a Eurídice del inframundo con una condición: jamás mirar atrás antes de pisar la luz del sol. Pero el silencio era asfixiante."
+  },
+  {
+   "hablado": "¿Podrá el músico más grande de la antigüedad vencer la desesperación antes de rozar la superficie? Hoy verás cómo el amor más puro desafió a la Muerte solo para rozar una tragedia devastadora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statue marble",
+    "otras": [
+     "greek sculpture museum",
+     "ancient ruins greece"
+    ],
+    "descripcion": "Primer plano de una estatua griega de mármol antiguo iluminada dramáticamente.",
+    "clip": "https://cdn.pixabay.com/video/2020/11/16/56531-480428215_large.mp4",
+    "clip_id": 56531,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/13/35919-408654270_large.mp4",
+      "clip_id": 35919
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/26/72295-541967042_large.mp4",
+      "clip_id": 72295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/26/72294-541967050_large.mp4",
+      "clip_id": 72294
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "¿Podrá el músico más grande de la antigüedad vencer la desesperación antes de rozar la superficie? Hoy verás cómo el amor más puro desafió a la Muerte solo para rozar una tragedia devastadora."
+  },
+  {
+   "hablado": "El aire helado rozaba sus hombros por el sendero de Laconia. Acompañado únicamente por pisadas etéreas, cada segundo se volvía una agonía. Descubre el trágico instante que cambió su destino para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "torch light cave",
+    "otras": [
+     "ancient torch cave",
+     "dark stone tunnel"
+    ],
+    "descripcion": "Un pasaje de cueva rocosa e inhóspita iluminado apenas por destellos fúnebres.",
+    "clip": "https://cdn.pixabay.com/video/2017/08/06/11186-228573647_large.mp4",
+    "clip_id": 11186,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/25/1366-147055432_large.mp4",
+      "clip_id": 1366
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/03/119107-717336656_small.mp4",
+      "clip_id": 119107
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/02/19/14385-256955049_small.mp4",
+      "clip_id": 14385
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "El aire helado rozaba sus hombros por el sendero de Laconia. Acompañado únicamente por pisadas etéreas, cada segundo se volvía una agonía. Descubre el trágico instante que cambió su destino para siempre."
+  },
+  {
+   "hablado": "La desconfianza empezó a germinar en la mente de Orfeo como un veneno sutil. Se preguntaba si las divinidades del infierno le habían engañado y si caminaba completamente solo en medio de aquella negrura sin fin.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins night",
+    "otras": [
+     "parthenon night ruins",
+     "ancient stone columns"
+    ],
+    "descripcion": "Ruinas de columnas griegas bajo un cielo nocturno y sombrío.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/11/30096-379047838_large.mp4",
+    "clip_id": 30096,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/23/144043-784169657_small.mp4",
+      "clip_id": 144043
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/23/144042-784169655_small.mp4",
+      "clip_id": 144042
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/03/199127-909835479_small.mp4",
+      "clip_id": 199127
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La desconfianza empezó a germinar en la mente de Orfeo como un veneno sutil. Se preguntaba si las divinidades del infierno le habían engañado y si caminaba completamente solo en medio de aquella negrura sin fin."
+  },
+  {
+   "hablado": "Pocos mortales lograron cruzar con vida las fronteras del Hades, pero ninguno lo había arriesgado todo por un motivo tan desgarrador. Su voz y su lira habían conmovido a los monstruos, pero no podían acallar sus temores.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus lyre vase painting",
+    "otras": [
+     "greek ceramic vase classical",
+     "ancient greek amphora"
+    ],
+    "descripcion": "Vasija o ánfora griega antigua tallada con la figura de un músico y su lira.",
+    "prompt": "Vasija o ánfora griega antigua tallada con la figura de un músico y su lira.",
+    "clip": "https://cdn.pixabay.com/video/2025/05/01/276034_large.mp4",
+    "clip_id": 276034,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/12/960-142611994_medium.mp4",
+      "clip_id": 960
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/01/276040_medium.mp4",
+      "clip_id": 276040
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/15/24449-342737501_large.mp4",
+      "clip_id": 24449
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pocos mortales lograron cruzar con vida las fronteras del Hades, pero ninguno lo había arriesgado todo por un motivo tan desgarrador. Su voz y su lira habían conmovido a los monstruos, pero no podían acallar sus temores."
+  },
+  {
+   "hablado": "La luz del mundo exterior comenzaba a filtrar sus primeros destellos débiles entre las grietas de la cueva. Faltaban solo unos pocos pasos para culminar la hazaña más grande jamás intentada por un ser humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cave entrance light",
+    "otras": [
+     "sunlight cave opening",
+     "mountain cave exit"
+    ],
+    "descripcion": "La entrada de una cueva de piedra donde se atisba la luz radiante del exterior.",
+    "clip": "https://cdn.pixabay.com/video/2024/11/26/243399_large.mp4",
+    "clip_id": 243399,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/29/118532-715426719_large.mp4",
+      "clip_id": 118532
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/28/331030_small.mp4",
+      "clip_id": 331030
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/07/230248_small.mp4",
+      "clip_id": 230248
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La luz del mundo exterior comenzaba a filtrar sus primeros destellos débiles entre las grietas de la cueva. Faltaban solo unos pocos pasos para culminar la hazaña más grande jamás intentada por un ser humano."
+  },
+  {
+   "hablado": "Sin embargo, el abismo psicológico y el pánico del abandono superaron la prudencia del viajero. En un instante de debilidad impetuosa, una decisión precipitada cambiaría el curso de la eternidad y marcaría su destino trágico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greece sea storm",
+    "otras": [
+     "dramatic sea cliff greece",
+     "rocky coast waves"
+    ],
+    "descripcion": "Olas embravecidas rompiendo contra acantilados rocosos bajo un cielo tormentoso.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/24/201766-916357972_small.mp4",
+    "clip_id": 201766,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/21/205011-926015732_large.mp4",
+      "clip_id": 205011
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/04/112957-696336342_large.mp4",
+      "clip_id": 112957
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/03/161578-824606442_large.mp4",
+      "clip_id": 161578
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, el abismo psicológico y el pánico del abandono superaron la prudencia del viajero. En un instante de debilidad impetuosa, una decisión precipitada cambiaría el curso de la eternidad y marcaría su destino trágico."
+  },
+  {
+   "hablado": "Pero para comprender la magnitud de esta tragedia, debemos viajar al pasado, a los verdes valles de Tracia. Allí, el joven Orfeo nació bendecido por la estirpe más pura de las artes y la divinidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek valley ruins",
+    "otras": [
+     "greek ruins mountains",
+     "ancient greece landscape"
+    ],
+    "descripcion": "Paisaje natural de valles y ruinas antiguas en Grecia",
+    "clip": "https://cdn.pixabay.com/video/2024/05/16/212277_small.mp4",
+    "clip_id": 212277,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/04/46347-447447986_large.mp4",
+      "clip_id": 46347
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/04/46349-447447979_large.mp4",
+      "clip_id": 46349
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/13/175815-854238855_small.mp4",
+      "clip_id": 175815
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero para comprender la magnitud de esta tragedia, debemos viajar al pasado, a los verdes valles de Tracia. Allí, el joven Orfeo nació bendecido por la estirpe más pura de las artes y la divinidad."
+  },
+  {
+   "hablado": "Hijo de la musa Calíope y del glorioso dios Apolo, el muchacho recibió un regalo incomparable. Una lira dorada cuyos acordes no pertenecían al mundo mortal, sino al telar de la creación universal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Apollo lyre statue marble",
+    "otras": [
+     "Apollo statue marble",
+     "Greek sculpture lyre"
+    ],
+    "descripcion": "Estatua clásica de mármol del dios Apolo sosteniendo una lira",
+    "prompt": "Estatua clásica de mármol del dios Apolo sosteniendo una lira",
+    "clip": "https://cdn.pixabay.com/video/2020/04/10/35678-407113554_large.mp4",
+    "clip_id": 35678,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/20/34016-400217359_large.mp4",
+      "clip_id": 34016
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/24/205509-927335653_small.mp4",
+      "clip_id": 205509
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/27/86545-594416579_large.mp4",
+      "clip_id": 86545
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hijo de la musa Calíope y del glorioso dios Apolo, el muchacho recibió un regalo incomparable. Una lira dorada cuyos acordes no pertenecían al mundo mortal, sino al telar de la creación universal."
+  },
+  {
+   "hablado": "Cuando Orfeo rasgaba las cuerdas de su instrumento, la naturaleza entera contenía el aliento. Los feroces lobos del monte Pangion y los leones hambrientos se echaban mancebos a sus pies, despojados de todo su salvajismo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus mosaic animals ancient",
+    "otras": [
+     "Orpheus mosaic roman",
+     "Orpheus painting classical"
+    ],
+    "descripcion": "Mosaico romano clásico que representa a Orfeo amansando a las fieras",
+    "prompt": "Mosaico romano clásico que representa a Orfeo amansando a las fieras",
+    "clip": "https://cdn.pixabay.com/video/2023/11/22/190144-887464241_large.mp4",
+    "clip_id": 190144,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/26/173348-849202575_large.mp4",
+      "clip_id": 173348
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/08/05/17644-283838519_small.mp4",
+      "clip_id": 17644
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/24/233037_small.mp4",
+      "clip_id": 233037
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Cuando Orfeo rasgaba las cuerdas de su instrumento, la naturaleza entera contenía el aliento. Los feroces lobos del monte Pangion y los leones hambrientos se echaban mancebos a sus pies, despojados de todo su salvajismo."
+  },
+  {
+   "hablado": "No solo los animales sucumbían a su hechizo. Los robles milenarios arrancaban sus viejas raíces de la tierra para acercarse a escucharlo, y las piedras del camino lloraban gotas de rocío ante sus trinos vibrantes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient forest trees nature",
+    "otras": [
+     "greek forest sunlight",
+     "ancient olive trees"
+    ],
+    "descripcion": "Árboles vetustos y bosque antiguo bañado por la luz del sol",
+    "clip": "https://cdn.pixabay.com/video/2024/05/28/214074_small.mp4",
+    "clip_id": 214074,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/08/95080-644716533_small.mp4",
+      "clip_id": 95080
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/18/167776-839208951_small.mp4",
+      "clip_id": 167776
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/18/167772-839208937_small.mp4",
+      "clip_id": 167772
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "No solo los animales sucumbían a su hechizo. Los robles milenarios arrancaban sus viejas raíces de la tierra para acercarse a escucharlo, y las piedras del camino lloraban gotas de rocío ante sus trinos vibrantes."
+  },
+  {
+   "hablado": "Ninguna criatura podía resistirse a su talento, pero el corazón del bardo solo latía por una criatura en particular. Se trataba de Eurídice, una ninfa de las maderas de singular hermosura y serenidad inigualable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek marble statue woman",
+    "otras": [
+     "ancient nymph sculpture",
+     "classical woman statue"
+    ],
+    "descripcion": "Escultura clásica de mármol de una mujer o ninfa griega",
+    "clip": "https://cdn.pixabay.com/video/2020/11/16/56536-480624558_large.mp4",
+    "clip_id": 56536,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/16/56529-480081221_large.mp4",
+      "clip_id": 56529
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/16/56535-480624556_large.mp4",
+      "clip_id": 56535
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/12/27/1765-150302522_medium.mp4",
+      "clip_id": 1765
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Ninguna criatura podía resistirse a su talento, pero el corazón del bardo solo latía por una criatura en particular. Se trataba de Eurídice, una ninfa de las maderas de singular hermosura y serenidad inigualable."
+  },
+  {
+   "hablado": "El amor entre el músico y la ninfa floreció con la misma fuerza que la primavera en Tracia. Cada melodía que Orfeo compondría desde aquel instante llevaría grabada la luz deslumbrante de la mirada de su amada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple olives",
+    "otras": [
+     "parthenon sunny sky",
+     "greek ruins sunbeam"
+    ],
+    "descripcion": "Templo griego antiguo rodeado de olivos bajo un cielo luminoso",
+    "clip": "https://cdn.pixabay.com/video/2021/08/24/86267-593601073_large.mp4",
+    "clip_id": 86267,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/08/203408-921381923_small.mp4",
+      "clip_id": 203408
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/21/143799-784138300_large.mp4",
+      "clip_id": 143799
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/13/175816-854238861_small.mp4",
+      "clip_id": 175816
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El amor entre el músico y la ninfa floreció con la misma fuerza que la primavera en Tracia. Cada melodía que Orfeo compondría desde aquel instante llevaría grabada la luz deslumbrante de la mirada de su amada."
+  },
+  {
+   "hablado": "Pronto acordaron unir sus destinos en una gran boda. Himeneo, el protector de los enlaces sagrados, acudió al banquete para bendecir a la pareja, rodeados de flores, cánticos de gozo y libaciones de vino dulce.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple altar",
+    "otras": [
+     "ancient greek columns",
+     "greek sanctuary ruins"
+    ],
+    "descripcion": "Altar y columnas de un santuario clásico de la Antigua Grecia",
+    "clip": "https://cdn.pixabay.com/video/2020/07/29/45926-447070828_large.mp4",
+    "clip_id": 45926,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/18/42472-431738787_large.mp4",
+      "clip_id": 42472
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/18/42473-431738801_large.mp4",
+      "clip_id": 42473
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/28/1431-147170142_medium.mp4",
+      "clip_id": 1431
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pronto acordaron unir sus destinos en una gran boda. Himeneo, el protector de los enlaces sagrados, acudió al banquete para bendecir a la pareja, rodeados de flores, cánticos de gozo y libaciones de vino dulce."
+  },
+  {
+   "hablado": "Sin embargo, la antorcha del dios Himeneo despedía un humo negro y denso que provocaba lágrimas entre los invitados. Aquel mal augurio anunciaba que la dicha de la joven pareja acababa de comenzar y pronto terminaría.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient torch fire smoke",
+    "otras": [
+     "fire smoke night temple",
+     "flame torch ancient ruin"
+    ],
+    "descripcion": "Antorcha de fuego ardiendo con humo oscuro en un entorno nocturno",
+    "clip": "https://cdn.pixabay.com/video/2023/02/25/152174-802335605_small.mp4",
+    "clip_id": 152174,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/19/253436_small.mp4",
+      "clip_id": 253436
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/16/204361-924209264_large.mp4",
+      "clip_id": 204361
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/25/152085-802335503_small.mp4",
+      "clip_id": 152085
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, la antorcha del dios Himeneo despedía un humo negro y denso que provocaba lágrimas entre los invitados. Aquel mal augurio anunciaba que la dicha de la joven pareja acababa de comenzar y pronto terminaría."
+  },
+  {
+   "hablado": "Apenas unas semanas después de las nupcias, Eurídice paseaba alegremente por los frondosos valles de Tracia. Corría descalza sobre la hierba fresca junto a las ninfas del bosque, disfrutando del cálido sol matutino sin presagiar el peligro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greece nature landscape",
+    "otras": [
+     "ancient greece nature",
+     "olive trees greece"
+    ],
+    "descripcion": "Un paisaje verde y soleado en la campiña griega con olivos y colinas al fondo.",
+    "clip": "https://cdn.pixabay.com/video/2015/09/16/784-139519770_large.mp4",
+    "clip_id": 784,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/25/186516-878145202_small.mp4",
+      "clip_id": 186516
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/25/186517-878145205_small.mp4",
+      "clip_id": 186517
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/05/30/355562_small.mp4",
+      "clip_id": 355562
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Apenas unas semanas después de las nupcias, Eurídice paseaba alegremente por los frondosos valles de Tracia. Corría descalza sobre la hierba fresca junto a las ninfas del bosque, disfrutando del cálido sol matutino sin presagiar el peligro."
+  },
+  {
+   "hablado": "Oculta entre la maleza tupida, una víbora venenosa descansaba bajo las sombras. Al avanzar sin fijar la mirada en el suelo, la joven ninfa pisó de forma accidental la cola del reptil, provocando su letal reacción inmediata.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "snake in grass",
+    "otras": [
+     "viper wild nature",
+     "snake nature"
+    ],
+    "descripcion": "Una serpiente moviéndose sigilosamente entre la hierba alta e iluminada por el sol.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/18/143409-782363218_small.mp4",
+    "clip_id": 143409,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/16/163305-827461442_large.mp4",
+      "clip_id": 163305
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/13/220923_large.mp4",
+      "clip_id": 220923
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/26/173405-849328180_small.mp4",
+      "clip_id": 173405
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Oculta entre la maleza tupida, una víbora venenosa descansaba bajo las sombras. Al avanzar sin fijar la mirada en el suelo, la joven ninfa pisó de forma accidental la cola del reptil, provocando su letal reacción inmediata."
+  },
+  {
+   "hablado": "El animal hundió sus colmillos con furia en el delicado tobillo de Eurídice. En pocos segundos, el veneno mortífero se filtró por el torrente sanguíneo de la muchacha, congelando sus extremidades y bloqueando su respiración.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Eurydice snake bite sculpture",
+    "otras": [
+     "Eurydice relief statue",
+     "ancient greek statue woman"
+    ],
+    "descripcion": "Estatua clásica de mármol que representa a una ninfa herida tendida en el suelo.",
+    "prompt": "Estatua clásica de mármol que representa a una ninfa herida tendida en el suelo.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/22/329420_large.mp4",
+    "clip_id": 329420,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/26/89796-615423254_small.mp4",
+      "clip_id": 89796
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/26/89794-615423248_small.mp4",
+      "clip_id": 89794
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/04/14/2800-162896281_large.mp4",
+      "clip_id": 2800
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El animal hundió sus colmillos con furia en el delicado tobillo de Eurídice. En pocos segundos, el veneno mortífero se filtró por el torrente sanguíneo de la muchacha, congelando sus extremidades y bloqueando su respiración."
+  },
+  {
+   "hablado": "Las ninfas acudieron a sus desgarradores gritos de dolor, pero ya era demasiado tarde. La tez de Eurídice perdió el color rápidamente y su pulso se apagó para siempre sobre la tierra húmeda del valle.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statue female",
+    "otras": [
+     "greece marble sculpture",
+     "ancient greek ruins"
+    ],
+    "descripcion": "Primer plano de una escultura griega de mármol con expresión melancólica.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34697-403408206_large.mp4",
+    "clip_id": 34697,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/10/84618-585553953_small.mp4",
+      "clip_id": 84618
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/04/33241-395657683_large.mp4",
+      "clip_id": 33241
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/04/33239-395657688_large.mp4",
+      "clip_id": 33239
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las ninfas acudieron a sus desgarradores gritos de dolor, pero ya era demasiado tarde. La tez de Eurídice perdió el color rápidamente y su pulso se apagó para siempre sobre la tierra húmeda del valle."
+  },
+  {
+   "hablado": "Cuando Orfeo llegó al lugar siguiendo los lamentos, encontró el cuerpo inerte de su amada. El dolor paralizó su pecho, rompiendo en mil pedazos la ilusión de la vida próspera que acababan de inaugurar juntos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins columns",
+    "otras": [
+     "ancient greece temple sunset",
+     "acropolis ruins"
+    ],
+    "descripcion": "Ruinas de un templo griego bajo la luz dorada del atardecer, transmitiendo soledad.",
+    "clip": "https://cdn.pixabay.com/video/2015/09/04/682-138357226_medium.mp4",
+    "clip_id": 682,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/05/130294-746674143_small.mp4",
+      "clip_id": 130294
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/23/144044-784169659_small.mp4",
+      "clip_id": 144044
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/23/144045-784169662_small.mp4",
+      "clip_id": 144045
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cuando Orfeo llegó al lugar siguiendo los lamentos, encontró el cuerpo inerte de su amada. El dolor paralizó su pecho, rompiendo en mil pedazos la ilusión de la vida próspera que acababan de inaugurar juntos."
+  },
+  {
+   "hablado": "Desesperado, el músico tomó su lira de oro, pero esta vez no brotaron notas alegres. Compuso un lamento amargo y profundo que resonó por todas las montañas de Tracia, conmoviendo a cuantas criaturas lo escuchaban.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus lyre painting",
+    "otras": [
+     "Orpheus playing lyre mosaic",
+     "ancient greek art lyre"
+    ],
+    "descripcion": "Pintura clásica donde se muestra a Orfeo tocando la lira rodeado de tristeza.",
+    "prompt": "Pintura clásica donde se muestra a Orfeo tocando la lira rodeado de tristeza.",
+    "clip": "https://cdn.pixabay.com/video/2026/05/16/353078_large.mp4",
+    "clip_id": 353078,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/10/38660-418027274_small.mp4",
+      "clip_id": 38660
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/01/04/20457-309694537_large.mp4",
+      "clip_id": 20457
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/24/205508-927335645_small.mp4",
+      "clip_id": 205508
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Desesperado, el músico tomó su lira de oro, pero esta vez no brotaron notas alegres. Compuso un lamento amargo y profundo que resonó por todas las montañas de Tracia, conmoviendo a cuantas criaturas lo escuchaban."
+  },
+  {
+   "hablado": "Brotaron lágrimas de los árboles, las aves dejaron de cantar y los propios dioses del Olimpo sintieron compasión ante semejante tragedia. La muerte había arrebatado injustamente a la joven en la plenitud de su juventud.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple rain",
+    "otras": [
+     "greece dark storm sky",
+     "ancient greece clouds"
+    ],
+    "descripcion": "Cielo tormentoso y oscuro sobre las columnas de mármol de un templo antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/05/38125-417752184_large.mp4",
+    "clip_id": 38125,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/07/02/17013-278400948_large.mp4",
+      "clip_id": 17013
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/08/29/26369-357512454_small.mp4",
+      "clip_id": 26369
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/14/5278-182817488_large.mp4",
+      "clip_id": 5278
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Brotaron lágrimas de los árboles, las aves dejaron de cantar y los propios dioses del Olimpo sintieron compasión ante semejante tragedia. La muerte había arrebatado injustamente a la joven en la plenitud de su juventud."
+  },
+  {
+   "hablado": "Sin embargo, Orfeo se negó a aceptar que aquel fuera el destino definitivo de su esposa. Dispuesto a desafiar a las leyes eternas de la naturaleza, concibió un plan descabellado que ningún mortal vivo había intentado jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave entrance ancient",
+    "otras": [
+     "cave entrance rock",
+     "ancient tunnel stone"
+    ],
+    "descripcion": "Entrada a una cueva oscura y profunda tallada en la roca de una montaña.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/08/203449-921267347_small.mp4",
+    "clip_id": 203449,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/24/365983_small.mp4",
+      "clip_id": 365983
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/03/22555-328624767_medium.mp4",
+      "clip_id": 22555
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/05/4948-181538478_large.mp4",
+      "clip_id": 4948
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, Orfeo se negó a aceptar que aquel fuera el destino definitivo de su esposa. Dispuesto a desafiar a las leyes eternas de la naturaleza, concibió un plan descabellado que ningún mortal vivo había intentado jamás."
+  },
+  {
+   "hablado": "Guiado por la desesperación, Orfeo viajó hasta las profundas cuevas del cabo Témaro, en Laconia. Allí se abría una grieta abismal y helada, conocida por los griegos como la entrada directa hacia el inframundo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave entrance rocks",
+    "otras": [
+     "ancient cave ruins dark",
+     "rocky cave mountain entrance"
+    ],
+    "descripcion": "Entrada a una cueva oscura y profunda rodeada de rocas acantiladas",
+    "clip": "https://cdn.pixabay.com/video/2024/10/12/236016_small.mp4",
+    "clip_id": 236016,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/01/112562-695117376_small.mp4",
+      "clip_id": 112562
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/01/275983_small.mp4",
+      "clip_id": 275983
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/18/31377-386628887_small.mp4",
+      "clip_id": 31377
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Guiado por la desesperación, Orfeo viajó hasta las profundas cuevas del cabo Témaro, en Laconia. Allí se abría una grieta abismal y helada, conocida por los griegos como la entrada directa hacia el inframundo."
+  },
+  {
+   "hablado": "Sin dudarlo un instante, el músico se adentró en las tinieblas eternas donde la luz del sol jamás había penetrado. El aire se volvió pesado y el silencio aplastante comenzó a helarle la sangre con cada paso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stone tunnel cave",
+    "otras": [
+     "ancient stone passage dark",
+     "dark cave path walking"
+    ],
+    "descripcion": "Interior de un túnel de piedra oscuro e inhóspito en penumbras",
+    "clip": "https://cdn.pixabay.com/video/2022/07/14/124170-730515125_small.mp4",
+    "clip_id": 124170,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/20/82190-577893753_small.mp4",
+      "clip_id": 82190
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/05/06/9005-216332135_large.mp4",
+      "clip_id": 9005
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/23/172941-848188013_large.mp4",
+      "clip_id": 172941
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin dudarlo un instante, el músico se adentró en las tinieblas eternas donde la luz del sol jamás había penetrado. El aire se volvió pesado y el silencio aplastante comenzó a helarle la sangre con cada paso."
+  },
+  {
+   "hablado": "Tras un largo trayecto entre rocas afiladas, llegó a la orilla del oscuro río Aqueronte. Allí aguardaba Caronte, el fúnebre barquero encargado de transportar las almas de los muertos hacia las sombras del otro lado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Charon Acheron painting",
+    "otras": [
+     "Charon barque classical painting",
+     "Acheron river mythology art"
+    ],
+    "descripcion": "Cuadro clásico de Caronte en su barca cruzando el río Aqueronte",
+    "prompt": "Cuadro clásico de Caronte en su barca cruzando el río Aqueronte",
+    "clip": "https://cdn.pixabay.com/video/2023/08/06/174860-852215326_small.mp4",
+    "clip_id": 174860,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/10/38653-418027253_small.mp4",
+      "clip_id": 38653
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/24/205507-927335640_small.mp4",
+      "clip_id": 205507
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/15/6385-191687856_large.mp4",
+      "clip_id": 6385
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Tras un largo trayecto entre rocas afiladas, llegó a la orilla del oscuro río Aqueronte. Allí aguardaba Caronte, el fúnebre barquero encargado de transportar las almas de los muertos hacia las sombras del otro lado."
+  },
+  {
+   "hablado": "El anciano barquero rechazó al viajero vivo con firmeza. Sin embargo, Orfeo tomó su lira y rasgó las cuerdas con nostalgia, produciendo una melodía tan dulce que ablandó el marchito corazón de la deidad del abismo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient harp playing shadow",
+    "otras": [
+     "ancient Greek statue lyre",
+     "wooden instrument music shadow"
+    ],
+    "descripcion": "Manos tocando un instrumento de cuerdas antiguo sumido en penumbras",
+    "clip": "https://cdn.pixabay.com/video/2017/03/19/8437-209165711_large.mp4",
+    "clip_id": 8437,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/15/30222-380473795_large.mp4",
+      "clip_id": 30222
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/20/45150-441301097_large.mp4",
+      "clip_id": 45150
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/19/24541-343454486_large.mp4",
+      "clip_id": 24541
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El anciano barquero rechazó al viajero vivo con firmeza. Sin embargo, Orfeo tomó su lira y rasgó las cuerdas con nostalgia, produciendo una melodía tan dulce que ablandó el marchito corazón de la deidad del abismo."
+  },
+  {
+   "hablado": "Navegando en silencio sobre aguas profundas y brumosas, cruzaron la frontera prohibida. Al desembarcar, la música continuó resonando entre las tinieblas, abriendo un camino de paz en un territorio dominado únicamente por el sufrimiento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "misty river dark boat",
+    "otras": [
+     "foggy dark river night",
+     "dark water mist boat"
+    ],
+    "descripcion": "Una barca navegando lentamente sobre un río oscuro y lleno de niebla",
+    "clip": "https://cdn.pixabay.com/video/2023/09/20/181376-866506956_small.mp4",
+    "clip_id": 181376,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/04/28707-371213524_small.mp4",
+      "clip_id": 28707
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382582_small.mp4",
+      "clip_id": 382582
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/31/249876_small.mp4",
+      "clip_id": 249876
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Navegando en silencio sobre aguas profundas y brumosas, cruzaron la frontera prohibida. Al desembarcar, la música continuó resonando entre las tinieblas, abriendo un camino de paz en un territorio dominado únicamente por el sufrimiento."
+  },
+  {
+   "hablado": "Pronto se alzó ante él la enorme silueta de Cerbero, el voraz perro de tres cabezas que custodiaba las puertas de Hades. Sus feroces fauces goteaban baba y sus gruñidos retumbaron amenazantes en las paredes de piedra.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Cerberus artwork mythology",
+    "otras": [
+     "Cerberus Orpheus painting",
+     "Cerberus underworld art"
+    ],
+    "descripcion": "Representación artística clásica del fiero perro Cerbero ante las puertas del inframundo",
+    "prompt": "Representación artística clásica del fiero perro Cerbero ante las puertas del inframundo",
+    "clip": "https://cdn.pixabay.com/video/2016/06/29/3654-173062443_large.mp4",
+    "clip_id": 3654,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/02/37857-415200822_large.mp4",
+      "clip_id": 37857
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/02/37858-415200828_large.mp4",
+      "clip_id": 37858
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/12/41836-431406586_large.mp4",
+      "clip_id": 41836
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pronto se alzó ante él la enorme silueta de Cerbero, el voraz perro de tres cabezas que custodiaba las puertas de Hades. Sus feroces fauces goteaban baba y sus gruñidos retumbaron amenazantes en las paredes de piedra."
+  },
+  {
+   "hablado": "Nuevamente, la maestría de Orfeo obró el milagro. Sus acordes hipnóticos amansaron a la bestia salvaje, que cerró sus seis ojos y cayó rendida en un sueño profundo, permitiendo el paso al intrépido bardo de Tracia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek statues shadows",
+    "otras": [
+     "ancient temple ruins dark",
+     "Greek marble statue shadow"
+    ],
+    "descripcion": "Esculturas clásicas de piedra antigua en la calma y oscuridad de la noche",
+    "clip": "https://cdn.pixabay.com/video/2016/01/24/1971-152947486_large.mp4",
+    "clip_id": 1971,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/15/27944-366570951_large.mp4",
+      "clip_id": 27944
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/30/118689-715412212_small.mp4",
+      "clip_id": 118689
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/10/175442-853593452_large.mp4",
+      "clip_id": 175442
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Nuevamente, la maestría de Orfeo obró el milagro. Sus acordes hipnóticos amansaron a la bestia salvaje, que cerró sus seis ojos y cayó rendida en un sueño profundo, permitiendo el paso al intrépido bardo de Tracia."
+  },
+  {
+   "hablado": "Las almas en pena y los severos jueces de los muertos detuvieron sus tormentos ante tal prodigio. Nadie se atrevió a frenar la marcha de aquel mortal que avanzaba invicto hacia el trono del señor de las sombras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek columns torch fire",
+    "otras": [
+     "fire torch ancient stone passage",
+     "ancient temple shadows fire"
+    ],
+    "descripcion": "Antorchas de fuego iluminando los muros y columnas de un templo antiguo",
+    "clip": "https://cdn.pixabay.com/video/2024/06/01/214855_small.mp4",
+    "clip_id": 214855,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/04/10/8625-212638612_large.mp4",
+      "clip_id": 8625
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/30/148594-794221537_small.mp4",
+      "clip_id": 148594
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/12/10/192687-893427276_large.mp4",
+      "clip_id": 192687
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Las almas en pena y los severos jueces de los muertos detuvieron sus tormentos ante tal prodigio. Nadie se atrevió a frenar la marcha de aquel mortal que avanzaba invicto hacia el trono del señor de las sombras."
+  },
+  {
+   "hablado": "Orfeo se detuvo finalmente ante el majestuoso trono de obsidiana, donde el temible Hades reinaba en penumbra junto a la soberana Perséfone. El silencio en aquel salón de sombras era denso, abrumador y casi insoportable para un mortal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek statue dark",
+    "otras": [
+     "dark marble temple",
+     "ancient greek ruins night"
+    ],
+    "descripcion": "Estatua griega de mármol en un entorno oscuro y sombrío.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/12/30124-380473635_large.mp4",
+    "clip_id": 30124,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/10/200024-911915509_small.mp4",
+      "clip_id": 200024
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/26/136641-764417517_small.mp4",
+      "clip_id": 136641
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/26/136640-764417510_small.mp4",
+      "clip_id": 136640
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Orfeo se detuvo finalmente ante el majestuoso trono de obsidiana, donde el temible Hades reinaba en penumbra junto a la soberana Perséfone. El silencio en aquel salón de sombras era denso, abrumador y casi insoportable para un mortal."
+  },
+  {
+   "hablado": "Sin pronunciar palabra, el bardo se arrodilló sobre la piedra helada y rasgó suavemente las cuerdas de su lira. La primera nota vibró en el aire, rompiendo la quietud eterna de la corte de los muertos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "playing ancient lyre",
+    "otras": [
+     "harp playing close up",
+     "ancient musical instrument"
+    ],
+    "descripcion": "Manos tocando un instrumento antiguo de cuerdas en la penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/08/139-135737102_large.mp4",
+    "clip_id": 139,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/05/161726-824133858_small.mp4",
+      "clip_id": 161726
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/20/28097-367748158_large.mp4",
+      "clip_id": 28097
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/19/36542-411342268_large.mp4",
+      "clip_id": 36542
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin pronunciar palabra, el bardo se arrodilló sobre la piedra helada y rasgó suavemente las cuerdas de su lira. La primera nota vibró en el aire, rompiendo la quietud eterna de la corte de los muertos."
+  },
+  {
+   "hablado": "Su voz entonó una melodía desgarradora que hablaba de la injusticia de una juventud arrebatada demasiado pronto. Cantó al amor puro, al dolor inmenso de la pérdida y a la desesperación de un corazón roto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus before Hades",
+    "otras": [
+     "Orpheus and Eurydice painting",
+     "Orpheus Hades Persephone"
+    ],
+    "descripcion": "Pintura clásica que representa a Orfeo tocando la lira ante Hades y Perséfone.",
+    "prompt": "Pintura clásica que representa a Orfeo tocando la lira ante Hades y Perséfone.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/09/326739_large.mp4",
+    "clip_id": 326739,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/02/214938_small.mp4",
+      "clip_id": 214938
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/01/380225_large.mp4",
+      "clip_id": 380225
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/28/343048_small.mp4",
+      "clip_id": 343048
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Su voz entonó una melodía desgarradora que hablaba de la injusticia de una juventud arrebatada demasiado pronto. Cantó al amor puro, al dolor inmenso de la pérdida y a la desesperación de un corazón roto."
+  },
+  {
+   "hablado": "Recordó a los soberanos que todos los mortales terminarán cayendo bajo su dominio tarde o temprano. No pedía la inmortalidad para su amada, sino tan solo los años que el destino le había robado de forma cruel.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave torches",
+    "otras": [
+     "fire torch wall cave",
+     "ancient underground temple"
+    ],
+    "descripcion": "Antorchas encendidas en las paredes de piedra de una cueva subterránea.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/29/2336-157269911_large.mp4",
+    "clip_id": 2336,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/18/128271-740907083_small.mp4",
+      "clip_id": 128271
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/29/249486_small.mp4",
+      "clip_id": 249486
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/20/227511_large.mp4",
+      "clip_id": 227511
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Recordó a los soberanos que todos los mortales terminarán cayendo bajo su dominio tarde o temprano. No pedía la inmortalidad para su amada, sino tan solo los años que el destino le había robado de forma cruel."
+  },
+  {
+   "hablado": "Por primera vez desde la creación del Inframundo, las lágrimas brotaron de los ojos de la reina Perséfone. El canto del músico ablandó el corazón de la diosa, recordando su propia nostalgia por la primavera.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "marble female statue crying",
+    "otras": [
+     "greek goddess statue",
+     "ancient sculpture water drops"
+    ],
+    "descripcion": "Detalle de una escultura clásica de mármol femenino con iluminación dramática.",
+    "clip": "https://cdn.pixabay.com/video/2021/04/26/72291-541967058_large.mp4",
+    "clip_id": 72291,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272620_large.mp4",
+      "clip_id": 272620
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/02/214945_large.mp4",
+      "clip_id": 214945
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/30/43459-436106182_small.mp4",
+      "clip_id": 43459
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Por primera vez desde la creación del Inframundo, las lágrimas brotaron de los ojos de la reina Perséfone. El canto del músico ablandó el corazón de la diosa, recordando su propia nostalgia por la primavera."
+  },
+  {
+   "hablado": "Incluso el implacable Hades, cuyo pecho guardaba un corazón de piedra jamás conmovido por súplica alguna, sintió una extraña piedad. La belleza del arte había logrado lo imposible, vencer la inflexibilidad del señor de las sombras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple smoke",
+    "otras": [
+     "dark ancient columns",
+     "ancient ruins fog"
+    ],
+    "descripcion": "Columnas antiguas de piedra envueltas en humo y penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2018/11/13/19314-300877515_large.mp4",
+    "clip_id": 19314,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/10/22728-329691509_large.mp4",
+      "clip_id": 22728
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/24/37079-413229597_small.mp4",
+      "clip_id": 37079
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/01/141309-777508139_medium.mp4",
+      "clip_id": 141309
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Incluso el implacable Hades, cuyo pecho guardaba un corazón de piedra jamás conmovido por súplica alguna, sintió una extraña piedad. La belleza del arte había logrado lo imposible, vencer la inflexibilidad del señor de las sombras."
+  },
+  {
+   "hablado": "El dios del abismo alzó su mano para detener la música y ordenó traer la sombra de Eurídice de entre los espíritus recién llegados. La joven avanzó despacio, cojeando aún por la herida fatal en su tobillo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus Eurydice relief",
+    "otras": [
+     "Orpheus Eurydice Hermes",
+     "classical relief orpheus"
+    ],
+    "descripcion": "Relieve clásico de piedra que muestra las figuras de Orfeo y Eurídice.",
+    "prompt": "Relieve clásico de piedra que muestra las figuras de Orfeo y Eurídice.",
+    "clip": "https://cdn.pixabay.com/video/2022/04/23/114825-702458208_small.mp4",
+    "clip_id": 114825,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/12/252149_small.mp4",
+      "clip_id": 252149
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/09/16/304556_large.mp4",
+      "clip_id": 304556
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/07/320349_small.mp4",
+      "clip_id": 320349
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El dios del abismo alzó su mano para detener la música y ordenó traer la sombra de Eurídice de entre los espíritus recién llegados. La joven avanzó despacio, cojeando aún por la herida fatal en su tobillo."
+  },
+  {
+   "hablado": "Hades aceptó devolverle la vida a la ninfa, concediendo un milagro jamás visto en el reino de la muerte. Sin embargo, antes de dejarlos marchar, el soberano impuso una última advertencia que cambiaría el destino de ambos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark tunnel light exit",
+    "otras": [
+     "cave entrance light",
+     "underground stone tunnel"
+    ],
+    "descripcion": "Entrada a una cueva oscura iluminada por la tenue luz del exterior.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/19/111281-690770684_small.mp4",
+    "clip_id": 111281,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/01/137357-766532324_small.mp4",
+      "clip_id": 137357
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/09/12866-242215707_small.mp4",
+      "clip_id": 12866
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/01/137359-766532337_small.mp4",
+      "clip_id": 137359
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hades aceptó devolverle la vida a la ninfa, concediendo un milagro jamás visto en el reino de la muerte. Sin embargo, antes de dejarlos marchar, el soberano impuso una última advertencia que cambiaría el destino de ambos."
+  },
+  {
+   "hablado": "El soberano del inframundo alzó su mano augusta y dictó una condición irrevocable. Eurídice caminaría detrás de él, ascendiendo desde las tinieblas de las profundidades hacia las grutas del puerto del Taínaro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek statue dark",
+    "otras": [
+     "ancient Greek throne",
+     "ancient ruins statues"
+    ],
+    "descripcion": "Una imponente estatua griega de mármol iluminada tenuemente desde abajo en la penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2020/09/29/51132-463106386_large.mp4",
+    "clip_id": 51132,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/20/217515_small.mp4",
+      "clip_id": 217515
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/07/44057-438195415_small.mp4",
+      "clip_id": 44057
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/16/143178-781991206_small.mp4",
+      "clip_id": 143178
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El soberano del inframundo alzó su mano augusta y dictó una condición irrevocable. Eurídice caminaría detrás de él, ascendiendo desde las tinieblas de las profundidades hacia las grutas del puerto del Taínaro."
+  },
+  {
+   "hablado": "La norma exigía una obediencia absoluta y despiadada. Orfeo debía guiar a la ninfa sin girar el rostro en ningún momento, prohibiéndole mirar hacia atrás hasta haber pisado por completo la luz solar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple ruins sunset",
+    "otras": [
+     "ancient Greece columns",
+     "sunlight ancient temple"
+    ],
+    "descripcion": "Columnas de un templo griego bañadas por la brillante luz del sol al atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2025/04/29/275633_large.mp4",
+    "clip_id": 275633,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/12/171197-844788003_large.mp4",
+      "clip_id": 171197
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/20/197405-904825134_large.mp4",
+      "clip_id": 197405
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/08/35423-407130876_large.mp4",
+      "clip_id": 35423
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La norma exigía una obediencia absoluta y despiadada. Orfeo debía guiar a la ninfa sin girar el rostro en ningún momento, prohibiéndole mirar hacia atrás hasta haber pisado por completo la luz solar."
+  },
+  {
+   "hablado": "Si sus ojos se posaban sobre ella tan solo un segundo antes de cruzar el umbral del mundo exterior, el hechizo se rompería para siempre y Eurídice regresarías eternamente al abismo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus and Eurydice relief",
+    "otras": [
+     "Orpheus Eurydice sculpture",
+     "ancient Greek relief"
+    ],
+    "descripcion": "Relieve clásico en piedra que representa la figura de Orfeo junto a Eurídice.",
+    "prompt": "Relieve clásico en piedra que representa la figura de Orfeo junto a Eurídice.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/28/214113_small.mp4",
+    "clip_id": 214113,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/09/14/304079_large.mp4",
+      "clip_id": 304079
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/08/29994-378309000_large.mp4",
+      "clip_id": 29994
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Si sus ojos se posaban sobre ella tan solo un segundo antes de cruzar el umbral del mundo exterior, el hechizo se rompería para siempre y Eurídice regresarías eternamente al abismo."
+  },
+  {
+   "hablado": "El músico asintió en silencio, sintiendo una pesada responsabilidad aplastar su pecho. Sabía que la prueba no desafiaba su fuerza física, sino la entereza de su espíritu y la firmeza de su fe.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek lyre musician",
+    "otras": [
+     "ancient statue harp",
+     "ancient Greece statue"
+    ],
+    "descripcion": "Detalle de una escultura de mármol que sostiene un instrumento de cuerda antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/23/209196_medium.mp4",
+    "clip_id": 209196,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/09/225546_large.mp4",
+      "clip_id": 225546
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/29/238854_small.mp4",
+      "clip_id": 238854
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/01/33103-395456671_large.mp4",
+      "clip_id": 33103
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El músico asintió en silencio, sintiendo una pesada responsabilidad aplastar su pecho. Sabía que la prueba no desafiaba su fuerza física, sino la entereza de su espíritu y la firmeza de su fe."
+  },
+  {
+   "hablado": "Guiada por el mandato de Perséfone, la pálida sombra de la ninfa se colocó lentamente tras los pasos de su esposo, respirando el aire gélido de los dominios subterráneos sin emitir sonido.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave torch light",
+    "otras": [
+     "ancient cave path",
+     "rocky cave tunnel"
+    ],
+    "descripcion": "Un pasadizo oscuro dentro de una cueva de piedra alumbrado levemente por una llama.",
+    "clip": "https://cdn.pixabay.com/video/2025/06/24/287510_small.mp4",
+    "clip_id": 287510,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/07/277363_small.mp4",
+      "clip_id": 277363
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/13/38998-420224615_large.mp4",
+      "clip_id": 38998
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/13/6349-191338845_large.mp4",
+      "clip_id": 6349
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Guiada por el mandato de Perséfone, la pálida sombra de la ninfa se colocó lentamente tras los pasos de su esposo, respirando el aire gélido de los dominios subterráneos sin emitir sonido."
+  },
+  {
+   "hablado": "Sin atreverse a cruzar la mirada con su amada, Orfeo dio media vuelta y empezó a caminar. La larga travesía hacia la libertad los adentraba en un túnel de roca empinado y resbaladizo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rocky cave stairs path",
+    "otras": [
+     "stone cave tunnel",
+     "dark rocky passage"
+    ],
+    "descripcion": "Un sendero de piedra empinado y húmedo en el interior de una angosta cueva.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/23/222638_small.mp4",
+    "clip_id": 222638,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/02/187612-880737125_medium.mp4",
+      "clip_id": 187612
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/19/232185_small.mp4",
+      "clip_id": 232185
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin atreverse a cruzar la mirada con su amada, Orfeo dio media vuelta y empezó a caminar. La larga travesía hacia la libertad los adentraba en un túnel de roca empinado y resbaladizo."
+  },
+  {
+   "hablado": "El trayecto transcurría entre la más densa penumbra, donde las húmedas paredes de piedra reverberaban con los latidos desbocados del artista, quien avanzaba a ciegas acariciando las frías rocas del camino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Cave of Diros Mani Greece",
+    "otras": [
+     "Cape Matapan cave",
+     "Taenarum cave Greece"
+    ],
+    "descripcion": "Interior rocoso y subterráneo de la cueva tradicional del Taínaro en Grecia.",
+    "prompt": "Interior rocoso y subterráneo de la cueva tradicional del Taínaro en Grecia.",
+    "clip": "https://cdn.pixabay.com/video/2025/03/31/269039_small.mp4",
+    "clip_id": 269039,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/27/3627-172488393_large.mp4",
+      "clip_id": 3627
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/20/42609-431280324_large.mp4",
+      "clip_id": 42609
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/11/321178_small.mp4",
+      "clip_id": 321178
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El trayecto transcurría entre la más densa penumbra, donde las húmedas paredes de piedra reverberaban con los latidos desbocados del artista, quien avanzaba a ciegas acariciando las frías rocas del camino."
+  },
+  {
+   "hablado": "Cada paso resultaba un tormento insoportable mientras dejaban atrás los tronos de obsidiana. Con el corazón en llamas y la mente dividida, Orfeo continuó la dura marcha, ignorando las sombras sospechosas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire torch burning dark cave",
+    "otras": [
+     "burning torch shadow",
+     "ancient torch cave"
+    ],
+    "descripcion": "Una antorcha encendida proyectando sombras misteriosas sobre la pared rocosa de la gruta.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/10/257593_small.mp4",
+    "clip_id": 257593,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/03/234515_small.mp4",
+      "clip_id": 234515
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/02/239511_small.mp4",
+      "clip_id": 239511
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/29/51145-463233915_large.mp4",
+      "clip_id": 51145
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Cada paso resultaba un tormento insoportable mientras dejaban atrás los tronos de obsidiana. Con el corazón en llamas y la mente dividida, Orfeo continuó la dura marcha, ignorando las sombras sospechosas."
+  },
+  {
+   "hablado": "La gruta del Taínaro era un pasillo angosto y helado tallado en la roca viva. Con cada zancada, la tenue luz del reino abismal se apagaba por completo, sepultando al músico en una penumbra impenetrable y asfixiante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave tunnel",
+    "otras": [
+     "ancient cave",
+     "rocky passage"
+    ],
+    "descripcion": "Un túnel de cueva oscuro y estrecho con paredes de roca húmeda.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/03/337794_small.mp4",
+    "clip_id": 337794,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/25/86378-592491844_small.mp4",
+      "clip_id": 86378
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/22/98660-649311088_small.mp4",
+      "clip_id": 98660
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/29/2299-157183618_large.mp4",
+      "clip_id": 2299
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La gruta del Taínaro era un pasillo angosto y helado tallado en la roca viva. Con cada zancada, la tenue luz del reino abismal se apagaba por completo, sepultando al músico en una penumbra impenetrable y asfixiante."
+  },
+  {
+   "hablado": "Orfeo apretaba su lira contra el pecho sintiendo únicamente el murmullo de sus propias pisadas. El espíritu de Eurídice, al ser una sombra etérea, no proyectaba pisadas ni ruidos al caminar tras sus pasos en la oscuridad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient marble statue dark",
+    "otras": [
+     "greek statue light",
+     "museum statue night"
+    ],
+    "descripcion": "Estatua clásica de mármol envuelta en sombras tenue.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34695-403408188_large.mp4",
+    "clip_id": 34695,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/20/227567_large.mp4",
+      "clip_id": 227567
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/17/370958_small.mp4",
+      "clip_id": 370958
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/27/228447_small.mp4",
+      "clip_id": 228447
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Orfeo apretaba su lira contra el pecho sintiendo únicamente el murmullo de sus propias pisadas. El espíritu de Eurídice, al ser una sombra etérea, no proyectaba pisadas ni ruidos al caminar tras sus pasos en la oscuridad."
+  },
+  {
+   "hablado": "Un frío atroz recorrió la columna del poeta cuando la duda brotó en su mente. ¿Acaso los gobernantes de las tinieblas le habían engañado ofreciendo una ilusión vana mientras él avanzaba completamente solo hacia la superficie?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus and Eurydice painting",
+    "otras": [
+     "Orpheus Hades painting",
+     "Greek myth classical painting"
+    ],
+    "descripcion": "Pintura clásica representando la tragedia de Orfeo y Eurídice en el inframundo.",
+    "prompt": "Pintura clásica representando la tragedia de Orfeo y Eurídice en el inframundo.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/10/200023-911915504_small.mp4",
+    "clip_id": 200023,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/06/41282-428319236_large.mp4",
+      "clip_id": 41282
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/04/319743_small.mp4",
+      "clip_id": 319743
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/27/43238-435970498_large.mp4",
+      "clip_id": 43238
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Un frío atroz recorrió la columna del poeta cuando la duda brotó en su mente. ¿Acaso los gobernantes de las tinieblas le habían engañado ofreciendo una ilusión vana mientras él avanzaba completamente solo hacia la superficie?"
+  },
+  {
+   "hablado": "El sendero se volvía empinado y peligroso, cuajado de piedras sueltas y humedad constante. Cada tropezón amenazaba con hacerle caer, pero el temor a romper la prohibición divina le obligaba a erguirse sin dirigir la mirada hacia atrás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient stone stairs",
+    "otras": [
+     "rocky path mountains",
+     "ancient ruins stairs"
+    ],
+    "descripcion": "Escaleras antiguas de piedra talladas en la montaña.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/30/228847_large.mp4",
+    "clip_id": 228847,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/15/42126-431423125_large.mp4",
+      "clip_id": 42126
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/01/19/20841-312432116_small.mp4",
+      "clip_id": 20841
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/25/205637-927347915_small.mp4",
+      "clip_id": 205637
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El sendero se volvía empinado y peligroso, cuajado de piedras sueltas y humedad constante. Cada tropezón amenazaba con hacerle caer, pero el temor a romper la prohibición divina le obligaba a erguirse sin dirigir la mirada hacia atrás."
+  },
+  {
+   "hablado": "Las corrientes de aire de las grutas susurraban entre las fisuras provocando ecos engañosos. El músico contenía el aliento intentando percibir la respiración de su amada, pero el abismo solo le devolví un eco vacío, helado y cruel.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "torch light cave",
+    "otras": [
+     "fire torch night",
+     "ancient cavern light"
+    ],
+    "descripcion": "Una antorcha encendida iluminando tenuemente la pared de una caverna.",
+    "clip": "https://cdn.pixabay.com/video/2022/10/09/134115-758552433_large.mp4",
+    "clip_id": 134115,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/07/153723-806178018_large.mp4",
+      "clip_id": 153723
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/17/208326_small.mp4",
+      "clip_id": 208326
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/02/325636_small.mp4",
+      "clip_id": 325636
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Las corrientes de aire de las grutas susurraban entre las fisuras provocando ecos engañosos. El músico contenía el aliento intentando percibir la respiración de su amada, pero el abismo solo le devolví un eco vacío, helado y cruel."
+  },
+  {
+   "hablado": "Las leyes del Inframundo jamás se habían doblegado ante la impaciencia de un mortal. La prueba impuesta por Hades no medía la fuerza física del héroe, sino su fe absoluta frente a la desesperación y el engaño de los sentidos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "parthenon columns",
+     "greece historical site"
+    ],
+    "descripcion": "Ruinas de un templo griego con columnas antiguas bajo el cielo.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/05/35110-405620887_large.mp4",
+    "clip_id": 35110,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/03/43748-436252242_large.mp4",
+      "clip_id": 43748
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/04/46348-447447981_large.mp4",
+      "clip_id": 46348
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/08/25/26277-357838984_small.mp4",
+      "clip_id": 26277
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las leyes del Inframundo jamás se habían doblegado ante la impaciencia de un mortal. La prueba impuesta por Hades no medía la fuerza física del héroe, sino su fe absoluta frente a la desesperación y el engaño de los sentidos."
+  },
+  {
+   "hablado": "Tras horas de angustiosa caminata, una tenue rendija de luz solar apareció a lo lejos entre las rocas. La proximidad del mundo de los vivos lejos de calmar su angustia, disparó sus pulsaciones hasta un límite insoportable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cave exit light",
+    "otras": [
+     "light at end of tunnel",
+     "sunlight cave opening"
+    ],
+    "descripcion": "La luz del día filtrándose por la salida de una cueva de piedra.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/23/128836-742339523_small.mp4",
+    "clip_id": 128836,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/12/11/1632-148614391_medium.mp4",
+      "clip_id": 1632
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/10/11285-229221014_large.mp4",
+      "clip_id": 11285
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/22/4753-179739298_large.mp4",
+      "clip_id": 4753
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tras horas de angustiosa caminata, una tenue rendija de luz solar apareció a lo lejos entre las rocas. La proximidad del mundo de los vivos lejos de calmar su angustia, disparó sus pulsaciones hasta un límite insoportable."
+  },
+  {
+   "hablado": "Sus pies alcanzaron finalmente el umbral iluminado por el sol, pero la incertidumbre quemaba sus entrañas con la fuerza de una maldición. Un simple movimiento de cuello estaba a punto de decidir su destino, pero lo peor aún no había llegado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greece coast sunset",
+    "otras": [
+     "greek landscape sea",
+     "ancient greece mountains"
+    ],
+    "descripcion": "Atardecer dorado sobre las colinas y el mar Egeo en Grecia.",
+    "clip_id": "mixkit:31651",
+    "clip_ini": 0,
+    "clip": "https://assets.mixkit.co/videos/31651/31651-720.mp4",
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/05/170258-843059148_large.mp4",
+      "clip_id": 170258
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/14/1917-152081339_medium.mp4",
+      "clip_id": 1917
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/23/365737_large.mp4",
+      "clip_id": 365737
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Sus pies alcanzaron finalmente el umbral iluminado por el sol, pero la incertidumbre quemaba sus entrañas con la fuerza de una maldición. Un simple movimiento de cuello estaba a punto de decidir su destino, pero lo peor aún no había llegado."
+  },
+  {
+   "hablado": "Orfeo dio el último paso hacia la luz del día, sintiendo el calor del sol sobre su rostro cansado. La calidez del mundo exterior parecía confirmar que la pesadilla del inframundo había llegado a su fin.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek temple sun",
+    "otras": [
+     "ancient ruins sunlight",
+     "Greek ruins"
+    ],
+    "descripcion": "Luz del sol filtrándose entre las columnas de un templo griego antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/13/188912-884171167_large.mp4",
+    "clip_id": 188912,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/09/153976-817104245_small.mp4",
+      "clip_id": 153976
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/11/138588-770315514_small.mp4",
+      "clip_id": 138588
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/24/28268-368753924_small.mp4",
+      "clip_id": 28268
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Orfeo dio el último paso hacia la luz del día, sintiendo el calor del sol sobre su rostro cansado. La calidez del mundo exterior parecía confirmar que la pesadilla del inframundo había llegado a su fin."
+  },
+  {
+   "hablado": "Sin embargo, embriagado por el alivio de pisar tierra firme, el joven músico cometió un error fatal. Olvidó que la promesa exigía que ambos, y no solo él, hubieran salido por completo de las penumbras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cave entrance sunlight",
+    "otras": [
+     "dark cave mouth",
+     "ancient cave light"
+    ],
+    "descripcion": "Entrada de una cueva de piedra con la luz del día al fondo y sombras profundas.",
+    "clip": "https://cdn.pixabay.com/video/2025/01/19/253423_large.mp4",
+    "clip_id": 253423,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/30/12687-241236784_large.mp4",
+      "clip_id": 12687
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/03/66810-520427372_small.mp4",
+      "clip_id": 66810
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/09/24/18390-291585321_small.mp4",
+      "clip_id": 18390
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, embriagado por el alivio de pisar tierra firme, el joven músico cometió un error fatal. Olvidó que la promesa exigía que ambos, y no solo él, hubieran salido por completo de las penumbras."
+  },
+  {
+   "hablado": "Movido por un impulso incontrolable y el temor desesperado de haber sido engañado, se detuvo de golpe. Giró su cabeza hacia las sombras para buscar la mirada de su amada y confirmar que realmente caminaba tras sus pasos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus and Eurydice painting",
+    "otras": [
+     "Orpheus turning back",
+     "Orpheus Eurydice relief"
+    ],
+    "descripcion": "Representación artística clásica de Orfeo girándose hacia Eurídice en el inframundo.",
+    "prompt": "Representación artística clásica de Orfeo girándose hacia Eurídice en el inframundo.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/14/221151_large.mp4",
+    "clip_id": 221151,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/22/12564-240358890_large.mp4",
+      "clip_id": 12564
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/20/42696-432087106_large.mp4",
+      "clip_id": 42696
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/27/3624-172488379_large.mp4",
+      "clip_id": 3624
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Movido por un impulso incontrolable y el temor desesperado de haber sido engañado, se detuvo de golpe. Giró su cabeza hacia las sombras para buscar la mirada de su amada y confirmar que realmente caminaba tras sus pasos."
+  },
+  {
+   "hablado": "Por una fracción de segundo, sus miradas volvieron a encontrarse. Orfeo alcanzó a ver la silueta tenue de Eurídice, cuyo rostro mostraba una mezcla de amor infinito y una profunda melancolía al comprender lo que estaba a punto de ocurrir.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Greek statue woman face",
+    "otras": [
+     "marble statue face",
+     "ancient Greek sculpture"
+    ],
+    "descripcion": "Rostro esculpido en mármol blanco de una mujer clásica en posición melancólica.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/23/42952-431802395_large.mp4",
+    "clip_id": 42952,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/03/210574_large.mp4",
+      "clip_id": 210574
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/28/63241-505964153_large.mp4",
+      "clip_id": 63241
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/31/178472-859955927_large.mp4",
+      "clip_id": 178472
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Por una fracción de segundo, sus miradas volvieron a encontrarse. Orfeo alcanzó a ver la silueta tenue de Eurídice, cuyo rostro mostraba una mezcla de amor infinito y una profunda melancolía al comprender lo que estaba a punto de ocurrir."
+  },
+  {
+   "hablado": "Pero la condición impuesta por Hades no admitía excepciones. Como Eurídice todavía mantenía un pie en el reino de las sombras, el pacto sagrado se rompió al instante de manera cruel e irreversible ante los ojos del bardo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient torches flame darkness",
+    "otras": [
+     "torch light cave",
+     "ancient shadows flame"
+    ],
+    "descripcion": "Antorchas encendidas en la oscuridad de una galería de piedra antigua.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/20/42704-432102898_large.mp4",
+    "clip_id": 42704,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/04/244839_large.mp4",
+      "clip_id": 244839
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/06/7070-198606760_large.mp4",
+      "clip_id": 7070
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/21/29316-374747498_large.mp4",
+      "clip_id": 29316
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pero la condición impuesta por Hades no admitía excepciones. Como Eurídice todavía mantenía un pie en el reino de las sombras, el pacto sagrado se rompió al instante de manera cruel e irreversible ante los ojos del bardo."
+  },
+  {
+   "hablado": "Una fuerza invisible e implacable atrapó el cuerpo etéreo de la ninfa. Una corriente de aire gélido la arrastró violentamente hacia las profundidades, mientras la luz que iluminaba su figura comenzaba a apagarse de forma definitiva e inexorable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark fog cave motion",
+    "otras": [
+     "black smoke darkness",
+     "mysterious mist cave"
+    ],
+    "descripcion": "Masa de niebla oscura y densa moviéndose rápidamente dentro de un paso de piedra.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/19/328740_small.mp4",
+    "clip_id": 328740,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/11/28975-372617944_small.mp4",
+      "clip_id": 28975
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/10/56079-478742696_large.mp4",
+      "clip_id": 56079
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/06/277097_large.mp4",
+      "clip_id": 277097
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Una fuerza invisible e implacable atrapó el cuerpo etéreo de la ninfa. Una corriente de aire gélido la arrastró violentamente hacia las profundidades, mientras la luz que iluminaba su figura comenzaba a apagarse de forma definitiva e inexorable."
+  },
+  {
+   "hablado": "Eurídice extendió sus pálidos brazos hacia él en un intento desesperado por sostenerse, tratando de pronunciar un último adiós. Sin embargo, sus labios solo dejaron escapar un suspiro sordo que fue engullido de inmediato por el abismo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus Hermes Eurydice relief",
+    "otras": [
+     "ancient Greek relief classical art",
+     "Eurydice marble relief"
+    ],
+    "descripcion": "Relieve clásico en mármol que muestra el desgarrador instante del adiós de Eurídice.",
+    "prompt": "Relieve clásico en mármol que muestra el desgarrador instante del adiós de Eurídice.",
+    "clip": "https://cdn.pixabay.com/video/2019/02/19/21531-318988171_large.mp4",
+    "clip_id": 21531,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/11/123762-729019600_small.mp4",
+      "clip_id": 123762
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/01/58011-486853033_small.mp4",
+      "clip_id": 58011
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/01/58010-486853030_small.mp4",
+      "clip_id": 58010
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Eurídice extendió sus pálidos brazos hacia él en un intento desesperado por sostenerse, tratando de pronunciar un último adiós. Sin embargo, sus labios solo dejaron escapar un suspiro sordo que fue engullido de inmediato por el abismo."
+  },
+  {
+   "hablado": "La sombra de la ninfa se disolvió por completo en las tinieblas del Tártaro. Orfeo estiró sus manos hacia el vacío, atrapando tan solo el aire helado de la gruta, mientras el destino le asestaba el golpe más devastador.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek ruins darkness",
+    "otras": [
+     "ancient ruins dramatic sky",
+     "Greek columns night"
+    ],
+    "descripcion": "Columnas griegas antiguas bajo un cielo oscuro y dramático.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/12/30123-380473642_large.mp4",
+    "clip_id": 30123,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/11/32248-390923737_large.mp4",
+      "clip_id": 32248
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/04/22/2876-163914751_medium.mp4",
+      "clip_id": 2876
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/14/42057-431422943_large.mp4",
+      "clip_id": 42057
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La sombra de la ninfa se disolvió por completo en las tinieblas del Tártaro. Orfeo estiró sus manos hacia el vacío, atrapando tan solo el aire helado de la gruta, mientras el destino le asestaba el golpe más devastador."
+  },
+  {
+   "hablado": "Desesperado, el joven músico corrió de vuelta hacia las profundidades, pero una fuerza invisible y colosal le impidió cruzar de nuevo los umbrales del inframundo. Las puertas de la Muerte estaban cerradas para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient cave entrance darkness",
+    "otras": [
+     "dark cave entrance",
+     "rocky cavern opening"
+    ],
+    "descripcion": "Entrada oscura a una cueva de piedra resbaladiza.",
+    "clip": "https://cdn.pixabay.com/video/2018/05/11/16160-269534741_large.mp4",
+    "clip_id": 16160,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/12/3139-166335921_large.mp4",
+      "clip_id": 3139
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/10/7215-198992418_large.mp4",
+      "clip_id": 7215
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/22/2222-156375630_medium.mp4",
+      "clip_id": 2222
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Desesperado, el joven músico corrió de vuelta hacia las profundidades, pero una fuerza invisible y colosal le impidió cruzar de nuevo los umbrales del inframundo. Las puertas de la Muerte estaban cerradas para siempre."
+  },
+  {
+   "hablado": "Durante siete días y siete noches, Orfeo permaneció sentado en la orilla del río Aqueronte. Negándose a probar bocado o beber agua, sus lágrimas alimentaron las oscuras corrientes mientras aguardaba un perdón divino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark river water night",
+    "otras": [
+     "river fog night",
+     "water stream dark"
+    ],
+    "descripcion": "Río oscuro fluyendo lentamente entre la niebla nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/23/190332-887815676_small.mp4",
+    "clip_id": 190332,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/23/27163-362142249_large.mp4",
+      "clip_id": 27163
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/17/217017_small.mp4",
+      "clip_id": 217017
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/30/367600_small.mp4",
+      "clip_id": 367600
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante siete días y siete noches, Orfeo permaneció sentado en la orilla del río Aqueronte. Negándose a probar bocado o beber agua, sus lágrimas alimentaron las oscuras corrientes mientras aguardaba un perdón divino."
+  },
+  {
+   "hablado": "Al comprender que el barquero Caronte jamás volvería a transportarle, regresó derrotado a las heladas colinas de Tracia. Rechazó la compañía de cualquier otra mujer, guardando una fidelidad absoluta a la memoria de su amada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statues marble",
+    "otras": [
+     "greece statues museum",
+     "marble sculpture antique"
+    ],
+    "descripcion": "Estatua de mármol clásico en posición melancólica.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/10/35649-407113548_large.mp4",
+    "clip_id": 35649,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/26/72292-541967056_large.mp4",
+      "clip_id": 72292
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/05/41167-428310433_large.mp4",
+      "clip_id": 41167
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/05/35067-405620822_large.mp4",
+      "clip_id": 35067
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al comprender que el barquero Caronte jamás volvería a transportarle, regresó derrotado a las heladas colinas de Tracia. Rechazó la compañía de cualquier otra mujer, guardando una fidelidad absoluta a la memoria de su amada."
+  },
+  {
+   "hablado": "Las tracias, enfurecidas por su desdén, acabaron atacando al bardo durante un frenético ritual. Aunque destrozaron su cuerpo, ni la misma muerte pudo separar la voz de su lira, que continuó cantando al flotar río abajo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient ruins columns sunset",
+    "otras": [
+     "greek ruins columns",
+     "greece temple ruins"
+    ],
+    "descripcion": "Ruinas griegas al atardecer entre vegetación salvaje.",
+    "clip": "https://cdn.pixabay.com/video/2022/06/14/120306-720505026_small.mp4",
+    "clip_id": 120306,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/05/1844-150885307_medium.mp4",
+      "clip_id": 1844
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/19/135658-764361528_small.mp4",
+      "clip_id": 135658
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/18/111204-689949818_medium.mp4",
+      "clip_id": 111204
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Las tracias, enfurecidas por su desdén, acabaron atacando al bardo durante un frenético ritual. Aunque destrozaron su cuerpo, ni la misma muerte pudo separar la voz de su lira, que continuó cantando al flotar río abajo."
+  },
+  {
+   "hablado": "Su alma descendió finalmente al reino inferior, donde encontró de nuevo a Eurídice. Allí, entre los campos elíseos, los dos amantes caminan juntos eternamente, pudiendo al fin mirarse a los ojos sin temor a alguna condena.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Orpheus and Eurydice sculpture",
+    "otras": [
+     "Orpheus Eurydice relief",
+     "ancient greek art orpheus"
+    ],
+    "descripcion": "Relieve clásico que muestra a Orfeo y Eurídice juntos.",
+    "prompt": "Relieve clásico que muestra a Orfeo y Eurídice juntos.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/26/34309-400974311_large.mp4",
+    "clip_id": 34309,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/27/213945_small.mp4",
+      "clip_id": 213945
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/07/19204-299997329_small.mp4",
+      "clip_id": 19204
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/20/212850_small.mp4",
+      "clip_id": 212850
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Su alma descendió finalmente al reino inferior, donde encontró de nuevo a Eurídice. Allí, entre los campos elíseos, los dos amantes caminan juntos eternamente, pudiendo al fin mirarse a los ojos sin temor a alguna condena."
+  },
+  {
+   "hablado": "La tragedia de Orfeo nos recuerda la fragilidad de la fe en los momentos más oscuros. Su impaciencia no nació del egoísmo, sino del amor desbordante y la incapacidad humana de confiar a ciegas en la eternidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek temple columns sky",
+    "otras": [
+     "parthenon acropolis ruins",
+     "ancient greece architecture"
+    ],
+    "descripcion": "Columnas de templo griego erguidas bajo un cielo azul despejado.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/29/33068-394889770_large.mp4",
+    "clip_id": 33068,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/21/82368-580974559_medium.mp4",
+      "clip_id": 82368
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/13/2142-155246338_large.mp4",
+      "clip_id": 2142
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/26/136642-764417523_small.mp4",
+      "clip_id": 136642
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La tragedia de Orfeo nos recuerda la fragilidad de la fe en los momentos más oscuros. Su impaciencia no nació del egoísmo, sino del amor desbordante y la incapacidad humana de confiar a ciegas en la eternidad."
+  },
+  {
+   "hablado": "¿Crees que el castigo dictado por Hades fue una crueldad deliberada del dios del inframundo, o acaso fue la propia desconfianza del músico la que selló su destino trágico para siempre?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hades statue marble ancient",
+    "otras": [
+     "ancient sculpture marble head",
+     "greek god statue"
+    ],
+    "descripcion": "Busto de mármol antiguo con expresión imponente y severa.",
+    "clip": "https://cdn.pixabay.com/video/2025/08/20/298643_large.mp4",
+    "clip_id": 298643,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/12/26788-361092006_large.mp4",
+      "clip_id": 26788
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/27/6574-193379308_large.mp4",
+      "clip_id": 6574
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "¿Crees que el castigo dictado por Hades fue una crueldad deliberada del dios del inframundo, o acaso fue la propia desconfianza del músico la que selló su destino trágico para siempre?"
+  },
+  {
+   "hablado": "Déjanos tu opinión en los comentarios y suscríbete a Relatos en Español para seguir descubriendo los grandes mitos, héroes y leyendas del mundo clásico en nuestros próximos vídeos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient amphora pottery museum",
+    "otras": [
+     "greek pottery antique",
+     "ancient greece artifacts"
+    ],
+    "descripcion": "Ánforas cerámicas griegas antiguas expuestas en un ambiente clásico.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/29/2265-157183276_large.mp4",
+    "clip_id": 2265,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/12/257894_large.mp4",
+      "clip_id": 257894
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/23/28201-368763917_large.mp4",
+      "clip_id": 28201
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Déjanos tu opinión en los comentarios y suscríbete a Relatos en Español para seguir descubriendo los grandes mitos, héroes y leyendas del mundo clásico en nuestros próximos vídeos."
+  }
+ ],
+ "titulo_youtube": "Orfeo: Bajó al Infierno por amor y lo perdió TODO",
+ "voz": "Algenib",
+ "estilo_imagen": "Cinematic photorealistic film still, ancient Greece, dramatic lighting, shallow depth of field, ultra detailed, 35mm film grain. ",
+ "vetados": [
+  "22183",
+  "222229",
+  "251264",
+  "297963",
+  "31363",
+  "32141",
+  "44184",
+  "mixkit:30377"
+ ]
+}

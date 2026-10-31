@@ -1,0 +1,570 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "Orfeo y Eurídice",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/01_full.mp4",
+  "1": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/02_full.mp4",
+  "2": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/03_full.mp4",
+  "3": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/04_full.mp4",
+  "4": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/05_full.mp4",
+  "5": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/06_full.mp4",
+  "6": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/07_full.mp4",
+  "7": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/08_full.mp4",
+  "8": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/09_full.mp4",
+  "9": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/10_full.mp4",
+  "10": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/11_full.mp4",
+  "11": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/12_full.mp4",
+  "12": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/13_full.mp4",
+  "13": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/14_full.mp4",
+  "14": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/15_full.mp4",
+  "15": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/16_full.mp4",
+  "16": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/17_full.mp4",
+  "17": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/18_full.mp4",
+  "18": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/19_full.mp4",
+  "19": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/20_full.mp4",
+  "20": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/21_full.mp4",
+  "21": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/22_full.mp4",
+  "22": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/23_full.mp4",
+  "23": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/24_full.mp4",
+  "24": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/25_full.mp4",
+  "25": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/26_full.mp4",
+  "26": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/27_full.mp4",
+  "27": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/28_full.mp4",
+  "28": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/29_full.mp4",
+  "29": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/30_full.mp4",
+  "30": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/31_full.mp4",
+  "31": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/32_full.mp4",
+  "32": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/33_full.mp4",
+  "33": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/34_full.mp4",
+  "34": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/35_full.mp4",
+  "35": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/36_full.mp4",
+  "36": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/37_full.mp4",
+  "37": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/38_full.mp4",
+  "38": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/39_full.mp4",
+  "39": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/40_full.mp4",
+  "40": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/41_full.mp4",
+  "41": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/42_full.mp4",
+  "42": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/43_full.mp4",
+  "43": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/44_full.mp4",
+  "44": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/45_full.mp4",
+  "45": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/46_full.mp4",
+  "46": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/47_full.mp4",
+  "47": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/48_full.mp4",
+  "48": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/49_full.mp4",
+  "49": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/50_full.mp4",
+  "50": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/51_full.mp4",
+  "51": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/52_full.mp4",
+  "52": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/53_full.mp4",
+  "53": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/54_full.mp4",
+  "54": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/55_full.mp4",
+  "55": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/56_full.mp4",
+  "56": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/57_full.mp4",
+  "57": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/58_full.mp4",
+  "58": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/59_full.mp4",
+  "59": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/60_full.mp4",
+  "60": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/61_full.mp4",
+  "61": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/62_full.mp4",
+  "62": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/63_full.mp4",
+  "63": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/64_full.mp4",
+  "64": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/65_full.mp4",
+  "65": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/66_full.mp4",
+  "66": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/67_full.mp4",
+  "67": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/68_full.mp4",
+  "68": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/69_full.mp4",
+  "69": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/70_full.mp4",
+  "70": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/71_full.mp4",
+  "71": "/tmp/largo-relatos-knl7ngrd/proyecto/clips/72_full.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "El acorde prohibido"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "Un músico capaz de mover las piedras"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "La sombra en la hierba alta"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "El descenso al reino sin retorno"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "La súplica ante el trono de sombras"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "La única condición de Hades"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "El silencio que alimenta la sospecha"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "El giro fatal"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "El luto eterno del bardo"
+  }
+ ],
+ "color": null,
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "Un hombre camina a ciegas por el reino de los muertos. A pocos pasos de su victoria, la sombra silenciosa de su amada le sigue entre la niebla. Un solo error lo destruirá todo.",
+   "subtitulo": "Un hombre camina a ciegas por el reino de los muertos. A pocos pasos de su victoria, la sombra silenciosa de su amada le sigue entre la niebla. Un solo error lo destruirá todo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios Hades impuso una norma cruel y absoluta. Orfeo podía rescatar a Eurídice del inframundo con una condición: jamás mirar atrás antes de pisar la luz del sol. Pero el silencio era asfixiante.",
+   "subtitulo": "El dios Hades impuso una norma cruel y absoluta. Orfeo podía rescatar a Eurídice del inframundo con una condición: jamás mirar atrás antes de pisar la luz del sol. Pero el silencio era asfixiante."
+  },
+  {
+   "titulo": "",
+   "hablado": "¿Podrá el músico más grande de la antigüedad vencer la desesperación antes de rozar la superficie? Hoy verás cómo el amor más puro desafió a la Muerte solo para rozar una tragedia devastadora.",
+   "subtitulo": "¿Podrá el músico más grande de la antigüedad vencer la desesperación antes de rozar la superficie? Hoy verás cómo el amor más puro desafió a la Muerte solo para rozar una tragedia devastadora."
+  },
+  {
+   "titulo": "",
+   "hablado": "El aire helado rozaba sus hombros por el sendero de Laconia. Acompañado únicamente por pisadas etéreas, cada segundo se volvía una agonía. Descubre el trágico instante que cambió su destino para siempre.",
+   "subtitulo": "El aire helado rozaba sus hombros por el sendero de Laconia. Acompañado únicamente por pisadas etéreas, cada segundo se volvía una agonía. Descubre el trágico instante que cambió su destino para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "La desconfianza empezó a germinar en la mente de Orfeo como un veneno sutil. Se preguntaba si las divinidades del infierno le habían engañado y si caminaba completamente solo en medio de aquella negrura sin fin.",
+   "subtitulo": "La desconfianza empezó a germinar en la mente de Orfeo como un veneno sutil. Se preguntaba si las divinidades del infierno le habían engañado y si caminaba completamente solo en medio de aquella negrura sin fin."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pocos mortales lograron cruzar con vida las fronteras del Hades, pero ninguno lo había arriesgado todo por un motivo tan desgarrador. Su voz y su lira habían conmovido a los monstruos, pero no podían acallar sus temores.",
+   "subtitulo": "Pocos mortales lograron cruzar con vida las fronteras del Hades, pero ninguno lo había arriesgado todo por un motivo tan desgarrador. Su voz y su lira habían conmovido a los monstruos, pero no podían acallar sus temores."
+  },
+  {
+   "titulo": "",
+   "hablado": "La luz del mundo exterior comenzaba a filtrar sus primeros destellos débiles entre las grietas de la cueva. Faltaban solo unos pocos pasos para culminar la hazaña más grande jamás intentada por un ser humano.",
+   "subtitulo": "La luz del mundo exterior comenzaba a filtrar sus primeros destellos débiles entre las grietas de la cueva. Faltaban solo unos pocos pasos para culminar la hazaña más grande jamás intentada por un ser humano."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, el abismo psicológico y el pánico del abandono superaron la prudencia del viajero. En un instante de debilidad impetuosa, una decisión precipitada cambiaría el curso de la eternidad y marcaría su destino trágico.",
+   "subtitulo": "Sin embargo, el abismo psicológico y el pánico del abandono superaron la prudencia del viajero. En un instante de debilidad impetuosa, una decisión precipitada cambiaría el curso de la eternidad y marcaría su destino trágico."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero para comprender la magnitud de esta tragedia, debemos viajar al pasado, a los verdes valles de Tracia. Allí, el joven Orfeo nació bendecido por la estirpe más pura de las artes y la divinidad.",
+   "subtitulo": "Pero para comprender la magnitud de esta tragedia, debemos viajar al pasado, a los verdes valles de Tracia. Allí, el joven Orfeo nació bendecido por la estirpe más pura de las artes y la divinidad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hijo de la musa Calíope y del glorioso dios Apolo, el muchacho recibió un regalo incomparable. Una lira dorada cuyos acordes no pertenecían al mundo mortal, sino al telar de la creación universal.",
+   "subtitulo": "Hijo de la musa Calíope y del glorioso dios Apolo, el muchacho recibió un regalo incomparable. Una lira dorada cuyos acordes no pertenecían al mundo mortal, sino al telar de la creación universal."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando Orfeo rasgaba las cuerdas de su instrumento, la naturaleza entera contenía el aliento. Los feroces lobos del monte Pangion y los leones hambrientos se echaban mancebos a sus pies, despojados de todo su salvajismo.",
+   "subtitulo": "Cuando Orfeo rasgaba las cuerdas de su instrumento, la naturaleza entera contenía el aliento. Los feroces lobos del monte Pangion y los leones hambrientos se echaban mancebos a sus pies, despojados de todo su salvajismo."
+  },
+  {
+   "titulo": "",
+   "hablado": "No solo los animales sucumbían a su hechizo. Los robles milenarios arrancaban sus viejas raíces de la tierra para acercarse a escucharlo, y las piedras del camino lloraban gotas de rocío ante sus trinos vibrantes.",
+   "subtitulo": "No solo los animales sucumbían a su hechizo. Los robles milenarios arrancaban sus viejas raíces de la tierra para acercarse a escucharlo, y las piedras del camino lloraban gotas de rocío ante sus trinos vibrantes."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ninguna criatura podía resistirse a su talento, pero el corazón del bardo solo latía por una criatura en particular. Se trataba de Eurídice, una ninfa de las maderas de singular hermosura y serenidad inigualable.",
+   "subtitulo": "Ninguna criatura podía resistirse a su talento, pero el corazón del bardo solo latía por una criatura en particular. Se trataba de Eurídice, una ninfa de las maderas de singular hermosura y serenidad inigualable."
+  },
+  {
+   "titulo": "",
+   "hablado": "El amor entre el músico y la ninfa floreció con la misma fuerza que la primavera en Tracia. Cada melodía que Orfeo compondría desde aquel instante llevaría grabada la luz deslumbrante de la mirada de su amada.",
+   "subtitulo": "El amor entre el músico y la ninfa floreció con la misma fuerza que la primavera en Tracia. Cada melodía que Orfeo compondría desde aquel instante llevaría grabada la luz deslumbrante de la mirada de su amada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pronto acordaron unir sus destinos en una gran boda. Himeneo, el protector de los enlaces sagrados, acudió al banquete para bendecir a la pareja, rodeados de flores, cánticos de gozo y libaciones de vino dulce.",
+   "subtitulo": "Pronto acordaron unir sus destinos en una gran boda. Himeneo, el protector de los enlaces sagrados, acudió al banquete para bendecir a la pareja, rodeados de flores, cánticos de gozo y libaciones de vino dulce."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la antorcha del dios Himeneo despedía un humo negro y denso que provocaba lágrimas entre los invitados. Aquel mal augurio anunciaba que la dicha de la joven pareja acababa de comenzar y pronto terminaría.",
+   "subtitulo": "Sin embargo, la antorcha del dios Himeneo despedía un humo negro y denso que provocaba lágrimas entre los invitados. Aquel mal augurio anunciaba que la dicha de la joven pareja acababa de comenzar y pronto terminaría."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apenas unas semanas después de las nupcias, Eurídice paseaba alegremente por los frondosos valles de Tracia. Corría descalza sobre la hierba fresca junto a las ninfas del bosque, disfrutando del cálido sol matutino sin presagiar el peligro.",
+   "subtitulo": "Apenas unas semanas después de las nupcias, Eurídice paseaba alegremente por los frondosos valles de Tracia. Corría descalza sobre la hierba fresca junto a las ninfas del bosque, disfrutando del cálido sol matutino sin presagiar el peligro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Oculta entre la maleza tupida, una víbora venenosa descansaba bajo las sombras. Al avanzar sin fijar la mirada en el suelo, la joven ninfa pisó de forma accidental la cola del reptil, provocando su letal reacción inmediata.",
+   "subtitulo": "Oculta entre la maleza tupida, una víbora venenosa descansaba bajo las sombras. Al avanzar sin fijar la mirada en el suelo, la joven ninfa pisó de forma accidental la cola del reptil, provocando su letal reacción inmediata."
+  },
+  {
+   "titulo": "",
+   "hablado": "El animal hundió sus colmillos con furia en el delicado tobillo de Eurídice. En pocos segundos, el veneno mortífero se filtró por el torrente sanguíneo de la muchacha, congelando sus extremidades y bloqueando su respiración.",
+   "subtitulo": "El animal hundió sus colmillos con furia en el delicado tobillo de Eurídice. En pocos segundos, el veneno mortífero se filtró por el torrente sanguíneo de la muchacha, congelando sus extremidades y bloqueando su respiración."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las ninfas acudieron a sus desgarradores gritos de dolor, pero ya era demasiado tarde. La tez de Eurídice perdió el color rápidamente y su pulso se apagó para siempre sobre la tierra húmeda del valle.",
+   "subtitulo": "Las ninfas acudieron a sus desgarradores gritos de dolor, pero ya era demasiado tarde. La tez de Eurídice perdió el color rápidamente y su pulso se apagó para siempre sobre la tierra húmeda del valle."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando Orfeo llegó al lugar siguiendo los lamentos, encontró el cuerpo inerte de su amada. El dolor paralizó su pecho, rompiendo en mil pedazos la ilusión de la vida próspera que acababan de inaugurar juntos.",
+   "subtitulo": "Cuando Orfeo llegó al lugar siguiendo los lamentos, encontró el cuerpo inerte de su amada. El dolor paralizó su pecho, rompiendo en mil pedazos la ilusión de la vida próspera que acababan de inaugurar juntos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desesperado, el músico tomó su lira de oro, pero esta vez no brotaron notas alegres. Compuso un lamento amargo y profundo que resonó por todas las montañas de Tracia, conmoviendo a cuantas criaturas lo escuchaban.",
+   "subtitulo": "Desesperado, el músico tomó su lira de oro, pero esta vez no brotaron notas alegres. Compuso un lamento amargo y profundo que resonó por todas las montañas de Tracia, conmoviendo a cuantas criaturas lo escuchaban."
+  },
+  {
+   "titulo": "",
+   "hablado": "Brotaron lágrimas de los árboles, las aves dejaron de cantar y los propios dioses del Olimpo sintieron compasión ante semejante tragedia. La muerte había arrebatado injustamente a la joven en la plenitud de su juventud.",
+   "subtitulo": "Brotaron lágrimas de los árboles, las aves dejaron de cantar y los propios dioses del Olimpo sintieron compasión ante semejante tragedia. La muerte había arrebatado injustamente a la joven en la plenitud de su juventud."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, Orfeo se negó a aceptar que aquel fuera el destino definitivo de su esposa. Dispuesto a desafiar a las leyes eternas de la naturaleza, concibió un plan descabellado que ningún mortal vivo había intentado jamás.",
+   "subtitulo": "Sin embargo, Orfeo se negó a aceptar que aquel fuera el destino definitivo de su esposa. Dispuesto a desafiar a las leyes eternas de la naturaleza, concibió un plan descabellado que ningún mortal vivo había intentado jamás."
+  },
+  {
+   "titulo": "",
+   "hablado": "Guiado por la desesperación, Orfeo viajó hasta las profundas cuevas del cabo Témaro, en Laconia. Allí se abría una grieta abismal y helada, conocida por los griegos como la entrada directa hacia el inframundo.",
+   "subtitulo": "Guiado por la desesperación, Orfeo viajó hasta las profundas cuevas del cabo Témaro, en Laconia. Allí se abría una grieta abismal y helada, conocida por los griegos como la entrada directa hacia el inframundo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin dudarlo un instante, el músico se adentró en las tinieblas eternas donde la luz del sol jamás había penetrado. El aire se volvió pesado y el silencio aplastante comenzó a helarle la sangre con cada paso.",
+   "subtitulo": "Sin dudarlo un instante, el músico se adentró en las tinieblas eternas donde la luz del sol jamás había penetrado. El aire se volvió pesado y el silencio aplastante comenzó a helarle la sangre con cada paso."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras un largo trayecto entre rocas afiladas, llegó a la orilla del oscuro río Aqueronte. Allí aguardaba Caronte, el fúnebre barquero encargado de transportar las almas de los muertos hacia las sombras del otro lado.",
+   "subtitulo": "Tras un largo trayecto entre rocas afiladas, llegó a la orilla del oscuro río Aqueronte. Allí aguardaba Caronte, el fúnebre barquero encargado de transportar las almas de los muertos hacia las sombras del otro lado."
+  },
+  {
+   "titulo": "",
+   "hablado": "El anciano barquero rechazó al viajero vivo con firmeza. Sin embargo, Orfeo tomó su lira y rasgó las cuerdas con nostalgia, produciendo una melodía tan dulce que ablandó el marchito corazón de la deidad del abismo.",
+   "subtitulo": "El anciano barquero rechazó al viajero vivo con firmeza. Sin embargo, Orfeo tomó su lira y rasgó las cuerdas con nostalgia, produciendo una melodía tan dulce que ablandó el marchito corazón de la deidad del abismo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Navegando en silencio sobre aguas profundas y brumosas, cruzaron la frontera prohibida. Al desembarcar, la música continuó resonando entre las tinieblas, abriendo un camino de paz en un territorio dominado únicamente por el sufrimiento.",
+   "subtitulo": "Navegando en silencio sobre aguas profundas y brumosas, cruzaron la frontera prohibida. Al desembarcar, la música continuó resonando entre las tinieblas, abriendo un camino de paz en un territorio dominado únicamente por el sufrimiento."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pronto se alzó ante él la enorme silueta de Cerbero, el voraz perro de tres cabezas que custodiaba las puertas de Hades. Sus feroces fauces goteaban baba y sus gruñidos retumbaron amenazantes en las paredes de piedra.",
+   "subtitulo": "Pronto se alzó ante él la enorme silueta de Cerbero, el voraz perro de tres cabezas que custodiaba las puertas de Hades. Sus feroces fauces goteaban baba y sus gruñidos retumbaron amenazantes en las paredes de piedra."
+  },
+  {
+   "titulo": "",
+   "hablado": "Nuevamente, la maestría de Orfeo obró el milagro. Sus acordes hipnóticos amansaron a la bestia salvaje, que cerró sus seis ojos y cayó rendida en un sueño profundo, permitiendo el paso al intrépido bardo de Tracia.",
+   "subtitulo": "Nuevamente, la maestría de Orfeo obró el milagro. Sus acordes hipnóticos amansaron a la bestia salvaje, que cerró sus seis ojos y cayó rendida en un sueño profundo, permitiendo el paso al intrépido bardo de Tracia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las almas en pena y los severos jueces de los muertos detuvieron sus tormentos ante tal prodigio. Nadie se atrevió a frenar la marcha de aquel mortal que avanzaba invicto hacia el trono del señor de las sombras.",
+   "subtitulo": "Las almas en pena y los severos jueces de los muertos detuvieron sus tormentos ante tal prodigio. Nadie se atrevió a frenar la marcha de aquel mortal que avanzaba invicto hacia el trono del señor de las sombras."
+  },
+  {
+   "titulo": "",
+   "hablado": "Orfeo se detuvo finalmente ante el majestuoso trono de obsidiana, donde el temible Hades reinaba en penumbra junto a la soberana Perséfone. El silencio en aquel salón de sombras era denso, abrumador y casi insoportable para un mortal.",
+   "subtitulo": "Orfeo se detuvo finalmente ante el majestuoso trono de obsidiana, donde el temible Hades reinaba en penumbra junto a la soberana Perséfone. El silencio en aquel salón de sombras era denso, abrumador y casi insoportable para un mortal."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin pronunciar palabra, el bardo se arrodilló sobre la piedra helada y rasgó suavemente las cuerdas de su lira. La primera nota vibró en el aire, rompiendo la quietud eterna de la corte de los muertos.",
+   "subtitulo": "Sin pronunciar palabra, el bardo se arrodilló sobre la piedra helada y rasgó suavemente las cuerdas de su lira. La primera nota vibró en el aire, rompiendo la quietud eterna de la corte de los muertos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su voz entonó una melodía desgarradora que hablaba de la injusticia de una juventud arrebatada demasiado pronto. Cantó al amor puro, al dolor inmenso de la pérdida y a la desesperación de un corazón roto.",
+   "subtitulo": "Su voz entonó una melodía desgarradora que hablaba de la injusticia de una juventud arrebatada demasiado pronto. Cantó al amor puro, al dolor inmenso de la pérdida y a la desesperación de un corazón roto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Recordó a los soberanos que todos los mortales terminarán cayendo bajo su dominio tarde o temprano. No pedía la inmortalidad para su amada, sino tan solo los años que el destino le había robado de forma cruel.",
+   "subtitulo": "Recordó a los soberanos que todos los mortales terminarán cayendo bajo su dominio tarde o temprano. No pedía la inmortalidad para su amada, sino tan solo los años que el destino le había robado de forma cruel."
+  },
+  {
+   "titulo": "",
+   "hablado": "Por primera vez desde la creación del Inframundo, las lágrimas brotaron de los ojos de la reina Perséfone. El canto del músico ablandó el corazón de la diosa, recordando su propia nostalgia por la primavera.",
+   "subtitulo": "Por primera vez desde la creación del Inframundo, las lágrimas brotaron de los ojos de la reina Perséfone. El canto del músico ablandó el corazón de la diosa, recordando su propia nostalgia por la primavera."
+  },
+  {
+   "titulo": "",
+   "hablado": "Incluso el implacable Hades, cuyo pecho guardaba un corazón de piedra jamás conmovido por súplica alguna, sintió una extraña piedad. La belleza del arte había logrado lo imposible, vencer la inflexibilidad del señor de las sombras.",
+   "subtitulo": "Incluso el implacable Hades, cuyo pecho guardaba un corazón de piedra jamás conmovido por súplica alguna, sintió una extraña piedad. La belleza del arte había logrado lo imposible, vencer la inflexibilidad del señor de las sombras."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios del abismo alzó su mano para detener la música y ordenó traer la sombra de Eurídice de entre los espíritus recién llegados. La joven avanzó despacio, cojeando aún por la herida fatal en su tobillo.",
+   "subtitulo": "El dios del abismo alzó su mano para detener la música y ordenó traer la sombra de Eurídice de entre los espíritus recién llegados. La joven avanzó despacio, cojeando aún por la herida fatal en su tobillo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hades aceptó devolverle la vida a la ninfa, concediendo un milagro jamás visto en el reino de la muerte. Sin embargo, antes de dejarlos marchar, el soberano impuso una última advertencia que cambiaría el destino de ambos.",
+   "subtitulo": "Hades aceptó devolverle la vida a la ninfa, concediendo un milagro jamás visto en el reino de la muerte. Sin embargo, antes de dejarlos marchar, el soberano impuso una última advertencia que cambiaría el destino de ambos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El soberano del inframundo alzó su mano augusta y dictó una condición irrevocable. Eurídice caminaría detrás de él, ascendiendo desde las tinieblas de las profundidades hacia las grutas del puerto del Taínaro.",
+   "subtitulo": "El soberano del inframundo alzó su mano augusta y dictó una condición irrevocable. Eurídice caminaría detrás de él, ascendiendo desde las tinieblas de las profundidades hacia las grutas del puerto del Taínaro."
+  },
+  {
+   "titulo": "",
+   "hablado": "La norma exigía una obediencia absoluta y despiadada. Orfeo debía guiar a la ninfa sin girar el rostro en ningún momento, prohibiéndole mirar hacia atrás hasta haber pisado por completo la luz solar.",
+   "subtitulo": "La norma exigía una obediencia absoluta y despiadada. Orfeo debía guiar a la ninfa sin girar el rostro en ningún momento, prohibiéndole mirar hacia atrás hasta haber pisado por completo la luz solar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Si sus ojos se posaban sobre ella tan solo un segundo antes de cruzar el umbral del mundo exterior, el hechizo se rompería para siempre y Eurídice regresarías eternamente al abismo.",
+   "subtitulo": "Si sus ojos se posaban sobre ella tan solo un segundo antes de cruzar el umbral del mundo exterior, el hechizo se rompería para siempre y Eurídice regresarías eternamente al abismo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El músico asintió en silencio, sintiendo una pesada responsabilidad aplastar su pecho. Sabía que la prueba no desafiaba su fuerza física, sino la entereza de su espíritu y la firmeza de su fe.",
+   "subtitulo": "El músico asintió en silencio, sintiendo una pesada responsabilidad aplastar su pecho. Sabía que la prueba no desafiaba su fuerza física, sino la entereza de su espíritu y la firmeza de su fe."
+  },
+  {
+   "titulo": "",
+   "hablado": "Guiada por el mandato de Perséfone, la pálida sombra de la ninfa se colocó lentamente tras los pasos de su esposo, respirando el aire gélido de los dominios subterráneos sin emitir sonido.",
+   "subtitulo": "Guiada por el mandato de Perséfone, la pálida sombra de la ninfa se colocó lentamente tras los pasos de su esposo, respirando el aire gélido de los dominios subterráneos sin emitir sonido."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin atreverse a cruzar la mirada con su amada, Orfeo dio media vuelta y empezó a caminar. La larga travesía hacia la libertad los adentraba en un túnel de roca empinado y resbaladizo.",
+   "subtitulo": "Sin atreverse a cruzar la mirada con su amada, Orfeo dio media vuelta y empezó a caminar. La larga travesía hacia la libertad los adentraba en un túnel de roca empinado y resbaladizo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El trayecto transcurría entre la más densa penumbra, donde las húmedas paredes de piedra reverberaban con los latidos desbocados del artista, quien avanzaba a ciegas acariciando las frías rocas del camino.",
+   "subtitulo": "El trayecto transcurría entre la más densa penumbra, donde las húmedas paredes de piedra reverberaban con los latidos desbocados del artista, quien avanzaba a ciegas acariciando las frías rocas del camino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cada paso resultaba un tormento insoportable mientras dejaban atrás los tronos de obsidiana. Con el corazón en llamas y la mente dividida, Orfeo continuó la dura marcha, ignorando las sombras sospechosas.",
+   "subtitulo": "Cada paso resultaba un tormento insoportable mientras dejaban atrás los tronos de obsidiana. Con el corazón en llamas y la mente dividida, Orfeo continuó la dura marcha, ignorando las sombras sospechosas."
+  },
+  {
+   "titulo": "",
+   "hablado": "La gruta del Taínaro era un pasillo angosto y helado tallado en la roca viva. Con cada zancada, la tenue luz del reino abismal se apagaba por completo, sepultando al músico en una penumbra impenetrable y asfixiante.",
+   "subtitulo": "La gruta del Taínaro era un pasillo angosto y helado tallado en la roca viva. Con cada zancada, la tenue luz del reino abismal se apagaba por completo, sepultando al músico en una penumbra impenetrable y asfixiante."
+  },
+  {
+   "titulo": "",
+   "hablado": "Orfeo apretaba su lira contra el pecho sintiendo únicamente el murmullo de sus propias pisadas. El espíritu de Eurídice, al ser una sombra etérea, no proyectaba pisadas ni ruidos al caminar tras sus pasos en la oscuridad.",
+   "subtitulo": "Orfeo apretaba su lira contra el pecho sintiendo únicamente el murmullo de sus propias pisadas. El espíritu de Eurídice, al ser una sombra etérea, no proyectaba pisadas ni ruidos al caminar tras sus pasos en la oscuridad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Un frío atroz recorrió la columna del poeta cuando la duda brotó en su mente. ¿Acaso los gobernantes de las tinieblas le habían engañado ofreciendo una ilusión vana mientras él avanzaba completamente solo hacia la superficie?",
+   "subtitulo": "Un frío atroz recorrió la columna del poeta cuando la duda brotó en su mente. ¿Acaso los gobernantes de las tinieblas le habían engañado ofreciendo una ilusión vana mientras él avanzaba completamente solo hacia la superficie?"
+  },
+  {
+   "titulo": "",
+   "hablado": "El sendero se volvía empinado y peligroso, cuajado de piedras sueltas y humedad constante. Cada tropezón amenazaba con hacerle caer, pero el temor a romper la prohibición divina le obligaba a erguirse sin dirigir la mirada hacia atrás.",
+   "subtitulo": "El sendero se volvía empinado y peligroso, cuajado de piedras sueltas y humedad constante. Cada tropezón amenazaba con hacerle caer, pero el temor a romper la prohibición divina le obligaba a erguirse sin dirigir la mirada hacia atrás."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las corrientes de aire de las grutas susurraban entre las fisuras provocando ecos engañosos. El músico contenía el aliento intentando percibir la respiración de su amada, pero el abismo solo le devolví un eco vacío, helado y cruel.",
+   "subtitulo": "Las corrientes de aire de las grutas susurraban entre las fisuras provocando ecos engañosos. El músico contenía el aliento intentando percibir la respiración de su amada, pero el abismo solo le devolví un eco vacío, helado y cruel."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las leyes del Inframundo jamás se habían doblegado ante la impaciencia de un mortal. La prueba impuesta por Hades no medía la fuerza física del héroe, sino su fe absoluta frente a la desesperación y el engaño de los sentidos.",
+   "subtitulo": "Las leyes del Inframundo jamás se habían doblegado ante la impaciencia de un mortal. La prueba impuesta por Hades no medía la fuerza física del héroe, sino su fe absoluta frente a la desesperación y el engaño de los sentidos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras horas de angustiosa caminata, una tenue rendija de luz solar apareció a lo lejos entre las rocas. La proximidad del mundo de los vivos lejos de calmar su angustia, disparó sus pulsaciones hasta un límite insoportable.",
+   "subtitulo": "Tras horas de angustiosa caminata, una tenue rendija de luz solar apareció a lo lejos entre las rocas. La proximidad del mundo de los vivos lejos de calmar su angustia, disparó sus pulsaciones hasta un límite insoportable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sus pies alcanzaron finalmente el umbral iluminado por el sol, pero la incertidumbre quemaba sus entrañas con la fuerza de una maldición. Un simple movimiento de cuello estaba a punto de decidir su destino, pero lo peor aún no había llegado.",
+   "subtitulo": "Sus pies alcanzaron finalmente el umbral iluminado por el sol, pero la incertidumbre quemaba sus entrañas con la fuerza de una maldición. Un simple movimiento de cuello estaba a punto de decidir su destino, pero lo peor aún no había llegado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Orfeo dio el último paso hacia la luz del día, sintiendo el calor del sol sobre su rostro cansado. La calidez del mundo exterior parecía confirmar que la pesadilla del inframundo había llegado a su fin.",
+   "subtitulo": "Orfeo dio el último paso hacia la luz del día, sintiendo el calor del sol sobre su rostro cansado. La calidez del mundo exterior parecía confirmar que la pesadilla del inframundo había llegado a su fin."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, embriagado por el alivio de pisar tierra firme, el joven músico cometió un error fatal. Olvidó que la promesa exigía que ambos, y no solo él, hubieran salido por completo de las penumbras.",
+   "subtitulo": "Sin embargo, embriagado por el alivio de pisar tierra firme, el joven músico cometió un error fatal. Olvidó que la promesa exigía que ambos, y no solo él, hubieran salido por completo de las penumbras."
+  },
+  {
+   "titulo": "",
+   "hablado": "Movido por un impulso incontrolable y el temor desesperado de haber sido engañado, se detuvo de golpe. Giró su cabeza hacia las sombras para buscar la mirada de su amada y confirmar que realmente caminaba tras sus pasos.",
+   "subtitulo": "Movido por un impulso incontrolable y el temor desesperado de haber sido engañado, se detuvo de golpe. Giró su cabeza hacia las sombras para buscar la mirada de su amada y confirmar que realmente caminaba tras sus pasos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Por una fracción de segundo, sus miradas volvieron a encontrarse. Orfeo alcanzó a ver la silueta tenue de Eurídice, cuyo rostro mostraba una mezcla de amor infinito y una profunda melancolía al comprender lo que estaba a punto de ocurrir.",
+   "subtitulo": "Por una fracción de segundo, sus miradas volvieron a encontrarse. Orfeo alcanzó a ver la silueta tenue de Eurídice, cuyo rostro mostraba una mezcla de amor infinito y una profunda melancolía al comprender lo que estaba a punto de ocurrir."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero la condición impuesta por Hades no admitía excepciones. Como Eurídice todavía mantenía un pie en el reino de las sombras, el pacto sagrado se rompió al instante de manera cruel e irreversible ante los ojos del bardo.",
+   "subtitulo": "Pero la condición impuesta por Hades no admitía excepciones. Como Eurídice todavía mantenía un pie en el reino de las sombras, el pacto sagrado se rompió al instante de manera cruel e irreversible ante los ojos del bardo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Una fuerza invisible e implacable atrapó el cuerpo etéreo de la ninfa. Una corriente de aire gélido la arrastró violentamente hacia las profundidades, mientras la luz que iluminaba su figura comenzaba a apagarse de forma definitiva e inexorable.",
+   "subtitulo": "Una fuerza invisible e implacable atrapó el cuerpo etéreo de la ninfa. Una corriente de aire gélido la arrastró violentamente hacia las profundidades, mientras la luz que iluminaba su figura comenzaba a apagarse de forma definitiva e inexorable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Eurídice extendió sus pálidos brazos hacia él en un intento desesperado por sostenerse, tratando de pronunciar un último adiós. Sin embargo, sus labios solo dejaron escapar un suspiro sordo que fue engullido de inmediato por el abismo.",
+   "subtitulo": "Eurídice extendió sus pálidos brazos hacia él en un intento desesperado por sostenerse, tratando de pronunciar un último adiós. Sin embargo, sus labios solo dejaron escapar un suspiro sordo que fue engullido de inmediato por el abismo."
+  },
+  {
+   "titulo": "",
+   "hablado": "La sombra de la ninfa se disolvió por completo en las tinieblas del Tártaro. Orfeo estiró sus manos hacia el vacío, atrapando tan solo el aire helado de la gruta, mientras el destino le asestaba el golpe más devastador.",
+   "subtitulo": "La sombra de la ninfa se disolvió por completo en las tinieblas del Tártaro. Orfeo estiró sus manos hacia el vacío, atrapando tan solo el aire helado de la gruta, mientras el destino le asestaba el golpe más devastador."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desesperado, el joven músico corrió de vuelta hacia las profundidades, pero una fuerza invisible y colosal le impidió cruzar de nuevo los umbrales del inframundo. Las puertas de la Muerte estaban cerradas para siempre.",
+   "subtitulo": "Desesperado, el joven músico corrió de vuelta hacia las profundidades, pero una fuerza invisible y colosal le impidió cruzar de nuevo los umbrales del inframundo. Las puertas de la Muerte estaban cerradas para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante siete días y siete noches, Orfeo permaneció sentado en la orilla del río Aqueronte. Negándose a probar bocado o beber agua, sus lágrimas alimentaron las oscuras corrientes mientras aguardaba un perdón divino.",
+   "subtitulo": "Durante siete días y siete noches, Orfeo permaneció sentado en la orilla del río Aqueronte. Negándose a probar bocado o beber agua, sus lágrimas alimentaron las oscuras corrientes mientras aguardaba un perdón divino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al comprender que el barquero Caronte jamás volvería a transportarle, regresó derrotado a las heladas colinas de Tracia. Rechazó la compañía de cualquier otra mujer, guardando una fidelidad absoluta a la memoria de su amada.",
+   "subtitulo": "Al comprender que el barquero Caronte jamás volvería a transportarle, regresó derrotado a las heladas colinas de Tracia. Rechazó la compañía de cualquier otra mujer, guardando una fidelidad absoluta a la memoria de su amada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las tracias, enfurecidas por su desdén, acabaron atacando al bardo durante un frenético ritual. Aunque destrozaron su cuerpo, ni la misma muerte pudo separar la voz de su lira, que continuó cantando al flotar río abajo.",
+   "subtitulo": "Las tracias, enfurecidas por su desdén, acabaron atacando al bardo durante un frenético ritual. Aunque destrozaron su cuerpo, ni la misma muerte pudo separar la voz de su lira, que continuó cantando al flotar río abajo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su alma descendió finalmente al reino inferior, donde encontró de nuevo a Eurídice. Allí, entre los campos elíseos, los dos amantes caminan juntos eternamente, pudiendo al fin mirarse a los ojos sin temor a alguna condena.",
+   "subtitulo": "Su alma descendió finalmente al reino inferior, donde encontró de nuevo a Eurídice. Allí, entre los campos elíseos, los dos amantes caminan juntos eternamente, pudiendo al fin mirarse a los ojos sin temor a alguna condena."
+  },
+  {
+   "titulo": "",
+   "hablado": "La tragedia de Orfeo nos recuerda la fragilidad de la fe en los momentos más oscuros. Su impaciencia no nació del egoísmo, sino del amor desbordante y la incapacidad humana de confiar a ciegas en la eternidad.",
+   "subtitulo": "La tragedia de Orfeo nos recuerda la fragilidad de la fe en los momentos más oscuros. Su impaciencia no nació del egoísmo, sino del amor desbordante y la incapacidad humana de confiar a ciegas en la eternidad."
+  },
+  {
+   "titulo": "",
+   "hablado": "¿Crees que el castigo dictado por Hades fue una crueldad deliberada del dios del inframundo, o acaso fue la propia desconfianza del músico la que selló su destino trágico para siempre?",
+   "subtitulo": "¿Crees que el castigo dictado por Hades fue una crueldad deliberada del dios del inframundo, o acaso fue la propia desconfianza del músico la que selló su destino trágico para siempre?"
+  },
+  {
+   "titulo": "",
+   "hablado": "Déjanos tu opinión en los comentarios y suscríbete a Relatos en Español para seguir descubriendo los grandes mitos, héroes y leyendas del mundo clásico en nuestros próximos vídeos.",
+   "subtitulo": "Déjanos tu opinión en los comentarios y suscríbete a Relatos en Español para seguir descubriendo los grandes mitos, héroes y leyendas del mundo clásico en nuestros próximos vídeos."
+  }
+ ]
+}
