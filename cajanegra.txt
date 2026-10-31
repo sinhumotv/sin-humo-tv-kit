@@ -37,3 +37,4 @@
 2026-10-31|08:00|La fuga de Alcatraz|cuenta|YO 6ae5775bceb491e585daabb8 IN 6ae5775bceb491e585daac12 TI 6ae5775c406ab8a0189d69da|img=mixto|08:07
 2026-10-31|12:00|La muerte de Francis Bacon|increible|YO 6ae57871ceb491e585dae7de IN 6ae57871eaa24d6f9a5853e4 TI 6ae57872eaa24d6f9a585427|img=mixto|12:11
 2026-10-31|15:00|El robo de Amberes|error|YO 6ae5798b406ab8a0189ddf5d IN 6ae5798c1891472093b59575 TI 6ae5798cceb491e585db19f8|img=mixto|15:26
+2026-10-31|18:00|La imprudencia de Garry Hoy|sabias|YO 6ae57a851891472093b5cf3b IN 6ae57a86b84259308bbc34c8 TI 6ae57a86ceb491e585db480a|img=mixto|18:14
