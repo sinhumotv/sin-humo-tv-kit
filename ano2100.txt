@@ -33,3 +33,4 @@
 2026-10-30|15:00|Enjambres de drones militares|final|YO 6ae42838ba1ca51fd3f803b3 IN 6ae4283956e01b976389eb4a TI 6ae428394b8768bfb2df0872|img=mixto|14:44
 2026-10-30|18:00|Geoingeniería solar planetaria|increible|YO 6ae42907a83a7fb63c968082 IN 6ae42907a83a7fb63c9680af TI 6ae429076385db216a273e97|img=mixto|18:09
 2026-10-30|21:00|La llegada de la superinteligencia|sabias|YO 6ae42a052782e7f331d39a62 IN 6ae42a0556e01b97638a4253 TI 6ae42a06a83a7fb63c96ae98|img=mixto|20:47
+2026-10-31|08:00|La paradoja de la memoria cara|consecuencia|YO 6ae57928ceb491e585db009d IN 6ae57928406ab8a0189dc912 TI 6ae57929eaa24d6f9a587074|img=mixto|08:06
