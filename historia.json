@@ -1,0 +1,1086 @@
+{
+ "titulo": "La desaparición del vuelo MH370",
+ "titulos": [
+  "¿Qué le pasó realmente al VUELO MH370?",
+  "MH370: La desaparición de 239 personas",
+  "El MISTERIO del MH370: Las pistas ocultas",
+  "Vuelo MH370: ¿Por qué apagaron los radares?",
+  "MH370: El dato que la versión oficial OCULTÓ",
+  "¿Dónde está el VUELO MH370? La verdad",
+  "El enigma del MH370: Lo que hallaron en el mar",
+  "MH370: La prueba oculta en el SIMULADOR",
+  "La desaparición más MISTERIOSA de la historia",
+  "Vuelo MH370: El secreto del piloto"
+ ],
+ "miniatura": {
+  "texto": "NUNCA FUE UN ACCIDENTE",
+  "clave": "ACCIDENTE",
+  "prompt": "A dark cinematic view of a commercial airliner glowing cockpit silhouette on the right side, dramatic stormy night skies over a deep ocean, intense amber radar screen lights, high contrast, moody atmospheric shadows, hyper-realistic, dark subtle texture on the left side with ample blank space for text overlay."
+ },
+ "descripcion": "El 8 de marzo de 2014, el vuelo 370 de Malaysia Airlines despegó con 239 personas hacia Pekín. Minutos después, tras pronunciar una frase rutinaria, la aeronave apagó sus transpondedores y desapareció por completo de los radares civiles. ¿Cómo pudo un gigantesco Boeing 777 esfumarse en pleno siglo XXI sin dejar una señal de socorro?\n\nEn este documental de Caja Negra, repasamos la cronología exacta de los hechos, las señales satelitales secretas que registraron su rumbo final hacia el Océano Índico y las investigaciones sobre la tripulación. Descubre la hipótesis más respaldada por los expertos sobre el mayor misterio de la aviación moderna.",
+ "etiquetas": [
+  "vuelo mh370",
+  "mh370 malaysia airlines",
+  "desaparicion mh370",
+  "misterios de la aviacion",
+  "casos sin resolver",
+  "caja negra",
+  "zaharie ahmad shah",
+  "que paso con el mh370",
+  "enigmas reales",
+  "documental misterio",
+  "desapariciones misteriosas",
+  "oceano indico"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El último mensaje antes del silencio"
+  },
+  {
+   "escena": 8,
+   "titulo": "El giro fantasma en el radar militar"
+  },
+  {
+   "escena": 16,
+   "titulo": "Los 'pings' invisibles de Inmarsat"
+  },
+  {
+   "escena": 24,
+   "titulo": "La hipótesis del fallo técnico descartada"
+  },
+  {
+   "escena": 32,
+   "titulo": "El expediente del capitán Zaharie"
+  },
+  {
+   "escena": 40,
+   "titulo": "Restos en las costas del continente africano"
+  },
+  {
+   "escena": 48,
+   "titulo": "La búsqueda en el abismo marino"
+  },
+  {
+   "escena": 56,
+   "titulo": "Las sombras de la carga y el equipaje"
+  },
+  {
+   "escena": 64,
+   "titulo": "La conclusión inevitable de un misterio eterno"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "¿Cómo puede un gigantesco Boeing setecientos setenta y siete con doscientas treinta y nueve personas esfumarse en pleno siglo veintiuno? Sin enviar una sola señal de socorro ni dejar rastro en los radares civiles.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night airplane flying sky",
+    "otras": [
+     "airplane night runway",
+     "night flight window"
+    ],
+    "descripcion": "Un avión volando de noche en un cielo oscuro con luces parpadeantes"
+   },
+   "efecto": "niebla",
+   "subtitulo": "¿Cómo puede un gigantesco Boeing setecientos setenta y siete con doscientas treinta y nueve personas esfumarse en pleno siglo veintiuno? Sin enviar una sola señal de socorro ni dejar rastro en los radares civiles."
+  },
+  {
+   "hablado": "Unas últimas palabras rutinarias desde la cabina precedieron al apagón total. Ráfagas satelitales secretas revelaron un desvío calculado hacia el océano Índico, abriendo la hipótesis más inquietante que resolveremos al final de este viaje.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "radar screen dark room",
+    "otras": [
+     "control tower night",
+     "air traffic controller screen"
+    ],
+    "descripcion": "Pantalla de radar en una sala de control aéreo a oscuras"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Unas últimas palabras rutinarias desde la cabina precedieron al apagón total. Ráfagas satelitales secretas revelaron un desvío calculado hacia el océano Índico, abriendo la hipótesis más inquietante que resolveremos al final de este viaje."
+  },
+  {
+   "hablado": "Todo comenzó el ocho de marzo de dos mil catorce en Kuala Lumpur. La noche era completamente serena, el comandante acumulaba una impecable trayectoria y el avión despegó con destino a Pekín sin contratiempos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airport terminal night departure",
+    "otras": [
+     "airport runway lights night",
+     "airplane taking off night"
+    ],
+    "descripcion": "Pista de aterrizaje iluminada de noche en un aeropuerto internacional"
+   },
+   "efecto": "nada",
+   "subtitulo": "Todo comenzó el ocho de marzo de dos mil catorce en Kuala Lumpur. La noche era completamente serena, el comandante acumulaba una impecable trayectoria y el avión despegó con destino a Pekín sin contratiempos."
+  },
+  {
+   "hablado": "Durante los primeros cuarenta minutos de trayecto, la aeronave ascendió limpiamente hasta los treinta y cinco mil pies sobre el mar de China Meridional. Ningún indicador alertaba del inminente corte deliberado de las comunicaciones.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane cockpit instruments night",
+    "otras": [
+     "airplane wing clouds night",
+     "cockpit panel lights"
+    ],
+    "descripcion": "Instrumentos de navegación iluminados dentro de la cabina de un avión"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante los primeros cuarenta minutos de trayecto, la aeronave ascendió limpiamente hasta los treinta y cinco mil pies sobre el mar de China Meridional. Ningún indicador alertaba del inminente corte deliberado de las comunicaciones."
+  },
+  {
+   "hablado": "A la una y diecinueve minutos de la madrugada, los controladores de Malasia despidieron al avión al transferir la frecuencia a Vietnam. La voz en cabina respondió con calma: Buenas noches, Malaysia tres siete cero.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "air traffic controller headset",
+    "otras": [
+     "radio communication microphone",
+     "headset listening night"
+    ],
+    "descripcion": "Controlador aéreo hablando por auriculares frente a monitores en la noche"
+   },
+   "efecto": "nada",
+   "subtitulo": "A la una y diecinueve minutos de la madrugada, los controladores de Malasia despidieron al avión al transferir la frecuencia a Vietnam. La voz en cabina respondió con calma: Buenas noches, Malaysia tres siete cero."
+  },
+  {
+   "hablado": "Tan solo cinco segundos después de presionar el botón del micrófono, el transpondedor que transmitía la posición exacta de la aeronave fue apagado de manera totalmente manual desde la propia cabina.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hands toggling switch dashboard",
+    "otras": [
+     "hand turning off switch",
+     "cockpit controls close up"
+    ],
+    "descripcion": "Mano apagando un interruptor en el panel de control de una aeronave"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tan solo cinco segundos después de presionar el botón del micrófono, el transpondedor que transmitía la posición exacta de la aeronave fue apagado de manera totalmente manual desde la propia cabina."
+  },
+  {
+   "hablado": "Las pantallas del control aéreo civil perdieron la señal de la nave de forma instantánea. No hubo llamadas de emergencia, ni alertas de despresurización, ni transmisiones automáticas de avería en los sistemas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "glitch static screen radar",
+    "otras": [
+     "empty radar monitor dark",
+     "computer signal lost screen"
+    ],
+    "descripcion": "Monitor de radar perdiendo lentamente la señal de rastreo de un objetivo"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las pantallas del control aéreo civil perdieron la señal de la nave de forma instantánea. No hubo llamadas de emergencia, ni alertas de despresurización, ni transmisiones automáticas de avería en los sistemas."
+  },
+  {
+   "hablado": "Para el mundo civil, el avión se había esfumado en el abismo nocturno. Sin embargo, en la sombra, los radares militares comenzaban a rastrear un giro inesperado que nadie pudo prever.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "military radar station night",
+    "otras": [
+     "radar dish turning night",
+     "dark ocean horizon night"
+    ],
+    "descripcion": "Antena de radar militar girando contra el cielo nocturno despejado"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para el mundo civil, el avión se había esfumado en el abismo nocturno. Sin embargo, en la sombra, los radares militares comenzaban a rastrear un giro inesperado que nadie pudo prever."
+  },
+  {
+   "hablado": "Apenas un minuto después de apagarse el respondedor civil, una estación de radar militar de defensa aérea en el norte de Malasia detectó un eco primario solitario. No transmitía altitud ni matrícula, pero avanzaba a gran velocidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "military radar screen",
+    "otras": [
+     "radar screen glowing",
+     "air traffic control screen"
+    ],
+    "descripcion": "Pantalla oscura con barridos de radar e indicadores luminosos en una sala de operaciones nocturna."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Apenas un minuto después de apagarse el respondedor civil, una estación de radar militar de defensa aérea en el norte de Malasia detectó un eco primario solitario. No transmitía altitud ni matrícula, pero avanzaba a gran velocidad."
+  },
+  {
+   "hablado": "La traza reveló una maniobra desconcertante e imposible para un fallo automático. El gigantesco aparato viró bruscamente hacia el suroeste, cruzando de vuelta la península malaya justo en la frontera entre dos zonas de control aéreo internacional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage aviation map",
+    "otras": [
+     "navigational map ruler",
+     "plotting flight course"
+    ],
+    "descripcion": "Manos trazando con una regla y compás un desvío marcado sobre una carta de navegación aeronáutica."
+   },
+   "efecto": "polvo",
+   "subtitulo": "La traza reveló una maniobra desconcertante e imposible para un fallo automático. El gigantesco aparato viró bruscamente hacia el suroeste, cruzando de vuelta la península malaya justo en la frontera entre dos zonas de control aéreo internacional."
+  },
+  {
+   "hablado": "Quien estuviese a los mandos conocía las debilidades del sistema. Volaba siguiendo los límites fronterizos entre Malasia y Tailandia, una franja confusa donde los controladores de ambos países pensaban que el tráfico pertenecía al vecino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane cockpit night",
+    "otras": [
+     "cockpit instrument panel",
+     "pilot hands throttles"
+    ],
+    "descripcion": "Panel de mandos iluminado de una cabina de avión en plena noche con silueta de espaldas."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Quien estuviese a los mandos conocía las debilidades del sistema. Volaba siguiendo los límites fronterizos entre Malasia y Tailandia, una franja confusa donde los controladores de ambos países pensaban que el tráfico pertenecía al vecino."
+  },
+  {
+   "hablado": "Los operadores de la fuerza aérea observaron la señal en sus pantallas sin activar los cazas de interceptación. Asumieron erróneamente que era un vuelo comercial autorizado e inofensivo, perdiendo la única oportunidad de identificar visualmente la cabina.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "radar operators room",
+    "otras": [
+     "control room monitors",
+     "security operations center"
+    ],
+    "descripcion": "Operadores militares observando monitores luminosos en una sala de mando en penumbra."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los operadores de la fuerza aérea observaron la señal en sus pantallas sin activar los cazas de interceptación. Asumieron erróneamente que era un vuelo comercial autorizado e inofensivo, perdiendo la única oportunidad de identificar visualmente la cabina."
+  },
+  {
+   "hablado": "Los registros del radar primario mostraron lecturas de altitud erráticas, desde ascensos bruscos hasta descensos pronunciados sobre el estrecho de Malaca. Aunque estos datos eran imprecisos, evidenciaban un vuelo guiado de forma agresiva y totalmente manual.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm clouds night",
+    "otras": [
+     "night sky clouds timelapse",
+     "rough ocean dark night"
+    ],
+    "descripcion": "Nubes oscuras y densas desplazándose velozmente en un cielo nocturno con atmósfera tensa."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los registros del radar primario mostraron lecturas de altitud erráticas, desde ascensos bruscos hasta descensos pronunciados sobre el estrecho de Malaca. Aunque estos datos eran imprecisos, evidenciaban un vuelo guiado de forma agresiva y totalmente manual."
+  },
+  {
+   "hablado": "Al pasar sobre la isla de Penang, la aeronave realizó una última inclinación para enfilar hacia el noroeste. Algunos analistas sugirieron que el piloto miró por última vez su ciudad natal antes de adentrarse en la oscuridad marítima.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night aerial coast city",
+    "otras": [
+     "coastal city night lights",
+     "island coastline night"
+    ],
+    "descripcion": "Vista aérea nocturna de una costa iluminada con luces urbanas que bordean el océano oscuro."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al pasar sobre la isla de Penang, la aeronave realizó una última inclinación para enfilar hacia el noroeste. Algunos analistas sugirieron que el piloto miró por última vez su ciudad natal antes de adentrarse en la oscuridad marítima."
+  },
+  {
+   "hablado": "A las dos y veintidós de la madrugada, el contacto con el radar militar se desvaneció cerca del mar de Andamán. El avión abandonaba la cobertura continental para siempre, internándose en las aguas más profundas y desoladas del planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ocean water night",
+    "otras": [
+     "calm sea dark night",
+     "deep ocean waters"
+    ],
+    "descripcion": "Olas oscuras rompiendo lentamente bajo una noche cerrada sin iluminación visible."
+   },
+   "efecto": "niebla",
+   "subtitulo": "A las dos y veintidós de la madrugada, el contacto con el radar militar se desvaneció cerca del mar de Andamán. El avión abandonaba la cobertura continental para siempre, internándose en las aguas más profundas y desoladas del planeta."
+  },
+  {
+   "hablado": "Todos creyeron que el rastro se había extinguido definitivamente en ese punto del océano. Nadie sospechaba que, desde el espacio exterior, un satélite solitario continuaba escuchando unos latidos electrónicos imposibles de apagar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "satellite earth orbit",
+    "otras": [
+     "earth from space night",
+     "night planet stars"
+    ],
+    "descripcion": "Representación realista del planeta Tierra desde el espacio en penumbra con luces distantes."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Todos creyeron que el rastro se había extinguido definitivamente en ese punto del océano. Nadie sospechaba que, desde el espacio exterior, un satélite solitario continuaba escuchando unos latidos electrónicos imposibles de apagar."
+  },
+  {
+   "hablado": "Cuatro días después de la desconexión total, un equipo de ingenieros británicos revisó los registros rutinarios de sus telecomunicaciones. Para su absoluto asombro, descubrieron que la antena del avión había continuado enviando señales horarias automáticas durante horas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "satellite dish telecommunications",
+    "otras": [
+     "radar antenna tracking",
+     "telecommunications station exterior"
+    ],
+    "descripcion": "Enorme antena parabólica y estación de telecomunicaciones rastreando el cielo nocturno."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cuatro días después de la desconexión total, un equipo de ingenieros británicos revisó los registros rutinarios de sus telecomunicaciones. Para su absoluto asombro, descubrieron que la antena del avión había continuado enviando señales horarias automáticas durante horas."
+  },
+  {
+   "hablado": "Aquellos discretos impulsos técnicos eran meros intentos de sincronización entre el avión y el satélite situado sobre el océano Índico. Aunque la tripulación había apagado los sistemas de comunicación civil, los motores seguían recibiendo electricidad y respondiendo al enlace espacial.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room flashing lights",
+    "otras": [
+     "engineer working laptop",
+     "computer screens data"
+    ],
+    "descripcion": "Luces parpadeantes en paneles de servidores informáticos con ingenieros supervisando datos."
+   },
+   "efecto": "nada",
+   "subtitulo": "Aquellos discretos impulsos técnicos eran meros intentos de sincronización entre el avión y el satélite situado sobre el océano Índico. Aunque la tripulación había apagado los sistemas de comunicación civil, los motores seguían recibiendo electricidad y respondiendo al enlace espacial."
+  },
+  {
+   "hablado": "El análisis reveló siete conexiones consecutivas que demostraban algo escalofriante. El Boeing setecientos setenta y siete no había caído inmediatamente al mar, sino que continuó volando a ciegas durante casi seis horas completas después de desaparecer de los radares militares.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage clock ticking",
+    "otras": [
+     "clock timelapse office",
+     "analog clock hands moving"
+    ],
+    "descripcion": "Reloj de pared antiguo con las manecillas avanzando inexorablemente en una habitación vacía."
+   },
+   "efecto": "polvo",
+   "subtitulo": "El análisis reveló siete conexiones consecutivas que demostraban algo escalofriante. El Boeing setecientos setenta y siete no había caído inmediatamente al mar, sino que continuó volando a ciegas durante casi seis horas completas después de desaparecer de los radares militares."
+  },
+  {
+   "hablado": "Para descifrar hacia dónde se dirigía la nave sin datos de localización convencionales, los matemáticos recurrieron a una técnica pionera. Midieron diminutas variaciones en la frecuencia de las ondas de radio, un fenómeno físico conocido como el efecto Doppler.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist writing calculations",
+    "otras": [
+     "hands writing mathematical equations",
+     "working on blueprint desk"
+    ],
+    "descripcion": "Manos de un investigador escribiendo fórmulas complejas sobre un escritorio cubierto de gráficos y notas."
+   },
+   "efecto": "nada",
+   "subtitulo": "Para descifrar hacia dónde se dirigía la nave sin datos de localización convencionales, los matemáticos recurrieron a una técnica pionera. Midieron diminutas variaciones en la frecuencia de las ondas de radio, un fenómeno físico conocido como el efecto Doppler."
+  },
+  {
+   "hablado": "Los primeros cálculos arrojaron dos posibles rutas gigantescas en forma de semicírculo: un corredor hacia Asia central y otro hacia las aguas heladas del sur. La falta de ecos en radares de varios países descartó por completo la ruta del norte continental.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "compass navigation nautical map",
+    "otras": [
+     "hands measuring map dividers",
+     "old vintage map table"
+    ],
+    "descripcion": "Manos utilizando un compás náutico y reglas trazando arcos sobre un gran mapa de navegación."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los primeros cálculos arrojaron dos posibles rutas gigantescas en forma de semicírculo: un corredor hacia Asia central y otro hacia las aguas heladas del sur. La falta de ecos en radares de varios países descartó por completo la ruta del norte continental."
+  },
+  {
+   "hablado": "La conclusión científica era tan firme como desoladora. La aeronave había volado en línea recta hacia el rincón más remoto, oscuro y profundo del planeta, un abismo marítimo desprovisto de islas habitadas o pistas de aterrizaje donde encontrar auxilio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy ocean waves",
+    "otras": [
+     "deep rough sea night",
+     "ocean water aerial view"
+    ],
+    "descripcion": "Olas oscuras y agitadas en mitad de un océano infinito e inhóspito durante el crepúsculo."
+   },
+   "efecto": "niebla",
+   "subtitulo": "La conclusión científica era tan firme como desoladora. La aeronave había volado en línea recta hacia el rincón más remoto, oscuro y profundo del planeta, un abismo marítimo desprovisto de islas habitadas o pistas de aterrizaje donde encontrar auxilio."
+  },
+  {
+   "hablado": "A las ocho y diecinueve de la mañana se produjo el séptimo y último contacto electrónico incompleto. Los peritos dedujeron que el combustible de los tanques se había agotado en ese preciso instante, silenciando para siempre los dos enormes reactores.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane cockpit night instruments",
+    "otras": [
+     "pilot instrument panel darkness",
+     "aircraft navigation controls"
+    ],
+    "descripcion": "Panel de instrumentos e indicadores de una cabina de vuelo a oscuras con luces tenues parpadeando."
+   },
+   "efecto": "polvo",
+   "subtitulo": "A las ocho y diecinueve de la mañana se produjo el séptimo y último contacto electrónico incompleto. Los peritos dedujeron que el combustible de los tanques se había agotado en ese preciso instante, silenciando para siempre los dos enormes reactores."
+  },
+  {
+   "hablado": "Los datos del satélite demostraban el destino final del vuelo, pero abrieron un dilema aún más aterrador. ¿Pudo una avería técnica catastrófica provocar un desvío tan prolongado, o alguien en cabina planeó meticulosamente cada minuto de aquella trayectoria mortal?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "investigator documents desk lamp",
+    "otras": [
+     "detective looking evidence papers",
+     "hands examining case file"
+    ],
+    "descripcion": "Investigador revisando carpetas oficiales e informes confidenciales bajo la luz tenue de una lámpara de mesa."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los datos del satélite demostraban el destino final del vuelo, pero abrieron un dilema aún más aterrador. ¿Pudo una avería técnica catastrófica provocar un desvío tan prolongado, o alguien en cabina planeó meticulosamente cada minuto de aquella trayectoria mortal?"
+  },
+  {
+   "hablado": "En los primeros días tras la desaparición, los expertos aeronáuticos exploraron la posibilidad de un fallo estructural masivo. Un incendio repentino en la bodega de carga o una despresurización fulminante habrían privado de oxígeno a toda la tripulación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane hangar engineer",
+    "otras": [
+     "aircraft maintenance",
+     "hangar inspection"
+    ],
+    "descripcion": "Ingenieros con chalecos reflectantes revisando planos y el exterior de una aeronave comercial en un hangar."
+   },
+   "efecto": "niebla",
+   "subtitulo": "En los primeros días tras la desaparición, los expertos aeronáuticos exploraron la posibilidad de un fallo estructural masivo. Un incendio repentino en la bodega de carga o una despresurización fulminante habrían privado de oxígeno a toda la tripulación."
+  },
+  {
+   "hablado": "Si una pérdida de presión hubiera dejado inconscientes a los pilotos, el avión se habría convertido en un vuelo fantasma. El piloto automático habría mantenido la aeronave en línea recta constante hasta agotar sus reservas de combustible sobre el mar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane flying clouds",
+    "otras": [
+     "airplane sky night",
+     "flight above clouds"
+    ],
+    "descripcion": "Avión comercial surcando en solitario un mar de nubes oscuras al atardecer en vuelo recto."
+   },
+   "efecto": "nada",
+   "subtitulo": "Si una pérdida de presión hubiera dejado inconscientes a los pilotos, el avión se habría convertido en un vuelo fantasma. El piloto automático habría mantenido la aeronave en línea recta constante hasta agotar sus reservas de combustible sobre el mar."
+  },
+  {
+   "hablado": "Pero los radares demostraron todo lo contrario. La nave ejecutó maniobras complejas, giros calculados y ascensos y descensos deliberados. Quien manejaba los mandos bordeaba las fronteras de Malasia y Tailandia para esquivar la detección inmediata de los radares de defensa aérea.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "air traffic control",
+    "otras": [
+     "radar screen monitoring",
+     "control tower operators"
+    ],
+    "descripcion": "Sala de control de tráfico aéreo en penumbra con operadores observando pantallas de radar con trayectorias de vuelo."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero los radares demostraron todo lo contrario. La nave ejecutó maniobras complejas, giros calculados y ascensos y descensos deliberados. Quien manejaba los mandos bordeaba las fronteras de Malasia y Tailandia para esquivar la detección inmediata de los radares de defensa aérea."
+  },
+  {
+   "hablado": "Para mantener la nave oculta, los sistemas de comunicación no fallaron al unísono como en un cortocircuito general. El transpondedor y el sistema de mensajería digital fueron desactivados de forma manual, secuencial y con varios minutos de diferencia entre ambos apagados.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cockpit switches night",
+    "otras": [
+     "pilot hands controls",
+     "airplane cockpit panel"
+    ],
+    "descripcion": "Primer plano de los paneles superiores de una cabina de mando con luces tenues e interruptores aeronáuticos."
+   },
+   "efecto": "nada",
+   "subtitulo": "Para mantener la nave oculta, los sistemas de comunicación no fallaron al unísono como en un cortocircuito general. El transpondedor y el sistema de mensajería digital fueron desactivados de forma manual, secuencial y con varios minutos de diferencia entre ambos apagados."
+  },
+  {
+   "hablado": "Apagar esos equipos no es tan sencillo como pulsar un botón corriente. Requiere un conocimiento exhaustivo de los paneles de interruptores situados en el techo de la cabina, algo que solo un aviador veterano o un técnico cualificado sabría ejecutar a oscuras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pilot flying night",
+    "otras": [
+     "cockpit instrument flight",
+     "pilot silhouette cockpit"
+    ],
+    "descripcion": "Silueta de un piloto de espaldas en la cabina de un avión mientras observa los instrumentos iluminados en la noche."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Apagar esos equipos no es tan sencillo como pulsar un botón corriente. Requiere un conocimiento exhaustivo de los paneles de interruptores situados en el techo de la cabina, algo que solo un aviador veterano o un técnico cualificado sabría ejecutar a oscuras."
+  },
+  {
+   "hablado": "La teoría del fuego a bordo también se desplomó. Un incendio capaz de neutralizar las comunicaciones habría destruido las líneas eléctricas vitales en cuestión de segundos, impidiendo que el Boeing setecientos setenta y siete continuara navegando durante casi seis horas enteras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "aircraft electrical testing",
+    "otras": [
+     "electronics workshop lab",
+     "technician checking cables"
+    ],
+    "descripcion": "Técnico examinando paneles de cableado electrónico con instrumentos de medición en un laboratorio de mantenimiento."
+   },
+   "efecto": "niebla",
+   "subtitulo": "La teoría del fuego a bordo también se desplomó. Un incendio capaz de neutralizar las comunicaciones habría destruido las líneas eléctricas vitales en cuestión de segundos, impidiendo que el Boeing setecientos setenta y siete continuara navegando durante casi seis horas enteras."
+  },
+  {
+   "hablado": "La conclusión técnica de los investigadores internacionales fue tajante e indiscutible. El avión no sufrió una avería mecánica incontrolable. Alguien con acceso prioritario a la cabina secuestró el aparato desde el interior y guio deliberadamente su trayectoria hacia la nada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "detectives meeting room",
+    "otras": [
+     "investigators office papers",
+     "serious meeting dark"
+    ],
+    "descripcion": "Grupo de investigadores en una mesa de reuniones oscura revisando informes técnicos y gráficos periciales."
+   },
+   "efecto": "polvo",
+   "subtitulo": "La conclusión técnica de los investigadores internacionales fue tajante e indiscutible. El avión no sufrió una avería mecánica incontrolable. Alguien con acceso prioritario a la cabina secuestró el aparato desde el interior y guio deliberadamente su trayectoria hacia la nada."
+  },
+  {
+   "hablado": "Descartado cualquier fallo técnico fortuito, la atención mundial se enfocó en las dos únicas personas que tenían el control absoluto de la puerta blindada. Y pronto, un inquietante hallazgo en la vivienda del capitán lo cambiaría absolutamente todo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "detective opening file",
+    "otras": [
+     "police archive folders",
+     "confidential folder desk"
+    ],
+    "descripcion": "Manos de un investigador abriendo una carpeta con etiqueta de confidencial sobre un escritorio de madera."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Descartado cualquier fallo técnico fortuito, la atención mundial se enfocó en las dos únicas personas que tenían el control absoluto de la puerta blindada. Y pronto, un inquietante hallazgo en la vivienda del capitán lo cambiaría absolutamente todo."
+  },
+  {
+   "hablado": "Todas las miradas se posaron sobre el comandante Zaharie Ahmad Shah, un veterano de cincuenta y tres años con más de dieciocho mil horas de vuelo. Para la aerolínea y sus colegas, era un instructor intachable, devoto de la aviación comercial.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pilot in cockpit",
+    "otras": [
+     "cockpit controls night",
+     "airplane cockpit view"
+    ],
+    "descripcion": "Piloto de espaldas o en penumbra frente al panel de mandos iluminado de un avión comercial"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Todas las miradas se posaron sobre el comandante Zaharie Ahmad Shah, un veterano de cincuenta y tres años con más de dieciocho mil horas de vuelo. Para la aerolínea y sus colegas, era un instructor intachable, devoto de la aviación comercial."
+  },
+  {
+   "hablado": "Agentes policiales registraron su residencia a las afueras de la capital malaya. En una habitación tranquila, encontraron un sofisticado simulador de vuelo doméstico que él mismo había ensamblado meticulosamente con seis monitores y mandos profesionales para sus días libres.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "computer monitors desk",
+    "otras": [
+     "multiple computer screens",
+     "dark computer room"
+    ],
+    "descripcion": "Escritorio en penumbra con varios monitores de ordenador encendidos mostrando controles de navegación"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Agentes policiales registraron su residencia a las afueras de la capital malaya. En una habitación tranquila, encontraron un sofisticado simulador de vuelo doméstico que él mismo había ensamblado meticulosamente con seis monitores y mandos profesionales para sus días libres."
+  },
+  {
+   "hablado": "Los investigadores confiscaron los discos duros del simulador y solicitaron el apoyo de peritos informáticos de la policía federal estadounidense. El objetivo era recuperar archivos borrados de la memoria del sistema operativo para reconstruir sus últimas actividades virtuales previas a la tragedia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "computer forensics typing",
+    "otras": [
+     "hard drive laboratory",
+     "cyber security hands"
+    ],
+    "descripcion": "Manos de un perito tecleando en una terminal informática dentro de un laboratorio forense"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los investigadores confiscaron los discos duros del simulador y solicitaron el apoyo de peritos informáticos de la policía federal estadounidense. El objetivo era recuperar archivos borrados de la memoria del sistema operativo para reconstruir sus últimas actividades virtuales previas a la tragedia."
+  },
+  {
+   "hablado": "Lo que reveló el análisis forense congeló la sangre de los agentes. Semanas antes de la desaparición, alguien utilizó ese simulador doméstico para trazar una ruta que cruzaba el estrecho de Malaca y se internaba en la nada más absoluta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "navigation map table",
+    "otras": [
+     "studying route map",
+     "radar navigation screen"
+    ],
+    "descripcion": "Manos trazando una línea sobre una carta de navegación aeronáutica sobre una mesa de madera"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Lo que reveló el análisis forense congeló la sangre de los agentes. Semanas antes de la desaparición, alguien utilizó ese simulador doméstico para trazar una ruta que cruzaba el estrecho de Malaca y se internaba en la nada más absoluta."
+  },
+  {
+   "hablado": "Aquella trayectoria simulada terminaba exactamente en el sur profundo del océano Índico, en el mismo corredor marítimo calculado por los satélites, hasta quedarse por completo sin combustible. Era una réplica casi matemática del destino fatal que sufriría el vuelo real.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy ocean",
+    "otras": [
+     "ocean waves aerial",
+     "deep sea night"
+    ],
+    "descripcion": "Aguas oscuras y agitadas de un océano abierto bajo un cielo nocturno cargado de nubes"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Aquella trayectoria simulada terminaba exactamente en el sur profundo del océano Índico, en el mismo corredor marítimo calculado por los satélites, hasta quedarse por completo sin combustible. Era una réplica casi matemática del destino fatal que sufriría el vuelo real."
+  },
+  {
+   "hablado": "La familia y amigos del capitán defendieron con fervor su inocencia, argumentando que un entusiasta de la aeronáutica prueba cientos de rutas distintas por simple curiosidad técnica. Para ellos, era injusto convertir una afición privada en una prueba de culpabilidad premeditada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "photo album table",
+    "otras": [
+     "investigation file desk",
+     "vintage documents hands"
+    ],
+    "descripcion": "Primer plano de unas manos hojeando un expediente con fotografías y notas personales"
+   },
+   "efecto": "polvo",
+   "subtitulo": "La familia y amigos del capitán defendieron con fervor su inocencia, argumentando que un entusiasta de la aeronáutica prueba cientos de rutas distintas por simple curiosidad técnica. Para ellos, era injusto convertir una afición privada en una prueba de culpabilidad premeditada."
+  },
+  {
+   "hablado": "La autopsia psicológica oficial tampoco encontró deudas financieras asfixiantes, disputas familiares insalvables ni indicios de fanatismo ideológico que explicaran semejante desenlace. El perfil del hombre frente a los mandos seguía siendo un absoluto enigma indescifrable para los servicios de inteligencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "investigation files archive",
+    "otras": [
+     "archive document folders",
+     "searching paper records"
+    ],
+    "descripcion": "Estanterías de un archivo policial con cajas y carpetas de expedientes confidenciales clasificados"
+   },
+   "efecto": "polvo",
+   "subtitulo": "La autopsia psicológica oficial tampoco encontró deudas financieras asfixiantes, disputas familiares insalvables ni indicios de fanatismo ideológico que explicaran semejante desenlace. El perfil del hombre frente a los mandos seguía siendo un absoluto enigma indescifrable para los servicios de inteligencia."
+  },
+  {
+   "hablado": "El rastro del simulador era la pista circunstancial más inquietante, pero carecía de peso definitivo sin evidencias físicas en el mundo real. Y cuando la búsqueda parecía estancarse para siempre, el mar decidió arrojar sus primeras respuestas a miles de kilómetros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean waves beach shore",
+    "otras": [
+     "coastline tide debris",
+     "rocky shore waves"
+    ],
+    "descripcion": "Olas solitarias rompiendo suavemente sobre la orilla de una playa desierta y rocosa"
+   },
+   "efecto": "niebla",
+   "subtitulo": "El rastro del simulador era la pista circunstancial más inquietante, pero carecía de peso definitivo sin evidencias físicas en el mundo real. Y cuando la búsqueda parecía estancarse para siempre, el mar decidió arrojar sus primeras respuestas a miles de kilómetros."
+  },
+  {
+   "hablado": "En julio de dos mil quince, en las costas rocosas de la remota isla de La Reunión, un empleado de limpieza comunitaria divisó un objeto metálico inusual, cubierto de conchas y algas, varado entre la espuma marina.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean waves rocky beach",
+    "otras": [
+     "tropical coast rocks",
+     "waves crashing shore"
+    ],
+    "descripcion": "Olas rompiendo contra las rocas y la orilla de una costa remota con vegetación tropical al fondo."
+   },
+   "efecto": "niebla",
+   "subtitulo": "En julio de dos mil quince, en las costas rocosas de la remota isla de La Reunión, un empleado de limpieza comunitaria divisó un objeto metálico inusual, cubierto de conchas y algas, varado entre la espuma marina."
+  },
+  {
+   "hablado": "La pieza fue enviada de urgencia a un laboratorio aeronáutico en Francia. Los peritos confirmaron que se trataba del flaperón de un Boeing setecientos setenta y siete. Era la primera prueba física irrefutable del avión desaparecido.",
+   "imagen": {
+    "tipo": "real",
+    "busqueda": "MH370 flaperon Reunion",
+    "otras": [
+     "flaperon Reunion Island",
+     "debris Boeing 777 Reunion"
+    ],
+    "descripcion": "Fotografía del flaperón recuperado en la isla de La Reunión siendo trasladado por peritos oficiales."
+   },
+   "efecto": "polvo",
+   "subtitulo": "La pieza fue enviada de urgencia a un laboratorio aeronáutico en Francia. Los peritos confirmaron que se trataba del flaperón de un Boeing setecientos setenta y siete. Era la primera prueba física irrefutable del avión desaparecido."
+  },
+  {
+   "hablado": "Los oceanógrafos trazaron modelos de corrientes marinas y concluyeron que la deriva encajaba perfectamente. Durante dieciséis meses, las aguas del sur del Índico habían arrastrado los restos flotantes más de cuatro mil kilómetros hacia las costas africanas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep ocean aerial",
+    "otras": [
+     "sea waves aerial view",
+     "open ocean water"
+    ],
+    "descripcion": "Vista aérea cenital del océano abierto y agitado, mostrando corrientes y remolinos de agua."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los oceanógrafos trazaron modelos de corrientes marinas y concluyeron que la deriva encajaba perfectamente. Durante dieciséis meses, las aguas del sur del Índico habían arrastrado los restos flotantes más de cuatro mil kilómetros hacia las costas africanas."
+  },
+  {
+   "hablado": "Pronto comenzaron a multiplicarse los descubrimientos en Mozambique, Madagascar y Sudáfrica. Pescadores y rastreadores independientes hallaron más de treinta fragmentos dispersos, incluyendo paneles interiores, cubiertas de motor y secciones fracturadas de las alas del aparato.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "walking empty beach",
+    "otras": [
+     "beach debris sand",
+     "searching on coast"
+    ],
+    "descripcion": "Investigador o persona caminando por una playa salvaje desierta examinando objetos arrastrados a la arena."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pronto comenzaron a multiplicarse los descubrimientos en Mozambique, Madagascar y Sudáfrica. Pescadores y rastreadores independientes hallaron más de treinta fragmentos dispersos, incluyendo paneles interiores, cubiertas de motor y secciones fracturadas de las alas del aparato."
+  },
+  {
+   "hablado": "Incluso los pequeños crustáceos adheridos al metal aportaron pistas forenses esenciales. El análisis biológico de las conchas demostró que los fragmentos habían flotado inicialmente a través de aguas extremadamente frías en las remotas latitudes del sur.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist examining sample",
+    "otras": [
+     "laboratory microscope analysis",
+     "forensic scientist working"
+    ],
+    "descripcion": "Científico en un laboratorio examinando muestras y fragmentos con instrumental óptico de precisión."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Incluso los pequeños crustáceos adheridos al metal aportaron pistas forenses esenciales. El análisis biológico de las conchas demostró que los fragmentos habían flotado inicialmente a través de aguas extremadamente frías en las remotas latitudes del sur."
+  },
+  {
+   "hablado": "El análisis técnico del flaperón arrojó la revelación más estremecedora. La pieza no presentaba las marcas de tensión típicas de un amerizaje controlado, lo que indicaba que los alerones no estaban desplegados para un descenso suave de emergencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane wing inspection",
+    "otras": [
+     "aircraft wing mechanical",
+     "mechanic examining metal"
+    ],
+    "descripcion": "Ingeniero aeronáutico inspeccionando minuciosamente las partes mecánicas y alerones del ala de un avión."
+   },
+   "efecto": "niebla",
+   "subtitulo": "El análisis técnico del flaperón arrojó la revelación más estremecedora. La pieza no presentaba las marcas de tensión típicas de un amerizaje controlado, lo que indicaba que los alerones no estaban desplegados para un descenso suave de emergencia."
+  },
+  {
+   "hablado": "Todo apuntaba a una caída en espiral sin control o a un impacto a altísima velocidad contra la superficie del agua. El fuselaje debió desintegrarse en miles de partes diminutas al chocar con una fuerza demoledora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "turbulent ocean water",
+    "otras": [
+     "rough dark sea storm",
+     "ocean waves splashing"
+    ],
+    "descripcion": "Plano dramático de olas oscuras y violentas chocando con furia en alta mar."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Todo apuntaba a una caída en espiral sin control o a un impacto a altísima velocidad contra la superficie del agua. El fuselaje debió desintegrarse en miles de partes diminutas al chocar con una fuerza demoledora."
+  },
+  {
+   "hablado": "Los restos en la costa confirmaban el destino fatal del vuelo, pero el fuselaje principal permanecía en paradero desconocido. Para encontrar las cajas negras, la humanidad debía emprender la misión submarina más profunda y desafiante de la historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sonar research vessel",
+    "otras": [
+     "ship deep ocean",
+     "submarine ocean exploration"
+    ],
+    "descripcion": "Gran barco de investigación oceanográfica navegando lentamente en aguas abiertas del océano en un día nublado."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los restos en la costa confirmaban el destino fatal del vuelo, pero el fuselaje principal permanecía en paradero desconocido. Para encontrar las cajas negras, la humanidad debía emprender la misión submarina más profunda y desafiante de la historia."
+  },
+  {
+   "hablado": "Australia asumió la coordinación de una operación sin precedentes que movilizó buques militares, científicos de primer nivel y aviones de patrulla marítima. El objetivo prioritario consistía en rastrear ciento veinte mil kilómetros cuadrados de aguas bravas e inhóspitas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean research vessel",
+    "otras": [
+     "ship rough sea",
+     "naval vessel navigation"
+    ],
+    "descripcion": "Un gran barco de investigación navegando por aguas profundas y agitadas de alta mar."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Australia asumió la coordinación de una operación sin precedentes que movilizó buques militares, científicos de primer nivel y aviones de patrulla marítima. El objetivo prioritario consistía en rastrear ciento veinte mil kilómetros cuadrados de aguas bravas e inhóspitas."
+  },
+  {
+   "hablado": "Equipos de sonar de barrido lateral y vehículos autónomos descendieron a profundidades superiores a los cuatro mil metros. El relieve submarino reveló un paisaje sobrecogedor de fosas tectónicas, volcanes extintos y precipicios submarinos jamás cartografiados por el hombre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underwater deep sea",
+    "otras": [
+     "deep ocean bottom",
+     "underwater dark abyss"
+    ],
+    "descripcion": "El fondo abisal oscuro del océano iluminado tenuemente por un haz de luz submarino."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Equipos de sonar de barrido lateral y vehículos autónomos descendieron a profundidades superiores a los cuatro mil metros. El relieve submarino reveló un paisaje sobrecogedor de fosas tectónicas, volcanes extintos y precipicios submarinos jamás cartografiados por el hombre."
+  },
+  {
+   "hablado": "Los barcos arrastraron micrófonos acuáticos diseñados para captar las señales acústicas emitidas por las cajas negras. Sin embargo, las baterías de las balizas submarinas tenían una vida útil de apenas treinta días, corriendo a contrarreloj en un océano infinito.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship deck ocean",
+    "otras": [
+     "boat radar sea",
+     "ocean storm waves"
+    ],
+    "descripcion": "Cubierta de un barco con equipos de rastreo en medio de un océano inmenso y gris."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los barcos arrastraron micrófonos acuáticos diseñados para captar las señales acústicas emitidas por las cajas negras. Sin embargo, las baterías de las balizas submarinas tenían una vida útil de apenas treinta días, corriendo a contrarreloj en un océano infinito."
+  },
+  {
+   "hablado": "La inversión económica superó con creces los ciento cincuenta millones de dólares, transformándose en la búsqueda marina más costosa de la historia humana. Decenas de expertos analizaban diariamente gigabytes de datos acústicos en busca del más mínimo eco artificial.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist working computer",
+    "otras": [
+     "hands typing keyboard",
+     "radar monitor screen"
+    ],
+    "descripcion": "Investigador analizando gráficos y pantallas de datos en una sala técnica en penumbra."
+   },
+   "efecto": "polvo",
+   "subtitulo": "La inversión económica superó con creces los ciento cincuenta millones de dólares, transformándose en la búsqueda marina más costosa de la historia humana. Decenas de expertos analizaban diariamente gigabytes de datos acústicos en busca del más mínimo eco artificial."
+  },
+  {
+   "hablado": "Tras casi tres años de esfuerzos titánicos, en enero de dos mil diecisiete las autoridades anunciaron la suspensión oficial de las operaciones. No se había detectado ni un solo rastro del fuselaje principal ni de los pasajeros en la zona prioritaria.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty conference room",
+    "otras": [
+     "microphones press room",
+     "empty office dark"
+    ],
+    "descripcion": "Una sala de prensa vacía con micrófonos apagados sobre una mesa tras un comunicado."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tras casi tres años de esfuerzos titánicos, en enero de dos mil diecisiete las autoridades anunciaron la suspensión oficial de las operaciones. No se había detectado ni un solo rastro del fuselaje principal ni de los pasajeros en la zona prioritaria."
+  },
+  {
+   "hablado": "Meses después, la empresa privada Ocean Infinity asumió el desafío bajo un contrato condicionante: solo cobrarían si encontraban los restos. Desplegaron una flotilla de ocho drones submarinos autónomos que barrieron más de cien mil kilómetros adicionales sin éxito alguno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "submersible underwater robot",
+    "otras": [
+     "robot underwater ocean",
+     "ocean research equipment"
+    ],
+    "descripcion": "Un vehículo submarino no tripulado descendiendo hacia las profundidades del mar."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Meses después, la empresa privada Ocean Infinity asumió el desafío bajo un contrato condicionante: solo cobrarían si encontraban los restos. Desplegaron una flotilla de ocho drones submarinos autónomos que barrieron más de cien mil kilómetros adicionales sin éxito alguno."
+  },
+  {
+   "hablado": "El cierre definitivo de las exploraciones en el año dos mil dieciocho dejó un vacío desgarrador en los familiares de las víctimas. Aquel silencio absoluto alimentó la desconfianza ciudadana y provocó una cascada de hipótesis alternativas y sospechas políticas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person walking beach",
+    "otras": [
+     "solitary figure coast",
+     "foggy coast rocks"
+    ],
+    "descripcion": "Silueta solitaria caminando a contraluz junto a la orilla de una playa fría y neblinosa."
+   },
+   "efecto": "niebla",
+   "subtitulo": "El cierre definitivo de las exploraciones en el año dos mil dieciocho dejó un vacío desgarrador en los familiares de las víctimas. Aquel silencio absoluto alimentó la desconfianza ciudadana y provocó una cascada de hipótesis alternativas y sospechas políticas."
+  },
+  {
+   "hablado": "Sin el avión en el fondo marino, algunos analistas comenzaron a desviar la mirada hacia la terminal de carga del aeropuerto. Aquella fatídica noche, en las bodegas viajaba un misterioso cargamento que muchos consideraron una auténtica bomba de tiempo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo containers warehouse",
+    "otras": [
+     "airport cargo logistics",
+     "dark industrial warehouse"
+    ],
+    "descripcion": "Un almacén logístico de carga aeroportuaria en penumbra con cajas y palés apilados."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin el avión en el fondo marino, algunos analistas comenzaron a desviar la mirada hacia la terminal de carga del aeropuerto. Aquella fatídica noche, en las bodegas viajaba un misterioso cargamento que muchos consideraron una auténtica bomba de tiempo."
+  },
+  {
+   "hablado": "Tras semanas de inspecciones documentales, los registros oficiales desvelaron un detalle inquietante en el manifiesto aduanero. En las bodegas del avión descansaban cuatro toneladas y media de mangostanes junto a doscientos veintiún kilos de peligrosas baterías de litio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo warehouse forklift pallets",
+    "otras": [
+     "airport cargo handling",
+     "warehouse logistics boxes"
+    ],
+    "descripcion": "Operarios y carretillas moviendo cajas y palés de mercancía en un almacén de carga aeroportuario con poca luz"
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tras semanas de inspecciones documentales, los registros oficiales desvelaron un detalle inquietante en el manifiesto aduanero. En las bodegas del avión descansaban cuatro toneladas y media de mangostanes junto a doscientos veintiún kilos de peligrosas baterías de litio."
+  },
+  {
+   "hablado": "La aerolínea admitió con retraso que aquel cargamento electrónico no había sido sometido a un escaneo de seguridad con rayos equis antes del despegue. Diversos peritos independientes sospecharon de inmediato que un defecto de fabricación pudo desencadenar un sobrecalentamiento letal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airport luggage inspection monitor",
+    "otras": [
+     "airport security check",
+     "security control terminal"
+    ],
+    "descripcion": "Pantalla de escáner de control de seguridad aeroportuario mostrando el interior de paquetes y equipajes"
+   },
+   "efecto": "nada",
+   "subtitulo": "La aerolínea admitió con retraso que aquel cargamento electrónico no había sido sometido a un escaneo de seguridad con rayos equis antes del despegue. Diversos peritos independientes sospecharon de inmediato que un defecto de fabricación pudo desencadenar un sobrecalentamiento letal."
+  },
+  {
+   "hablado": "En la aviación comercial, el embalaje inadecuado del litio es temido por provocar combustiones espontáneas incontrolables a gran altitud. Si un incendio voraz comenzó en la panza de la aeronave, el humo tóxico habría inundado la cabina inutilizando los circuitos vitales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "smoke dark room shadows",
+    "otras": [
+     "black smoke industrial chimney",
+     "dark corridor smoke haze"
+    ],
+    "descripcion": "Humo denso y oscuro extendiéndose lentamente por un espacio cerrado iluminado tenuemente en penumbra"
+   },
+   "efecto": "niebla",
+   "subtitulo": "En la aviación comercial, el embalaje inadecuado del litio es temido por provocar combustiones espontáneas incontrolables a gran altitud. Si un incendio voraz comenzó en la panza de la aeronave, el humo tóxico habría inundado la cabina inutilizando los circuitos vitales."
+  },
+  {
+   "hablado": "Esa hipótesis explicaba con aparente lógica el corte súbito del transpondedor justo al cambiar de sector sobre el mar. Los sistemas eléctricos se habrían fundido uno tras otro en cuestión de segundos, dejando a los tripulantes a ciegas en mitad de la noche.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cockpit flight instruments night",
+    "otras": [
+     "airplane cockpit night view",
+     "pilot controls dials glowing"
+    ],
+    "descripcion": "Primer plano de los paneles e instrumentos de navegación iluminados en la cabina de un avión volando de noche"
+   },
+   "efecto": "nada",
+   "subtitulo": "Esa hipótesis explicaba con aparente lógica el corte súbito del transpondedor justo al cambiar de sector sobre el mar. Los sistemas eléctricos se habrían fundido uno tras otro en cuestión de segundos, dejando a los tripulantes a ciegas en mitad de la noche."
+  },
+  {
+   "hablado": "Sin embargo, los expertos en siniestros aéreos señalaron rápidamente una contradicción insalvable en este escenario técnico. Un fuego descontrolado no realiza un giro suave de casi ciento ochenta grados ni esquiva con precisión militar el espacio aéreo de dos naciones vecinas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "radar screen sweep lines",
+    "otras": [
+     "air traffic control radar",
+     "radar surveillance monitor"
+    ],
+    "descripcion": "Línea de barrido verde de un radar militar girando rítmicamente sobre una pantalla oscura con trazas y coordenadas"
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, los expertos en siniestros aéreos señalaron rápidamente una contradicción insalvable en este escenario técnico. Un fuego descontrolado no realiza un giro suave de casi ciento ochenta grados ni esquiva con precisión militar el espacio aéreo de dos naciones vecinas."
+  },
+  {
+   "hablado": "Los precedentes históricos demuestran que una deflagración de baterías derriba un transporte pesado en menos de media hora. El Boeing setecientos setenta y siete continuó navegando de forma estable durante casi siete horas más sobre la inmensidad del océano Índico meridional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane flying dark clouds",
+    "otras": [
+     "aircraft in flight night",
+     "silhouette commercial airplane sunset"
+    ],
+    "descripcion": "Silueta de un gran avión comercial de pasajeros surcando un cielo oscuro cubierto de nubes densas"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los precedentes históricos demuestran que una deflagración de baterías derriba un transporte pesado en menos de media hora. El Boeing setecientos setenta y siete continuó navegando de forma estable durante casi siete horas más sobre la inmensidad del océano Índico meridional."
+  },
+  {
+   "hablado": "El dilema de la carga fracturó a la comunidad investigadora en dos bandos irreconciliables. Mientras algunos ingenieros sostenían que una cascada de averías electrónicas desorientó los controles automáticos, los detectives veían la mano deliberada de un operador frío y experimentado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "investigators reviewing case files",
+    "otras": [
+     "detectives working office night",
+     "hands examining documents table"
+    ],
+    "descripcion": "Investigadores sentados alrededor de una mesa examinando carpetas de informes técnicos y mapas abiertos"
+   },
+   "efecto": "polvo",
+   "subtitulo": "El dilema de la carga fracturó a la comunidad investigadora en dos bandos irreconciliables. Mientras algunos ingenieros sostenían que una cascada de averías electrónicas desorientó los controles automáticos, los detectives veían la mano deliberada de un operador frío y experimentado."
+  },
+  {
+   "hablado": "Descartada la combustión accidental como causa primordial del desvío, la investigación volvió inexorablemente su mirada hacia los mandos de pilotaje. Todas las pruebas apuntaban hacia una aterradora decisión humana, una certeza sombría que estaba a punto de desvelar el enigma definitivo del vuelo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pilot silhouette airplane cockpit",
+    "otras": [
+     "captain looking out cockpit",
+     "aviator silhouette dark window"
+    ],
+    "descripcion": "Silueta a contraluz de un piloto sentado frente a los controles de cabina contemplando la oscuridad infinita"
+   },
+   "efecto": "niebla",
+   "subtitulo": "Descartada la combustión accidental como causa primordial del desvío, la investigación volvió inexorablemente su mirada hacia los mandos de pilotaje. Todas las pruebas apuntaban hacia una aterradora decisión humana, una certeza sombría que estaba a punto de desvelar el enigma definitivo del vuelo."
+  },
+  {
+   "hablado": "La hipótesis más sólida entre los expertos en seguridad aérea sugiere que el capitán despresurizó la cabina de forma deliberada. Sin oxígeno, los pasajeros y la tripulación cayeron inconscientes en pocos minutos antes de percatarse de la tragedia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "airplane cockpit dark night",
+    "otras": [
+     "airplane inside cabin",
+     "pilot controls"
+    ],
+    "descripcion": "Un piloto solitario en una cabina oscura de avión."
+   },
+   "efecto": "niebla",
+   "subtitulo": "La hipótesis más sólida entre los expertos en seguridad aérea sugiere que el capitán despresurizó la cabina de forma deliberada. Sin oxígeno, los pasajeros y la tripulación cayeron inconscientes en pocos minutos antes de percatarse de la tragedia."
+  },
+  {
+   "hablado": "Equipado con su propia reserva de oxígeno suplementario en el puesto de mando, quien pilotaba la nave mantuvo el rumbo hacia la absoluta nada. Un desierto oceánico donde las probabilidades de hallazgo eran prácticamente nulas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ocean water night",
+    "otras": [
+     "deep ocean water",
+     "waves night"
+    ],
+    "descripcion": "Aguas oscuras del océano durante la noche."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Equipado con su propia reserva de oxígeno suplementario en el puesto de mando, quien pilotaba la nave mantuvo el rumbo hacia la absoluta nada. Un desierto oceánico donde las probabilidades de hallazgo eran prácticamente nulas."
+  },
+  {
+   "hablado": "Cuando el combustible se agotó por completo tras horas de silencio sepulcral, los motores se apagaron uno a uno. El enorme Boeing se precipitó contra la superficie del océano Índico a una velocidad devastadora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sea waves turbulent storm",
+    "otras": [
+     "dark sea surface",
+     "stormy water"
+    ],
+    "descripcion": "Mar embravecido en la inmensidad del agua."
+   },
+   "efecto": "nada",
+   "subtitulo": "Cuando el combustible se agotó por completo tras horas de silencio sepulcral, los motores se apagaron uno a uno. El enorme Boeing se precipitó contra la superficie del océano Índico a una velocidad devastadora."
+  },
+  {
+   "hablado": "Pese al rastreo de millones de kilómetros cuadrados con la tecnología submarina más avanzada de nuestra época, el fuselaje principal y las cajas negras permanecen ocultos a miles de metros bajo el lecho marino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sonar underwater research vessel",
+    "otras": [
+     "underwater ocean depth",
+     "ocean floor scan"
+    ],
+    "descripcion": "Un barco de investigación explorando las profundidades oceánicas."
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pese al rastreo de millones de kilómetros cuadrados con la tecnología submarina más avanzada de nuestra época, el fuselaje principal y las cajas negras permanecen ocultos a miles de metros bajo el lecho marino."
+  },
+  {
+   "hablado": "La mayor tragedia de la aviación comercial moderna demostró una aterradora vulnerabilidad. Un solo individuo capacitado puede desactivar todos los sistemas de rastreo digital y borrar un avión gigante del mapa en cuestión de segundos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "flight radar control room operator",
+    "otras": [
+     "air traffic control screen",
+     "radar screen dark"
+    ],
+    "descripcion": "Pantallas de radar y control de tráfico aéreo en una sala oscura."
+   },
+   "efecto": "nada",
+   "subtitulo": "La mayor tragedia de la aviación comercial moderna demostró una aterradora vulnerabilidad. Un solo individuo capacitado puede desactivar todos los sistemas de rastreo digital y borrar un avión gigante del mapa en cuestión de segundos."
+  },
+  {
+   "hablado": "Para las familias de las doscientas treinta y nueve víctimas, la ausencia de respuestas definitivas mantiene la herida abierta. Sin una tumba ni un fuselaje confirmado, el dolor se transforma en un misterio sin fin.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty beach sunset gloomy",
+    "otras": [
+     "lonely coast sea",
+     "ocean coastline cloudy"
+    ],
+    "descripcion": "Una playa solitaria y melancólica al atardecer."
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para las familias de las doscientas treinta y nueve víctimas, la ausencia de respuestas definitivas mantiene la herida abierta. Sin una tumba ni un fuselaje confirmado, el dolor se transforma en un misterio sin fin."
+  },
+  {
+   "hablado": "El vuelo trescientos setenta de Malaysia Airlines se ha convertido en una leyenda negra. Un recordatorio humillante de que, incluso en la era de los satélites globales, el océano aún guarda secretos impenetrables para la humanidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "globe ocean space satellite view",
+    "otras": [
+     "planet earth blue ocean",
+     "deep sea horizon"
+    ],
+    "descripcion": "Vista panorámica del inmenso planeta y el océano Índico."
+   },
+   "efecto": "polvo",
+   "subtitulo": "El vuelo trescientos setenta de Malaysia Airlines se ha convertido en una leyenda negra. Un recordatorio humillante de que, incluso en la era de los satélites globales, el océano aún guarda secretos impenetrables para la humanidad."
+  },
+  {
+   "hablado": "El misterio permanece sumergido en las profundidades abisales. ¿Crees que las cajas negras del avión serán descubiertas algún día en el fondo del mar, o seguirá siendo un secreto guardado para siempre? Deja tu opinión en los comentarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underwater deep sea dark",
+    "otras": [
+     "deep blue ocean abyss",
+     "underwater light rays"
+    ],
+    "descripcion": "Las profundidades abisales del mar oscuro."
+   },
+   "efecto": "nada",
+   "subtitulo": "El misterio permanece sumergido en las profundidades abisales. ¿Crees que las cajas negras del avión serán descubiertas algún día en el fondo del mar, o seguirá siendo un secreto guardado para siempre? Deja tu opinión en los comentarios."
+  }
+ ],
+ "titulo_youtube": "Vuelo MH370: La pista oculta en el SIMULADOR",
+ "voz": "Algenib",
+ "estilo_imagen": "Analog film photograph, shot on 35mm Kodak Tri-X or Portra, visible film grain, muted desaturated colors, soft vignette, slight light leaks, documentary realism, period-accurate clothing and places, moody low-key lighting, vintage archival newspaper-era atmosphere. "
+}
