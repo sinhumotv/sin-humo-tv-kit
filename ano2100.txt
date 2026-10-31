@@ -35,3 +35,4 @@
 2026-10-30|21:00|La llegada de la superinteligencia|sabias|YO 6ae42a052782e7f331d39a62 IN 6ae42a0556e01b97638a4253 TI 6ae42a06a83a7fb63c96ae98|img=mixto|20:47
 2026-10-31|08:00|La paradoja de la memoria cara|consecuencia|YO 6ae57928ceb491e585db009d IN 6ae57928406ab8a0189dc912 TI 6ae57929eaa24d6f9a587074|img=mixto|08:06
 2026-10-31|12:00|El superclúster nacional de computación|cuenta|YO 6ae57ac2eaa24d6f9a58c5d9 IN 6ae57ac2406ab8a0189e1d16 TI 6ae57ac3b84259308bbc3d11|img=mixto|12:16
+2026-10-31|15:00|El colapso de los modelos sintéticos|error|YO 6ae57c1feaa24d6f9a59072d IN 6ae57c20ceb491e585db997e TI 6ae57c20ceb491e585db99ce|img=mixto|14:51
