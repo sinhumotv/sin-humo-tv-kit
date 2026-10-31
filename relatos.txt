@@ -42,3 +42,4 @@
 2026-10-30|21:00|La fuga de Medea|nadie|YO 6ae42ba52782e7f331d3ebcc IN 6ae42ba556e01b97638a91f8 TI 6ae42ba6ba1ca51fd3f8b981|img=mixto|20:51
 2026-10-31|08:00|Tifón contra Zeus|cuenta|YO 6ae577f4eaa24d6f9a58421a IN 6ae577f4406ab8a0189d92ce TI 6ae577f51891472093b54a65|img=mixto|08:10
 2026-10-31|12:00|El mito de Calisto|final|YO 6ae57900a11457434989120a IN 6ae57900406ab8a0189dc130 TI 6ae57901eaa24d6f9a586a25|img=mixto|11:55
+2026-10-31|15:00|El sacrificio de Alcestis|pregunta|YO 6ae57a19b84259308bbc227f IN 6ae57a19b84259308bbc22ac TI 6ae57a1aceb491e585db3381|img=mixto|14:36
