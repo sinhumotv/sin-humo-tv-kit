@@ -44,3 +44,4 @@
 2026-10-31|12:00|El mito de Calisto|final|YO 6ae57900a11457434989120a IN 6ae57900406ab8a0189dc130 TI 6ae57901eaa24d6f9a586a25|img=mixto|11:55
 2026-10-31|15:00|El sacrificio de Alcestis|pregunta|YO 6ae57a19b84259308bbc227f IN 6ae57a19b84259308bbc22ac TI 6ae57a1aceb491e585db3381|img=mixto|14:36
 2026-10-31|18:00|El duelo de Marsias|sabias|YO 6ae57b30406ab8a0189e2d40 IN 6ae57b30b84259308bbc4cd7 TI 6ae57b31eaa24d6f9a58d308|img=mixto|17:52
+2026-10-31|21:00|El tizón de Meleagro|consecuencia|YO 6ae57c01b84259308bbc80c2 IN 6ae57c02b84259308bbc80f7 TI 6ae57c02eaa24d6f9a5903b9|img=mixto|20:30
