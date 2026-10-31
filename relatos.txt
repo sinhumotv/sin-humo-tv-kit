@@ -41,3 +41,4 @@
 2026-10-30|18:00|Orión y el escorpión|sabias|YO 6ae42aa24b8768bfb2df74ae IN 6ae42aa24b8768bfb2df74db TI 6ae42aa3ba1ca51fd3f86e60|img=mixto|18:13
 2026-10-30|21:00|La fuga de Medea|nadie|YO 6ae42ba52782e7f331d3ebcc IN 6ae42ba556e01b97638a91f8 TI 6ae42ba6ba1ca51fd3f8b981|img=mixto|20:51
 2026-10-31|08:00|Tifón contra Zeus|cuenta|YO 6ae577f4eaa24d6f9a58421a IN 6ae577f4406ab8a0189d92ce TI 6ae577f51891472093b54a65|img=mixto|08:10
+2026-10-31|12:00|El mito de Calisto|final|YO 6ae57900a11457434989120a IN 6ae57900406ab8a0189dc130 TI 6ae57901eaa24d6f9a586a25|img=mixto|11:55
