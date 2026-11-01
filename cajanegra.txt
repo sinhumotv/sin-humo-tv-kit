@@ -39,3 +39,4 @@
 2026-10-31|15:00|El robo de Amberes|error|YO 6ae5798b406ab8a0189ddf5d IN 6ae5798c1891472093b59575 TI 6ae5798cceb491e585db19f8|img=mixto|15:26
 2026-10-31|18:00|La imprudencia de Garry Hoy|sabias|YO 6ae57a851891472093b5cf3b IN 6ae57a86b84259308bbc34c8 TI 6ae57a86ceb491e585db480a|img=mixto|18:14
 2026-10-31|21:00|El bastón de Jean-Baptiste Lully|consecuencia|YO 6ae57ba5ceb491e585db8305 IN 6ae57ba6b84259308bbc67a2 TI 6ae57ba6eaa24d6f9a58edcc|img=mixto|21:36
+2026-11-01|08:00|El enigma de Kaspar Hauser|pregunta|YO 6ae6ca501ee172cd6ddd9eda IN 6ae6ca5037c1acd2a0ea2008 TI 6ae6ca50ab019b908740d842|img=real|07:29
