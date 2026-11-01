@@ -46,3 +46,4 @@
 2026-10-31|18:00|El duelo de Marsias|sabias|YO 6ae57b30406ab8a0189e2d40 IN 6ae57b30b84259308bbc4cd7 TI 6ae57b31eaa24d6f9a58d308|img=mixto|17:52
 2026-10-31|21:00|El tizón de Meleagro|consecuencia|YO 6ae57c01b84259308bbc80c2 IN 6ae57c02b84259308bbc80f7 TI 6ae57c02eaa24d6f9a5903b9|img=mixto|20:30
 2026-11-01|12:00|La maldición de Eresictón|increible|YO 6ae6cc80cf3a3112f3df25cb IN 6ae6cc8121c807e9d5a16a5c TI 6ae6cc81cf3a3112f3df2616|img=mixto|12:28
+2026-11-01|15:00|Jasón y el Vellocino de Oro|nadie|YO 6ae6cdcd37c1acd2a0eac071 IN 6ae6cdce21c807e9d5a1a2b1 TI 6ae6cdcf37c1acd2a0eac0a6|img=mixto|14:45
