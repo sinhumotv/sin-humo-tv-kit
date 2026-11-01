@@ -41,3 +41,4 @@
 2026-11-01|08:00|El dilema de gravar los robots|final|YO 6ae6cab8ab019b908740f87e IN 6ae6cab937c1acd2a0ea36b8 TI 6ae6cab937c1acd2a0ea3702|img=mixto|08:36
 2026-11-01|12:00|El peligro del consejo médico artificial|increible|YO 6ae6cbe4f0984eef334b67af IN 6ae6cbe41ee172cd6dddeaad TI 6ae6cbe537c1acd2a0ea6cc8|img=mixto|12:32
 2026-11-01|15:00|Memoria artificial en 2100|pregunta|YO 6ae6cd2c21c807e9d5a17ee1 IN 6ae6cd2d37c1acd2a0eaa05d TI 6ae6cd2d21c807e9d5a17f55|img=mixto|15:02
+2026-11-01|18:00|El internet cuántico en 2100|sabias|YO 6ae6ce4fab019b9087418d14 IN 6ae6ce5021c807e9d5a1afa5 TI 6ae6ce50cf3a3112f3df6590|img=mixto|18:27
