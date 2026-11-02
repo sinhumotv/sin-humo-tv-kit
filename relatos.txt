@@ -49,3 +49,4 @@
 2026-11-01|15:00|Jasón y el Vellocino de Oro|nadie|YO 6ae6cdcd37c1acd2a0eac071 IN 6ae6cdce21c807e9d5a1a2b1 TI 6ae6cdcf37c1acd2a0eac0a6|img=mixto|14:45
 2026-11-01|18:00|Hefesto atrapa a Ares y Afrodita|sabias|YO 6ae6cffd37c1acd2a0eb3769 IN 6ae6cffe1ee172cd6ddea6ad TI 6ae6cfffab019b908741efa7|img=mixto|18:37
 2026-11-01|21:00|Perseo y Andrómeda|consecuencia|YO 6ae6d1ae37c1acd2a0eb7a5d IN 6ae6d1af21c807e9d5a24d17 TI 6ae6d1afcf3a3112f3dffd15|img=mixto|21:33
+2026-11-02|08:00|Heracles y Atlas|pregunta|YO 6ae81f29759fc887b6cd1077 IN 6ae81f2a7817c41d1a458792 TI 6ae81f2a76279ec7eb94132b|img=mixto|07:20
