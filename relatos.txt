@@ -50,3 +50,4 @@
 2026-11-01|18:00|Hefesto atrapa a Ares y Afrodita|sabias|YO 6ae6cffd37c1acd2a0eb3769 IN 6ae6cffe1ee172cd6ddea6ad TI 6ae6cfffab019b908741efa7|img=mixto|18:37
 2026-11-01|21:00|Perseo y Andrómeda|consecuencia|YO 6ae6d1ae37c1acd2a0eb7a5d IN 6ae6d1af21c807e9d5a24d17 TI 6ae6d1afcf3a3112f3dffd15|img=mixto|21:33
 2026-11-02|08:00|Heracles y Atlas|pregunta|YO 6ae81f29759fc887b6cd1077 IN 6ae81f2a7817c41d1a458792 TI 6ae81f2a76279ec7eb94132b|img=mixto|07:20
+2026-11-02|12:00|Dánae y la lluvia de oro|final|YO 6ae8208a64604db314410ec6 IN 6ae8208ac60bdbcc33d8a211 TI 6ae8208b76279ec7eb9473e9|img=mixto|11:25
