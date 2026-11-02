@@ -205,7 +205,7 @@ if E["fase"] == "voz":
     guardar_proyecto()
 
 if E["fase"] == "imagenes":
-    rc, out = sh(f'python3 "{AQUI}/largo_imagenes.py" "{P}" "{CFG_P}"', ok=True)
+    rc, out = sh(f'CLIPS_USADOS="{DAT}/clips_{CANAL}.txt" python3 "{AQUI}/largo_imagenes.py" "{P}" "{CFG_P}"', ok=True)
     print(out.strip()[-2500:])
     guardar_proyecto()
     if rc == 3:
@@ -472,6 +472,16 @@ if E["fase"] == "publicar":
     datos.anadir(REPO_URL, f"largos_{CANAL}.txt",
                  [f"{cuando:%Y-%m-%d %H:%M}|{H['titulo']}|{H['titulo_youtube']}|{pid}|{E['tag']}"],
                  C["nombre"], f"largo {CANAL} {cuando:%Y-%m-%d}")
+    # clips usados en este largo: no se repetirán en los siguientes del canal (petición del usuario, 2-nov-2026)
+    ids = []
+    for e in H["escenas"]:
+        im_ = e.get("imagen", {})
+        ids += [str(x) for x in [im_.get("clip_id")] + [y.get("clip_id") for y in im_.get("extra", [])] if x]
+    if ids:
+        try:
+            datos.anadir(REPO_URL, f"clips_{CANAL}.txt", sorted(set(ids)), C["nombre"], f"clips del largo {CANAL} {cuando:%Y-%m-%d}")
+        except Exception as x:
+            print("no se ha podido guardar la lista de clips usados:", str(x)[:120])
     estado("hecho", publicado=cuando.isoformat())
     guardar_proyecto()
     print(f"PROGRAMADO · {C['nombre']} · {cuando:%d/%m %H:%M} · «{H['titulo_youtube']}»")

@@ -23,6 +23,13 @@ os.makedirs(f"{D}/imgs", exist_ok=True)
 CRED_P = f"{D}/creditos.json"
 CRED = json.load(open(CRED_P, encoding="utf-8")) if os.path.exists(CRED_P) else {}
 ESTILO = H.get("estilo_imagen", "")
+# clips ya usados en largos ANTERIORES del canal (registro clips_<canal>.txt de la rama datos): petición del usuario
+# (2-nov-2026) de no repetir las mismas escenas de un vídeo a otro. Se miran los últimos 2.500.
+_PREV_F = os.environ.get("CLIPS_USADOS", "")
+PREVIOS = set()
+if _PREV_F and os.path.exists(_PREV_F):
+    PREVIOS = {l.strip() for l in open(_PREV_F, encoding="utf-8").read().splitlines()[-2500:] if l.strip()}
+    print(f"clips ya usados en otros largos del canal: {len(PREVIOS)} (no se repiten)")
 SEGURO = " Tasteful, no blood, no gore, no nudity."
 
 
@@ -331,13 +338,13 @@ def candidatos(q):
 
 def video(i, e):
     im = e["imagen"]
-    usados = {x.get("imagen", {}).get("clip_id") for x in ESC}
-    cands, vistos = [], set(usados)
+    usados = {x.get("imagen", {}).get("clip_id") for x in ESC} | PREVIOS
+    cands, vistos = [], {str(x) for x in usados}
     genericas = list(L.get("video_generico") or [])
     for q in [im["busqueda"]] + list(im.get("otras") or []) + genericas[(i * 3) % max(1, len(genericas)):][:3]:
         for c in candidatos(q):
-            if c["id"] not in vistos:
-                vistos.add(c["id"])
+            if str(c["id"]) not in vistos:
+                vistos.add(str(c["id"]))
                 cands.append(c)
         if len(cands) >= 12:
             break
@@ -396,7 +403,7 @@ Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico 
     # ningún clip aprobado: vídeo real de ambiente del canal (nunca una foto)
     for q in genericas[i % max(1, len(genericas)):] + genericas:
         for c in pixabay(q):
-            if c["id"] in usados or not bajar_clip(c["url"], destino):
+            if str(c["id"]) in {str(u) for u in usados} or not bajar_clip(c["url"], destino):
                 continue
             if movimiento(destino) >= 3.0:
                 im["clip"], im["clip_id"] = c["url"], c["id"]
@@ -412,7 +419,7 @@ Que se reconozca el tema del vídeo: {C.get('visual', '')} Un paisaje genérico 
 def ambiente(i, e):
     """Vídeo real de ambiente del canal (cuando ningún clip concreto vale)."""
     im, destino = e["imagen"], f"{D}/clips/{i:02d}.mp4"
-    usados = {str(x.get("imagen", {}).get("clip_id")) for x in ESC} | {str(x) for x in H.get("vetados", [])}
+    usados = {str(x.get("imagen", {}).get("clip_id")) for x in ESC} | {str(x) for x in H.get("vetados", [])} | PREVIOS
     genericas = list(L.get("video_generico") or [])
     for q in genericas[i % max(1, len(genericas)):] + genericas:
         for c in pixabay(q):
@@ -428,7 +435,7 @@ def ambiente(i, e):
 
 def lote(indices):
     """Clips para varias escenas con UNA sola consulta a Gemini (antes era una por escena)."""
-    vistos = {str(x.get("imagen", {}).get("clip_id")) for x in ESC if x.get("imagen", {}).get("clip_id")}
+    vistos = {str(x.get("imagen", {}).get("clip_id")) for x in ESC if x.get("imagen", {}).get("clip_id")} | PREVIOS
     vistos |= {str(x) for x in H.get("vetados", [])}
     gen = list(L.get("video_generico") or [])
     items = []
@@ -465,7 +472,7 @@ def lote(indices):
 
 # ---------- REGLA DEL USUARIO: en los largos TODO es vídeo en movimiento, nunca fotos ni imágenes fijas ----------
 def usados_ids():
-    ids = {str(x) for x in H.get("vetados", [])}   # clips que dieron imagen quieta: no se vuelven a usar
+    ids = {str(x) for x in H.get("vetados", [])} | PREVIOS   # clips quietos o ya usados en otros largos: no se vuelven a usar
     for x in ESC:
         im_ = x.get("imagen", {})
         ids.add(str(im_.get("clip_id")))
@@ -595,7 +602,47 @@ for k in range(0, len(pend), 12):
     guardar()
 extras()
 
-# 3) imagen base de la miniatura: un fotograma REAL del propio vídeo (lo elige Gemini). La IA solo si no hay nada.
+# 3) imagen base de la miniatura (lo que más decide el clic). Petición del usuario (2-nov-2026): miniaturas muy
+#    curradas para el máximo CTR. Se crean 3 ilustraciones de IA hechas a propósito para la miniatura (un protagonista
+#    grande con emoción intensa, mucho contraste, hueco oscuro para el texto) y compiten con los 2 mejores fotogramas
+#    reales; Gemini elige la que más clics daría. Si no queda cuota de Cloudflare, se usa el mejor fotograma real.
+CTR = (" YouTube thumbnail composition, ONE huge main subject filling the right half, close-up, face or eyes showing an intense"
+       " emotion (shock, fear, fury or awe) looking at the viewer, dramatic rim light, strong complementary colors (teal and orange"
+       " or red and black), very high contrast and saturation, razor sharp focus, simple dark uncluttered background on the left"
+       " half for text, cinematic, epic, ultra detailed. No text, no letters, no logos, no watermark.")
+if not os.path.exists(f"{D}/miniatura_base.jpg") and H.get("miniatura", {}).get("prompt") and os.environ.get("CF_ACCOUNT"):
+    opciones = []
+    for k in range(3):
+        out = f"{D}/miniatura_ia_{k + 1}.jpg"
+        if not os.path.exists(out):
+            giro = ["", " Extreme close-up of the face.", " Wider dramatic shot with the main subject towering over the scene."][k]
+            r = cloudflare(H["miniatura"]["prompt"].rstrip(". ") + "." + giro + CTR, out, 1536, 864)
+            if r == "cuota":
+                break
+        if os.path.exists(out):
+            opciones.append(out)
+    reales = [i for i in range(1, len(ESC) + 1) if os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
+    opciones += [f"{D}/imgs/{i:02d}.jpg" for i in reales[::max(1, len(reales) // 8)][:8]]
+    if len(opciones) > 1:
+        minis = []
+        for f in opciones:
+            t = Image.open(f).convert("RGB"); t.thumbnail((480, 480))
+            buf = io.BytesIO(); t.save(buf, "JPEG", quality=80); minis.append(buf.getvalue())
+        elegido = 0
+        try:
+            j, _ = pedir(f"""Eres experto en miniaturas de YouTube con mucho CTR (canales faceless de historias y misterios).
+Vídeo: "{H['titulo_youtube']}". Texto que irá en la miniatura: "{H['miniatura'].get('texto', '')}" (a la izquierda).
+Te paso {len(opciones)} imágenes candidatas para el fondo (desde 0). Elige la que haría que MÁS gente hiciera clic al verla
+pequeña en el móvil: un protagonista claro y grande, emoción intensa, contraste fuerte, que se entienda de qué va, sin
+texto ni deformidades (manos, caras raras) y con hueco a la izquierda para el texto. Devuelve SOLO JSON: {{"mejor": <número>}}""",
+                         temp=0.2, imagenes=minis, max_tokens=300)
+            k = j.get("mejor") if isinstance(j, dict) else None
+            if isinstance(k, int) and 0 <= k < len(opciones):
+                elegido = k
+        except SystemExit:
+            pass
+        Image.open(opciones[elegido]).convert("RGB").save(f"{D}/miniatura_base.jpg", quality=92)
+        print(f"miniatura: fondo elegido {os.path.basename(opciones[elegido])} entre {len(opciones)} candidatas")
 if not os.path.exists(f"{D}/miniatura_base.jpg"):
     cand = [i for i in range(1, len(ESC) + 1) if os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
     if cand:

@@ -25,9 +25,15 @@ def base(p, espejo=False):
     im = im.crop((x, y, x + W, y + HH))
     if espejo:
         im = im.transpose(Image.FLIP_LEFT_RIGHT)
-    im = ImageEnhance.Contrast(im).enhance(1.18)
-    im = ImageEnhance.Color(im).enhance(1.22)
-    return im.filter(ImageFilter.UnsharpMask(radius=2, percent=80, threshold=2))
+    im = ImageEnhance.Contrast(im).enhance(1.25)
+    im = ImageEnhance.Color(im).enhance(1.32)
+    im = ImageEnhance.Brightness(im).enhance(1.04)
+    im = im.filter(ImageFilter.UnsharpMask(radius=2, percent=110, threshold=2))
+    # viñeta: bordes más oscuros para que el ojo vaya al centro y el texto destaque
+    v = Image.new("L", (W, HH), 0)
+    ImageDraw.Draw(v).ellipse((-W * 0.15, -HH * 0.25, W * 1.15, HH * 1.25), fill=255)
+    v = v.filter(ImageFilter.GaussianBlur(120))
+    return Image.composite(im, Image.new("RGB", (W, HH)), v.point(lambda x: 90 + x * 165 // 255))
 
 
 def degradado(im, lado="izq", fuerza=0.85):
@@ -52,7 +58,7 @@ def lineas(pal):
 def texto(im, x0, ancho, caja_clave=False, centrado=False):
     d = ImageDraw.Draw(im)
     ls = lineas(TXT)
-    size = 190
+    size = 210
     while size > 50:
         f = ImageFont.truetype(NEGRA, size)
         if all(d.textlength(" ".join(l), font=f) <= ancho for l in ls) and size * 1.02 * len(ls) <= HH * 0.78:
@@ -75,7 +81,7 @@ def texto(im, x0, ancho, caja_clave=False, centrado=False):
                 dc.rounded_rectangle((x - 14, y + size * 0.06, x + pw + 14, y + size * 1.02), 14, fill=AMARILLO + (255,))
             ds.text((x + 8, y + 10), p, font=f, fill=(0, 0, 0, 230))
             col = (20, 16, 10) if (clave and caja_clave) else (AMARILLO if clave else BLANCO)
-            dc.text((x, y), p, font=f, fill=col + (255,), stroke_width=0 if (clave and caja_clave) else max(6, size // 18),
+            dc.text((x, y), p, font=f, fill=col + (255,), stroke_width=0 if (clave and caja_clave) else max(8, size // 14),
                     stroke_fill=(0, 0, 0, 255))
             x += pw + esp
         y += int(size * 1.02)
@@ -102,4 +108,25 @@ for y in range(HH):
     g.paste(int(230 * max(0, (y / HH - 0.35) / 0.65) ** 1.3), (0, y, W, y + 1))
 c = Image.composite(Image.new("RGB", (W, HH)), c, g)
 texto(c, 0, W * 0.9, caja_clave=True, centrado=True).save(f"{D}/miniatura_C.jpg", quality=92)
+# la que se publica (A) es la que Gemini cree que daría más clics de las tres (petición del usuario: máximo CTR)
+try:
+    import io, shutil
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from gem import pedir
+    minis = []
+    for k in "ABC":
+        t = Image.open(f"{D}/miniatura_{k}.jpg"); t.thumbnail((640, 360))
+        buf = io.BytesIO(); t.save(buf, "JPEG", quality=85); minis.append(buf.getvalue())
+    j, _ = pedir(f"""Eres experto en CTR de YouTube. Título del vídeo: "{H.get('titulo_youtube', '')}". Te paso 3 miniaturas (0, 1 y 2).
+¿Cuál conseguiría MÁS clics vista pequeña en el móvil (se lee el texto, se entiende la imagen, despierta curiosidad o
+emoción)? Devuelve SOLO JSON: {{"mejor": <0, 1 o 2>, "motivo": "..."}}""", temp=0.2, imagenes=minis, max_tokens=300)
+    k = j.get("mejor") if isinstance(j, dict) else 0
+    if k in (1, 2):
+        g = "ABC"[k]
+        shutil.copy(f"{D}/miniatura_A.jpg", f"{D}/_a.jpg")
+        shutil.copy(f"{D}/miniatura_{g}.jpg", f"{D}/miniatura_A.jpg")
+        shutil.move(f"{D}/_a.jpg", f"{D}/miniatura_{g}.jpg")
+    print("miniatura elegida:", "ABC"[k if k in (0, 1, 2) else 0], "·", str(j.get("motivo", ""))[:120] if isinstance(j, dict) else "")
+except BaseException as x:
+    print("sin juez de miniaturas:", str(x)[:80])
 print("MINIATURAS OK · A (se publica), B y C ·", " ".join(TXT))
