@@ -44,3 +44,4 @@
 2026-11-01|18:00|El internet cuántico en 2100|sabias|YO 6ae6ce4fab019b9087418d14 IN 6ae6ce5021c807e9d5a1afa5 TI 6ae6ce50cf3a3112f3df6590|img=mixto|18:27
 2026-11-01|21:00|Cúpulas climáticas en 2100|consecuencia|YO 6ae6cf1b1ee172cd6dde7d6c IN 6ae6cf1c21c807e9d5a1de56 TI 6ae6cf1c1ee172cd6dde7da1|img=real|20:22
 2026-11-02|08:00|Cancelan juego hecho con IA|error|YO 6ae820407817c41d1a45d5f3 IN 6ae820411a965d64fbee9aff TI 6ae820411a965d64fbee9b50|img=real|07:48
+2026-11-02|12:00|Sueldos millonarios en IA|cuenta|YO 6ae821757817c41d1a460ced IN 6ae82175759fc887b6cd9363 TI 6ae821761a965d64fbeeda07|img=mixto|12:31
