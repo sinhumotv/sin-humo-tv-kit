@@ -52,3 +52,4 @@
 2026-11-02|08:00|Heracles y Atlas|pregunta|YO 6ae81f29759fc887b6cd1077 IN 6ae81f2a7817c41d1a458792 TI 6ae81f2a76279ec7eb94132b|img=mixto|07:20
 2026-11-02|12:00|Dánae y la lluvia de oro|final|YO 6ae8208a64604db314410ec6 IN 6ae8208ac60bdbcc33d8a211 TI 6ae8208b76279ec7eb9473e9|img=mixto|11:25
 2026-11-02|15:00|Céfalo y Procris|error|YO 6ae8217d76279ec7eb94bfb1 IN 6ae8217d7817c41d1a460e34 TI 6ae8217e64604db31441446c|img=mixto|14:22
+2026-11-02|18:00|Las Danaides|cuenta|YO 6ae8225b7817c41d1a464b70 IN 6ae8225b759fc887b6cdce9d TI 6ae8225c64604db314417ae7|img=mixto|17:43
