@@ -48,3 +48,4 @@
 2026-11-02|12:00|Las huellas del diablo|cuenta|YO 6ae8206cc60bdbcc33d89dd5 IN 6ae8206c64604db314410af6 TI 6ae8206c759fc887b6cd6284|img=mixto|12:01
 2026-11-02|15:00|La muerte de Atila el Huno|increible|YO 6ae821ab759fc887b6cd9b7f IN 6ae821ab759fc887b6cd9bac TI 6ae821ac1a965d64fbeee474|img=mixto|15:29
 2026-11-02|18:00|Las chicas del radio|sabias|YO 6ae822b376279ec7eb94f5a5 IN 6ae822b41a965d64fbef232a TI 6ae822b464604db314419026|img=mixto|18:25
+2026-11-02|21:00|El asunto de los venenos|consecuencia|YO 6ae823dd1a965d64fbef5970 IN 6ae823de759fc887b6ce2b1b TI 6ae823de76279ec7eb95340f|img=mixto|20:58
