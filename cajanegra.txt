@@ -44,3 +44,4 @@
 2026-11-01|15:00|El elixir de Qin Shi Huang|nadie|YO 6ae6cc87ab019b90874148dd IN 6ae6cc8821c807e9d5a16cd7 TI 6ae6cc88f0984eef334b87e2|img=mixto|14:20
 2026-11-01|18:00|El desastre del U-1206|sabias|YO 6ae6cd7e37c1acd2a0eab051 IN 6ae6cd7e21c807e9d5a191a6 TI 6ae6cd7e1ee172cd6dde2c2d|img=mixto|17:52
 2026-11-01|21:00|La muerte de Carlos VIII|consecuencia|YO 6ae6ce5c21c807e9d5a1b2b0 IN 6ae6ce5cab019b908741900f TI 6ae6ce5dab019b908741905c|img=mixto|20:48
+2026-11-02|08:00|El misterio del submarino Hunley|error|YO 6ae81f1e759fc887b6cd0ee2 IN 6ae81f1e759fc887b6cd0f0f TI 6ae81f1f76279ec7eb94119f|img=mixto|08:05
