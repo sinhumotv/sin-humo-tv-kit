@@ -45,3 +45,4 @@
 2026-11-01|21:00|Cúpulas climáticas en 2100|consecuencia|YO 6ae6cf1b1ee172cd6dde7d6c IN 6ae6cf1c21c807e9d5a1de56 TI 6ae6cf1c1ee172cd6dde7da1|img=real|20:22
 2026-11-02|08:00|Cancelan juego hecho con IA|error|YO 6ae820407817c41d1a45d5f3 IN 6ae820411a965d64fbee9aff TI 6ae820411a965d64fbee9b50|img=real|07:48
 2026-11-02|12:00|Sueldos millonarios en IA|cuenta|YO 6ae821757817c41d1a460ced IN 6ae82175759fc887b6cd9363 TI 6ae821761a965d64fbeeda07|img=mixto|12:31
+2026-11-02|15:00|Nanorobots en la sangre|nadie|YO 6ae822d8759fc887b6cde4b6 IN 6ae822d8759fc887b6cde4ed TI 6ae822d9c60bdbcc33d92e49|img=mixto|15:19
