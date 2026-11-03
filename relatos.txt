@@ -57,3 +57,4 @@
 2026-11-03|08:00|El castigo de Ixión|increible|YO 6ae96f115d60da1eff7959ee IN 6ae96f11a5f6b0f7438c0d7e TI 6ae96f125d60da1eff795a91|img=mixto|08:30
 2026-11-03|12:00|El mito de Titono|nadie|YO 6ae9703ba5f6b0f7438c50f6 IN 6ae9703cda2711fd26b1a74b TI 6ae9703cda2711fd26b1a779|img=mixto|11:28
 2026-11-03|15:00|Hipólito y Fedra|consecuencia|YO 6ae97146da2711fd26b1d0e5 IN 6ae97147a5f6b0f7438c8a01 TI 6ae9714794b13c6dd798dcc0|img=mixto|15:27
+2026-11-03|18:00|El origen de la flauta de Pan|sabias|YO 6ae9727ca86fdc4e31820798 IN 6ae9727c5d60da1eff7a253c TI 6ae9727db1dfe2c544f42a27|img=mixto|17:37
