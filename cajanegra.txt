@@ -53,3 +53,4 @@
 2026-11-03|12:00|El robo del Cordero Místico|nadie|YO 6ae975f6e5f645e4e32d5045 IN 6ae975f76896a4441f62c7c5 TI 6ae975f8e5f645e4e32d50c7|img=mixto|11:50
 2026-11-03|15:00|La desaparición de Fawcett|final|YO 6ae9777964e1ad8ea2e81ac5 IN 6ae9777a941ff0cb276fcf6a TI 6ae9777bee93f2557f283ec9|img=mixto|14:22
 2026-11-03|18:00|La tragedia del Sultana|sabias|YO 6ae978ce64e1ad8ea2e8b9c7 IN 6ae978ceee93f2557f28e505 TI 6ae978cfe5f645e4e32e2f2d|img=mixto|18:09
+2026-11-03|21:00|El funeral de Guillermo|consecuencia|YO 6ae97a153b00665c7378f6af IN 6ae97a16c6212bc0ea311bb3 TI 6ae97a16e5f645e4e32e9745|img=real|20:41
