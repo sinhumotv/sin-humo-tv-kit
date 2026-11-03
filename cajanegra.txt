@@ -50,3 +50,4 @@
 2026-11-02|18:00|Las chicas del radio|sabias|YO 6ae822b376279ec7eb94f5a5 IN 6ae822b41a965d64fbef232a TI 6ae822b464604db314419026|img=mixto|18:25
 2026-11-02|21:00|El asunto de los venenos|consecuencia|YO 6ae823dd1a965d64fbef5970 IN 6ae823de759fc887b6ce2b1b TI 6ae823de76279ec7eb95340f|img=mixto|20:58
 2026-11-03|08:00|La trampa de Midgley|pregunta|YO 6ae9746694b13c6dd799a98f IN 6ae97467a86fdc4e31827dc7 TI 6ae97468a5f6b0f7438d753a|img=mixto|07:56
+2026-11-03|12:00|El robo del Cordero Místico|nadie|YO 6ae975f6e5f645e4e32d5045 IN 6ae975f76896a4441f62c7c5 TI 6ae975f8e5f645e4e32d50c7|img=mixto|11:50
