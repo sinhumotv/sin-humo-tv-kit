@@ -50,3 +50,4 @@
 2026-11-02|21:00|Ciudades bajo la Luna|consecuencia|YO 6ae82530c60bdbcc33d9ac2e IN 6ae825307817c41d1a46e758 TI 6ae8253176279ec7eb958471|img=mixto|20:51
 2026-11-03|08:00|Inteligencia artificial en órbita|pregunta|YO 6ae971a2a5f6b0f7438cb94b IN 6ae971a3a5f6b0f7438cb978 TI 6ae971a3a5f6b0f7438cba1b|img=mixto|08:03
 2026-11-03|12:00|La cámara que caza basura en carretera|increible|YO 6ae972a794b13c6dd799340b IN 6ae972a7da2711fd26b23a77 TI 6ae972a894b13c6dd7993455|img=mixto|12:30
+2026-11-03|15:00|Árboles luminosos en 2100|final|YO 6ae9737aa86fdc4e31823415 IN 6ae9737ada2711fd26b25f28 TI 6ae9737ada2711fd26b25f74|img=mixto|15:24
