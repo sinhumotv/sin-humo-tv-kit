@@ -57,3 +57,4 @@
 2026-11-04|12:00|Una IA reescribe el cerebro de otra|cuenta|YO 6aeac2c1ff887f055cee0a4a IN 6aeac2c2b8d162e0d8072495 TI 6aeac2c2ff887f055cee0a9a|img=mixto|11:35
 2026-11-04|15:00|Grabadores de sueños en 2100|nadie|YO 6aeac3f7ff887f055cee722e IN 6aeac3f84c41ba80aa5d65f7 TI 6aeac3f816e63068f19785a5|img=mixto|15:40
 2026-11-04|18:00|Fábricas a oscuras|sabias|YO 6aeac4f187b7c6d24c92bf81 IN 6aeac4f14c41ba80aa5daf29 TI 6aeac4f2ff887f055ceeb3ab|img=mixto|17:40
+2026-11-04|21:00|La desextinción genética en 2100|consecuencia|YO 6aeac6374c41ba80aa5df14b IN 6aeac63869ad1ef03b7d2500 TI 6aeac63887b7c6d24c931699|img=mixto|20:42
