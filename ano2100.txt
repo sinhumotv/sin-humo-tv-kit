@@ -53,3 +53,4 @@
 2026-11-03|15:00|Árboles luminosos en 2100|final|YO 6ae9737aa86fdc4e31823415 IN 6ae9737ada2711fd26b25f28 TI 6ae9737ada2711fd26b25f74|img=mixto|15:24
 2026-11-03|18:00|Baterías de diamante nuclear|sabias|YO 6ae974a8a5f6b0f7438d8429 IN 6ae974a85d60da1eff7ac5ef TI 6ae974a9a5f6b0f7438d8486|img=mixto|18:20
 2026-11-03|21:00|Ropa inteligente autorregulable|consecuencia|YO 6ae9758b64e1ad8ea2e7bfde IN 6ae9758cc6212bc0ea2fe175 TI 6ae9758c941ff0cb276f69d9|img=mixto|20:31
+2026-11-04|08:00|La colosal factura de Anthropic|error|YO 6aeac18369ad1ef03b7be12f IN 6aeac1834c41ba80aa5cc95d TI 6aeac18416e63068f196dc93|img=mixto|07:38
