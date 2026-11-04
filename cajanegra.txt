@@ -58,3 +58,4 @@
 2026-11-04|12:00|La barba mortal|error|YO 6aeac24db8d162e0d80709c0 IN 6aeac24dff887f055cedee7f TI 6aeac24e16e63068f1970c58|img=mixto|12:38
 2026-11-04|15:00|El sínodo del cadáver|increible|YO 6aeac33816e63068f1975dfc IN 6aeac338b8d162e0d8075f6c TI 6aeac3394c41ba80aa5d381e|img=mixto|14:54
 2026-11-04|18:00|El lago mortal de Nios|sabias|YO 6aeac46669ad1ef03b7ca3e0 IN 6aeac46787b7c6d24c929bfe TI 6aeac4674c41ba80aa5d7d71|img=mixto|18:30
+2026-11-04|21:00|El fantasma de Greenbrier|consecuencia|YO 6aeac599ff887f055ceedae8 IN 6aeac59a16e63068f197fb85 TI 6aeac59bb8d162e0d8080fe9|img=mixto|21:20
