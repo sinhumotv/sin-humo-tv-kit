@@ -55,3 +55,4 @@
 2026-11-03|21:00|Ropa inteligente autorregulable|consecuencia|YO 6ae9758b64e1ad8ea2e7bfde IN 6ae9758cc6212bc0ea2fe175 TI 6ae9758c941ff0cb276f69d9|img=mixto|20:31
 2026-11-04|08:00|La colosal factura de Anthropic|error|YO 6aeac18369ad1ef03b7be12f IN 6aeac1834c41ba80aa5cc95d TI 6aeac18416e63068f196dc93|img=mixto|07:38
 2026-11-04|12:00|Una IA reescribe el cerebro de otra|cuenta|YO 6aeac2c1ff887f055cee0a4a IN 6aeac2c2b8d162e0d8072495 TI 6aeac2c2ff887f055cee0a9a|img=mixto|11:35
+2026-11-04|15:00|Grabadores de sueños en 2100|nadie|YO 6aeac3f7ff887f055cee722e IN 6aeac3f84c41ba80aa5d65f7 TI 6aeac3f816e63068f19785a5|img=mixto|15:40
