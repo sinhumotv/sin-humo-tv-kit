@@ -61,3 +61,4 @@
 2026-11-03|21:00|El diluvio de Deucalión|pregunta|YO 6ae973995d60da1eff7a61ee IN 6ae9739ab1dfe2c544f45c9a TI 6ae9739a5d60da1eff7a623e|img=mixto|21:09
 2026-11-04|08:00|Acis y Galatea|final|YO 6aeac1d5b8d162e0d806f8de IN 6aeac1d587b7c6d24c91dedf TI 6aeac1d6ff887f055ceddbad|img=mixto|08:05
 2026-11-04|12:00|El rey Licaón|error|YO 6aeac33016e63068f1975b98 IN 6aeac33087b7c6d24c9255fc TI 6aeac33169ad1ef03b7c56ca|img=ia|12:20
+2026-11-04|15:00|Los establos de Augías|cuenta|YO 6aeac47469ad1ef03b7ca5b4 IN 6aeac475ff887f055cee9626 TI 6aeac47516e63068f197a2db|img=mixto|14:49
