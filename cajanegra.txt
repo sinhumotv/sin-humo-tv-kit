@@ -57,3 +57,4 @@
 2026-11-04|08:00|El superviviente del Pelé|cuenta|YO 6aeac17b4c41ba80aa5cc85b IN 6aeac17b87b7c6d24c91cac5 TI 6aeac17cb8d162e0d806e108|img=mixto|08:04
 2026-11-04|12:00|La barba mortal|error|YO 6aeac24db8d162e0d80709c0 IN 6aeac24dff887f055cedee7f TI 6aeac24e16e63068f1970c58|img=mixto|12:38
 2026-11-04|15:00|El sínodo del cadáver|increible|YO 6aeac33816e63068f1975dfc IN 6aeac338b8d162e0d8075f6c TI 6aeac3394c41ba80aa5d381e|img=mixto|14:54
+2026-11-04|18:00|El lago mortal de Nios|sabias|YO 6aeac46669ad1ef03b7ca3e0 IN 6aeac46787b7c6d24c929bfe TI 6aeac4674c41ba80aa5d7d71|img=mixto|18:30
