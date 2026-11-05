@@ -64,3 +64,4 @@
 2026-11-04|15:00|Los establos de Augías|cuenta|YO 6aeac47469ad1ef03b7ca5b4 IN 6aeac475ff887f055cee9626 TI 6aeac47516e63068f197a2db|img=mixto|14:49
 2026-11-04|18:00|La muerte de Sémele|sabias|YO 6aeac5e5b8d162e0d80817fb IN 6aeac5e569ad1ef03b7d148a TI 6aeac5e687b7c6d24c92fed0|img=mixto|17:24
 2026-11-04|21:00|El castigo de Penteo|consecuencia|YO 6aeac73016e63068f198637c IN 6aeac731b8d162e0d8085a08 TI 6aeac7314c41ba80aa5e2c16|img=mixto|21:35
+2026-11-05|08:00|Las Moiras y el Hilo del Destino|pregunta|YO 6aec14dc80f7fd0537f0d4b7 IN 6aec14dc80f7fd0537f0d4ff TI 6aec14dd7877e0eab2782e75|img=mixto|07:49
