@@ -60,3 +60,4 @@
 2026-11-04|18:00|El lago mortal de Nios|sabias|YO 6aeac46669ad1ef03b7ca3e0 IN 6aeac46787b7c6d24c929bfe TI 6aeac4674c41ba80aa5d7d71|img=mixto|18:30
 2026-11-04|21:00|El fantasma de Greenbrier|consecuencia|YO 6aeac599ff887f055ceedae8 IN 6aeac59a16e63068f197fb85 TI 6aeac59bb8d162e0d8080fe9|img=mixto|21:20
 2026-11-05|08:00|La trampa de la expedición Franklin|pregunta|YO 6aec133ce22643a987916765 IN 6aec133d3ddb81d22108179b TI 6aec133d7877e0eab277d519|img=mixto|07:34
+2026-11-05|15:00|El secreto de la emperatriz Sissi|nadie|YO 6aec161080f7fd0537f10fe4 IN 6aec1610e22643a9879200e0 TI 6aec161175052a1eb821693f|img=mixto|15:13
