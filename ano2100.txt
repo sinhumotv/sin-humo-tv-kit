@@ -60,3 +60,4 @@
 2026-11-04|21:00|La desextinción genética en 2100|consecuencia|YO 6aeac6374c41ba80aa5df14b IN 6aeac63869ad1ef03b7d2500 TI 6aeac63887b7c6d24c931699|img=mixto|20:42
 2026-11-05|08:00|Torreta láser anti mosquitos con IA|increible|YO 6aec134fe22643a98791698e IN 6aec134fe22643a9879169b7 TI 6aec1350660b2991f1536b52|img=mixto|07:21
 2026-11-05|12:00|Robo masivo de chips de IA en carreteras|pregunta|YO 6aec147ee22643a98791a912 IN 6aec147f7877e0eab27819d6 TI 6aec14807877e0eab2781a51|img=mixto|11:40
+2026-11-05|15:00|Enjambres de microdrones forestales en 2100|final|YO 6aec1581e22643a98791e476 IN 6aec158280f7fd0537f0ee2f TI 6aec158280f7fd0537f0ee6a|img=mixto|15:08
