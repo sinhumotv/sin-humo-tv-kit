@@ -67,3 +67,4 @@
 2026-11-05|08:00|Las Moiras y el Hilo del Destino|pregunta|YO 6aec14dc80f7fd0537f0d4b7 IN 6aec14dc80f7fd0537f0d4ff TI 6aec14dd7877e0eab2782e75|img=mixto|07:49
 2026-11-05|12:00|Fineo y las Arpías|nadie|YO 6aec169180f7fd0537f124a1 IN 6aec1692660b2991f1540839 TI 6aec169275052a1eb8217f00|img=mixto|12:06
 2026-11-05|15:00|La Manzana de la Discordia|increible|YO 6aec17fd660b2991f1545270 IN 6aec17fe80f7fd0537f16858 TI 6aec17fe660b2991f15452e7|img=mixto|15:07
+2026-11-05|18:00|Apolo y Jacinto|sabias|YO 6aec1a1075052a1eb82231b1 IN 6aec1a103ddb81d221097b43 TI 6aec1a1180f7fd0537f1dd0e|img=mixto|17:58
