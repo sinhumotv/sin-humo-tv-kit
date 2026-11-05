@@ -62,3 +62,4 @@
 2026-11-05|08:00|La trampa de la expedición Franklin|pregunta|YO 6aec133ce22643a987916765 IN 6aec133d3ddb81d22108179b TI 6aec133d7877e0eab277d519|img=mixto|07:34
 2026-11-05|15:00|El secreto de la emperatriz Sissi|nadie|YO 6aec161080f7fd0537f10fe4 IN 6aec1610e22643a9879200e0 TI 6aec161175052a1eb821693f|img=mixto|15:13
 2026-11-05|18:00|El robo de las joyas de la corona|sabias|YO 6aec174f3ddb81d22108e9ed IN 6aec174f75052a1eb821a674 TI 6aec1750660b2991f1542b40|img=mixto|18:33
+2026-11-05|21:00|La insólita muerte de Jacobo I|consecuencia|YO 6aec18d77877e0eab2790a67 IN 6aec18d8660b2991f15489f6 TI 6aec18d83ddb81d22109390b|img=mixto|20:35
