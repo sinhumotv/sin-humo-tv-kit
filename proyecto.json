@@ -1,0 +1,511 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "Las Ciudades del Año 2100",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/01_full.mp4",
+  "1": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/02_full.mp4",
+  "2": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/03_full.mp4",
+  "3": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/04_full.mp4",
+  "4": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/05_full.mp4",
+  "5": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/06_full.mp4",
+  "6": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/07_full.mp4",
+  "7": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/08_full.mp4",
+  "8": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/09_full.mp4",
+  "9": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/10_full.mp4",
+  "10": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/11_full.mp4",
+  "11": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/12_full.mp4",
+  "12": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/13_full.mp4",
+  "13": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/14_full.mp4",
+  "14": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/15_full.mp4",
+  "15": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/16_full.mp4",
+  "16": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/17_full.mp4",
+  "17": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/18_full.mp4",
+  "18": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/19_full.mp4",
+  "19": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/20_full.mp4",
+  "20": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/21_full.mp4",
+  "21": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/22_full.mp4",
+  "22": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/23_full.mp4",
+  "23": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/24_full.mp4",
+  "24": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/25_full.mp4",
+  "25": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/26_full.mp4",
+  "26": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/27_full.mp4",
+  "27": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/28_full.mp4",
+  "28": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/29_full.mp4",
+  "29": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/30_full.mp4",
+  "30": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/31_full.mp4",
+  "31": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/32_full.mp4",
+  "32": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/33_full.mp4",
+  "33": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/34_full.mp4",
+  "34": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/35_full.mp4",
+  "35": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/36_full.mp4",
+  "36": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/37_full.mp4",
+  "37": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/38_full.mp4",
+  "38": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/39_full.mp4",
+  "39": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/40_full.mp4",
+  "40": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/41_full.mp4",
+  "41": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/42_full.mp4",
+  "42": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/43_full.mp4",
+  "43": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/44_full.mp4",
+  "44": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/45_full.mp4",
+  "45": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/46_full.mp4",
+  "46": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/47_full.mp4",
+  "47": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/48_full.mp4",
+  "48": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/49_full.mp4",
+  "49": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/50_full.mp4",
+  "50": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/51_full.mp4",
+  "51": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/52_full.mp4",
+  "52": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/53_full.mp4",
+  "53": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/54_full.mp4",
+  "54": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/55_full.mp4",
+  "55": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/56_full.mp4",
+  "56": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/57_full.mp4",
+  "57": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/58_full.mp4",
+  "58": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/59_full.mp4",
+  "59": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/60_full.mp4",
+  "60": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/61_full.mp4",
+  "61": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/62_full.mp4",
+  "62": "/tmp/largo-ano2100-ri4fsdul/proyecto/clips/63_full.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "La Ciudad Silenciosa"
+  },
+  {
+   "desde": 7,
+   "escena": 7,
+   "titulo": "El Fin del Coche Privado"
+  },
+  {
+   "desde": 14,
+   "escena": 14,
+   "titulo": "Arquitectura Viva y Autónoma"
+  },
+  {
+   "desde": 21,
+   "escena": 21,
+   "titulo": "Alimento Vertical sin Campo"
+  },
+  {
+   "desde": 28,
+   "escena": 28,
+   "titulo": "Tubos de Vacío entre Continentes"
+  },
+  {
+   "desde": 35,
+   "escena": 35,
+   "titulo": "La Red Neural Urbana"
+  },
+  {
+   "desde": 42,
+   "escena": 42,
+   "titulo": "Escudos Climáticos y Resiliencia"
+  },
+  {
+   "desde": 49,
+   "escena": 49,
+   "titulo": "Metrópolis Flotantes"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "El Giro: ¿Paraíso o Jaula?"
+  }
+ ],
+ "color": [
+  40,
+  230,
+  120
+ ],
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "Imagina una metrópolis de diez millones de habitantes en el año dos mil cien sin escuchar un solo motor. El tráfico ha desaparecido y el silencio es casi absoluto.",
+   "subtitulo": "Imagina una metrópolis de diez millones de habitantes en el año dos mil cien sin escuchar un solo motor. El tráfico ha desaparecido y el silencio es casi absoluto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hoy el ruido urbano acorta vidas y destruye la salud mental de millones de personas. Sin embargo, los modelos algorítmicos ya proyectan eliminar por completo los atascos del siglo veintiuno.",
+   "subtitulo": "Hoy el ruido urbano acorta vidas y destruye la salud mental de millones de personas. Sin embargo, los modelos algorítmicos ya proyectan eliminar por completo los atascos del siglo veintiuno."
+  },
+  {
+   "titulo": "",
+   "hablado": "Descubrirás cómo las arterias de asfalto se transformarán en parques lineales interconectados. Aunque esta utopía oculta una contradicción inquietante que revelaremos al final del episodio.",
+   "subtitulo": "Descubrirás cómo las arterias de asfalto se transformarán en parques lineales interconectados. Aunque esta utopía oculta una contradicción inquietante que revelaremos al final del episodio."
+  },
+  {
+   "titulo": "",
+   "hablado": "Actualmente, los ingenieros usan inteligencia artificial avanzada para simular el flujo acústico y térmico de manzanas enteras antes de colocar un solo ladrillo en las ciudades del futuro.",
+   "subtitulo": "Actualmente, los ingenieros usan inteligencia artificial avanzada para simular el flujo acústico y térmico de manzanas enteras antes de colocar un solo ladrillo en las ciudades del futuro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Según los expertos en diseño urbano, la eliminación progresiva de los vehículos privados permitirá reconvertir hasta un sesenta por ciento del espacio público en avenidas arboladas y zonas peatonales continuas.",
+   "subtitulo": "Según los expertos en diseño urbano, la eliminación progresiva de los vehículos privados permitirá reconvertir hasta un sesenta por ciento del espacio público en avenidas arboladas y zonas peatonales continuas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las flotas de transporte automatizado y el asfalto fabricado con materiales porosos capaces de absorber el sonido reducirán la contaminación acústica a niveles nunca antes vistos en la historia humana.",
+   "subtitulo": "Las flotas de transporte automatizado y el asfalto fabricado con materiales porosos capaces de absorber el sonido reducirán la contaminación acústica a niveles nunca antes vistos en la historia humana."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las grandes urbes dejarán de rugir para convertirse en ecosistemas habitables donde la tecnología trabaje en segundo plano. Sin embargo, para que este silencio sea posible, el concepto de propiedad debe desaparecer.",
+   "subtitulo": "Las grandes urbes dejarán de rugir para convertirse en ecosistemas habitables donde la tecnología trabaje en segundo plano. Sin embargo, para que este silencio sea posible, el concepto de propiedad debe desaparecer."
+  },
+  {
+   "titulo": "",
+   "hablado": "En la actualidad un vehículo privado pasa más del noventa por ciento de su vida útil estacionado. Para finales de este siglo la idea de poseer un coche resultará tan obsoleta como mantener un caballo para desplazarse por la metrópolis.",
+   "subtitulo": "En la actualidad un vehículo privado pasa más del noventa por ciento de su vida útil estacionado. Para finales de este siglo la idea de poseer un coche resultará tan obsoleta como mantener un caballo para desplazarse por la metrópolis."
+  },
+  {
+   "titulo": "",
+   "hablado": "En su lugar flotas interconectadas de pequeñísimos módulos eléctricos de transporte público circularán de forma ininterrumpida. Gestionados por algoritmos centrales estos vehículos sin conductor calcularán las rutas más eficientes sin necesidad de intervención humana.",
+   "subtitulo": "En su lugar flotas interconectadas de pequeñísimos módulos eléctricos de transporte público circularán de forma ininterrumpida. Gestionados por algoritmos centrales estos vehículos sin conductor calcularán las rutas más eficientes sin necesidad de intervención humana."
+  },
+  {
+   "titulo": "",
+   "hablado": "El cambio más drástico será la eliminación total de los semáforos. La inteligencia artificial coordinará la velocidad de cada módulo al milisegundo permitiendo cruces continuos y coordinados donde los vehículos se entrelazan de manera perfecta sin llegar a detenerse jamás.",
+   "subtitulo": "El cambio más drástico será la eliminación total de los semáforos. La inteligencia artificial coordinará la velocidad de cada módulo al milisegundo permitiendo cruces continuos y coordinados donde los vehículos se entrelazan de manera perfecta sin llegar a detenerse jamás."
+  },
+  {
+   "titulo": "",
+   "hablado": "Además gran parte del transporte pesado y la distribución de mercancías se trasladará bajo tierra o a vías fluviales urbanas. Túneles automatizados de mercancías descargarán suministros directamente en los edificios sin congestionar el espacio exterior.",
+   "subtitulo": "Además gran parte del transporte pesado y la distribución de mercancías se trasladará bajo tierra o a vías fluviales urbanas. Túneles automatizados de mercancías descargarán suministros directamente en los edificios sin congestionar el espacio exterior."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al desaparecer los vehículos aparcados las ciudades recuperarán millones de metros cuadrados de asfalto. Las antiguas plazas de aparcamiento y las autopistas urbanas se transformarían en parques lineales huertos comunitarios y zonas de arbolado nativo.",
+   "subtitulo": "Al desaparecer los vehículos aparcados las ciudades recuperarán millones de metros cuadrados de asfalto. Las antiguas plazas de aparcamiento y las autopistas urbanas se transformarían en parques lineales huertos comunitarios y zonas de arbolado nativo."
+  },
+  {
+   "titulo": "",
+   "hablado": "La movilidad se convertirá en un servicio público invisible y de acceso universal. Bastará con solicitar un trayecto o simplemente caminar hacia la vía rápida para que un módulo disponible te recoja en cuestión de segundos.",
+   "subtitulo": "La movilidad se convertirá en un servicio público invisible y de acceso universal. Bastará con solicitar un trayecto o simplemente caminar hacia la vía rápida para que un módulo disponible te recoja en cuestión de segundos."
+  },
+  {
+   "titulo": "",
+   "hablado": "La reconversión del espacio urbano transformará drásticamente la faz de nuestras calles. Sin embargo despejar el asfalto es solo el primer paso. El verdadero desafío comenzará cuando las propias estructuras de la ciudad adquieran vida propia.",
+   "subtitulo": "La reconversión del espacio urbano transformará drásticamente la faz de nuestras calles. Sin embargo despejar el asfalto es solo el primer paso. El verdadero desafío comenzará cuando las propias estructuras de la ciudad adquieran vida propia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los cimientos de la arquitectura moderna están cambiando radicalmente. Las redes neuronales avanzadas proyectan estructuras optimizadas hasta el milímetro, capaces de responder de forma dinámica al viento y a las condiciones del entorno circundante.",
+   "subtitulo": "Los cimientos de la arquitectura moderna están cambiando radicalmente. Las redes neuronales avanzadas proyectan estructuras optimizadas hasta el milímetro, capaces de responder de forma dinámica al viento y a las condiciones del entorno circundante."
+  },
+  {
+   "titulo": "",
+   "hablado": "En lugar de materiales inertes, los nuevos edificios incorporan biocompuestos capaces de autorepararse. Si aparece una grieta, cultivos bacterianos integrados en la mezcla se activan de inmediato para sellar la fisura sin intervención humana alguna.",
+   "subtitulo": "En lugar de materiales inertes, los nuevos edificios incorporan biocompuestos capaces de autorepararse. Si aparece una grieta, cultivos bacterianos integrados en la mezcla se activan de inmediato para sellar la fisura sin intervención humana alguna."
+  },
+  {
+   "titulo": "",
+   "hablado": "Estas torres de vanguardia no se limitan a reducir su impacto ambiental, sino que absorben activamente toneladas de dióxido de carbono del aire urbano, transformando grandes complejos de hormigón en potentes filtros ecológicos.",
+   "subtitulo": "Estas torres de vanguardia no se limitan a reducir su impacto ambiental, sino que absorben activamente toneladas de dióxido de carbono del aire urbano, transformando grandes complejos de hormigón en potentes filtros ecológicos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las fachadas dinámicas alteran su porosidad y disposición según la estación del año. Durante los meses calurosos se pliegan para bloquear la radiación solar directa, mientras que en invierno maximizan el aprovechamiento del calor natural.",
+   "subtitulo": "Las fachadas dinámicas alteran su porosidad y disposición según la estación del año. Durante los meses calurosos se pliegan para bloquear la radiación solar directa, mientras que en invierno maximizan el aprovechamiento del calor natural."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al funcionar como verdaderos organismos fotosintéticos, las estructuras generan más energía limpia mediante paneles integrados y biomasa de la que necesitan sus residentes para funcionar día a día de manera constante.",
+   "subtitulo": "Al funcionar como verdaderos organismos fotosintéticos, las estructuras generan más energía limpia mediante paneles integrados y biomasa de la que necesitan sus residentes para funcionar día a día de manera constante."
+  },
+  {
+   "titulo": "",
+   "hablado": "El concreto tradicional del pasado queda obsoleto frente a estos materiales orgánicos inteligentes. La edificación deja de ser un proceso estático para convertirse en un ecosistema en constante evolución y crecimiento dentro de la metrópoli.",
+   "subtitulo": "El concreto tradicional del pasado queda obsoleto frente a estos materiales orgánicos inteligentes. La edificación deja de ser un proceso estático para convertirse en un ecosistema en constante evolución y crecimiento dentro de la metrópoli."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta arquitectura viva transformará por completo la imagen de nuestros centros urbanos. Sin embargo, estas gigantescas estructuras no solo deberán protegernos, sino también alimentarnos. ¿Cómo produciremos suficiente comida cuando el campo tradicional desaparezca por completo?",
+   "subtitulo": "Esta arquitectura viva transformará por completo la imagen de nuestros centros urbanos. Sin embargo, estas gigantescas estructuras no solo deberán protegernos, sino también alimentarnos. ¿Cómo produciremos suficiente comida cuando el campo tradicional desaparezca por completo?"
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante siglos la producción de alimentos exigió deforestar inmensas extensiones de suelo. En las metrópolis del futuro las cosechas abandonan la tierra horizontal para elevarse en rascacielos agrícolas controlados milimétricamente por algoritmos de inteligencia artificial.",
+   "subtitulo": "Durante siglos la producción de alimentos exigió deforestar inmensas extensiones de suelo. En las metrópolis del futuro las cosechas abandonan la tierra horizontal para elevarse en rascacielos agrícolas controlados milimétricamente por algoritmos de inteligencia artificial."
+  },
+  {
+   "titulo": "",
+   "hablado": "Estas granjas verticales prescinden de la tierra natural. Mediante sistemas aeropónicos avanzados las raíces cuelgan al aire mientras una fina neblina cargada de nutrientes exactos las alimenta en una atmósfera completamente esterilizada y optimizada.",
+   "subtitulo": "Estas granjas verticales prescinden de la tierra natural. Mediante sistemas aeropónicos avanzados las raíces cuelgan al aire mientras una fina neblina cargada de nutrientes exactos las alimenta en una atmósfera completamente esterilizada y optimizada."
+  },
+  {
+   "titulo": "",
+   "hablado": "La inteligencia artificial ajusta el espectro de la iluminación vegetal planta por planta. Cada cultivo recibe las horas exactas de radiación y humedad que requiere para multiplicar por diez su ritmo de crecimiento sin depender jamás del clima exterior.",
+   "subtitulo": "La inteligencia artificial ajusta el espectro de la iluminación vegetal planta por planta. Cada cultivo recibe las horas exactas de radiación y humedad que requiere para multiplicar por diez su ritmo de crecimiento sin depender jamás del clima exterior."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al tratarse de ecosistemas cerrados y supervisados digitalmente la necesidad de pesticidas químicos desaparece por completo. La comida producida es totalmente pura y libre de plagas eliminando la degradación de los suelos agrícolas tradicionales.",
+   "subtitulo": "Al tratarse de ecosistemas cerrados y supervisados digitalmente la necesidad de pesticidas químicos desaparece por completo. La comida producida es totalmente pura y libre de plagas eliminando la degradación de los suelos agrícolas tradicionales."
+  },
+  {
+   "titulo": "",
+   "hablado": "La eficiencia hídrica alcanza cotas históricas. El agua evaporada por las plantas se condensa y recircula constantemente reduciendo el consumo total hasta en un noventa y cinco por ciento respecto a la agricultura extensiva del pasado.",
+   "subtitulo": "La eficiencia hídrica alcanza cotas históricas. El agua evaporada por las plantas se condensa y recircula constantemente reduciendo el consumo total hasta en un noventa y cinco por ciento respecto a la agricultura extensiva del pasado."
+  },
+  {
+   "titulo": "",
+   "hablado": "El transporte de frutas y verduras desde otros continentes queda obsoleto. Los alimentos se cosechan a pocas manzanas de los consumidores garantizando productos frescos diarios y borrando de un plumazo las emisiones del transporte pesado.",
+   "subtitulo": "El transporte de frutas y verduras desde otros continentes queda obsoleto. Los alimentos se cosechan a pocas manzanas de los consumidores garantizando productos frescos diarios y borrando de un plumazo las emisiones del transporte pesado."
+  },
+  {
+   "titulo": "",
+   "hablado": "De este modo la comida del siglo veintiduno se cultiva justo al lado del plato. Pero una metrópolis autosuficiente no puede permanecer aislada. ¿Cómo nos desplazaremos entre ciudades distantes cuando viajar en avión sea cosa del pasado?",
+   "subtitulo": "De este modo la comida del siglo veintiduno se cultiva justo al lado del plato. Pero una metrópolis autosuficiente no puede permanecer aislada. ¿Cómo nos desplazaremos entre ciudades distantes cuando viajar en avión sea cosa del pasado?"
+  },
+  {
+   "titulo": "",
+   "hablado": "La respuesta se encuentra bajo la superficie y en arterias selladas al vacío. Los trenes de levitación magnética dentro de tubos despresurizados permitirán viajar a velocidades cercanas a la del sonido sin rozamiento aerodinámico.",
+   "subtitulo": "La respuesta se encuentra bajo la superficie y en arterias selladas al vacío. Los trenes de levitación magnética dentro de tubos despresurizados permitirán viajar a velocidades cercanas a la del sonido sin rozamiento aerodinámico."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al eliminar casi todo el aire de las tuberías continentales los vehículos flotan sobre campos magnéticos. Consumen una fracción mínima de energía impulsados por motores lineales de alta eficiencia que evitan cualquier fricción con los rieles.",
+   "subtitulo": "Al eliminar casi todo el aire de las tuberías continentales los vehículos flotan sobre campos magnéticos. Consumen una fracción mínima de energía impulsados por motores lineales de alta eficiencia que evitan cualquier fricción con los rieles."
+  },
+  {
+   "titulo": "",
+   "hablado": "Una inteligencia artificial avanzada supervisa cada milisegundo el flujo de cápsulas la presión atmosférica interna y las dilataciones térmicas del tubo. El sistema ajusta las salidas y entradas con una precisión imposible para el ojo humano.",
+   "subtitulo": "Una inteligencia artificial avanzada supervisa cada milisegundo el flujo de cápsulas la presión atmosférica interna y las dilataciones térmicas del tubo. El sistema ajusta las salidas y entradas con una precisión imposible para el ojo humano."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cruzar un continente completo tomará poco más de una hora sustituyendo casi por completo la aviación comercial de corta distancia. Las estaciones urbanas conectan directamente con el metro reduciendo el tiempo de viaje a escasos minutos.",
+   "subtitulo": "Cruzar un continente completo tomará poco más de una hora sustituyendo casi por completo la aviación comercial de corta distancia. Las estaciones urbanas conectan directamente con el metro reduciendo el tiempo de viaje a escasos minutos."
+  },
+  {
+   "titulo": "",
+   "hablado": "La seguridad dependerá de sensores distribuidos que detectan microfisuras antes de que ocurra una despresurización. Campos magnéticos de respaldo y cámaras de aire intermedias garantizan el frenado suave ante cualquier anomalía imprevista en el trayecto.",
+   "subtitulo": "La seguridad dependerá de sensores distribuidos que detectan microfisuras antes de que ocurra una despresurización. Campos magnéticos de respaldo y cámaras de aire intermedias garantizan el frenado suave ante cualquier anomalía imprevista en el trayecto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta enorme red de transporte ultra rápido se alimentará de fuentes limpias conectadas a la red eléctrica global. Al eliminar la combustión de los aviones la huella de carbono interurbana descenderá hasta niveles prácticamente inexistentes.",
+   "subtitulo": "Esta enorme red de transporte ultra rápido se alimentará de fuentes limpias conectadas a la red eléctrica global. Al eliminar la combustión de los aviones la huella de carbono interurbana descenderá hasta niveles prácticamente inexistentes."
+  },
+  {
+   "titulo": "",
+   "hablado": "Viajar entre metrópolis distantes será tan rápido y continuo como cruzar una simple avenida. Sin embargo este gigantesco flujo de personas y mercancías exige una coordinación absoluta. Pero cómo gestionará la ciudad su propio latido interno sin colapsar.",
+   "subtitulo": "Viajar entre metrópolis distantes será tan rápido y continuo como cruzar una simple avenida. Sin embargo este gigantesco flujo de personas y mercancías exige una coordinación absoluta. Pero cómo gestionará la ciudad su propio latido interno sin colapsar."
+  },
+  {
+   "titulo": "",
+   "hablado": "La respuesta reside en un sistema operativo urbano totalmente invisible. Millones de sensores repartidos por tuberías farolas y cimientos miden el flujo del agua la pureza del aire y la temperatura ambiente en tiempo real.",
+   "subtitulo": "La respuesta reside en un sistema operativo urbano totalmente invisible. Millones de sensores repartidos por tuberías farolas y cimientos miden el flujo del agua la pureza del aire y la temperatura ambiente en tiempo real."
+  },
+  {
+   "titulo": "",
+   "hablado": "Toda esa información converge en un núcleo algorítmico central que procesa billones de datos por segundo. La red redirige la electricidad sobrante hacia zonas con picos de demanda y ajusta la iluminación según la presencia peatonal.",
+   "subtitulo": "Toda esa información converge en un núcleo algorítmico central que procesa billones de datos por segundo. La red redirige la electricidad sobrante hacia zonas con picos de demanda y ajusta la iluminación según la presencia peatonal."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los residuos urbanos tampoco se acumulan en aceras ni camiones ruidosos. Redes neumáticas subterráneas succionan la basura a gran velocidad hasta centros de reciclaje automatizados donde robots especializados clasifican y procesan cada material al instante.",
+   "subtitulo": "Los residuos urbanos tampoco se acumulan en aceras ni camiones ruidosos. Redes neumáticas subterráneas succionan la basura a gran velocidad hasta centros de reciclaje automatizados donde robots especializados clasifican y procesan cada material al instante."
+  },
+  {
+   "titulo": "",
+   "hablado": "Si una tubería sufre una fisura bajo el asfalto ningún equipo humano necesita cavar la calle. Pequeños vehículos autónomos subterráneos detectan la fuga mediante ultrasonidos y aplican selladores sintéticos en cuestión de pocos minutos.",
+   "subtitulo": "Si una tubería sufre una fisura bajo el asfalto ningún equipo humano necesita cavar la calle. Pequeños vehículos autónomos subterráneos detectan la fuga mediante ultrasonidos y aplican selladores sintéticos en cuestión de pocos minutos."
+  },
+  {
+   "titulo": "",
+   "hablado": "La metrópolis actúa como un organismo vivo que autorregula sus constantes vitales. Las averías infraestructurales se corrigen antes de que los ciudadanos noten la menor interrupción en el suministro de agua luz o comunicaciones digitales.",
+   "subtitulo": "La metrópolis actúa como un organismo vivo que autorregula sus constantes vitales. Las averías infraestructurales se corrigen antes de que los ciudadanos noten la menor interrupción en el suministro de agua luz o comunicaciones digitales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Este entorno dinámico responde con precisión milimétrica a las necesidades de la población. Las plazas públicas modifican sombreados y ventilación natural para mantener la comodidad térmica sin recurrir a climatizadores convencionales altamente contaminantes.",
+   "subtitulo": "Este entorno dinámico responde con precisión milimétrica a las necesidades de la población. Las plazas públicas modifican sombreados y ventilación natural para mantener la comodidad térmica sin recurrir a climatizadores convencionales altamente contaminantes."
+  },
+  {
+   "titulo": "",
+   "hablado": "La urbe parece haber alcanzado la eficiencia absoluta gracias al control algorítmico continuo. Sin embargo la verdadera prueba de fuego para esta mente digital no vendrá del interior sino del exterior. Pero qué ocurrirá cuando la naturaleza responda con ferocidad.",
+   "subtitulo": "La urbe parece haber alcanzado la eficiencia absoluta gracias al control algorítmico continuo. Sin embargo la verdadera prueba de fuego para esta mente digital no vendrá del interior sino del exterior. Pero qué ocurrirá cuando la naturaleza responda con ferocidad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para finales del siglo veintiuno las tormentas supercélula y la subida del nivel del mar amenazarán las costas. Las inteligencias artificiales monitorearán el clima planetario en tiempo real anticipando desastres meteorológicos con días de antelación.",
+   "subtitulo": "Para finales del siglo veintiuno las tormentas supercélula y la subida del nivel del mar amenazarán las costas. Las inteligencias artificiales monitorearán el clima planetario en tiempo real anticipando desastres meteorológicos con días de antelación."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando la marea alcance niveles críticos las barreras costeras automatizadas se elevarán de forma autónoma. Estos diques inteligentes ajustarán su altura utilizando sensores hidráulicos gestionados por algoritmos para impedir la inundación de los centros urbanos.",
+   "subtitulo": "Cuando la marea alcance niveles críticos las barreras costeras automatizadas se elevarán de forma autónoma. Estos diques inteligentes ajustarán su altura utilizando sensores hidráulicos gestionados por algoritmos para impedir la inundación de los centros urbanos."
+  },
+  {
+   "titulo": "",
+   "hablado": "En el interior de las metrópolis las cúpulas microclimáticas transparentes y los escudos térmicos dinámicos refractarán el calor extremo. La inteligencia artificial desviará la radiación solar excesiva regulando la temperatura urbana durante las peores olas de calor.",
+   "subtitulo": "En el interior de las metrópolis las cúpulas microclimáticas transparentes y los escudos térmicos dinámicos refractarán el calor extremo. La inteligencia artificial desviará la radiación solar excesiva regulando la temperatura urbana durante las peores olas de calor."
+  },
+  {
+   "titulo": "",
+   "hablado": "El exceso de calor capturado en las superficies no se desperdiciará. Los sistemas de ingeniería canalizarán esa energía térmica sobrante hacia profundas instalaciones subterráneas alimentando masivas plantas de desalinización de agua de mar sin consumir red eléctrica tradicional.",
+   "subtitulo": "El exceso de calor capturado en las superficies no se desperdiciará. Los sistemas de ingeniería canalizarán esa energía térmica sobrante hacia profundas instalaciones subterráneas alimentando masivas plantas de desalinización de agua de mar sin consumir red eléctrica tradicional."
+  },
+  {
+   "titulo": "",
+   "hablado": "Redes de refrigeración por fluido circularán bajo el asfalto absorbiendo la radiación del entorno. Al mismo tiempo algoritmos de equilibrio geotérmico distribuirán el agua potable desalinizada manteniendo los tanques de reserva urbanos completamente llenos durante periodos de sequía prolongada.",
+   "subtitulo": "Redes de refrigeración por fluido circularán bajo el asfalto absorbiendo la radiación del entorno. Al mismo tiempo algoritmos de equilibrio geotérmico distribuirán el agua potable desalinizada manteniendo los tanques de reserva urbanos completamente llenos durante periodos de sequía prolongada."
+  },
+  {
+   "titulo": "",
+   "hablado": "La ingeniería climática algorítmica pasará de ser una opción experimental a convertirse en el escudo defensivo fundamental de la civilización. Sin esta intervención constante de la mente digital las urbes más prósperas sucumbirían a la furia de la naturaleza.",
+   "subtitulo": "La ingeniería climática algorítmica pasará de ser una opción experimental a convertirse en el escudo defensivo fundamental de la civilización. Sin esta intervención constante de la mente digital las urbes más prósperas sucumbirían a la furia de la naturaleza."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero qué ocurre cuando el nivel de los océanos sube tanto que la tierra firme deja de ser una opción segura para expandir la población. La respuesta ya no estará en la costa sino mar adentro. Pero lo sorprendente recién comenzaba.",
+   "subtitulo": "Pero qué ocurre cuando el nivel de los océanos sube tanto que la tierra firme deja de ser una opción segura para expandir la población. La respuesta ya no estará en la costa sino mar adentro. Pero lo sorprendente recién comenzaba."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante el avance inminente de los océanos, los ingenieros proyectan gigantescas plataformas modulares capaces de flotar en alta mar. Estas estructuras flexibles absorben el impacto de las olas más violentas y se conectan entre sí para expandir el territorio urbano.",
+   "subtitulo": "Ante el avance inminente de los océanos, los ingenieros proyectan gigantescas plataformas modulares capaces de flotar en alta mar. Estas estructuras flexibles absorben el impacto de las olas más violentas y se conectan entre sí para expandir el territorio urbano."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para alimentar a estas metrópolis oceánicas, la corriente marina y el movimiento de las mareas generan electricidad ininterrumpida. Además, cristales fotovoltaicos transparentes instalados en las fachadas captan la luz del sol sin bloquear las vistas directas del horizonte marino.",
+   "subtitulo": "Para alimentar a estas metrópolis oceánicas, la corriente marina y el movimiento de las mareas generan electricidad ininterrumpida. Además, cristales fotovoltaicos transparentes instalados en las fachadas captan la luz del sol sin bloquear las vistas directas del horizonte marino."
+  },
+  {
+   "titulo": "",
+   "hablado": "La producción de alimento en estas islas artificiales abandona la tierra firme gracias a la acuaponía avanzada. Sistemas cerrados cultivan peces y vegetales de forma simbiótica, mientras algoritmos de inteligencia artificial regulan con máxima precisión cada gramo de nutriente inyectado.",
+   "subtitulo": "La producción de alimento en estas islas artificiales abandona la tierra firme gracias a la acuaponía avanzada. Sistemas cerrados cultivan peces y vegetales de forma simbiótica, mientras algoritmos de inteligencia artificial regulan con máxima precisión cada gramo de nutriente inyectado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Un núcleo digital analiza continuamente el impacto sobre los ecosistemas marinos adyacentes. Si la temperatura o la salinidad del agua sufren alteraciones, la ciudad redirige sus flujos de residuos tratándolos mediante microalgas hasta devolver una pureza cristalina al ecosistema circundante.",
+   "subtitulo": "Un núcleo digital analiza continuamente el impacto sobre los ecosistemas marinos adyacentes. Si la temperatura o la salinidad del agua sufren alteraciones, la ciudad redirige sus flujos de residuos tratándolos mediante microalgas hasta devolver una pureza cristalina al ecosistema circundante."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta expansión urbana independiente de los continentes abre una nueva era de soberanía y organización social. Sin embargo, la construcción de estas gigantescas urbes flotantes plantea preguntas geopolíticas inéditas sobre la propiedad de las aguas internacionales y el libre tránsito.",
+   "subtitulo": "Esta expansión urbana independiente de los continentes abre una nueva era de soberanía y organización social. Sin embargo, la construcción de estas gigantescas urbes flotantes plantea preguntas geopolíticas inéditas sobre la propiedad de las aguas internacionales y el libre tránsito."
+  },
+  {
+   "titulo": "",
+   "hablado": "Muchos científicos aseguran que antes de establecer colonias estables en Marte, nuestro verdadero aprendizaje para vivir en entornos hostiles se consolidará en la superficie oceánica de la Tierra, un territorio aún fascinante y casi inexplorado por la arquitectura.",
+   "subtitulo": "Muchos científicos aseguran que antes de establecer colonias estables en Marte, nuestro verdadero aprendizaje para vivir en entornos hostiles se consolidará en la superficie oceánica de la Tierra, un territorio aún fascinante y casi inexplorado por la arquitectura."
+  },
+  {
+   "titulo": "",
+   "hablado": "Estas metrópolis sobre el mar representan un triunfo fascinante de la ingeniería moderna. Sin embargo, detrás de la fachada limpia y eficiente de las ciudades del futuro se oculta un dilema ético profundo. Pero lo verdaderamente inquietante estaba a punto de ser desvelado.",
+   "subtitulo": "Estas metrópolis sobre el mar representan un triunfo fascinante de la ingeniería moderna. Sin embargo, detrás de la fachada limpia y eficiente de las ciudades del futuro se oculta un dilema ético profundo. Pero lo verdaderamente inquietante estaba a punto de ser desvelado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para que un sistema urbano funcione sin un solo fallo de tráfico o desabastecimiento, la inteligencia artificial necesita medirlo todo. Cada paso por la calle, cada compra y cada interacción personal son procesados constantemente por el núcleo central.",
+   "subtitulo": "Para que un sistema urbano funcione sin un solo fallo de tráfico o desabastecimiento, la inteligencia artificial necesita medirlo todo. Cada paso por la calle, cada compra y cada interacción personal son procesados constantemente por el núcleo central."
+  },
+  {
+   "titulo": "",
+   "hablado": "La supervisión no es simplemente pasiva. Los algoritmos predictivos anticipan comportamientos alterados o desviaciones del patrón diario. Si alguien actúa de forma inusual, el entorno responde de inmediato ajustando el acceso a ciertos servicios o enviando agentes de asistencia.",
+   "subtitulo": "La supervisión no es simplemente pasiva. Los algoritmos predictivos anticipan comportamientos alterados o desviaciones del patrón diario. Si alguien actúa de forma inusual, el entorno responde de inmediato ajustando el acceso a ciertos servicios o enviando agentes de asistencia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esto plantea la gran paradoja del siglo veintidós. Se logra erradicar el crimen violento y optimizar la energía al máximo, pero a costa de eliminar cualquier margen de privacidad. El anonimato se convierte en un concepto totalmente extinto.",
+   "subtitulo": "Esto plantea la gran paradoja del siglo veintidós. Se logra erradicar el crimen violento y optimizar la energía al máximo, pero a costa de eliminar cualquier margen de privacidad. El anonimato se convierte en un concepto totalmente extinto."
+  },
+  {
+   "titulo": "",
+   "hablado": "El mayor riesgo reside en quién programa los parámetros de esa armonía. Si la prioridad del algoritmo es la estabilidad absoluta, cualquier disidencia o comportamiento fuera de norma podría ser corregido silenciosamente restringiendo la movilidad del ciudadano.",
+   "subtitulo": "El mayor riesgo reside en quién programa los parámetros de esa armonía. Si la prioridad del algoritmo es la estabilidad absoluta, cualquier disidencia o comportamiento fuera de norma podría ser corregido silenciosamente restringiendo la movilidad del ciudadano."
+  },
+  {
+   "titulo": "",
+   "hablado": "La metrópolis del futuro no será un destino inevitable impuesto por la tecnología, sino el reflejo de las decisiones éticas que tomemos hoy. La frontera entre una utopía sostenible y una prisión transparente dependerá de nuestras regulaciones actuales.",
+   "subtitulo": "La metrópolis del futuro no será un destino inevitable impuesto por la tecnología, sino el reflejo de las decisiones éticas que tomemos hoy. La frontera entre una utopía sostenible y una prisión transparente dependerá de nuestras regulaciones actuales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Diseñar entornos urbanos capaces de acoger a diez mil millones de personas requiere innovación radical, pero la verdadera prueba será conservar nuestra humanidad y libertad individual en un mundo gobernado por código y sensores.",
+   "subtitulo": "Diseñar entornos urbanos capaces de acoger a diez mil millones de personas requiere innovación radical, pero la verdadera prueba será conservar nuestra humanidad y libertad individual en un mundo gobernado por código y sensores."
+  },
+  {
+   "titulo": "",
+   "hablado": "Llegados a este punto, la pregunta es inevitable. ¿Estarías dispuesto a vivir en una ciudad con aire puro, sin tráfico y sin delincuencia a cambio de renunciar por completo a tu privacidad personal? Déjanos tu opinión en los comentarios.",
+   "subtitulo": "Llegados a este punto, la pregunta es inevitable. ¿Estarías dispuesto a vivir en una ciudad con aire puro, sin tráfico y sin delincuencia a cambio de renunciar por completo a tu privacidad personal? Déjanos tu opinión en los comentarios."
+  }
+ ]
+}

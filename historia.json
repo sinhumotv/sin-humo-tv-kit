@@ -1,0 +1,1968 @@
+{
+ "titulo": "Las Ciudades del Año 2100",
+ "titulos": [
+  "Así serán las CIUDADES en el año 2100",
+  "¿Cómo viviremos en las METRÓPOLIS de 2100?",
+  "Dentro de la primera CIUDAD inteligente de 2100",
+  "El fin de los coches: así será tu CIUDAD en 2100",
+  "Las megapoblaciones de 2100 y la IA URBANA",
+  "¿Viviremos bajo DOMOS en el año 2100?",
+  "Así cambiará tu VIDA diaria en la ciudad de 2100",
+  "La revolución URBANA: el mundo en 2100",
+  "Rascacielos inteligentes y el FUTURO en 2100",
+  "De calles con tráfico a la CIUDAD del futuro"
+ ],
+ "miniatura": {
+  "texto": "¿EDIFICIOS QUE RESPIRAN?",
+  "clave": "RESPIRAN",
+  "prompt": "A futuristic city in the year 2100 on the right side of the frame, showing massive glowing vertical garden skyscrapers, sleek hyperloop tubes, floating green platforms, and silent drone paths under a clean sunset sky. Cinematic lighting, ultra detailed, hyper-realistic, highly atmospheric. The left side is a dark gradient background designed for high contrast text overlay. No real logos, no real human faces."
+ },
+ "descripcion": "Imagínate despertar en una metrópolis sin ruido de motores, donde los edificios respiran y regulan su propia temperatura gracias a la inteligencia artificial, y donde las granjas verticales alimentan a millones de personas sin usar tierra agrícola. En este episodio de Año 2100, analizamos cómo los ingenieros urbanos y los modelos de IA proyectan las ciudades del próximo siglo.\n\nDesde el fin del vehículo privado en el centro de las metrópolis hasta los trenes de tubo de vacío y las arquitecturas auto-reparables, descubriremos los avances reales que hoy comienzan en laboratorios y cómo cambiarán por completo nuestra forma de vivir, trabajar y desplazarnos en el futuro.",
+ "etiquetas": [
+  "ciudades del futuro",
+  "año 2100",
+  "inteligencia artificial",
+  "futurismo",
+  "tecnologia 2100",
+  "granjas verticales",
+  "trenes de vacio",
+  "ciudades inteligentes",
+  "arquitectura del futuro",
+  "tecnologia urbana",
+  "futuro de la humanidad",
+  "futuro de las ciudades"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "La Ciudad Silenciosa"
+  },
+  {
+   "escena": 7,
+   "titulo": "El Fin del Coche Privado"
+  },
+  {
+   "escena": 14,
+   "titulo": "Arquitectura Viva y Autónoma"
+  },
+  {
+   "escena": 21,
+   "titulo": "Alimento Vertical sin Campo"
+  },
+  {
+   "escena": 28,
+   "titulo": "Tubos de Vacío entre Continentes"
+  },
+  {
+   "escena": 35,
+   "titulo": "La Red Neural Urbana"
+  },
+  {
+   "escena": 42,
+   "titulo": "Escudos Climáticos y Resiliencia"
+  },
+  {
+   "escena": 49,
+   "titulo": "Metrópolis Flotantes"
+  },
+  {
+   "escena": 56,
+   "titulo": "El Giro: ¿Paraíso o Jaula?"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Imagina una metrópolis de diez millones de habitantes en el año dos mil cien sin escuchar un solo motor. El tráfico ha desaparecido y el silencio es casi absoluto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city view window",
+    "otras": [
+     "aerial city skyline",
+     "city morning sunshine"
+    ],
+    "descripcion": "Vista panorámica de una metrópolis moderna iluminada por el sol desde una ventana elevada.",
+    "clip": "https://archive.org/download/FromDawn1937/FromDawn1937.mp4",
+    "clip_id": "ia:FromDawn1937",
+    "clip_ini": 74,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/26/24746-344986280_large.mp4",
+      "clip_id": 24746
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/27/50959-462807798_large.mp4",
+      "clip_id": 50959
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Imagina una metrópolis de diez millones de habitantes en el año dos mil cien sin escuchar un solo motor. El tráfico ha desaparecido y el silencio es casi absoluto."
+  },
+  {
+   "hablado": "Hoy el ruido urbano acorta vidas y destruye la salud mental de millones de personas. Sin embargo, los modelos algorítmicos ya proyectan eliminar por completo los atascos del siglo veintiuno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "heavy city traffic jam",
+    "otras": [
+     "busy city street cars",
+     "traffic jam highway"
+    ],
+    "descripcion": "Plano general de un atasco denso de vehículos en una gran avenida urbana.",
+    "clip": "https://cdn.pixabay.com/video/2021/09/18/88921-608445975_small.mp4",
+    "clip_id": 88921,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/29/2347-157269979_medium.mp4",
+      "clip_id": 2347
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/09/87884-602894619_small.mp4",
+      "clip_id": 87884
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/30/31787-388997508_large.mp4",
+      "clip_id": 31787
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hoy el ruido urbano acorta vidas y destruye la salud mental de millones de personas. Sin embargo, los modelos algorítmicos ya proyectan eliminar por completo los atascos del siglo veintiuno."
+  },
+  {
+   "hablado": "Descubrirás cómo las arterias de asfalto se transformarán en parques lineales interconectados. Aunque esta utopía oculta una contradicción inquietante que revelaremos al final del episodio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "green pedestrian city street",
+    "otras": [
+     "city park walking path",
+     "modern green architecture"
+    ],
+    "descripcion": "Paseo peatonal rodeado de vegetación y arquitectura moderna sostenible.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/08/123-135736590_large.mp4",
+    "clip_id": 123,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/01/137378-766338362_small.mp4",
+      "clip_id": 137378
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/11/2121-155244120_large.mp4",
+      "clip_id": 2121
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/03/08/8250-207598576_large.mp4",
+      "clip_id": 8250
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Descubrirás cómo las arterias de asfalto se transformarán en parques lineales interconectados. Aunque esta utopía oculta una contradicción inquietante que revelaremos al final del episodio."
+  },
+  {
+   "hablado": "Actualmente, los ingenieros usan inteligencia artificial avanzada para simular el flujo acústico y térmico de manzanas enteras antes de colocar un solo ladrillo en las ciudades del futuro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "architect working laptop office",
+    "otras": [
+     "engineers discussion office",
+     "urban planning design"
+    ],
+    "descripcion": "Ingeniero trabajando en un plano urbano detallado en un estudio moderno.",
+    "clip": "https://assets.mixkit.co/videos/16556/16556-720.mp4",
+    "clip_id": "mixkit:16556",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1038-142623914_large.mp4",
+      "clip_id": 1038
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/20/22130-325481645_large.mp4",
+      "clip_id": 22130
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/12/11/1658-148614500_medium.mp4",
+      "clip_id": 1658
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Actualmente, los ingenieros usan inteligencia artificial avanzada para simular el flujo acústico y térmico de manzanas enteras antes de colocar un solo ladrillo en las ciudades del futuro."
+  },
+  {
+   "hablado": "Según los expertos en diseño urbano, la eliminación progresiva de los vehículos privados permitirá reconvertir hasta un sesenta por ciento del espacio público en avenidas arboladas y zonas peatonales continuas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking park avenue",
+    "otras": [
+     "pedestrians walking city park",
+     "urban green space"
+    ],
+    "descripcion": "Personas caminando tranquilamente por una amplia avenida arbolada y limpia.",
+    "clip": "https://assets.mixkit.co/videos/19544/19544-720.mp4",
+    "clip_id": "mixkit:19544",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/06/76621-559757958_small.mp4",
+      "clip_id": 76621
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/15/6379-191636285_large.mp4",
+      "clip_id": 6379
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/22/140029-774012791_small.mp4",
+      "clip_id": 140029
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Según los expertos en diseño urbano, la eliminación progresiva de los vehículos privados permitirá reconvertir hasta un sesenta por ciento del espacio público en avenidas arboladas y zonas peatonales continuas."
+  },
+  {
+   "hablado": "Las flotas de transporte automatizado y el asfalto fabricado con materiales porosos capaces de absorber el sonido reducirán la contaminación acústica a niveles nunca antes vistos en la historia humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "electric bus street city",
+    "otras": [
+     "modern tram city street",
+     "clean city road"
+    ],
+    "descripcion": "Vehículo eléctrico silencioso desplazándose por una calle urbana moderna.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/09/38590-418590043_large.mp4",
+    "clip_id": 38590,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/13/142755-780943401_small.mp4",
+      "clip_id": 142755
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/04/215268_large.mp4",
+      "clip_id": 215268
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/13/142751-780943387_small.mp4",
+      "clip_id": 142751
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Las flotas de transporte automatizado y el asfalto fabricado con materiales porosos capaces de absorber el sonido reducirán la contaminación acústica a niveles nunca antes vistos en la historia humana."
+  },
+  {
+   "hablado": "Las grandes urbes dejarán de rugir para convertirse en ecosistemas habitables donde la tecnología trabaje en segundo plano. Sin embargo, para que este silencio sea posible, el concepto de propiedad debe desaparecer.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern clean city street",
+    "otras": [
+     "city buildings trees sunlight",
+     "modern urban architecture"
+    ],
+    "descripcion": "Vista urbana limpia con edificios integrados con plantas y árboles bajo una luz clara.",
+    "clip": "https://cdn.pixabay.com/video/2026/10/20/383838_small.mp4",
+    "clip_id": 383838,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/21/384238_small.mp4",
+      "clip_id": 384238
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/22/384575_small.mp4",
+      "clip_id": 384575
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/06/251083_small.mp4",
+      "clip_id": 251083
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las grandes urbes dejarán de rugir para convertirse en ecosistemas habitables donde la tecnología trabaje en segundo plano. Sin embargo, para que este silencio sea posible, el concepto de propiedad debe desaparecer."
+  },
+  {
+   "hablado": "En la actualidad un vehículo privado pasa más del noventa por ciento de su vida útil estacionado. Para finales de este siglo la idea de poseer un coche resultará tan obsoleta como mantener un caballo para desplazarse por la metrópolis.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "traffic jam city street",
+    "otras": [
+     "cars traffic city",
+     "urban traffic street"
+    ],
+    "descripcion": "Tráfico denso de vehículos en una gran ciudad moderna.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/06/30951-383991408_large.mp4",
+    "clip_id": 30951,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/06/30952-383991415_large.mp4",
+      "clip_id": 30952
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/06/30945-383991394_large.mp4",
+      "clip_id": 30945
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/21/3517-171709741_large.mp4",
+      "clip_id": 3517
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En la actualidad un vehículo privado pasa más del noventa por ciento de su vida útil estacionado. Para finales de este siglo la idea de poseer un coche resultará tan obsoleta como mantener un caballo para desplazarse por la metrópolis."
+  },
+  {
+   "hablado": "En su lugar flotas interconectadas de pequeñísimos módulos eléctricos de transporte público circularán de forma ininterrumpida. Gestionados por algoritmos centrales estos vehículos sin conductor calcularán las rutas más eficientes sin necesidad de intervención humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "autonomous electric car driverless",
+    "otras": [
+     "self driving vehicle test",
+     "electric car street"
+    ],
+    "descripcion": "Pruebas de un vehículo eléctrico autónomo circulando por la calle.",
+    "clip": "https://cdn.pixabay.com/video/2017/08/20/11490-230853032_small.mp4",
+    "clip_id": 11490,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/14/2165-155327596_medium.mp4",
+      "clip_id": 2165
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/12/184734-873923034_small.mp4",
+      "clip_id": 184734
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/06/199545-910530517_small.mp4",
+      "clip_id": 199545
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En su lugar flotas interconectadas de pequeñísimos módulos eléctricos de transporte público circularán de forma ininterrumpida. Gestionados por algoritmos centrales estos vehículos sin conductor calcularán las rutas más eficientes sin necesidad de intervención humana."
+  },
+  {
+   "hablado": "El cambio más drástico será la eliminación total de los semáforos. La inteligencia artificial coordinará la velocidad de cada módulo al milisegundo permitiendo cruces continuos y coordinados donde los vehículos se entrelazan de manera perfecta sin llegar a detenerse jamás.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city intersection aerial view",
+    "otras": [
+     "busy city road aerial",
+     "highway junction aerial"
+    ],
+    "descripcion": "Vista aérea de un cruce urbano con vehículos moviéndose fluidamente.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/05/245026_small.mp4",
+    "clip_id": 245026,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/05/245028_small.mp4",
+      "clip_id": 245028
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/05/245027_small.mp4",
+      "clip_id": 245027
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/05/245030_small.mp4",
+      "clip_id": 245030
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El cambio más drástico será la eliminación total de los semáforos. La inteligencia artificial coordinará la velocidad de cada módulo al milisegundo permitiendo cruces continuos y coordinados donde los vehículos se entrelazan de manera perfecta sin llegar a detenerse jamás."
+  },
+  {
+   "hablado": "Además gran parte del transporte pesado y la distribución de mercancías se trasladará bajo tierra o a vías fluviales urbanas. Túneles automatizados de mercancías descargarán suministros directamente en los edificios sin congestionar el espacio exterior.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "subway tunnel train",
+    "otras": [
+     "underground tunnel transit",
+     "metro line tunnel"
+    ],
+    "descripcion": "Túnel subterráneo de transporte público o tren.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/23/31511-387662243_large.mp4",
+    "clip_id": 31511,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/22/71914-540475470_small.mp4",
+      "clip_id": 71914
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/03/34908-405203240_large.mp4",
+      "clip_id": 34908
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/07/31014-384234115_large.mp4",
+      "clip_id": 31014
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Además gran parte del transporte pesado y la distribución de mercancías se trasladará bajo tierra o a vías fluviales urbanas. Túneles automatizados de mercancías descargarán suministros directamente en los edificios sin congestionar el espacio exterior."
+  },
+  {
+   "hablado": "Al desaparecer los vehículos aparcados las ciudades recuperarán millones de metros cuadrados de asfalto. Las antiguas plazas de aparcamiento y las autopistas urbanas se transformarían en parques lineales huertos comunitarios y zonas de arbolado nativo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "urban park people walking",
+    "otras": [
+     "green city park",
+     "people walking park trees"
+    ],
+    "descripcion": "Gente paseando por un parque urbano rodeado de árboles y vegetación.",
+    "clip": "https://cdn.pixabay.com/video/2017/01/15/7376-199627588_large.mp4",
+    "clip_id": 7376,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/10/44380-438662091_large.mp4",
+      "clip_id": 44380
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/05/256703_large.mp4",
+      "clip_id": 256703
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/137028-765458104_large.mp4",
+      "clip_id": 137028
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al desaparecer los vehículos aparcados las ciudades recuperarán millones de metros cuadrados de asfalto. Las antiguas plazas de aparcamiento y las autopistas urbanas se transformarían en parques lineales huertos comunitarios y zonas de arbolado nativo."
+  },
+  {
+   "hablado": "La movilidad se convertirá en un servicio público invisible y de acceso universal. Bastará con solicitar un trayecto o simplemente caminar hacia la vía rápida para que un módulo disponible te recoja en cuestión de segundos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person using smartphone street",
+    "otras": [
+     "passenger getting into car",
+     "person hailing ride"
+    ],
+    "descripcion": "Persona en la calle interactuando con su teléfono inteligente mientras espera transporte.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/20/42698-432087121_large.mp4",
+    "clip_id": 42698,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/04/83865-584870625_large.mp4",
+      "clip_id": 83865
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/09/1295-145209438_large.mp4",
+      "clip_id": 1295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/05/22609-328810354_small.mp4",
+      "clip_id": 22609
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La movilidad se convertirá en un servicio público invisible y de acceso universal. Bastará con solicitar un trayecto o simplemente caminar hacia la vía rápida para que un módulo disponible te recoja en cuestión de segundos."
+  },
+  {
+   "hablado": "La reconversión del espacio urbano transformará drásticamente la faz de nuestras calles. Sin embargo despejar el asfalto es solo el primer paso. El verdadero desafío comenzará cuando las propias estructuras de la ciudad adquieran vida propia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern skyscrapers architecture",
+    "otras": [
+     "glass building skyline",
+     "city architecture building"
+    ],
+    "descripcion": "Rascacielos y estructuras arquitectónicas modernas de una gran metrópolis.",
+    "clip": "https://cdn.pixabay.com/video/2026/01/08/326677_small.mp4",
+    "clip_id": 326677,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/17/85434-588675526_large.mp4",
+      "clip_id": 85434
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/29/198477-907598465_small.mp4",
+      "clip_id": 198477
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/29/86762-594416960_small.mp4",
+      "clip_id": 86762
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La reconversión del espacio urbano transformará drásticamente la faz de nuestras calles. Sin embargo despejar el asfalto es solo el primer paso. El verdadero desafío comenzará cuando las propias estructuras de la ciudad adquieran vida propia."
+  },
+  {
+   "hablado": "Los cimientos de la arquitectura moderna están cambiando radicalmente. Las redes neuronales avanzadas proyectan estructuras optimizadas hasta el milímetro, capaces de responder de forma dinámica al viento y a las condiciones del entorno circundante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "architect working computer",
+    "otras": [
+     "architect blueprint computer",
+     "building design modern"
+    ],
+    "descripcion": "Un arquitecto analizando planos digitales de rascacielos modernos en monitores de alta resolución.",
+    "clip": "https://cdn.pixabay.com/video/2019/12/18/30334-380713885_large.mp4",
+    "clip_id": 30334,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/20/42701-432087143_large.mp4",
+      "clip_id": 42701
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/07/29920-383980356_large.mp4",
+      "clip_id": 29920
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/14/211922_small.mp4",
+      "clip_id": 211922
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los cimientos de la arquitectura moderna están cambiando radicalmente. Las redes neuronales avanzadas proyectan estructuras optimizadas hasta el milímetro, capaces de responder de forma dinámica al viento y a las condiciones del entorno circundante."
+  },
+  {
+   "hablado": "En lugar de materiales inertes, los nuevos edificios incorporan biocompuestos capaces de autorepararse. Si aparece una grieta, cultivos bacterianos integrados en la mezcla se activan de inmediato para sellar la fisura sin intervención humana alguna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "laboratory microscope science",
+    "otras": [
+     "biologist working lab",
+     "sample analysis laboratory"
+    ],
+    "descripcion": "Un científico examinando muestras biológicas a través de un microscopio en un laboratorio moderno.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/27/48342-454346532_small.mp4",
+    "clip_id": 48342,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/11/15522-264715974_large.mp4",
+      "clip_id": 15522
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/09/207436_small.mp4",
+      "clip_id": 207436
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/10/127428-738466669_small.mp4",
+      "clip_id": 127428
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En lugar de materiales inertes, los nuevos edificios incorporan biocompuestos capaces de autorepararse. Si aparece una grieta, cultivos bacterianos integrados en la mezcla se activan de inmediato para sellar la fisura sin intervención humana alguna."
+  },
+  {
+   "hablado": "Estas torres de vanguardia no se limitan a reducir su impacto ambiental, sino que absorben activamente toneladas de dióxido de carbono del aire urbano, transformando grandes complejos de hormigón en potentes filtros ecológicos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "green building plants city",
+    "otras": [
+     "modern skyscraper greenery",
+     "sustainable architecture city"
+    ],
+    "descripcion": "Rascacielos vanguardistas cubiertos de vegetación e integrados en el paisaje urbano.",
+    "clip": "https://cdn.pixabay.com/video/2017/11/12/12897-242487545_large.mp4",
+    "clip_id": 12897,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/24/45469-443133933_large.mp4",
+      "clip_id": 45469
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/21/273434_large.mp4",
+      "clip_id": 273434
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/27/118267-714645557_medium.mp4",
+      "clip_id": 118267
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Estas torres de vanguardia no se limitan a reducir su impacto ambiental, sino que absorben activamente toneladas de dióxido de carbono del aire urbano, transformando grandes complejos de hormigón en potentes filtros ecológicos."
+  },
+  {
+   "hablado": "Las fachadas dinámicas alteran su porosidad y disposición según la estación del año. Durante los meses calurosos se pliegan para bloquear la radiación solar directa, mientras que en invierno maximizan el aprovechamiento del calor natural.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "glass facade building sun",
+    "otras": [
+     "modern skyscraper reflection",
+     "building exterior sunny"
+    ],
+    "descripcion": "Detalle de una fachada vidriada de gran tamaño reflejando el paso de la luz solar.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/04/215239_large.mp4",
+    "clip_id": 215239,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/18/204588-925146082_small.mp4",
+      "clip_id": 204588
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/14/1917-152081339_medium.mp4",
+      "clip_id": 1917
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/25/218133_small.mp4",
+      "clip_id": 218133
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Las fachadas dinámicas alteran su porosidad y disposición según la estación del año. Durante los meses calurosos se pliegan para bloquear la radiación solar directa, mientras que en invierno maximizan el aprovechamiento del calor natural."
+  },
+  {
+   "hablado": "Al funcionar como verdaderos organismos fotosintéticos, las estructuras generan más energía limpia mediante paneles integrados y biomasa de la que necesitan sus residentes para funcionar día a día de manera constante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "solar panel roof city",
+    "otras": [
+     "renewable energy roof",
+     "solar panels aerial view"
+    ],
+    "descripcion": "Vista aérea de instalaciones de paneles solares sobre las cubiertas de edificios urbanos.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_small.mp4",
+    "clip_id": 139802,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/12/4385-178708062_large.mp4",
+      "clip_id": 4385
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/28/118497-715426654_small.mp4",
+      "clip_id": 118497
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/22/140042-774012846_large.mp4",
+      "clip_id": 140042
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al funcionar como verdaderos organismos fotosintéticos, las estructuras generan más energía limpia mediante paneles integrados y biomasa de la que necesitan sus residentes para funcionar día a día de manera constante."
+  },
+  {
+   "hablado": "El concreto tradicional del pasado queda obsoleto frente a estos materiales orgánicos inteligentes. La edificación deja de ser un proceso estático para convertirse en un ecosistema en constante evolución y crecimiento dentro de la metrópoli.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "construction site worker",
+    "otras": [
+     "building construction crane",
+     "modern structure building"
+    ],
+    "descripcion": "Trabajadores e ingenieros supervisando la edificación de una estructura arquitectónica moderna.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/20/131993-751915314_large.mp4",
+    "clip_id": 131993,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/23/42924-434300920_large.mp4",
+      "clip_id": 42924
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/08/73469-548642130_large.mp4",
+      "clip_id": 73469
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/23/42925-434300933_large.mp4",
+      "clip_id": 42925
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El concreto tradicional del pasado queda obsoleto frente a estos materiales orgánicos inteligentes. La edificación deja de ser un proceso estático para convertirse en un ecosistema en constante evolución y crecimiento dentro de la metrópoli."
+  },
+  {
+   "hablado": "Esta arquitectura viva transformará por completo la imagen de nuestros centros urbanos. Sin embargo, estas gigantescas estructuras no solo deberán protegernos, sino también alimentarnos. ¿Cómo produciremos suficiente comida cuando el campo tradicional desaparezca por completo?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline sunset",
+    "otras": [
+     "modern city drone view",
+     "urban horizon evening"
+    ],
+    "descripcion": "Vista panorámica con dron de una gran metrópolis al atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_small.mp4",
+    "clip_id": 139804,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/14/134927-760686109_large.mp4",
+      "clip_id": 134927
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/02/20/335734_large.mp4",
+      "clip_id": 335734
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/19/50352-460423340_large.mp4",
+      "clip_id": 50352
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta arquitectura viva transformará por completo la imagen de nuestros centros urbanos. Sin embargo, estas gigantescas estructuras no solo deberán protegernos, sino también alimentarnos. ¿Cómo produciremos suficiente comida cuando el campo tradicional desaparezca por completo?"
+  },
+  {
+   "hablado": "Durante siglos la producción de alimentos exigió deforestar inmensas extensiones de suelo. En las metrópolis del futuro las cosechas abandonan la tierra horizontal para elevarse en rascacielos agrícolas controlados milimétricamente por algoritmos de inteligencia artificial.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vertical farm indoor",
+    "otras": [
+     "modern indoor agriculture",
+     "greenhouse hydroponics"
+    ],
+    "descripcion": "Instalaciones modernas de agricultura vertical en interior con filas de plantas iluminadas.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/08/80-135733160_large.mp4",
+    "clip_id": 80,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/03/174452-851475304_small.mp4",
+      "clip_id": 174452
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/19/120739-724673230_large.mp4",
+      "clip_id": 120739
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/19/189692-886572510_large.mp4",
+      "clip_id": 189692
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Durante siglos la producción de alimentos exigió deforestar inmensas extensiones de suelo. En las metrópolis del futuro las cosechas abandonan la tierra horizontal para elevarse en rascacielos agrícolas controlados milimétricamente por algoritmos de inteligencia artificial."
+  },
+  {
+   "hablado": "Estas granjas verticales prescinden de la tierra natural. Mediante sistemas aeropónicos avanzados las raíces cuelgan al aire mientras una fina neblina cargada de nutrientes exactos las alimenta en una atmósfera completamente esterilizada y optimizada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hydroponics technology plants",
+    "otras": [
+     "indoor plant nursery",
+     "automated greenhouse"
+    ],
+    "descripcion": "Detalle de plantas cultivadas mediante sistemas de irrigación e hidroponía avanzada.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/28/140806-776043756_small.mp4",
+    "clip_id": 140806,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/05/31953-389724688_large.mp4",
+      "clip_id": 31953
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/09/9734-221163205_large.mp4",
+      "clip_id": 9734
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/23/164215-829639524_small.mp4",
+      "clip_id": 164215
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Estas granjas verticales prescinden de la tierra natural. Mediante sistemas aeropónicos avanzados las raíces cuelgan al aire mientras una fina neblina cargada de nutrientes exactos las alimenta en una atmósfera completamente esterilizada y optimizada."
+  },
+  {
+   "hablado": "La inteligencia artificial ajusta el espectro de la iluminación vegetal planta por planta. Cada cultivo recibe las horas exactas de radiación y humedad que requiere para multiplicar por diez su ritmo de crecimiento sin depender jamás del clima exterior.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "led grow lights farm",
+    "otras": [
+     "automated farming system",
+     "high tech agriculture"
+    ],
+    "descripcion": "Luces de cultivo sobre filas de vegetación en un entorno automatizado de precisión.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/28/140809-776043767_small.mp4",
+    "clip_id": 140809,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/22/5635-183850259_large.mp4",
+      "clip_id": 5635
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/07/29/11022-227573553_large.mp4",
+      "clip_id": 11022
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/04/11129-228400393_large.mp4",
+      "clip_id": 11129
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La inteligencia artificial ajusta el espectro de la iluminación vegetal planta por planta. Cada cultivo recibe las horas exactas de radiación y humedad que requiere para multiplicar por diez su ritmo de crecimiento sin depender jamás del clima exterior."
+  },
+  {
+   "hablado": "Al tratarse de ecosistemas cerrados y supervisados digitalmente la necesidad de pesticidas químicos desaparece por completo. La comida producida es totalmente pura y libre de plagas eliminando la degradación de los suelos agrícolas tradicionales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "botanist laboratory inspection",
+    "otras": [
+     "scientist testing plants",
+     "clean technology lab"
+    ],
+    "descripcion": "Investigador analizando hojas y brotes verdes en un laboratorio sin químicos.",
+    "clip": "https://images-assets.nasa.gov/video/Best_Space_Station_Science_Pictures_of_2021/Best_Space_Station_Science_Pictures_of_2021~large.mp4",
+    "clip_id": "nasa:Best_Space_Station_Science_Pictures_of_2021",
+    "clip_ini": 6,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129409-744385400_small.mp4",
+      "clip_id": 129409
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129403-744385395_small.mp4",
+      "clip_id": 129403
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/17/204465-924724075_small.mp4",
+      "clip_id": 204465
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Al tratarse de ecosistemas cerrados y supervisados digitalmente la necesidad de pesticidas químicos desaparece por completo. La comida producida es totalmente pura y libre de plagas eliminando la degradación de los suelos agrícolas tradicionales."
+  },
+  {
+   "hablado": "La eficiencia hídrica alcanza cotas históricas. El agua evaporada por las plantas se condensa y recircula constantemente reduciendo el consumo total hasta en un noventa y cinco por ciento respecto a la agricultura extensiva del pasado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "water drop plant leave",
+    "otras": [
+     "water recycling filter",
+     "irrigation technology detail"
+    ],
+    "descripcion": "Gotas de agua limpias goteando sobre hojas de plantas en un sistema de riego cerrado.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/12/203878-922675732_large.mp4",
+    "clip_id": 203878,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/28/214086_small.mp4",
+      "clip_id": 214086
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/28/214085_small.mp4",
+      "clip_id": 214085
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/07/05/289712_large.mp4",
+      "clip_id": 289712
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La eficiencia hídrica alcanza cotas históricas. El agua evaporada por las plantas se condensa y recircula constantemente reduciendo el consumo total hasta en un noventa y cinco por ciento respecto a la agricultura extensiva del pasado."
+  },
+  {
+   "hablado": "El transporte de frutas y verduras desde otros continentes queda obsoleto. Los alimentos se cosechan a pocas manzanas de los consumidores garantizando productos frescos diarios y borrando de un plumazo las emisiones del transporte pesado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fresh vegetables market city",
+    "otras": [
+     "city food delivery",
+     "urban fresh produce"
+    ],
+    "descripcion": "Vegetales frescos recién cosechados listos para su distribución en entorno urbano.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/08/151-135737478_large.mp4",
+    "clip_id": 151,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/09/05/18089-288458766_large.mp4",
+      "clip_id": 18089
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/06/15421-263616147_large.mp4",
+      "clip_id": 15421
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/08/95108-644716644_small.mp4",
+      "clip_id": 95108
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El transporte de frutas y verduras desde otros continentes queda obsoleto. Los alimentos se cosechan a pocas manzanas de los consumidores garantizando productos frescos diarios y borrando de un plumazo las emisiones del transporte pesado."
+  },
+  {
+   "hablado": "De este modo la comida del siglo veintiduno se cultiva justo al lado del plato. Pero una metrópolis autosuficiente no puede permanecer aislada. ¿Cómo nos desplazaremos entre ciudades distantes cuando viajar en avión sea cosa del pasado?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city skyline transit",
+    "otras": [
+     "city architecture aerial",
+     "urban transportation network"
+    ],
+    "descripcion": "Vista aérea de una gran urbe moderna conectada por amplias vías de tránsito.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/27/205792-928091046_small.mp4",
+    "clip_id": 205792,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/21/132059-752303208_large.mp4",
+      "clip_id": 132059
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/21/132060-752303213_small.mp4",
+      "clip_id": 132060
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/28/261422_small.mp4",
+      "clip_id": 261422
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "De este modo la comida del siglo veintiduno se cultiva justo al lado del plato. Pero una metrópolis autosuficiente no puede permanecer aislada. ¿Cómo nos desplazaremos entre ciudades distantes cuando viajar en avión sea cosa del pasado?"
+  },
+  {
+   "hablado": "La respuesta se encuentra bajo la superficie y en arterias selladas al vacío. Los trenes de levitación magnética dentro de tubos despresurizados permitirán viajar a velocidades cercanas a la del sonido sin rozamiento aerodinámico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "high speed train station",
+    "otras": [
+     "modern train interior",
+     "fast train passing"
+    ],
+    "descripcion": "Un tren de alta velocidad cruzando a toda velocidad por una vía moderna",
+    "clip": "https://cdn.pixabay.com/video/2018/05/02/15953-268112363_large.mp4",
+    "clip_id": 15953,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/05/02/15954-268112365_large.mp4",
+      "clip_id": 15954
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/20/2213-156227801_medium.mp4",
+      "clip_id": 2213
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/11/02/386668_small.mp4",
+      "clip_id": 386668
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La respuesta se encuentra bajo la superficie y en arterias selladas al vacío. Los trenes de levitación magnética dentro de tubos despresurizados permitirán viajar a velocidades cercanas a la del sonido sin rozamiento aerodinámico."
+  },
+  {
+   "hablado": "Al eliminar casi todo el aire de las tuberías continentales los vehículos flotan sobre campos magnéticos. Consumen una fracción mínima de energía impulsados por motores lineales de alta eficiencia que evitan cualquier fricción con los rieles.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "magnetic levitation train",
+    "otras": [
+     "subway tunnel train",
+     "modern transit system"
+    ],
+    "descripcion": "Detalle de las vías de un tren moderno y túneles subterráneos de transporte",
+    "clip": "https://cdn.pixabay.com/video/2024/04/25/209494_small.mp4",
+    "clip_id": 209494,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/11/188724-883612357_small.mp4",
+      "clip_id": 188724
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/02/183271-870457542_small.mp4",
+      "clip_id": 183271
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/22/121764-724719672_small.mp4",
+      "clip_id": 121764
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al eliminar casi todo el aire de las tuberías continentales los vehículos flotan sobre campos magnéticos. Consumen una fracción mínima de energía impulsados por motores lineales de alta eficiencia que evitan cualquier fricción con los rieles."
+  },
+  {
+   "hablado": "Una inteligencia artificial avanzada supervisa cada milisegundo el flujo de cápsulas la presión atmosférica interna y las dilataciones térmicas del tubo. El sistema ajusta las salidas y entradas con una precisión imposible para el ojo humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "data center server room",
+    "otras": [
+     "operator monitor screen",
+     "control room system"
+    ],
+    "descripcion": "Pantallas de monitorización y servidores en una sala de control de datos",
+    "clip": "https://cdn.pixabay.com/video/2022/11/28/140805-776043754_small.mp4",
+    "clip_id": 140805,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/09/1288-145117189_medium.mp4",
+      "clip_id": 1288
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/03/234567_small.mp4",
+      "clip_id": 234567
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/01/106311-672600347_large.mp4",
+      "clip_id": 106311
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Una inteligencia artificial avanzada supervisa cada milisegundo el flujo de cápsulas la presión atmosférica interna y las dilataciones térmicas del tubo. El sistema ajusta las salidas y entradas con una precisión imposible para el ojo humano."
+  },
+  {
+   "hablado": "Cruzar un continente completo tomará poco más de una hora sustituyendo casi por completo la aviación comercial de corta distancia. Las estaciones urbanas conectan directamente con el metro reduciendo el tiempo de viaje a escasos minutos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "passengers boarding train",
+    "otras": [
+     "crowded subway station",
+     "modern airport terminal"
+    ],
+    "descripcion": "Pasajeros subiendo a un transporte de alta velocidad en una estación subterránea limpia",
+    "clip": "https://cdn.pixabay.com/video/2020/01/04/30876-382770859_large.mp4",
+    "clip_id": 30876,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/21/15724-865412877_large.mp4",
+      "clip_id": 15724
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/04/30872-382770848_large.mp4",
+      "clip_id": 30872
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/04/30870-382770842_large.mp4",
+      "clip_id": 30870
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Cruzar un continente completo tomará poco más de una hora sustituyendo casi por completo la aviación comercial de corta distancia. Las estaciones urbanas conectan directamente con el metro reduciendo el tiempo de viaje a escasos minutos."
+  },
+  {
+   "hablado": "La seguridad dependerá de sensores distribuidos que detectan microfisuras antes de que ocurra una despresurización. Campos magnéticos de respaldo y cámaras de aire intermedias garantizan el frenado suave ante cualquier anomalía imprevista en el trayecto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer testing sensor",
+    "otras": [
+     "technical maintenance worker",
+     "pipeline inspection"
+    ],
+    "descripcion": "Un técnico inspeccionando infraestructura de transporte con equipos de medición",
+    "clip": "https://cdn.pixabay.com/video/2022/07/08/123514-728292574_small.mp4",
+    "clip_id": 123514,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/07/16/3830-175213500_large.mp4",
+      "clip_id": 3830
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/18/383281_small.mp4",
+      "clip_id": 383281
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/18/383282_small.mp4",
+      "clip_id": 383282
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La seguridad dependerá de sensores distribuidos que detectan microfisuras antes de que ocurra una despresurización. Campos magnéticos de respaldo y cámaras de aire intermedias garantizan el frenado suave ante cualquier anomalía imprevista en el trayecto."
+  },
+  {
+   "hablado": "Esta enorme red de transporte ultra rápido se alimentará de fuentes limpias conectadas a la red eléctrica global. Al eliminar la combustión de los aviones la huella de carbono interurbana descenderá hasta niveles prácticamente inexistentes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "solar panel field sunny",
+    "otras": [
+     "wind turbine landscape",
+     "green energy grid"
+    ],
+    "descripcion": "Un gran parque de paneles solares alimentando la red de energía",
+    "clip": "https://cdn.pixabay.com/video/2019/09/07/26657-359268460_small.mp4",
+    "clip_id": 26657,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/15/221306_small.mp4",
+      "clip_id": 221306
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/07/25/10948-226983364_large.mp4",
+      "clip_id": 10948
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/02/14/14297-255703880_small.mp4",
+      "clip_id": 14297
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta enorme red de transporte ultra rápido se alimentará de fuentes limpias conectadas a la red eléctrica global. Al eliminar la combustión de los aviones la huella de carbono interurbana descenderá hasta niveles prácticamente inexistentes."
+  },
+  {
+   "hablado": "Viajar entre metrópolis distantes será tan rápido y continuo como cruzar una simple avenida. Sin embargo este gigantesco flujo de personas y mercancías exige una coordinación absoluta. Pero cómo gestionará la ciudad su propio latido interno sin colapsar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "aerial view city traffic",
+    "otras": [
+     "modern city skyline day",
+     "crowded city intersection"
+    ],
+    "descripcion": "Vista aérea de un gran centro urbano con tráfico fluyendo de forma ordenada",
+    "clip": "https://cdn.pixabay.com/video/2021/08/15/85167-587617839_small.mp4",
+    "clip_id": 85167,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/15/85168-587617842_small.mp4",
+      "clip_id": 85168
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/26/261192_medium.mp4",
+      "clip_id": 261192
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/26/261200_small.mp4",
+      "clip_id": 261200
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Viajar entre metrópolis distantes será tan rápido y continuo como cruzar una simple avenida. Sin embargo este gigantesco flujo de personas y mercancías exige una coordinación absoluta. Pero cómo gestionará la ciudad su propio latido interno sin colapsar."
+  },
+  {
+   "hablado": "La respuesta reside en un sistema operativo urbano totalmente invisible. Millones de sensores repartidos por tuberías farolas y cimientos miden el flujo del agua la pureza del aire y la temperatura ambiente en tiempo real.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city sensors street light",
+    "otras": [
+     "smart city sensors",
+     "city overhead street"
+    ],
+    "descripcion": "Un primer plano de sensores tecnológicos instalados en infraestructura urbana y calles concurridas.",
+    "clip": "https://cdn.pixabay.com/video/2025/05/31/282814_small.mp4",
+    "clip_id": 282814,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/06/28766-372045645_large.mp4",
+      "clip_id": 28766
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/24/190482-888122628_small.mp4",
+      "clip_id": 190482
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/24/190483-888122630_small.mp4",
+      "clip_id": 190483
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La respuesta reside en un sistema operativo urbano totalmente invisible. Millones de sensores repartidos por tuberías farolas y cimientos miden el flujo del agua la pureza del aire y la temperatura ambiente en tiempo real."
+  },
+  {
+   "hablado": "Toda esa información converge en un núcleo algorítmico central que procesa billones de datos por segundo. La red redirige la electricidad sobrante hacia zonas con picos de demanda y ajusta la iluminación según la presencia peatonal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room data center",
+    "otras": [
+     "computer servers blue light",
+     "data center cables"
+    ],
+    "descripcion": "Una sala de servidores moderna con luces parpadeantes y cableado de alta velocidad.",
+    "clip": "https://cdn.pixabay.com/video/2015/10/16/1009-142621189_large.mp4",
+    "clip_id": 1009,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/08/10/17723-284467863_small.mp4",
+      "clip_id": 17723
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/13/6350-191338848_large.mp4",
+      "clip_id": 6350
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/11/19274-300869215_small.mp4",
+      "clip_id": 19274
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Toda esa información converge en un núcleo algorítmico central que procesa billones de datos por segundo. La red redirige la electricidad sobrante hacia zonas con picos de demanda y ajusta la iluminación según la presencia peatonal."
+  },
+  {
+   "hablado": "Los residuos urbanos tampoco se acumulan en aceras ni camiones ruidosos. Redes neumáticas subterráneas succionan la basura a gran velocidad hasta centros de reciclaje automatizados donde robots especializados clasifican y procesan cada material al instante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "automated recycling factory",
+    "otras": [
+     "industrial conveyor belt",
+     "recycling facility robots"
+    ],
+    "descripcion": "Una planta de reciclaje automatizada con cintas transportadoras separando residuos.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/01/202560-918431383_small.mp4",
+    "clip_id": 202560,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/25/223170_small.mp4",
+      "clip_id": 223170
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/01/202559-918431373_small.mp4",
+      "clip_id": 202559
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/24/19539-302628052_large.mp4",
+      "clip_id": 19539
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los residuos urbanos tampoco se acumulan en aceras ni camiones ruidosos. Redes neumáticas subterráneas succionan la basura a gran velocidad hasta centros de reciclaje automatizados donde robots especializados clasifican y procesan cada material al instante."
+  },
+  {
+   "hablado": "Si una tubería sufre una fisura bajo el asfalto ningún equipo humano necesita cavar la calle. Pequeños vehículos autónomos subterráneos detectan la fuga mediante ultrasonidos y aplican selladores sintéticos en cuestión de pocos minutos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underground pipe inspection",
+    "otras": [
+     "worker inspecting tunnel",
+     "subway tunnel maintenance"
+    ],
+    "descripcion": "Un túnel subterráneo de infraestructuras con equipos técnicos de mantenimiento.",
+    "clip": "https://cdn.pixabay.com/video/2023/07/23/172941-848188013_large.mp4",
+    "clip_id": 172941,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/09/64745-510542361_large.mp4",
+      "clip_id": 64745
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/23/190323-887815655_small.mp4",
+      "clip_id": 190323
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/22/181864-867378698_large.mp4",
+      "clip_id": 181864
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Si una tubería sufre una fisura bajo el asfalto ningún equipo humano necesita cavar la calle. Pequeños vehículos autónomos subterráneos detectan la fuga mediante ultrasonidos y aplican selladores sintéticos en cuestión de pocos minutos."
+  },
+  {
+   "hablado": "La metrópolis actúa como un organismo vivo que autorregula sus constantes vitales. Las averías infraestructurales se corrigen antes de que los ciudadanos noten la menor interrupción en el suministro de agua luz o comunicaciones digitales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city skyline daytime",
+    "otras": [
+     "clean city street people",
+     "aerial city view sunny"
+    ],
+    "descripcion": "Una vista aérea de una metrópolis ordenada con tráfico fluido y vegetación.",
+    "clip": "https://cdn.pixabay.com/video/2016/06/22/3522-171841303_medium.mp4",
+    "clip_id": 3522,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/973-142612045_large.mp4",
+      "clip_id": 973
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/04/215302_large.mp4",
+      "clip_id": 215302
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/23/31509-387662245_large.mp4",
+      "clip_id": 31509
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La metrópolis actúa como un organismo vivo que autorregula sus constantes vitales. Las averías infraestructurales se corrigen antes de que los ciudadanos noten la menor interrupción en el suministro de agua luz o comunicaciones digitales."
+  },
+  {
+   "hablado": "Este entorno dinámico responde con precisión milimétrica a las necesidades de la población. Las plazas públicas modifican sombreados y ventilación natural para mantener la comodidad térmica sin recurrir a climatizadores convencionales altamente contaminantes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking city park",
+    "otras": [
+     "urban green space",
+     "people sitting public plaza"
+    ],
+    "descripcion": "Gente paseando por una plaza urbana moderna llena de árboles y arquitectura sostenible.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/04/215253_large.mp4",
+    "clip_id": 215253,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/137029-765458108_large.mp4",
+      "clip_id": 137029
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/137031-765458117_large.mp4",
+      "clip_id": 137031
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/137032-765458119_large.mp4",
+      "clip_id": 137032
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Este entorno dinámico responde con precisión milimétrica a las necesidades de la población. Las plazas públicas modifican sombreados y ventilación natural para mantener la comodidad térmica sin recurrir a climatizadores convencionales altamente contaminantes."
+  },
+  {
+   "hablado": "La urbe parece haber alcanzado la eficiencia absoluta gracias al control algorítmico continuo. Sin embargo la verdadera prueba de fuego para esta mente digital no vendrá del interior sino del exterior. Pero qué ocurrirá cuando la naturaleza responda con ferocidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "storm clouds over city",
+    "otras": [
+     "dark clouds city sky",
+     "heavy rain city street"
+    ],
+    "descripcion": "Nubes oscuras de tormenta aproximándose al cielo de una gran ciudad.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/03/206694_small.mp4",
+    "clip_id": 206694,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/04/112957-696336342_large.mp4",
+      "clip_id": 112957
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/19/114510-701051379_small.mp4",
+      "clip_id": 114510
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/12/22/6847-196978755_large.mp4",
+      "clip_id": 6847
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La urbe parece haber alcanzado la eficiencia absoluta gracias al control algorítmico continuo. Sin embargo la verdadera prueba de fuego para esta mente digital no vendrá del interior sino del exterior. Pero qué ocurrirá cuando la naturaleza responda con ferocidad."
+  },
+  {
+   "hablado": "Para finales del siglo veintiuno las tormentas supercélula y la subida del nivel del mar amenazarán las costas. Las inteligencias artificiales monitorearán el clima planetario en tiempo real anticipando desastres meteorológicos con días de antelación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "storm ocean waves crash",
+    "otras": [
+     "ocean storm heavy rain",
+     "sea storm high tide"
+    ],
+    "descripcion": "Grandes olas chocando contra el litoral durante una tormenta intensa.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/24/201766-916357972_small.mp4",
+    "clip_id": 201766,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/05/16/353078_large.mp4",
+      "clip_id": 353078
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/11/220593_large.mp4",
+      "clip_id": 220593
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/23/217848_large.mp4",
+      "clip_id": 217848
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para finales del siglo veintiuno las tormentas supercélula y la subida del nivel del mar amenazarán las costas. Las inteligencias artificiales monitorearán el clima planetario en tiempo real anticipando desastres meteorológicos con días de antelación."
+  },
+  {
+   "hablado": "Cuando la marea alcance niveles críticos las barreras costeras automatizadas se elevarán de forma autónoma. Estos diques inteligentes ajustarán su altura utilizando sensores hidráulicos gestionados por algoritmos para impedir la inundación de los centros urbanos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "water dam floodgate hydraulic",
+    "otras": [
+     "sea wall barrier ocean",
+     "coastal protection engineering"
+    ],
+    "descripcion": "Una enorme barrera hidráulica o presa regulando el paso del agua del mar.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/18/204565-924698132_small.mp4",
+    "clip_id": 204565,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/21/172575-847860504_large.mp4",
+      "clip_id": 172575
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/24/237979_small.mp4",
+      "clip_id": 237979
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/12/264281_small.mp4",
+      "clip_id": 264281
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Cuando la marea alcance niveles críticos las barreras costeras automatizadas se elevarán de forma autónoma. Estos diques inteligentes ajustarán su altura utilizando sensores hidráulicos gestionados por algoritmos para impedir la inundación de los centros urbanos."
+  },
+  {
+   "hablado": "En el interior de las metrópolis las cúpulas microclimáticas transparentes y los escudos térmicos dinámicos refractarán el calor extremo. La inteligencia artificial desviará la radiación solar excesiva regulando la temperatura urbana durante las peores olas de calor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern glass dome architecture",
+    "otras": [
+     "glass canopy building city",
+     "urban green roof structure"
+    ],
+    "descripcion": "Estructura arquitectónica transparente de cristal o cúpula en una ciudad.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/12/123938-729425659_small.mp4",
+    "clip_id": 123938,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/12/123943-729425678_small.mp4",
+      "clip_id": 123943
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/13/47053-450995419_small.mp4",
+      "clip_id": 47053
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/22/39778-424022635_small.mp4",
+      "clip_id": 39778
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "En el interior de las metrópolis las cúpulas microclimáticas transparentes y los escudos térmicos dinámicos refractarán el calor extremo. La inteligencia artificial desviará la radiación solar excesiva regulando la temperatura urbana durante las peores olas de calor."
+  },
+  {
+   "hablado": "El exceso de calor capturado en las superficies no se desperdiciará. Los sistemas de ingeniería canalizarán esa energía térmica sobrante hacia profundas instalaciones subterráneas alimentando masivas plantas de desalinización de agua de mar sin consumir red eléctrica tradicional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underground industrial pipes facility",
+    "otras": [
+     "large water treatment plant",
+     "geothermal energy plant interior"
+    ],
+    "descripcion": "Tuberías industriales e instalaciones subterráneas de procesamiento de agua o energía.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/21/208788_small.mp4",
+    "clip_id": 208788,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/22/197780-905439947_small.mp4",
+      "clip_id": 197780
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/30/57936-486852886_large.mp4",
+      "clip_id": 57936
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/11/207658_small.mp4",
+      "clip_id": 207658
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El exceso de calor capturado en las superficies no se desperdiciará. Los sistemas de ingeniería canalizarán esa energía térmica sobrante hacia profundas instalaciones subterráneas alimentando masivas plantas de desalinización de agua de mar sin consumir red eléctrica tradicional."
+  },
+  {
+   "hablado": "Redes de refrigeración por fluido circularán bajo el asfalto absorbiendo la radiación del entorno. Al mismo tiempo algoritmos de equilibrio geotérmico distribuirán el agua potable desalinizada manteniendo los tanques de reserva urbanos completamente llenos durante periodos de sequía prolongada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "water cooling pipes system",
+    "otras": [
+     "pumping station water supply",
+     "engineers inspecting pipes"
+    ],
+    "descripcion": "Sistemas de bombeo y tuberías de agua en una planta de distribución.",
+    "clip": "https://cdn.pixabay.com/video/2015/10/18/1077-142790218_large.mp4",
+    "clip_id": 1077,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/02/46192-447175463_small.mp4",
+      "clip_id": 46192
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/14/81424-575185178_large.mp4",
+      "clip_id": 81424
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/08/35427-407130886_large.mp4",
+      "clip_id": 35427
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Redes de refrigeración por fluido circularán bajo el asfalto absorbiendo la radiación del entorno. Al mismo tiempo algoritmos de equilibrio geotérmico distribuirán el agua potable desalinizada manteniendo los tanques de reserva urbanos completamente llenos durante periodos de sequía prolongada."
+  },
+  {
+   "hablado": "La ingeniería climática algorítmica pasará de ser una opción experimental a convertirse en el escudo defensivo fundamental de la civilización. Sin esta intervención constante de la mente digital las urbes más prósperas sucumbirían a la furia de la naturaleza.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "satellite Earth weather view",
+    "otras": [
+     "data center server room",
+     "weather forecast monitoring screen"
+    ],
+    "descripcion": "Vista del planeta Tierra o servidores procesando mapas de monitoreo ambiental.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/03/206692_small.mp4",
+    "clip_id": 206692,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/13/7328-199383367_large.mp4",
+      "clip_id": 7328
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/05/21/354006_small.mp4",
+      "clip_id": 354006
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/05/1844-150885307_medium.mp4",
+      "clip_id": 1844
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La ingeniería climática algorítmica pasará de ser una opción experimental a convertirse en el escudo defensivo fundamental de la civilización. Sin esta intervención constante de la mente digital las urbes más prósperas sucumbirían a la furia de la naturaleza."
+  },
+  {
+   "hablado": "Pero qué ocurre cuando el nivel de los océanos sube tanto que la tierra firme deja de ser una opción segura para expandir la población. La respuesta ya no estará en la costa sino mar adentro. Pero lo sorprendente recién comenzaba.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "open ocean horizon sea",
+    "otras": [
+     "aerial sea water horizon",
+     "ocean waves drone view"
+    ],
+    "descripcion": "Vista aérea del océano abierto extendiéndose hacia el horizonte.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/09/127256-738105411_large.mp4",
+    "clip_id": 127256,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/05/17/353263_large.mp4",
+      "clip_id": 353263
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/05/17/353264_small.mp4",
+      "clip_id": 353264
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/06/24/360429_large.mp4",
+      "clip_id": 360429
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Pero qué ocurre cuando el nivel de los océanos sube tanto que la tierra firme deja de ser una opción segura para expandir la población. La respuesta ya no estará en la costa sino mar adentro. Pero lo sorprendente recién comenzaba."
+  },
+  {
+   "hablado": "Ante el avance inminente de los océanos, los ingenieros proyectan gigantescas plataformas modulares capaces de flotar en alta mar. Estas estructuras flexibles absorben el impacto de las olas más violentas y se conectan entre sí para expandir el territorio urbano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean drone view",
+    "otras": [
+     "sea wave power",
+     "coastal engineering"
+    ],
+    "descripcion": "Vista aérea panorámica del océano con olas dinámicas y espacio marino abierto",
+    "clip": "https://cdn.pixabay.com/video/2023/10/08/184069-872413642_small.mp4",
+    "clip_id": 184069,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/01/10/13772-251867974_small.mp4",
+      "clip_id": 13772
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/30/161045-822582085_large.mp4",
+      "clip_id": 161045
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/12/24/102359-659985589_small.mp4",
+      "clip_id": 102359
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Ante el avance inminente de los océanos, los ingenieros proyectan gigantescas plataformas modulares capaces de flotar en alta mar. Estas estructuras flexibles absorben el impacto de las olas más violentas y se conectan entre sí para expandir el territorio urbano."
+  },
+  {
+   "hablado": "Para alimentar a estas metrópolis oceánicas, la corriente marina y el movimiento de las mareas generan electricidad ininterrumpida. Además, cristales fotovoltaicos transparentes instalados en las fachadas captan la luz del sol sin bloquear las vistas directas del horizonte marino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "solar panels roof",
+    "otras": [
+     "clean energy sea",
+     "wind turbine ocean"
+    ],
+    "descripcion": "Paneles solares modernos captando luz solar cerca de un entorno costero",
+    "clip": "https://cdn.pixabay.com/video/2021/08/04/83903-586090001_small.mp4",
+    "clip_id": 83903,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/24/39991-424360905_small.mp4",
+      "clip_id": 39991
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/05/83984-586574957_small.mp4",
+      "clip_id": 83984
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/12/12437-238795767_large.mp4",
+      "clip_id": 12437
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para alimentar a estas metrópolis oceánicas, la corriente marina y el movimiento de las mareas generan electricidad ininterrumpida. Además, cristales fotovoltaicos transparentes instalados en las fachadas captan la luz del sol sin bloquear las vistas directas del horizonte marino."
+  },
+  {
+   "hablado": "La producción de alimento en estas islas artificiales abandona la tierra firme gracias a la acuaponía avanzada. Sistemas cerrados cultivan peces y vegetales de forma simbiótica, mientras algoritmos de inteligencia artificial regulan con máxima precisión cada gramo de nutriente inyectado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "aquaponics greenhouse",
+    "otras": [
+     "vertical farming hydroponics",
+     "fish farm technology"
+    ],
+    "descripcion": "Invernadero tecnificado con cultivos hidropónicos y tanques de agua limpia",
+    "clip": "https://cdn.pixabay.com/video/2024/06/30/218792_small.mp4",
+    "clip_id": 218792,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119406-717695291_small.mp4",
+      "clip_id": 119406
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/16/117174-710564322_small.mp4",
+      "clip_id": 117174
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/05/41140-428253063_large.mp4",
+      "clip_id": 41140
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La producción de alimento en estas islas artificiales abandona la tierra firme gracias a la acuaponía avanzada. Sistemas cerrados cultivan peces y vegetales de forma simbiótica, mientras algoritmos de inteligencia artificial regulan con máxima precisión cada gramo de nutriente inyectado."
+  },
+  {
+   "hablado": "Un núcleo digital analiza continuamente el impacto sobre los ecosistemas marinos adyacentes. Si la temperatura o la salinidad del agua sufren alteraciones, la ciudad redirige sus flujos de residuos tratándolos mediante microalgas hasta devolver una pureza cristalina al ecosistema circundante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "coral reef underwater",
+    "otras": [
+     "water filtration system",
+     "laboratory water test"
+    ],
+    "descripcion": "Fondo marino con vida arrecifal limpia y aguas cristalinas iluminadas por el sol",
+    "clip": "https://cdn.pixabay.com/video/2025/03/07/263235_small.mp4",
+    "clip_id": 263235,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/19/85674-591865490_large.mp4",
+      "clip_id": 85674
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/07/263254_small.mp4",
+      "clip_id": 263254
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/07/263255_small.mp4",
+      "clip_id": 263255
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Un núcleo digital analiza continuamente el impacto sobre los ecosistemas marinos adyacentes. Si la temperatura o la salinidad del agua sufren alteraciones, la ciudad redirige sus flujos de residuos tratándolos mediante microalgas hasta devolver una pureza cristalina al ecosistema circundante."
+  },
+  {
+   "hablado": "Esta expansión urbana independiente de los continentes abre una nueva era de soberanía y organización social. Sin embargo, la construcción de estas gigantescas urbes flotantes plantea preguntas geopolíticas inéditas sobre la propiedad de las aguas internacionales y el libre tránsito.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship ocean",
+    "otras": [
+     "modern port skyline",
+     "maritime transport vessel"
+    ],
+    "descripcion": "Buque navegando en aguas internacionales bajo un cielo despejado",
+    "clip": "https://cdn.pixabay.com/video/2023/02/17/151008-799903783_small.mp4",
+    "clip_id": 151008,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/27/32941-395456389_large.mp4",
+      "clip_id": 32941
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/14/110723-688648638_medium.mp4",
+      "clip_id": 110723
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/03/169894-842039558_large.mp4",
+      "clip_id": 169894
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta expansión urbana independiente de los continentes abre una nueva era de soberanía y organización social. Sin embargo, la construcción de estas gigantescas urbes flotantes plantea preguntas geopolíticas inéditas sobre la propiedad de las aguas internacionales y el libre tránsito."
+  },
+  {
+   "hablado": "Muchos científicos aseguran que antes de establecer colonias estables en Marte, nuestro verdadero aprendizaje para vivir en entornos hostiles se consolidará en la superficie oceánica de la Tierra, un territorio aún fascinante y casi inexplorado por la arquitectura.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep sea research",
+    "otras": [
+     "scuba diver underwater",
+     "modern architecture ocean"
+    ],
+    "descripcion": "Exploradores submarinos y equipos técnicos operando en profundidades marinas",
+    "clip": "https://cdn.pixabay.com/video/2015/08/11/312-135977474_large.mp4",
+    "clip_id": 312,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/02/90544-623004704_medium.mp4",
+      "clip_id": 90544
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/28/228699_medium.mp4",
+      "clip_id": 228699
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/09/18/797-318214648_medium.mp4",
+      "clip_id": 797
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Muchos científicos aseguran que antes de establecer colonias estables en Marte, nuestro verdadero aprendizaje para vivir en entornos hostiles se consolidará en la superficie oceánica de la Tierra, un territorio aún fascinante y casi inexplorado por la arquitectura."
+  },
+  {
+   "hablado": "Estas metrópolis sobre el mar representan un triunfo fascinante de la ingeniería moderna. Sin embargo, detrás de la fachada limpia y eficiente de las ciudades del futuro se oculta un dilema ético profundo. Pero lo verdaderamente inquietante estaba a punto de ser desvelado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline night",
+    "otras": [
+     "server room data",
+     "cctv camera street"
+    ],
+    "descripcion": "Horizonte urbano iluminado de noche con luces inteligentes y torres de datos",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3138-166335919_large.mp4",
+    "clip_id": 3138,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/15/204326-923959262_large.mp4",
+      "clip_id": 204326
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/22/5624-183849074_large.mp4",
+      "clip_id": 5624
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/25/86350-592491784_large.mp4",
+      "clip_id": 86350
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Estas metrópolis sobre el mar representan un triunfo fascinante de la ingeniería moderna. Sin embargo, detrás de la fachada limpia y eficiente de las ciudades del futuro se oculta un dilema ético profundo. Pero lo verdaderamente inquietante estaba a punto de ser desvelado."
+  },
+  {
+   "hablado": "Para que un sistema urbano funcione sin un solo fallo de tráfico o desabastecimiento, la inteligencia artificial necesita medirlo todo. Cada paso por la calle, cada compra y cada interacción personal son procesados constantemente por el núcleo central.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "security camera city street",
+    "otras": [
+     "urban surveillance camera",
+     "city people walking"
+    ],
+    "descripcion": "Cámara de vigilancia urbana enfocando una calle concurrita de una ciudad moderna",
+    "clip": "https://cdn.pixabay.com/video/2016/06/27/3582-172488198_large.mp4",
+    "clip_id": 3582,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/17/6455-192501937_large.mp4",
+      "clip_id": 6455
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/30/268770_small.mp4",
+      "clip_id": 268770
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/05/126837-737020173_large.mp4",
+      "clip_id": 126837
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para que un sistema urbano funcione sin un solo fallo de tráfico o desabastecimiento, la inteligencia artificial necesita medirlo todo. Cada paso por la calle, cada compra y cada interacción personal son procesados constantemente por el núcleo central."
+  },
+  {
+   "hablado": "La supervisión no es simplemente pasiva. Los algoritmos predictivos anticipan comportamientos alterados o desviaciones del patrón diario. Si alguien actúa de forma inusual, el entorno responde de inmediato ajustando el acceso a ciertos servicios o enviando agentes de asistencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "data center servers",
+    "otras": [
+     "control room monitors",
+     "server room blinking lights"
+    ],
+    "descripcion": "Luces parpadeantes en un centro de servidores de procesamiento de datos masivos",
+    "clip": "https://cdn.pixabay.com/video/2021/06/29/79581-569653331_large.mp4",
+    "clip_id": 79581,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/19/197343-904650836_large.mp4",
+      "clip_id": 197343
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/10/198-135846853_large.mp4",
+      "clip_id": 198
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/08/134065-758552308_large.mp4",
+      "clip_id": 134065
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La supervisión no es simplemente pasiva. Los algoritmos predictivos anticipan comportamientos alterados o desviaciones del patrón diario. Si alguien actúa de forma inusual, el entorno responde de inmediato ajustando el acceso a ciertos servicios o enviando agentes de asistencia."
+  },
+  {
+   "hablado": "Esto plantea la gran paradoja del siglo veintidós. Se logra erradicar el crimen violento y optimizar la energía al máximo, pero a costa de eliminar cualquier margen de privacidad. El anonimato se convierte en un concepto totalmente extinto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern glass building exterior",
+    "otras": [
+     "clean city architecture",
+     "empty modern hallway"
+    ],
+    "descripcion": "Fachada moderna y pulcra de cristal de un edificio urbano",
+    "clip": "https://cdn.pixabay.com/video/2025/04/17/272519_small.mp4",
+    "clip_id": 272519,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/17/247213_small.mp4",
+      "clip_id": 247213
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/02/15356-262921938_large.mp4",
+      "clip_id": 15356
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/01/63747-507811831_large.mp4",
+      "clip_id": 63747
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esto plantea la gran paradoja del siglo veintidós. Se logra erradicar el crimen violento y optimizar la energía al máximo, pero a costa de eliminar cualquier margen de privacidad. El anonimato se convierte en un concepto totalmente extinto."
+  },
+  {
+   "hablado": "El mayor riesgo reside en quién programa los parámetros de esa armonía. Si la prioridad del algoritmo es la estabilidad absoluta, cualquier disidencia o comportamiento fuera de norma podría ser corregido silenciosamente restringiendo la movilidad del ciudadano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person holding smartphone city",
+    "otras": [
+     "man using tablet",
+     "person walking looking phone"
+    ],
+    "descripcion": "Persona caminando por la ciudad consultando un dispositivo electrónico",
+    "clip": "https://cdn.pixabay.com/video/2021/08/25/86378-592491844_small.mp4",
+    "clip_id": 86378,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/03/08/8255-207598607_large.mp4",
+      "clip_id": 8255
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/15/39183-421020269_large.mp4",
+      "clip_id": 39183
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/04/130209-748134173_large.mp4",
+      "clip_id": 130209
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El mayor riesgo reside en quién programa los parámetros de esa armonía. Si la prioridad del algoritmo es la estabilidad absoluta, cualquier disidencia o comportamiento fuera de norma podría ser corregido silenciosamente restringiendo la movilidad del ciudadano."
+  },
+  {
+   "hablado": "La metrópolis del futuro no será un destino inevitable impuesto por la tecnología, sino el reflejo de las decisiones éticas que tomemos hoy. La frontera entre una utopía sostenible y una prisión transparente dependerá de nuestras regulaciones actuales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "urban planners table blueprint",
+    "otras": [
+     "engineers meeting office",
+     "architects working office"
+    ],
+    "descripcion": "Grupo de arquitectos y planificadores reunidos analizando planos de diseño urbano",
+    "clip": "https://cdn.pixabay.com/video/2024/06/12/216369_small.mp4",
+    "clip_id": 216369,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/24/34203-400954475_large.mp4",
+      "clip_id": 34203
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/28/28376-369325503_large.mp4",
+      "clip_id": 28376
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/09/149935-797511795_large.mp4",
+      "clip_id": 149935
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La metrópolis del futuro no será un destino inevitable impuesto por la tecnología, sino el reflejo de las decisiones éticas que tomemos hoy. La frontera entre una utopía sostenible y una prisión transparente dependerá de nuestras regulaciones actuales."
+  },
+  {
+   "hablado": "Diseñar entornos urbanos capaces de acoger a diez mil millones de personas requiere innovación radical, pero la verdadera prueba será conservar nuestra humanidad y libertad individual en un mundo gobernado por código y sensores.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline sunset aerial",
+    "otras": [
+     "modern metropolis aerial view",
+     "city skyline evening"
+    ],
+    "descripcion": "Vista aérea del horizonte de una gran metrópolis al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2025/06/23/287386_small.mp4",
+    "clip_id": 287386,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272511_small.mp4",
+      "clip_id": 272511
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/16/85272-590799500_small.mp4",
+      "clip_id": 85272
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/16/85275-590799527_small.mp4",
+      "clip_id": 85275
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Diseñar entornos urbanos capaces de acoger a diez mil millones de personas requiere innovación radical, pero la verdadera prueba será conservar nuestra humanidad y libertad individual en un mundo gobernado por código y sensores."
+  },
+  {
+   "hablado": "Llegados a este punto, la pregunta es inevitable. ¿Estarías dispuesto a vivir en una ciudad con aire puro, sin tráfico y sin delincuencia a cambio de renunciar por completo a tu privacidad personal? Déjanos tu opinión en los comentarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking out window city",
+    "otras": [
+     "man looking at city sunset",
+     "woman looking out window"
+    ],
+    "descripcion": "Persona contemplando pensativa el paisaje urbano a través de un ventanal",
+    "clip": "https://cdn.pixabay.com/video/2017/03/10/8281-208046155_large.mp4",
+    "clip_id": 8281,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/08/23/26208-357512365_large.mp4",
+      "clip_id": 26208
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/10/12417-238795698_large.mp4",
+      "clip_id": 12417
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/02/06/7686-202893456_large.mp4",
+      "clip_id": 7686
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Llegados a este punto, la pregunta es inevitable. ¿Estarías dispuesto a vivir en una ciudad con aire puro, sin tráfico y sin delincuencia a cambio de renunciar por completo a tu privacidad personal? Déjanos tu opinión en los comentarios."
+  }
+ ],
+ "titulo_youtube": "Así será TU CIUDAD en el año 2100",
+ "voz": "Algenib",
+ "estilo_imagen": "Ultra realistic photograph, real-world photojournalism look of a believable near future: futuristic technology integrated into everyday places, natural daylight or soft practical lighting, true-to-life skin and materials, subtle sci-fi details (holographic displays, sleek robots, advanced vehicles), sharp focus, shallow depth of field, shot on a full-frame camera, 35mm lens. "
+}
