@@ -65,3 +65,4 @@
 2026-11-05|21:00|Rascacielos orgánicos impresos en 3D en 2100|consecuencia|YO 6aec17e975052a1eb821c4c4 IN 6aec17eae22643a987924e89 TI 6aec17ea80f7fd0537f165ce|img=mixto|21:15
 2026-11-06|08:00|Gafas de repartidores de Amazon|cuenta|YO 6aed6532f3498efda77045e0 IN 6aed653286fe9b8379750549 TI 6aed653386fe9b837975059c|img=mixto|08:00
 2026-11-06|12:00|Robot Alex militar estadounidense|nadie|YO 6aed662b86fe9b8379754594 IN 6aed662c7b7e47e8f40d3506 TI 6aed662cf3498efda7709930|img=mixto|11:53
+2026-11-06|15:00|Tutores de IA en la educación|error|YO 6aed6733f3498efda770d082 IN 6aed673486fe9b8379757daf TI 6aed6734f3498efda770d0bb|img=mixto|14:43
