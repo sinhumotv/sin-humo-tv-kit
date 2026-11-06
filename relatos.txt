@@ -70,3 +70,4 @@
 2026-11-05|18:00|Apolo y Jacinto|sabias|YO 6aec1a1075052a1eb82231b1 IN 6aec1a103ddb81d221097b43 TI 6aec1a1180f7fd0537f1dd0e|img=mixto|17:58
 2026-11-05|21:00|El castigo de Tiresias|consecuencia|YO 6aec1b96660b2991f1553fe6 IN 6aec1b967877e0eab279c32e TI 6aec1b97660b2991f1554080|img=mixto|21:32
 2026-11-06|08:00|Píramo y Tisbe|cuenta|YO 6aed65cbc1e74b84e5cb49cf IN 6aed65cc07f945cca9425583 TI 6aed65ccf3498efda77062ff|img=mixto|08:13
+2026-11-06|12:00|Arión y el delfín|final|YO 6aed66ccc1e74b84e5cb8c7d IN 6aed66cdf3498efda770b2c4 TI 6aed66cd07f945cca942a0b2|img=mixto|11:35
