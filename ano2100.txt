@@ -67,3 +67,4 @@
 2026-11-06|12:00|Robot Alex militar estadounidense|nadie|YO 6aed662b86fe9b8379754594 IN 6aed662c7b7e47e8f40d3506 TI 6aed662cf3498efda7709930|img=mixto|11:53
 2026-11-06|15:00|Tutores de IA en la educación|error|YO 6aed6733f3498efda770d082 IN 6aed673486fe9b8379757daf TI 6aed6734f3498efda770d0bb|img=mixto|14:43
 2026-11-06|18:00|Detección de mentiras con IA|sabias|YO 6aed6896c1e74b84e5cbeefd IN 6aed6896c1e74b84e5cbef26 TI 6aed68977b7e47e8f40dac7e|img=mixto|18:16
+2026-11-06|21:00|Gemelos digitales de salud|consecuencia|YO 6aed69f77b7e47e8f40e0276 IN 6aed69f786fe9b83797617a3 TI 6aed69f8dbada656bef665c0|img=mixto|20:51
