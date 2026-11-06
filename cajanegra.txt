@@ -66,3 +66,4 @@
 2026-11-05|12:00|El banquete mortal|error|YO 6aec5cca9d7f1562d761e520 IN 6aec5ccae069fbd430df90a9 TI 6aec5ccba94d53b8ea7f5e74|img=mixto|11:54
 2026-11-06|08:00|La muerte de Dracón|increible|YO 6aed6705c1e74b84e5cb982e IN 6aed670607f945cca942aa7d TI 6aed6706dbada656bef5ad23|img=mixto|08:38
 2026-11-06|12:00|El misterio de Louis Le Prince|final|YO 6aed6803c1e74b84e5cbcf62 IN 6aed680407f945cca942e259 TI 6aed680486fe9b837975af1b|img=mixto|11:47
+2026-11-06|15:00|El robo de la Piedra de Scone|cuenta|YO 6aed69097b7e47e8f40dc304 IN 6aed6909dbada656bef618fa TI 6aed690a07f945cca9431a07|img=mixto|14:24
