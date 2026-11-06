@@ -1177,3 +1177,6 @@ ia:0734_Passenger_Train_The_03_48_41_00
 ia:0007_American_Frontier_07_30_37_00
 63752
 9597
+ia:basic_typing_1
+31721
+ia:Corvairi1960
