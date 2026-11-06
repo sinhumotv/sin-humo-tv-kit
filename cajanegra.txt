@@ -65,3 +65,4 @@
 2026-11-05|21:00|La insólita muerte de Jacobo I|consecuencia|YO 6aec18d77877e0eab2790a67 IN 6aec18d8660b2991f15489f6 TI 6aec18d83ddb81d22109390b|img=mixto|20:35
 2026-11-05|12:00|El banquete mortal|error|YO 6aec5cca9d7f1562d761e520 IN 6aec5ccae069fbd430df90a9 TI 6aec5ccba94d53b8ea7f5e74|img=mixto|11:54
 2026-11-06|08:00|La muerte de Dracón|increible|YO 6aed6705c1e74b84e5cb982e IN 6aed670607f945cca942aa7d TI 6aed6706dbada656bef5ad23|img=mixto|08:38
+2026-11-06|12:00|El misterio de Louis Le Prince|final|YO 6aed6803c1e74b84e5cbcf62 IN 6aed680407f945cca942e259 TI 6aed680486fe9b837975af1b|img=mixto|11:47
