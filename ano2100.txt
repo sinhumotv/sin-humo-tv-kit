@@ -63,3 +63,4 @@
 2026-11-05|15:00|Enjambres de microdrones forestales en 2100|final|YO 6aec1581e22643a98791e476 IN 6aec158280f7fd0537f0ee2f TI 6aec158280f7fd0537f0ee6a|img=mixto|15:08
 2026-11-05|18:00|Almacenamiento de datos en ADN en 2100|sabias|YO 6aec16a580f7fd0537f12931 IN 6aec16a5660b2991f1540a0d TI 6aec16a67877e0eab2788ccb|img=mixto|17:21
 2026-11-05|21:00|Rascacielos orgánicos impresos en 3D en 2100|consecuencia|YO 6aec17e975052a1eb821c4c4 IN 6aec17eae22643a987924e89 TI 6aec17ea80f7fd0537f165ce|img=mixto|21:15
+2026-11-06|08:00|Gafas de repartidores de Amazon|cuenta|YO 6aed6532f3498efda77045e0 IN 6aed653286fe9b8379750549 TI 6aed653386fe9b837975059c|img=mixto|08:00
