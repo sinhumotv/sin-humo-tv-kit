@@ -1,0 +1,2138 @@
+{
+ "titulo": "El lado oscuro de Apolo: El dios más temido",
+ "titulos": [
+  "Por qué APOLO era el dios más cruel y temido del Olimpo",
+  "La TERRIBLE verdad sobre Apolo que la historia ocultó",
+  "El dios del Sol: ¿Por qué los griegos LE TEMÍAN tanto?",
+  "Apolo y sus atroces castigos: La VERDADERA historia",
+  "¿Era Apolo un MONSTRUO? El lado oscuro de la luz",
+  "La masacre de Níobe y los peores CRÍMENES de Apolo",
+  "Por qué Zeus TEMÍA la furia de su hijo Apolo",
+  "El castigo de Marsias: La CRUELDAD oculta de Apolo",
+  "Apolo: El dios PERTURBADOR que destruyó Troya con la peste",
+  "La cara oculta de APOLO: Mitología griega explicada"
+ ],
+ "miniatura": {
+  "texto": "SU LADO OSCURO",
+  "clave": "TEMIDO",
+  "prompt": "Cinematic shot of Apollo, the Greek god, standing on the right side of the frame, wearing golden-embroidered white robes, holding a glowing golden bow with an arrow aimed forward. His face has a cold, terrifying, merciless expression with radiant glowing golden eyes. Cinematic dark background with atmospheric smoke on the dark left side, dramatic lighting, high contrast, warm gold and deep black dark aesthetic, hyper-detailed, masterpiece."
+ },
+ "descripcion": "Siempre nos contaron que Apolo era el apuesto dios de la luz, la música, la poesía y la medicina. Sin embargo, en la Antigua Grecia, pronunciar su nombre infundía un terror absoluto entre los mortales y los propios dioses. Detrás de su lira de oro y su aura dorada se escondía la deidad más vengativa, despiadada e impredecible de todo el Olimpo, capaz de masacrar familias enteras por un simple insulto o desatar plagas mortales con sus flechas invisibles.\n\nEn este episodio recorremos los pasajes más oscuros y perturbadores del mito de Apolo: desde la crueldad con la que desolló vivo al sátiro Marsias hasta la implacable matanza de los catorce hijos de Níobe o la terrible maldición lanzada sobre la profetisa Casandra. Descubre por qué los griegos no solo adoraban al dios Sol, sino que rezaban fervientemente para no atraer jamás su mortífera mirada.",
+ "etiquetas": [
+  "Apolo",
+  "mitologia griega",
+  "mitologia",
+  "dioses olimpicos",
+  "lado oscuro de apolo",
+  "el dios mas temido",
+  "dioses griegos",
+  "historias de la mitologia",
+  "mitos griegos",
+  "historia antigua",
+  "zeus y apolo",
+  "relatos en espanol"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "La sombra bajo la luz"
+  },
+  {
+   "escena": 8,
+   "titulo": "El nacimiento de la venganza"
+  },
+  {
+   "escena": 16,
+   "titulo": "La matanza de Delfos"
+  },
+  {
+   "escena": 24,
+   "titulo": "La masacre de los retoños de Níobe"
+  },
+  {
+   "escena": 32,
+   "titulo": "El suplicio del sátiro Marsias"
+  },
+  {
+   "escena": 40,
+   "titulo": "La maldición de las palabras vacías"
+  },
+  {
+   "escena": 48,
+   "titulo": "Flechas de peste sobre la armada griega"
+  },
+  {
+   "escena": 56,
+   "titulo": "Amores convertidos en pesadilla"
+  },
+  {
+   "escena": 64,
+   "titulo": "La verdadera naturaleza de la luz"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Las playas de Troya arden bajo el humo de mil piras funerarias. Cientos de guerreros caen sin tocar una sola espada enemiga. Una fuerza invisible pulveriza sus pulmones desde el cielo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire night smoke",
+    "otras": [
+     "fire sparks dark",
+     "ancient fire torch"
+    ],
+    "descripcion": "Fuego y humo espeso ascendiendo contra un cielo nocturno oscuro.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/15/2173-155441327_medium.mp4",
+    "clip_id": 2173,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/08/44187-438212438_large.mp4",
+      "clip_id": 44187
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/08/44185-438212412_large.mp4",
+      "clip_id": 44185
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Las playas de Troya arden bajo el humo de mil piras funerarias. Cientos de guerreros caen sin tocar una sola espada enemiga. Una fuerza invisible pulveriza sus pulmones desde el cielo."
+  },
+  {
+   "hablado": "Desde el Monte Olimpo, el dios más hermoso ha disparado sus flechas de plata. No busca sanar, sino exterminar. Su nombre es Apolo y su verdadera naturaleza es aterradora.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue marble",
+    "otras": [
+     "ancient statue head",
+     "apollo statue museum"
+    ],
+    "descripcion": "Estatua clásica griega de mármol con iluminación dramática y claroscuro.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/15/127967-739777056_large.mp4",
+    "clip_id": 127967,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/20/222133_large.mp4",
+      "clip_id": 222133
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/10/240662_small.mp4",
+      "clip_id": 240662
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Desde el Monte Olimpo, el dios más hermoso ha disparado sus flechas de plata. No busca sanar, sino exterminar. Su nombre es Apolo y su verdadera naturaleza es aterradora."
+  },
+  {
+   "hablado": "Lo recordamos como el señor de la luz, el arte y la medicina. Sin embargo, para los antiguos griegos, pronunciar su nombre causaba un pavor absoluto y un castigo despiadado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple columns",
+    "otras": [
+     "greece temple ruins",
+     "pantheon columns sun"
+    ],
+    "descripcion": "Columnas de piedra de un templo griego antiguo bajo un sol cegador.",
+    "clip": "https://cdn.pixabay.com/video/2019/02/26/21664-320282109_large.mp4",
+    "clip_id": 21664,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/24/28268-368753924_small.mp4",
+      "clip_id": 28268
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/12/18/6815-196282555_large.mp4",
+      "clip_id": 6815
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Lo recordamos como el señor de la luz, el arte y la medicina. Sin embargo, para los antiguos griegos, pronunciar su nombre causaba un pavor absoluto y un castigo despiadado."
+  },
+  {
+   "hablado": "Hoy descubrirás por qué la deidad más admirada del Olimpo aterrorizaba a reyes y héroes, y la terrible razón por la que su resplandor redujo prósperas ciudades a cenizas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy sea",
+    "otras": [
+     "dramatic storm clouds",
+     "ocean waves night"
+    ],
+    "descripcion": "Olas de un mar tormentoso rompiendo contra rocas oscuras en un día sombrío.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/13/2150-155246358_large.mp4",
+    "clip_id": 2150,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/28/63281-505964213_large.mp4",
+      "clip_id": 63281
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/06/41276-428319214_small.mp4",
+      "clip_id": 41276
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Hoy descubrirás por qué la deidad más admirada del Olimpo aterrorizaba a reyes y héroes, y la terrible razón por la que su resplandor redujo prósperas ciudades a cenizas."
+  },
+  {
+   "hablado": "Los mismos rayos solares que bendecían las cosechas al amanecer eran considerados por los mortales como dagas incandescentes. Desafiar al impuro o cometer el más mínimo desdén hacia su figura equivalía a condenar a todo un pueblo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dry land cracks",
+    "otras": [
+     "sun rays desert",
+     "parched ground sun"
+    ],
+    "descripcion": "Tierra seca y agrietada por el sol intenso en un paisaje árido.",
+    "clip": "https://cdn.pixabay.com/video/2025/04/29/275593_small.mp4",
+    "clip_id": 275593,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/24/197946-906217105_small.mp4",
+      "clip_id": 197946
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/08/381510_medium.mp4",
+      "clip_id": 381510
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/27/213835_large.mp4",
+      "clip_id": 213835
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los mismos rayos solares que bendecían las cosechas al amanecer eran considerados por los mortales como dagas incandescentes. Desafiar al impuro o cometer el más mínimo desdén hacia su figura equivalía a condenar a todo un pueblo."
+  },
+  {
+   "hablado": "Nadie escapaba a su cólera, pues para Apolo no existía la compasión ante la soberbia humana. Cualquier intento de rivalizar con su divino talento o vulnerar sus sagrados recintos era castigado con tormentos eternos y sangrientos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Apollo Belvedere Vatican",
+    "otras": [
+     "Apollo sculpture ancient",
+     "Statue of Apollo"
+    ],
+    "descripcion": "Escultura clásica en mármol del dios Apolo Belvedere.",
+    "prompt": "Escultura clásica en mármol del dios Apolo Belvedere.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/11/200116-912093131_small.mp4",
+    "clip_id": 200116,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/04/83926-586490302_small.mp4",
+      "clip_id": 83926
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/06/113110-697208030_large.mp4",
+      "clip_id": 113110
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/24/129014-742902188_small.mp4",
+      "clip_id": 129014
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Nadie escapaba a su cólera, pues para Apolo no existía la compasión ante la soberbia humana. Cualquier intento de rivalizar con su divino talento o vulnerar sus sagrados recintos era castigado con tormentos eternos y sangrientos."
+  },
+  {
+   "hablado": "Pero este rigor imperturbable no surgió del azar. Nació en medio del dolor, las persecuciones y los celos divinos que marcaron a su madre antes de que él pisara la tierra por primera vez.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy mountain wilderness",
+    "otras": [
+     "rocky landscape cliffs",
+     "ancient mountains foggy"
+    ],
+    "descripcion": "Montañas rocosas cubiertas por una densa niebla en un paisaje solitario.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/31/249876_small.mp4",
+    "clip_id": 249876,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/07/22/292827_large.mp4",
+      "clip_id": 292827
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/02/215055_large.mp4",
+      "clip_id": 215055
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Pero este rigor imperturbable no surgió del azar. Nació en medio del dolor, las persecuciones y los celos divinos que marcaron a su madre antes de que él pisara la tierra por primera vez."
+  },
+  {
+   "hablado": "Para comprender la despiadada crueldad de este ser impecable, debemos viajar al momento exacto de su gestación, cuando una maldición estremecedora acorraló a su estirpe... pero lo peor aún estaba por llegar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greece island ocean",
+    "otras": [
+     "mediterranean coastline rocks",
+     "sea cliffs ancient"
+    ],
+    "descripcion": "Vista aérea de una isla rocosa desierta rodeada por el mar Mediterráneo.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/11/220591_large.mp4",
+    "clip_id": 220591,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/29/140920-776415370_small.mp4",
+      "clip_id": 140920
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/14/176004-854526240_large.mp4",
+      "clip_id": 176004
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/27/214001_small.mp4",
+      "clip_id": 214001
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para comprender la despiadada crueldad de este ser impecable, debemos viajar al momento exacto de su gestación, cuando una maldición estremecedora acorraló a su estirpe... pero lo peor aún estaba por llegar."
+  },
+  {
+   "hablado": "La reina Hera descubrió que la titánide Leto esperaba descendientes del supremo Zeus. Cegada por una furia implacable dictó que ninguna tierra firme bendecida por los rayos del sol podría acoger jamás la agonía del parto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple ruins",
+    "otras": [
+     "greece ruins sunny",
+     "ancient greek columns"
+    ],
+    "descripcion": "Columnas de un antiguo templo griego bajo la radiante y calurosa luz del sol.",
+    "clip": "https://cdn.pixabay.com/video/2018/02/14/14297-255703880_small.mp4",
+    "clip_id": 14297,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/12/171197-844788003_large.mp4",
+      "clip_id": 171197
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/21/22196-326050737_large.mp4",
+      "clip_id": 22196
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/16/143129-781982656_large.mp4",
+      "clip_id": 143129
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La reina Hera descubrió que la titánide Leto esperaba descendientes del supremo Zeus. Cegada por una furia implacable dictó que ninguna tierra firme bendecida por los rayos del sol podría acoger jamás la agonía del parto."
+  },
+  {
+   "hablado": "Para asegurar aquel castigo inclemente Hera envió a la monstruosa serpiente Pitón nacida del barro primordial. La fiera acorraló a la desdichada madre impidiéndole hallar refugio mientras el veneno del miedo recorría sus entrañas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark misty cave",
+    "otras": [
+     "foggy mountain rocks",
+     "dark ancient rocks"
+    ],
+    "descripcion": "Cueva oscura y rocosa envuelta en una densa niebla amenazante.",
+    "clip_id": "mixkit:46575",
+    "clip": "https://assets.mixkit.co/videos/46575/46575-720.mp4",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382582_small.mp4",
+      "clip_id": 382582
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/13/2145-155246345_large.mp4",
+      "clip_id": 2145
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382583_small.mp4",
+      "clip_id": 382583
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para asegurar aquel castigo inclemente Hera envió a la monstruosa serpiente Pitón nacida del barro primordial. La fiera acorraló a la desdichada madre impidiéndole hallar refugio mientras el veneno del miedo recorría sus entrañas."
+  },
+  {
+   "hablado": "Vagando sin rumbo Leto encontró auxilio en Delos una isla flotante e inestable que no estaba amarrada al fondo marino. Al no ser considerada tierra firme las leyes de Hera quedaron invalidadas en aquel peñasco a la deriva.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greece island sea",
+    "otras": [
+     "aegean sea coast",
+     "rocky island sea"
+    ],
+    "descripcion": "Vista aérea de las costas rocosas de una isla griega rodeada por el mar Egeo.",
+    "clip_id": 214001,
+    "clip": "https://cdn.pixabay.com/video/2024/05/27/214001_small.mp4",
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/07/251264_small.mp4",
+      "clip_id": 251264
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/27/275153_small.mp4",
+      "clip_id": 275153
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/14/59195-491810092_large.mp4",
+      "clip_id": 59195
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Vagando sin rumbo Leto encontró auxilio en Delos una isla flotante e inestable que no estaba amarrada al fondo marino. Al no ser considerada tierra firme las leyes de Hera quedaron invalidadas en aquel peñasco a la deriva."
+  },
+  {
+   "hablado": "Durante nueve días y nueve noches la madre sufrió tormentos inhumanos retenida por la furia olímpica. Finalmente sobre las faldas del monte Cinto alumbró a la cazadora Ártemis quien de inmediato ayudó en el parto de Apolo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Leto Apollo Artemis statue",
+    "otras": [
+     "Apollo statue marble",
+     "Greek classical sculpture"
+    ],
+    "descripcion": "Escultura clásica de mármol que representa a las deidades de la mitología griega.",
+    "prompt": "Escultura clásica de mármol que representa a las deidades de la mitología griega.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/01/198786-908874612_small.mp4",
+    "clip_id": 198786,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/01/137377-766338360_small.mp4",
+      "clip_id": 137377
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1055-142623932_large.mp4",
+      "clip_id": 1055
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/04/187862-881332114_small.mp4",
+      "clip_id": 187862
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante nueve días y nueve noches la madre sufrió tormentos inhumanos retenida por la furia olímpica. Finalmente sobre las faldas del monte Cinto alumbró a la cazadora Ártemis quien de inmediato ayudó en el parto de Apolo."
+  },
+  {
+   "hablado": "El neonato dios rechazó el pecho materno y probó la ambrosía divina entregada por la diosa Temis. En cuestión de instantes la sustancia sagrada transformó su fragilidad infantil en la figura majestuosa de un inmortal adulto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient amphora pottery",
+    "otras": [
+     "torch fire glowing",
+     "ancient gold temple"
+    ],
+    "descripcion": "Vasija de cerámica griega antigua iluminada por el cálido fuego de las antorchas.",
+    "clip": "https://cdn.pixabay.com/video/2020/09/29/51143-463233910_large.mp4",
+    "clip_id": 51143,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/07/41387-429396668_large.mp4",
+      "clip_id": 41387
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/26/173354-849202596_large.mp4",
+      "clip_id": 173354
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/19/310874_small.mp4",
+      "clip_id": 310874
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "El neonato dios rechazó el pecho materno y probó la ambrosía divina entregada por la diosa Temis. En cuestión de instantes la sustancia sagrada transformó su fragilidad infantil en la figura majestuosa de un inmortal adulto."
+  },
+  {
+   "hablado": "Los Cíclopes forjaron para el nuevo señor un arco de plata imperecedero y flechas impregnadas de fuego solar. Sosteniendo aquel arma celestial el dios recién nacido proclamó su destino absoluto ante la mirada atónita del cosmos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "apollo statue marble",
+    "otras": [
+     "ancient greek sculpture",
+     "museum statue marble"
+    ],
+    "descripcion": "Estatua de mármol de Apolo destacando sus rasgos e imponente presencia divinas.",
+    "clip": "https://cdn.pixabay.com/video/2019/03/22/22225-326032542_large.mp4",
+    "clip_id": 22225,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/23/164215-829639524_small.mp4",
+      "clip_id": 164215
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/05/188021-881528788_large.mp4",
+      "clip_id": 188021
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/05/11168-228530158_large.mp4",
+      "clip_id": 11168
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Los Cíclopes forjaron para el nuevo señor un arco de plata imperecedero y flechas impregnadas de fuego solar. Sosteniendo aquel arma celestial el dios recién nacido proclamó su destino absoluto ante la mirada atónita del cosmos."
+  },
+  {
+   "hablado": "La primera resolución de Apolo fue vengar el tormento que la voraz serpiente infligió a su progenitora. Guiado por un orgullo cegador prometió perseguir al engendro hasta el confín del mundo sin mostrar clemencia alguna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "stormy mountain sky",
+    "otras": [
+     "dark storm clouds",
+     "greece mountains clouds"
+    ],
+    "descripcion": "Cielo tormentoso y nubes oscuras sobre las cumbres de las montañas griegas.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/19/201063-914557776_small.mp4",
+    "clip_id": 201063,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/10/18/6017-187893785_large.mp4",
+      "clip_id": 6017
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/06/106961-674268847_small.mp4",
+      "clip_id": 106961
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/26/254787_large.mp4",
+      "clip_id": 254787
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La primera resolución de Apolo fue vengar el tormento que la voraz serpiente infligió a su progenitora. Guiado por un orgullo cegador prometió perseguir al engendro hasta el confín del mundo sin mostrar clemencia alguna."
+  },
+  {
+   "hablado": "Aquella sed inicial de justicia filial pronto germinaría en una doctrina inflexible donde el error humano se pagaba con la muerte. El joven protector estaba a punto de reclamar su santuario sagrado pero la matanza apenas comenzaba.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "delphi greece ruins",
+    "otras": [
+     "ancient greek altar fire",
+     "parthenon athens ruins"
+    ],
+    "descripcion": "Ruinas arqueológicas del santuario de Delfos con antorchas encendidas al anochecer.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/24/197993-906226493_small.mp4",
+    "clip_id": 197993,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/30/148594-794221537_small.mp4",
+      "clip_id": 148594
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/04/11/8642-212820309_large.mp4",
+      "clip_id": 8642
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/01/9487-220088145_large.mp4",
+      "clip_id": 9487
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquella sed inicial de justicia filial pronto germinaría en una doctrina inflexible donde el error humano se pagaba con la muerte. El joven protector estaba a punto de reclamar su santuario sagrado pero la matanza apenas comenzaba."
+  },
+  {
+   "hablado": "Guiado por el deseo de castigar a la bestia que torturó a su madre, el joven dios ascendió hasta las laderas oscuras del Monte Parnaso. En las grietas profundas habitaba la temible serpiente Pitón, guardiana del antiguo oráculo de Gea.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient cave mountain",
+    "otras": [
+     "mountain foggy rocks",
+     "ancient ruins mountain"
+    ],
+    "descripcion": "Laderas rocosas y oscuras de una montaña antigua envuelta en niebla",
+    "clip": "https://cdn.pixabay.com/video/2017/01/07/7127-336300875_small.mp4",
+    "clip_id": 7127,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/19/310878_small.mp4",
+      "clip_id": 310878
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/19/222032_small.mp4",
+      "clip_id": 222032
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/13/175815-854238855_small.mp4",
+      "clip_id": 175815
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Guiado por el deseo de castigar a la bestia que torturó a su madre, el joven dios ascendió hasta las laderas oscuras del Monte Parnaso. En las grietas profundas habitaba la temible serpiente Pitón, guardiana del antiguo oráculo de Gea."
+  },
+  {
+   "hablado": "Sin temblar ni un segundo, Apolo tensó su arco de plata y descargó una lluvia implacable de flechas doradas sobre las escamas del monstruo. El veneno y los rugidos de la criatura retumbaron en las rocas antes de desplomarse inerte.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue apollo",
+    "otras": [
+     "ancient marble statue",
+     "greek archery statue"
+    ],
+    "descripcion": "Estatua clásica de mármol de un dios griego empuñando un arco",
+    "clip": "https://cdn.pixabay.com/video/2019/05/19/23768-337232397_large.mp4",
+    "clip_id": 23768,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/14/346395_small.mp4",
+      "clip_id": 346395
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/07/14/17285-280038627_large.mp4",
+      "clip_id": 17285
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/07/23/10885-226635374_large.mp4",
+      "clip_id": 10885
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin temblar ni un segundo, Apolo tensó su arco de plata y descargó una lluvia implacable de flechas doradas sobre las escamas del monstruo. El veneno y los rugidos de la criatura retumbaron en las rocas antes de desplomarse inerte."
+  },
+  {
+   "hablado": "Al derramar sangre divina, Apolo debía purificar su falta para no atraer la mancha del crimen. Reclamó el santuario para sí y fundó los Juegos Píticos, celebraciones sagradas destinadas a honrar su victoria y limpiar la profanación del suelo sagrado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "delphi greece ruins",
+    "otras": [
+     "ancient greek temple ruins",
+     "parthenon ancient greece"
+    ],
+    "descripcion": "Ruinas majestuosas del templo de Delfos rodeadas de colinas en Grecia",
+    "clip": "https://cdn.pixabay.com/video/2024/10/02/234373_small.mp4",
+    "clip_id": 234373,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/26/342464_small.mp4",
+      "clip_id": 342464
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/10/369739_large.mp4",
+      "clip_id": 369739
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/05/308073_small.mp4",
+      "clip_id": 308073
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al derramar sangre divina, Apolo debía purificar su falta para no atraer la mancha del crimen. Reclamó el santuario para sí y fundó los Juegos Píticos, celebraciones sagradas destinadas a honrar su victoria y limpiar la profanación del suelo sagrado."
+  },
+  {
+   "hablado": "Desde las entrañas de la cueva, la sacerdotisa Pitonisa comenzó a transmitir la voz ineludible del dios entre vapores místicos. Los mortales comprendieron rápidamente que Apolo no ofrecía simples consejos ni consuelo, sino mandatos absolutos de un destino inalterable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Pythia priestess delphi painting",
+    "otras": [
+     "oracle of delphi painting",
+     "delphi pythia art"
+    ],
+    "descripcion": "Pintura clásica representando a la Pitonisa pronunciando el oráculo de Delfos",
+    "prompt": "Pintura clásica representando a la Pitonisa pronunciando el oráculo de Delfos",
+    "clip": "https://cdn.pixabay.com/video/2024/01/30/198548-907924805_small.mp4",
+    "clip_id": 198548,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/06/41282-428319236_large.mp4",
+      "clip_id": 41282
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/04/319743_small.mp4",
+      "clip_id": 319743
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/04/215249_large.mp4",
+      "clip_id": 215249
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Desde las entrañas de la cueva, la sacerdotisa Pitonisa comenzó a transmitir la voz ineludible del dios entre vapores místicos. Los mortales comprendieron rápidamente que Apolo no ofrecía simples consejos ni consuelo, sino mandatos absolutos de un destino inalterable."
+  },
+  {
+   "hablado": "Cualquiera que intentara desafiar o engañar a las profecías dictadas en Delfos quedaba atrapado en una red trágica. El dios utilizaba el propio miedo del rey o del héroe para guiarlo exactamente al fatídico final que pretendía evitar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple night",
+    "otras": [
+     "ancient ruins night",
+     "torch light temple ruins"
+    ],
+    "descripcion": "Columnas de un templo griego de noche iluminadas por antorchas y sombras",
+    "clip": "https://cdn.pixabay.com/video/2024/02/17/200941-914521062_small.mp4",
+    "clip_id": 200941,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/13/180386-864121573_small.mp4",
+      "clip_id": 180386
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/03/250395_large.mp4",
+      "clip_id": 250395
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/27/3565-172488151_large.mp4",
+      "clip_id": 3565
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Cualquiera que intentara desafiar o engañar a las profecías dictadas en Delfos quedaba atrapado en una red trágica. El dios utilizaba el propio miedo del rey o del héroe para guiarlo exactamente al fatídico final que pretendía evitar."
+  },
+  {
+   "hablado": "Las palabras de Apolo en el oráculo no permitían discusiones ni arrepentimientos. Reyes y ejércitos enteros viajaban desde los confines del Mediterráneo solo para escuchar dictámenes helados que sentenciaban el ascenso o la caída inevitable de sus reinos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient amphitheater greece",
+    "otras": [
+     "greek theater ruins",
+     "ancient stone amphitheater"
+    ],
+    "descripcion": "Antiguo teatro griego de piedra frente al mar bajo un cielo despejado",
+    "clip_id": 192651,
+    "clip": "https://cdn.pixabay.com/video/2023/12/09/192651-892970395_small.mp4",
+    "extra": [],
+    "necesita": 20.1
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las palabras de Apolo en el oráculo no permitían discusiones ni arrepentimientos. Reyes y ejércitos enteros viajaban desde los confines del Mediterráneo solo para escuchar dictámenes helados que sentenciaban el ascenso o la caída inevitable de sus reinos."
+  },
+  {
+   "hablado": "Dominar el conocimiento del futuro transformó a Apolo en una deidad implacable. Su ego divino creció al saberse dueño absoluto de la verdad, convencido de que la imperfección humana debía ser castigada sin piedad al menor rasgo de soberbia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek god statue marble",
+    "otras": [
+     "zeus apollo marble statue",
+     "ancient greece sculpture"
+    ],
+    "descripcion": "Escultura clásica de mármol de la cabeza de un dios griego iluminada dramáticamente",
+    "clip": "https://cdn.pixabay.com/video/2024/11/02/239515_small.mp4",
+    "clip_id": 239515,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/01/249998_small.mp4",
+      "clip_id": 249998
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/28/21723-320725678_large.mp4",
+      "clip_id": 21723
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/06/240104_small.mp4",
+      "clip_id": 240104
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Dominar el conocimiento del futuro transformó a Apolo en una deidad implacable. Su ego divino creció al saberse dueño absoluto de la verdad, convencido de que la imperfección humana debía ser castigada sin piedad al menor rasgo de soberbia."
+  },
+  {
+   "hablado": "El victorioso dios del Sol había establecido su trono divino sobre los cimientos de la muerte de la sierpe. Pero pronto, una reina humana cometería la imprudencia de desafiar a su linaje, desatando una venganza aún más sangrienta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek palace ruins",
+    "otras": [
+     "columns ruins ancient greece",
+     "greece historical landmarks"
+    ],
+    "descripcion": "Columnas en ruinas de un antiguo palacio real griego al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2025/11/13/315767_small.mp4",
+    "clip_id": 315767,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/20/45157-442509344_large.mp4",
+      "clip_id": 45157
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/12/01/191588-890528371_small.mp4",
+      "clip_id": 191588
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/22/205194-926528076_small.mp4",
+      "clip_id": 205194
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "El victorioso dios del Sol había establecido su trono divino sobre los cimientos de la muerte de la sierpe. Pero pronto, una reina humana cometería la imprudencia de desafiar a su linaje, desatando una venganza aún más sangrienta."
+  },
+  {
+   "hablado": "Níobe, la soberbia reina de Tebas, se sentía invencible. Madre de catorce hermosos hijos, siete varones y siete mujeres, cometió el error imperdonable de proclamarse superior a la diosa Leto por poseer mayor descendencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Niobe statue marble classic",
+    "otras": [
+     "Niobe sculpture",
+     "ancient greek statue woman"
+    ],
+    "descripcion": "Estatua de mármol clásica que representa a una noble reina griega en actitud soberbia.",
+    "prompt": "Estatua de mármol clásica que representa a una noble reina griega en actitud soberbia.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/19/197319-904610088_small.mp4",
+    "clip_id": 197319,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/26/148029-793140704_small.mp4",
+      "clip_id": 148029
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/05/4953-181545195_large.mp4",
+      "clip_id": 4953
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/28/243732_large.mp4",
+      "clip_id": 243732
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Níobe, la soberbia reina de Tebas, se sentía invencible. Madre de catorce hermosos hijos, siete varones y siete mujeres, cometió el error imperdonable de proclamarse superior a la diosa Leto por poseer mayor descendencia."
+  },
+  {
+   "hablado": "La reina interrumpió los cultos sagrados y prohibió a sus súbditos ofrecer sacrificios a la madre del dios del Sol. Afirmaba que su linaje divino y su riqueza la hacían mucho más merecedora de veneración eterna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "parthenon columns sun",
+     "ancient ruins greece"
+    ],
+    "descripcion": "Columnas de mármol de un templo griego bajo la intensa luz del sol.",
+    "clip": "https://cdn.pixabay.com/video/2016/01/14/1917-152081339_medium.mp4",
+    "clip_id": 1917,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/29/249475_small.mp4",
+      "clip_id": 249475
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/02/325636_small.mp4",
+      "clip_id": 325636
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/24/15779-266806346_small.mp4",
+      "clip_id": 15779
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La reina interrumpió los cultos sagrados y prohibió a sus súbditos ofrecer sacrificios a la madre del dios del Sol. Afirmaba que su linaje divino y su riqueza la hacían mucho más merecedora de veneración eterna."
+  },
+  {
+   "hablado": "Profundamente humillada, Leto convocó a sus gemelos divinos en las cumbres celestiales. Les exigió vengar de inmediato la afrenta a su honor, recordándoles que ningún mortal debía quedar impune ante semejante insolencia hacia los dioses.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "storm clouds mountain peak",
+    "otras": [
+     "dark clouds sky",
+     "mount olympus greece"
+    ],
+    "descripcion": "Nubes oscuras de tormenta acumulándose sobre las cumbres de una gran montaña.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/18/227185_small.mp4",
+    "clip_id": 227185,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/11/33565-397143924_small.mp4",
+      "clip_id": 33565
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/13/33652-397860913_large.mp4",
+      "clip_id": 33652
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/19/176781-856056389_medium.mp4",
+      "clip_id": 176781
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Profundamente humillada, Leto convocó a sus gemelos divinos en las cumbres celestiales. Les exigió vengar de inmediato la afrenta a su honor, recordándoles que ningún mortal debía quedar impune ante semejante insolencia hacia los dioses."
+  },
+  {
+   "hablado": "Envueltos en una densa niebla sombría, Apolo y Ártemis descendieron sobre la próspera ciudad de Tebas. Armados con sus arcos dorados e invisibles al ojo humano, los hermanos celestiales prepararon una matanza metódica e implacable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy forest ancient Greece",
+    "otras": [
+     "dark fog mountain",
+     "misty landscape"
+    ],
+    "descripcion": "Niebla densa y oscura avanzando sobre un paisaje griego con olivos antiguos.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/19/227318_small.mp4",
+    "clip_id": 227318,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/14/321986_small.mp4",
+      "clip_id": 321986
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/07/7102-198553608_large.mp4",
+      "clip_id": 7102
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/17/279622_small.mp4",
+      "clip_id": 279622
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Envueltos en una densa niebla sombría, Apolo y Ártemis descendieron sobre la próspera ciudad de Tebas. Armados con sus arcos dorados e invisibles al ojo humano, los hermanos celestiales prepararon una matanza metódica e implacable."
+  },
+  {
+   "hablado": "Apolo actuó primero en los campos de entrenamiento. Con una precisión aterradora y silenciosa, sus flechas invisibles atravesaron uno a uno a los siete príncipes tebanos, matándolos al instante sin darles opción a defenderse.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek athletics statue",
+    "otras": [
+     "greek marble statue archer",
+     "greek ruins field"
+    ],
+    "descripcion": "Estatua griega clásica de mármol recortada contra el cielo de un terreno abierto.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/26/342468_small.mp4",
+    "clip_id": 342468,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/09/215946_small.mp4",
+      "clip_id": 215946
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_large.mp4",
+      "clip_id": 15748
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/19/189730-886596151_small.mp4",
+      "clip_id": 189730
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Apolo actuó primero en los campos de entrenamiento. Con una precisión aterradora y silenciosa, sus flechas invisibles atravesaron uno a uno a los siete príncipes tebanos, matándolos al instante sin darles opción a defenderse."
+  },
+  {
+   "hablado": "Segundos después, Ártemis irrumpió en el interior del palacio real. Las siete hijas cayeron abatidas sin piedad ante el certero arco de la diosa de la caza, ignorando los ruegos desesperados de las jóvenes princesas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Artemis Apollo Niobe sculpture",
+    "otras": [
+     "Niobid marble relief",
+     "ancient greek relief sculpture"
+    ],
+    "descripcion": "Relieve clásico de mármol que representa la tragedia de la matanza de los Nióbidas.",
+    "prompt": "Relieve clásico de mármol que representa la tragedia de la matanza de los Nióbidas.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/16/189287-885460807_small.mp4",
+    "clip_id": 189287,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/06/133824-758327954_small.mp4",
+      "clip_id": 133824
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/25/43117-434409286_large.mp4",
+      "clip_id": 43117
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/09/95186-644716846_small.mp4",
+      "clip_id": 95186
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Segundos después, Ártemis irrumpió en el interior del palacio real. Las siete hijas cayeron abatidas sin piedad ante el certero arco de la diosa de la caza, ignorando los ruegos desesperados de las jóvenes princesas."
+  },
+  {
+   "hablado": "La reina Níobe abrazó enloquecida al último de sus descendientes, suplicando clemencia al cielo. Pero los dioses no mostraron compasión y la última flecha atravesó a la pequeña, dejando catorce cadáveres al pie del trono.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient palace stone floor",
+    "otras": [
+     "ancient greek interior ruins",
+     "palace ruin columns"
+    ],
+    "descripcion": "Interior de ruinas de piedra de un palacio antiguo iluminado por ases de luz solar.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/05/123193-727221472_small.mp4",
+    "clip_id": 123193,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/07/183881-872226466_small.mp4",
+      "clip_id": 183881
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/07/183880-872226465_small.mp4",
+      "clip_id": 183880
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/28/214083_small.mp4",
+      "clip_id": 214083
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La reina Níobe abrazó enloquecida al último de sus descendientes, suplicando clemencia al cielo. Pero los dioses no mostraron compasión y la última flecha atravesó a la pequeña, dejando catorce cadáveres al pie del trono."
+  },
+  {
+   "hablado": "Consumida por un dolor incalculable, la desdichada reina quedó paralizada entre el llanto y se transformó en una estatua de piedra en el monte Sípilo, un castigo que preludiaba una barbarie aún mayor contra otro confiado mortal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mountain rock cliff greece",
+    "otras": [
+     "rocky mountain peak sky",
+     "ancient stone cliff"
+    ],
+    "descripcion": "Acantilado rocoso en una alta montaña rodeado de niebla y humedad.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/28/223642_large.mp4",
+    "clip_id": 223642,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/11/84690-588566405_large.mp4",
+      "clip_id": 84690
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/24/37088-413229662_small.mp4",
+      "clip_id": 37088
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/10/35615-407595589_small.mp4",
+      "clip_id": 35615
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Consumida por un dolor incalculable, la desdichada reina quedó paralizada entre el llanto y se transformó en una estatua de piedra en el monte Sípilo, un castigo que preludiaba una barbarie aún mayor contra otro confiado mortal."
+  },
+  {
+   "hablado": "En los frondosos bosques de Frigia, un silvano llamado Marsias encontró una flauta de doble tubo descartada por la diosa Atenea. Al soplarla, el instrumento emitió melodías tan fascinantes que los campesinos creyeron que superaba al mismísimo dios del Sol.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins forest",
+    "otras": [
+     "greek temple nature",
+     "ancient forest ruins"
+    ],
+    "descripcion": "Bosque frondoso cerca de ruinas griegas antiguas bañado por la luz del sol",
+    "clip": "https://cdn.pixabay.com/video/2017/04/11/8647-212843910_small.mp4",
+    "clip_id": 8647,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/19/189813-887078786_small.mp4",
+      "clip_id": 189813
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/24/287510_small.mp4",
+      "clip_id": 287510
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/11/142579-780232342_large.mp4",
+      "clip_id": 142579
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "En los frondosos bosques de Frigia, un silvano llamado Marsias encontró una flauta de doble tubo descartada por la diosa Atenea. Al soplarla, el instrumento emitió melodías tan fascinantes que los campesinos creyeron que superaba al mismísimo dios del Sol."
+  },
+  {
+   "hablado": "Embriagado por los elogios de las ninfas y los pastores, el confiado sátiro cometió la imprudencia suprema. Lanzó un desafío público a Apolo para determinar cuál de los dos era el músico más hábil de toda la Creación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek marble statue apollo",
+    "otras": [
+     "ancient greek statue",
+     "apollo marble sculpture"
+    ],
+    "descripcion": "Estatua clásica de mármol del dios Apolo iluminada de forma dramática",
+    "clip": "https://cdn.pixabay.com/video/2023/11/23/190336-887815699_small.mp4",
+    "clip_id": 190336,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/19/85715-591865304_small.mp4",
+      "clip_id": 85715
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Embriagado por los elogios de las ninfas y los pastores, el confiado sátiro cometió la imprudencia suprema. Lanzó un desafío público a Apolo para determinar cuál de los dos era el músico más hábil de toda la Creación."
+  },
+  {
+   "hablado": "El dios de las artes aceptó el reto con una sonrisa helada, imponiendo una condición despiadada. El vencedor podría hacer con el vencido lo que quisiera. Las Musas asistieron como jurado sobre la hierba para presenciar el duelo sonoro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Apollo and Marsyas contest painting",
+    "otras": [
+     "Marsyas Apollo competition",
+     "Greek vase painting Marsyas"
+    ],
+    "descripcion": "Pintura clásica que representa la competición musical entre Apolo y Marsias ante las Musas",
+    "prompt": "Pintura clásica que representa la competición musical entre Apolo y Marsias ante las Musas",
+    "clip": "https://cdn.pixabay.com/video/2024/01/23/197799-905717427_small.mp4",
+    "clip_id": 197799,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/08/235285_small.mp4",
+      "clip_id": 235285
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/19/151273-800360253_small.mp4",
+      "clip_id": 151273
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/19/151272-800360248_small.mp4",
+      "clip_id": 151272
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El dios de las artes aceptó el reto con una sonrisa helada, imponiendo una condición despiadada. El vencedor podría hacer con el vencido lo que quisiera. Las Musas asistieron como jurado sobre la hierba para presenciar el duelo sonoro."
+  },
+  {
+   "hablado": "Marsias hizo cantar a su flauta con una pasión desgarradora que maravilló a los presentes. Sin embargo, Apolo dio la vuelta a su lira de oro y comenzó a cantar simultáneamente, una proeza imposible para quien usa la boca para soplar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lyre ancient instrument",
+    "otras": [
+     "greek harp statue",
+     "ancient greek culture"
+    ],
+    "descripcion": "Relieve en piedra de una lira griega antigua y detalles de instrumentos clásicos",
+    "clip": "https://cdn.pixabay.com/video/2015/08/08/139-135737102_large.mp4",
+    "clip_id": 139,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/05/30902-383991325_large.mp4",
+      "clip_id": 30902
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/16/85285-590730545_large.mp4",
+      "clip_id": 85285
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/22/13042-244747053_small.mp4",
+      "clip_id": 13042
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Marsias hizo cantar a su flauta con una pasión desgarradora que maravilló a los presentes. Sin embargo, Apolo dio la vuelta a su lira de oro y comenzó a cantar simultáneamente, una proeza imposible para quien usa la boca para soplar."
+  },
+  {
+   "hablado": "Incapaz de cantar mientras tocaba su instrumento de viento, el desdichado sátiro se vio derrotado. Las Musas declararon triunfador al olímpico, desencadenando la rabia encubierta que el dios había estado acumulando durante toda la contienda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek amphitheater",
+    "otras": [
+     "greek ruins theater",
+     "ancient greece columns"
+    ],
+    "descripcion": "Vista panorámica de un teatro de piedra griego antiguo rodeado de colinas",
+    "clip": "https://cdn.pixabay.com/video/2023/04/11/158384-816637349_small.mp4",
+    "clip_id": 158384,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/12/226059_medium.mp4",
+      "clip_id": 226059
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/06/219782_medium.mp4",
+      "clip_id": 219782
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/12/226058_medium.mp4",
+      "clip_id": 226058
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Incapaz de cantar mientras tocaba su instrumento de viento, el desdichado sátiro se vio derrotado. Las Musas declararon triunfador al olímpico, desencadenando la rabia encubierta que el dios había estado acumulando durante toda la contienda."
+  },
+  {
+   "hablado": "Lejos de mostrar la piedad propia de una deidad refinada, Apolo arrastró al desafortunado competidor hasta las entrañas de un pino sagrado. Allí ató sus extremidades con cuerdas de cuero para ejecutar una venganza sin precedentes en la mitología.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pine tree forest sunbeam",
+    "otras": [
+     "ancient forest trees",
+     "deep woods landscape"
+    ],
+    "descripcion": "Tronco de un pino ancestral en medio de un bosque denso y sombrío",
+    "clip": "https://cdn.pixabay.com/video/2020/09/15/49981-459802291_large.mp4",
+    "clip_id": 49981,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/30/12687-241236784_large.mp4",
+      "clip_id": 12687
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/02/17/335040_small.mp4",
+      "clip_id": 335040
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/01/282995_small.mp4",
+      "clip_id": 282995
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Lejos de mostrar la piedad propia de una deidad refinada, Apolo arrastró al desafortunado competidor hasta las entrañas de un pino sagrado. Allí ató sus extremidades con cuerdas de cuero para ejecutar una venganza sin precedentes en la mitología."
+  },
+  {
+   "hablado": "Ante la mirada aterrorizada de los espíritus del bosque, el dios arrancó la piel de Marsias viva, contemplando con frialdad implacable el sufrimiento del sátiro hasta que las lágrimas de los tristes faunos formaron un río cristalino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "The Flaying of Marsyas Titian",
+    "otras": [
+     "Apollo flaying Marsyas sculpture",
+     "Flaying of Marsyas art"
+    ],
+    "descripcion": "Obra pictórica de Titulada 'El desollamiento de Marsias' reflejando el trágico mito",
+    "prompt": "Obra pictórica de Titulada 'El desollamiento de Marsias' reflejando el trágico mito",
+    "clip": "https://cdn.pixabay.com/video/2026/07/18/364757_small.mp4",
+    "clip_id": 364757,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/28/148230-793717994_large.mp4",
+      "clip_id": 148230
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/19/21538-318978207_small.mp4",
+      "clip_id": 21538
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/05/153297-804933556_large.mp4",
+      "clip_id": 153297
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Ante la mirada aterrorizada de los espíritus del bosque, el dios arrancó la piel de Marsias viva, contemplando con frialdad implacable el sufrimiento del sátiro hasta que las lágrimas de los tristes faunos formaron un río cristalino."
+  },
+  {
+   "hablado": "Esta atrocidad demostró que desafiar la excelencia de Apolo conllevaba un tormento insoportable. Pero su crueldad no solo castigaba la soberbia de los hombres, pues pronto aplicaría un castigo eterno y silencioso a la mente de una princesa troyana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek columns dusk",
+    "otras": [
+     "troy ancient ruins",
+     "greek ruins night"
+    ],
+    "descripcion": "Columnas de un templo griego antiguo al atardecer bajo un cielo amenazante",
+    "clip": "https://cdn.pixabay.com/video/2020/07/06/43958-437624417_large.mp4",
+    "clip_id": 43958,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/09/06/302098_small.mp4",
+      "clip_id": 302098
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/22/186070-876973719_large.mp4",
+      "clip_id": 186070
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/09/24/18390-291585321_small.mp4",
+      "clip_id": 18390
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Esta atrocidad demostró que desafiar la excelencia de Apolo conllevaba un tormento insoportable. Pero su crueldad no solo castigaba la soberbia de los hombres, pues pronto aplicaría un castigo eterno y silencioso a la mente de una princesa troyana."
+  },
+  {
+   "hablado": "Fascinado por la extraordinaria belleza de la princesa troyana Casandra, Apolo buscó conquistarla. Para obtener su afecto, el dios le prometió otorgarle el sagrado don de la adivinación y la visión del futuro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient marble statue",
+    "otras": [
+     "greek statue museum",
+     "marble sculpture ruins"
+    ],
+    "descripcion": "Estatua clásica de mármol de una mujer joven iluminada por luz cálida.",
+    "clip": "https://cdn.pixabay.com/video/2019/05/14/23668-336607590_large.mp4",
+    "clip_id": 23668,
+    "extra": []
+   },
+   "efecto": "polvo",
+   "subtitulo": "Fascinado por la extraordinaria belleza de la princesa troyana Casandra, Apolo buscó conquistarla. Para obtener su afecto, el dios le prometió otorgarle el sagrado don de la adivinación y la visión del futuro."
+  },
+  {
+   "hablado": "La joven deslumbrada aceptó la bendición, y al instante los velos del tiempo se abrieron ante sus ojos. Sin embargo, tras recibir el conocimiento divino, Casandra rechazó entregarse a los brazos del impetuoso dios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Cassandra Evelyn De Morgan",
+    "otras": [
+     "Cassandra painting classical",
+     "Cassandra prophetess artwork"
+    ],
+    "descripcion": "Pintura clásica que representa a Casandra contemplando visiones con desesperación.",
+    "prompt": "Pintura clásica que representa a Casandra contemplando visiones con desesperación.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/20/45150-441301097_large.mp4",
+    "clip_id": 45150,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/28/367098_small.mp4",
+      "clip_id": 367098
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/03/21758-321309738_large.mp4",
+      "clip_id": 21758
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/10/27/53493-474649248_large.mp4",
+      "clip_id": 53493
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La joven deslumbrada aceptó la bendición, y al instante los velos del tiempo se abrieron ante sus ojos. Sin embargo, tras recibir el conocimiento divino, Casandra rechazó entregarse a los brazos del impetuoso dios."
+  },
+  {
+   "hablado": "La ira de Apolo fue inmediata y despiadada. Un don otorgado por un inmortal jamás podía retirarse, por lo que el dios ideó una tortura psicológica sin precedentes para la orgullosa doncella.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "apollo statue marble",
+    "otras": [
+     "ancient greek god statue",
+     "zeus temple ruins"
+    ],
+    "descripcion": "Escultura de mármol del dios Apolo bajo sombras amenazantes.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/03/130076-746154338_small.mp4",
+    "clip_id": 130076,
+    "extra": []
+   },
+   "efecto": "brasas",
+   "subtitulo": "La ira de Apolo fue inmediata y despiadada. Un don otorgado por un inmortal jamás podía retirarse, por lo que el dios ideó una tortura psicológica sin precedentes para la orgullosa doncella."
+  },
+  {
+   "hablado": "Pidiendo un último beso como despedida, Apolo escupió en la boca de la princesa. Con ese gesto infame, selló una maldición implacable sobre ella: diría siempre la verdad absoluta, pero nadie creería jamás sus palabras.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient ruins storm",
+    "otras": [
+     "dark clouds temple",
+     "greek columns night"
+    ],
+    "descripcion": "Columnas griegas antiguas bajo un cielo oscuro de tormenta y relámpagos.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/14/200538-913040121_small.mp4",
+    "clip_id": 200538,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/12/22/6847-196978755_large.mp4",
+      "clip_id": 6847
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/20/151422-800681015_large.mp4",
+      "clip_id": 151422
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/26/186588-878455871_small.mp4",
+      "clip_id": 186588
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Pidiendo un último beso como despedida, Apolo escupió en la boca de la princesa. Con ese gesto infame, selló una maldición implacable sobre ella: diría siempre la verdad absoluta, pero nadie creería jamás sus palabras."
+  },
+  {
+   "hablado": "Desde aquel instante, la vida de la princesa se convirtió en una pesadilla insoportable. Veía con escalofriante nitidez los desastres inminentes, mientras su propia familia y pueblo la tachaban de demente e histérica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient stone walls",
+    "otras": [
+     "ancient castle ruins",
+     "old stone corridor"
+    ],
+    "descripcion": "Pasillo de piedra en ruinas antiguas con sombras dramáticas.",
+    "clip": "https://cdn.pixabay.com/video/2021/08/09/84409-585160575_small.mp4",
+    "clip_id": 84409,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/05/33279-396488078_large.mp4",
+      "clip_id": 33279
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/04/46346-447447973_large.mp4",
+      "clip_id": 46346
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/22/65998-516088997_large.mp4",
+      "clip_id": 65998
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Desde aquel instante, la vida de la princesa se convirtió en una pesadilla insoportable. Veía con escalofriante nitidez los desastres inminentes, mientras su propia familia y pueblo la tachaban de demente e histérica."
+  },
+  {
+   "hablado": "Gritó e imploró desesperadamente advirtiendo que el gigantesco caballo de madera traería la ruina a Troya, pero sus ciudadanos ignoraron sus llantos. Todos la contemplaban con lástima y burlas mientras el destino se cumplía irremediablemente.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Procession of the Trojan Horse Tiepolo",
+    "otras": [
+     "Trojan horse painting classical",
+     "Troy ancient depiction"
+    ],
+    "descripcion": "Pintura clásica que muestra el caballo de Troya siendo introducido en la ciudad.",
+    "prompt": "Pintura clásica que muestra el caballo de Troya siendo introducido en la ciudad.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/20/222134_small.mp4",
+    "clip_id": 222134,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/14/62028-502737559_small.mp4",
+      "clip_id": 62028
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/07/07/25016-347958009_small.mp4",
+      "clip_id": 25016
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/03/122967-726547939_small.mp4",
+      "clip_id": 122967
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Gritó e imploró desesperadamente advirtiendo que el gigantesco caballo de madera traería la ruina a Troya, pero sus ciudadanos ignoraron sus llantos. Todos la contemplaban con lástima y burlas mientras el destino se cumplía irremediablemente."
+  },
+  {
+   "hablado": "Encerrada en su dolor mental, asistió impasible y devastada al saqueo de su ciudad y a la masacre de todo su linaje, sufriendo en soledad la condena del conocimiento sin poder.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night fire burning",
+    "otras": [
+     "flames dark background",
+     "burning torches night"
+    ],
+    "descripcion": "Fuego y brasas ardientes en la noche evocando la destrucción de una ciudad.",
+    "clip": "https://cdn.pixabay.com/video/2023/09/27/182517-868916307_small.mp4",
+    "clip_id": 182517,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/04/206889_large.mp4",
+      "clip_id": 206889
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/08/44186-438212430_large.mp4",
+      "clip_id": 44186
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Encerrada en su dolor mental, asistió impasible y devastada al saqueo de su ciudad y a la masacre de todo su linaje, sufriendo en soledad la condena del conocimiento sin poder."
+  },
+  {
+   "hablado": "El castigo de Casandra convirtió su propio don divino en una cárcel de angustia eterna. Pero las flechas del dios del Sol no solo infligían tormentos del alma, pues la peste física estaba a punto de arrasar a un ejército entero.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek armor",
+    "otras": [
+     "bronze helmets museum",
+     "ancient spears shield"
+    ],
+    "descripcion": "Cascos y escudos de bronce antiguos de guerreros griegos.",
+    "clip": "https://cdn.pixabay.com/video/2022/06/11/120005-719443947_large.mp4",
+    "clip_id": 120005,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/14/120303-720505020_small.mp4",
+      "clip_id": 120303
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/10/257529_small.mp4",
+      "clip_id": 257529
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/08/74-135732548_medium.mp4",
+      "clip_id": 74
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El castigo de Casandra convirtió su propio don divino en una cárcel de angustia eterna. Pero las flechas del dios del Sol no solo infligían tormentos del alma, pues la peste física estaba a punto de arrasar a un ejército entero."
+  },
+  {
+   "hablado": "En mitad de la implacable Guerra de Troya, el rey Agamenón cometió la imprudencia fatal de secuestrar a la joven Criseida y humillar públicamente a su anciano padre, un venerable sacerdote devoto del propio Apolo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statue",
+    "otras": [
+     "ancient ruins temple",
+     "greek sculpture"
+    ],
+    "descripcion": "Estatua clásica de mármol de un rey o líder guerrero en un entorno antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/26/342472_small.mp4",
+    "clip_id": 342472,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/26/182441-868496213_small.mp4",
+      "clip_id": 182441
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/28/144582-784867455_small.mp4",
+      "clip_id": 144582
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/27/243516_small.mp4",
+      "clip_id": 243516
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "En mitad de la implacable Guerra de Troya, el rey Agamenón cometió la imprudencia fatal de secuestrar a la joven Criseida y humillar públicamente a su anciano padre, un venerable sacerdote devoto del propio Apolo."
+  },
+  {
+   "hablado": "Desesperado y despojado de toda dignidad, el sacerdote caminó en soledad hacia la orilla del embravecido mar Egeo. Allí suplicó entre lágrimas que el dios del arco de plata vengara su doloroso ultraje sin piedad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Chryses Apollo sea painting",
+    "otras": [
+     "Chryses priest Apollo",
+     "ancient greek sea coast"
+    ],
+    "descripcion": "Pintura clásica o vasija que representa al sacerdote Crises suplicando junto al mar.",
+    "prompt": "Pintura clásica o vasija que representa al sacerdote Crises suplicando junto al mar.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/17/217115_small.mp4",
+    "clip_id": 217115,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/08/263305_small.mp4",
+      "clip_id": 263305
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/06/215484_small.mp4",
+      "clip_id": 215484
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/19/21528-318978038_large.mp4",
+      "clip_id": 21528
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Desesperado y despojado de toda dignidad, el sacerdote caminó en soledad hacia la orilla del embravecido mar Egeo. Allí suplicó entre lágrimas que el dios del arco de plata vengara su doloroso ultraje sin piedad."
+  },
+  {
+   "hablado": "Apolo escuchó el clamor desde las alturas del Olimpo y una cólera abrasadora se apoderó de su ser. Descendió de las cumbres envuelto en una niebla sombría, con su carcaj resonando como un trueno amenazante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy clouds",
+    "otras": [
+     "storm lightning mountain",
+     "dramatic sky"
+    ],
+    "descripcion": "Cielo tormentoso y oscuro sobre crestas de montañas elevadas.",
+    "clip": "https://cdn.pixabay.com/video/2026/04/08/345308_large.mp4",
+    "clip_id": 345308,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/05/11/16135-269534699_small.mp4",
+      "clip_id": 16135
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/05/14/9153-217588676_small.mp4",
+      "clip_id": 9153
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/21/347987_small.mp4",
+      "clip_id": 347987
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Apolo escuchó el clamor desde las alturas del Olimpo y una cólera abrasadora se apoderó de su ser. Descendió de las cumbres envuelto en una niebla sombría, con su carcaj resonando como un trueno amenazante."
+  },
+  {
+   "hablado": "Apostado sobre las colinas que dominaban el campamento griego, el dios comenzó a disparar sus flechas invisibles. Durante los primeros días, el veneno divino abatió sin remedio a las mulas y a los perros de los soldados.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek camp fire",
+    "otras": [
+     "fire torch dark night",
+     "ancient camp"
+    ],
+    "descripcion": "Hogueras y antorchas encendidas en la noche en un campamento antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2021/12/07/99867-658725791_medium.mp4",
+    "clip_id": 99867,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/15/134999-760679974_medium.mp4",
+      "clip_id": 134999
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/02/1808-150713272_medium.mp4",
+      "clip_id": 1808
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/14/44699-439982630_large.mp4",
+      "clip_id": 44699
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Apostado sobre las colinas que dominaban el campamento griego, el dios comenzó a disparar sus flechas invisibles. Durante los primeros días, el veneno divino abatió sin remedio a las mulas y a los perros de los soldados."
+  },
+  {
+   "hablado": "Pero la venganza no se detuvo allí. Durante nueve jornadas consecutivas, las flechas infectadas cayeron sobre los guerreros aqueos, propagando una peste devastadora que llenó la costa con el humo inacabable de cientos de piras funerarias.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire bonfire smoke night",
+    "otras": [
+     "burning flames dark",
+     "smoke mist night"
+    ],
+    "descripcion": "Llamas ardientes y humo elevándose hacia la noche como en una pira.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/30/198549-907924817_small.mp4",
+    "clip_id": 198549,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/06/4270-178210412_large.mp4",
+      "clip_id": 4270
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/17/4527-179384278_large.mp4",
+      "clip_id": 4527
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/25/198073-906522435_small.mp4",
+      "clip_id": 198073
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pero la venganza no se detuvo allí. Durante nueve jornadas consecutivas, las flechas infectadas cayeron sobre los guerreros aqueos, propagando una peste devastadora que llenó la costa con el humo inacabable de cientos de piras funerarias."
+  },
+  {
+   "hablado": "Los aqueos comprendieron aterrados que sus espadas de bronce y sus escudos de madera resultaban inútiles contra el castigo invisible de una deidad. La peste no distinguía entre valientes héroes y humildes sirvientes en aquella sangrienta masacre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek helmet shield",
+    "otras": [
+     "ancient armor museum",
+     "bronze helmet ancient"
+    ],
+    "descripcion": "Cascos y escudos de bronce antiguos expuestos en penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/23/190334-887815688_small.mp4",
+    "clip_id": 190334,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/25/118060-713859243_small.mp4",
+      "clip_id": 118060
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/08/211188_large.mp4",
+      "clip_id": 211188
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/28/372984_small.mp4",
+      "clip_id": 372984
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los aqueos comprendieron aterrados que sus espadas de bronce y sus escudos de madera resultaban inútiles contra el castigo invisible de una deidad. La peste no distinguía entre valientes héroes y humildes sirvientes en aquella sangrienta masacre."
+  },
+  {
+   "hablado": "Solo tras devolver a Criseida y ofrecer generosos sacrificios de hecatombes logró el ejército calmar la ira del dios exterminador. Sin embargo, esta mortífera plaga demostró que el portador de la luz poseía la sombra más cruenta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sacrifice Apollo painting ancient",
+    "otras": [
+     "sacrificing altar greek temple",
+     "greek altar vase"
+    ],
+    "descripcion": "Representación clásica de un altar con fuego y ofrendas en un templo griego.",
+    "prompt": "Representación clásica de un altar con fuego y ofrendas en un templo griego.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/18/42472-431738787_large.mp4",
+    "clip_id": 42472,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/18/42473-431738801_large.mp4",
+      "clip_id": 42473
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/02/126467-735976946_large.mp4",
+      "clip_id": 126467
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Solo tras devolver a Criseida y ofrecer generosos sacrificios de hecatombes logró el ejército calmar la ira del dios exterminador. Sin embargo, esta mortífera plaga demostró que el portador de la luz poseía la sombra más cruenta."
+  },
+  {
+   "hablado": "Ni los grandes reyes ni los imperios estaban a salvo del temible Apolo cuando herían su orgullo o el de sus devotos. Pero la verdadera tragedia del dios no siempre nacía de la guerra, sino de sus propios amores infaustos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "apollo marble statue",
+    "otras": [
+     "greek god statue",
+     "ancient marble bust"
+    ],
+    "descripcion": "Estatua de mármol del dios Apolo iluminada cenitalmente.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/19/197314-904610071_small.mp4",
+    "clip_id": 197314,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/12/28/102703-660745151_large.mp4",
+      "clip_id": 102703
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Ni los grandes reyes ni los imperios estaban a salvo del temible Apolo cuando herían su orgullo o el de sus devotos. Pero la verdadera tragedia del dios no siempre nacía de la guerra, sino de sus propios amores infaustos."
+  },
+  {
+   "hablado": "Se decía que la deslumbrante belleza de Apolo resultaba irresistible, pero para quienes despertaban su afecto se convertía en una sentencia. Su pasión divina no traía consuelo, sino una vorágine de obsesión y dolor ineludible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek sculpture",
+    "otras": [
+     "greek statue marble",
+     "marble head statue"
+    ],
+    "descripcion": "Estatua clásica de mármol griego iluminada con luz dramática",
+    "clip": "https://cdn.pixabay.com/video/2017/06/09/9734-221163205_large.mp4",
+    "clip_id": 9734,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/12/01/191520-890522260_large.mp4",
+      "clip_id": 191520
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/15/246810_small.mp4",
+      "clip_id": 246810
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/19/167882-837765426_small.mp4",
+      "clip_id": 167882
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Se decía que la deslumbrante belleza de Apolo resultaba irresistible, pero para quienes despertaban su afecto se convertía en una sentencia. Su pasión divina no traía consuelo, sino una vorágine de obsesión y dolor ineludible."
+  },
+  {
+   "hablado": "Tras burlarse de la destreza del joven Eros, el dios del amor tomó venganza. Atravesó a Apolo con una flecha de oro provocando un deseo insaciable, y a la ninfa Dafne con una de plomo que engendró un rechazo absoluto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Bernini Apollo Daphne sculpture",
+    "otras": [
+     "Apollo and Daphne painting",
+     "Greek vase Apollo"
+    ],
+    "descripcion": "Escultura clásica de Bernini mostrando a Apolo y Dafne",
+    "prompt": "Escultura clásica de Bernini mostrando a Apolo y Dafne",
+    "clip_id": 14866,
+    "clip": "https://cdn.pixabay.com/video/2018/03/07/14866-259623301_large.mp4",
+    "extra": [],
+    "necesita": 18.7
+   },
+   "efecto": "nada",
+   "subtitulo": "Tras burlarse de la destreza del joven Eros, el dios del amor tomó venganza. Atravesó a Apolo con una flecha de oro provocando un deseo insaciable, y a la ninfa Dafne con una de plomo que engendró un rechazo absoluto."
+  },
+  {
+   "hablado": "Apolo la persiguió sin descanso entre la vegetación. Desesperada al sentir el aliento del dios sobre su cuello, Dafne suplicó a su padre, el dios río Peneo, que borrara la belleza que había desencadenado semejante cacería.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient forest trees",
+    "otras": [
+     "greek forest nature",
+     "forest sunlight"
+    ],
+    "descripcion": "Bosque denso con rayos de sol entre la vegetación",
+    "clip": "https://cdn.pixabay.com/video/2026/09/11/375658_large.mp4",
+    "clip_id": 375658,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/18/167776-839208951_small.mp4",
+      "clip_id": 167776
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/18/167772-839208937_small.mp4",
+      "clip_id": 167772
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/12/15/101333-658819949_large.mp4",
+      "clip_id": 101333
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Apolo la persiguió sin descanso entre la vegetación. Desesperada al sentir el aliento del dios sobre su cuello, Dafne suplicó a su padre, el dios río Peneo, que borrara la belleza que había desencadenado semejante cacería."
+  },
+  {
+   "hablado": "Sus pies se clavaron en la tierra transformándose en raíces y una corteza suave cubrió su cuerpo. Apolo abrazó el tronco sintiendo aún el corazón latir en la madera, convirtiendo el laurel en su símbolo sagrado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "laurel tree leaves",
+    "otras": [
+     "ancient olive tree",
+     "green leaves sunlight"
+    ],
+    "descripcion": "Hojas de laurel mecidas por el viento bajo el sol",
+    "clip": "https://cdn.pixabay.com/video/2025/01/19/253423_large.mp4",
+    "clip_id": 253423,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/05/22/23881-337972830_small.mp4",
+      "clip_id": 23881
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/06/22636-328940148_small.mp4",
+      "clip_id": 22636
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/01/13/104260-665837376_small.mp4",
+      "clip_id": 104260
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sus pies se clavaron en la tierra transformándose en raíces y una corteza suave cubrió su cuerpo. Apolo abrazó el tronco sintiendo aún el corazón latir en la madera, convirtiendo el laurel en su símbolo sagrado."
+  },
+  {
+   "hablado": "El afecto del dios volvió a tornarse aciago con Jacinto, un hermoso príncipe espartano. Apolo abandonó sus deberes celestiales para acompañar al joven en las colinas, disfrutando de la caza y los juegos atléticos en completa devoción.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greece hills",
+    "otras": [
+     "greece countryside landscape",
+     "ancient greek ruins"
+    ],
+    "descripcion": "Colinas verdes y paisajes de la Grecia antigua al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2020/02/19/32601-393989951_large.mp4",
+    "clip_id": 32601,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/12/09/192649-892970391_small.mp4",
+      "clip_id": 192649
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/16/231659_large.mp4",
+      "clip_id": 231659
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/07/94981-644694709_large.mp4",
+      "clip_id": 94981
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El afecto del dios volvió a tornarse aciago con Jacinto, un hermoso príncipe espartano. Apolo abandonó sus deberes celestiales para acompañar al joven en las colinas, disfrutando de la caza y los juegos atléticos en completa devoción."
+  },
+  {
+   "hablado": "Durante una competición de disco, Apolo lanzó la pesada pieza de bronce hacia lo alto. Guiado por los celos del viento del oeste o por la fatalidad, el disco se desvió e impactó brutalmente contra la frente de Jacinto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Apollo and Hyacinthus painting",
+    "otras": [
+     "Death of Hyacinthus painting",
+     "Apollo Greek art"
+    ],
+    "descripcion": "Pintura clásica de Apolo sosteniendo a Jacinto herido",
+    "prompt": "Pintura clásica de Apolo sosteniendo a Jacinto herido",
+    "clip": "https://cdn.pixabay.com/video/2024/01/19/197316-904610074_small.mp4",
+    "clip_id": 197316,
+    "extra": []
+   },
+   "efecto": "brasas",
+   "subtitulo": "Durante una competición de disco, Apolo lanzó la pesada pieza de bronce hacia lo alto. Guiado por los celos del viento del oeste o por la fatalidad, el disco se desvió e impactó brutalmente contra la frente de Jacinto."
+  },
+  {
+   "hablado": "Apolo corrió a sostener al joven agonizante entre sus brazos. El dios de la medicina intentó en vano sanar la herida mortal; de la sangre derramada en la hierba hizo brotar una flor que llevaría su nombre para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "purple hyacinth flower",
+    "otras": [
+     "flowers blooming close up",
+     "red flower field"
+    ],
+    "descripcion": "Primer plano de flores brotando en el campo",
+    "clip": "https://cdn.pixabay.com/video/2024/04/08/207308_small.mp4",
+    "clip_id": 207308,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/26/274867_small.mp4",
+      "clip_id": 274867
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/26/274861_small.mp4",
+      "clip_id": 274861
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/26/274863_small.mp4",
+      "clip_id": 274863
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Apolo corrió a sostener al joven agonizante entre sus brazos. El dios de la medicina intentó en vano sanar la herida mortal; de la sangre derramada en la hierba hizo brotar una flor que llevaría su nombre para siempre."
+  },
+  {
+   "hablado": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba esa deslumbrante resplandor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek temple sunrise",
+    "otras": [
+     "ancient temple columns",
+     "parthenon golden hour"
+    ],
+    "descripcion": "Columnas de un templo griego iluminadas por un sol intenso al amanecer",
+    "clip": "https://cdn.pixabay.com/video/2016/02/11/2119-155244112_large.mp4",
+    "clip_id": 2119,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/19/328740_small.mp4",
+      "clip_id": 328740
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/12/246391_small.mp4",
+      "clip_id": 246391
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/21/82368-580974559_medium.mp4",
+      "clip_id": 82368
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba esa deslumbrante resplandor."
+  },
+  {
+   "hablado": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba ese deslumbrante resplandor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek sculpture marble",
+    "otras": [
+     "greek statue face",
+     "apollo statue museum"
+    ],
+    "descripcion": "Detalle de una estatua de mármol de la antigua Grecia en un museo iluminada por una luz tenue",
+    "clip": "https://cdn.pixabay.com/video/2024/02/12/200229-912128005_small.mp4",
+    "clip_id": 200229,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/15/42154-431423229_large.mp4",
+      "clip_id": 42154
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba ese deslumbrante resplandor."
+  },
+  {
+   "hablado": "La civilización griega no veía en Apolo a un tirano cruel, sino a la encarnación perfecta de la medida exacta. Su luz daba la vida a los campos de trigo, pero también desataba la sequía más implacable sobre los insensatos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "parthenon columns athens",
+     "greek ancient architecture"
+    ],
+    "descripcion": "Columnas de un templo griego antiguo bajo la luz brillante del sol",
+    "clip": "https://cdn.pixabay.com/video/2024/01/19/197318-904610086_small.mp4",
+    "clip_id": 197318,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/21/190011-887054228_small.mp4",
+      "clip_id": 190011
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/12/91744-636709154_small.mp4",
+      "clip_id": 91744
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/26/173361-849202633_large.mp4",
+      "clip_id": 173361
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La civilización griega no veía en Apolo a un tirano cruel, sino a la encarnación perfecta de la medida exacta. Su luz daba la vida a los campos de trigo, pero también desataba la sequía más implacable sobre los insensatos."
+  },
+  {
+   "hablado": "Cada castigo, desde el trágico final de Jacinto hasta la desesperación de Níobe, respondía a una norma inquebrantable. El orden divino del Olimpo no toleraba jamás la arrogancia de los mortales que olvidaban su verdadera condición.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek pottery amphora",
+    "otras": [
+     "greek vase art museum",
+     "classical greek relief"
+    ],
+    "descripcion": "Vasija de cerámica griega antigua con figuras detalladas en un museo",
+    "clip": "https://cdn.pixabay.com/video/2023/05/20/163869-828669760_small.mp4",
+    "clip_id": 163869,
+    "extra": []
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cada castigo, desde el trágico final de Jacinto hasta la desesperación de Níobe, respondía a una norma inquebrantable. El orden divino del Olimpo no toleraba jamás la arrogancia de los mortales que olvidaban su verdadera condición."
+  },
+  {
+   "hablado": "Apolo exigía reverencia absoluta porque era la voz de la verdad y la profecía en el santuario de Delfos. Cruzar esa línea invisible entre el respeto y la soberbia significaba invocar la furia instantánea de las flechas doradas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "delphi greece ruins",
+    "otras": [
+     "oracle of delphi temple",
+     "greek amphitheater ruins"
+    ],
+    "descripcion": "Ruinas arqueológicas del santuario de Delfos en la ladera de la montaña",
+    "clip": "https://cdn.pixabay.com/video/2022/01/09/103891-664525382_large.mp4",
+    "clip_id": 103891,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/09/150006-797862631_small.mp4",
+      "clip_id": 150006
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/26/148092-793525250_small.mp4",
+      "clip_id": 148092
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/26/148094-793525258_small.mp4",
+      "clip_id": 148094
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Apolo exigía reverencia absoluta porque era la voz de la verdad y la profecía en el santuario de Delfos. Cruzar esa línea invisible entre el respeto y la soberbia significaba invocar la furia instantánea de las flechas doradas."
+  },
+  {
+   "hablado": "Su historia nos enseña que aquello que nos ilumina y nos guía puede volverse destructivo si nos acercamos demasiado. Los mitos griegos utilizaban al dios del Sol para recordar la distancia insalvable que separa a los hombres de los inmortales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek armor helmet",
+    "otras": [
+     "greek sword museum",
+     "ancient bronze artifacts"
+    ],
+    "descripcion": "Cascos y armas de bronce de la antigua Grecia expuestos en una vitrina",
+    "clip": "https://cdn.pixabay.com/video/2025/12/30/325069_large.mp4",
+    "clip_id": 325069,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/23/47889-452144042_large.mp4",
+      "clip_id": 47889
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/09/13/18215-289984375_large.mp4",
+      "clip_id": 18215
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/18/36516-411342243_large.mp4",
+      "clip_id": 36516
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Su historia nos enseña que aquello que nos ilumina y nos guía puede volverse destructivo si nos acercamos demasiado. Los mitos griegos utilizaban al dios del Sol para recordar la distancia insalvable que separa a los hombres de los inmortales."
+  },
+  {
+   "hablado": "Así concluye el relato sobre el lado más oscuro y temido del dios más venerado del panteón helénico. Una deidad cuya belleza deslumbrante ocultaba un poder capaz de doblegar imperios enteros sin derramar apenas una sola gota de sangre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek theater stone",
+    "otras": [
+     "epidaurus theater greece",
+     "greek ruins sunset"
+    ],
+    "descripcion": "Gradas de piedra de un antiguo teatro griego al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2022/10/19/135658-764361528_small.mp4",
+    "clip_id": 135658,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/07/183878-872226461_small.mp4",
+      "clip_id": 183878
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/25/205638-927347922_small.mp4",
+      "clip_id": 205638
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/05/31953-389724688_large.mp4",
+      "clip_id": 31953
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Así concluye el relato sobre el lado más oscuro y temido del dios más venerado del panteón helénico. Una deidad cuya belleza deslumbrante ocultaba un poder capaz de doblegar imperios enteros sin derramar apenas una sola gota de sangre."
+  },
+  {
+   "hablado": "Ahora que conoces toda la verdad sobre sus actos más terribles y su férrea justicia, queda una última duda por resolver. ¿Crees realmente que sus castigos fueron justos o se debieron únicamente a un ego divino descontrolado?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athens acropolis sunset",
+    "otras": [
+     "parthenon at night",
+     "greece historical landmarks"
+    ],
+    "descripcion": "La Acrópolis de Atenas iluminada al atardecer con el cielo despejado",
+    "clip_id": 12127,
+    "clip": "https://cdn.pixabay.com/video/2017/09/20/12127-235051444_large.mp4",
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/22/140111-774507949_small.mp4",
+      "clip_id": 140111
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/07/230248_small.mp4",
+      "clip_id": 230248
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/05/21175-315405446_small.mp4",
+      "clip_id": 21175
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Ahora que conoces toda la verdad sobre sus actos más terribles y su férrea justicia, queda una última duda por resolver. ¿Crees realmente que sus castigos fueron justos o se debieron únicamente a un ego divino descontrolado?"
+  },
+  {
+   "hablado": "Déjame tu sincera opinión aquí abajo en los comentarios y suscríbete para no perderte el próximo viaje a los misterios de la mitología clásica. Hasta la próxima leyenda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek columns museum",
+    "otras": [
+     "classical sculpture gallery",
+     "greek history museum"
+    ],
+    "descripcion": "Pasillo de un museo con grandes esculturas y columnas de la antigua Grecia",
+    "clip": "https://cdn.pixabay.com/video/2024/01/19/197313-904610070_small.mp4",
+    "clip_id": 197313,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/19/11467-230275478_large.mp4",
+      "clip_id": 11467
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Déjame tu sincera opinión aquí abajo en los comentarios y suscríbete para no perderte el próximo viaje a los misterios de la mitología clásica. Hasta la próxima leyenda."
+  }
+ ],
+ "titulo_youtube": "Por qué APOLO era el dios más temido",
+ "voz": "Algenib",
+ "estilo_imagen": "Cinematic photorealistic film still, ancient Greece, dramatic lighting, shallow depth of field, ultra detailed, 35mm film grain. ",
+ "vetados": [
+  "153166",
+  "153168",
+  "1823",
+  "197798",
+  "209659",
+  "219780",
+  "223459",
+  "239",
+  "248",
+  "256387",
+  "26531",
+  "27061",
+  "27285",
+  "275983",
+  "276088",
+  "31363",
+  "365737",
+  "382580",
+  "382584",
+  "42084"
+ ]
+}
