@@ -68,3 +68,4 @@
 2026-11-06|15:00|Tutores de IA en la educación|error|YO 6aed6733f3498efda770d082 IN 6aed673486fe9b8379757daf TI 6aed6734f3498efda770d0bb|img=mixto|14:43
 2026-11-06|18:00|Detección de mentiras con IA|sabias|YO 6aed6896c1e74b84e5cbeefd IN 6aed6896c1e74b84e5cbef26 TI 6aed68977b7e47e8f40dac7e|img=mixto|18:16
 2026-11-06|21:00|Gemelos digitales de salud|consecuencia|YO 6aed69f77b7e47e8f40e0276 IN 6aed69f786fe9b83797617a3 TI 6aed69f8dbada656bef665c0|img=mixto|20:51
+2026-11-07|08:00|IA asesora de cuentas bancarias|pregunta|YO 6aeeb3abd6bbae6fa167febe IN 6aeeb3aca7751de7c9c92c64 TI 6aeeb3acaf7e526d43003b7d|img=mixto|08:16
