@@ -72,3 +72,4 @@
 2026-11-07|12:00|Demanda por precios con IA en comida rápida|final|YO 6aeeb4a8d6bbae6fa1683cb7 IN 6aeeb4a8d6bbae6fa1683ce0 TI 6aeeb4a9004e4879a7363583|img=mixto|11:24
 2026-11-07|15:00|Barcos devoradores de plástico en 2100|increible|YO 6aeeb5dc229bf05daf2d29b4 IN 6aeeb5dda7751de7c9c99bec TI 6aeeb5dd229bf05daf2d29ec|img=mixto|14:23
 2026-11-07|18:00|Hormigón autorreparable en 2100|sabias|YO 6aeeb6d2d6bbae6fa168a129 IN 6aeeb6d2229bf05daf2d5717 TI 6aeeb6d39214322f68d0b781|img=mixto|17:23
+2026-11-07|21:00|Lentillas biónicas en 2100|consecuencia|YO 6aeeb827af7e526d4301368c IN 6aeeb827229bf05daf2dab11 TI 6aeeb8289214322f68d11357|img=mixto|21:19
