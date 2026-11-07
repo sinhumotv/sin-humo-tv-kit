@@ -73,3 +73,4 @@
 2026-11-07|12:00|La muerte de Houdini|error|YO 6aeeb4f3004e4879a7363c8a IN 6aeeb4f3004e4879a7363cb3 TI 6aeeb4f49214322f68d05a1e|img=mixto|11:44
 2026-11-07|15:00|El enigma de Ötzi|pregunta|YO 6aeeb62f9214322f68d09e9f IN 6aeeb630d6bbae6fa168846d TI 6aeeb630a7751de7c9c9b0bd|img=mixto|14:50
 2026-11-07|18:00|La muerte de Lord Carnarvon|sabias|YO 6aeeb73da7751de7c9c9d935 IN 6aeeb73e229bf05daf2d6b3b TI 6aeeb73ed6bbae6fa168b20d|img=mixto|18:18
+2026-11-07|21:00|El misterio del Vuelo Diecinueve|consecuencia|YO 6aeeb851a7751de7c9ca2876 IN 6aeeb851229bf05daf2db136 TI 6aeeb852d6bbae6fa16904dd|img=mixto|20:40
