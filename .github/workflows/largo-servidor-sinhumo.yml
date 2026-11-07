@@ -1,0 +1,38 @@
+# (7-nov-2026) Los largos de sin humo TV los hace el servidor (Modal, lunes, miércoles y sábado a las 13:07) sin depender de Claude.
+# Este workflow lee lo que el servidor ha dejado para hoy y lo programa en YouTube con Metricool a las 19:00 de Madrid.
+# Si hoy no hay largo, o es de prueba, no hace nada.
+name: Largo del servidor sin humo TV
+
+on:
+  schedule:
+    - cron: "20 16 * * 1,3,6"   # 17:20 en invierno / 18:20 en verano (hora de Madrid)
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Publicarlo aunque sea de prueba"
+        type: boolean
+        default: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer el largo de hoy del servidor
+        id: leer
+        run: |
+          code=$(curl -s -o /tmp/publicacion.json -w '%{http_code}' https://sinhumotv--explicalo-api.modal.run/sinhumo/largo-hoy)
+          if [ "$code" != 200 ]; then echo "Hoy no hay largo del servidor ($code)"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
+          prueba=$(python3 -c "import json;print(json.load(open('/tmp/publicacion.json')).get('prueba'))")
+          if [ "$prueba" = True ] && [ "${{ inputs.forzar }}" != true ]; then echo "El largo de hoy es de PRUEBA: no se publica"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
+          for u in $(python3 -c "import json;p=json.load(open('/tmp/publicacion.json'));print(p['video'],p['miniatura'])"); do
+            c=$(curl -s -o /dev/null -I -w '%{http_code}' "$u"); echo "$u → $c"; [ "$c" = 200 ] || { echo "falta $u"; exit 1; }
+          done
+          python3 -c "import json;p=json.load(open('/tmp/publicacion.json'));print('Largo:',p['titulo'],'·',p.get('duracion'),'s')"
+          echo "hay=si" >> $GITHUB_OUTPUT
+      - name: Programar en Metricool
+        if: steps.leer.outputs.hay == 'si'
+        env:
+          REFRESH: ${{ secrets.METRICOOL_SINHUMO_REFRESH }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+        run: python3 metricool/publicar_largo.py sinhumo /tmp/publicacion.json
