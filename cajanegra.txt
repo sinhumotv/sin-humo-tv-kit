@@ -71,3 +71,4 @@
 2026-11-06|21:00|El hombre de la máscara de hierro|consecuencia|YO 6aed6aadf3498efda7719854 IN 6aed6aad7b7e47e8f40e2529 TI 6aed6aae07f945cca94370dc|img=mixto|21:11
 2026-11-07|08:00|La muerte de Plinio|nadie|YO 6aeeb3d8af7e526d430040f0 IN 6aeeb3d8af7e526d4300421e TI 6aeeb3d9af7e526d43004267|img=mixto|07:37
 2026-11-07|12:00|La muerte de Houdini|error|YO 6aeeb4f3004e4879a7363c8a IN 6aeeb4f3004e4879a7363cb3 TI 6aeeb4f49214322f68d05a1e|img=mixto|11:44
+2026-11-07|15:00|El enigma de Ötzi|pregunta|YO 6aeeb62f9214322f68d09e9f IN 6aeeb630d6bbae6fa168846d TI 6aeeb630a7751de7c9c9b0bd|img=mixto|14:50
