@@ -74,3 +74,4 @@
 2026-11-06|15:00|El mito de Cipariso|error|YO 6aed67eadbada656bef5dd21 IN 6aed67eadbada656bef5dd4a TI 6aed67ebdbada656bef5dd9d|img=mixto|15:07
 2026-11-06|18:00|Aretusa y Alfeo|sabias|YO 6aed6937dbada656bef62010 IN 6aed6938f3498efda7712f53 TI 6aed6939dbada656bef6207b|img=mixto|18:16
 2026-11-06|21:00|La locura de Áyax|consecuencia|YO 6aed6a9edbada656bef6891e IN 6aed6a9fdbada656bef68a28 TI 6aed6aa0c1e74b84e5cc62cc|img=ia|20:22
+2026-11-07|08:00|Dioniso y los piratas|increible|YO 6aeeb432004e4879a73618ba IN 6aeeb4329214322f68d03fa1 TI 6aeeb433004e4879a7361907|img=mixto|08:00
