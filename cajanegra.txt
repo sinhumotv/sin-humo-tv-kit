@@ -72,3 +72,4 @@
 2026-11-07|08:00|La muerte de Plinio|nadie|YO 6aeeb3d8af7e526d430040f0 IN 6aeeb3d8af7e526d4300421e TI 6aeeb3d9af7e526d43004267|img=mixto|07:37
 2026-11-07|12:00|La muerte de Houdini|error|YO 6aeeb4f3004e4879a7363c8a IN 6aeeb4f3004e4879a7363cb3 TI 6aeeb4f49214322f68d05a1e|img=mixto|11:44
 2026-11-07|15:00|El enigma de Ötzi|pregunta|YO 6aeeb62f9214322f68d09e9f IN 6aeeb630d6bbae6fa168846d TI 6aeeb630a7751de7c9c9b0bd|img=mixto|14:50
+2026-11-07|18:00|La muerte de Lord Carnarvon|sabias|YO 6aeeb73da7751de7c9c9d935 IN 6aeeb73e229bf05daf2d6b3b TI 6aeeb73ed6bbae6fa168b20d|img=mixto|18:18
