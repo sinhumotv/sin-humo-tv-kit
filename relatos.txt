@@ -77,3 +77,4 @@
 2026-11-07|08:00|Dioniso y los piratas|increible|YO 6aeeb432004e4879a73618ba IN 6aeeb4329214322f68d03fa1 TI 6aeeb433004e4879a7361907|img=mixto|08:00
 2026-11-07|15:00|El castigo de Salmoneo|pregunta|YO 6aeeb6ab229bf05daf2d53c9 IN 6aeeb6ac004e4879a736a1fc TI 6aeeb6ad9214322f68d0b006|img=mixto|14:20
 2026-11-07|18:00|Ceix y Alcíone|sabias|YO 6aeeb7d99214322f68d1047d IN 6aeeb7d99214322f68d104df TI 6aeeb7da229bf05daf2da03a|img=mixto|17:20
+2026-11-07|21:00|Menelao y Proteo|consecuencia|YO 6aeeb995229bf05daf2de3f0 IN 6aeeb995229bf05daf2de42d TI 6aeeb996d6bbae6fa1693af3|img=mixto|20:56
