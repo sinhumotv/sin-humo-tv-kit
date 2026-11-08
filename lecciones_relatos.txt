@@ -1,8 +1,9 @@
-Actualizado 2026-11-01
-AVISO: sigue sin haber datos propios. La cuenta de vidIQ conectada solo tiene autorizado el canal "Sin Humo TV"; este canal no aparece, así que no hay retención, minuto de abandono ni duración media vista. Para tenerlos hay que autorizar este canal en vidIQ.
-- Llevamos 7-8 largos publicados en 10 días: aún no se puede decir cuál va mejor.
+Actualizado 2026-11-08
+AVISO: sigue sin haber datos propios. vidIQ solo tiene autorizado "Sin Humo TV" y este canal no está en su índice: no hay retención, minuto de abandono ni duración media vista. Para tenerlos hay que autorizar este canal en vidIQ.
+- 9 largos publicados (Narciso, Sísifo, Prometeo, Teseo, Perseo, Titanomaquia, Orfeo, Ío, Tifón). Sin datos de visitas no se puede decir cuál va mejor.
 - Mantener títulos con pregunta, cifra o una palabra en MAYÚSCULAS: es lo que usan los outliers del nicho.
 - Los outliers del nicho prometen la "historia completa" o un ángulo inesperado (víctima, villano, lo que nadie cuenta): decirlo en los primeros 20 segundos.
 - Abrir con el momento más fuerte de la historia y luego volver al principio; no empezar con contexto.
 - Cerrar cada capítulo con una pregunta abierta para que no se vayan a mitad.
 - Los recopilatorios largos (varios casos/mitos en un vídeo) están arrasando en español: probar uno cuando haya material publicado.
+- Los outliers de esta semana duran 13-45 min (o 2-3 h los 'para dormir'): un largo de unos 20 min con varios mitos enlazados encaja mejor que uno corto.
