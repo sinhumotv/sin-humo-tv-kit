@@ -81,3 +81,4 @@
 2026-11-07|12:00|El hechizo de Circe|pregunta|YO 6aeef8cad6bbae6fa17bf8d0 IN 6aeef8cbd6bbae6fa17bf90a TI 6aeef8cba7751de7c9dd66a7|img=mixto|11:43
 2026-11-08|08:00|El toro de Minos|error|YO 6af0062b51492b796e1af262 IN 6af0062cd6bbae6fa1cb9963 TI 6af0062d51492b796e1af2a8|img=mixto|08:35
 2026-11-08|12:00|Cástor y Pólux|final|YO 6af0074b562f2e6de99c013b IN 6af0074b51492b796e1b30a4 TI 6af0074c562f2e6de99c01a7|img=mixto|11:38
+2026-11-08|15:00|Asclepio|nadie|YO 6af0092c562f2e6de99c6e20 IN 6af0092c562f2e6de99c6e50 TI 6af0092d51492b796e1bae3e|img=mixto|14:51
