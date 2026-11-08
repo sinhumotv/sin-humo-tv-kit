@@ -73,7 +73,37 @@ def modelos(k):
     return orden[:6] or PREFERIDOS
 
 
-def preguntar(k, texto, temperatura=0.8, timeout=90):
+def _una(k, m, texto, temperatura, timeout):
+    r = peticion(f'{API}/models/{m}:generateContent?key={k}', {
+        'contents': [{'role': 'user', 'parts': [{'text': texto}]}],
+        'generationConfig': {'temperature': temperatura, 'responseMimeType': 'application/json'}}, timeout=timeout)
+    t = r['candidates'][0]['content']['parts'][0]['text']
+    return json.loads(t[t.index('{'):t.rindex('}') + 1]), m
+
+
+def preguntar(k, texto, temperatura=0.8, timeout=90, relevo=None):
+    """relevo (segundos): si el modelo no contesta en ese tiempo, se lanza ya el siguiente sin cortar el primero y vale
+    la primera respuesta buena (8-nov-2026: a veces un modelo se queda colgado más de 100 s y el cliente esperaba)."""
+    if relevo:
+        import queue, threading
+        cola, ms, vivos, ultimo = queue.Queue(), list(modelos(k)), 0, None
+        def lanzar():
+            m = ms.pop(0)
+            def h():
+                try: cola.put(('ok', _una(k, m, texto, temperatura, timeout)))
+                except Exception as e: cola.put(('mal', f'{m}: {e}'))
+            threading.Thread(target=h, daemon=True).start()
+        lanzar(); vivos = 1
+        while vivos:
+            try: est, v = cola.get(timeout=relevo)
+            except queue.Empty:
+                if ms: lanzar(); vivos += 1
+                continue
+            vivos -= 1
+            if est == 'ok': return v
+            ultimo = v
+            if ms: lanzar(); vivos += 1
+        print('ningún modelo responde:', ultimo, file=sys.stderr); sys.exit(2)
     ultimo = None
     for m in modelos(k):
         try:
