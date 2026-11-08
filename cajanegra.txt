@@ -76,3 +76,4 @@
 2026-11-07|21:00|El misterio del Vuelo Diecinueve|consecuencia|YO 6aeeb851a7751de7c9ca2876 IN 6aeeb851229bf05daf2db136 TI 6aeeb852d6bbae6fa16904dd|img=mixto|20:40
 2026-11-08|12:00|La gran niebla de Londres|cuenta|YO 6af0071e229bf05daf90ac85 IN 6af0071e004e4879a7995869 TI 6af0071f229bf05daf90ad25|img=mixto|11:29
 2026-11-08|21:00|La trampa de John Dillinger|consecuencia|YO 6af009a1004e4879a799de0e IN 6af009a2d6bbae6fa1cc5e34 TI 6af009a39214322f6833c912|img=mixto|20:24
+2026-11-08|15:00|La batalla de Karánsebes|nadie|YO 6af04bb2d6bbae6fa1dfb7f4 IN 6af04bb3d6bbae6fa1dfb85b TI 6af04bb4d6bbae6fa1dfb950|img=mixto|14:20
