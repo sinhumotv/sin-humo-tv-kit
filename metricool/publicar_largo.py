@@ -24,6 +24,21 @@ else:
         cuando = ahora + dt.timedelta(minutes=10)
 s = mc.Sesion(mc.acceso(canal))
 marca = mc.marca(s)
+if P.get("mover"):   # (8-nov-2026) cambiar la hora de un largo ya programado (p. ej. publicarlo ya): {"mover": <id>, "fecha": "ahora"|...}
+    lst = s.llamar("getScheduledPosts", {"brandId": str(marca["id"]), "timezone": "Europe/Madrid",
+                                         "fromDate": (ahora - dt.timedelta(days=1)).isoformat(timespec="seconds"),
+                                         "toDate": (ahora + dt.timedelta(days=7)).isoformat(timespec="seconds")})
+    lst = lst.get("data", lst) if isinstance(lst, dict) else lst
+    viejo = next((x for x in lst if str(x.get("id")) == str(P["mover"])), None)
+    if not viejo:
+        sys.exit(f"FALLO: no encuentro el post {P['mover']} entre los programados")
+    nuevo = {k: v for k, v in viejo.items() if k not in ("id", "uuid", "creationDate", "creatorUserMail", "creatorUserId", "brandTags")}
+    nuevo["publicationDate"] = {"dateTime": cuando.strftime("%Y-%m-%dT%H:%M:00"), "timezone": "Europe/Madrid"}
+    res = s.llamar("updateScheduledPost", {"id": str(viejo["id"]), "uuid": str(viejo["uuid"]), "blogId": str(marca["id"]),
+                                            "info": json.dumps(nuevo, ensure_ascii=False)})
+    print("METRICOOL:", json.dumps(res, ensure_ascii=False)[:300])
+    print(f"MOVIDO · {canal} · {cuando:%d/%m %H:%M} · post {P['mover']}")
+    sys.exit(0)
 info = {"autoPublish": True, "draft": False, "descendants": [], "firstCommentText": "", "hasNotReadNotes": False,
         "media": [P["video"]], "mediaAltText": [], "providers": [{"network": "youtube"}],
         "publicationDate": {"dateTime": cuando.strftime("%Y-%m-%dT%H:%M:00"), "timezone": "Europe/Madrid"},
