@@ -79,3 +79,4 @@
 2026-11-07|18:00|Ceix y Alcíone|sabias|YO 6aeeb7d99214322f68d1047d IN 6aeeb7d99214322f68d104df TI 6aeeb7da229bf05daf2da03a|img=mixto|17:20
 2026-11-07|21:00|Menelao y Proteo|consecuencia|YO 6aeeb995229bf05daf2de3f0 IN 6aeeb995229bf05daf2de42d TI 6aeeb996d6bbae6fa1693af3|img=mixto|20:56
 2026-11-07|12:00|El hechizo de Circe|pregunta|YO 6aeef8cad6bbae6fa17bf8d0 IN 6aeef8cbd6bbae6fa17bf90a TI 6aeef8cba7751de7c9dd66a7|img=mixto|11:43
+2026-11-08|08:00|El toro de Minos|error|YO 6af0062b51492b796e1af262 IN 6af0062cd6bbae6fa1cb9963 TI 6af0062d51492b796e1af2a8|img=mixto|08:35
