@@ -30,7 +30,20 @@ def sh(c, cwd=None):
 video = f"{D}/video_final.mp4"
 tam = os.path.getsize(video)
 tmp = tempfile.mkdtemp()
-sh(f'git init -q && git checkout -q --orphan {RAMA} && cp "{video}" video.mp4 && git add video.mp4 && '
+# (8-nov-2026) REEL DE PRUEBA DE INSTAGRAM: si se sube el MISMO archivo dos veces, Instagram lo marca como repetido y le da poco alcance.
+# Para el reel de prueba se deja al lado una copia distinta a nivel de archivo e imagen pero igual a la vista: zoom del 3 %, color
+# ligeramente distinto, otra compresión y sin metadatos (como cuando Pablo lo descargaba de Instagram y lo volvía a subir).
+extra = ""
+if CFG["id"] == "relatos":
+    wh = (sh(f'ffprobe -v error -select_streams v -show_entries stream=width,height -of csv=p=0 "{video}"').stdout.strip() or "1080,1920").split(",")
+    pr = sh(f'ffmpeg -y -loglevel error -i "{video}" -vf "crop=iw*0.97:ih*0.97,scale={wh[0]}:{wh[1]},eq=saturation=1.05:brightness=0.012:contrast=1.02,'
+            f'setsar=1" -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p -c:a aac -b:a 160k -ar 48000 -map_metadata -1 '
+            f'-metadata comment="p{dt.datetime.now().strftime("%j%H%M%S")}" -movflags +faststart "{tmp}/video_prueba.mp4"')
+    if pr.returncode == 0 and os.path.exists(f"{tmp}/video_prueba.mp4") and os.path.getsize(f"{tmp}/video_prueba.mp4") > 100000:
+        extra = " video_prueba.mp4"
+    else:
+        print("aviso: no se ha podido hacer la copia para el reel de prueba:", pr.stderr[-200:])
+sh(f'git init -q && git checkout -q --orphan {RAMA} && cp "{video}" video.mp4 && git add video.mp4{extra} && '
    f'git -c user.name="{CFG['nombre']}" -c user.email="sinhumotv@users.noreply.github.com" commit -qm "{RAMA}"', tmp)
 r = sh(f"git push -q --force {REPO} {RAMA}", tmp)
 url = f"https://raw.githubusercontent.com/sinhumotv/sin-humo-tv-kit/{RAMA}/video.mp4"
