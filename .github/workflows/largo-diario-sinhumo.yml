@@ -1,0 +1,52 @@
+# (8-nov-2026) LARGO de sin humo TV hecho en GitHub (gratis y sin Claude): hasta 20 al mes, el límite de Metricool.
+# Cada mañana decide si hoy toca (reparte los 20 a lo largo del mes), lo fabrica y lo programa en YouTube hacia las 19:00.
+name: Largo diario sin humo TV
+
+on:
+  schedule:
+    - cron: "17 9 * * *"    # 10:17 en invierno / 11:17 en verano (Madrid): listo con horas de margen
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "1 = hacerlo aunque hoy no toque"
+        default: ""
+      ahora:
+        description: "1 = publicar en cuanto esté"
+        default: ""
+      no_publicar:
+        description: "1 = solo fabricar (prueba)"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: largo-sinhumo
+  cancel-in-progress: false
+
+jobs:
+  largo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
+          mkdir -p ~/.fonts && cp fonts/*.otf ~/.fonts/ && fc-cache -f > /dev/null
+          pip install -q numpy pillow faster-whisper num2words
+          npm i -s --no-save playwright@1.63.0 > /dev/null && npx playwright install --with-deps chromium > /dev/null
+      - name: Hacer y programar el largo
+        env:
+          GEMINI_CLAVES: ${{ secrets.SINHUMO_GEMINI_KEY }},${{ secrets.GEMINI_KEY_RESERVA }},${{ secrets.GEMINI_KEY }}
+          REFRESH: ${{ secrets.METRICOOL_SINHUMO_REFRESH }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORZAR: ${{ inputs.forzar }}
+          AHORA: ${{ inputs.ahora }}
+          NO_PUBLICAR: ${{ inputs.no_publicar }}
+          PYTHONUNBUFFERED: "1"
+        run: |
+          for v in FORZAR AHORA NO_PUBLICAR; do [ -z "${!v}" ] && unset $v; done
+          export GEMINI_CLAVES=$(echo "$GEMINI_CLAVES" | sed 's/^,*//; s/,,*/,/g; s/,$//')
+          python3 sinhumo_largo/hacer.py
