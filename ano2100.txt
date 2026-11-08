@@ -74,3 +74,4 @@
 2026-11-07|18:00|Hormigón autorreparable en 2100|sabias|YO 6aeeb6d2d6bbae6fa168a129 IN 6aeeb6d2229bf05daf2d5717 TI 6aeeb6d39214322f68d0b781|img=mixto|17:23
 2026-11-07|21:00|Lentillas biónicas en 2100|consecuencia|YO 6aeeb827af7e526d4301368c IN 6aeeb827229bf05daf2dab11 TI 6aeeb8289214322f68d11357|img=mixto|21:19
 2026-11-08|08:00|La fiebre de metales por la IA|nadie|YO 6af005d5d6bbae6fa1cb8992 IN 6af005d6004e4879a7991e86 TI 6af005d6562f2e6de99bbbf6|img=mixto|07:35
+2026-11-08|15:00|Limpieza de basura espacial en 2100|cuenta|YO 6af009169214322f6833afcf IN 6af00917562f2e6de99c67af TI 6af009179214322f6833b023|img=mixto|14:56
