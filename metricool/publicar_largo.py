@@ -33,6 +33,11 @@ if P.get("mover"):   # (8-nov-2026) cambiar la hora de un largo ya programado (p
     if not viejo:
         sys.exit(f"FALLO: no encuentro el post {P['mover']} entre los programados")
     nuevo = {k: v for k, v in viejo.items() if k not in ("id", "uuid", "creationDate", "creatorUserMail", "creatorUserId", "brandTags")}
+    redes = [x.get("network") for x in viejo.get("providers") or []]
+    nuevo["providers"] = [{"network": r} for r in redes]
+    for k in list(nuevo):   # solo los datos de las redes del post (Metricool devuelve también twitterData, instagramData…)
+        if k.endswith("Data") and k != "smartLinkData" and k[:-4] not in redes:
+            nuevo.pop(k)
     nuevo["publicationDate"] = {"dateTime": cuando.strftime("%Y-%m-%dT%H:%M:00"), "timezone": "Europe/Madrid"}
     res = s.llamar("updateScheduledPost", {"id": str(viejo["id"]), "uuid": str(viejo["uuid"]), "blogId": str(marca["id"]),
                                             "info": json.dumps(nuevo, ensure_ascii=False)})
