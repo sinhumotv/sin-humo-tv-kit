@@ -13,7 +13,7 @@ import json, os, re, subprocess, sys, tempfile, urllib.request, urllib.error
 AQUI = os.path.dirname(os.path.abspath(__file__))
 PLAT = os.path.dirname(AQUI)
 API = 'https://generativelanguage.googleapis.com/v1beta'
-PREFERIDOS = ['gemini-3.8-flash', 'gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-3-flash', 'gemini-3.8-flash-lite']   # (7-nov-2026) Google retiró gemini-2.5-flash: daba 404
+PREFERIDOS = ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-3-flash', 'gemini-3.8-flash', 'gemini-3.8-flash-lite']   # (8-nov-2026) gemini-3.8-flash se queda colgado (>100 s): al final   # (7-nov-2026) Google retiró gemini-2.5-flash: daba 404
 ICONOS = ['moneda', 'carrito', 'banco', 'termometro', 'barril', 'rayo', 'globo', 'persona', 'cartera', 'alerta', 'reloj', 'calendario', 'vela',
           'escudo', 'casa', 'corona', 'olas', 'gente', 'documento', 'edificio', 'coche', 'medalla', 'mazo', 'balanza', 'paloma', 'pin']
 
@@ -73,13 +73,13 @@ def modelos(k):
     return orden[:6] or PREFERIDOS
 
 
-def preguntar(k, texto, temperatura=0.8):
+def preguntar(k, texto, temperatura=0.8, timeout=90):
     ultimo = None
     for m in modelos(k):
         try:
             r = peticion(f'{API}/models/{m}:generateContent?key={k}', {
                 'contents': [{'role': 'user', 'parts': [{'text': texto}]}],
-                'generationConfig': {'temperature': temperatura, 'responseMimeType': 'application/json'}})
+                'generationConfig': {'temperature': temperatura, 'responseMimeType': 'application/json'}}, timeout=timeout)
             t = r['candidates'][0]['content']['parts'][0]['text']
             return json.loads(t[t.index('{'):t.rindex('}') + 1]), m
         except (urllib.error.HTTPError, urllib.error.URLError, KeyError, IndexError, ValueError, TimeoutError) as e:
