@@ -86,3 +86,4 @@
 2026-11-08|21:00|El trono de Hefesto|sabias|YO 6af00b53562f2e6de99ce529 IN 6af00b53229bf05daf91a8e0 TI 6af00b5451492b796e1c18dc|img=mixto|21:29
 2026-11-09|08:00|El lecho de Procrusto|increible|YO 6af15dd4796ccae266876387 IN 6af15dd47522f65ac0c06ac7 TI 6af15dd5796ccae2668763dc|img=mixto|08:09
 2026-11-09|12:00|Endimión y Selene|pregunta|YO 6af15f4d7522f65ac0c0bcba IN 6af15f4e796ccae26687c161 TI 6af15f4e2f1ff83d451a8aff|img=mixto|12:24
+2026-11-09|18:00|El cinturón de Hipólita|sabias|YO 6af1633ee29b1359f0d1c83a IN 6af1633ee44ddbb57c36979a TI 6af1633fe29b1359f0d1c896|img=ia|17:55
