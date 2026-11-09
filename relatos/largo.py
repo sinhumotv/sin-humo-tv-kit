@@ -278,6 +278,32 @@ if E["fase"] == "montaje":
             return float(sh(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{f}"')[1].strip())
         except Exception:
             return 0.0
+
+    # (9-nov-2026) CLIPS ROTOS: un clip mal codificado («co located POCs unavailable», marcas de tiempo raras) tumbaba el
+    # largo entero al recortarlo. Antes de usarlos, cada clip se decodifica entero; si da error se recodifica limpio y, si
+    # ni así sale, se descarta (la escena se queda corta y se buscan otros clips, como siempre). Nunca se repite un clip.
+    def sanear(d):
+        marca = d + ".ok"
+        if os.path.exists(marca):
+            return True
+        rc, out = sh(f'ffmpeg -v error -i "{d}" -an -f null -', ok=True)
+        if rc == 0 and not out.strip():
+            open(marca, "w").close()
+            return True
+        tmp = d[:-4] + "_san.mp4"
+        rc, _ = sh(f'ffmpeg -y -v error -fflags +genpts+discardcorrupt -err_detect ignore_err -i "{d}" -an '
+                   f'-vf "fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 18 -movflags +faststart "{tmp}"', ok=True)
+        if rc == 0 and os.path.exists(tmp) and dur_(tmp) >= 1.0 and sh(f'ffmpeg -v error -i "{tmp}" -an -f null -', ok=True)[0] == 0:
+            shutil.move(tmp, d)
+            open(marca, "w").close()
+            print(f"clip con fallos recodificado: {os.path.basename(d)}")
+            return True
+        for f in (tmp, d):
+            if os.path.exists(f):
+                os.remove(f)
+        print(f"clip roto descartado: {os.path.basename(d)}")
+        return False
+
     cortas = []   # escenas cuyo material no llega: NUNCA se repite (bucle) un clip para rellenar
     for k, e in enumerate(ESC):
         n, im = k + 1, e["imagen"]
@@ -285,6 +311,10 @@ if E["fase"] == "montaje":
         partes = [d for d in partes if os.path.exists(d)]
         full = f"{P}/clips/{n:02d}_full.mp4"
         if not partes or os.path.exists(full) or k >= len(TE):
+            continue
+        partes = [d for d in partes if sanear(d)]
+        if not partes:
+            cortas.append((n, TE[k]["fin"] - TE[k]["ini"] + 1.6))
             continue
         largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.6
         durs = [dur_(d) - (0.5 if j else 0) for j, d in enumerate(partes)]
@@ -312,9 +342,17 @@ if E["fase"] == "montaje":
         for j, d in enumerate(partes):
             o = f"{P}/clips/_n{n:02d}_{j}.mp4"
             ini = 0.5 if j else 0   # (el primero empieza desde el principio, para el fundido de entrada)
-            sh(f'ffmpeg -y -v error -ss {ini} -i "{d}" -t {seg[j]:.2f} -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
-               f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"')
+            rc, _ = sh(f'ffmpeg -y -v error -ss {ini} -i "{d}" -t {seg[j]:.2f} -an -vf "scale=1920:1080:force_original_aspect_ratio=increase,'
+                       f'crop=1920:1080,fps=30,format=yuv420p" -c:v libx264 -preset veryfast -crf 20 "{o}"', ok=True)
+            if rc:   # último recurso: ese clip fuera; la escena se queda corta y se buscan otros
+                print(f"clip que no se deja recortar, descartado: {os.path.basename(d)}")
+                os.remove(d)
+                norm = None
+                break
             norm.append(o)
+        if norm is None:
+            cortas.append((n, largo_esc))
+            continue
         cur = norm[0]
         for j, o in enumerate(norm[1:], 1):
             d0 = dur_(cur)
