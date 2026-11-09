@@ -55,9 +55,23 @@ Devuelve SOLO JSON: {{"fotogramas": [<mejor>, <segundo>], "texto": "...", "clave
         clave = str(j.get("clave") or "")
 except BaseException as x:
     print("sin Gemini para la miniatura:", str(x)[:120])
-fot[eleg[0]].save(f"{D}/imgs/01.jpg", quality=95)
-fot[eleg[-1]].save(f"{D}/imgs/02.jpg", quality=95)
-fot[eleg[0]].save(f"{D}/miniatura_base.jpg", quality=95)
+# (10-nov-2026) si el servidor ha hecho un fondo a propósito (FLUX: sujeto llamativo, sin texto, lado izquierdo libre), es
+# la base principal; los fotogramas del vídeo quedan como alternativa (los de Explícalo suelen ir llenos de rótulos)
+fondo = None
+if P.get("fondo"):
+    try:
+        b = urllib.request.urlopen(urllib.request.Request(P["fondo"], headers={"User-Agent": "Explicalo"}), timeout=120).read()
+        fondo = Image.open(io.BytesIO(b)).convert("RGB")
+    except Exception as x:
+        print("sin fondo del servidor:", str(x)[:120])
+if fondo is not None:
+    fondo.save(f"{D}/imgs/01.jpg", quality=95)
+    fondo.save(f"{D}/miniatura_base.jpg", quality=95)
+    fot[eleg[0]].save(f"{D}/imgs/02.jpg", quality=95)
+else:
+    fot[eleg[0]].save(f"{D}/imgs/01.jpg", quality=95)
+    fot[eleg[-1]].save(f"{D}/imgs/02.jpg", quality=95)
+    fot[eleg[0]].save(f"{D}/miniatura_base.jpg", quality=95)
 json.dump({"titulo_youtube": P["titulo"], "miniatura": {"texto": texto, "clave": clave},
            "escenas": [{"imagen": {"tipo": "ia"}}, {"imagen": {"tipo": "real"}}]},
           open(f"{D}/historia.json", "w", encoding="utf-8"), ensure_ascii=False)
