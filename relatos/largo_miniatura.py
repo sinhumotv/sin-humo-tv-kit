@@ -119,7 +119,7 @@ try:
         buf = io.BytesIO(); t.save(buf, "JPEG", quality=85); minis.append(buf.getvalue())
     j, _ = pedir(f"""Eres experto en CTR de YouTube. Título del vídeo: "{H.get('titulo_youtube', '')}". Te paso 3 miniaturas (0, 1 y 2).
 ¿Cuál conseguiría MÁS clics vista pequeña en el móvil (se lee el texto, se entiende la imagen, despierta curiosidad o
-emoción)? Devuelve SOLO JSON: {{"mejor": <0, 1 o 2>, "motivo": "..."}}""", temp=0.2, imagenes=minis, max_tokens=300)
+emoción)? Devuelve SOLO JSON: {{"mejor": <0, 1 o 2>, "motivo": "..."}}""", temp=0.2, imagenes=minis, max_tokens=4000)
     k = j.get("mejor") if isinstance(j, dict) else 0
     if k in (1, 2):
         g = "ABC"[k]

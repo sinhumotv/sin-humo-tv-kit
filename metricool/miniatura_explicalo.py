@@ -46,7 +46,7 @@ imagen clara, llamativa, que se entienda en pequeño en el móvil y relacionada 
 Escribe además el TEXTO de la miniatura: 2 a 4 palabras en español, MAYÚSCULAS, que despierten curiosidad y NO repitan el
 título (p. ej. «NO GASTA DATOS», «EL TRUCO OCULTO», «¿CÓMO LO SABE?»), y la palabra CLAVE de ese texto (irá en amarillo).
 Devuelve SOLO JSON: {{"fotogramas": [<mejor>, <segundo>], "texto": "...", "clave": "..."}}""",
-                 temp=0.5, imagenes=minis, max_tokens=400)
+                 temp=0.5, imagenes=minis, max_tokens=4000)
     if isinstance(j, dict):
         f2 = [k for k in (j.get("fotogramas") or []) if isinstance(k, int) and 0 <= k < len(fot)]
         if f2:

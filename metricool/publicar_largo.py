@@ -30,7 +30,10 @@ if P.get("mover"):   # (8-nov-2026) cambiar la hora de un largo ya programado (p
                                          "toDate": (ahora + dt.timedelta(days=7)).isoformat(timespec="seconds")})
     lst = lst.get("data", lst) if isinstance(lst, dict) else lst
     viejo = next((x for x in lst if str(x.get("id")) == str(P["mover"])), None)
+    if not viejo and P.get("titulo_buscar"):   # (10-nov-2026) Metricool puede cambiar el id al editar: se busca por título
+        viejo = next((x for x in lst if P["titulo_buscar"][:40] in json.dumps(x, ensure_ascii=False)), None)
     if not viejo:
+        print("programados:", [(x.get("id"), str((x.get("youtubeData") or {}).get("title"))[:50]) for x in lst])
         sys.exit(f"FALLO: no encuentro el post {P['mover']} entre los programados")
     nuevo = {k: v for k, v in viejo.items() if k not in ("id", "uuid", "creationDate", "creatorUserMail", "creatorUserId", "brandTags")}
     redes = [x.get("network") for x in viejo.get("providers") or []]
