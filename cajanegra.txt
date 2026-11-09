@@ -80,3 +80,4 @@
 2026-11-08|18:00|La estafa de Poyais|pregunta|YO 6af04c65229bf05dafa4d187 IN 6af04c66d6bbae6fa1dfdf72 TI 6af04c67229bf05dafa4d1c4|img=mixto|17:46
 2026-11-09|08:00|El robo de la Estrella de la India|error|YO 6af15beecac9d7525f6e803d IN 6af15beee44ddbb57c349f11 TI 6af15befe44ddbb57c349f49|img=mixto|07:44
 2026-11-09|12:00|La muerte de Isadora Duncan|increible|YO 6af15d33796ccae266874f32 IN 6af15d33e29b1359f0d0212f TI 6af15d34e44ddbb57c34ec53|img=mixto|12:07
+2026-11-09|15:00|La insólita muerte de Bobby Leach|sabias|YO 6af15df37522f65ac0c0754f IN 6af15df37522f65ac0c0759a TI 6af15df4796ccae266876bb5|img=mixto|14:28
