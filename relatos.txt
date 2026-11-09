@@ -84,3 +84,4 @@
 2026-11-08|15:00|Asclepio|nadie|YO 6af0092c562f2e6de99c6e20 IN 6af0092c562f2e6de99c6e50 TI 6af0092d51492b796e1bae3e|img=mixto|14:51
 2026-11-08|18:00|La cierva de Cerinia|cuenta|YO 6af00a4451492b796e1be978 IN 6af00a44562f2e6de99cb6f6 TI 6af00a4551492b796e1be9cd|img=mixto|17:20
 2026-11-08|21:00|El trono de Hefesto|sabias|YO 6af00b53562f2e6de99ce529 IN 6af00b53229bf05daf91a8e0 TI 6af00b5451492b796e1c18dc|img=mixto|21:29
+2026-11-09|08:00|El lecho de Procrusto|increible|YO 6af15dd4796ccae266876387 IN 6af15dd47522f65ac0c06ac7 TI 6af15dd5796ccae2668763dc|img=mixto|08:09
