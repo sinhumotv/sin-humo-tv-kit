@@ -95,18 +95,25 @@ def siguiente_hueco():
         return d + dt.timedelta(minutes=v)
     por_mes = int(L.get("por_mes", 0))
     if por_mes:
-        # X largos al mes (cupo gratis de Metricool: 20 publicaciones al mes por cuenta), repartidos por igual en el mes
-        import calendar
-        def toca(d):
-            n = calendar.monthrange(d.year, d.month)[1]
-            return int(d.day * por_mes / n) != int((d.day - 1) * por_mes / n)
-        def lleno(d):
-            return sum(1 for r in REGISTRO if r[0][:7] == d.strftime("%Y-%m")) >= por_mes
-        d = max(d, AHORA.replace(hour=hh, minute=mm, second=0, microsecond=0))
-        paso = dt.timedelta(days=1)
-        while (not toca(d) or lleno(d) or variado(d) < AHORA + dt.timedelta(minutes=30)
-               or d.strftime("%Y-%m-%d") in huecos_ocupados()):
-            d += paso
+        # (9-nov-2026, petición del usuario) aprovechar las 20 publicaciones al mes de Metricool: cada largo se publica EN
+        # CUANTO ESTÁ LISTO (20 min después), hasta 2 al día (separados 5 h como mínimo) y hasta 20 al mes. Si el día o
+        # el mes ya están llenos, va al siguiente día libre a la hora del canal (variada).
+        def del_dia(x):
+            return [r for r in REGISTRO if r[0][:10] == x.strftime("%Y-%m-%d")]
+        def lleno(x):
+            return sum(1 for r in REGISTRO if r[0][:7] == x.strftime("%Y-%m")) >= por_mes
+        hoy = del_dia(AHORA)
+        ultimo = max([dt.datetime.strptime(r[0][:16], "%Y-%m-%d %H:%M").replace(tzinfo=MAD) for r in hoy], default=None)
+        if not lleno(AHORA) and len(hoy) < 2:
+            cuando = AHORA + dt.timedelta(minutes=20)
+            if ultimo:
+                cuando = max(cuando, ultimo + dt.timedelta(hours=5))
+            if cuando.date() == AHORA.date():
+                return cuando
+        d = AHORA.replace(hour=hh, minute=mm, second=0, microsecond=0) + dt.timedelta(days=1)
+        while lleno(d) or len(del_dia(d)) >= 2:
+            d += dt.timedelta(days=1)
+        return variado(d)
     else:
         while variado(d) < AHORA + dt.timedelta(minutes=30) or d.strftime("%Y-%m-%d") in huecos_ocupados():
             d += paso
