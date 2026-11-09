@@ -1,0 +1,47 @@
+# (10-nov-2026) Largos del YouTube de Explícalo. Los fabrica el servidor de Explícalo (Modal) de madrugada, 20 al mes, y deja
+# una nota en /redes/expl-largo-hoy. Este workflow la recoge por la mañana y la publica YA con la cuenta de Metricool de
+# Explícalo (Buffer solo sube Shorts a YouTube y rechazaba los largos). Si hoy no hay largo, no hace nada.
+name: Largo de Explícalo
+
+on:
+  schedule:
+    - cron: "17 6 * * *"    # 7:17 / 8:17 en Madrid: el servidor empieza a las 1:12 y tarda una o dos horas
+  workflow_dispatch:
+
+concurrency:
+  group: largo-explicalo
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer el largo de hoy del servidor
+        id: leer
+        run: |
+          code=$(curl -s -o /tmp/publicacion.json -w '%{http_code}' https://sinhumotv--explicalo-api.modal.run/redes/expl-largo-hoy)
+          if [ "$code" != 200 ]; then echo "Hoy no hay largo de Explícalo ($code)"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
+          hoy=$(TZ=Europe/Madrid date +%Y-%m-%d)
+          if git fetch -q --depth 1 origin datos && git show origin/datos:largos_explicalo.txt 2>/dev/null | grep -q "^$hoy"; then
+            echo "El largo de hoy ya está publicado"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
+          u=$(python3 -c "import json;print(json.load(open('/tmp/publicacion.json'))['video'])")
+          c=$(curl -s -o /dev/null -I -w '%{http_code}' "$u"); echo "$u → $c"; [ "$c" = 200 ] || { echo "falta el vídeo"; exit 1; }
+          python3 -c "import json;p=json.load(open('/tmp/publicacion.json'));print('Largo:',p['titulo'])"
+          echo "hay=si" >> $GITHUB_OUTPUT
+      - name: Publicar con Metricool
+        if: steps.leer.outputs.hay == 'si'
+        env:
+          REFRESH: ${{ secrets.METRICOOL_EXPLICALO_REFRESH }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+        run: python3 metricool/publicar_largo.py explicalo /tmp/publicacion.json | tee /tmp/salida.txt
+      - name: Apuntarlo (para no publicarlo dos veces)
+        if: steps.leer.outputs.hay == 'si'
+        run: |
+          grep -q PROGRAMADO /tmp/salida.txt || exit 0
+          d=$(mktemp -d); git clone -q --depth 1 --branch datos "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" "$d"
+          echo "$(TZ=Europe/Madrid date '+%Y-%m-%d %H:%M')|$(python3 -c "import json;print(json.load(open('/tmp/publicacion.json'))['titulo'].replace('|','-'))")" >> "$d/largos_explicalo.txt"
+          cd "$d" && git -c user.name="Explícalo" -c user.email="sinhumotv@users.noreply.github.com" commit -qam "largo de Explícalo" 2>/dev/null || { git add largos_explicalo.txt && git -c user.name="Explícalo" -c user.email="sinhumotv@users.noreply.github.com" commit -qm "largo de Explícalo"; }
+          git push -q
