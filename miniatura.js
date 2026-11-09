@@ -37,7 +37,9 @@ for(let i=0;i<14;i++){const a=i*Math.PI/7;svg+='<path d="M1010 380 L'+(1010+600*
 svg+='<text x="60" y="'+(70+s1*.82)+'" font-family="Inter" font-weight="900" font-size="'+s1+'" fill="'+tinta+'" stroke="'+A.INK+'" stroke-width="'+(oscuro&&!O.foto?0:12)+'" paint-order="stroke">'+esc(O.l1||'')+'</text>';
 const y2=70+s1*.95+s2*.86;
 svg+='<text x="54" y="'+y2+'" font-family="Inter" font-weight="900" font-size="'+s2+'" fill="'+c+'" stroke="'+A.INK+'" stroke-width="14" paint-order="stroke">'+esc(O.l2||'')+'</text>';
-if(O.sub){const ss=fit(O.sub,56,680,34);svg+='<rect id="subr" x="50" y="'+(y2+30)+'" width="700" height="'+(ss+34)+'" rx="16" fill="'+A.ORO+'" stroke="'+A.INK+'" stroke-width="6"/><text id="subt" x="75" y="'+(y2+30+ss+6)+'" font-family="Inter" font-weight="900" font-size="'+ss+'" fill="'+A.INK+'">'+esc(O.sub)+'</text>';}
+// (9-nov-2026) la frase amarilla no puede pasar de x=720: ahí empieza el brazo de Lupi. window.ajustar la encoge o la parte en 2 líneas.
+const SUB_X=50, SUB_MAX=670, SUB_Y=y2+30;
+if(O.sub){const ss=fit(O.sub,56,SUB_MAX-50,34);svg+='<rect id="subr" x="'+SUB_X+'" y="'+SUB_Y+'" width="'+SUB_MAX+'" height="'+(ss+34)+'" rx="16" fill="'+A.ORO+'" stroke="'+A.INK+'" stroke-width="6"/><text id="subt" x="75" y="'+(SUB_Y+ss+6)+'" font-family="Inter" font-weight="900" font-size="'+ss+'" fill="'+A.INK+'">'+esc(O.sub)+'</text>';}
 // dato o icono protagonista junto a Lupi
 if(O.icono&&A[O.icono]){svg+=O.icono==='calendario'?A.calendario(820,600,1.25,O.dato_sub||'',O.dato||'',c):A.esc_(820,600,1.4,A[O.icono](820,600,1));}
 else if(O.dato){svg+=A.txtC(870,600,O.dato,150,c,'middle',14);}
@@ -47,7 +49,16 @@ svg+=lupi({x:1060,y:300,s:2.3,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'a
 svg+='<g transform="translate(60 670)"><rect x="-14" y="-38" width="250" height="52" rx="14" fill="'+A.INK+'" stroke="'+A.CRE+'" stroke-width="3"/><text x="111" y="-2" font-family="Inter" font-weight="900" font-size="30" fill="'+A.CRE+'" text-anchor="middle">sin humo TV</text></g>';
 svg+='</svg>';
 document.getElementById('c').innerHTML=svg;
-window.ajustar=()=>{const st=document.getElementById('subt');if(st){const w=st.getBBox().width;document.getElementById('subr').setAttribute('width',w+50);}};
+window.ajustar=()=>{const st=document.getElementById('subt'),sr=document.getElementById('subr');if(!st)return;
+  const NS='http://www.w3.org/2000/svg',lim=SUB_MAX-50;let fs=+st.getAttribute('font-size');
+  while(fs>34&&st.getBBox().width>lim){fs-=2;st.setAttribute('font-size',fs);}
+  if(st.getBBox().width<=lim){st.setAttribute('y',SUB_Y+fs+6);sr.setAttribute('height',fs+34);sr.setAttribute('width',st.getBBox().width+50);return;}
+  // no cabe en una línea: dos líneas partidas por la palabra más cercana a la mitad
+  const pal=O.sub.split(' ');let mejor=1,dif=1e9;for(let i=1;i<pal.length;i++){const d=Math.abs(pal.slice(0,i).join(' ').length-pal.slice(i).join(' ').length);if(d<dif){dif=d;mejor=i;}}
+  const lineas=[pal.slice(0,mejor).join(' '),pal.slice(mejor).join(' ')];fs=46;
+  const pon=()=>{st.textContent='';st.setAttribute('font-size',fs);lineas.forEach((l,i)=>{const t=document.createElementNS(NS,'tspan');t.setAttribute('x',75);t.setAttribute('y',SUB_Y+fs+6+i*fs*1.12);t.textContent=l;st.appendChild(t);});};
+  pon();while(fs>24&&st.getBBox().width>lim){fs-=2;pon();}
+  sr.setAttribute('height',fs*2.12+34);sr.setAttribute('width',Math.min(st.getBBox().width+50,SUB_MAX));};
 </script></body></html>`;
 const tmp = path.join(DIR, '_miniatura.html');
 fs.writeFileSync(tmp, html);
