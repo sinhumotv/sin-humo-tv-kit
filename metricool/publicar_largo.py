@@ -39,6 +39,8 @@ if P.get("mover"):   # (8-nov-2026) cambiar la hora de un largo ya programado (p
         if k.endswith("Data") and k != "smartLinkData" and k[:-4] not in redes:
             nuevo.pop(k)
     nuevo["publicationDate"] = {"dateTime": cuando.strftime("%Y-%m-%dT%H:%M:00"), "timezone": "Europe/Madrid"}
+    if P.get("miniatura"):   # (10-nov-2026) también se le puede cambiar la miniatura
+        nuevo["videoThumbnailUrl"] = P["miniatura"]
     res = s.llamar("updateScheduledPost", {"id": str(viejo["id"]), "uuid": str(viejo["uuid"]), "blogId": str(marca["id"]),
                                             "info": json.dumps(nuevo, ensure_ascii=False)})
     print("METRICOOL:", json.dumps(res, ensure_ascii=False)[:300])

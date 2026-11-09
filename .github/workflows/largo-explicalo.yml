@@ -14,6 +14,9 @@ on:
       fecha:
         description: "con mover: AAAA-MM-DDTHH:MM (hora de Madrid) o ahora"
         default: "ahora"
+      miniatura:
+        description: "con mover: 1 = hacerle además la miniatura buena (la del largo de hoy del servidor)"
+        default: ""
 
 concurrency:
   group: largo-explicalo
@@ -31,8 +34,19 @@ jobs:
         env:
           REFRESH: ${{ secrets.METRICOOL_EXPLICALO_REFRESH }}
           GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo '{"mover": "${{ inputs.mover }}", "fecha": "${{ inputs.fecha }}"}' > /tmp/mover.json
+          mini=""
+          if [ "${{ inputs.miniatura }}" = 1 ]; then
+            curl -sf -o /tmp/pub.json https://sinhumotv--explicalo-api.modal.run/redes/expl-largo-hoy
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; pip install -q pillow numpy
+            python3 metricool/miniatura_explicalo.py /tmp/pub.json /tmp/mini
+            tag="expl-largo-$(TZ=Europe/Madrid date +%Y%m%d-%H%M)"
+            gh release create "$tag" /tmp/mini/miniatura_A.jpg -R ${{ github.repository }} -t "$tag" -n "Miniatura largo Explícalo"
+            mini="https://github.com/${{ github.repository }}/releases/download/$tag/miniatura_A.jpg"
+          fi
+          python3 -c "import json,sys;json.dump({'mover':sys.argv[1],'fecha':sys.argv[2],'miniatura':sys.argv[3]},open('/tmp/mover.json','w'))" "${{ inputs.mover }}" "${{ inputs.fecha }}" "$mini"
           python3 metricool/publicar_largo.py explicalo /tmp/mover.json
       - name: Leer el largo de hoy del servidor
         if: inputs.mover == ''
@@ -47,6 +61,19 @@ jobs:
           c=$(curl -s -o /dev/null -I -w '%{http_code}' "$u"); echo "$u → $c"; [ "$c" = 200 ] || { echo "falta el vídeo"; exit 1; }
           python3 -c "import json;p=json.load(open('/tmp/publicacion.json'));print('Largo:',p['titulo'])"
           echo "hay=si" >> $GITHUB_OUTPUT
+      - name: Miniatura pensada para el clic (cada vídeo; si falla, se queda el fotograma del servidor)
+        if: steps.leer.outputs.hay == 'si'
+        continue-on-error: true
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+            sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; pip install -q pillow numpy
+            python3 metricool/miniatura_explicalo.py /tmp/publicacion.json /tmp/mini
+            tag="expl-largo-$(TZ=Europe/Madrid date +%Y%m%d-%H%M)"
+            gh release create "$tag" /tmp/mini/miniatura_A.jpg -R ${{ github.repository }} -t "$tag" -n "Miniatura largo Explícalo"
+            mini="https://github.com/${{ github.repository }}/releases/download/$tag/miniatura_A.jpg"
+            python3 -c "import json,sys;p=json.load(open('/tmp/publicacion.json'));p['miniatura']=sys.argv[1];json.dump(p,open('/tmp/publicacion.json','w'),ensure_ascii=False)" "$mini"
       - name: Publicar con Metricool
         if: steps.leer.outputs.hay == 'si'
         env:
