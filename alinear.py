@@ -6,7 +6,7 @@ la voz de ElevenLabs encadena párrafos sin pausa), transcribe voz.mp3 en local 
 <carpeta>/inicios.json. Luego basta volver a ejecutar audio.py, que usa esos inicios (parte la voz en el
 punto más silencioso junto a la primera palabra de cada escena).
 Uso: python3 alinear.py <carpeta>"""
-import json, sys, re, subprocess, unicodedata, difflib
+import json, os, sys, re, subprocess, unicodedata, difflib
 try:
     from faster_whisper import WhisperModel
 except ImportError:
@@ -17,7 +17,7 @@ D = sys.argv[1]
 P = json.load(open(D + "/proyecto.json", encoding="utf-8"))
 a = np.frombuffer(subprocess.run(["ffmpeg", "-loglevel", "error", "-i", D + "/voz.mp3", "-ar", "16000", "-ac", "1", "-f", "s16le", "-"],
                                  capture_output=True).stdout, np.int16).astype(np.float32) / 32768
-segs, _ = WhisperModel("small", device="cpu", compute_type="int8").transcribe(a, language="es", word_timestamps=True)
+segs, _ = WhisperModel(os.environ.get("WHISPER_MODELO", "small"), device="cpu", compute_type="int8").transcribe(a, language="es", word_timestamps=True)
 W = [(w.start, w.end, w.word.strip()) for s in segs for w in s.words]
 json.dump(W, open(D + "/palabras.json", "w"), ensure_ascii=False)
 def norm(w):

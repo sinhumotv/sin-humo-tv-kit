@@ -189,7 +189,8 @@ escenas_audio = [aplicar_atempo(construir(g, max_p), atempo) for g in grupos]
 # la voz arranca en el fotograma 0: sin silencio inicial en la escena 1
 x = escenas_audio[0]
 nz = np.argmax(np.abs(x) > 0.02)
-escenas_audio[0] = x[max(0, nz - int(0.02 * SR)):]
+RECORTE0 = max(0, nz - int(0.02 * SR)) / SR   # segundos (ya con atempo) quitados al principio de la escena 1
+escenas_audio[0] = x[int(RECORTE0 * SR):]
 
 dur = [len(x) / SR + RESPIRO for x in escenas_audio]
 if sum(dur) > TMAX:  # último recurso: recortar respiros
@@ -217,6 +218,101 @@ for e, (x, d) in enumerate(zip(escenas_audio, dur)):
     t += d
 total_s = round(t, 3)
 voz = voz[:int(total_s * SR)]
+
+
+# --- 5b. (v28) Tiempo REAL de cada palabra del subtítulo --------------------------
+# Si existe palabras.json (lo deja alinear.py: palabras de voz.mp3 con su segundo exacto), cada palabra del subtítulo
+# recibe el instante en que la voz la dice de verdad, ya trasladado al vídeo (pausas recortadas, atempo y respiros).
+# motor.js lo usa para el karaoke y el .srt para sus bloques. Sin palabras.json todo sigue como antes (reparto por longitud).
+def _norm(w):
+    import unicodedata
+    w = unicodedata.normalize("NFD", w.lower())
+    return re.sub(r"[^a-z0-9]", "", "".join(c for c in w if unicodedata.category(c) != "Mn"))
+
+
+def fichas_sub(e):
+    """Las palabras del subtítulo de la escena tal y como las parte motor.js (el nombre del canal es una sola)."""
+    txt = ESC[e].get("subtitulo") or ESC[e]["hablado"]
+    txt = re.sub(r"sin humo te uve", "sin humo TV", txt, flags=re.I).replace("sin humo TV", "sin\u2060humo\u2060TV")
+    return [w for w in re.split(r"[ \t\n]+", txt) if w]
+
+
+def mapa_escena(g):
+    """Tramos (inicio_original, fin_original, inicio_en_la_escena) de construir(g, max_p), antes del atempo."""
+    i0, i1 = g
+    m, o = [], 0.0
+    a0 = max(0.0, tramos[i0][0] - 0.1)
+    for k in range(i0, i1 + 1):
+        a, b = tramos[k]
+        if k == i0:
+            a = a0
+        m.append((a, b, o, 1.0)); o += b - a
+        if k < i1:
+            p = tramos[k + 1][0] - b
+            q = max_p if (max_p is not None and p > 0.32) else p
+            m.append((b, tramos[k + 1][0], o, q / p if p > 0 else 1.0)); o += q
+    b = min(DUR, tramos[i1][1] + 0.2)
+    m.append((tramos[i1][1], b, o, 1.0))
+    return m
+
+
+def a_video(e, s):
+    """Segundo de voz.mp3 → segundo del vídeo final, dentro de la escena e."""
+    m = mapa_escena(grupos[e])
+    if s <= m[0][0]:
+        o = 0.0
+    elif s >= m[-1][1]:
+        o = m[-1][2] + (m[-1][1] - m[-1][0])
+    else:
+        a, b, o0, f = next(x for x in m if x[0] <= s <= x[1])
+        o = o0 + (s - a) * f
+    o = o / atempo - (RECORTE0 if e == 0 else 0.0)
+    T_ = tiempos[e]
+    return min(max(T_["ini"] + o, T_["ini"]), T_["voz_fin"])
+
+
+_pj = os.path.join(D, "palabras.json")
+if os.path.exists(_pj):
+    try:
+        W = json.load(open(_pj))
+        hyp = [_norm(w[2]) for w in W]
+        ref, de = [], []
+        for e in range(N):
+            for i, w in enumerate(fichas_sub(e)):
+                ref.append(_norm(w.replace("\u2060", " ")).replace(" ", "")); de.append((e, i))
+        import difflib
+        par = {}
+        for x, y, n in difflib.SequenceMatcher(None, ref, hyp, autojunk=False).get_matching_blocks():
+            for k in range(n):
+                if ref[x + k]:
+                    par[x + k] = y + k
+        acertadas = 0
+        for e in range(N):
+            idx = [r for r in range(len(ref)) if de[r][0] == e]
+            T_ = tiempos[e]
+            ini = [None] * len(idx)
+            for j, r in enumerate(idx):
+                if r in par:
+                    t_ = a_video(e, W[par[r]][0])
+                    if T_["ini"] - 0.01 <= t_ <= T_["voz_fin"]:   # la palabra está en el trozo de voz de su escena
+                        ini[j] = t_; acertadas += 1
+            # huecos (cifras que la voz dice en letra, palabras mal oídas): se reparten por longitud entre las vecinas
+            fichas = fichas_sub(e)
+            peso = [len(_norm(w)) + 2 for w in fichas]
+            anclas = [(-1, T_["ini"] + 0.02)] + [(j, ini[j]) for j in range(len(ini)) if ini[j] is not None] + [(len(ini), T_["voz_fin"] - 0.05)]
+            for (ja, ta), (jb, tb) in zip(anclas, anclas[1:]):
+                if jb - ja <= 1:
+                    continue
+                s0 = max(ja, 0); tot = max(1, sum(peso[s0:jb]))
+                for j in range(ja + 1, jb):
+                    ini[j] = ta + (tb - ta) * sum(peso[s0:j]) / tot
+            for j in range(1, len(ini)):   # nunca hacia atrás
+                ini[j] = max(ini[j], ini[j - 1] + 0.04)
+            fin = [min(ini[j + 1], ini[j] + 1.2) if j + 1 < len(ini) else max(ini[j] + 0.2, T_["voz_fin"] - 0.05) for j in range(len(ini))]
+            T_["palabras"] = [[round(a, 3), round(b, 3)] for a, b in zip(ini, fin)]
+        print(f"Subtítulos al ritmo real de la voz: {acertadas}/{len(ref)} palabras con su segundo exacto")
+    except Exception as x:
+        print("AVISO: no se pudo usar palabras.json (subtítulos repartidos por longitud):", x)
 pcm = (np.clip(voz, -1, 1) * 32767).astype(np.int16)
 tmp = os.path.join(D, "_vf.raw")
 pcm.tofile(tmp)
@@ -259,10 +355,16 @@ for e, tm in enumerate(tiempos):
     L = sum(len(b) for b in bl)
     vt = tm["voz_fin"] - tm["ini"]
     acc = 0
+    PW = tm.get("palabras")
+    if PW and len(PW) != len(txt.split()):
+        PW = None   # el nombre del canal cuenta como una palabra en motor.js: se usa el reparto clásico
+    wi = 0
     for b in bl:
         a = tm["ini"] + vt * acc / L
         acc += len(b)
         z = tm["ini"] + vt * acc / L
+        if PW:   # v28: con los tiempos reales de cada palabra
+            nw = len(b.split()); a, z = PW[wi][0], PW[wi + nw - 1][1]; wi += nw
         srt.append(f"{n}\n{fmt(a)} --> {fmt(z)}\n{b}\n")
         n += 1
 open(os.path.join(D, "subtitulos.srt"), "w", encoding="utf-8").write("\n".join(srt))

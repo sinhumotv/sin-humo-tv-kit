@@ -196,6 +196,8 @@
     }
     const t0 = T.ini + .02, t1 = Math.max(t0 + .3, T.voz_fin - .05), tot = pal.reduce((a, b) => a + b.peso, 0) || 1;
     let acc = 0; for (const p of pal) { p.a = t0 + (t1 - t0) * acc / tot; acc += p.peso; p.b = t0 + (t1 - t0) * acc / tot; }
+    // v28: si audio.py dejó el segundo REAL de cada palabra (alinear.py + palabras.json), el karaoke va con la voz
+    if (Array.isArray(T.palabras) && T.palabras.length === pal.length) pal.forEach((p, i) => { p.a = T.palabras[i][0]; p.b = T.palabras[i][1]; });
     // Bloques de hasta ~38 caracteres (2 líneas), cortando preferentemente tras puntuación,
     // sin dejar restos de 1-2 palabras y sin acabar línea en "de", "la", "que"...
     const DEBIL = /^(a|al|de|del|el|la|las|los|lo|un|una|y|e|o|u|que|en|con|por|para|su|sus|se|ni|ya|muy|más|tu|mi)$/i;
