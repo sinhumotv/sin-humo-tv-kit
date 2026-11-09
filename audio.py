@@ -101,36 +101,42 @@ for j in fin_idx:
 # v26: cortes forzados. Si existe <carpeta>/inicios.json (lista con el segundo de voz.mp3 en que empieza cada
 # escena, p. ej. sacado de una transcripción con marcas de tiempo), cada escena empieza en el tramo de voz más cercano.
 _fz = os.path.join(D, "inicios.json")
-if os.path.exists(_fz):
-    _ini = json.load(open(_fz))
-    if len(_ini) == N:
-        # si un inicio cae dentro de un tramo de voz continuo, se parte el tramo en el punto más silencioso cercano
-        def _hueco(t):
-            fr = int(0.02 * SR); best, bt = 1e9, t
-            for x in np.arange(t - 0.3, t + 0.06, 0.01):
-                i = int(x * SR)
-                if i < fr or i + fr > len(raw): continue
-                r = float(np.sqrt(np.mean(raw[i - fr // 2:i + fr // 2] ** 2)))
-                if r < best: best, bt = r, x
-            return bt
-        for e in range(1, N):
-            t = _hueco(_ini[e])
-            for k, (a, b) in enumerate(tramos):
-                if a + 0.35 < t < b - 0.15:
-                    tramos[k:k + 1] = [(a, t - 0.2), (t + 0.1, b)]
-                    break
-            else:
-                continue
-            _ini[e] = t + 0.1
-        T = len(tramos)
-        _st = [0]
-        for e in range(1, N):
-            cand = [k for k in range(_st[-1] + 1, T - (N - 1 - e))]
-            _st.append(min(cand, key=lambda k: abs(tramos[k][0] - _ini[e])))
-        grupos = [(_st[e], (_st[e + 1] - 1) if e + 1 < N else T - 1) for e in range(N)]
-        print("Cortes forzados con inicios.json")
-    else:
-        print(f"AVISO: inicios.json tiene {len(_ini)} valores y hay {N} escenas: se ignora")
+# (9-nov-2026) si los cortes forzados no encajan (p. ej. menos pausas que escenas en un corto), se usa el reparto normal en vez de fallar
+_tramos0, _grupos0 = list(tramos), list(grupos)
+try:
+    if os.path.exists(_fz):
+        _ini = json.load(open(_fz))
+        if len(_ini) == N:
+            # si un inicio cae dentro de un tramo de voz continuo, se parte el tramo en el punto más silencioso cercano
+            def _hueco(t):
+                fr = int(0.02 * SR); best, bt = 1e9, t
+                for x in np.arange(t - 0.3, t + 0.06, 0.01):
+                    i = int(x * SR)
+                    if i < fr or i + fr > len(raw): continue
+                    r = float(np.sqrt(np.mean(raw[i - fr // 2:i + fr // 2] ** 2)))
+                    if r < best: best, bt = r, x
+                return bt
+            for e in range(1, N):
+                t = _hueco(_ini[e])
+                for k, (a, b) in enumerate(tramos):
+                    if a + 0.35 < t < b - 0.15:
+                        tramos[k:k + 1] = [(a, t - 0.2), (t + 0.1, b)]
+                        break
+                else:
+                    continue
+                _ini[e] = t + 0.1
+            T = len(tramos)
+            _st = [0]
+            for e in range(1, N):
+                cand = [k for k in range(_st[-1] + 1, T - (N - 1 - e))]
+                _st.append(min(cand, key=lambda k: abs(tramos[k][0] - _ini[e])))
+            grupos = [(_st[e], (_st[e + 1] - 1) if e + 1 < N else T - 1) for e in range(N)]
+            print("Cortes forzados con inicios.json")
+        else:
+            print(f"AVISO: inicios.json tiene {len(_ini)} valores y hay {N} escenas: se ignora")
+except Exception as _x:
+    tramos, grupos = _tramos0, _grupos0
+    print("AVISO: cortes forzados con inicios.json no aplicables, se usa el reparto normal:", _x)
 
 # --- 4. Extraer cada escena con pausas recortadas -----------------------------
 def trozo(a, b):
