@@ -314,10 +314,13 @@ for campo in ('l1', 'l2', 'sub'):   # (8-nov-2026) la miniatura tampoco puede ll
         if _dig(x) not in [_dig(y) for y in re.findall(r'\d[\d.,]*', todo_dicho)]:
             print(f'miniatura: «{T.get(campo)}» lleva una cifra que no se dice → fuera', flush=True); T[campo] = ''
 if not (T.get('l1') or T.get('l2')): T['l1'] = ' '.join(P['titulo_noticia'].upper().split()[:2])[:16]
+def _corta(t, n):   # (9-nov-2026) cortar por palabras enteras, nunca a mitad de palabra
+    t = ' '.join(str(t or '').split())
+    return t if len(t) <= n else t[:n + 1].rsplit(' ', 1)[0].rstrip(' ,;:-')
 for n, f in enumerate(fotos[:2]):
     os.makedirs(os.path.join(D, f'v{n + 1}'), exist_ok=True)
     corre(['node', 'miniatura.js', os.path.join(D, f'v{n + 1}'), json.dumps({'l1': str(T.get('l1') or '')[:16], 'l2': str(T.get('l2') or '')[:14],
-          'sub': str(T.get('sub') or '')[:46], 'color': 'rojo', 'expr': 'seria' if GRAVE else 'sorprendida', 'fondo': 'oscuro',
+          'sub': _corta(T.get('sub'), 60), 'color': 'rojo', 'expr': 'seria' if GRAVE else 'sorprendida', 'fondo': 'oscuro',
           'foto': f['ruta'], 'credito': 'Foto: ' + f['credito']}, ensure_ascii=False)])
 subprocess.run(['cp', os.path.join(D, 'v1', 'miniatura.jpg'), os.path.join(D, 'miniatura.jpg')], check=True)
 enl = '\n'.join(f'{fu}: {u}' for fu, u in zip(N.get('fuentes') or [], N.get('enlaces') or []))
