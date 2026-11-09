@@ -78,3 +78,4 @@
 2026-11-08|18:00|Rascacielos biomiméticos en 2100|sabias|YO 6af00a59d6bbae6fa1cc8c7e IN 6af00a5a562f2e6de99cb8c7 TI 6af00a5bd6bbae6fa1cc8cd0|img=mixto|18:16
 2026-11-08|21:00|Biopsia molecular en 2100|consecuencia|YO 6af00b8f562f2e6de99cf058 IN 6af00b909214322f6834277b TI 6af00b90229bf05daf91b2ee|img=mixto|21:38
 2026-11-08|12:00|Límite de presupuesto en IA|cuenta|YO 6af04a24562f2e6de9aec875 IN 6af04a25229bf05dafa41c35 TI 6af04a26229bf05dafa41c9c|img=mixto|11:59
+2026-11-09|08:00|Demostraciones matemáticas con IA|final|YO 6af15fab796ccae26687d58a IN 6af15fab796ccae26687d5b6 TI 6af15face44ddbb57c356b80|img=mixto|07:49
