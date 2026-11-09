@@ -78,3 +78,4 @@
 2026-11-08|21:00|La trampa de John Dillinger|consecuencia|YO 6af009a1004e4879a799de0e IN 6af009a2d6bbae6fa1cc5e34 TI 6af009a39214322f6833c912|img=mixto|20:24
 2026-11-08|15:00|La batalla de Karánsebes|nadie|YO 6af04bb2d6bbae6fa1dfb7f4 IN 6af04bb3d6bbae6fa1dfb85b TI 6af04bb4d6bbae6fa1dfb950|img=mixto|14:20
 2026-11-08|18:00|La estafa de Poyais|pregunta|YO 6af04c65229bf05dafa4d187 IN 6af04c66d6bbae6fa1dfdf72 TI 6af04c67229bf05dafa4d1c4|img=mixto|17:46
+2026-11-09|08:00|El robo de la Estrella de la India|error|YO 6af15beecac9d7525f6e803d IN 6af15beee44ddbb57c349f11 TI 6af15befe44ddbb57c349f49|img=mixto|07:44
