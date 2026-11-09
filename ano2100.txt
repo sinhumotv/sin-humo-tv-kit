@@ -80,3 +80,4 @@
 2026-11-08|12:00|Límite de presupuesto en IA|cuenta|YO 6af04a24562f2e6de9aec875 IN 6af04a25229bf05dafa41c35 TI 6af04a26229bf05dafa41c9c|img=mixto|11:59
 2026-11-09|08:00|Demostraciones matemáticas con IA|final|YO 6af15fab796ccae26687d58a IN 6af15fab796ccae26687d5b6 TI 6af15face44ddbb57c356b80|img=mixto|07:49
 2026-11-09|12:00|Láseres ultrarrápidos para chips|pregunta|YO 6af16111796ccae266881103 IN 6af161122f1ff83d451adf16 TI 6af161127522f65ac0c110ab|img=mixto|11:52
+2026-11-09|15:00|Fotosíntesis artificial en 2100|increible|YO 6af1626c2f1ff83d451b7ceb IN 6af1626d796ccae26688d070 TI 6af1626d2f1ff83d451b7d47|img=mixto|14:29
