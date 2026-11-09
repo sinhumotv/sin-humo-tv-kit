@@ -88,3 +88,4 @@
 2026-11-09|12:00|Endimión y Selene|pregunta|YO 6af15f4d7522f65ac0c0bcba IN 6af15f4e796ccae26687c161 TI 6af15f4e2f1ff83d451a8aff|img=mixto|12:24
 2026-11-09|18:00|El cinturón de Hipólita|sabias|YO 6af1633ee29b1359f0d1c83a IN 6af1633ee44ddbb57c36979a TI 6af1633fe29b1359f0d1c896|img=ia|17:55
 2026-11-09|21:00|La metamorfosis de Cadmo|nadie|YO 6af164cecac9d7525f70c879 IN 6af164cf7522f65ac0c26764 TI 6af164cfcac9d7525f70c8b1|img=mixto|21:32
+2026-11-09|15:00|Las yeguas de Diomedes|final|YO 6af19fff0ed1890679aa57ee IN 6af1a000f309feb7ee060058 TI 6af1a0000ed1890679aa5859|img=mixto|14:50
