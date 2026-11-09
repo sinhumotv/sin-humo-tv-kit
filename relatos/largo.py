@@ -318,7 +318,10 @@ if E["fase"] == "montaje":
             continue
         largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.6
         durs = [dur_(d) - (0.5 if j else 0) for j, d in enumerate(partes)]
-        if sum(durs) - 0.5 * (len(partes) - 1) < largo_esc:
+        # (9-nov-2026) tras dos búsquedas de más clips, una escena a la que le faltan unos segundos se acepta: el montaje la
+        # ralentiza como mucho x1,25 (sin repetir clip). Antes se tiraba el largo entero por 2 o 3 escenas de 60.
+        tolera = 1.25 if int(os.environ.get("REPETIR_LARGO", "0")) >= 2 else 1.0
+        if (sum(durs) - 0.5 * (len(partes) - 1)) * tolera < largo_esc:
             cortas.append((n, largo_esc))
             continue
         if len(partes) < 2:
