@@ -508,9 +508,59 @@ def rescate(i):
     return False
 
 
+def usados_este_video():
+    ids = {str(x) for x in H.get("vetados", [])}
+    for x in ESC:
+        im_ = x.get("imagen", {})
+        ids.add(str(im_.get("clip_id")))
+        ids |= {str(y.get("clip_id")) for y in im_.get("extra", [])}
+    return ids
+
+
+def clip_mas(qs, dst, ancho=False):
+    """(9-nov-2026) Clip extra para una escena a la que le falta material. Orden pedido por el usuario: primero se busca
+    en TODAS las webs del canal (Pixabay, varias páginas, y Commons, NASA, Internet Archive, Mixkit) un clip nunca usado;
+    solo si en ninguna hay nada, como último recurso, se acepta un clip que ya salió en un largo ANTIGUO del canal
+    (nunca uno ya usado en este mismo vídeo). Devuelve (clip, repetido_de_otro_largo) o (None, False)."""
+    usados = usados_ids()
+    # 1) Pixabay, más páginas que antes
+    for pag in ((1, 2, 3, 4) if ancho else (1,)):
+        for q in qs:
+            for c in pixabay(q, pag):
+                if str(c["id"]) in usados or not bajar_clip(c["url"], dst):
+                    continue
+                if movimiento(dst) >= 3.0:
+                    return c, False
+    # 2) las demás webs de vídeo del canal
+    for q in qs:
+        for f in [f for f in (C.get("fuentes") or []) if f != "pixabay"]:
+            try:
+                cands = {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive,
+                         "mixkit": stock.mixkit}[f](q)
+            except Exception as ex:
+                print("  fuente", f, str(ex)[:60])
+                continue
+            for c in cands[:8]:
+                if str(c["id"]) in usados or not bajar_extra(c, dst):
+                    continue
+                if movimiento(dst) >= 3.0:
+                    return c, False
+    # 3) último recurso (solo tras una búsqueda ampliada fallida): un clip de un largo antiguo, nunca de este vídeo
+    if ancho and int(os.environ.get("REPETIR_LARGO", "0")) >= 1:
+        propios = usados_este_video()
+        for pag in (1, 2):
+            for q in qs:
+                for c in pixabay(q, pag):
+                    if str(c["id"]) in propios or str(c["id"]) not in PREVIOS or not bajar_clip(c["url"], dst):
+                        continue
+                    if movimiento(dst) >= 3.0:
+                        return c, True
+    return None, False
+
+
 def extras():
-    """Si el clip es más corto que lo que dura la escena, se le añaden más clips (hasta 3) en vez de ralentizarlo o
-    dejarlo congelado. La duración de la escena se calcula con el texto hablado (misma velocidad que la voz)."""
+    """Si el clip es más corto que lo que dura la escena, se le añaden más clips (hasta 3, o 6 si ya faltó material) en
+    vez de ralentizarlo o dejarlo congelado. La duración de la escena se calcula con el texto hablado."""
     for i, e in enumerate(ESC, 1):
         im = e["imagen"]
         base = f"{D}/clips/{i:02d}.mp4"
@@ -528,14 +578,21 @@ def extras():
         while (total < necesita * 1.15 or 1 + len(im["extra"]) < planos) and len(im["extra"]) < tope:
             n = len(im["extra"]) + 1
             dst = f"{D}/clips/{i:02d}_{n}.mp4"
+            pal = [w for w in re.findall(r"[A-Za-z]+", im.get("busqueda", "")) if len(w) > 3]
             qs = [im.get("busqueda", "")] + list(im.get("otras") or []) + list(L.get("video_generico") or [])
-            c = clip_pixabay([q for q in qs if q], dst, paginas=(1, 2) if im.get("necesita") else (1,))
+            if im.get("necesita"):
+                qs += pal[:2] + list(L.get("video_rescate") or [])
+            c, rep = clip_mas([q for q in dict.fromkeys(qs) if q], dst, ancho=bool(im.get("necesita")))
             if not c:
                 break
-            im["extra"].append({"clip": c["url"], "clip_id": c["id"]})
-            CRED[f"{i:02d}_{n}"] = f"Vídeo de Pixabay · {c['pagina']}"
+            x = {"clip": c["url"], "clip_id": c["id"]}
+            if c.get("fuente"):
+                x["clip_ini"] = c.get("inicio", 1)
+            im["extra"].append(x)
+            CRED[f"{i:02d}_{n}"] = c.get("credito") or f"Vídeo de Pixabay · {c['pagina']}"
             total += dur(dst)
-            print(f"escena {i}: clip extra {n} ({c['id']}) para cubrir {necesita:.0f} s")
+            print(f"escena {i}: clip extra {n} ({c['id']}{', repetido de un largo antiguo' if rep else ''}) "
+                  f"para cubrir {necesita:.0f} s")
         guardar()
 
 

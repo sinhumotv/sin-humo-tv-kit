@@ -489,7 +489,18 @@ if E["fase"] == "publicar":
             res = s.llamar("updateScheduledPost", {"id": str(REH), "uuid": uuid_viejo, "blogId": str(marca["id"]),
                                                    "info": args["info"]})
         else:
-            res = s.llamar("createScheduledPost", args)
+            # (9-nov-2026) Metricool a veces responde «Failed to normalize media» con un vídeo recién alojado que luego
+            # acepta: se reintenta con espera antes de dar el largo por fallido
+            for _int in range(4):
+                try:
+                    res = s.llamar("createScheduledPost", args)
+                    break
+                except RuntimeError as e_n:
+                    if "NORMALIZE" not in str(e_n).upper() or _int == 3:
+                        raise
+                    print(f"Metricool no ha podido leer el vídeo todavía; reintento {_int + 1} en {120 * (_int + 1)} s")
+                    import time as _tm
+                    _tm.sleep(120 * (_int + 1))
     except RuntimeError as e:
         if "THUMBNAIL" not in str(e).upper():
             raise
