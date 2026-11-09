@@ -324,13 +324,16 @@ def _movimiento(ruta):
     return float(np.abs(np.frombuffer(fr[0], np.uint8).astype(float) - np.frombuffer(fr[1], np.uint8).astype(float)).mean())
 
 
+FUENTES = {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive, "mixkit": stock.mixkit,
+           "europeana": stock.europeana}
+
+
 def candidatos(q):
     """Pixabay (horizontal, Full HD) + las demás fuentes del canal (Wikimedia Commons, NASA, Internet Archive)."""
     out = pixabay(q)[:6]
     for f in [f for f in (C.get("fuentes") or []) if f != "pixabay"]:
         try:
-            out += {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive,
-                    "mixkit": stock.mixkit}[f](q)[:4 if f == "mixkit" else 3]
+            out += FUENTES[f](q)[:4 if f in ("mixkit", "europeana") else 3]
         except Exception as ex:
             print("  fuente", f, str(ex)[:60])
     return out
@@ -531,16 +534,25 @@ def clip_mas(qs, dst, ancho=False):
                     continue
                 if movimiento(dst) >= 3.0:
                     return c, False
-    # 2) las demás webs de vídeo del canal
+    # 2) las demás webs de vídeo del canal (Commons, NASA, Internet Archive, Mixkit, Europeana)
+    largos_ = []
     for q in qs:
-        for f in [f for f in (C.get("fuentes") or []) if f != "pixabay"]:
+        for f in [f for f in (C.get("fuentes") or []) if f != "pixabay" and f in FUENTES]:
             try:
-                cands = {"commons": stock.commons, "nasa": stock.nasa, "archive": stock.archive,
-                         "mixkit": stock.mixkit}[f](q)
+                cands = FUENTES[f](q)
             except Exception as ex:
                 print("  fuente", f, str(ex)[:60])
                 continue
             for c in cands[:8]:
+                largos_.append(c)
+                if str(c["id"]) in usados or not bajar_extra(c, dst):
+                    continue
+                if movimiento(dst) >= 3.0:
+                    return c, False
+    # 2b) otros trozos (planos distintos) de las grabaciones largas encontradas
+    if ancho:
+        for c0 in largos_[:10]:
+            for c in stock.trozos(c0):
                 if str(c["id"]) in usados or not bajar_extra(c, dst):
                     continue
                 if movimiento(dst) >= 3.0:

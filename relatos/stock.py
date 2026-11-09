@@ -143,8 +143,10 @@ def nasa(q):
 
 def archive(q):
     d = _json("https://archive.org/advancedsearch.php?" + urllib.parse.urlencode(
-        {"q": f"({q}) AND mediatype:movies AND (collection:prelinger OR collection:universal_newsreels)",
-         "fl[]": "identifier,title", "rows": 8, "output": "json"}))
+        {"q": f"({q}) AND mediatype:movies AND (collection:prelinger OR collection:universal_newsreels OR "
+              f"collection:FedFlix OR collection:newsandpublicaffairs OR licenseurl:*publicdomain* OR "
+              f"licenseurl:*creativecommons.org/licenses/by/* OR licenseurl:*creativecommons.org/licenses/by-sa/*)",
+         "fl[]": "identifier,title", "rows": 14, "output": "json"}))
     out = []
     for doc in ((d or {}).get("response") or {}).get("docs", []):
         ide = doc["identifier"]
@@ -196,6 +198,55 @@ def mixkit(q, maximo=6):
     return out
 
 
+def europeana(q, maximo=8):
+    """(9-nov-2026) Europeana: archivos de vídeo de museos, filmotecas y televisiones europeas. Solo los de licencia libre
+    (dominio público, CC0, CC BY, CC BY-SA) con enlace directo al MP4. Usa la clave pública de demostración."""
+    d = _json("https://api.europeana.eu/record/v2/search.json?" + urllib.parse.urlencode(
+        {"wskey": os.environ.get("EUROPEANA_KEY", "api2demo"), "query": q, "qf": "TYPE:VIDEO", "media": "true",
+         "reusability": "open", "rows": 24, "profile": "rich"}))
+    out = []
+    for it in (d or {}).get("items", []):
+        url = ((it.get("edmIsShownBy") or [""])[0] or "").replace("http://", "https://")
+        lic = " ".join(it.get("rights") or [])
+        if not re.search(r"\.mp4($|\?)", url, re.I) or re.search(r"/(by-nc|by-nd|by-nc-sa|by-nc-nd)/|InC|rightsstatements", lic):
+            continue
+        tit = " ".join(it.get("title") or [])[:120]
+        if NO_REAL.search(tit):
+            continue
+        prov = " ".join(it.get("dataProvider") or [])[:80]
+        pag = (it.get("guid") or "").split("?")[0]
+        out.append({"id": "eu:" + it.get("id", url), "url": url, "thumb": (it.get("edmPreview") or [None])[0],
+                    "inicio": 3, "tags": tit, "pagina": pag, "vertical": False, "fuente": "europeana",
+                    "credito": f"{prov} (licencia libre), Europeana · {pag}"})
+        if len(out) >= maximo:
+            break
+    return out
+
+
+def trozos(c, n=4, separacion=25):
+    """(9-nov-2026) De una película o grabación larga (Archive, Europeana, Commons, NASA) salen varios trozos DISTINTOS,
+    cada uno con su propio id (no es repetir escena: son planos diferentes del metraje)."""
+    if c.get("fuente") in (None, "mixkit"):
+        return []
+    u = _resolver(c)
+    if not u:
+        return []
+    try:
+        r = subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{u}"', shell=True,
+                           capture_output=True, text=True, timeout=90)
+        dur = float(r.stdout.strip())
+    except Exception:
+        return []
+    base = int(c.get("inicio", 1))
+    out = []
+    for k in range(1, n + 1):
+        ini = base + k * separacion
+        if ini + 15 > dur:
+            break
+        out.append({**c, "id": f"{c['id']}@{ini}", "inicio": ini})
+    return out
+
+
 def _resolver(c):
     """URL directa del vídeo (NASA e Internet Archive la dan aparte) y punto de inicio del trozo."""
     if c.get("url"):
@@ -214,7 +265,8 @@ def _resolver(c):
         if fs:
             dur = float(fs[0].get("length") or 0) if str(fs[0].get("length", "")).replace(".", "").isdigit() else 0
             import zlib
-            c["inicio"] = 30 + zlib.crc32(c["ia"].encode()) % max(1, int(dur - 60)) if dur > 120 else 5
+            if "inicio" not in c:
+                c["inicio"] = 30 + zlib.crc32(c["ia"].encode()) % max(1, int(dur - 60)) if dur > 120 else 5
             c["url"] = f"https://archive.org/download/{c['ia']}/{urllib.parse.quote(fs[0]['name'])}"
             return c["url"]
     return None
@@ -250,10 +302,11 @@ def buscar_todo(q, fuentes=("pixabay",)):
     listas = []
     for f in fuentes:
         try:
-            listas.append({"pixabay": buscar, "commons": commons, "nasa": nasa, "archive": archive, "mixkit": mixkit}[f](q))
+            listas.append({"pixabay": buscar, "commons": commons, "nasa": nasa, "archive": archive, "mixkit": mixkit,
+                           "europeana": europeana}[f](q))
         except Exception as e:
             print("  fuente", f, str(e)[:80])
-    cupo = {"pixabay": 5, "mixkit": 4, "commons": 3, "nasa": 3, "archive": 2}
+    cupo = {"pixabay": 5, "mixkit": 4, "commons": 3, "nasa": 3, "archive": 2, "europeana": 2}
     out = []
     for k in range(max([len(l) for l in listas] or [0])):
         for l in listas:
