@@ -1237,3 +1237,7 @@ nasa:HD 049 Mercury_Gemini_Apollo_Resource Reel 1
 210786
 214767
 217105
+ia:SeeingLo1920
+85350
+227112
+ia:Chevrole1936_4
