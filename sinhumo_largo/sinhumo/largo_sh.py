@@ -304,7 +304,8 @@ if not os.path.exists(os.path.join(D, 'video_final.mp4')):
 cap_txt = open(os.path.join(D, 'capitulos.txt')).read().strip() if os.path.exists(os.path.join(D, 'capitulos.txt')) else ''
 T = gemini(f'Vídeo de YouTube de sin humo TV (unos 8 minutos) sobre: «{P["titulo_noticia"]}». Resumen de los hechos: {N["hechos"][:1500]}\n'
            'Escribe 5 títulos (≤ 70 caracteres, con lo que la gente busca + curiosidad o urgencia + promesa cierta, sin clickbait falso) y elige el más fuerte. '
-           'Miniatura (NUNCA repite el título, lo complementa con un dato, urgencia o pregunta): l1 y l2 (2-3 palabras enormes en total, una cifra si la hay) '
+           'Miniatura (NUNCA repite el título, lo complementa con un dato, urgencia o pregunta): l1 y l2, las DOS obligatorias, cada una de 1-2 palabras y como mucho 12 caracteres '
+           '(l1 = de qué va, l2 = lo que impacta: «SUPREMO» / «DICE NO»; una cifra solo si se dice en el vídeo) '
            'y sub (franja corta ≤ 45 caracteres). Descripción: 2-3 líneas con las palabras que la gente busca. Etiquetas: 6-8 términos de búsqueda. '
            'Pregunta neutral para comentar. Responde solo JSON: {"titulo":"","l1":"","l2":"","sub":"","descripcion":"","etiquetas":[],"pregunta":""}', 0.7)
 titulo = str(T.get('titulo') or P['titulo_noticia'])[:70]
@@ -314,6 +315,19 @@ for campo in ('l1', 'l2', 'sub'):   # (8-nov-2026) la miniatura tampoco puede ll
         if _dig(x) not in [_dig(y) for y in re.findall(r'\d[\d.,]*', todo_dicho)]:
             print(f'miniatura: «{T.get(campo)}» lleva una cifra que no se dice → fuera', flush=True); T[campo] = ''
 if not (T.get('l1') or T.get('l2')): T['l1'] = ' '.join(P['titulo_noticia'].upper().split()[:2])[:16]
+# (10-nov-2026) el titular de la miniatura siempre con DOS líneas (una sola palabra, «VOTO», no decía nada): la que falte se saca del
+# título del vídeo (la palabra con mayúscula más larga que no esté ya; si no hay, la más larga)
+def _linea_extra(ya):
+    pal = [re.sub(r'[^\wáéíóúñüÁÉÍÓÚÑÜ-]', '', w) for w in titulo.split()]
+    pal = [w for w in pal if len(w) >= 4 and not re.search(r'\d', w) and w.upper() not in ya.upper().split()]
+    prop = [w for w in pal[1:] if w[:1].isupper()] or pal
+    return max(prop, key=len).upper()[:14] if prop else ''
+T['l1'], T['l2'] = str(T.get('l1') or '').strip(), str(T.get('l2') or '').strip()
+if T['l1'] and not T['l2']:
+    ws = T['l1'].split()
+    if len(ws) >= 2: T['l1'], T['l2'] = ' '.join(ws[:-1]), ws[-1]
+    else: T['l2'] = T['l1']; T['l1'] = _linea_extra(T['l2'])
+elif T['l2'] and not T['l1']: T['l1'] = _linea_extra(T['l2'])
 def _corta(t, n):   # (9-nov-2026) cortar por palabras enteras, nunca a mitad de palabra
     t = ' '.join(str(t or '').split())
     return t if len(t) <= n else t[:n + 1].rsplit(' ', 1)[0].rstrip(' ,;:-')

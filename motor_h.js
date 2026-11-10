@@ -11,7 +11,7 @@
    Capítulos: proyecto.json "capitulos": [{"titulo": "...", "desde": <índice de escena>}, ...] (el primero desde 0). */
 (function () {
   if (!window.PROY || String(window.PROY.formato || '').toUpperCase() !== 'YOUTUBE') return;
-  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA, brillos } = window.SH;
+  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA, brillos, resalta } = window.SH;
   const { INK, ORA, AZU, VER, ORO, ROJ, CRE, cl, easeOut, easeIO, esc } = A;
   const W = 1280, H = 720;
   const ZONA = { x0: 60, x1: 1040, y0: 120, y1: 560 };
@@ -103,6 +103,13 @@
       const filas = it.map((s, i) => {
         const t0 = .2 + i * (d * .7 / n); if (L < t0) return '';
         const p = A.pop(L, t0), y = y0 + i * paso;
+        if (moderno()) {
+          const e = easeOut((L - t0) / .35), hh = Math.min(78, paso - 10);
+          return `<g transform="translate(${(1 - e) * -70} 0)" opacity="${e}"><rect x="76" y="${y - hh / 2}" width="900" height="${hh}" rx="18" fill="#fff" stroke="${INK}" stroke-width="4"/>` +
+            `<rect x="76" y="${y - hh / 2}" width="14" height="${hh}" rx="7" fill="${c}"/>` +
+            `<circle cx="132" cy="${y}" r="24" fill="${c}" stroke="${INK}" stroke-width="4"/>` + A.txt(132, y + 11, String(i + 1), 28, '#fff') +
+            A.txt(176, y + 13, s, Math.min(38, Math.floor(760 / (Math.max(1, [...s].length) * .58))), INK, 'start', 800) + `</g>`;
+        }
         return A.esc_(110, y, p, `<circle cx="110" cy="${y}" r="26" fill="${c}" stroke="${INK}" stroke-width="5"/>` + A.txt(110, y + 12, String(i + 1), 32, CRE)) +
           `<g opacity="${easeOut((L - t0) / .3)}">${A.txt(160, y + 14, s, 40, INK, 'start', 800)}</g>`;
       }).join('');
@@ -262,7 +269,7 @@
     return (moderno() ? `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="24" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>` : `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="22" fill="${INK}" fill-opacity=".9"/>`) + B.ls.map((ln, j) => {
       const tsp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b;
-        return `<tspan fill="${ahora ? ORA : p.clave ? '#7fd8d2' : CRE}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora ? (moderno() ? '#fff' : ORA) : p.clave ? '#7fd8d2' : CRE}"${ahora && moderno() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="640" y="${y0 + j * 46 + (1 - easeOut(ent)) * 8}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${.35 + .65 * easeOut(ent)}">${tsp}</text>`;
     }).join('');
@@ -370,6 +377,7 @@
     const g = P.golpe_inicial === false ? 0 : 1 - easeOut(t / .45);
     if (g > 0) svg = svg.replace(`<image href="${FONDO}"`, `<g transform="translate(640 360) scale(${(1 + .05 * g).toFixed(4)}) translate(-640 -360)"><image href="${FONDO}"`).replace(/<\/svg>$/, '</g></svg>');
     document.getElementById('lienzo').innerHTML = svg;
+    if (M2) resalta();
     return true;
   };
 })();

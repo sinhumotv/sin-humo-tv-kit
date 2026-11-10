@@ -262,7 +262,7 @@
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b || t < .05;
         const col = ahora ? ORA : p.clave ? '#7fd8d2' : CRE;
         const pop = ahora && window.PROY.estilo !== 'clasico' ? ` font-size="${Math.round(fs * (1.04 + .06 * (1 - cl((t - p.a) / .18))))}"` : '';
-        return `<tspan fill="${col}"${pop} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora && MOD2() ? '#fff' : col}"${pop}${ahora && MOD2() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="360" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
     }).join('');
@@ -407,8 +407,21 @@
     }
     return tr[tr.length - 1];
   }
+  // v33 · subtítulos con recuadro: la palabra que suena lleva detrás un recuadro naranja (estilo de los vídeos virales).
+  // Se llama después de pintar el fotograma: mide la palabra marcada con data-a y le pone el recuadro justo detrás.
+  function resalta() {
+    try {
+      const el = document.querySelector('#lienzo tspan[data-a]'); if (!el) return;
+      const b = el.getBBox(), tx = el.parentNode; if (!b.width) return;
+      const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      const m = b.height * .09;
+      r.setAttribute('x', b.x - m); r.setAttribute('y', b.y + b.height * .04); r.setAttribute('width', b.width + 2 * m); r.setAttribute('height', b.height * .98);
+      r.setAttribute('rx', b.height * .22); r.setAttribute('fill', ORA); r.setAttribute('opacity', tx.getAttribute('opacity') || 1);
+      tx.parentNode.insertBefore(r, tx);
+    } catch (e) { }
+  }
   // Exporta piezas para el motor horizontal (motor_h.js), sin cambiar nada de los shorts
-  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA, brillos };
+  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA, brillos, resalta };
   const DESV = {};
   function desvioLupi(k) {
     if (DESV[k]) return DESV[k];
@@ -518,6 +531,7 @@
     const g = P.golpe_inicial === false ? 0 : 1 - easeOut(t / .45);
     if (g > 0) svg = svg.replace(`<image href="${FONDO}"`, `<g transform="translate(360 640) scale(${(1 + .07 * g).toFixed(4)}) translate(-360 -640)"><image href="${FONDO}"`).replace(/<\/svg>$/, '</g></svg>');
     document.getElementById('lienzo').innerHTML = svg;
+    if (M2) resalta();
     ultimo = svg;
     return true;
   };

@@ -24,12 +24,13 @@ const c=COL[O.color]||O.color||A.ROJ, oscuro=O.fondo!=='claro';
 const tinta=oscuro?A.CRE:A.INK;
 // tamaño del titular: lo más grande que quepa en 760 px
 const fit=(t,max,w,min=60)=>{let s=max;while(s>min&&t.length*s*.66>w)s-=2;return s;};
-const s1=fit(O.l1||'',150,760), s2=fit(O.l2||'',190,760);
+if(!O.l2&&O.l1){O.l2=O.l1;O.l1='';}
+const s1=O.l1?fit(O.l1,150,760):0, s2=fit(O.l2||'',190,760);
 let svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">';
 svg+=oscuro?'<rect width="1280" height="720" fill="#2a2433"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".25"/>'
            :'<image href="${path.join(KIT, 'fondo_h.jpg')}" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".18"/>';
 // foto real de fondo (v11): a sangre, oscurecida a la izquierda para que el titular se lea, crédito pequeño abajo
-if(O.foto){svg+='<defs><linearGradient id="osc" x1="0" x2="1"><stop offset="0" stop-color="#1d1824" stop-opacity=".82"/><stop offset=".5" stop-color="#1d1824" stop-opacity=".45"/><stop offset="1" stop-color="#1d1824" stop-opacity=".05"/></linearGradient></defs><image href="file://'+O.foto+'" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/><rect width="1280" height="720" fill="url(#osc)"/>';
+if(O.foto){svg+='<defs><linearGradient id="osc" x1="0" x2="1"><stop offset="0" stop-color="#1d1824" stop-opacity=".82"/><stop offset=".5" stop-color="#1d1824" stop-opacity=".45"/><stop offset="1" stop-color="#1d1824" stop-opacity=".05"/></linearGradient></defs><image href="file://'+O.foto+'" width="1280" height="720" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.45) contrast(1.12) brightness(1.04)"/><rect width="1280" height="720" fill="url(#osc)"/><rect x="0" y="0" width="1280" height="720" fill="'+c+'" opacity=".10"/><rect x="7" y="7" width="1266" height="706" fill="none" stroke="'+c+'" stroke-width="14"/>';
   if(O.credito)svg+='<text x="1268" y="712" font-family="Inter" font-weight="700" font-size="13" fill="#fff" opacity=".75" text-anchor="end">'+esc(O.credito)+'</text>';}
 // rayos detrás de Lupi (llaman la atención)
 for(let i=0;i<14;i++){const a=i*Math.PI/7;svg+='<path d="M1010 380 L'+(1010+600*Math.cos(a))+' '+(380+600*Math.sin(a))+' L'+(1010+600*Math.cos(a+.12))+' '+(380+600*Math.sin(a+.12))+'Z" fill="'+(oscuro?'#fff':A.INK)+'" opacity=".05"/>';}
