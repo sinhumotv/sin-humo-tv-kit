@@ -112,6 +112,10 @@ for l in r.stdout.splitlines():
 # ---------- 4) Registro ----------
 lin = f'{hoy}|{fecha[-5:] if fecha != "ahora" else ahora.strftime("%H:%M")}|{L.get("tema", "")}|{L["titulo"]}|{mid}'
 open(REG, 'a', encoding='utf-8').write(lin + '\n')
+# (10-nov-2026) el registro del día NO se guardó porque otra tanda escribió a la vez en la rama de datos y el reintento no llevaba
+# nombre de autor (sin registro, el largo se podría hacer dos veces el mismo día). Ahora reintenta dos veces con autor.
+_GITID = 'git -c user.name="sin humo TV" -c user.email=sinhumotv@users.noreply.github.com'
 r = sh(f'cd {DAT} && git add largos_sinhumo.txt && git -c user.name="sin humo TV" -c user.email=sinhumotv@users.noreply.github.com '
-       f'commit -q -m "largo sin humo TV {hoy}" && (git push -q {REPO} HEAD:datos || (git pull -q --rebase {REPO} datos && git push -q {REPO} HEAD:datos))')
+       f'commit -q -m "largo sin humo TV {hoy}" && (git push -q {REPO} HEAD:datos || (sleep 5 && {_GITID} pull -q --rebase {REPO} datos && git push -q {REPO} HEAD:datos) '
+       f'|| (sleep 20 && {_GITID} pull -q --rebase {REPO} datos && git push -q {REPO} HEAD:datos))')
 print('REGISTRO:', lin, '(ok)' if r.returncode == 0 else '(no se ha podido guardar: ' + r.stderr[-200:] + ')')
