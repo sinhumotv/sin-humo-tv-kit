@@ -91,3 +91,4 @@
 2026-11-09|15:00|Las yeguas de Diomedes|final|YO 6af19fff0ed1890679aa57ee IN 6af1a000f309feb7ee060058 TI 6af1a0000ed1890679aa5859|img=mixto|14:50
 2026-11-10|08:00|Las aves del Estínfalo|error|YO 6af2c3b8223aa16048f628b1 IN 6af2c3bb223aa16048f62aef TI 6af2c3c6d35dff5701e6175a|img=mixto|07:23
 2026-11-10|12:00|La matanza de los pretendientes|consecuencia|YO 6af2c786e261c09acca8b3ee IN 6af2c787223aa16048f73e52 TI 6af2c788b59b34913a627237|img=mixto|11:42
+2026-11-10|15:00|El castigo de Ticio|cuenta|YO 6af2cc5ed35dff5701e88f50 IN 6af2cc5fb59b34913a640e5a TI 6af2cc60e261c09accaa1f11|img=mixto|14:26
