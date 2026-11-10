@@ -22,6 +22,25 @@ def _sh_web(url, timeout=30):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; sinhumoTV/1.0; +https://github.com/sinhumotv)'})
     return urllib.request.urlopen(req, timeout=timeout).read().decode('utf-8', 'ignore')
 
+def _sh_ganadores():
+    """(10-nov-2026) Temas que están funcionando AHORA en el canal: títulos de los vídeos de los últimos 5 días con muchas más visitas
+    que el resto (al menos 300 y el triple de la mediana), leídos del feed público de YouTube (no necesita claves). → lista (máx. 3)."""
+    import datetime as _d, html as _h, re as _r
+    try:
+        x = _sh_web('https://www.youtube.com/feeds/videos.xml?channel_id=UCCz-7FqKL1uEjz3IB2m1xuw', 20)
+        ahora, vids = _d.datetime.now(_d.timezone.utc), []
+        for e in _r.findall(r'<entry>(.*?)</entry>', x, _r.S):
+            t, p, v = _r.search(r'<title>(.*?)</title>', e, _r.S), _r.search(r'<published>(.*?)</published>', e), _r.search(r'<media:statistics views="(\d+)"', e)
+            if t and p and v:
+                vids.append(((ahora - _d.datetime.fromisoformat(p.group(1))).total_seconds() / 3600, int(v.group(1)), _h.unescape(t.group(1)).strip()))
+        if len(vids) < 5: return []
+        mediana = sorted(v for _, v, _ in vids)[len(vids) // 2]
+        gan = sorted([(v, t) for h, v, t in vids if h <= 120 and v >= max(300, 3 * mediana)], reverse=True)
+        return [f'«{t}» ({v} visitas)' for v, t in gan[:3]]
+    except Exception as x:
+        print('ganadores:', str(x)[:100]); return []
+
+
 def _sh_gemini(k, texto, temperatura=0.3):
     import urllib.error
     errores = []
@@ -73,6 +92,8 @@ def _sh_noticia_larga(previos):
     if len({i['medio'] for i in items}) < 2: raise RuntimeError(f'no se han podido leer las portadas ({len(items)} titulares)')
     lista = '\n'.join(f'{i}. [{x["medio"]}] {x["titulo"]} — {x["resumen"][:160]}' for i, x in enumerate(items[:200]))
     hoy = datetime.datetime.now(ZoneInfoMadrid()).strftime('%d/%m/%Y')
+    _gan = _sh_ganadores()
+    if _gan: print('temas que están funcionando:', '; '.join(_gan))
     el, _ = _sh_gemini(k, (
         f'Hoy es {hoy}. Eres el editor de «sin humo TV», canal de YouTube de noticias para España que explica la actualidad sin humo. '
         'Titulares de las portadas de hoy y ayer:\n' + lista + '\n\nElige UNA noticia de esta semana que merezca un vídeo de 8 minutos que la explique '
@@ -86,6 +107,7 @@ def _sh_noticia_larga(previos):
         'vigor, cómo votar, un cambio que afecta a todos); 2.º, un suceso grande del que la gente quiere entender qué pasó y qué viene ahora '
         '(accidente, temporal, apagón, investigación). Deja para cuando no haya nada mejor la política de partidos, los sondeos y las '
         'declaraciones: interesan poco y cuesta ser neutral. '
+        + (f'TEMAS QUE ESTÁN FUNCIONANDO AHORA en el canal (vídeos de estos días con muchas más visitas que el resto): {"; ".join(_gan)}. Si en los titulares hay NOVEDADES de alguno de esos temas, elige esa noticia y cuéntala desde un ángulo NUEVO (qué ha cambiado, qué viene ahora), aunque el tema ya haya salido en el canal; nunca repitas lo ya contado. ' if _gan else '') +
         f'No repitas tema ni categoría de los últimos largos: {"; ".join(previos[-8:]) or "ninguno"}. '
         'Responde solo JSON: {"numeros": [3 o 4 titulares de medios DISTINTOS sobre esa noticia], "tema": "la noticia en una frase"}'), 0.4)
     nums = [int(n) for n in (el.get('numeros') or []) if str(n).isdigit() and int(n) < len(items)]
