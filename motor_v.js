@@ -43,6 +43,7 @@
     return partir(txt, n).map((l, i) => `<text x="${x}" y="${y + i * size * 1.16}" font-family="Inter" font-weight="900" font-size="${size}" fill="${fill}" text-anchor="${anchor}" opacity="${alpha}"${st}>${rico(l, acento)}</text>`).join('');
   }
   let CAL = [];
+  window.SH.icono = (nombre, x, y, s, L, c) => icono(nombre, x, y, s, L, c);   // v42: lo usa motor_pro.js
   function icono(nombre, x, y, s, L, c) {
     const f = A[nombre];
     if (!f) return A.alerta(x, y, s);

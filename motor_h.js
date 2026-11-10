@@ -11,7 +11,7 @@
    Capítulos: proyecto.json "capitulos": [{"titulo": "...", "desde": <índice de escena>}, ...] (el primero desde 0). */
 (function () {
   if (!window.PROY || String(window.PROY.formato || '').toUpperCase() !== 'YOUTUBE') return;
-  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA, brillos, resalta } = window.SH;
+  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA, brillos, resalta, tarjeta } = window.SH;
   const { INK, ORA, AZU, VER, ORO, ROJ, CRE, cl, easeOut, easeIO, esc } = A;
   const W = 1280, H = 720;
   const ZONA = { x0: 60, x1: 1040, y0: 120, y1: 560 };
@@ -33,6 +33,7 @@
   }
   // Dibuja cualquier icono del kit por su nombre (calendario: textos de la hoja en visual.cal = ["NOV", "29"])
   let CAL = [];
+  window.SH.icono = (nombre, x, y, s, L, c) => icono(nombre, x, y, s, L, c);   // v42: lo usa motor_pro.js
   function icono(nombre, x, y, s, L, c) {
     const f = A[nombre];
     if (!f) return A.alerta(x, y, s);
@@ -339,9 +340,9 @@
     const dibuja = (k, alpha, dx) => {
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1) : 0);
       const r = escena(k, L, t);
-      const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + .03 * easeIO(cl((t - S.ini) / dur));
+      const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + (moderno() ? .055 : .03) * easeIO(cl((t - S.ini) / dur));
       const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y;
-      const kb = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)}) translate(550 340) scale(${z.toFixed(4)}) translate(-550 -340)`;
+      const kb = `translate(${F.tx.toFixed(2)} ${(F.ty + (moderno() ? 4 * Math.sin(t * 1.5) : 0)).toFixed(2)}) scale(${F.s.toFixed(4)}) translate(550 340) scale(${z.toFixed(4)}) translate(-550 -340)`;
       let lup = '';
       if (r.lupi) {
         const o = Object.assign({ t, id: 'L' + k }, r.lupi), s = o.s || 1;
@@ -362,7 +363,7 @@
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`;
-    if (M2) svg += brillos(t, W, H) + `<rect x="42" y="120" width="1208" height="454" rx="34" fill="#000" opacity=".3"/><rect x="36" y="112" width="1208" height="454" rx="34" fill="${BLA}"/>`;
+    if (M2) svg += brillos(t, W, H) + tarjeta(36, 112, 1208, 454, 34, t);
     for (const c of capas) {
       const SF = A.separaFotos(c.r.svg);
       svg += `<g opacity="${c.alpha}" transform="translate(${c.dx} 0)"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;

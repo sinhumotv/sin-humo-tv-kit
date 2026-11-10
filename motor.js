@@ -8,16 +8,45 @@
   const W = 720, H = 1280;
   // v30 · ASPECTO MODERNO: fondo oscuro con brillo, el dibujo sobre una tarjeta clara, trazo limpio (sin temblor), título en blanco
   // y subtítulos sobre cristal. proyecto.json "aspecto": "clasico" vuelve al papel de cuaderno; "moderno" lo fuerza.
-  const ASPECTO_DEFECTO = 'moderno';
+  const ASPECTO_DEFECTO = 'pro';
   const MOD2 = () => ((window.PROY && window.PROY.aspecto) || window.ASPECTO || ASPECTO_DEFECTO) === 'moderno';
   const BLA = '#fffaf0';
-  // v32 · el fondo nunca está quieto: dos brillos (naranja y turquesa) que se desplazan muy despacio
+  // v41 (10-nov-2026) · Pablo: «el aspecto lo sigo viendo pobre; dijiste que había fondo en movimiento y no hay nada». Los brillos de
+  // la v32 eran tan lentos y tenues que no se notaban. Ahora el movimiento SE VE: brillos grandes que cruzan la pantalla, luces
+  // que suben flotando (bokeh), dos haces de luz en diagonal y, en la tarjeta, una luz que recorre el borde sin parar.
+  const frac = x => x - Math.floor(x);
   const brillos = (t, W_, H_) => {
-    const r = Math.max(W_, H_) * .42, a = t * .23;
-    return `<defs><radialGradient id="glA"><stop offset="0" stop-color="${ORA}" stop-opacity=".30"/><stop offset="1" stop-color="${ORA}" stop-opacity="0"/></radialGradient>` +
-      `<radialGradient id="glB"><stop offset="0" stop-color="${VER}" stop-opacity=".26"/><stop offset="1" stop-color="${VER}" stop-opacity="0"/></radialGradient></defs>` +
-      `<circle cx="${(W_ * (.18 + .16 * Math.sin(a))).toFixed(1)}" cy="${(H_ * (.86 + .08 * Math.cos(a * 1.3))).toFixed(1)}" r="${r}" fill="url(#glA)"/>` +
-      `<circle cx="${(W_ * (.84 + .14 * Math.cos(a * .8))).toFixed(1)}" cy="${(H_ * (.14 + .10 * Math.sin(a * 1.1))).toFixed(1)}" r="${r}" fill="url(#glB)"/>`;
+    const r = Math.max(W_, H_) * .5, a = t * .55;
+    let o = `<defs><radialGradient id="glA"><stop offset="0" stop-color="${ORA}" stop-opacity=".55"/><stop offset="1" stop-color="${ORA}" stop-opacity="0"/></radialGradient>` +
+      `<radialGradient id="glB"><stop offset="0" stop-color="${VER}" stop-opacity=".5"/><stop offset="1" stop-color="${VER}" stop-opacity="0"/></radialGradient>` +
+      `<radialGradient id="glC"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".5" stop-color="#fff" stop-opacity=".25"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>` +
+      `<radialGradient id="glD"><stop offset="0" stop-color="${ORO}" stop-opacity=".9"/><stop offset=".5" stop-color="${ORO}" stop-opacity=".25"/><stop offset="1" stop-color="${ORO}" stop-opacity="0"/></radialGradient>` +
+      `<radialGradient id="glE"><stop offset="0" stop-color="${VER}" stop-opacity=".9"/><stop offset=".5" stop-color="${VER}" stop-opacity=".25"/><stop offset="1" stop-color="${VER}" stop-opacity="0"/></radialGradient></defs>` +
+      `<circle cx="${(W_ * (.2 + .3 * Math.sin(a))).toFixed(1)}" cy="${(H_ * (.8 + .16 * Math.cos(a * 1.3))).toFixed(1)}" r="${r}" fill="url(#glA)"/>` +
+      `<circle cx="${(W_ * (.8 + .3 * Math.cos(a * .8))).toFixed(1)}" cy="${(H_ * (.2 + .18 * Math.sin(a * 1.1))).toFixed(1)}" r="${r}" fill="url(#glB)"/>`;
+    for (let i = 0; i < 2; i++) {            // haces de luz en diagonal
+      const x = frac(t * .045 + i * .5) * (W_ + 900) - 450;
+      o += `<rect x="${x.toFixed(1)}" y="${-H_ * .2}" width="${120 + 80 * i}" height="${H_ * 1.4}" fill="#fff" opacity=".06" transform="rotate(18 ${x.toFixed(1)} ${H_ / 2})"/>`;
+    }
+    for (let i = 0; i < 22; i++) {           // luces que suben flotando
+      const v = 22 + (i * 37 % 5) * 14, rr = 7 + (i * 53 % 7) * 5, x0 = frac(i * .6180339) * W_;
+      const y = H_ + 60 - frac(t * v / (H_ + 120) + frac(i * .37)) * (H_ + 120);
+      const x = x0 + 34 * Math.sin(t * .7 + i * 1.7), op = .35 + .45 * (.5 + .5 * Math.sin(t * 1.3 + i * 2.1));
+      o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rr}" fill="url(#gl${'CDE'[i % 3]})" opacity="${op.toFixed(2)}"/>`;
+    }
+    return o;
+  };
+  // tarjeta del dibujo: sombra, fondo con degradado suave y trama de puntos, y dos luces (naranja y turquesa) recorriendo el borde
+  const tarjeta = (x, y, w, h, rx, t) => {
+    const d = `M${x + rx} ${y}H${x + w - rx}A${rx} ${rx} 0 0 1 ${x + w} ${y + rx}V${y + h - rx}A${rx} ${rx} 0 0 1 ${x + w - rx} ${y + h}H${x + rx}A${rx} ${rx} 0 0 1 ${x} ${y + h - rx}V${y + rx}A${rx} ${rx} 0 0 1 ${x + rx} ${y}Z`;
+    const off = -frac(t * .11) * 1000;
+    return `<defs><linearGradient id="tjF" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#fbf1dc"/></linearGradient>` +
+      `<pattern id="tjP" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="${INK}" opacity=".07"/></pattern></defs>` +
+      `<rect x="${x + 7}" y="${y + 12}" width="${w}" height="${h}" rx="${rx}" fill="#000" opacity=".38"/>` +
+      `<path d="${d}" fill="url(#tjF)"/><path d="${d}" fill="url(#tjP)"/>` +
+      `<path d="${d}" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>` +
+      `<path d="${d}" fill="none" stroke="${ORA}" stroke-width="7" stroke-linecap="round" pathLength="1000" stroke-dasharray="150 850" stroke-dashoffset="${off.toFixed(1)}"/>` +
+      `<path d="${d}" fill="none" stroke="${VER}" stroke-width="7" stroke-linecap="round" pathLength="1000" stroke-dasharray="150 850" stroke-dashoffset="${(off - 500).toFixed(1)}"/>`;
   };
   const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
   const easeOut = p => 1 - Math.pow(1 - cl(p), 3);
@@ -422,7 +451,8 @@
     } catch (e) { }
   }
   // Exporta piezas para el motor horizontal (motor_h.js), sin cambiar nada de los shorts
-  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA, brillos, resalta };
+  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA, brillos, resalta, tarjeta,
+    pro: () => ((window.PROY && window.PROY.aspecto) || window.ASPECTO || ASPECTO_DEFECTO) === 'pro' };   // v42: motor_pro.js
   const DESV = {};
   function desvioLupi(k) {
     if (DESV[k]) return DESV[k];
@@ -483,9 +513,9 @@
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1.5) : 0); // la escena 1 ya empieza avanzada: todo lo que entre antes de L=1,5 se ve en el fotograma 0
       const r = E[k](L, A, t) || {};
       // cámara: acercamiento lento durante la escena (+4 %) para que nunca haya un plano quieto
-      const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + .04 * easeIO(cl((t - S.ini) / dur));
+      const dur = Math.max(1, S.fin - S.ini), z = P.camara === false ? 1 : 1 + (MOD2() ? .07 : .04) * easeIO(cl((t - S.ini) / dur));
       const F = encuadre(k), fx = x => F.tx + F.s * x, fy = y => F.ty + F.s * y;
-      const kb = `translate(${F.tx.toFixed(2)} ${F.ty.toFixed(2)}) scale(${F.s.toFixed(4)}) translate(360 465) scale(${z.toFixed(4)}) translate(-360 -465)`;
+      const kb = `translate(${F.tx.toFixed(2)} ${(F.ty + (MOD2() ? 5 * Math.sin(t * 1.5) : 0)).toFixed(2)}) scale(${F.s.toFixed(4)}) translate(360 465) scale(${z.toFixed(4)}) translate(-360 -465)`;
       let lup = '';
       if (r.lupi) {
         const o = Object.assign({ t, id: 'L' + k }, r.lupi);
@@ -511,7 +541,7 @@
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}"/>`;
-    if (M2) svg += brillos(t, W, H) + `<rect x="46" y="200" width="640" height="566" rx="38" fill="#000" opacity=".3"/><rect x="40" y="190" width="640" height="566" rx="38" fill="${BLA}"/>`;
+    if (M2) svg += brillos(t, W, H) + tarjeta(40, 190, 640, 566, 38, t);
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
       const SF = A.separaFotos(c.r.svg);
