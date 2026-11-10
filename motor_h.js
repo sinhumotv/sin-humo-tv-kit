@@ -269,7 +269,7 @@
     return (moderno() ? `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="24" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>` : `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="22" fill="${INK}" fill-opacity=".9"/>`) + B.ls.map((ln, j) => {
       const tsp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b;
-        return `<tspan fill="${ahora ? (moderno() ? '#fff' : ORA) : p.clave ? '#7fd8d2' : CRE}"${ahora && moderno() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora ? ORA : p.clave ? '#7fd8d2' : CRE}"${ahora && moderno() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="640" y="${y0 + j * 46 + (1 - easeOut(ent)) * 8}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${.35 + .65 * easeOut(ent)}">${tsp}</text>`;
     }).join('');

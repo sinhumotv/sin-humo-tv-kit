@@ -262,7 +262,7 @@
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b || t < .05;
         const col = ahora ? ORA : p.clave ? '#7fd8d2' : CRE;
         const pop = ahora && window.PROY.estilo !== 'clasico' ? ` font-size="${Math.round(fs * (1.04 + .06 * (1 - cl((t - p.a) / .18))))}"` : '';
-        return `<tspan fill="${ahora && MOD2() ? '#fff' : col}"${pop}${ahora && MOD2() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
+        return `<tspan fill="${col}"${pop}${ahora && MOD2() ? ' data-a="1"' : ''} fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/\u2060/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="360" y="${y0 + j * 62 + (1 - easeOut(ent)) * 10}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" opacity="${alpha * (i === 0 && k === 0 ? 1 : .35 + .65 * easeOut(ent))}">${tsp}</text>`;
     }).join('');
@@ -414,9 +414,10 @@
       const el = document.querySelector('#lienzo tspan[data-a]'); if (!el) return;
       const b = el.getBBox(), tx = el.parentNode; if (!b.width) return;
       const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      const m = b.height * .09;
+      const m = b.height * .13;
       r.setAttribute('x', b.x - m); r.setAttribute('y', b.y + b.height * .04); r.setAttribute('width', b.width + 2 * m); r.setAttribute('height', b.height * .98);
-      r.setAttribute('rx', b.height * .22); r.setAttribute('fill', ORA); r.setAttribute('opacity', tx.getAttribute('opacity') || 1);
+      r.setAttribute('rx', b.height * .22); r.setAttribute('fill', 'none'); r.setAttribute('stroke', ORA); r.setAttribute('stroke-width', Math.max(3, b.height * .07));
+      r.setAttribute('opacity', tx.getAttribute('opacity') || 1);   // (10-nov-2026) Pablo: sin relleno, solo el borde
       tx.parentNode.insertBefore(r, tx);
     } catch (e) { }
   }
