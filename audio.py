@@ -350,7 +350,16 @@ if sum(dur) > TMAX:  # último recurso: recortar respiros
     exceso = sum(dur) - TMAX
     dur = [d - min(RESP[e], exceso / N) for e, d in enumerate(dur)]
 if sum(dur) < TMIN:
-    dur[-1] += TMIN - sum(dur)
+    # v45 (11-nov-2026): antes se alargaba la última escena hasta la duración mínima y algunos cortos acababan con hasta 20 s
+    # de música sola. Ahora como mucho se añade 1 s; si la voz es más corta, el vídeo es más corto.
+    falta = TMIN - sum(dur)
+    if falta > 1.0:
+        print(f"AVISO: la voz dura {sum(dur):.1f}s, menos que el mínimo ({TMIN:.0f}s); no se rellena con música")
+    dur[-1] += min(falta, 1.0)
+# v45: al acabar la voz quedan entre 0,8 y 1,6 s para el cierre (ni corte en seco ni cola larga)
+if not YOUTUBE:   # los largos no se tocan (pantalla final de YouTube)
+    _vf = len(escenas_audio[-1]) / SR
+    dur[-1] = min(max(dur[-1], _vf + 0.8), _vf + 1.6)
 
 # --- 5. Montar voz final y tiempos --------------------------------------------
 total_s = sum(dur)

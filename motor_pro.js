@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v44, 10-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v45, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -28,7 +28,7 @@
   const E = P.escenas, N = E.length, DUR = T.duracion;
   const CAPS = (P.capitulos || []).filter(c => c && c.desde < N);
   const GRAVE = P.tono === 'grave';
-  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: 44, y: 232, w: 632, h: 560 };   // zona del gráfico
+  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: 64, y: 250, w: 592, h: 520 };   // zona del gráfico
   const ZC = { x: Z.x + Z.w / 2, y: Z.y + Z.h / 2 };
   const SOM = HOR ? 7 : 8;                // desplazamiento de la sombra dura
 
@@ -117,18 +117,18 @@
   const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="5"/><g transform="scale(${(r / 150).toFixed(3)})">${icono(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
   const G = {
     cifra(v, L, d) {
-      const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 200, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1.3, d * .45));
-      const yN = ZC.y + (HOR ? 30 : 10), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 20), wS = size * Math.max(3, s.length) * .58;
+      const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1.3, d * .45));
+      const yN = ZC.y + (HOR ? 30 : 10), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
       return `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
         `<g transform="translate(${ZC.x} ${yN}) scale(${ent.toFixed(3)}) translate(${-ZC.x} ${-yN})">${tx(ZC.x, yN, esc(contar(s, p)), size, INK, 'middle', 900, 'letter-spacing="-4"')}</g>` +
-        lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 86) + i * (HOR ? 50 : 58), esc(l), HOR ? 42 : 48, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
-        (v.icono ? sticker(HOR ? Z.x + 100 : Z.x + 84, HOR ? Z.y + 70 : Z.y + 46, HOR ? 70 : 70, L, .25, v.icono, c) : '');
+        lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 70) + i * (HOR ? 50 : 44), esc(l), HOR ? 42 : 36, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
+        (v.icono ? sticker(HOR ? Z.x + 100 : Z.x + 70, HOR ? Z.y + 70 : Z.y + 40, HOR ? 70 : 52, L, .25, v.icono, c) : '');
     },
     comparar(v, L, d) {
-      const a = v.a || {}, b = v.b || {}, na = num(a.valor), nb = num(b.valor), mx = Math.max(Math.abs(na), Math.abs(nb), 1e-9), ah = HOR ? 78 : 96, x0 = Z.x + (HOR ? 140 : 14), wM = Z.w - (HOR ? 280 : 28);
+      const a = v.a || {}, b = v.b || {}, na = num(a.valor), nb = num(b.valor), mx = Math.max(Math.abs(na), Math.abs(nb), 1e-9), ah = HOR ? 78 : 76, x0 = Z.x + (HOR ? 140 : 14), wM = Z.w - (HOR ? 280 : 28);
       const fila = (o, n, y, c, t0) => {
         const p = eo((L - t0) / .9), w = Math.max(ah * 1.1, wM * (Math.abs(n) / mx) * p), op = cl((L - t0) / .15);
-        return `<g opacity="${op}">` + tx(x0, y - 18, esc(o.etiqueta || ''), HOR ? 34 : 40, INK, 'start', 900) + caja(x0, y, w, ah, ah * .28, c) +
+        return `<g opacity="${op}">` + tx(x0, y - 16, esc(o.etiqueta || ''), HOR ? 34 : 32, INK, 'start', 900) + caja(x0, y, w, ah, ah * .28, c) +
           (w > wM * .5 ? tx(x0 + w - 22, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, c === ORA ? '#fff' : INK, 'end') : tx(x0 + w + 26, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, INK, 'start')) + `</g>`;
       };
       return fila(a, na, ZC.y - ah - (HOR ? 34 : 70), GRI, .15) + fila(b, nb, ZC.y + (HOR ? 62 : 86), ORA, .6);
@@ -136,23 +136,23 @@
     grafico(v, L, d) {
       const vs = (v.valores || []).slice(0, 7), et = v.etiquetas || [], n = vs.length || 1, mx = Math.max(...vs.map(x => Math.abs(num(x))), 1e-9), base = Z.y + Z.h - (HOR ? 50 : 66), alto = Z.h - (HOR ? 160 : 220);
       const paso = Math.min(HOR ? 190 : 150, Z.w / n), an = paso * .6, x0 = ZC.x - paso * n / 2 + (paso - an) / 2;
-      let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 36 : 46), HOR ? 40 : 44, L, { max: HOR ? 46 : 24 }) : '';
+      let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 36 : 40), HOR ? 40 : 34, L, { max: HOR ? 46 : 30 }) : '';
       o += [1, 2, 3].map(i => `<path d="M${Z.x} ${base - alto * i / 3} H${Z.x + Z.w}" stroke="${INK}" stroke-opacity=".16" stroke-width="3" stroke-dasharray="4 12"/>`).join('');
       vs.forEach((x, i) => {
         const t0 = .25 + i * Math.min(.35, d * .5 / n), p = back((L - t0) / .7), h = Math.max(12, alto * Math.abs(num(x)) / mx * p), xx = x0 + i * paso, ult = i === n - 1, op = cl((L - t0) / .12);
         o += `<g opacity="${op}">` + caja(xx, base - h, an, h, Math.min(14, an * .16), ult ? ORA : GRI) +
-          tx(xx + an / 2, base - h - 16, esc(contar(String(x), cl((L - t0) / .7))), Math.min(HOR ? 40 : 42, an * .5), INK) +
-          tx(xx + an / 2, base + (HOR ? 42 : 48), esc(et[i] || ''), Math.min(HOR ? 28 : 30, paso * .3), INK, 'middle', 800) + `</g>`;
+          tx(xx + an / 2, base - h - 16, esc(contar(String(x), cl((L - t0) / .7))), Math.min(HOR ? 40 : 32, an * .45), INK) +
+          tx(xx + an / 2, base + (HOR ? 42 : 48), esc(et[i] || ''), Math.min(HOR ? 28 : 24, paso * .3), INK, 'middle', 800) + `</g>`;
       });
       return o + `<path d="M${Z.x} ${base} H${Z.x + Z.w}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
     },
     lista(v, L, d) {
-      const it = (v.items || []).slice(0, 4), n = it.length || 1, c = col(v.color), hT = v.titulo ? (HOR ? 74 : 104) : 0, ah = Math.min(HOR ? 80 : 104, (Z.h - hT - 10) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
+      const it = (v.items || []).slice(0, 4), n = it.length || 1, c = col(v.color), hT = v.titulo ? (HOR ? 74 : 84) : 0, ah = Math.min(HOR ? 80 : 80, (Z.h - hT - 10) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
       const act = Math.min(n - 1, Math.floor(cl((L - .3) / Math.max(1, d - .8)) * n));
-      let o = v.titulo ? cinetico(v.titulo, HOR ? Z.x + 20 : ZC.x, Z.y + (HOR ? 46 : 62), HOR ? 46 : 52, L, { max: HOR ? 48 : 22, anchor: HOR ? 'start' : 'middle' }) : '';
+      let o = v.titulo ? cinetico(v.titulo, HOR ? Z.x + 20 : ZC.x, Z.y + (HOR ? 46 : 62), HOR ? 46 : 38, L, { max: HOR ? 48 : 28, anchor: HOR ? 'start' : 'middle' }) : '';
       it.forEach((s, i) => {
         const t0 = .3 + i * (Math.max(1, d - .8) / n), e = back((L - t0) / .4); if (L < t0) return;
-        const y = y0 + i * (ah + 18), on = i === act, fs = Math.min(ah * .44, (Z.w - 160) / (Math.max(8, [...String(s)].length) * .56));
+        const y = y0 + i * (ah + 18), on = i === act, fs = Math.min(ah * .4, (Z.w - 160) / (Math.max(8, [...String(s)].length) * .56));
         o += `<g transform="translate(${((1 - e) * (i % 2 ? -1 : 1) * 300).toFixed(1)} 0) rotate(${on ? -1 : 0} ${ZC.x} ${y + ah / 2})" opacity="${cl((L - t0) / .12)}">` + caja(Z.x + 8, y, Z.w - 24, ah, ah * .26, on ? c : BLA) +
           `<circle cx="${Z.x + 8 + ah * .5}" cy="${y + ah / 2}" r="${ah * .3}" fill="${on ? '#fff' : c}" stroke="${INK}" stroke-width="4"/>` + tx(Z.x + 8 + ah * .5, y + ah / 2 + ah * .13, String(i + 1), ah * .36, on ? c : '#fff') +
           tx(Z.x + 8 + ah * 1.05, y + ah / 2 + fs * .36, esc(s), fs, on && c !== ORO ? '#fff' : INK, 'start', 800) + `</g>`;
@@ -160,9 +160,9 @@
       return o;
     },
     frase(v, L, d) {
-      const size = HOR ? 48 : 52, max = HOR ? 38 : 20, alto = altoCin(v.texto, size, max), hC = alto + (HOR ? 110 : 150), wC = HOR ? Z.w - 160 : Z.w - 16, x = ZC.x - wC / 2, y = ZC.y - hC / 2, e = back(L / .4);
+      const size = HOR ? 48 : 40, max = HOR ? 38 : 24, alto = altoCin(v.texto, size, max), hC = alto + (HOR ? 110 : 150), wC = HOR ? Z.w - 160 : Z.w - 16, x = ZC.x - wC / 2, y = ZC.y - hC / 2, e = back(L / .4);
       return `<g transform="translate(${ZC.x} ${ZC.y}) scale(${e.toFixed(3)}) rotate(-1) translate(${-ZC.x} ${-ZC.y})">` + caja(x, y, wC, hC, 26, BLA, 6, SOM + 3) +
-        `<text x="${x + 22}" y="${y + (HOR ? 96 : 112)}" font-family="Georgia, serif" font-weight="900" font-size="${HOR ? 170 : 190}" fill="${ORA}">“</text></g>` +
+        `<text x="${x + 22}" y="${y + (HOR ? 96 : 112)}" font-family="Georgia, serif" font-weight="900" font-size="${HOR ? 170 : 140}" fill="${ORA}">“</text></g>` +
         cinetico(v.texto, ZC.x, y + (HOR ? 76 : 104) + size * .5, size, L, { max, t0: .3, paso: Math.min(.1, d * .5 / Math.max(6, String(v.texto || '').split(' ').length)) }) +
         (v.fuente ? peg(ZC.x + (HOR ? 300 : 150), y + hC + 4, v.fuente, HOR ? 26 : 30, INK, '#fff', 'middle', eo((L - d * .45) / .3), -3, back((L - d * .45) / .35)) : '');
     },
@@ -173,55 +173,56 @@
       hs.forEach((h, i) => {
         const t0 = .2 + i * tramo, on = L >= t0, e = back((L - t0) / .35), y = y0 + i * paso, ult = on && (i === n - 1 || L < t0 + tramo);
         o += `<circle cx="${x}" cy="${y}" r="${on ? 18 + (ult ? 4 * Math.sin(L * 6) : 0) : 12}" fill="${on ? ORA : BLA}" stroke="${INK}" stroke-width="5"/>`;
-        if (on) o += `<g transform="translate(${((1 - e) * 140).toFixed(1)} 0)" opacity="${cl((L - t0) / .12)}">` + peg(x + 46, y + (HOR ? 10 : -6), String(h.fecha || ''), HOR ? 26 : 30, ult ? ORA : INK, '#fff', 'start', 1, -2) +
-          tx(x + 46 + (HOR ? 170 : 0), y + (HOR ? 13 : 50), esc(h.texto || ''), HOR ? 38 : 40, INK, 'start', 800) + `</g>`;
+        if (on) o += `<g transform="translate(${((1 - e) * 140).toFixed(1)} 0)" opacity="${cl((L - t0) / .12)}">` + peg(x + 46, y + (HOR ? 10 : -6), String(h.fecha || ''), HOR ? 26 : 24, ult ? ORA : INK, '#fff', 'start', 1, -2) +
+          tx(x + 46 + (HOR ? 170 : 0), y + (HOR ? 13 : 44), esc(h.texto || ''), HOR ? 38 : 32, INK, 'start', 800) + `</g>`;
       });
       return o;
     },
     icono(v, L, d) {
-      const c = col(v.color), ix = HOR ? Z.x + 190 : ZC.x, iy = HOR ? ZC.y : Z.y + 165, size = HOR ? 58 : 62, max = HOR ? 19 : 17, alto = altoCin(v.texto, size, max);
-      const tx0 = HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, ty = HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 372 + size * .5;
-      return `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, 150, L, 0, v.icono, c)}</g>` +
+      const c = col(v.color), ix = HOR ? Z.x + 190 : ZC.x, iy = HOR ? ZC.y : Z.y + 140, size = HOR ? 58 : 44, max = HOR ? 19 : 22, alto = altoCin(v.texto, size, max);
+      const tx0 = HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, ty = HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 300 + size * .5;
+      return `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, HOR ? 150 : 112, L, 0, v.icono, c)}</g>` +
         cinetico(v.texto, tx0, ty, size, L, { max, t0: .2 }) +
-        (v.etiqueta ? peg(tx0 + (HOR ? 120 : 110), ty + alto + 6, String(v.etiqueta), HOR ? 28 : 30, c === ORA ? AZU : c, '#fff', 'middle', eo((L - .8) / .25), 4, back((L - .8) / .35)) : '');
+        (v.etiqueta ? peg(tx0 + (HOR ? 120 : 110), ty + alto + 6, String(v.etiqueta), HOR ? 28 : 24, c === ORA ? AZU : c, '#fff', 'middle', eo((L - .8) / .25), 4, back((L - .8) / .35)) : '');
     },
     pregunta(v, L, d) {
-      const size = HOR ? 60 : 68, max = HOR ? 18 : 15, alto = altoCin(v.texto, size, max), qx = HOR ? Z.x + 190 : ZC.x, qy = HOR ? ZC.y + 120 : Z.y + 270, e = back(L / .5), fs = HOR ? 380 : 360;
+      const size = HOR ? 60 : 48, max = HOR ? 18 : 20, alto = altoCin(v.texto, size, max), qx = HOR ? Z.x + 190 : ZC.x, qy = HOR ? ZC.y + 120 : Z.y + 230, e = back(L / .5), fs = HOR ? 380 : 260;
       const q = (dx, dy, f, st) => `<text x="${dx}" y="${dy}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" fill="${f}"${st ? ` stroke="${INK}" stroke-width="10" stroke-linejoin="round"` : ''}>?</text>`;
       return `<g transform="translate(${qx} ${qy}) rotate(${(-9 + 7 * Math.sin(L * 1.8)).toFixed(2)}) scale(${e.toFixed(3)})">${q(SOM + 2, SOM + 2, INK, true)}${q(0, 0, ORA, true)}</g>` +
-        cinetico(v.texto, HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 380, size, L, { max, t0: .25 });
+        cinetico(v.texto, HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 330, size, L, { max, t0: .25 });
     },
     titular(v, L, d) {
-      const s = String(v.texto || ''), max = HOR ? 20 : 11, size = Math.min(HOR ? 124 : 122, (Z.w * .98) / (Math.min(max, Math.max(...partir(s.replace(/\*/g, ''), max).map(l => l.length), 4)) * .6));
+      const s = String(v.texto || ''), max = HOR ? 20 : 14, size = Math.min(HOR ? 124 : 84, (Z.w * .98) / (Math.min(max, Math.max(...partir(s.replace(/\*/g, ''), max).map(l => l.length), 4)) * .6));
       const alto = altoCin(s, size, max);
       return cinetico(s, ZC.x, ZC.y - alto / 2 + size * .82, size, L, { max, paso: .11, clave: col(v.color) });
     },
     foto(v, L, d, k) {
-      const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 56, max = HOR ? 20 : 19, alto = altoCin(txt, size, max), e = back(L / .45);
+      const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
       const fw = HOR ? Z.w * .6 : Z.w - 20, fh = HOR ? Z.h - 10 : Z.h - alto - 56, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 16), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
       return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}"/>` +
         `<clipPath id="${id}"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24"/></clipPath><image href="file://${f.ruta}" x="${fx}" y="${fy}" width="${fw}" height="${fh}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
         `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
         `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke">${esc(f.credito || '')}</text></g>` +
-        peg(fx + 92, fy + 44, 'FOTO REAL', HOR ? 22 : 24, ROJ, '#fff', 'middle', eo((L - .3) / .2), -6, back((L - .3) / .35)) +
-        (f.etiqueta ? peg(fx + fw - 86, fy + fh - 40, f.etiqueta, HOR ? 24 : 26, ORO, INK, 'middle', eo((L - .5) / .2), 5, back((L - .5) / .35)) : '') +
+        peg(fx + 92, fy + 44, 'FOTO REAL', HOR ? 22 : 18, ROJ, '#fff', 'middle', eo((L - .3) / .2), -6, back((L - .3) / .35)) +
+        (f.etiqueta ? peg(fx + fw - 86, fy + fh - 40, f.etiqueta, HOR ? 24 : 20, ORO, INK, 'middle', eo((L - .5) / .2), 5, back((L - .5) / .35)) : '') +
         cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 30 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
     },
     mencion(v, L, d) {
-      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 150, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, by = HOR ? ZC.y + 120 : Z.y + 520, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
-      return `<g transform="translate(${lx} ${ly}) scale(${(1.45 * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
-        cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 400, HOR ? 58 : 56, L, { max: HOR ? 20 : 18, t0: .2 }) +
-        `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${caja(-190, -44, 380, 88, 44, ROJ, 6)}<text x="0" y="15" font-family="Inter" font-weight="900" font-size="40" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>`;
+      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
+      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
+        cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 320, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 }) +
+        `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>`;
     },
     cierre(v, L, d) {
-      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 150, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE;
-      return `<g transform="translate(${lx} ${ly}) scale(${(1.45 * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
-        cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 410, HOR ? 62 : 60, L, { max: HOR ? 20 : 16, t0: .2 }) +
-        peg(tx0, HOR ? ZC.y + 130 : Z.y + 545, 'sin humo TV', HOR ? 34 : 36, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4));
+      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
+      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
+        cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
+        peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4));
     },
   };
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
+    if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
     if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
@@ -234,37 +235,37 @@
     const S = T.escenas[k], L = Math.max(0, t - S.ini) + (k === 0 ? 1 : 0), d = Math.max(1, S.fin - S.ini), v = E[k].visual || { tipo: 'icono', icono: 'alerta', texto: E[k].titulo };
     const f = fotoDe(k), tipo = f ? 'foto' : (G[v.tipo] ? v.tipo : 'icono');
     let g = ''; try { g = G[tipo](v, L, d, k) || ''; } catch (e) { g = G.icono({ icono: 'alerta', texto: E[k].titulo || '' }, L, d); }
-    const z = (HOR ? 1 : 1.06) + .03 * cl(L / d);   // v44: en vertical el gráfico va un 6 % más grande para llenar la pantalla
+    const z = 1 + .02 * cl(L / d);   // v45: sin agrandar (Pablo lo veía todo demasiado grande)
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
       `<g transform="translate(${ZC.x} ${ZC.y}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L));
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
   function rotulo(k, L) {
     const tit = String(E[k].titulo || ''); if (!tit) return '';
-    return peg(HOR ? Z.x + 6 : ZC.x, HOR ? 104 : 190, tit, HOR ? 30 : 38, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4));
+    return peg(HOR ? Z.x + 6 : ZC.x, HOR ? 104 : 196, tit, HOR ? 30 : 26, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4));
   }
 
   // ---------- capas fijas ----------
   function cabecera(k, t, L) {
     const ci = CAPS.reduce((a, c, i) => (c.desde <= k ? i : a), -1), tp = (E[k].visual || {}).tipo;
-    let o = `<g>${nube(HOR ? 96 : 78, HOR ? 44 : 84, HOR ? .95 : 1.15)}<text x="${HOR ? 130 : 118}" y="${HOR ? 54 : 96}" font-family="Inter" font-weight="900" font-size="${HOR ? 28 : 34}" fill="${INK}">sin humo TV</text></g>`;
+    let o = `<g>${nube(HOR ? 96 : 78, HOR ? 44 : 84, HOR ? .95 : 1.15)}<text x="${HOR ? 130 : 118}" y="${HOR ? 54 : 96}" font-family="Inter" font-weight="900" font-size="${HOR ? 28 : 30}" fill="${INK}">sin humo TV</text></g>`;
     if (k === 0 && P.fecha) o += peg(HOR ? 400 : 430, HOR ? 53 : 95, P.fecha, HOR ? 20 : 22, ORO, INK, 'middle', 1, 3);
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
     if (tp !== 'mencion' && tp !== 'cierre') {
-      const lx = HOR ? W - 62 : W - 82, ly = HOR ? H - 196 : 100, s = HOR ? .5 : .56;
+      const lx = HOR ? W - 62 : W - 78, ly = HOR ? H - 196 : 96, s = HOR ? .5 : .46;
       o += lupi({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: GRAVE ? 'seria' : tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz', mira: [HOR ? -1 : -.6, HOR ? -.4 : .8], brazos: L < 1 ? 'senala' : '' });
     }
     return o;
   }
   function subtitulos(k, t) {
-    const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13); if (!bl.length) return '';
+    const bl = bloquesKaraoke(k, HOR ? 34 : 30, HOR ? 34 : 18); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = back((t - B.a) / .16) || (i === 0 ? 1 : 0), maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1)));
-    const fs = Math.min(HOR ? 52 : 80, Math.floor((HOR ? 1000 : 640) / (Math.max(5, maxc) * .58))), lh = fs * 1.16, yc = HOR ? 606 : 930, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
-    return `<g transform="translate(${W / 2} ${yc}) scale(${(.88 + .12 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
+    const fs = Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : 620) / (Math.max(5, maxc) * .58))), lh = fs * 1.18, yc = HOR ? 606 : 900, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
+    return `<g transform="translate(${W / 2} ${yc}) scale(${(HOR ? .88 + .12 * ent : .96 + .04 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
-        return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1" font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : ''} fill-opacity="${ahora || dicho ? 1 : .42}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : ''}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" letter-spacing="-.5" stroke="${BG}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
@@ -279,7 +280,7 @@
   // v44 · pie de los cortos: cinta de titulares que corre + base oscura. Llena la zona que tapan los textos de YouTube/TikTok/Instagram
   // (antes quedaba crema vacío) y hace que el título blanco de la aplicación se lea mejor.
   function pie(t) {
-    if (HOR) return '';
+    if (HOR || !window.PIE_CINTA) return '';   // v45: quitado en los cortos (más limpio); window.PIE_CINTA = true lo recupera
     const y = 1088, h = 50, fs = 26, tr = ['SIN HUMO TV', 'LOS HECHOS, SIN HUMO'].concat(P.fecha ? [String(P.fecha).toUpperCase()] : []);
     const an = tr.map(x => Math.round(x.length * fs * .8) + 70), per = an.reduce((a, b) => a + b, 0), off = (t * 70) % per;
     let o = `<rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="${INK}"/><rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="url(#pt2)"/>` +
