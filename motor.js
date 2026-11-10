@@ -8,7 +8,7 @@
   const W = 720, H = 1280;
   // v30 · ASPECTO MODERNO: fondo oscuro con brillo, el dibujo sobre una tarjeta clara, trazo limpio (sin temblor), título en blanco
   // y subtítulos sobre cristal. proyecto.json "aspecto": "clasico" vuelve al papel de cuaderno; "moderno" lo fuerza.
-  const ASPECTO_DEFECTO = 'clasico';
+  const ASPECTO_DEFECTO = 'moderno';
   const MOD2 = () => ((window.PROY && window.PROY.aspecto) || window.ASPECTO || ASPECTO_DEFECTO) === 'moderno';
   const BLA = '#fffaf0';
   const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
