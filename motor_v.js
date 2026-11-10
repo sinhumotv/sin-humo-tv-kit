@@ -78,6 +78,10 @@
   const golpe = (L, t) => { const p = cl((L - t) / .35); return p <= 0 || p >= 1 ? 1 : 1 + .18 * Math.sin(p * Math.PI) * (1 - p * .5); };
   const tiembla = (L, t) => { const p = cl((L - t) / .3); return p <= 0 || p >= 1 ? 0 : Math.sin(p * 40) * 5 * (1 - p); };
   const lupiBase = (L, d, expr = 'curiosa', extra = {}) => Object.assign({ x: 565, y: 610, s: .78, expr, mira: [-.8, -.3], brazos: L < d * .6 ? 'senala' : 'abajo' }, extra);
+  // v37 · gráficos con más acabado en el aspecto moderno: líneas guía discontinuas al fondo y un brillo en cada barra
+  const M2 = () => !!(window.SH.moderno && window.SH.moderno());
+  const guias = (x0, x1, base, alto) => !M2() ? '' : [1, 2, 3].map(i => `<path d="M${x0} ${base - alto * i / 3} H${x1}" stroke="${INK}" stroke-opacity=".13" stroke-width="3" stroke-dasharray="6 10"/>`).join('');
+  const brillo = (x, y, w, h) => !M2() || h < 26 ? '' : `<rect x="${x + w * .1}" y="${y + 10}" width="${Math.max(8, w * .13)}" height="${h - 20}" rx="${Math.max(4, w * .065)}" fill="#fff" opacity=".24"/>`;
   const tam = (s, max, ancho) => Math.min(max, Math.floor(ancho / (Math.max(1, [...String(s)].length) * .62)));
 
   const P_ = {
@@ -125,12 +129,12 @@
       const barra = (o, n, x, t0, c) => {
         const hh = 330 * (n ? Math.max(.04, Math.abs(n.num) / max) : .5) * easeOut((L - t0) / .9);
         const sz = tam(o.valor, 62, 250);
-        return `<rect x="${x - 95}" y="${680 - hh}" width="190" height="${hh}" rx="14" fill="${c}" stroke="${INK}" stroke-width="5"/>` +
+        return `<rect x="${x - 95}" y="${680 - hh}" width="190" height="${hh}" rx="14" fill="${c}" stroke="${INK}" stroke-width="5"/>` + brillo(x - 95, 680 - hh, 190, hh) +
           (L > t0 + .3 ? A.esc_(x, 650 - hh, golpe(L, t0 + .9), A.txtC(x, 660 - hh, contador(o.valor, L, t0, .9), sz, c, 'middle', 9)) : '') +
           bloque(x, 722, o.etiqueta || '', 30, 13, INK);
       };
       const vs = L > d * .45 ? A.esc_(360, 420, A.pop(L, d * .45), `<circle cx="360" cy="420" r="36" fill="${ORO}" stroke="${INK}" stroke-width="5"/>` + A.txt(360, 432, 'vs', 32)) : '';
-      return { svg: `<path d="M110 682 H610" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>` + barra(a, na, 215, .15, col(a.color || 'azul')) + barra(b, nb, 505, d * .38, col(b.color || 'rojo')) + vs, lupi: lupiBase(L, d, L > d * .5 ? 'sorprendida' : 'curiosa', { x: 600, y: 300, s: .62 }), evitar: [[100, 280, 520, 470]] };
+      return { svg: guias(110, 610, 680, 330) + `<path d="M110 682 H610" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>` + barra(a, na, 215, .15, col(a.color || 'azul')) + barra(b, nb, 505, d * .38, col(b.color || 'rojo')) + vs, lupi: lupiBase(L, d, L > d * .5 ? 'sorprendida' : 'curiosa', { x: 600, y: 300, s: .62 }), evitar: [[100, 280, 520, 470]] };
     },
     lista(L, d, v) {
       const it = (v.items || []).slice(0, 4), n = it.length || 1, c = col(v.color || 'naranja');
@@ -178,12 +182,12 @@
       const vals = (v.valores || []).slice(0, 5), et = v.etiquetas || [], n = vals.length || 1;
       const max = Math.max(...vals.map(x => Math.abs(numero(x) ? numero(x).num : 0)), 1);
       const ancho = 500 / n, an = Math.min(110, ancho * .72);
-      let s = `<path d="M90 682 H630" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
+      let s = guias(90, 630, 682, 330) + `<path d="M90 682 H630" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
       if (v.titulo) s += bloque(360, 245, v.titulo, 40, 22, INK);
       vals.forEach((val, i) => {
         const t0 = .2 + i * (d * .45 / n), nn = numero(val), hh = 330 * (nn ? Math.abs(nn.num) / max : 0) * easeOut((L - t0) / .7);
         const x = 110 + i * ancho + (ancho - an) / 2, c = i === n - 1 ? col(v.color || 'rojo') : AZU;
-        s += `<rect x="${x}" y="${682 - hh}" width="${an}" height="${hh}" rx="10" fill="${c}" stroke="${INK}" stroke-width="5"/>`;
+        s += `<rect x="${x}" y="${682 - hh}" width="${an}" height="${hh}" rx="10" fill="${c}" stroke="${INK}" stroke-width="5"/>` + brillo(x, 682 - hh, an, hh);
         if (L > t0 + .3) s += A.txt(x + an / 2, 668 - hh, contador(val, L, t0, .7), tam(val, 34, an + 20), INK);
         s += A.txt(x + an / 2, 720, et[i] || '', tam(et[i] || '', 26, ancho), INK, 'middle', 800);
       });

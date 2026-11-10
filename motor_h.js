@@ -66,6 +66,9 @@
     return n.pre + s + n.suf;
   }
 
+  // v37 · gráficos con más acabado en el aspecto moderno: líneas guía discontinuas al fondo y un brillo en cada barra
+  const guias = (x0, x1, base, alto) => !moderno() ? '' : [1, 2, 3].map(i => `<path d="M${x0} ${base - alto * i / 3} H${x1}" stroke="${INK}" stroke-opacity=".13" stroke-width="3" stroke-dasharray="6 10"/>`).join('');
+  const brillo = (x, y, w, h) => !moderno() || h < 26 ? '' : `<rect x="${x + w * .1}" y="${y + 10}" width="${Math.max(8, w * .13)}" height="${h - 20}" rx="${Math.max(4, w * .065)}" fill="#fff" opacity=".24"/>`;
   // ---------- PLANTILLAS ----------
   // Todas reciben (L, d, v, k): L segundos desde que empieza, d duración, v = visual, k = índice.
   // Devuelven { svg, lupi?, evitar? }. Lo nuevo entra repartido a lo largo de la escena.
@@ -88,12 +91,12 @@
       const max = Math.max(Math.abs(na ? na.num : 1), Math.abs(nb ? nb.num : 1)) || 1;
       const barra = (o, n, x, t0, c) => {
         const h = 300 * (n ? Math.abs(n.num) / max : .5) * easeOut((L - t0) / 1);
-        return `<rect x="${x - 90}" y="${520 - h}" width="180" height="${h}" rx="10" fill="${c}" stroke="${INK}" stroke-width="5"/>` +
+        return `<rect x="${x - 90}" y="${520 - h}" width="180" height="${h}" rx="10" fill="${c}" stroke="${INK}" stroke-width="5"/>` + brillo(x - 90, 520 - h, 180, h) +
           (L > t0 + .3 ? A.txtC(x, 505 - h, contador(o.valor, L, t0, 1), 64, c, 'middle', 9) : '') +
           `<text x="${x}" y="555" font-family="Inter" font-weight="900" font-size="34" text-anchor="middle" fill="${INK}">${esc(o.etiqueta || '')}</text>`;
       };
       const vs = L > d * .45 ? A.esc_(550, 380, A.pop(L, d * .45), `<circle cx="550" cy="380" r="40" fill="${ORO}" stroke="${INK}" stroke-width="5"/>` + A.txt(550, 393, 'vs', 36)) : '';
-      return { svg: `<path d="M260 522 H840" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>` + barra(a, na, 380, .2, col(a.color || 'azul')) + barra(b, nb, 720, d * .4, col(b.color || 'rojo')) + vs, lupi: lupiDcha(L, d, L > d * .5 ? 'sorprendida' : 'curiosa'), evitar: [[270, 150, 580, 400]] };
+      return { svg: guias(260, 840, 520, 300) + `<path d="M260 522 H840" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>` + barra(a, na, 380, .2, col(a.color || 'azul')) + barra(b, nb, 720, d * .4, col(b.color || 'rojo')) + vs, lupi: lupiDcha(L, d, L > d * .5 ? 'sorprendida' : 'curiosa'), evitar: [[270, 150, 580, 400]] };
     },
     // Lista de hasta 4 puntos que van apareciendo
     lista(L, d, v) {
@@ -152,12 +155,12 @@
     grafico(L, d, v) {
       const vals = v.valores || [], et = v.etiquetas || [], n = vals.length || 1, max = Math.max(...vals.map(x => Math.abs(numero(x) ? numero(x).num : 0)), 1);
       const anch = Math.min(150, 780 / n), x0 = 140;
-      let s = `<path d="M110 520 H980" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
+      let s = guias(110, 980, 520, 300) + `<path d="M110 520 H980" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
       if (v.titulo) s += A.txt(80, 165, v.titulo, 42, INK, 'start');
       vals.forEach((val, i) => {
         const t0 = .2 + i * (d * .5 / n), nn = numero(val), h = 300 * (nn ? Math.abs(nn.num) / max : 0) * easeOut((L - t0) / .7);
         const x = x0 + i * (780 / n) + (780 / n - anch) / 2, c = i === n - 1 ? col(v.color || 'rojo') : AZU;
-        s += `<rect x="${x}" y="${520 - h}" width="${anch}" height="${h}" rx="8" fill="${c}" stroke="${INK}" stroke-width="5"/>`;
+        s += `<rect x="${x}" y="${520 - h}" width="${anch}" height="${h}" rx="8" fill="${c}" stroke="${INK}" stroke-width="5"/>` + brillo(x, 520 - h, anch, h);
         if (L > t0 + .3) s += A.txt(x + anch / 2, 505 - h, contador(val, L, t0, .7), 34, INK);
         s += A.txt(x + anch / 2, 556, et[i] || '', 28, INK, 'middle', 800);
       });
