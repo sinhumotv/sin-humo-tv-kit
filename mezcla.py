@@ -32,42 +32,127 @@ def guarda(x, nombre):
 
 
 # ---------- música ----------
-bpm = {"tensa": 104, "ligera": 112, "grave": 84}.get(tono, 104)
-beat = 60 / bpm
-n = int((DUR + 2) * SR)
-t = np.arange(n) / SR
-acordes = {  # Hz de las notas de cada acorde (4 compases)
-    "tensa": [[110, 130.8, 164.8], [87.3, 110, 130.8], [98, 123.5, 146.8], [82.4, 103.8, 123.5]],
-    "ligera": [[130.8, 164.8, 196], [110, 130.8, 164.8], [87.3, 110, 130.8], [98, 123.5, 146.8]],
-    "grave": [[73.4, 87.3, 110], [65.4, 77.8, 98], [58.3, 73.4, 87.3], [55, 69.3, 82.4]],
-}[tono]
-compas = beat * 4
-pad = np.zeros(n)
-for i in range(int(np.ceil((DUR + 2) / compas))):
-    a, b = int(i * compas * SR), min(n, int((i + 1) * compas * SR))
-    seg = t[a:b] - t[a]
-    env = np.minimum(1, seg / .4) * np.minimum(1, (compas - seg) / .4)
-    for f in acordes[i % 4]:
-        pad[a:b] += env * (np.sin(2 * np.pi * f * t[a:b]) + .3 * np.sin(2 * np.pi * 2 * f * t[a:b] + .5)) / 3
-# pulso: bombo en cada pulso, charles en contratiempo
-pulso = np.zeros(n)
-kl = int(.25 * SR); kt = np.arange(kl) / SR
-bombo = np.sin(2 * np.pi * (55 + 90 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 12)
-hl = int(.05 * SR); charles = rng.normal(0, 1, hl) * np.exp(-np.arange(hl) / SR * 90) * .25
-k = 0
-while k * beat < DUR + 2:
-    a = int(k * beat * SR)
-    if a + kl < n: pulso[a:a + kl] += bombo * (.9 if tono != "grave" else .6)
-    b = int((k + .5) * beat * SR)
-    if b + hl < n and tono != "grave": pulso[b:b + hl] += charles
-    k += 1
-mus = pad * .5 + pulso * .6
-# bucle: el final se funde con el principio
-L2 = int(2 * SR)
-m = mus[:int(DUR * SR)].copy()
-fade = np.linspace(0, 1, L2)
-m[:L2] = m[:L2] * fade + mus[int(DUR * SR):int(DUR * SR) + L2] * (1 - fade)
-m /= np.max(np.abs(m)) + 1e-9
+# v34 (10-nov-2026) · MÚSICA NUEVA hecha por código (sin licencias): bajo, acordes con cuerpo, arpegio y batería suave, con una
+# progresión de 8 compases y cambios cada pocos compases (entrada sin batería, cortes, tramos más tranquilos) para que no sea
+# un bucle idéntico durante todo el vídeo. Tres ambientes según "tono": tensa (La menor), ligera (Do mayor) y grave
+# (Re menor, lenta y sin batería). "musica": "clasica" en proyecto.json vuelve a la anterior.
+def musica_nueva():
+    bpm = {"tensa": 104, "ligera": 112, "grave": 84}.get(tono, 104)
+    beat = 60 / bpm; compas = 4 * beat
+    n = int((DUR + 2) * SR)
+    hz = lambda m: 440.0 * 2 ** ((m - 69) / 12)
+    # acordes (notas MIDI de la tríada, fundamental primero), 8 compases
+    PROG = {"tensa": [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60], [50, 53, 57], [52, 56, 59]],
+            "ligera": [[48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62], [53, 57, 60], [55, 59, 62]],
+            "grave": [[50, 53, 57], [46, 50, 53], [53, 57, 60], [48, 52, 55], [50, 53, 57], [46, 50, 53], [55, 58, 62], [57, 61, 64]]}[tono if tono in ("tensa", "ligera", "grave") else "tensa"]
+    grave = tono == "grave"
+    pad, bajo, arp, bat = np.zeros(n), np.zeros(n), np.zeros(n), np.zeros(n)
+
+    def pon_(dest, x, ts, g=1.0):
+        a = int(ts * SR)
+        if a >= n or a < 0: return
+        x = x[:n - a]; dest[a:a + len(x)] += x * g
+
+    def nota(f, dur, arm, caida, ataque=.004):   # timbre = armónicos; envolvente = ataque corto + caída exponencial
+        t = np.arange(int(dur * SR)) / SR
+        x = sum(am * np.sin(2 * np.pi * f * (k + 1) * t) for k, am in enumerate(arm))
+        return x * np.minimum(1, t / ataque) * np.exp(-t * caida) * np.minimum(1, (dur - t) / .02)
+
+    # batería
+    kt = np.arange(int(.28 * SR)) / SR
+    bombo = np.sin(2 * np.pi * (48 * kt + 62 / 28 * (1 - np.exp(-kt * 28)))) * np.exp(-kt * 11)
+    ct = np.arange(int(.16 * SR)) / SR
+    ruido = rng.normal(0, 1, len(ct)); ruido = ruido - np.convolve(ruido, np.ones(24) / 24, "same")     # sin graves
+    palma = ruido * (np.exp(-ct * 34) + .6 * np.exp(-np.maximum(0, ct - .012) * 34) * (ct > .012)) * .5
+    ht = np.arange(int(.045 * SR)) / SR
+    hr = rng.normal(0, 1, len(ht)); hr = hr - np.convolve(hr, np.ones(6) / 6, "same")                   # solo agudos
+    charles = hr * np.exp(-ht * 110) * .22
+
+    ncomp = int(np.ceil((DUR + 2) / compas))
+    PAT = [[0, 1, 2, 1, 0, 2, 1, 2], [0, 2, 1, 2, 0, 1, 2, 1], [2, 1, 0, 1, 2, 0, 1, 0]]
+    for c in range(ncomp):
+        t0 = c * compas; ac = PROG[c % 8]
+        tranquilo = (c // 8) % 4 == 3 and c % 8 < 4          # cada 32 compases, 4 más tranquilos (sin batería)
+        corte = c % 8 == 7                                    # último compás de cada vuelta: sin bombo ni palma
+        # acordes con cuerpo: 3 notas, dos voces un poco desafinadas, entrada y salida suaves
+        tt = np.arange(int((compas + .5) * SR)) / SR
+        env = np.minimum(1, tt / .45) * np.minimum(1, (compas + .5 - tt) / .5)
+        for m in ac:
+            f = hz(m)
+            x = sum(am * (np.sin(2 * np.pi * f * 1.0015 * (k + 1) * tt) + np.sin(2 * np.pi * f * .9985 * (k + 1) * tt + .7)) for k, am in enumerate([1, .32, .14, .06]))
+            pon_(pad, x * env, t0, .16)
+        if c < 2: pass                                        # entrada: solo acordes y arpegio (la voz arranca limpia)
+        # bajo
+        f0 = hz(ac[0] - 24)
+        if c >= 2:
+            if grave: pon_(bajo, nota(f0, compas, [1, .25], .5, .03), t0, .8)
+            else:
+                for bt in ([0, 1.5, 2, 3.5] if not tranquilo else [0, 2]):
+                    pon_(bajo, nota(f0, beat * .9, [1, .3, .08], 4.2), t0 + bt * beat, .85)
+        # arpegio (notas del acorde una octava arriba)
+        pat = PAT[(c // 8) % 3]
+        if grave:
+            for i in range(4): pon_(arp, nota(hz(ac[pat[i]] + 12), beat * 1.6, [1, .35, .12, .04], 2.6, .006), t0 + i * beat, .30)
+        else:
+            oct_ = 24 if (c // 16) % 2 else 12
+            for i in range(8):
+                acento = 1.0 if i % 2 == 0 else .72
+                pon_(arp, nota(hz(ac[pat[i]] + oct_), beat * .48, [1, .4, .18], 9.0), t0 + i * beat / 2, .30 * acento)
+        # batería (nunca en tono grave)
+        if not grave and c >= 2:
+            for i in range(8):
+                if i % 2 == 1 or c >= 4: pon_(bat, charles, t0 + i * beat / 2, 1.0 if i % 2 else .6)
+            if c >= 4 and not tranquilo and not corte:
+                for bt in (0, 2, 2.5 if c % 2 else 99): 
+                    if bt < 4: pon_(bat, bombo, t0 + bt * beat, .9)
+                for bt in (1, 3): pon_(bat, palma, t0 + bt * beat, .55)
+    mus = pad * .55 + bajo * .55 + arp * .5 + bat * .6
+    m = np.tanh(mus[:int(DUR * SR)] * 1.2)
+    fin = min(len(m), int(1.5 * SR)); m[-fin:] *= np.linspace(1, 0, fin)      # se apaga al final
+    return m / (np.max(np.abs(m)) + 1e-9)
+
+
+def musica_clasica():
+    bpm = {"tensa": 104, "ligera": 112, "grave": 84}.get(tono, 104)
+    beat = 60 / bpm
+    n = int((DUR + 2) * SR)
+    t = np.arange(n) / SR
+    acordes = {  # Hz de las notas de cada acorde (4 compases)
+        "tensa": [[110, 130.8, 164.8], [87.3, 110, 130.8], [98, 123.5, 146.8], [82.4, 103.8, 123.5]],
+        "ligera": [[130.8, 164.8, 196], [110, 130.8, 164.8], [87.3, 110, 130.8], [98, 123.5, 146.8]],
+        "grave": [[73.4, 87.3, 110], [65.4, 77.8, 98], [58.3, 73.4, 87.3], [55, 69.3, 82.4]],
+    }[tono]
+    compas = beat * 4
+    pad = np.zeros(n)
+    for i in range(int(np.ceil((DUR + 2) / compas))):
+        a, b = int(i * compas * SR), min(n, int((i + 1) * compas * SR))
+        seg = t[a:b] - t[a]
+        env = np.minimum(1, seg / .4) * np.minimum(1, (compas - seg) / .4)
+        for f in acordes[i % 4]:
+            pad[a:b] += env * (np.sin(2 * np.pi * f * t[a:b]) + .3 * np.sin(2 * np.pi * 2 * f * t[a:b] + .5)) / 3
+    # pulso: bombo en cada pulso, charles en contratiempo
+    pulso = np.zeros(n)
+    kl = int(.25 * SR); kt = np.arange(kl) / SR
+    bombo = np.sin(2 * np.pi * (55 + 90 * np.exp(-kt * 30)) * kt) * np.exp(-kt * 12)
+    hl = int(.05 * SR); charles = rng.normal(0, 1, hl) * np.exp(-np.arange(hl) / SR * 90) * .25
+    k = 0
+    while k * beat < DUR + 2:
+        a = int(k * beat * SR)
+        if a + kl < n: pulso[a:a + kl] += bombo * (.9 if tono != "grave" else .6)
+        b = int((k + .5) * beat * SR)
+        if b + hl < n and tono != "grave": pulso[b:b + hl] += charles
+        k += 1
+    mus = pad * .5 + pulso * .6
+    # bucle: el final se funde con el principio
+    L2 = int(2 * SR)
+    m = mus[:int(DUR * SR)].copy()
+    fade = np.linspace(0, 1, L2)
+    m[:L2] = m[:L2] * fade + mus[int(DUR * SR):int(DUR * SR) + L2] * (1 - fade)
+    m /= np.max(np.abs(m)) + 1e-9
+    return m
+
+
+m = musica_clasica() if P.get("musica") == "clasica" else musica_nueva()
 guarda(m * .8, "musica")
 
 # ---------- efectos ----------
