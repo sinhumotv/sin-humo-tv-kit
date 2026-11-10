@@ -83,3 +83,4 @@
 2026-11-09|15:00|La insólita muerte de Bobby Leach|sabias|YO 6af15df37522f65ac0c0754f IN 6af15df37522f65ac0c0759a TI 6af15df4796ccae266876bb5|img=mixto|14:28
 2026-11-09|18:00|El atraco de Baker Street|final|YO 6af15f84e29b1359f0d0928d IN 6af15f84cac9d7525f6f46d7 TI 6af15f842f1ff83d451a9808|img=mixto|18:38
 2026-11-09|21:00|La muerte de Adolfo Federico|consecuencia|YO 6af1608c7522f65ac0c0fb20 IN 6af1608ce44ddbb57c358f7e TI 6af1608d2f1ff83d451acad6|img=mixto|21:00
+2026-11-10|15:00|El misterio del Ourang Medan|nadie|YO 6af2f1210f3180d1203e0e3f IN 6af2f12217d2b2f30cff82f8 TI 6af2f12217d2b2f30cff8323|img=mixto|14:47
