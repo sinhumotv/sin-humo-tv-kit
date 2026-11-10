@@ -53,90 +53,195 @@ if DUR - c > 0.05:
 # pausas internas candidatas a corte (entre tramos)
 cortes = [(tramos[i][1], tramos[i + 1][0]) for i in range(len(tramos) - 1)]
 K = len(cortes)
-if K < N - 1:
-    sys.exit(f"Solo hay {K} pausas y hacen falta {N-1}: baja el umbral o revisa la voz")
-
-# --- 3. Programación dinámica: N-1 cortes con velocidad uniforme ------------------
 chars = [len(re.sub(r"\s+", "", e["hablado"])) for e in ESC]
 vtot = sum(b - a for a, b in tramos)
 media = sum(chars) / vtot
 
 
-_acum = [0.0]
-for _a, _b in tramos:
-    _acum.append(_acum[-1] + _b - _a)
+# --- 2b. (v29) CORTES CONTINUOS para los vídeos largos ---------------------------
+# (10-nov-2026) Pablo: «en los largos de sin humo TV he visto cortes en la voz». El reparto por pausas ponía algunos cortes
+# de escena una o dos palabras desplazados cuando la voz encadena frases sin pausa («podrán ‖ ejercer su derecho») y metía
+# ahí el respiro entre escenas; además ponía a cero todo lo que sonaba por debajo de -32 dB (finales de palabra, respiraciones).
+# Con palabras.json (alinear.py) cada escena se corta ENTRE su última palabra y la primera de la siguiente:
+#   · si ahí la voz hace una pausa de verdad, se corta dentro de la pausa (con fundido) y se añade el respiro;
+#   · si la voz no para, NO se añade silencio: el audio sigue tal cual y solo cambia la imagen.
+# Nunca se pone nada a cero dentro de una escena. "cortes": "clasico" en proyecto.json vuelve al método anterior.
+def _norm_c(w):
+    import unicodedata
+    w = unicodedata.normalize("NFD", w.lower())
+    return re.sub(r"[^a-z0-9]", "", "".join(c for c in w if unicodedata.category(c) != "Mn"))
 
 
-def voz_entre(i0, i1):  # segundos de voz de los tramos i0..i1 (inclusive), con sumas acumuladas
-    return _acum[i1 + 1] - _acum[i0]
-
-
-T = len(tramos)
-INF = 1e18
-VENTANA = T if N <= 12 else 60   # en los shorts, búsqueda completa (igual que antes)
-# dp[e][j] = coste mínimo con las escenas 0..e terminando en el tramo j
-dp = [[INF] * T for _ in range(N)]
-bk = [[-1] * T for _ in range(N)]
-for j in range(T):
-    v = voz_entre(0, j)
-    dp[0][j] = (chars[0] / v / media - 1) ** 2
-for e in range(1, N):
-    for j in range(e, T):
-        for i in range(max(e - 1, j - VENTANA), j):   # una escena no abarca más de VENTANA tramos
-            if dp[e - 1][i] >= INF:
+def cortes_continuos():
+    import difflib
+    W = json.load(open(os.path.join(D, "palabras.json")))
+    if len(W) < N:
+        return None
+    ref, sc = [], []
+    for i, e in enumerate(ESC):
+        for w in e["hablado"].split():
+            if _norm_c(w):
+                ref.append(_norm_c(w)); sc.append(i)
+    hyp = [_norm_c(w[2]) for w in W]
+    m = {}
+    for x, y, n in difflib.SequenceMatcher(None, ref, hyp, autojunk=False).get_matching_blocks():
+        for k in range(n):
+            if ref[x + k]:
+                m[x + k] = y + k
+    if len(m) < 0.5 * len(ref):
+        print(f"AVISO: la transcripción solo reconoce {len(m)}/{len(ref)} palabras: cortes clásicos")
+        return None
+    emp = [None] * N                      # primera palabra (índice en ref) de cada escena
+    for r, e in enumerate(sc):
+        if emp[e] is None:
+            emp[e] = r
+    if any(x is None for x in emp):
+        return None
+    hop = int(0.005 * SR)
+    nfr = len(raw) // hop
+    env = 20 * np.log10(np.sqrt((raw[:nfr * hop].reshape(nfr, hop) ** 2).mean(1)) + 1e-9)
+    env = np.convolve(env, np.ones(5) / 5, "same")          # 25 ms
+    UMB = max(-48.0, float(np.percentile(env, 90)) - 24.0)  # silencio: 24 dB por debajo de la voz
+    ini, fin, resp = [0.0] * N, [DUR] * N, [True] * N
+    con_pausa = 0
+    for e in range(1, N):
+        r0 = emp[e]
+        ra = next((r for r in range(r0 - 1, -1, -1) if r in m), None)
+        rb = next((r for r in range(r0, len(ref)) if r in m), None)
+        lo = W[m[ra]][1] if ra is not None else 0.0
+        hi = W[m[rb]][0] if rb is not None else DUR
+        if hi < lo:
+            lo, hi = hi, lo
+        if not (ra == r0 - 1 and rb == r0):   # palabras sin reconocer junto al corte: se estima por longitud
+            a0 = (ra + 1) if ra is not None else 0
+            b0 = rb if rb is not None else len(ref)
+            tot = max(1, sum(len(ref[r]) + 1 for r in range(a0, b0)))
+            est = lo + (hi - lo) * sum(len(ref[r]) + 1 for r in range(a0, r0)) / tot
+            lo, hi = max(lo, est - 0.3), min(hi, est + 0.3)
+        lo, hi = max(ini[e - 1] + 0.3, lo - 0.10), min(DUR - 0.05, hi + 0.10)
+        if hi <= lo:
+            hi = lo + 0.02
+        i0, i1 = int(lo * SR / hop), max(int(lo * SR / hop) + 1, int(hi * SR / hop))
+        k = i0 + int(np.argmin(env[i0:i1 + 1]))
+        if env[k] < UMB:                      # hay silencio: ¿cuánto dura la pausa?
+            pa = k
+            while pa > 0 and env[pa - 1] < UMB:
+                pa -= 1
+            pb = k
+            while pb < nfr - 1 and env[pb + 1] < UMB:
+                pb += 1
+            pa_s, pb_s = pa * hop / SR, (pb + 1) * hop / SR
+            pa_s = max(pa_s, ini[e - 1] + 0.3)
+            if pb_s - pa_s >= 0.10:
+                f_, i_ = min(pa_s + 0.20, pb_s), max(pb_s - 0.10, pa_s)
+                if i_ < f_:
+                    f_ = i_ = (pa_s + pb_s) / 2
+                fin[e - 1], ini[e], resp[e - 1] = f_, i_, True
+                con_pausa += 1
                 continue
-            v = voz_entre(i + 1, j)
-            plen = cortes[i][1] - cortes[i][0]
-            c = dp[e - 1][i] + (chars[e] / v / media - 1) ** 2 - 0.15 * min(plen, 1.0)
-            if c < dp[e][j]:
-                dp[e][j], bk[e][j] = c, i
-fin_idx = [T - 1]
-for e in range(N - 1, 0, -1):
-    fin_idx.append(bk[e][fin_idx[-1]])
-fin_idx = fin_idx[::-1]
-grupos, s = [], 0
-for j in fin_idx:
-    grupos.append((s, j))
-    s = j + 1
-# v26: cortes forzados. Si existe <carpeta>/inicios.json (lista con el segundo de voz.mp3 en que empieza cada
-# escena, p. ej. sacado de una transcripción con marcas de tiempo), cada escena empieza en el tramo de voz más cercano.
-_fz = os.path.join(D, "inicios.json")
-# (9-nov-2026) si los cortes forzados no encajan (p. ej. menos pausas que escenas en un corto), se usa el reparto normal en vez de fallar
-_tramos0, _grupos0 = list(tramos), list(grupos)
-try:
-    if os.path.exists(_fz):
-        _ini = json.load(open(_fz))
-        if len(_ini) == N:
-            # si un inicio cae dentro de un tramo de voz continuo, se parte el tramo en el punto más silencioso cercano
-            def _hueco(t):
-                fr = int(0.02 * SR); best, bt = 1e9, t
-                for x in np.arange(t - 0.3, t + 0.06, 0.01):
-                    i = int(x * SR)
-                    if i < fr or i + fr > len(raw): continue
-                    r = float(np.sqrt(np.mean(raw[i - fr // 2:i + fr // 2] ** 2)))
-                    if r < best: best, bt = r, x
-                return bt
-            for e in range(1, N):
-                t = _hueco(_ini[e])
-                for k, (a, b) in enumerate(tramos):
-                    if a + 0.35 < t < b - 0.15:
-                        tramos[k:k + 1] = [(a, t - 0.2), (t + 0.1, b)]
-                        break
-                else:
+        c = (k + 0.5) * hop / SR              # la voz no para: corte limpio, sin silencio añadido
+        fin[e - 1], ini[e], resp[e - 1] = c, c, False
+    if any(fin[e] - ini[e] < 0.25 for e in range(N)):
+        print("AVISO: cortes continuos incoherentes (escena demasiado corta): cortes clásicos")
+        return None
+    print(f"Cortes continuos (v29): {con_pausa} en pausa real y {N - 1 - con_pausa} sin pausa (sin silencio añadido)")
+    return {"ini": ini, "fin": fin, "resp": resp}
+
+
+CONT = None
+if YOUTUBE and P.get("cortes") != "clasico" and os.path.exists(os.path.join(D, "palabras.json")):
+    try:
+        CONT = cortes_continuos()
+    except Exception as _x:
+        print("AVISO: cortes continuos no aplicables, se usa el reparto clásico:", _x)
+        CONT = None
+
+if CONT is None and K < N - 1:
+    sys.exit(f"Solo hay {K} pausas y hacen falta {N-1}: baja el umbral o revisa la voz")
+
+if CONT is not None:
+    grupos = list(range(N))
+else:
+
+    # --- 3. Programación dinámica: N-1 cortes con velocidad uniforme ------------------
+
+
+    _acum = [0.0]
+    for _a, _b in tramos:
+        _acum.append(_acum[-1] + _b - _a)
+
+
+    def voz_entre(i0, i1):  # segundos de voz de los tramos i0..i1 (inclusive), con sumas acumuladas
+        return _acum[i1 + 1] - _acum[i0]
+
+
+    T = len(tramos)
+    INF = 1e18
+    VENTANA = T if N <= 12 else 60   # en los shorts, búsqueda completa (igual que antes)
+    # dp[e][j] = coste mínimo con las escenas 0..e terminando en el tramo j
+    dp = [[INF] * T for _ in range(N)]
+    bk = [[-1] * T for _ in range(N)]
+    for j in range(T):
+        v = voz_entre(0, j)
+        dp[0][j] = (chars[0] / v / media - 1) ** 2
+    for e in range(1, N):
+        for j in range(e, T):
+            for i in range(max(e - 1, j - VENTANA), j):   # una escena no abarca más de VENTANA tramos
+                if dp[e - 1][i] >= INF:
                     continue
-                _ini[e] = t + 0.1
-            T = len(tramos)
-            _st = [0]
-            for e in range(1, N):
-                cand = [k for k in range(_st[-1] + 1, T - (N - 1 - e))]
-                _st.append(min(cand, key=lambda k: abs(tramos[k][0] - _ini[e])))
-            grupos = [(_st[e], (_st[e + 1] - 1) if e + 1 < N else T - 1) for e in range(N)]
-            print("Cortes forzados con inicios.json")
-        else:
-            print(f"AVISO: inicios.json tiene {len(_ini)} valores y hay {N} escenas: se ignora")
-except Exception as _x:
-    tramos, grupos = _tramos0, _grupos0
-    print("AVISO: cortes forzados con inicios.json no aplicables, se usa el reparto normal:", _x)
+                v = voz_entre(i + 1, j)
+                plen = cortes[i][1] - cortes[i][0]
+                c = dp[e - 1][i] + (chars[e] / v / media - 1) ** 2 - 0.15 * min(plen, 1.0)
+                if c < dp[e][j]:
+                    dp[e][j], bk[e][j] = c, i
+    fin_idx = [T - 1]
+    for e in range(N - 1, 0, -1):
+        fin_idx.append(bk[e][fin_idx[-1]])
+    fin_idx = fin_idx[::-1]
+    grupos, s = [], 0
+    for j in fin_idx:
+        grupos.append((s, j))
+        s = j + 1
+    # v26: cortes forzados. Si existe <carpeta>/inicios.json (lista con el segundo de voz.mp3 en que empieza cada
+    # escena, p. ej. sacado de una transcripción con marcas de tiempo), cada escena empieza en el tramo de voz más cercano.
+    _fz = os.path.join(D, "inicios.json")
+    # (9-nov-2026) si los cortes forzados no encajan (p. ej. menos pausas que escenas en un corto), se usa el reparto normal en vez de fallar
+    _tramos0, _grupos0 = list(tramos), list(grupos)
+    try:
+        if os.path.exists(_fz):
+            _ini = json.load(open(_fz))
+            if len(_ini) == N:
+                # si un inicio cae dentro de un tramo de voz continuo, se parte el tramo en el punto más silencioso cercano
+                def _hueco(t):
+                    fr = int(0.02 * SR); best, bt = 1e9, t
+                    for x in np.arange(t - 0.3, t + 0.06, 0.01):
+                        i = int(x * SR)
+                        if i < fr or i + fr > len(raw): continue
+                        r = float(np.sqrt(np.mean(raw[i - fr // 2:i + fr // 2] ** 2)))
+                        if r < best: best, bt = r, x
+                    return bt
+                for e in range(1, N):
+                    t = _hueco(_ini[e])
+                    for k, (a, b) in enumerate(tramos):
+                        if a + 0.35 < t < b - 0.15:
+                            tramos[k:k + 1] = [(a, t - 0.2), (t + 0.1, b)]
+                            break
+                    else:
+                        continue
+                    _ini[e] = t + 0.1
+                T = len(tramos)
+                _st = [0]
+                for e in range(1, N):
+                    cand = [k for k in range(_st[-1] + 1, T - (N - 1 - e))]
+                    _st.append(min(cand, key=lambda k: abs(tramos[k][0] - _ini[e])))
+                grupos = [(_st[e], (_st[e + 1] - 1) if e + 1 < N else T - 1) for e in range(N)]
+                print("Cortes forzados con inicios.json")
+            else:
+                print(f"AVISO: inicios.json tiene {len(_ini)} valores y hay {N} escenas: se ignora")
+    except Exception as _x:
+        tramos, grupos = _tramos0, _grupos0
+        print("AVISO: cortes forzados con inicios.json no aplicables, se usa el reparto normal:", _x)
+
 
 # --- 4. Extraer cada escena con pausas recortadas -----------------------------
 def trozo(a, b):
@@ -144,6 +249,14 @@ def trozo(a, b):
 
 
 def construir(g, max_pausa_int):
+    if CONT is not None:   # v29: el audio de la escena tal cual, con fundido solo donde hay respiro
+        x = trozo(CONT["ini"][g], CONT["fin"][g]).copy()
+        fi, fo = int(0.008 * SR), int(0.015 * SR)
+        if g > 0 and CONT["resp"][g - 1] and len(x) > fi:
+            x[:fi] *= np.linspace(0, 1, fi, dtype=np.float32)
+        if CONT["resp"][g] and len(x) > fo:
+            x[-fo:] *= np.linspace(1, 0, fo, dtype=np.float32)
+        return x
     i0, i1 = g
     partes = []
     a0 = max(0.0, tramos[i0][0] - 0.1)
@@ -170,8 +283,11 @@ if vel < (2.6 if YOUTUBE else 2.9):   # en los largos, ritmo algo más pausado (
 max_p = None
 
 
+RESP = [RESPIRO if (CONT is None or CONT["resp"][e]) else 0.0 for e in range(N)]   # v29: sin respiro donde la voz no para
+
+
 def total(atempo, max_p):
-    return sum(len(construir(g, max_p)) / SR / atempo + RESPIRO for g in grupos)
+    return sum(len(construir(g, max_p)) / SR / atempo + RESP[e] for e, g in enumerate(grupos))
 
 
 while total(atempo, max_p) > TMAX and atempo < 1.08:
@@ -191,17 +307,33 @@ def aplicar_atempo(x, f):
     return np.fromfile(tmp_o, dtype=np.float32)
 
 
-escenas_audio = [aplicar_atempo(construir(g, max_p), atempo) for g in grupos]
+if CONT is None:
+    escenas_audio = [aplicar_atempo(construir(g, max_p), atempo) for g in grupos]
+else:
+    # v29: las escenas unidas sin pausa se estiran juntas (un solo atempo) para que la unión no haga clic
+    escenas_audio, e = [], 0
+    while e < N:
+        f = e
+        while f < N - 1 and not CONT["resp"][f]:
+            f += 1
+        partes = [construir(g, max_p) for g in range(e, f + 1)]
+        y = aplicar_atempo(np.concatenate(partes), atempo)
+        lens = np.array([len(p_) for p_ in partes], float)
+        bordes = np.round(np.cumsum(lens) / lens.sum() * len(y)).astype(int)
+        a_ = 0
+        for b_ in bordes:
+            escenas_audio.append(y[a_:b_]); a_ = b_
+        e = f + 1
 # la voz arranca en el fotograma 0: sin silencio inicial en la escena 1
 x = escenas_audio[0]
 nz = np.argmax(np.abs(x) > 0.02)
 RECORTE0 = max(0, nz - int(0.02 * SR)) / SR   # segundos (ya con atempo) quitados al principio de la escena 1
 escenas_audio[0] = x[int(RECORTE0 * SR):]
 
-dur = [len(x) / SR + RESPIRO for x in escenas_audio]
+dur = [len(x) / SR + RESP[e] for e, x in enumerate(escenas_audio)]
 if sum(dur) > TMAX:  # último recurso: recortar respiros
     exceso = sum(dur) - TMAX
-    dur = [d - min(RESPIRO, exceso / N) for d in dur]
+    dur = [d - min(RESP[e], exceso / N) for e, d in enumerate(dur)]
 if sum(dur) < TMIN:
     dur[-1] += TMIN - sum(dur)
 
@@ -245,6 +377,8 @@ def fichas_sub(e):
 
 def mapa_escena(g):
     """Tramos (inicio_original, fin_original, inicio_en_la_escena) de construir(g, max_p), antes del atempo."""
+    if CONT is not None:
+        return [(CONT["ini"][g], CONT["fin"][g], 0.0, 1.0)]
     i0, i1 = g
     m, o = [], 0.0
     a0 = max(0.0, tramos[i0][0] - 0.1)

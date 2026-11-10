@@ -169,6 +169,10 @@ def fiel(wav, texto, tono):
         return False, "lee las notas de dirección (" + ", ".join(sorted(set(intrusas))[:6]) + ")"
     if len(oido) > 1.25 * len(esperado) + 6:
         return False, f"dice {len(oido)} palabras y el texto tiene {len(esperado)}"
+    # (10-nov-2026) y al revés: si la voz se SALTA parte del texto o el audio llega cortado, también se repite
+    # (las cifras van en letra en el texto y la transcripción las junta en una sola palabra: por eso el margen)
+    if len(oido) < 0.72 * len(esperado) - 4:
+        return False, f"faltan palabras: dice {len(oido)} y el texto tiene {len(esperado)}"
     return True, ""
 
 
