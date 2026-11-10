@@ -123,6 +123,21 @@ def cortes_continuos():
             hi = lo + 0.02
         i0, i1 = int(lo * SR / hop), max(int(lo * SR / hop) + 1, int(hi * SR / hop))
         k = i0 + int(np.argmin(env[i0:i1 + 1]))
+        # (10-nov-2026, v40) en el largo del 10-nov quedaron 5 respiros DESPUÉS de la primera palabra de la frase («El ‖ dato», «Un ‖
+        # ejemplo»): la transcripción marca tarde esa palabrita y el punto más silencioso de la ventana caía tras ella. La pausa
+        # buena es la PRIMERA que hay después de la última palabra de la escena anterior: se busca esa (≥ 0,10 s) antes que el mínimo.
+        _j = i0
+        while _j <= i1:
+            if env[_j] < UMB:
+                _f = _j
+                while _f < nfr - 1 and env[_f + 1] < UMB:
+                    _f += 1
+                if (_f - _j + 1) * hop / SR >= 0.10:
+                    k = (_j + min(_f, i1)) // 2
+                    break
+                _j = _f + 1
+            else:
+                _j += 1
         if env[k] < UMB:                      # hay silencio: ¿cuánto dura la pausa?
             pa = k
             while pa > 0 and env[pa - 1] < UMB:

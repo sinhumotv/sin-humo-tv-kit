@@ -107,6 +107,12 @@ def _sh_noticia_larga(previos):
         'vigor, cómo votar, un cambio que afecta a todos); 2.º, un suceso grande del que la gente quiere entender qué pasó y qué viene ahora '
         '(accidente, temporal, apagón, investigación). Deja para cuando no haya nada mejor la política de partidos, los sondeos y las '
         'declaraciones: interesan poco y cuesta ser neutral. '
+        # (10-nov-2026) objetivo de Pablo: máximas visitas y suscriptores cuanto antes. La búsqueda premia al vídeo que YA está subido cuando
+        # la gente empieza a buscar: hay que llegar ANTES del pico, no el mismo día.
+        'ANTICÍPATE: entre dos temas parecidos, gana el que la gente va a buscar en los PRÓXIMOS 3-15 días porque tiene fecha (una huelga '
+        'convocada, unas elecciones, un plazo que acaba, una subida o una norma que entra en vigor, un cambio de hora, un sorteo, unas rebajas, '
+        'el calendario laboral o la paga del mes que viene), siempre que los titulares de hoy hablen de ello: el vídeo tiene que estar subido '
+        'cuando llegue el pico de búsquedas. '
         + (f'TEMAS QUE ESTÁN FUNCIONANDO AHORA en el canal (vídeos de estos días con muchas más visitas que el resto): {"; ".join(_gan)}. Si en los titulares hay NOVEDADES de alguno de esos temas, elige esa noticia y cuéntala desde un ángulo NUEVO (qué ha cambiado, qué viene ahora), aunque el tema ya haya salido en el canal; nunca repitas lo ya contado. ' if _gan else '') +
         f'No repitas tema ni categoría de los últimos largos: {"; ".join(previos[-8:]) or "ninguno"}. '
         'Responde solo JSON: {"numeros": [3 o 4 titulares de medios DISTINTOS sobre esa noticia], "tema": "la noticia en una frase"}'), 0.4)

@@ -252,6 +252,7 @@ def _visual_ok(v):
     if t == 'linea': return len([h for h in (v.get('hitos') or []) if isinstance(h, dict) and str(h.get('texto') or '').strip()]) >= 2
     if t == 'cifra': return _num_ok(v.get('valor'))
     if t in ('frase', 'pregunta'): return len(str(v.get('texto') or '').strip()) >= 8
+    if t == 'icono': return len(str(v.get('texto') or '').strip()) >= 4      # el 10-nov salió una escena con un icono y nada escrito
     return True
 for k, e in enumerate(escenas):
     if not _visual_ok(e['visual']):
