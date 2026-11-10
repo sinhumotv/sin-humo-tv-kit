@@ -11,6 +11,14 @@
   const ASPECTO_DEFECTO = 'moderno';
   const MOD2 = () => ((window.PROY && window.PROY.aspecto) || window.ASPECTO || ASPECTO_DEFECTO) === 'moderno';
   const BLA = '#fffaf0';
+  // v32 · el fondo nunca está quieto: dos brillos (naranja y turquesa) que se desplazan muy despacio
+  const brillos = (t, W_, H_) => {
+    const r = Math.max(W_, H_) * .42, a = t * .23;
+    return `<defs><radialGradient id="glA"><stop offset="0" stop-color="${ORA}" stop-opacity=".30"/><stop offset="1" stop-color="${ORA}" stop-opacity="0"/></radialGradient>` +
+      `<radialGradient id="glB"><stop offset="0" stop-color="${VER}" stop-opacity=".26"/><stop offset="1" stop-color="${VER}" stop-opacity="0"/></radialGradient></defs>` +
+      `<circle cx="${(W_ * (.18 + .16 * Math.sin(a))).toFixed(1)}" cy="${(H_ * (.86 + .08 * Math.cos(a * 1.3))).toFixed(1)}" r="${r}" fill="url(#glA)"/>` +
+      `<circle cx="${(W_ * (.84 + .14 * Math.cos(a * .8))).toFixed(1)}" cy="${(H_ * (.14 + .10 * Math.sin(a * 1.1))).toFixed(1)}" r="${r}" fill="url(#glB)"/>`;
+  };
   const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
   const easeOut = p => 1 - Math.pow(1 - cl(p), 3);
   const easeIO = p => { p = cl(p); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
@@ -400,7 +408,7 @@
     return tr[tr.length - 1];
   }
   // Exporta piezas para el motor horizontal (motor_h.js), sin cambiar nada de los shorts
-  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA };
+  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA, brillos };
   const DESV = {};
   function desvioLupi(k) {
     if (DESV[k]) return DESV[k];
@@ -442,6 +450,12 @@
   A.foto = (ruta, cx, cy, w, h, rot = 0, s = 1, credito = '') => {
     if (s <= 0.001) return '';
     const id = 'fclip' + (++_fclip), x = -w / 2, y = -h / 2, m = 12, mb = 32;
+    if (MOD2()) return '<!--FOTO-->' + `<g transform="translate(${cx} ${cy}) scale(${s})"><rect x="${x + 8}" y="${y + 12}" width="${w}" height="${h}" rx="22" fill="#000" opacity=".28"/>` +
+      `<clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22"/></clipPath><image href="file://${ruta}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
+      `<linearGradient id="g${id}" x1="0" y1="0" x2="0" y2="1"><stop offset=".6" stop-color="#17131f" stop-opacity="0"/><stop offset="1" stop-color="#17131f" stop-opacity=".8"/></linearGradient><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="url(#g${id})"/>` +
+      `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="22" fill="none" stroke="${INK}" stroke-width="5"/>` +
+      `<rect x="${x + 16}" y="${y + 16}" width="118" height="30" rx="15" fill="${ROJ}"/><text x="${x + 75}" y="${y + 37}" font-family="Inter" font-weight="900" font-size="16" text-anchor="middle" fill="#fff">FOTO REAL</text>` +
+      `<text x="${x + w - 14}" y="${y + h - 12}" font-family="Inter" font-weight="700" font-size="13" text-anchor="end" fill="#fff" fill-opacity=".9">${credito}</text></g>` + '<!--/FOTO-->';
     const cinta = (tx, r) => `<rect x="${tx - 48}" y="${y - m - 16}" width="96" height="30" rx="3" fill="#efe2b8" opacity=".86" stroke="${INK}" stroke-width="2" transform="rotate(${r} ${tx} ${y - m})"/>`;
     return '<!--FOTO-->' + `<g transform="translate(${cx} ${cy}) rotate(${rot}) scale(${s})"><rect x="${x - m + 9}" y="${y - m + 11}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#000" opacity=".22"/><rect x="${x - m}" y="${y - m}" width="${w + 2 * m}" height="${h + m + mb}" rx="6" fill="#fffdf6" stroke="${INK}" stroke-width="4"/><clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath><image href="file://${ruta}" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${INK}" stroke-width="2"/><text x="${x + w}" y="${y + h + 23}" font-family="Inter" font-weight="700" font-size="14" text-anchor="end" fill="#6b6475">${credito}</text><text x="${x}" y="${y + h + 23}" font-family="Inter" font-weight="900" font-size="14" fill="${ROJ}">FOTO REAL</text>${cinta(x + 46, -8)}${cinta(x + w - 46, 7)}</g>` + '<!--/FOTO-->';
   };
@@ -483,7 +497,7 @@
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}"/>`;
-    if (M2) svg += `<rect x="46" y="200" width="640" height="566" rx="38" fill="#000" opacity=".3"/><rect x="40" y="190" width="640" height="566" rx="38" fill="${BLA}"/>`;
+    if (M2) svg += brillos(t, W, H) + `<rect x="46" y="200" width="640" height="566" rx="38" fill="#000" opacity=".3"/><rect x="40" y="190" width="640" height="566" rx="38" fill="${BLA}"/>`;
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
       const SF = A.separaFotos(c.r.svg);

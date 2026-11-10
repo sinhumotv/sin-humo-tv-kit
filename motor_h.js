@@ -11,7 +11,7 @@
    Capítulos: proyecto.json "capitulos": [{"titulo": "...", "desde": <índice de escena>}, ...] (el primero desde 0). */
 (function () {
   if (!window.PROY || String(window.PROY.formato || '').toUpperCase() !== 'YOUTUBE') return;
-  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA } = window.SH;
+  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA, brillos } = window.SH;
   const { INK, ORA, AZU, VER, ORO, ROJ, CRE, cl, easeOut, easeIO, esc } = A;
   const W = 1280, H = 720;
   const ZONA = { x0: 60, x1: 1040, y0: 120, y1: 560 };
@@ -138,7 +138,8 @@
       const ls = partir(v.texto || '', 16), y0 = 330 - (ls.length - 1) * 32;
       const tx = L > .6 ? textoMultilinea(780, y0, v.texto || '', 54, 16, INK, 'middle', easeOut((L - .6) / .4)) : '';
       const et = v.etiqueta && L > d * .5 ? A.etiqueta(780, 480, v.etiqueta, A.pop(L, d * .5), col(v.color || 'oro'), -5) : '';
-      return { svg: ic + A.onda(290, 350, L, .1, 170, col(v.color || 'naranja')) + tx + et, lupi: lupiDcha(L, d, 'curiosa'), evitar: [[560, 220, 420, 300]] };
+      const halo = moderno() ? `<circle cx="290" cy="350" r="${165 * A.pop(L, 0)}" fill="${col(v.color || 'naranja')}" fill-opacity=".16"/>` : '';
+      return { svg: halo + ic + A.onda(290, 350, L, .1, 170, col(v.color || 'naranja')) + tx + et, lupi: lupiDcha(L, d, 'curiosa'), evitar: [[560, 220, 420, 300]] };
     },
     // Gráfico de barras con etiquetas
     grafico(L, d, v) {
@@ -201,7 +202,7 @@
     const p = cl((L - .05) / .6);
     let dd = `M60 101`; for (let i = 1; i <= 30; i++) dd += ` L${60 + w * i / 30} ${101 + Math.sin(i * Math.PI / 2) * 4}`;
     if (moderno()) return `<g opacity="${alpha}">` +
-      (cap ? `<rect x="60" y="14" width="${26 + [...('CAPÍTULO ' + (ci + 1) + ' · ' + cap.titulo)].length * 12.2}" height="30" rx="15" fill="${ORA}"/><text x="72" y="36" font-family="Inter" font-weight="900" font-size="20" fill="#fff">CAPÍTULO ${ci + 1} · ${esc(cap.titulo.toUpperCase())}</text>` : '') +
+      (cap ? `<rect x="60" y="14" width="${26 + [...('CAPÍTULO ' + (ci + 1) + '/' + CAPS().length + ' · ' + cap.titulo)].length * 12.2}" height="30" rx="15" fill="${ORA}"/><text x="72" y="36" font-family="Inter" font-weight="900" font-size="20" fill="#fff">CAPÍTULO ${ci + 1}/${CAPS().length} · ${esc(cap.titulo.toUpperCase())}</text>` : '') +
       A.txt(60, 90, tt, size, BLA, 'start') + `<rect x="60" y="98" width="${Math.min(w, 420) * easeOut(p)}" height="6" rx="3" fill="${ORA}"/></g>`;
     return `<g opacity="${alpha}">` +
       (cap ? `<text x="60" y="34" font-family="Inter" font-weight="800" font-size="22" fill="${ORA}">CAPÍTULO ${ci + 1} · ${esc(cap.titulo.toUpperCase())}</text>` : '') +
@@ -216,6 +217,14 @@
     return `<g opacity="${a}"><rect x="0" y="0" width="${W}" height="${H}" fill="${INK}" fill-opacity=".92"/>` +
       A.txtC(640, 300, String(ci + 1), 170, ORA, 'middle', 12) +
       textoMultilinea(640, 400, cap.titulo, 60, 30, CRE) + `</g>`;
+  }
+  // v32 · en la última escena de cada capítulo aparece «A CONTINUACIÓN ▸ título del siguiente»: invita a quedarse
+  function continuacion(k, L, d) {
+    const c = CAPS(), sig = c.find(x => x.desde === k + 1);
+    if (!moderno() || !sig || L < d * .35) return '';
+    const txt = 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase(), w = 34 + [...txt].length * 11.6, e = easeOut((L - d * .35) / .4);
+    return `<g opacity="${e}" transform="translate(${(1 - e) * 40} 0)"><rect x="${1244 - w}" y="12" width="${w}" height="36" rx="18" fill="#17131f" stroke="${ORO}" stroke-width="2.5"/>` +
+      `<text x="${1244 - w / 2}" y="37" font-family="Inter" font-weight="900" font-size="20" text-anchor="middle" fill="${ORO}">${esc(txt)}</text></g>`;
   }
   function marcaFija() {
     return `<g>${nube(1048, 34, 1)}<text x="1222" y="42" font-family="Inter" font-weight="800" font-size="24" fill="${moderno() ? '#fff' : INK}" fill-opacity=".8" text-anchor="end">sin humo TV</text></g>`;
@@ -343,7 +352,7 @@
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
     svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`;
-    if (M2) svg += `<rect x="42" y="120" width="1208" height="454" rx="34" fill="#000" opacity=".3"/><rect x="36" y="112" width="1208" height="454" rx="34" fill="${BLA}"/>`;
+    if (M2) svg += brillos(t, W, H) + `<rect x="42" y="120" width="1208" height="454" rx="34" fill="#000" opacity=".3"/><rect x="36" y="112" width="1208" height="454" rx="34" fill="${BLA}"/>`;
     for (const c of capas) {
       const SF = A.separaFotos(c.r.svg);
       svg += `<g opacity="${c.alpha}" transform="translate(${c.dx} 0)"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
@@ -354,7 +363,7 @@
     const ev = capas.length ? (capas[capas.length - 1].r.evitar || []) : [];
     const ultimo = capas[capas.length - 1];
     if (!window.LIMPIO) svg += marcaMovil(t, ev, P.escenas[e].visual && P.escenas[e].visual.tipo === 'mencion' || e === P.mencion);
-    svg += marcaFija();
+    { const Su = T.escenas[ultimo.k], cont = continuacion(ultimo.k, t - Su.ini, Math.max(1, Su.fin - Su.ini)); svg += cont || marcaFija(); }
     if (!window.LIMPIO) { svg += barra(t, D); svg += karaoke(ultimo.k, t); }
     svg += cartela(ultimo.k, ultimo.L);
     svg += `</svg>`;
