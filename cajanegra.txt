@@ -85,3 +85,4 @@
 2026-11-09|21:00|La muerte de Adolfo Federico|consecuencia|YO 6af1608c7522f65ac0c0fb20 IN 6af1608ce44ddbb57c358f7e TI 6af1608d2f1ff83d451acad6|img=mixto|21:00
 2026-11-10|15:00|El misterio del Ourang Medan|nadie|YO 6af2f1210f3180d1203e0e3f IN 6af2f12217d2b2f30cff82f8 TI 6af2f12217d2b2f30cff8323|img=mixto|14:47
 2026-11-10|18:00|El desastre de la presa de Vajont|error|YO 6af2f281ba579c00246fe676 IN 6af2f281ba579c00246fe6c3 TI 6af2f282fe6796a7146fa7d0|img=mixto|17:44
+2026-11-10|21:00|El enigma del Manuscrito Voynich|pregunta|YO 6af2f490ba579c00247091ea IN 6af2f49117d2b2f30c00a9a4 TI 6af2f4920f3180d1203f3f33|img=mixto|20:25
