@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v43, 10-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v44, 10-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -234,7 +234,7 @@
     const S = T.escenas[k], L = Math.max(0, t - S.ini) + (k === 0 ? 1 : 0), d = Math.max(1, S.fin - S.ini), v = E[k].visual || { tipo: 'icono', icono: 'alerta', texto: E[k].titulo };
     const f = fotoDe(k), tipo = f ? 'foto' : (G[v.tipo] ? v.tipo : 'icono');
     let g = ''; try { g = G[tipo](v, L, d, k) || ''; } catch (e) { g = G.icono({ icono: 'alerta', texto: E[k].titulo || '' }, L, d); }
-    const z = 1 + .03 * cl(L / d);
+    const z = (HOR ? 1 : 1.06) + .03 * cl(L / d);   // v44: en vertical el gráfico va un 6 % más grande para llenar la pantalla
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
       `<g transform="translate(${ZC.x} ${ZC.y}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L));
   }
@@ -276,6 +276,19 @@
     return o + `<circle cx="${xk.toFixed(1)}" cy="${y}" r="13" fill="${BLA}" stroke="${INK}" stroke-width="4"/><text x="${xk.toFixed(1)}" y="${y + 4.5}" font-family="Inter" font-weight="900" font-size="12" text-anchor="middle" fill="${INK}">${Math.max(0, Math.ceil(DUR - t))}</text>`;
   }
 
+  // v44 · pie de los cortos: cinta de titulares que corre + base oscura. Llena la zona que tapan los textos de YouTube/TikTok/Instagram
+  // (antes quedaba crema vacío) y hace que el título blanco de la aplicación se lea mejor.
+  function pie(t) {
+    if (HOR) return '';
+    const y = 1088, h = 50, fs = 26, tr = ['SIN HUMO TV', 'LOS HECHOS, SIN HUMO'].concat(P.fecha ? [String(P.fecha).toUpperCase()] : []);
+    const an = tr.map(x => Math.round(x.length * fs * .8) + 70), per = an.reduce((a, b) => a + b, 0), off = (t * 70) % per;
+    let o = `<rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="${INK}"/><rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="url(#pt2)"/>` +
+      `<defs><pattern id="pt2" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="#fff" opacity=".08"/></pattern></defs>` +
+      `<rect x="-10" y="${y}" width="${W + 20}" height="${h}" fill="${ORA}" stroke="${INK}" stroke-width="5"/>`;
+    for (let x = -off; x < W; x += per) { let xx = x; tr.forEach((s_, n) => { o += `<text x="${(xx + an[n] / 2 - 18).toFixed(1)}" y="${y + h / 2 + fs * .36}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" fill="#fff" letter-spacing="1">${esc(s_)}</text><circle cx="${(xx + an[n] - 18).toFixed(1)}" cy="${y + h / 2}" r="6" fill="${INK}"/>`; xx += an[n]; }); }
+    return o;
+  }
+
   // ---------- fotograma ----------
   const TR = .3;
   window.render = function (t) {
@@ -289,8 +302,8 @@
         `<g transform="translate(${ver ? 0 : (-dir * W * p).toFixed(1)} ${ver ? (-dir * H * p).toFixed(1) : 0})">${ant}</g><g transform="translate(${ver ? 0 : (dir * W * (1 - p)).toFixed(1)} ${ver ? (dir * H * (1 - p)).toFixed(1) : 0})">${nue}</g></g>`;
     } else svg += escena(k, t);
     if (!window.LIMPIO) {
-      svg += cabecera(k, t, L) + subtitulos(k, t) + barra(t);
-      if (k === N - 1 && P.fuentes) svg += `<text x="${W / 2}" y="${HOR ? H - 8 : 1078}" font-family="Inter" font-weight="700" font-size="${HOR ? 16 : 20}" text-anchor="middle" fill="${INK}" fill-opacity=".75">Fuentes: ${esc(P.fuentes)}</text>`;
+      svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t);
+      if (k === N - 1 && P.fuentes) svg += `<text x="${W / 2}" y="${HOR ? H - 8 : 1076}" font-family="Inter" font-weight="700" font-size="${HOR ? 16 : 18}" text-anchor="middle" fill="${INK}" fill-opacity=".75">Fuentes: ${esc(P.fuentes)}</text>`;
     }
     svg += '</svg>';
     document.getElementById('lienzo').innerHTML = svg;
