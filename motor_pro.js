@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v45, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v46, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -118,11 +118,11 @@
   const G = {
     cifra(v, L, d) {
       const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1.3, d * .45));
-      const yN = ZC.y + (HOR ? 30 : 10), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
+      const yN = ZC.y + (HOR ? 30 : (v.icono ? 70 : 10)), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
       return `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
         `<g transform="translate(${ZC.x} ${yN}) scale(${ent.toFixed(3)}) translate(${-ZC.x} ${-yN})">${tx(ZC.x, yN, esc(contar(s, p)), size, INK, 'middle', 900, 'letter-spacing="-4"')}</g>` +
         lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 70) + i * (HOR ? 50 : 44), esc(l), HOR ? 42 : 36, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
-        (v.icono ? sticker(HOR ? Z.x + 100 : Z.x + 70, HOR ? Z.y + 70 : Z.y + 40, HOR ? 70 : 52, L, .25, v.icono, c) : '');
+        (v.icono ? (HOR ? sticker(Z.x + 100, Z.y + 70, 70, L, .25, v.icono, c) : `<g transform="translate(0 ${(4 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ZC.x, yN - size * .5 - 112, 78, L, 0, v.icono, c)}</g>`) : '');
     },
     comparar(v, L, d) {
       const a = v.a || {}, b = v.b || {}, na = num(a.valor), nb = num(b.valor), mx = Math.max(Math.abs(na), Math.abs(nb), 1e-9), ah = HOR ? 78 : 76, x0 = Z.x + (HOR ? 140 : 14), wM = Z.w - (HOR ? 280 : 28);
@@ -131,7 +131,14 @@
         return `<g opacity="${op}">` + tx(x0, y - 16, esc(o.etiqueta || ''), HOR ? 34 : 32, INK, 'start', 900) + caja(x0, y, w, ah, ah * .28, c) +
           (w > wM * .5 ? tx(x0 + w - 22, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, c === ORA ? '#fff' : INK, 'end') : tx(x0 + w + 26, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, INK, 'start')) + `</g>`;
       };
-      return fila(a, na, ZC.y - ah - (HOR ? 34 : 70), GRI, .15) + fila(b, nb, ZC.y + (HOR ? 62 : 86), ORA, .6);
+      let dif = '';   // v45: pastilla con la diferencia (+92 %, ×3…) cuando las dos cifras son comparables
+      if (na > 0 && nb > 0 && na !== nb && !/%/.test(String(a.valor) + String(b.valor))) {
+        const r = nb / na, pc = Math.round((r - 1) * 100);
+        const et = r >= 2.95 ? '×' + (Math.round(r * 10) / 10).toString().replace('.', ',') : (pc > 0 ? '+' : '') + pc + ' %';
+        const t0 = 1.3, e2 = back((L - t0) / .4);
+        if (L > t0 && Math.abs(pc) >= 3) dif = peg(HOR ? Z.x + Z.w - 120 : Z.x + Z.w - 70, HOR ? ZC.y + 10 : ZC.y + 8, et, HOR ? 36 : 34, pc > 0 ? ROJ : VER, '#fff', 'middle', 1, -6, e2);
+      }
+      return fila(a, na, ZC.y - ah - (HOR ? 34 : 70), GRI, .15) + fila(b, nb, ZC.y + (HOR ? 62 : 86), ORA, .6) + dif;
     },
     grafico(v, L, d) {
       const vs = (v.valores || []).slice(0, 7), et = v.etiquetas || [], n = vs.length || 1, mx = Math.max(...vs.map(x => Math.abs(num(x))), 1e-9), base = Z.y + Z.h - (HOR ? 50 : 66), alto = Z.h - (HOR ? 160 : 220);
@@ -291,13 +298,26 @@
   }
 
   // ---------- fotograma ----------
-  const TR = .3;
+  const TR = .3, TRC = .42;   // v45: tres transiciones que se alternan: barrido con desenfoque, zoom y cortina naranja
+  const TIPO_TR = k => ['barrido', 'zoom', 'barrido', 'cortina'][k % 4];
   window.render = function (t) {
     t = cl(t, 0, DUR - .001);
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
     const S = T.escenas[k], L = t - S.ini;
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/>`;
-    if (k > 0 && L < TR) {                 // barrido rápido con desenfoque de movimiento (alterna de lado y de arriba abajo)
+    const tt = k > 0 ? TIPO_TR(k) : '';
+    if (tt === 'zoom' && L < TR) {         // zoom: el plano anterior se acerca y se funde, el nuevo llega desde un poco más pequeño
+      const p = eio(L / TR), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), cx = W / 2, cy = H * .42;
+      svg += `<defs><filter id="zb"><feGaussianBlur stdDeviation="${(10 * p).toFixed(1)}"/></filter></defs>` +
+        `<g opacity="${(1 - p).toFixed(3)}" filter="url(#zb)" transform="translate(${cx} ${cy}) scale(${(1 + .35 * p).toFixed(3)}) translate(${-cx} ${-cy})">${ant}</g>` +
+        `<g opacity="${p.toFixed(3)}" transform="translate(${cx} ${cy}) scale(${(.86 + .14 * p).toFixed(3)}) translate(${-cx} ${-cy})">${nue}</g>`;
+    } else if (tt === 'cortina' && L < TRC) {   // cortina naranja de la marca que cruza en diagonal
+      const p = eio(L / TRC), sh = HOR ? 260 : 340, x = -W - sh + (2 * W + 2 * sh) * p;
+      svg += (p < .5 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t)) +
+        `<path d="M${(x + sh).toFixed(1)} 0 H${(x + W + sh).toFixed(1)} L${(x + W).toFixed(1)} ${H} H${x.toFixed(1)} Z" fill="${ORA}"/>` +
+        `<path d="M${(x + W + sh).toFixed(1)} 0 l28 0 L${(x + W + 28).toFixed(1)} ${H} l-28 0 Z" fill="${INK}"/>` +
+        `<g opacity="${(1 - Math.abs(p - .5) * 3).toFixed(2)}">${nube(W / 2 - (HOR ? 120 : 110), H * .42, HOR ? 2 : 2.4)}<text x="${W / 2 + (HOR ? 30 : 30)}" y="${H * .42 + 18}" font-family="Inter" font-weight="900" font-size="${HOR ? 64 : 58}" text-anchor="middle" fill="#fff">sin humo TV</text></g>`;
+    } else if (tt === 'barrido' && L < TR) {                 // barrido rápido con desenfoque de movimiento (alterna de lado y de arriba abajo)
       const p = eio(L / TR), ver = k % 2 === 1, bl = 46 * Math.sin(Math.PI * p), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), dir = k % 4 < 2 ? 1 : -1;
       svg += `<defs><filter id="mb" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${ver ? '0 ' + bl.toFixed(1) : bl.toFixed(1) + ' 0'}"/></filter></defs><g filter="url(#mb)">` +
         `<g transform="translate(${ver ? 0 : (-dir * W * p).toFixed(1)} ${ver ? (-dir * H * p).toFixed(1) : 0})">${ant}</g><g transform="translate(${ver ? 0 : (dir * W * (1 - p)).toFixed(1)} ${ver ? (dir * H * (1 - p)).toFixed(1) : 0})">${nue}</g></g>`;
