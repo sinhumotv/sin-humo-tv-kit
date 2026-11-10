@@ -83,3 +83,4 @@
 2026-11-09|15:00|Fotosíntesis artificial en 2100|increible|YO 6af1626c2f1ff83d451b7ceb IN 6af1626d796ccae26688d070 TI 6af1626d2f1ff83d451b7d47|img=mixto|14:29
 2026-11-09|18:00|Servidores submarinos|error|YO 6af163b6e44ddbb57c36bf17 IN 6af163b6e44ddbb57c36bf67 TI 6af163b77522f65ac0c221b3|img=mixto|18:40
 2026-11-09|21:00|Órganos impresos en 3D en 2100|sabias|YO 6af16522796ccae26689c1a1 IN 6af16523796ccae26689c1d0 TI 6af165247522f65ac0c294f9|img=ia|20:37
+2026-11-10|15:00|La crisis de metales por la IA|final|YO 6af2efe7fe6796a7146ea647 IN 6af2efe817d2b2f30cff23dd TI 6af2efe9ba579c00246efc6b|img=mixto|15:07
