@@ -4,7 +4,14 @@ name: Largo diario sin humo TV
 
 on:
   schedule:
+    # (10-nov-2026) GitHub arranca las tareas programadas con mucho retraso (el 9-nov, la de las 10:17 empezó a las 20:50 y el largo
+    # se publicó a las 21:52). Se programan varias horas: la primera que arranque hace el largo y las demás ven que hoy ya está
+    # hecho y terminan en segundos (nunca se duplica: mira el registro del día y solo hay una ejecución a la vez).
+    - cron: "17 5 * * *"
+    - cron: "37 7 * * *"
     - cron: "17 9 * * *"    # 10:17 en invierno / 11:17 en verano (Madrid): listo con horas de margen
+    - cron: "47 11 * * *"
+    - cron: "17 14 * * *"
   workflow_dispatch:
     inputs:
       forzar:
