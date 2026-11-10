@@ -312,6 +312,7 @@ if E["fase"] == "montaje":
         return False
 
     cortas = []   # escenas cuyo material no llega: NUNCA se repite (bucle) un clip para rellenar
+    PRESTADAS, YA_PRESTADOS = [], set()   # último recurso (ver más abajo)
     for k, e in enumerate(ESC):
         n, im = k + 1, e["imagen"]
         partes = [f"{P}/clips/{n:02d}.mp4"] + [f"{P}/clips/{n:02d}_{j + 1}.mp4" for j in range(len(im.get("extra", [])))]
@@ -320,10 +321,38 @@ if E["fase"] == "montaje":
         if not partes or os.path.exists(full) or k >= len(TE):
             continue
         partes = [d for d in partes if sanear(d)]
-        if not partes:
-            cortas.append((n, TE[k]["fin"] - TE[k]["ini"] + 1.6))
-            continue
         largo_esc = TE[k]["fin"] - TE[k]["ini"] + 1.6
+        # (10-nov-2026) ÚLTIMO RECURSO: tras tres búsquedas de clips, si a unas pocas escenas (como mucho 3, o 1 de cada 15) les
+        # sigue faltando material, se les presta un clip de otra escena LEJANA del mismo vídeo en vez de tirar el largo entero
+        # (el 9-nov se perdieron los largos de Relatos y de Año 2100 por 1 y 2 escenas de 60-70). Pablo: «si faltan clips, en
+        # ocasiones se puede repetir alguno». Solo en el último intento y nunca dos veces el mismo clip prestado.
+        def _falta(ps):
+            if not ps:
+                return True
+            dd = [dur_(d) - (0.5 if j else 0) for j, d in enumerate(ps)]
+            return (sum(dd) - 0.5 * (len(ps) - 1)) * 1.25 < largo_esc
+        if int(os.environ.get("REPETIR_LARGO", "0")) >= 3 and _falta(partes) and len(PRESTADAS) < max(3, len(ESC) // 15):
+            import glob as _glob, re as _re2
+            cand = []
+            for f in _glob.glob(f"{P}/clips/*.mp4"):
+                m = _re2.fullmatch(r"(\d\d+)(_\d+)?\.mp4", os.path.basename(f))
+                if m and abs(int(m.group(1)) - n) >= 6 and f not in YA_PRESTADOS:
+                    cand.append((abs(int(m.group(1)) - n), f))
+            propias = len(partes)
+            for _, f in sorted(cand, reverse=True):
+                if not _falta(partes) or len(partes) - propias >= 3:
+                    break
+                if sanear(f):
+                    partes.append(f); YA_PRESTADOS.add(f)
+            if len(partes) > propias and not _falta(partes):
+                PRESTADAS.append(n)
+                print(f"escena {n}: sin clips nuevos tras 3 búsquedas → se le presta{'n' if len(partes) - propias > 1 else ''} "
+                      f"{len(partes) - propias} clip(s) de otra escena del vídeo (último recurso)")
+                if propias == 0 and len(partes) == 1:      # la escena no tenía nada suyo: el clip prestado pasa a ser el suyo
+                    shutil.copy(partes[0], f"{P}/clips/{n:02d}.mp4"); partes = [f"{P}/clips/{n:02d}.mp4"]
+        if not partes:
+            cortas.append((n, largo_esc))
+            continue
         durs = [dur_(d) - (0.5 if j else 0) for j, d in enumerate(partes)]
         # (9-nov-2026) tras dos búsquedas de más clips, una escena a la que le faltan unos segundos se acepta: el montaje la
         # ralentiza como mucho x1,25 (sin repetir clip). Antes se tiraba el largo entero por 2 o 3 escenas de 60.
