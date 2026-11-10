@@ -6,6 +6,11 @@
   const INK = '#2a2433', ORA = '#f07d2a', AZU = '#2f7fd0', VER = '#2aa6a0', ORO = '#f2b632',
     ROJ = '#d94a3a', CRE = '#fbf3df', GRA = '#7a1f2b', VID = '#dcecf7';
   const W = 720, H = 1280;
+  // v30 · ASPECTO MODERNO: fondo oscuro con brillo, el dibujo sobre una tarjeta clara, trazo limpio (sin temblor), título en blanco
+  // y subtítulos sobre cristal. proyecto.json "aspecto": "clasico" vuelve al papel de cuaderno; "moderno" lo fuerza.
+  const ASPECTO_DEFECTO = 'clasico';
+  const MOD2 = () => ((window.PROY && window.PROY.aspecto) || window.ASPECTO || ASPECTO_DEFECTO) === 'moderno';
+  const BLA = '#fffaf0';
   const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
   const easeOut = p => 1 - Math.pow(1 - cl(p), 3);
   const easeIO = p => { p = cl(p); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
@@ -165,6 +170,7 @@
     const n = [...txt].length, size = n <= 13 ? 62 : n <= 16 ? 56 : 52, w = Math.min(600, n * size * .6);
     const p = cl((L - .05) / .6), x0 = 360 - w / 2;
     let d = `M${x0} 178`; for (let i = 1; i <= 24; i++) d += ` L${x0 + w * i / 24} ${178 + Math.sin(i * Math.PI / 2) * 5}`;
+    if (MOD2()) return `<g opacity="${alpha}">${A.txt(360, 152, txt, size, BLA)}<rect x="${360 - w * easeOut(p) / 2}" y="166" width="${w * easeOut(p)}" height="9" rx="4.5" fill="${ORA}"/></g>`;
     return `<g opacity="${alpha}">${A.txt(360, 158, txt, size)}<path d="${d}" stroke="${ORA}" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="${w * 1.1}" stroke-dashoffset="${w * 1.1 * (1 - easeOut(p))}"/></g>`;
   }
   function lineaPanel(l, y, a, dy) {
@@ -254,6 +260,8 @@
     }).join('');
   }
   function marcaFija() {
+    // aspecto moderno: la marca va arriba, centrada sobre el fondo oscuro (dentro de la tarjeta tapaba rótulos de los gráficos)
+    if (MOD2()) return `<g transform="translate(-125 -655)">${nube(485, 724, 1)}<text x="645" y="732" font-family="Inter" font-weight="800" font-size="22" fill="#fff" fill-opacity=".8" text-anchor="end">sin humo TV</text></g>`;
     return `<g>${nube(485, 724, 1)}<text x="645" y="732" font-family="Inter" font-weight="800" font-size="22" fill="${CRE}" fill-opacity=".75" stroke="${INK}" stroke-width="2" paint-order="stroke" text-anchor="end">sin humo TV</text></g>`;
   }
   const POS = [[90, 250], [400, 280], [80, 480], [410, 520], [110, 690], [380, 700]];
@@ -273,7 +281,7 @@
   function barra(t, D) {
     const x = 75 + 570 * cl(t / D), seg = Math.min(Math.floor(t) + 1, Math.ceil(D - 1e-6));
     const ft = t % 1, flash = ft < .18 ? (1 - ft / .18) : 0, bote = Math.sin(t * Math.PI * 4) * 2;
-    return `<rect x="75" y="767" width="570" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>` +
+    return (MOD2() ? `<rect x="75" y="767" width="570" height="10" rx="5" fill="#fff" fill-opacity=".18"/>` : `<rect x="75" y="767" width="570" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>`) +
       `<rect x="75" y="767" width="${Math.max(0, x - 75)}" height="10" rx="5" fill="${ORA}"/>` +
       lupi({ x, y: 772 + bote, s: 22 / 60, rot: 90, mini: true, sinCara: true, t, texto: seg, fs: 20 / (22 / 60) * 1 }) +
       (flash > 0 ? `<circle cx="${x}" cy="${772 + bote}" r="${24 + 10 * (1 - flash)}" fill="none" stroke="#fff" stroke-width="3" opacity="${flash}"/>` : '');
@@ -392,7 +400,7 @@
     return tr[tr.length - 1];
   }
   // Exporta piezas para el motor horizontal (motor_h.js), sin cambiar nada de los shorts
-  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn };
+  window.SH = { A, lupi, nube, bloquesKaraoke, W, H, cajasProtegidas, trayectoDesvio, desvioEn, moderno: MOD2, BLA };
   const DESV = {};
   function desvioLupi(k) {
     if (DESV[k]) return DESV[k];
@@ -408,7 +416,7 @@
           if (r.lupi.lupa) return { lupa: true };
           const cajas = cajasProtegidas(r.svg, kf, W, H);
           if (k === 0 && P.fecha) cajas.push([489, 192, 152, 40]);
-          cajas.push([465, 700, 190, 44]);   // v23: marca de agua fija (nube + sin humo TV)
+          if (!MOD2()) cajas.push([465, 700, 190, 44]);   // v23: marca de agua fija (nube + sin humo TV)
           if (k === T.escenas.length - 1 && P.fuentes) cajas.push([56, 728, 580, 26]);
           return { x: fx(r.lupi.x), y: fy(r.lupi.y), s: r.lupi.s || 1, cajas };
         };
@@ -440,7 +448,8 @@
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, E = window.ESCENAS, D = T.duracion;
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;
-    const filt = `url(#w${Math.floor(t * 8) % 4})`;
+    const M2 = MOD2(), FONDO = M2 ? 'fondo_m.jpg' : 'fondo.jpg';
+    const filt = M2 ? 'none' : `url(#w${Math.floor(t * 8) % 4})`;
     const capas = [];
     const dibuja = (k, alpha, dy, zs = 1) => {
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1.5) : 0); // la escena 1 ya empieza avanzada: todo lo que entre antes de L=1,5 se ve en el fotograma 0
@@ -473,7 +482,8 @@
     else if (!MOD && e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -20 * p); dibuja(e, p, 20 * (1 - p)); }
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
-    svg += `<image href="fondo.jpg" x="0" y="0" width="${W}" height="${H}"/>`;
+    svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}"/>`;
+    if (M2) svg += `<rect x="46" y="200" width="640" height="566" rx="38" fill="#000" opacity=".3"/><rect x="40" y="190" width="640" height="566" rx="38" fill="${BLA}"/>`;
     for (const c of capas) {
       const tt = P.escenas[c.k].titulo;
       const SF = A.separaFotos(c.r.svg);
@@ -486,13 +496,13 @@
     svg += marcaMovil(t, ev, e === P.mencion);
     svg += marcaFija();
     svg += barra(t, D);
-    svg += `<rect x="56" y="805" width="608" height="230" rx="24" fill="${INK}" fill-opacity=".93"/>`;
+    svg += M2 ? `<rect x="40" y="805" width="640" height="230" rx="30" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>` : `<rect x="56" y="805" width="608" height="230" rx="24" fill="${INK}" fill-opacity=".93"/>`;
     if (P.subtitulos === 'panel') { for (const c of capas) svg += panel(c.k, t, c.alpha, 0); }
     else svg += karaoke(capas[capas.length - 1].k, t, 1);
     svg += `</svg>`;
     // golpe de zoom al empezar (0,45 s): el primer fotograma ya se mueve y llama la atención
     const g = P.golpe_inicial === false ? 0 : 1 - easeOut(t / .45);
-    if (g > 0) svg = svg.replace('<image href="fondo.jpg"', `<g transform="translate(360 640) scale(${(1 + .07 * g).toFixed(4)}) translate(-360 -640)"><image href="fondo.jpg"`).replace(/<\/svg>$/, '</g></svg>');
+    if (g > 0) svg = svg.replace(`<image href="${FONDO}"`, `<g transform="translate(360 640) scale(${(1 + .07 * g).toFixed(4)}) translate(-360 -640)"><image href="${FONDO}"`).replace(/<\/svg>$/, '</g></svg>');
     document.getElementById('lienzo').innerHTML = svg;
     ultimo = svg;
     return true;

@@ -15,6 +15,8 @@ const VW = HOR ? 1280 : 720, VH = HOR ? 720 : 1280;
 function preparar() {
   if (!fs.existsSync(path.join(KIT, 'fondo.jpg'))) require('child_process').execSync(`python3 "${path.join(KIT, 'fondo.py')}"`);
   if (HOR && !fs.existsSync(path.join(KIT, 'fondo_h.jpg'))) require('child_process').execSync(`python3 "${path.join(KIT, 'fondo.py')}" h`);
+  const fm = HOR ? 'fondo_mh.jpg' : 'fondo_m.jpg';   // v30: fondo del aspecto moderno
+  if (!fs.existsSync(path.join(KIT, fm))) require('child_process').execSync(`python3 "${path.join(KIT, 'fondo.py')}" ${HOR ? 'mh' : 'm'}`);
   if (!fs.existsSync(path.join(KIT, 'fonts', 'Inter-Black.otf'))) {
     fs.mkdirSync(path.join(KIT, 'fonts'), { recursive: true });
     for (const f of ['Inter-ExtraBold.otf', 'Inter-Black.otf']) {
@@ -29,6 +31,7 @@ function html() {
   const T = fs.readFileSync(path.join(DIR, 'tiempos.json'), 'utf8');
   fs.copyFileSync(path.join(KIT, 'fondo.jpg'), path.join(DIR, 'fondo.jpg'));
   if (HOR) fs.copyFileSync(path.join(KIT, 'fondo_h.jpg'), path.join(DIR, 'fondo_h.jpg'));
+  fs.copyFileSync(path.join(KIT, HOR ? 'fondo_mh.jpg' : 'fondo_m.jpg'), path.join(DIR, HOR ? 'fondo_mh.jpg' : 'fondo_m.jpg'));
   const f = p => 'file://' + path.join(KIT, 'fonts', p);
   const h = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Inter;font-weight:800;src:url('${f('Inter-ExtraBold.otf')}')}

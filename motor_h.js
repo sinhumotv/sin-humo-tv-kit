@@ -11,7 +11,7 @@
    Capítulos: proyecto.json "capitulos": [{"titulo": "...", "desde": <índice de escena>}, ...] (el primero desde 0). */
 (function () {
   if (!window.PROY || String(window.PROY.formato || '').toUpperCase() !== 'YOUTUBE') return;
-  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn } = window.SH;
+  const { A, lupi, nube, bloquesKaraoke, cajasProtegidas, trayectoDesvio, desvioEn, moderno, BLA } = window.SH;
   const { INK, ORA, AZU, VER, ORO, ROJ, CRE, cl, easeOut, easeIO, esc } = A;
   const W = 1280, H = 720;
   const ZONA = { x0: 60, x1: 1040, y0: 120, y1: 560 };
@@ -200,6 +200,9 @@
     const n = [...tt].length, size = n <= 22 ? 50 : 44, w = Math.min(760, n * size * .58);
     const p = cl((L - .05) / .6);
     let dd = `M60 101`; for (let i = 1; i <= 30; i++) dd += ` L${60 + w * i / 30} ${101 + Math.sin(i * Math.PI / 2) * 4}`;
+    if (moderno()) return `<g opacity="${alpha}">` +
+      (cap ? `<rect x="60" y="14" width="${26 + [...('CAPÍTULO ' + (ci + 1) + ' · ' + cap.titulo)].length * 12.2}" height="30" rx="15" fill="${ORA}"/><text x="72" y="36" font-family="Inter" font-weight="900" font-size="20" fill="#fff">CAPÍTULO ${ci + 1} · ${esc(cap.titulo.toUpperCase())}</text>` : '') +
+      A.txt(60, 90, tt, size, BLA, 'start') + `<rect x="60" y="98" width="${Math.min(w, 420) * easeOut(p)}" height="6" rx="3" fill="${ORA}"/></g>`;
     return `<g opacity="${alpha}">` +
       (cap ? `<text x="60" y="34" font-family="Inter" font-weight="800" font-size="22" fill="${ORA}">CAPÍTULO ${ci + 1} · ${esc(cap.titulo.toUpperCase())}</text>` : '') +
       A.txt(60, 86, tt, size, INK, 'start') +
@@ -215,7 +218,7 @@
       textoMultilinea(640, 400, cap.titulo, 60, 30, CRE) + `</g>`;
   }
   function marcaFija() {
-    return `<g>${nube(1048, 34, 1)}<text x="1222" y="42" font-family="Inter" font-weight="800" font-size="24" fill="${INK}" fill-opacity=".8" text-anchor="end">sin humo TV</text></g>`;
+    return `<g>${nube(1048, 34, 1)}<text x="1222" y="42" font-family="Inter" font-weight="800" font-size="24" fill="${moderno() ? '#fff' : INK}" fill-opacity=".8" text-anchor="end">sin humo TV</text></g>`;
   }
   const POS = [[120, 170], [700, 190], [140, 520], [720, 520], [420, 300], [880, 350]];
   function marcaMovil(t, evitar, oculta) {
@@ -233,12 +236,13 @@
   const mmss = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   function barra(t, D) {
     const x0 = 60, x1 = 1110, x = x0 + (x1 - x0) * cl(t / D), T = window.TIEMPOS.escenas;
-    const marcas = CAPS().slice(1).map(c => { const xx = x0 + (x1 - x0) * (T[c.desde] ? T[c.desde].ini : 0) / D; return `<rect x="${xx - 2}" y="684" width="4" height="22" fill="${INK}"/>`; }).join('');
+    const marcas = CAPS().slice(1).map(c => { const xx = x0 + (x1 - x0) * (T[c.desde] ? T[c.desde].ini : 0) / D; return `<rect x="${xx - 2}" y="684" width="4" height="22" fill="${moderno() ? '#fff' : INK}"/>`; }).join('');
     const bote = Math.sin(t * Math.PI * 2) * 1.5;
-    return `<rect x="${x0}" y="690" width="${x1 - x0}" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>` +
+    const M2 = moderno();
+    return (M2 ? `<rect x="${x0}" y="690" width="${x1 - x0}" height="10" rx="5" fill="#fff" fill-opacity=".18"/>` : `<rect x="${x0}" y="690" width="${x1 - x0}" height="10" rx="5" fill="${INK}" fill-opacity=".2" stroke="${INK}" stroke-width="2"/>`) +
       `<rect x="${x0}" y="690" width="${Math.max(0, x - x0)}" height="10" rx="5" fill="${ORA}"/>` + marcas +
       lupi({ x, y: 695 + bote, s: 20 / 60, rot: 90, mini: true, sinCara: true, t }) +
-      `<text x="1222" y="703" font-family="Inter" font-weight="800" font-size="22" fill="${INK}" text-anchor="end">${mmss(t)}</text>`;
+      `<text x="1222" y="703" font-family="Inter" font-weight="800" font-size="22" fill="${M2 ? '#fff' : INK}" text-anchor="end">${mmss(t)}</text>`;
   }
   function karaoke(k, t) {
     const bl = bloquesKaraoke(k, 62, 34); if (!bl.length) return '';
@@ -246,7 +250,7 @@
     const B = bl[i], ent = cl((t - B.a) / .12) || (i === 0 ? 1 : 0);
     const maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1))), fs = Math.min(42, Math.floor(1000 / (maxc * .56)));
     const y0 = B.ls.length === 1 ? 638 : 618;
-    return `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="22" fill="${INK}" fill-opacity=".9"/>` + B.ls.map((ln, j) => {
+    return (moderno() ? `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="24" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>` : `<rect x="110" y="580" width="1060" height="${B.ls.length === 1 ? 84 : 92}" rx="22" fill="${INK}" fill-opacity=".9"/>`) + B.ls.map((ln, j) => {
       const tsp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b;
         return `<tspan fill="${ahora ? ORA : p.clave ? '#7fd8d2' : CRE}" fill-opacity="${ahora || dicho || p.clave ? 1 : .72}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
@@ -310,7 +314,8 @@
   window.render = function (t) {
     const P = window.PROY, T = window.TIEMPOS, D = T.duracion;
     let e = T.escenas.findIndex(s => t < s.fin); if (e < 0) e = T.escenas.length - 1;
-    const filt = `url(#w${Math.floor(t * 4) % 4})`;   // temblor de dibujo más tranquilo que en los shorts (y el vídeo pesa menos)
+    const M2 = moderno(), FONDO = M2 ? 'fondo_mh.jpg' : 'fondo_h.jpg';
+    const filt = M2 ? 'none' : `url(#w${Math.floor(t * 4) % 4})`;   // temblor de dibujo más tranquilo que en los shorts (y el vídeo pesa menos)
     const capas = [];
     const dibuja = (k, alpha, dx) => {
       const S = T.escenas[k], L = t - S.ini + (k === 0 ? (P.adelanto_inicio ?? 1) : 0);
@@ -337,13 +342,14 @@
     if (e > 0 && dt < .25) { const p = easeOut(dt / .25); dibuja(e - 1, 1 - p, -30 * p); dibuja(e, p, 30 * (1 - p)); }
     else dibuja(e, 1, 0);
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><defs>${FILTROS}</defs>`;
-    svg += `<image href="fondo_h.jpg" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`;
+    svg += `<image href="${FONDO}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice"/>`;
+    if (M2) svg += `<rect x="42" y="120" width="1208" height="454" rx="34" fill="#000" opacity=".3"/><rect x="36" y="112" width="1208" height="454" rx="34" fill="${BLA}"/>`;
     for (const c of capas) {
       const SF = A.separaFotos(c.r.svg);
       svg += `<g opacity="${c.alpha}" transform="translate(${c.dx} 0)"><g transform="${c.kf}">${SF.fotos}</g><g transform="${c.kb}"><g filter="${filt}">${SF.resto}</g></g>${c.lup}</g>`;
       if (!window.LIMPIO) svg += cabecera(c.k, c.L, c.alpha);
       if (c.k === 0 && P.fecha && !window.LIMPIO) svg += `<g opacity="${c.alpha}" transform="translate(1100 112) rotate(4)"><rect x="-80" y="-20" width="160" height="34" rx="8" fill="${ROJ}" stroke="${INK}" stroke-width="3"/><text y="5" font-family="Inter" font-weight="800" font-size="20" text-anchor="middle" fill="${CRE}">${esc(P.fecha)}</text></g>`;
-      if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="574" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}">Fuentes: ${esc(P.fuentes)}</text>`;
+      if (c.k === T.escenas.length - 1 && P.fuentes) svg += `<text x="60" y="574" font-family="Inter" font-weight="800" font-size="18" fill="${INK}" fill-opacity=".7" opacity="${c.alpha}"${M2 ? ' transform="translate(0 -22)"' : ''}>Fuentes: ${esc(P.fuentes)}</text>`;
     }
     const ev = capas.length ? (capas[capas.length - 1].r.evitar || []) : [];
     const ultimo = capas[capas.length - 1];
@@ -353,7 +359,7 @@
     svg += cartela(ultimo.k, ultimo.L);
     svg += `</svg>`;
     const g = P.golpe_inicial === false ? 0 : 1 - easeOut(t / .45);
-    if (g > 0) svg = svg.replace('<image href="fondo_h.jpg"', `<g transform="translate(640 360) scale(${(1 + .05 * g).toFixed(4)}) translate(-640 -360)"><image href="fondo_h.jpg"`).replace(/<\/svg>$/, '</g></svg>');
+    if (g > 0) svg = svg.replace(`<image href="${FONDO}"`, `<g transform="translate(640 360) scale(${(1 + .05 * g).toFixed(4)}) translate(-640 -360)"><image href="${FONDO}"`).replace(/<\/svg>$/, '</g></svg>');
     document.getElementById('lienzo').innerHTML = svg;
     return true;
   };
