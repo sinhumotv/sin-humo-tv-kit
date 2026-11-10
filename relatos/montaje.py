@@ -15,7 +15,7 @@ T = json.load(open(f"{D}/tiempos.json"))
 DUR = T["duracion"] + 0.4
 NF = int(DUR * FPS)
 FONT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", "pf.ttf")
-fnt = ImageFont.truetype(FONT, 66 if YT else 80)
+fnt = ImageFont.truetype(FONT, 66 if YT else 92)   # (10-nov-2026) cortos: letra un 15 % más grande, se lee mejor en el móvil
 try:
     fnt.set_variation_by_name("Bold")
 except Exception:
@@ -162,7 +162,7 @@ for q in range(len(trozos)):
 fin_pal = {j: (ini_p[j + 1] if j + 1 < len(pals) else 1e9) for j in range(len(pals))}
 
 Y_SUB = int(H * (0.885 if YT else 0.69))   # más abajo, pero por encima de los textos de las redes
-LH = 84 if YT else 100
+LH = 84 if YT else 114
 cache = {}
 
 
@@ -343,4 +343,29 @@ subprocess.run(
     f'"[1:a]aresample=48000,apad[v];[2:a]volume=0.22[m];[v][m]amix=inputs=2:duration=shortest:normalize=0,'
     f'loudnorm=I=-14:TP=-1.5:LRA=11[a]" -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -shortest '
     f'-movflags +faststart "{D}/video_final.mp4"', shell=True, check=True)
-print("OK", f"{D}/video_final.mp4", f"{DUR:.1f}s", len(trozos), "bloques de subtítulos")
+
+
+def igualar_volumen(video, objetivo=-14.0):
+    """(10-nov-2026) Los cortos salían a -16 LUFS (el ajuste de una pasada se queda corto) y sonaban más flojos que el resto de
+    vídeos de las redes. Se mide el resultado y, si falta volumen, se sube lo justo con limitador (sin tocar la imagen)."""
+    m = subprocess.run(f'ffmpeg -v info -i "{video}" -af ebur128=peak=true -f null -', shell=True, capture_output=True, text=True).stderr
+    try:
+        i = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", m)[-1])
+    except Exception:
+        return None
+    falta = objetivo - i
+    if falta < 0.6 or falta > 8:
+        return i
+    tmp = video[:-4] + "_vol.mp4"
+    r = subprocess.run(f'ffmpeg -y -v error -i "{video}" -c:v copy -af "volume={falta:.1f}dB,alimiter=limit=0.84:level=false" -c:a aac -b:a 192k '
+                       f'-movflags +faststart "{tmp}"', shell=True)
+    if r.returncode == 0 and os.path.exists(tmp) and os.path.getsize(tmp) > 0.5 * os.path.getsize(video):
+        os.replace(tmp, video)
+        return i + falta
+    if os.path.exists(tmp):
+        os.remove(tmp)
+    return i
+
+
+_vol = igualar_volumen(f"{D}/video_final.mp4")
+print("OK", f"{D}/video_final.mp4", f"{DUR:.1f}s", len(trozos), "bloques de subtítulos", f"· {_vol:.1f} LUFS" if _vol is not None else "")
