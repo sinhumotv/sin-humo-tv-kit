@@ -132,12 +132,12 @@
   const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="5"/><g transform="scale(${(r / 150).toFixed(3)})">${icono(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
   const G = {
     cifra(v, L, d) {
-      const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1.3, d * .45));
+      const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1, d * .45));   // v48: en la escena 1 la cifra ya está completa en el fotograma 0
       const yN = ZC.y + (HOR ? 30 : (v.icono ? 70 : 10)), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
       return `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
         `<g transform="translate(${ZC.x} ${yN}) scale(${ent.toFixed(3)}) translate(${-ZC.x} ${-yN})">${tx(ZC.x, yN, esc(contar(s, p)), size, INK, 'middle', 900, 'letter-spacing="-4"')}</g>` +
         lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 70) + i * (HOR ? 50 : 44), esc(l), HOR ? 42 : 36, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
-        (v.icono ? (HOR ? sticker(Z.x + 100, Z.y + 70, 70, L, .25, v.icono, c) : `<g transform="translate(0 ${(4 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ZC.x, yN - size * .5 - 112, 78, L, 0, v.icono, c)}</g>`) : '');
+        (v.icono ? (HOR ? sticker(Z.x + 30, Z.y + 40, 54, L, .25, v.icono, c) : `<g transform="translate(0 ${(4 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ZC.x, yN - size * .62 - 118, 74, L, 0, v.icono, c)}</g>`) : '');
     },
     comparar(v, L, d) {
       const a = v.a || {}, b = v.b || {}, na = num(a.valor), nb = num(b.valor), mx = Math.max(Math.abs(na), Math.abs(nb), 1e-9), ah = HOR ? 78 : 76, x0 = Z.x + (HOR ? 140 : 14), wM = Z.w - (HOR ? 280 : 28);
@@ -189,7 +189,7 @@
         (v.fuente ? peg(ZC.x + (HOR ? 300 : 150), y + hC + 4, v.fuente, HOR ? 26 : 30, INK, '#fff', 'middle', eo((L - d * .45) / .3), -3, back((L - d * .45) / .35)) : '');
     },
     linea(v, L, d) {
-      const hs = (v.hitos || []).slice(0, 5), n = hs.length || 1, paso = Math.min(HOR ? 92 : 122, (Z.h - 10) / n), y0 = ZC.y - paso * (n - 1) / 2, x = Z.x + (HOR ? 240 : 54);
+      const hs = (v.hitos || []).slice(0, 5), n = hs.length || 1, paso = Math.min(HOR ? 92 : 122, (Z.h - 10) / n), y0 = ZC.y - paso * (n - 1) / 2, x = HOR ? Z.x + 240 : ZC.x - Math.min(200, 40 + Math.max(...hs.map(h => Math.max(String(h.texto || '').length * 17, String(h.fecha || '').length * 15))) / 2);
       const tramo = Math.max(1, d - .8) / n, prog = cl((L - .2) / Math.max(1, d - .8)), yF = y0 + (n - 1) * paso * prog;
       let o = `<path d="M${x} ${y0} V${y0 + (n - 1) * paso}" stroke="${GRI}" stroke-width="10" stroke-linecap="round"/><path d="M${x} ${y0} V${yF.toFixed(1)}" stroke="${ORA}" stroke-width="10" stroke-linecap="round"/>`;
       hs.forEach((h, i) => {
@@ -322,7 +322,7 @@
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
     const S = T.escenas[k], L = t - S.ini;
     let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG2[0]}"/>`;
-    const tt = k > 0 ? TIPO_TR(k) : '';
+    const tt = k > 0 ? TIPO_TR(k) : ''; let encima = '';
     if (tt === 'zoom' && L < TR) {         // zoom: el plano anterior se acerca y se funde, el nuevo llega desde un poco más pequeño
       const p = eio(L / TR), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), cx = W / 2, cy = H * .42;
       svg += `<defs><filter id="zb"><feGaussianBlur stdDeviation="${(10 * p).toFixed(1)}"/></filter></defs>` +
@@ -330,20 +330,20 @@
         `<g opacity="${p.toFixed(3)}" transform="translate(${cx} ${cy}) scale(${(.86 + .14 * p).toFixed(3)}) translate(${-cx} ${-cy})">${nue}</g>`;
     } else if (tt === 'cortina' && L < TRC) {   // cortina naranja de la marca que cruza en diagonal
       const p = eio(L / TRC), sh = HOR ? 260 : 340, x = -W - sh + (2 * W + 2 * sh) * p;
-      svg += (p < .5 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t)) +
-        `<path d="M${(x + sh).toFixed(1)} 0 H${(x + W + sh).toFixed(1)} L${(x + W).toFixed(1)} ${H} H${x.toFixed(1)} Z" fill="${ORA}"/>` +
+      svg += (p < .5 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
+      encima = `<path d="M${(x + sh).toFixed(1)} 0 H${(x + W + sh).toFixed(1)} L${(x + W).toFixed(1)} ${H} H${x.toFixed(1)} Z" fill="${ORA}"/>` +
         `<path d="M${(x + W + sh).toFixed(1)} 0 l28 0 L${(x + W + 28).toFixed(1)} ${H} l-28 0 Z" fill="${INK}"/>` +
-        `<g opacity="${(1 - Math.abs(p - .5) * 3).toFixed(2)}">${nube(W / 2 - (HOR ? 120 : 110), H * .42, HOR ? 2 : 2.4)}<text x="${W / 2 + (HOR ? 30 : 30)}" y="${H * .42 + 18}" font-family="Inter" font-weight="900" font-size="${HOR ? 64 : 58}" text-anchor="middle" fill="#fff">sin humo TV</text></g>`;
+        `<g opacity="${cl(1 - Math.abs(p - .5) * 3).toFixed(2)}" transform="translate(${W / 2} ${H * .42}) scale(${(.9 + .1 * eo(1 - Math.abs(p - .5) * 2)).toFixed(3)})">${nube(HOR ? -215 : -190, 0, HOR ? 2.2 : 2.2)}<text x="${HOR ? 45 : 42}" y="20" font-family="Inter" font-weight="900" font-size="${HOR ? 64 : 58}" text-anchor="middle" fill="#fff">sin humo TV</text></g>`;
     } else if (tt === 'barrido' && L < TR) {                 // barrido rápido con desenfoque de movimiento (alterna de lado y de arriba abajo)
       const p = eio(L / TR), ver = k % 2 === 1, bl = 46 * Math.sin(Math.PI * p), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), dir = k % 4 < 2 ? 1 : -1;
       svg += `<defs><filter id="mb" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${ver ? '0 ' + bl.toFixed(1) : bl.toFixed(1) + ' 0'}"/></filter></defs><g filter="url(#mb)">` +
         `<g transform="translate(${ver ? 0 : (-dir * W * p).toFixed(1)} ${ver ? (-dir * H * p).toFixed(1) : 0})">${ant}</g><g transform="translate(${ver ? 0 : (dir * W * (1 - p)).toFixed(1)} ${ver ? (dir * H * (1 - p)).toFixed(1) : 0})">${nue}</g></g>`;
     } else svg += escena(k, t);
     if (!window.LIMPIO) {
-      svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t) + marco();
+      svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t);
       if (k === N - 1 && P.fuentes) svg += `<text x="${W / 2}" y="${HOR ? H - 8 : 1076}" font-family="Inter" font-weight="700" font-size="${HOR ? 16 : 18}" text-anchor="middle" fill="${INK}" fill-opacity=".75">Fuentes: ${esc(P.fuentes)}</text>`;
     }
-    svg += '</svg>';
+    svg += encima + (window.LIMPIO ? '' : marco()) + '</svg>';
     document.getElementById('lienzo').innerHTML = svg;
     cajas();
     return true;

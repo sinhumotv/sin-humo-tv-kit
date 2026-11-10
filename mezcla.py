@@ -176,8 +176,21 @@ pop = np.sin(2 * np.pi * 900 * pt * np.exp(-pt * 20)) * np.exp(-pt * 45)
 il = int(.5 * SR); it = np.arange(il) / SR
 impacto = np.sin(2 * np.pi * (48 + 70 * np.exp(-it * 18)) * it) * np.exp(-it * 7) + rng.normal(0, 1, il) * np.exp(-it * 60) * .25
 if P.get("golpe_inicial", True): pon(impacto, 0, .9)
-for e in T["escenas"][1:]:
-    pon(whoosh, e["ini"] - .3, .9)           # en el respiro entre escenas, no encima de palabras
+PRO = (P.get("aspecto") or "pro") == "pro"
+for k, e in enumerate(T["escenas"][1:], 1):
+    if not PRO:
+        pon(whoosh, e["ini"] - .3, .9)           # en el respiro entre escenas, no encima de palabras
+        continue
+    # v48: cada transición del motor pro con su sonido (mismo orden que TIPO_TR en motor_pro.js), centrado en el movimiento
+    tr = ["barrido", "zoom", "barrido", "cortina"][k % 4]
+    if tr == "barrido":
+        pon(whoosh, e["ini"] - .2, .9)
+    elif tr == "zoom":
+        pon(whoosh[::-1] * .8, e["ini"] - .3, .9)   # sube y corta justo cuando entra el plano nuevo
+        pon(pop, e["ini"] + .02, .5)
+    else:
+        pon(whoosh, e["ini"] - .14, 1.0)
+        pon(impacto, e["ini"] + .2, .35)            # golpe suave de la marca cuando la cortina tapa la pantalla
 for z in P.get("zum", []):
     pon(zum, z, .8)
 pon(pop, T["escenas"][-1]["voz_fin"] + .05)  # pop final
