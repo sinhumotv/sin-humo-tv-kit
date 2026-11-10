@@ -82,28 +82,29 @@ def commons(q):
     return out
 
 
-# ---------- 1) FOTOS (hasta 6) ----------
+# ---------- 1) FOTOS (hasta 12; 10-nov-2026: antes 6, y el vídeo era casi todo iconos con texto) ----------
+MAX_FOTOS = 12
 print('· fotos', flush=True)
 cand = []
-for q in (N.get('fotos') or [])[:5]:
+for q in (N.get('fotos') or [])[:8]:
     try:
         for c in commons(q):
             if c['url'] not in [x['url'] for x in cand]: cand.append(c)
     except Exception as x:
         print('fotos:', q, str(x)[:100], flush=True)
     time.sleep(3)
-cand = cand[:30]
+cand = cand[:48]
 fotos = []
 if cand:
     lista = '\n'.join(f'{i}. {c["titulo"]} · {c["desc"]}' for i, c in enumerate(cand))
     elec = gemini(f'Noticia: «{N["tema"]}». {N["hechos"][:900]}\nFotos libres de Wikimedia Commons:\n{lista}\n'
-                  'Elige hasta 6 DISTINTAS que muestren de verdad a quien o lo que sale en la noticia (personas públicas, lugares, edificios, '
+                  f'Elige hasta {MAX_FOTOS} DISTINTAS (cuantas más válidas, mejor; sin repetir el mismo sitio o persona más de 2 veces) que muestren de verdad a quien o lo que sale en la noticia (personas públicas, lugares, edificios, '
                   'instituciones, objetos). La PRIMERA va en la miniatura: nunca un político de partido (mejor un lugar, una institución o la escena). '
                   'Si eliges políticos, de varias partes, nunca solo de un partido. '
                   'Nunca menores, víctimas, primeros planos de personas que no sean cargos públicos, logos ni carteles '
                   'de partidos. Responde solo JSON: {"elegidas": [números]}', 0.2)
     os.makedirs(os.path.join(D, 'fotos'), exist_ok=True)
-    for i in [int(x) for x in (elec.get('elegidas') or []) if str(x).isdigit() and int(x) < len(cand)][:6]:
+    for i in [int(x) for x in (elec.get('elegidas') or []) if str(x).isdigit() and int(x) < len(cand)][:MAX_FOTOS]:
         c = cand[i]; dest = os.path.join(D, 'fotos', f'f{len(fotos)}.jpg')
         try:
             open(dest, 'wb').write(bajar(c['url']))
@@ -129,12 +130,19 @@ si un dato solo lo da una fuente, dilo como «según <fuente>»; no inventes cif
 Contenido: contexto (qué ha pasado), por qué importa, datos clave, posturas de cada parte (neutral, mismo espacio), qué puede pasar ahora y qué significa
 para el espectador. Política: solo hechos y NEUTRALIDAD ESTRICTA: si salen partidos o políticos, el mismo espacio para cada parte (Gobierno y oposición, y cada partido que cites), nunca más de 2 escenas seguidas sobre un mismo partido, y nada de insultos ni descalificaciones literales («mafia», «te come»…): cuéntalo como «críticas duras» sin repetirlas. Antes que declaraciones de partido, prioriza instituciones, datos y cómo afecta a la gente. {'Hay víctimas: tono serio y respetuoso; no identifiques a víctimas ni a menores; nadie es culpable sin condena.' if GRAVE else ''}
 Frases cortas (8-15 palabras), tono de narrador curioso y cercano, pausado. Una idea por escena (4-9 segundos).
+LENGUAJE DE LA CALLE: palabras sencillas, como se lo contarías a un amigo («votos», no «sufragios»; «elecciones», no «proceso comicial»; «dijo», no «manifestó»;
+«pidió», no «formalizó la petición»). Nada de jerga jurídica o administrativa; si una sigla o un término técnico es imprescindible, explícalo en la misma frase la primera vez.
+Cada escena aporta algo NUEVO y concreto (un dato, un nombre, una fecha, una consecuencia): nada de frases de relleno ni de repetir lo ya dicho.
 Primera frase: gancho de máximo 10 palabras (cifra, pregunta incómoda o hecho sorprendente); prohibido empezar por «Hola», «Hoy», «Bienvenidos» o el canal.
 En los primeros 30 s: qué vas a explicar y una promesa concreta que se cumple al final («y al final, lo que casi nadie está contando…»).
 Al final de cada capítulo, una frase que abra el siguiente. Hacia la mitad (capítulo 3), UNA escena de mención: «Si te está sirviendo, suscríbete a sin humo TV:
 aquí vamos a los hechos.» (variable, máx. 15 palabras) con "visual": {{"tipo":"mencion","texto":"Los hechos, sin humo"}}. Última escena: pregunta abierta y neutral
 con "visual": {{"tipo":"cierre","texto":"≤ 30 caracteres","grave":{str(GRAVE).lower()}}}; justo antes, un resumen en 3 frases y la revelación prometida.
 Cada escena: {{"capitulo": 1-5, "titulo": "≤ 26 caracteres", "subtitulo": "lo que dice la voz, con cifras y siglas tal cual y 1-3 *palabras clave*", "visual": {{…}}}}
+LO QUE SE VE tiene que ser tan concreto como lo que se dice: el texto de cada visual lleva el dato, el nombre o la fecha de esa escena, nunca una etiqueta
+genérica («Factor clave», «Reparto geográfico», «Circunscripciones clave» NO valen; «Decide 3 escaños en Ourense» SÍ). Como mucho un tercio de las escenas de tipo
+"icono": prefiere foto, cifra, comparar, linea, lista y frase. "grafico" solo con 3 o más cifras reales de la misma cosa (años, meses o lugares en las etiquetas) y
+"comparar" solo con dos cifras reales en la misma unidad; si no tienes esas cifras en los hechos, usa otro tipo. "lista": de 2 a 4 puntos, cada uno un hecho concreto.
 Tipos de "visual" (no repitas el mismo tipo más de 2 veces seguidas):
   {{"tipo":"cifra","valor":"72.000","texto":"personas en 2 días","icono":"gente","color":"rojo"}}
   {{"tipo":"comparar","a":{{"etiqueta":"2024","valor":"3,1 %"}},"b":{{"etiqueta":"2026","valor":"4,2 %"}}}}   (solo datos reales)
@@ -204,7 +212,7 @@ for k, e in enumerate(esc):
     v = e.get('visual') if isinstance(e.get('visual'), dict) else {}
     if v.get('tipo') not in TIPOS: v = {'tipo': 'icono', 'icono': 'alerta', 'texto': str(e.get('titulo') or '')[:40]}
     if v.get('tipo') == 'foto':
-        m = re.search(r'(\d)', str(v.get('foto') or '')); i = int(m.group(1)) - 1 if m else -1
+        m = re.search(r'(\d+)', str(v.get('foto') or '')); i = int(m.group(1)) - 1 if m else -1
         if 0 <= i < len(fotos) and i not in usadas:
             usadas.add(i); fotos_esc[len(escenas)] = (i, str(v.get('texto') or fotos[i]['que'])[:34])
         v = {'tipo': 'icono', 'icono': 'documento', 'texto': str(v.get('texto') or e.get('titulo') or '')[:40]}   # respaldo si no carga
@@ -228,6 +236,27 @@ def _cifras_ok(k, v):
         except Exception:
             return False
     return all(not _dig(x) or dicho(x) for x in vals if x not in (None, ''))
+def _num_ok(x):
+    return bool(re.search(r'\d', str(x or '')))
+def _visual_ok(v):
+    """(10-nov-2026) Un largo salió con un gráfico de una sola barra y rótulos sin sentido («Hijos», «Septiembre»). Lo que no tenga datos
+    de verdad para dibujarse pasa a icono (y de ahí, si queda una foto sin colocar, a foto real)."""
+    t = v.get('tipo')
+    if t == 'grafico':
+        vals, et = list(v.get('valores') or []), list(v.get('etiquetas') or [])
+        return len(vals) >= 3 and len(et) == len(vals) and all(_num_ok(x) for x in vals) and all(str(x).strip() for x in et)
+    if t == 'comparar':
+        a, b = v.get('a') or {}, v.get('b') or {}
+        return _num_ok(a.get('valor')) and _num_ok(b.get('valor')) and str(a.get('etiqueta') or '').strip() and str(b.get('etiqueta') or '').strip()
+    if t == 'lista': return len([x for x in (v.get('items') or []) if str(x).strip()]) >= 2
+    if t == 'linea': return len([h for h in (v.get('hitos') or []) if isinstance(h, dict) and str(h.get('texto') or '').strip()]) >= 2
+    if t == 'cifra': return _num_ok(v.get('valor'))
+    if t in ('frase', 'pregunta'): return len(str(v.get('texto') or '').strip()) >= 8
+    return True
+for k, e in enumerate(escenas):
+    if not _visual_ok(e['visual']):
+        print(f'escena {k}: visual sin datos suficientes ({json.dumps(e["visual"], ensure_ascii=False)[:120]}) → icono', flush=True)
+        e['visual'] = {'tipo': 'icono', 'icono': 'documento', 'texto': e['titulo'][:40]}
 for k, e in enumerate(escenas):
     if e['visual'].get('tipo') in ('cifra', 'comparar', 'grafico') and not _cifras_ok(k, e['visual']):
         print(f'escena {k}: cifra en pantalla que no se dice ({json.dumps(e["visual"], ensure_ascii=False)[:120]}) → icono', flush=True)
@@ -251,9 +280,10 @@ js = ['window.ESCENAS = window.ESCENAS || [];',
       '(function(){ %s.forEach(r=>{const i=new Image(); i.src="file://"+r;}); })();' % json.dumps([f['ruta'] for f in fotos])]
 for k, (i, rot) in sorted(fotos_esc.items()):
     f = fotos[i]
-    js.append(f"window.ESCENAS[{k}] = (L, A) => ({{ svg: A.foto({json.dumps(f['ruta'])}, 520, 280, 640, 350, -2, A.pop(L, 0), {json.dumps(f['credito'])})"
-              f" + (L > .6 ? A.etiqueta(520, 538, {json.dumps(rot)}, .55 * A.pop(L, .6), A.ORO, -3) : ''), lupi: {{x: 1135, y: 380, s: .9, "
-              f"expr: '{'seria' if GRAVE else 'curiosa'}', mira: [-1, 0], brazos: 'senala'}}, evitar: [[170, 120, 700, 520]] }});")
+    # (10-nov-2026) la foto llena la tarjeta (860x400) y el rótulo va escrito encima, abajo a la izquierda
+    js.append(f"window.ESCENAS[{k}] = (L, A) => ({{ svg: A.foto({json.dumps(f['ruta'])}, 540, 325, 860, 400, 0, A.pop(L, 0), {json.dumps(f['credito'])})"
+              f" + (L > .5 ? `<text x=\"140\" y=\"474\" font-family=\"Inter\" font-weight=\"900\" font-size=\"40\" fill=\"#fff\" stroke=\"${{A.INK}}\" stroke-width=\"8\" paint-order=\"stroke\" stroke-linejoin=\"round\" opacity=\"${{A.fade(L, .5)}}\">${{A.esc({json.dumps(rot)})}}</text>` : ''), lupi: {{x: 1135, y: 400, s: .85, "
+              f"expr: '{'seria' if GRAVE else 'curiosa'}', mira: [-1, 0], brazos: 'senala'}}, evitar: [[100, 120, 880, 420]] }});")
 open(os.path.join(D, 'escenas.js'), 'w').write('\n'.join(js) + '\n')
 def _hablado():
     """hablado.py pasa cifras, símbolos y siglas a palabras. (8-nov-2026) Si deja algo sin convertir («REVISAR: …»), se arregla aquí
@@ -303,7 +333,10 @@ if not os.path.exists(os.path.join(D, 'video_final.mp4')):
 # ---------- 6) TÍTULO, DESCRIPCIÓN Y MINIATURA ----------
 cap_txt = open(os.path.join(D, 'capitulos.txt')).read().strip() if os.path.exists(os.path.join(D, 'capitulos.txt')) else ''
 T = gemini(f'Vídeo de YouTube de sin humo TV (unos 8 minutos) sobre: «{P["titulo_noticia"]}». Resumen de los hechos: {N["hechos"][:1500]}\n'
-           'Escribe 5 títulos (≤ 70 caracteres, con lo que la gente busca + curiosidad o urgencia + promesa cierta, sin clickbait falso) y elige el más fuerte. '
+           'Escribe 5 títulos (≤ 70 caracteres) y elige el más fuerte. El título EMPIEZA por las palabras que la gente escribe en el buscador de YouTube '
+           '(el asunto y su fecha: «Huelga general 11 de noviembre», «Cambio de hora», «Voto por correo 29-N») y sigue con la duda práctica que resuelve el vídeo '
+           '(«¿te descuentan el día?», «¿es el último?», «qué cambia para ti»). Los dos títulos que mejor han funcionado en el canal: «Huelga general 11 de '
+           'noviembre: ¿te descuentan el día? Todo explicado» y «Cambio de hora: ¿es el último? Todo lo que debes saber en 8 minutos». Promesa cierta, sin clickbait falso. '
            'Miniatura (NUNCA repite el título, lo complementa con un dato, urgencia o pregunta): l1 y l2, las DOS obligatorias, cada una de 1-2 palabras y como mucho 12 caracteres '
            '(l1 = de qué va, l2 = lo que impacta: «SUPREMO» / «DICE NO»; una cifra solo si se dice en el vídeo) '
            'y sub (franja corta ≤ 45 caracteres). Descripción: 2-3 líneas con las palabras que la gente busca. Etiquetas: 6-8 términos de búsqueda. '

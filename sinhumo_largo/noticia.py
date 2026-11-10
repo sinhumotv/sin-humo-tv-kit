@@ -78,6 +78,14 @@ def _sh_noticia_larga(previos):
         'Titulares de las portadas de hoy y ayer:\n' + lista + '\n\nElige UNA noticia de esta semana que merezca un vídeo de 8 minutos que la explique '
         'a fondo: la que más se está buscando o comentando en España, la que más afecta a la vida de la gente o la que más dudas genera («qué es», '
         '«cómo me afecta», «qué pasa ahora»). Que la publiquen AL MENOS DOS medios distintos. Nada de deportes, cotilleos ni sucesos morbosos. '
+        # (10-nov-2026) datos del canal: 4 de cada 10 visitas llegan por la BÚSQUEDA de YouTube. Los largos que más han funcionado son los de
+        # servicio («Huelga general 11 de noviembre: ¿te descuentan el día?», 2.400 visitas; «Cambio de hora: ¿es el último?», 590) y los que
+        # menos, los de política de partidos y sondeos (10-100 visitas).
+        'PRIORIDAD (lo que de verdad funciona en el canal): 1.º, noticias de SERVICIO que la gente va a buscar estos días porque le tocan el bolsillo, '
+        'el trabajo, la casa o un trámite, sobre todo si hay una FECHA cercana (una huelga, un plazo, una subida, una ayuda, una norma que entra en '
+        'vigor, cómo votar, un cambio que afecta a todos); 2.º, un suceso grande del que la gente quiere entender qué pasó y qué viene ahora '
+        '(accidente, temporal, apagón, investigación). Deja para cuando no haya nada mejor la política de partidos, los sondeos y las '
+        'declaraciones: interesan poco y cuesta ser neutral. '
         f'No repitas tema ni categoría de los últimos largos: {"; ".join(previos[-8:]) or "ninguno"}. '
         'Responde solo JSON: {"numeros": [3 o 4 titulares de medios DISTINTOS sobre esa noticia], "tema": "la noticia en una frase"}'), 0.4)
     nums = [int(n) for n in (el.get('numeros') or []) if str(n).isdigit() and int(n) < len(items)]
@@ -99,7 +107,7 @@ def _sh_noticia_larga(previos):
         'menores, y nadie es culpable sin condena.\nResponde SOLO JSON: {"tema": "la noticia en una frase de menos de 90 caracteres", '
         '"hechos": "450-700 palabras en español de España, ordenadas así: qué ha pasado (con fechas), contexto y antecedentes, datos clave con cifras, '
         'qué dice cada parte, qué puede pasar ahora y cómo afecta a la gente", "fuentes": ["los medios usados"], "grave": true si hay víctimas o tragedia, '
-        '"fotos": ["4 o 5 búsquedas para FOTOS REALES en Wikimedia Commons: nombres propios de personas públicas, lugares, edificios, instituciones u '
+        '"fotos": ["8 búsquedas DISTINTAS para FOTOS REALES en Wikimedia Commons (cuantas más fotos reales lleve el vídeo, mejor): nombres propios de personas públicas, lugares, edificios, instituciones u '
         'objetos de la noticia; nunca víctimas ni particulares"]}'), 0.3)
     if len(str(n.get('hechos') or '').split()) < 300: raise RuntimeError('la noticia elegida no tiene datos suficientes para un largo')
     n['fuentes'] = [f for f in (n.get('fuentes') or []) if f] or sorted({x['medio'] for x in elegidos})
