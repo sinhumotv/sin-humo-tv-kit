@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v46, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v47, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -81,16 +81,31 @@
     } catch (e) { }
   }
 
-  // ---------- fondo: crema liso, trama de puntos y dos manchas de color muy suaves que se mueven ----------
+  // ---------- fondo propio de sin humo TV (v47, 11-nov-2026) ----------
+  // Pablo: «diferenciarnos del canal de En Plata, parece una copia». Fuera el crema con trama de puntos. Ahora:
+  // degradado melocotón cálido, estelas de HUMO naranja que suben despacio (el humo que el canal quita), la nube tachada de la marca
+  // enorme y muy suave al fondo y un marco naranja redondeado alrededor de la pantalla.
+  const BG2 = GRAVE ? ['#f4f1ec', '#e4ded4'] : ['#fff7ee', '#ffe1c4'];
+  function humo(i, t) {        // una estela de humo: curva ondulada que sube y se desvanece
+    const per = 9 + i * 2.3, f = frac(t / per + i * .37), x0 = W * (.12 + .26 * i) + 30 * Math.sin(i * 2.1), y0 = H * (1.15 - 1.3 * f), a = 60 + 25 * i;
+    let d = `M${x0.toFixed(0)} ${(y0 + H * .35).toFixed(0)}`;
+    for (let n = 1; n <= 4; n++) { const y = y0 + H * .35 - n * H * .11, x = x0 + a * Math.sin(n * 1.3 + t * .6 + i); d += ` S${(x + a * .6).toFixed(0)} ${(y + H * .05).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)}`; }
+    const op = Math.sin(Math.PI * f) * (GRAVE ? .05 : .09);
+    return `<path d="${d}" fill="none" stroke="${GRAVE ? INK : ORA}" stroke-width="${HOR ? 34 : 42}" stroke-linecap="round" opacity="${op.toFixed(3)}" filter="url(#hb)"/>`;
+  }
   function fondo(k, t) {
-    const a = t * .35, c2 = [ORO, AZU, VER, ROJ][k % 4];
-    return `<defs><pattern id="pt" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="${INK}" opacity=".1"/></pattern>` +
-      `<radialGradient id="mA"><stop offset="0" stop-color="${ORA}" stop-opacity=".2"/><stop offset="1" stop-color="${ORA}" stop-opacity="0"/></radialGradient>` +
-      `<radialGradient id="mB"><stop offset="0" stop-color="${c2}" stop-opacity=".16"/><stop offset="1" stop-color="${c2}" stop-opacity="0"/></radialGradient></defs>` +
-      `<rect width="${W}" height="${H}" fill="${GRAVE ? '#efece6' : BG}"/>` +
-      `<circle cx="${(W * (.1 + .25 * Math.sin(a + k))).toFixed(1)}" cy="${(H * (.92 + .06 * Math.cos(a * 1.3))).toFixed(1)}" r="${Math.max(W, H) * .42}" fill="url(#mA)"/>` +
-      `<circle cx="${(W * (.92 + .2 * Math.cos(a * .8 + k))).toFixed(1)}" cy="${(H * (.06 + .1 * Math.sin(a * 1.1))).toFixed(1)}" r="${Math.max(W, H) * .36}" fill="url(#mB)"/>` +
-      `<rect width="${W}" height="${H}" fill="url(#pt)"/>`;
+    const mx = HOR ? W - 210 : W - 120, my = HOR ? H - 150 : H * .58, rot = -8 + 4 * Math.sin(t * .25);
+    return `<defs><linearGradient id="gF" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="${BG2[0]}"/><stop offset="1" stop-color="${BG2[1]}"/></linearGradient>` +
+      `<filter id="hb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="${HOR ? 14 : 16}"/></filter>` +
+      `<radialGradient id="gL"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>` +
+      `<rect width="${W}" height="${H}" fill="url(#gF)"/>` +
+      `<circle cx="${(W * (.3 + .1 * Math.sin(t * .3 + k))).toFixed(1)}" cy="${(H * .3).toFixed(1)}" r="${Math.max(W, H) * .45}" fill="url(#gL)"/>` +
+      [0, 1, 2].map(i => humo(i, t + k * 1.7)).join('') +
+      `<g opacity="${GRAVE ? .04 : .07}" transform="translate(${mx} ${my}) rotate(${rot.toFixed(2)})">${nube(0, 0, HOR ? 7 : 8)}</g>`;
+  }
+  function marco() {           // marco naranja de la marca (encima de todo, fino y redondeado)
+    const g = HOR ? 7 : 9, r = HOR ? 26 : 34;
+    return `<rect x="${g / 2}" y="${g / 2}" width="${W - g}" height="${H - g}" rx="${r}" fill="none" stroke="${GRAVE ? '#8a8378' : ORA}" stroke-width="${g}"/>`;
   }
   const rayos = (cx, cy, t, op) => { let d = ''; for (let i = 0; i < 12; i++) { const a0 = (i / 12) * Math.PI * 2 + t * .5, a1 = a0 + Math.PI / 12, R = Math.max(W, H) * 1.2; d += `M${cx} ${cy}L${(cx + R * Math.cos(a0)).toFixed(0)} ${(cy + R * Math.sin(a0)).toFixed(0)}L${(cx + R * Math.cos(a1)).toFixed(0)} ${(cy + R * Math.sin(a1)).toFixed(0)}Z`; } return `<path d="${d}" fill="${ORA}" opacity="${op.toFixed(3)}"/>`; };
 
@@ -274,14 +289,16 @@
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
         return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : ''}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
-      return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" letter-spacing="-.5" stroke="${BG}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
+      return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
   }
-  function barra(t) {
-    const y = HOR ? H - 30 : 1040, x0 = HOR ? 80 : 150, w = HOR ? W - 160 : W - 300, p = cl(t / DUR), xk = x0 + w * p;
-    let o = `<path d="M${x0} ${y} H${x0 + w}" stroke="${GRI}" stroke-width="7" stroke-linecap="round"/><path d="M${x0} ${y} H${xk.toFixed(1)}" stroke="${ORA}" stroke-width="7" stroke-linecap="round"/>`;
+  function barra(t) {            // v47: vuelve Lupi a la barra (tumbada, con los segundos en la lente, bote y destello cada segundo)
+    const y = HOR ? H - 30 : 1040, x0 = HOR ? 80 : 110, w = HOR ? W - 160 : W - 220, p = cl(t / DUR), xk = x0 + w * p;
+    const seg = Math.max(0, Math.ceil(DUR - t)), ft = t % 1, flash = ft < .18 ? (1 - ft / .18) : 0, bote = Math.sin(t * Math.PI * 4) * 2;
+    let o = `<rect x="${x0}" y="${y - 5}" width="${w}" height="10" rx="5" fill="${INK}" fill-opacity=".14"/><rect x="${x0}" y="${y - 5}" width="${Math.max(0, xk - x0).toFixed(1)}" height="10" rx="5" fill="${ORA}"/>`;
     if (HOR) o += CAPS.map(c => `<rect x="${(x0 + w * (T.escenas[c.desde] ? T.escenas[c.desde].ini : 0) / DUR - 2).toFixed(1)}" y="${y - 9}" width="4" height="18" rx="2" fill="${INK}"/>`).join('');
-    return o + `<circle cx="${xk.toFixed(1)}" cy="${y}" r="13" fill="${BLA}" stroke="${INK}" stroke-width="4"/><text x="${xk.toFixed(1)}" y="${y + 4.5}" font-family="Inter" font-weight="900" font-size="12" text-anchor="middle" fill="${INK}">${Math.max(0, Math.ceil(DUR - t))}</text>`;
+    return o + lupi({ x: xk, y: y + bote, s: 22 / 60, rot: 90, mini: true, sinCara: true, t, texto: seg, fs: 20 / (22 / 60) }) +
+      (flash > 0 ? `<circle cx="${xk.toFixed(1)}" cy="${(y + bote).toFixed(1)}" r="${(24 + 10 * (1 - flash)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="3" opacity="${flash.toFixed(2)}"/>` : '');
   }
 
   // v44 · pie de los cortos: cinta de titulares que corre + base oscura. Llena la zona que tapan los textos de YouTube/TikTok/Instagram
@@ -304,7 +321,7 @@
     t = cl(t, 0, DUR - .001);
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
     const S = T.escenas[k], L = t - S.ini;
-    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG}"/>`;
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG2[0]}"/>`;
     const tt = k > 0 ? TIPO_TR(k) : '';
     if (tt === 'zoom' && L < TR) {         // zoom: el plano anterior se acerca y se funde, el nuevo llega desde un poco más pequeño
       const p = eio(L / TR), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), cx = W / 2, cy = H * .42;
@@ -323,7 +340,7 @@
         `<g transform="translate(${ver ? 0 : (-dir * W * p).toFixed(1)} ${ver ? (-dir * H * p).toFixed(1) : 0})">${ant}</g><g transform="translate(${ver ? 0 : (dir * W * (1 - p)).toFixed(1)} ${ver ? (dir * H * (1 - p)).toFixed(1) : 0})">${nue}</g></g>`;
     } else svg += escena(k, t);
     if (!window.LIMPIO) {
-      svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t);
+      svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t) + marco();
       if (k === N - 1 && P.fuentes) svg += `<text x="${W / 2}" y="${HOR ? H - 8 : 1076}" font-family="Inter" font-weight="700" font-size="${HOR ? 16 : 18}" text-anchor="middle" fill="${INK}" fill-opacity=".75">Fuentes: ${esc(P.fuentes)}</text>`;
     }
     svg += '</svg>';
