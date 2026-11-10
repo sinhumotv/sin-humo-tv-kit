@@ -80,6 +80,10 @@ if os.environ.get("EXTRA"):
     HORAS = [(HOY + dt.timedelta(minutes=30)).strftime("%H:%M")]
 if os.environ.get("REPESCA"):
     HORAS = [h for h in HORAS if h >= (HOY + dt.timedelta(minutes=15)).strftime("%H:%M")]
+elif not os.environ.get("EXTRA") and not os.environ.get("PROBAR"):
+    # (10-nov-2026) GitHub a veces arranca la tanda con horas de retraso (el 10-nov, la de las 05:17 no había empezado a las 10:40).
+    # Las horas que ya pasaron hace más de 45 minutos no se hacen: antes se publicaban todas de golpe al arrancar tarde.
+    HORAS = [h for h in HORAS if h >= (HOY - dt.timedelta(minutes=45)).strftime("%H:%M")]
 if not HORAS:
     print("Nada pendiente hoy en", CANAL)
     sys.exit(0)

@@ -4,7 +4,12 @@ name: Tanda diaria de vídeos
 
 on:
   schedule:
+    # (10-nov-2026) varias horas de arranque por los retrasos de GitHub: la primera que arranque hace los vídeos del día y las
+    # demás solo hacen lo que falte (cada hora se apunta al publicarse y nunca hay dos tandas del mismo canal a la vez).
+    - cron: "47 2 * * *"
     - cron: "17 4 * * *"   # 04:17 UTC = 05:17 (invierno) / 06:17 (verano) en Madrid
+    - cron: "47 5 * * *"
+    - cron: "17 12 * * *"  # repesca de la tarde (misma regla: solo horas que no hayan pasado)
     - cron: "17 9 * * *"   # repesca: rehace solo los vídeos que hayan fallado (horas aún por llegar)
   workflow_dispatch:
     inputs:
@@ -31,6 +36,9 @@ jobs:
   tanda:
     runs-on: ubuntu-latest
     timeout-minutes: 150
+    concurrency:
+      group: tanda-${{ matrix.canal }}   # nunca dos tandas del mismo canal a la vez (no se duplican vídeos)
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
@@ -51,7 +59,7 @@ jobs:
           PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           N: ${{ inputs.n }}
-          REPESCA: ${{ github.event.schedule == '17 9 * * *' && '1' || '' }}
+          REPESCA: ${{ (github.event.schedule == '17 9 * * *' || github.event.schedule == '17 12 * * *') && '1' || '' }}
           PROBAR: ${{ inputs.probar }}
           MODO_PRUEBA: ${{ inputs.modo }}
           EXTRA: ${{ inputs.extra }}
