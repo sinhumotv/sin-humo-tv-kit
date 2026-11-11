@@ -152,6 +152,7 @@
   // Pablo: «diferenciarnos del canal de En Plata, parece una copia». Fuera el crema con trama de puntos. Ahora:
   // degradado melocotón cálido, estelas de HUMO naranja que suben despacio (el humo que el canal quita), la nube tachada de la marca
   // enorme y muy suave al fondo y un marco naranja redondeado alrededor de la pantalla.
+  const VIAJE = .6;   // v90: segundos que tarda Lupi en volar entre la esquina y el centro
   const BG2 = GRAVE ? ['#f4f1ec', '#e4ded4'] : ['#fff7ee', '#ffe1c4'];
   function humo(i, t) {        // una estela de humo: curva ondulada que sube y se desvanece
     const per = 9 + i * 2.3, f = frac(t / per + i * .37), x0 = W * (.12 + .26 * i) + 30 * Math.sin(i * 2.1), y0 = H * (1.15 - 1.3 * f), a = 60 + 25 * i;
@@ -911,7 +912,7 @@
         cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 22 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
     },
     mencion(v, L, d) {
-      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
+      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26),   /* v90: Lupi llega volando desde la esquina y rebota al aterrizar */ lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 320, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 }) +
         // v78: en noticias graves, sin botón, sin mano ni campana: solo Lupi seria y la frase
@@ -924,7 +925,7 @@
           return campana + mano; })();
     },
     cierre(v, L, d) {
-      const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
+      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
         peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) +
@@ -1051,8 +1052,14 @@
     let o = logoM(HOR ? 100 : SX + 46, HOR ? 46 : 166, HOR ? .82 : .88);   // v68: logo moderno
     if (k === 0 && P.fecha) o += peg(HOR ? 400 : 422, HOR ? 53 : 173, P.fecha, HOR ? 20 : 22, ORO, INK, 'middle', 1, 3);
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
-    if (tp !== 'mencion' && tp !== 'cierre') {
-      const lx = HOR ? W - 62 : W - SX - 66, ly = HOR ? H - 196 : 166, s = HOR ? .5 : .46;
+    const lx = HOR ? W - 62 : W - SX - 66, ly = HOR ? H - 196 : 166, s = HOR ? .5 : .46;
+    // v90: Lupi nunca cambia de sitio de golpe: vuela de la esquina al centro (mención y cierre) y vuelve después, en arco y girando
+    const grande = q => ['mencion', 'cierre'].includes((E[q] || {}).visual ? E[q].visual.tipo : ''), GX = HOR ? Z.x + 230 : ZC.x, GY = HOR ? ZC.y - 20 : Z.y + 120, GS = HOR ? 1.45 : 1.05;
+    const viaja = (q, ida) => { const a = ida ? [lx, ly, s] : [GX, GY, GS], b = ida ? [GX, GY, GS] : [lx, ly, s], x = a[0] + (b[0] - a[0]) * q, y = a[1] + (b[1] - a[1]) * q - (HOR ? 160 : 140) * Math.sin(Math.PI * q), sc = a[2] + (b[2] - a[2]) * q;
+      return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${((ida ? -1 : 1) * 360 * eio(q)).toFixed(1)})">${lupiM({ x: 0, y: 0, s: sc, t, expr: 'feliz', brazos: 'saluda', mira: [ida ? -1 : 1, 0] })}</g>`; };
+    if (grande(k)) { if (L < VIAJE) o += viaja(eio(L / VIAJE), true); }
+    else if (k > 0 && grande(k - 1) && L < VIAJE) o += viaja(eio(L / VIAJE), false);
+    else {
       const em = EMO(k), porEmo = { surprised: 'sorprendida', excited: 'sorprendida', emphatic: 'sorprendida', indignant: 'enfadada', whispers: 'curiosa', conspiratorial: 'guino', curious: 'curiosa', serious: 'seria', tense: 'seria', sad: 'seria', amused: 'guino' }[em];
       let ex = GRAVE ? (porEmo === 'curiosa' ? 'curiosa' : 'seria') : porEmo || (tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz');
       if ((ex === 'feliz' || ex === 'seria' && !GRAVE) && hablando(k, t)) ex = 'habla';   // v52: Lupi «habla» con la voz
