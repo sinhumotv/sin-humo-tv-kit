@@ -832,7 +832,7 @@
     return `<g transform="translate(${W / 2} ${yc}) scale(${(HOR ? .88 + .12 * ent : .96 + .04 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
-        return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : ''}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : (p.clave ? ` font-size="${(fs * (1 + .14 * Math.sin(Math.PI * cl((t - p.a) / .22)))).toFixed(1)}"` : '')}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}"${su ? ' font-style="italic"' : ''} text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
