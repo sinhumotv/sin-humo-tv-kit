@@ -30,14 +30,18 @@ let svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewB
 svg+=oscuro?'<rect width="1280" height="720" fill="#2a2433"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".25"/>'
            :'<image href="${path.join(KIT, 'fondo_h.jpg')}" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/><circle cx="1010" cy="380" r="330" fill="'+c+'" opacity=".18"/>';
 // foto real de fondo (v11): a sangre, oscurecida a la izquierda para que el titular se lea, crédito pequeño abajo
-if(O.foto){svg+='<defs><linearGradient id="osc" x1="0" x2="1"><stop offset="0" stop-color="#1d1824" stop-opacity=".82"/><stop offset=".5" stop-color="#1d1824" stop-opacity=".45"/><stop offset="1" stop-color="#1d1824" stop-opacity=".05"/></linearGradient></defs><image href="file://'+O.foto+'" width="1280" height="720" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.45) contrast(1.12) brightness(1.04)"/><rect width="1280" height="720" fill="url(#osc)"/><rect x="0" y="0" width="1280" height="720" fill="'+c+'" opacity=".10"/><rect x="7" y="7" width="1266" height="706" fill="none" stroke="'+c+'" stroke-width="14"/>';
+if(O.foto){svg+='<defs><linearGradient id="osc" x1="0" x2="1"><stop offset="0" stop-color="#1d1824" stop-opacity=".9"/><stop offset=".55" stop-color="#1d1824" stop-opacity=".55"/><stop offset="1" stop-color="#1d1824" stop-opacity=".08"/></linearGradient><radialGradient id="vig" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient></defs><image href="file://'+O.foto+'" width="1280" height="720" preserveAspectRatio="xMidYMid slice" style="filter:saturate(1.5) contrast(1.15) brightness(1.02) blur(1.5px)"/><rect width="1280" height="720" fill="url(#vig)"/><rect width="1280" height="720" fill="url(#osc)"/><rect x="0" y="0" width="1280" height="720" fill="'+c+'" opacity=".10"/><rect x="7" y="7" width="1266" height="706" fill="none" stroke="'+c+'" stroke-width="14"/>';
   if(O.credito)svg+='<text x="1268" y="712" font-family="Inter" font-weight="700" font-size="13" fill="#fff" opacity=".75" text-anchor="end">'+esc(O.credito)+'</text>';}
 // rayos detrás de Lupi (llaman la atención)
-for(let i=0;i<14;i++){const a=i*Math.PI/7;svg+='<path d="M1010 380 L'+(1010+600*Math.cos(a))+' '+(380+600*Math.sin(a))+' L'+(1010+600*Math.cos(a+.12))+' '+(380+600*Math.sin(a+.12))+'Z" fill="'+(oscuro?'#fff':A.INK)+'" opacity=".05"/>';}
+// v98: resplandor de color detrás de Lupi (antes, rayos grises casi invisibles)
+svg+='<defs><radialGradient id="glo"><stop offset="0" stop-color="#ffb347" stop-opacity=".95"/><stop offset=".45" stop-color="'+A.ORA+'" stop-opacity=".55"/><stop offset="1" stop-color="'+A.ORA+'" stop-opacity="0"/></radialGradient></defs><circle cx="1060" cy="330" r="360" fill="url(#glo)"/>';
+for(let i=0;i<16;i++){const a=i*Math.PI/8;svg+='<path d="M1060 330 L'+(1060+700*Math.cos(a))+' '+(330+700*Math.sin(a))+' L'+(1060+700*Math.cos(a+.1))+' '+(330+700*Math.sin(a+.1))+'Z" fill="#fff" opacity=".07"/>';}
 // titular
 svg+='<text x="60" y="'+(70+s1*.82)+'" font-family="Inter" font-weight="900" font-size="'+s1+'" fill="'+tinta+'" stroke="'+A.INK+'" stroke-width="'+(oscuro&&!O.foto?0:12)+'" paint-order="stroke">'+esc(O.l1||'')+'</text>';
 const y2=70+s1*.95+s2*.86;
-svg+='<text x="54" y="'+y2+'" font-family="Inter" font-weight="900" font-size="'+s2+'" fill="'+c+'" stroke="'+A.INK+'" stroke-width="14" paint-order="stroke">'+esc(O.l2||'')+'</text>';
+// v98: la línea clave va en una franja de color inclinada, en blanco (se lee de lejos, en el móvil)
+svg+='<g transform="rotate(-2.5 60 '+(y2-s2*.4)+')"><rect id="l2r" x="38" y="'+(y2-s2*.86)+'" width="'+Math.min(780,(O.l2||'').length*s2*.64+50)+'" height="'+(s2*1.04)+'" rx="18" fill="'+c+'" stroke="'+A.INK+'" stroke-width="8"/>'+
+  '<text id="l2t" x="60" y="'+(y2-s2*.04)+'" font-family="Inter" font-weight="900" font-size="'+s2+'" fill="#fff" stroke="'+A.INK+'" stroke-width="8" paint-order="stroke">'+esc(O.l2||'')+'</text></g>';
 // (9-nov-2026) la frase amarilla no puede pasar de x=720: ahí empieza el brazo de Lupi. window.ajustar la encoge o la parte en 2 líneas.
 const SUB_X=50, SUB_MAX=670, SUB_Y=y2+30;
 if(O.sub){const ss=fit(O.sub,56,SUB_MAX-50,34);svg+='<rect id="subr" x="'+SUB_X+'" y="'+SUB_Y+'" width="'+SUB_MAX+'" height="'+(ss+34)+'" rx="16" fill="'+A.ORO+'" stroke="'+A.INK+'" stroke-width="6"/><text id="subt" x="75" y="'+(SUB_Y+ss+6)+'" font-family="Inter" font-weight="900" font-size="'+ss+'" fill="'+A.INK+'">'+esc(O.sub)+'</text>';}
@@ -49,11 +53,14 @@ else if(O.dato){svg+=A.txtC(830,600,O.dato,O.dato.length>4?130:150,c,'middle',14
 const ARTE=window.SH_ARTE;
 if(ARTE){svg+=ARTE.DEF_LUPI+ARTE.lupiM({x:1060,y:300,s:O.lupi_s||2.1,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'',t:.3});}
 else svg+=lupi({x:1060,y:300,s:2.3,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'abajo',t:.3});
+// v98: emoticono propio (el de los vídeos) que reacciona junto a Lupi
+if(window.EMOJIVEC&&O.emo!==''){const em=O.emo||(O.expr==='seria'?'':'😱');if(em)svg+='<g transform="translate(1185 105) rotate(12)"><circle r="78" fill="#fff" stroke="'+A.INK+'" stroke-width="6"/>'+window.EMOJIVEC(em,120,1.3)+'</g>';}
 // marca
 if(ARTE){svg+=ARTE.logoM(80,660,1.35,oscuro);}else svg+='<g transform="translate(60 670)"><rect x="-14" y="-38" width="250" height="52" rx="14" fill="'+A.INK+'" stroke="'+A.CRE+'" stroke-width="3"/><text x="111" y="-2" font-family="Inter" font-weight="900" font-size="30" fill="'+A.CRE+'" text-anchor="middle">sin humo TV</text></g>';
 svg+='</svg>';
 document.getElementById('c').innerHTML=svg;
-window.ajustar=()=>{const st=document.getElementById('subt'),sr=document.getElementById('subr');if(!st)return;
+window.ajustar=()=>{const lt=document.getElementById('l2t'),lr=document.getElementById('l2r');if(lt&&lr){let fs=+lt.getAttribute('font-size');while(fs>70&&lt.getBBox().width>740){fs-=4;lt.setAttribute('font-size',fs);}lr.setAttribute('width',lt.getBBox().width+46);}
+  const st=document.getElementById('subt'),sr=document.getElementById('subr');if(!st)return;
   const NS='http://www.w3.org/2000/svg',lim=SUB_MAX-50;let fs=+st.getAttribute('font-size');
   while(fs>34&&st.getBBox().width>lim){fs-=2;st.setAttribute('font-size',fs);}
   if(st.getBBox().width<=lim){st.setAttribute('y',SUB_Y+fs+6);sr.setAttribute('height',fs+34);sr.setAttribute('width',st.getBBox().width+50);return;}
