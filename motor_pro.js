@@ -1003,10 +1003,25 @@
     const ini = k === 0 ? Math.max(0, .3 - (t - S.ini)) / .3 : 0;   // v52: arranque con golpe de zoom (con el impacto de sonido del segundo 0)
     const z = 1 + .02 * cl(L / d) + .045 * golpe(k, t) + .045 * eo(ini), [sx, sy] = sacudida(k, t);
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
-      `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy + (tipo === 'foto' ? 0 : 5 * Math.sin(L * 1.6 + k))).toFixed(1)}) rotate(${(tipo === 'foto' ? 0 : .5 * Math.sin(L * .9 + k * 2)).toFixed(3)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) +
+      `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy + (tipo === 'foto' ? 0 : 5 * Math.sin(L * 1.6 + k))).toFixed(1)}) rotate(${(tipo === 'foto' ? 0 : .5 * Math.sin(L * .9 + k * 2)).toFixed(3)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) + (window.LIMPIO ? '' : reaccion(k, t)) +
       ambiente(k, t, L) + asoma(k, t) + (k === 0 && t - S.ini > 0 && t - S.ini < .3 ? `<rect width="${W}" height="${H}" fill="#fff" opacity="${(.4 * Math.sin(Math.PI * (t - S.ini) / .3)).toFixed(3)}"/>` : '')   // destello (el fotograma 0 queda limpio para la miniatura);
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
+  // v88: emoji de REACCIÓN grande (😱 💸 👀 🔥…) que salta en la palabra clave de la escena, se balancea y se va (como las
+  // pegatinas de los editores de TikTok). Lo elige el guion ("reaccion"), nunca en noticias graves ni en mención/cierre.
+  function reaccion(k, t) {
+    const em = String(E[k].reaccion || '').trim().slice(0, 8), tp = (E[k].visual || {}).tipo; if (!em || GRAVE || ['mencion', 'cierre'].includes(tp)) return '';
+    const S = T.escenas[k], c = claves(k), t0 = c.length ? c[0] : S.ini + Math.min(1.2, (S.fin - S.ini) * .3), x = t - t0, vida = 1.6;
+    if (x < 0 || x > vida) return '';
+    // en vertical: abajo a la izquierda (la columna de botones de TikTok/Reels está a la derecha, de media pantalla para abajo);
+    // si en esa escena puede asomar Lupi por la izquierda, arriba a la derecha
+    const e = back(x / .28), sale = x > vida - .25 ? 1 - eo((x - vida + .25) / .25) : 1, der = ['titular', 'pregunta', 'icono', 'frase'].includes(tp), fs = HOR ? 120 : 100;
+    const cx = HOR ? W - 300 : (der ? Z.x + Z.w - 50 : Z.x + 40), cy = HOR ? 250 : (der ? Z.y + 70 : Z.y + Z.h - 60) - 14 * x, rot = (der ? 12 : -12) * Math.sin(x * 7) * (1 - x / vida);
+    let o = `<g transform="translate(${cx.toFixed(1)} ${cy.toFixed(1)}) rotate(${rot.toFixed(1)}) scale(${(e * sale).toFixed(3)})">`;
+    const an = eo(x / .45); if (an < 1) o += `<circle r="${(fs * (.5 + .55 * an)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="${(8 * (1 - an)).toFixed(1)}" opacity="${(1 - an).toFixed(2)}"/>` +
+      [...Array(8).keys()].map(i => { const a_ = i * Math.PI / 4 + .3, r1 = fs * (.55 + .35 * an), r2 = r1 + 22 * (1 - an); return `<path d="M${(Math.cos(a_) * r1).toFixed(1)} ${(Math.sin(a_) * r1).toFixed(1)} L${(Math.cos(a_) * r2).toFixed(1)} ${(Math.sin(a_) * r2).toFixed(1)}" stroke="${i % 2 ? ORO : ORA}" stroke-width="6" stroke-linecap="round" opacity="${(1 - an).toFixed(2)}"/>`; }).join('');
+    return o + `<ellipse cx="0" cy="${fs * .52}" rx="${fs * .32}" ry="${fs * .07}" fill="${INK}" opacity=".15"/><text x="0" y="${(fs * .36).toFixed(1)}" font-family="Noto Color Emoji" font-size="${fs}" text-anchor="middle">${esc(em)}</text></g>`;
+  }
   function rotulo(k, L) {
     // v62: en la PRIMERA escena de los cortos, el titular de la noticia grande (mucha gente empieza a ver sin sonido)
     if (k === 0 && !HOR && P.titulo_noticia) {
