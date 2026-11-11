@@ -102,6 +102,8 @@ NUM = r"\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?"
 
 
 def normaliza(t):
+    # (11-nov-2026) leyes y normas «Ley 40/2003», «Real Decreto 3/2020» → «40 de 2003» (antes salía «cuarenta entre dos mil tres»)
+    t = re.sub(r"\b(\d{1,4})\s*/\s*((?:19|20)\d\d)\b", r"\1 de \2", t)
     t = t.replace(" ", " ").replace(" ", " ")
     t = re.sub(r"sin humo TV", "sin humo te uve", t, flags=re.I)
     # (11-nov-2026) cifras pegadas a una palabra («20minutos», «3millones»): se separan para poder leerlas
