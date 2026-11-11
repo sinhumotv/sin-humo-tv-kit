@@ -16,10 +16,13 @@ import torch, torchaudio as ta
 AQUI = os.path.dirname(os.path.abspath(__file__))
 # registro: (muestra de referencia, expresividad, cfg, temperatura)
 REGISTROS = {
-    "normal":  ("referencia.wav",         0.85, 0.35, 0.85),
-    "emocion": ("referencia_emocion.wav", 1.10, 0.30, 0.90),
-    "intriga": ("referencia_intriga.wav", 0.75, 0.40, 0.85),
-    "susurro": ("referencia_susurro.wav", 0.50, 0.50, 0.80),
+    # (11-nov-2026) TODOS con la muestra original de la voz 6: las muestras emocionales sacadas con ElevenLabs v4
+    # perdían el acento de España y Chatterbox lo copiaba. El registro se consigue con los ajustes y, en el susurro,
+    # con un tratamiento de audio (más bajo, sin graves, más íntimo).
+    "normal":  ("referencia.wav", 0.80, 0.35, 0.75),
+    "emocion": ("referencia.wav", 1.05, 0.30, 0.80),
+    "intriga": ("referencia.wav", 0.60, 0.45, 0.75),
+    "susurro": ("referencia.wav", 0.35, 0.50, 0.70),
 }
 ETIQ = re.compile(r"\[(susurro|emoci[oó]n|intriga|normal)\]", re.I)
 
@@ -40,6 +43,14 @@ def piezas(escena):
     return out
 
 
+def susurro(w, sr):
+    """Voz baja e íntima: quita graves, suaviza y baja el volumen (sin que suene a efecto)."""
+    import torchaudio.functional as F
+    w = F.highpass_biquad(w, sr, 260)
+    w = F.lowpass_biquad(w, sr, 7000)
+    return w * 0.55
+
+
 def main():
     carpeta = sys.argv[1]
     torch.set_num_threads(os.cpu_count() or 2)
@@ -56,6 +67,8 @@ def main():
             torch.manual_seed(1000 + n); n += 1   # semilla distinta por frase: entonación menos repetitiva
             w = m.generate(f, language_id="es", audio_prompt_path=os.path.join(AQUI, ref),
                            exaggeration=ex, cfg_weight=cfg, temperature=temp)
+            if reg == "susurro":
+                w = susurro(w, sr)
             trozos.append(w)
             pausa = 0.45 if f.endswith("...") or f.endswith("…") else 0.25
             trozos.append(torch.zeros(1, int(sr * pausa)))
