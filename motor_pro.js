@@ -327,7 +327,10 @@
           ls.map((l, j) => tx(cx, yC + rC + 50 + j * fs * 1.2, esc(l), fs, INK, 'middle', 800, `opacity="${eo((L - t0 - .3 - j * .08) / .25).toFixed(2)}"`)).join('') + `</g>`;
       };
       const vy = HOR ? ZC.y : Z.y + 30 + (Z.h - 90) / 2, ev = back((L - .6) / .4), pul = 1 + .06 * Math.sin(L * 6);
-      return lado(v.a, 0) + lado(v.b, 1) + (ev > 0 ? `<g transform="translate(${ZC.x} ${vy}) rotate(-8) scale(${(ev * pul).toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${HOR ? 54 : 46}" fill="${INK}"/><circle r="${HOR ? 54 : 46}" fill="${ORO}" stroke="${INK}" stroke-width="6"/>${tx(0, HOR ? 17 : 15, 'VS', HOR ? 48 : 40, INK)}</g>` : '');
+      const rayo = ev > 0 && !GRAVE ? (() => { const j = Math.floor(L * 12), rr = i => (Math.sin(j * 12.9 + i * 78.2) * 43758.5) % 1, hR = HOR ? Z.h * .7 : Z.h * .75; let dd = `M${ZC.x} ${vy - hR / 2}`;
+        for (let i = 1; i <= 6; i++) dd += ` L${(ZC.x + (i % 2 ? 1 : -1) * (8 + 14 * Math.abs(rr(i)))).toFixed(1)} ${(vy - hR / 2 + hR * i / 6).toFixed(1)}`;
+        return `<path d="${dd}" fill="none" stroke="${ORO}" stroke-width="10" stroke-linejoin="round" opacity="${(.85 * ev).toFixed(2)}"/><path d="${dd}" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" opacity="${ev.toFixed(2)}"/>`; })() : '';   // v66
+      return lado(v.a, 0) + lado(v.b, 1) + rayo + (ev > 0 ? `<g transform="translate(${ZC.x} ${vy}) rotate(-8) scale(${(ev * pul).toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${HOR ? 54 : 46}" fill="${INK}"/><circle r="${HOR ? 54 : 46}" fill="${ORO}" stroke="${INK}" stroke-width="6"/>${tx(0, HOR ? 17 : 15, 'VS', HOR ? 48 : 40, INK)}</g>` : '');
     },
     // mapa de España con chinchetas en las ciudades nombradas  {"tipo":"mapa","lugares":["Oviedo","Madrid"],"texto":"…"}
     mapa(v, L, d) {
@@ -347,6 +350,10 @@
         const [bx, by] = P_(-9.5, 35.75), [bx2, by2] = P_(-4.55, 33.9);
         o += `<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${(bx2 - bx).toFixed(1)}" height="${(by2 - by).toFixed(1)}" rx="10" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="8 6" opacity="${f.toFixed(2)}"/>` +
           CAN.map(([lo, la, rx, ry]) => { const [x, y] = P_(...mov([lo, la])); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
+      }
+      if (ls.length > 1) {   // v66: ruta discontinua que une los lugares
+        const pts = ls.map(([, ll]) => P_(...mov(ll))), q = eio(cl((L - 1.6) / .8));
+        if (q > 0) o += `<path d="M${pts.map(p => p.map(z => z.toFixed(1)).join(' ')).join(' L')}" fill="none" stroke="${ROJ}" stroke-width="5" stroke-dasharray="12 10" stroke-dashoffset="${(-L * 40).toFixed(1)}" opacity="${q.toFixed(2)}"/>`;
       }
       ls.forEach(([nom, [lo, la]], i) => {
         const t0 = .8 + i * .35, e = back((L - t0) / .4); if (e <= 0) return;
@@ -406,7 +413,7 @@
         const t0 = .25 + (n - 1 - i) * .22, p = eo((L - t0) / .6); if (L < t0) return;
         const y = y0 + i * (ah + 16), w = Math.max(ah * 2.6, wMax * r.n / mx) * p, top = i === 0, fsE = Math.min(ah * .38, (wMax * .62) / (Math.max(5, r.et.length) * .56));
         o += `<g opacity="${cl((L - t0) / .15)}"><circle cx="${Z.x + ah / 2 + SOM / 2}" cy="${y + ah / 2 + SOM / 2}" r="${ah / 2}" fill="${INK}"/><circle cx="${Z.x + ah / 2}" cy="${y + ah / 2}" r="${ah / 2}" fill="${med[i] || BLA}" stroke="${INK}" stroke-width="4"/>` +
-          tx(Z.x + ah / 2, y + ah / 2 + ah * .16, String(i + 1), ah * .45, INK) + caja(xL, y, w, ah, ah * .3, top ? ORA : BLA, 4) +
+          tx(Z.x + ah / 2, y + ah / 2 + ah * .16, String(i + 1), ah * .45, INK) + (top ? `<g transform="translate(${Z.x + ah / 2} ${(y - ah * .12 - 4 * Math.abs(Math.sin(L * 3))).toFixed(1)}) rotate(-12) scale(${(ah / 80 * back((L - t0 - .5) / .35)).toFixed(3)})"><path d="M-26 0 L-30 -26 L-14 -12 L0 -32 L14 -12 L30 -26 L26 0 Z" fill="${ORO}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>` : '') + caja(xL, y, w, ah, ah * .3, top ? ORA : BLA, 4) +
           tx(xL + 18, y + ah / 2 + fsE * .36, esc(r.et), fsE, top ? '#fff' : INK, 'start', 800) +
           tx(xL + w - 16, y + ah / 2 + ah * .15, esc(contar(r.va, p)), ah * .42, top ? '#fff' : INK, 'end', 900) + `</g>`;
       });
