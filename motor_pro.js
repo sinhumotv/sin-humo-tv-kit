@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v52, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v55, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -28,7 +28,8 @@
   const E = P.escenas, N = E.length, DUR = T.duracion;
   const CAPS = (P.capitulos || []).filter(c => c && c.desde < N);
   const GRAVE = P.tono === 'grave';
-  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: 60, y: 262, w: 600, h: 560 };   // zona del gráfico
+  const SX = HOR ? 0 : 60;   // v55: margen lateral que recortan TikTok/Instagram/YouTube en móviles alargados (zona segura)
+  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: SX + 26, y: 262, w: W - 2 * SX - 52, h: 560 };   // zona del gráfico
   const ZC = { x: Z.x + Z.w / 2, y: Z.y + Z.h / 2 };
   const SOM = HOR ? 7 : 8;                // desplazamiento de la sombra dura
 
@@ -105,9 +106,12 @@
   }
   function marco() {           // marco naranja de la marca (encima de todo, fino y redondeado)
     const g = HOR ? 7 : 9, r = HOR ? 26 : 34;
-    // v54: en los cortos, lo que queda fuera de las esquinas redondeadas va en negro (en el móvil el vídeo se ve redondeado de verdad)
-    const esq = HOR ? '' : `<path d="M0 0H${W}V${H}H0Z M${r} 0 H${W - r} A${r} ${r} 0 0 1 ${W} ${r} V${H - r} A${r} ${r} 0 0 1 ${W - r} ${H} H${r} A${r} ${r} 0 0 1 0 ${H - r} V${r} A${r} ${r} 0 0 1 ${r} 0 Z" fill="#000" fill-rule="evenodd"/>`;
-    return esq + `<rect x="${g / 2}" y="${g / 2}" width="${W - g}" height="${H - g}" rx="${r}" fill="none" stroke="${GRAVE ? '#8a8378' : ORA}" stroke-width="${g}"/>`;
+    // v55 (11-nov-2026): TikTok, Instagram y YouTube amplían el corto para llenar los móviles alargados (19,5:9) y recortan ~9 % por
+    // cada lado. El marco redondeado va DENTRO de la zona que siempre se ve (SX) y lo de fuera, en negro: en el iPhone las esquinas
+    // redondeadas quedan justo en el borde de la pantalla; en móviles menos alargados se ve una franja negra fina, como un marco de tele.
+    const x0 = SX, x1 = W - SX;
+    const esq = HOR ? '' : `<path d="M0 0H${W}V${H}H0Z M${x0 + r} 0 H${x1 - r} A${r} ${r} 0 0 1 ${x1} ${r} V${H - r} A${r} ${r} 0 0 1 ${x1 - r} ${H} H${x0 + r} A${r} ${r} 0 0 1 ${x0} ${H - r} V${r} A${r} ${r} 0 0 1 ${x0 + r} 0 Z" fill="#000" fill-rule="evenodd"/>`;
+    return esq + `<rect x="${x0 + g / 2}" y="${g / 2}" width="${x1 - x0 - g}" height="${H - g}" rx="${r}" fill="none" stroke="${GRAVE ? '#8a8378' : ORA}" stroke-width="${g}"/>`;
   }
   const rayos = (cx, cy, t, op) => { let d = ''; for (let i = 0; i < 12; i++) { const a0 = (i / 12) * Math.PI * 2 + t * .5, a1 = a0 + Math.PI / 12, R = Math.max(W, H) * 1.2; d += `M${cx} ${cy}L${(cx + R * Math.cos(a0)).toFixed(0)} ${(cy + R * Math.sin(a0)).toFixed(0)}L${(cx + R * Math.cos(a1)).toFixed(0)} ${(cy + R * Math.sin(a1)).toFixed(0)}Z`; } return `<path d="${d}" fill="${ORA}" opacity="${op.toFixed(3)}"/>`; };
 
@@ -234,7 +238,7 @@
     },
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
-      const fw = HOR ? Z.w * .6 : W - 44, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
+      const fw = HOR ? Z.w * .6 : Z.w + 20, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
       return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}"/>` +
         `<clipPath id="${id}"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24"/></clipPath><image href="file://${f.ruta}" x="${fx}" y="${fy}" width="${fw}" height="${fh}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
         `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
@@ -318,11 +322,11 @@
   // ---------- capas fijas ----------
   function cabecera(k, t, L) {
     const ci = CAPS.reduce((a, c, i) => (c.desde <= k ? i : a), -1), tp = (E[k].visual || {}).tipo;
-    let o = `<g>${nube(HOR ? 96 : 78, HOR ? 44 : 84, HOR ? .95 : 1.15)}<text x="${HOR ? 130 : 118}" y="${HOR ? 54 : 96}" font-family="Inter" font-weight="900" font-size="${HOR ? 28 : 30}" fill="${INK}">sin humo TV</text></g>`;
+    let o = `<g>${nube(HOR ? 96 : SX + 42, HOR ? 44 : 84, HOR ? .95 : 1.15)}<text x="${HOR ? 130 : SX + 80}" y="${HOR ? 54 : 96}" font-family="Inter" font-weight="900" font-size="${HOR ? 28 : 30}" fill="${INK}">sin humo TV</text></g>`;
     if (k === 0 && P.fecha) o += peg(HOR ? 400 : 430, HOR ? 53 : 95, P.fecha, HOR ? 20 : 22, ORO, INK, 'middle', 1, 3);
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
     if (tp !== 'mencion' && tp !== 'cierre') {
-      const lx = HOR ? W - 62 : W - 78, ly = HOR ? H - 196 : 96, s = HOR ? .5 : .46;
+      const lx = HOR ? W - 62 : W - SX - 48, ly = HOR ? H - 196 : 96, s = HOR ? .5 : .46;
       const em = EMO(k), porEmo = { surprised: 'sorprendida', excited: 'sorprendida', emphatic: 'sorprendida', indignant: 'enfadada', whispers: 'curiosa', conspiratorial: 'guino', curious: 'curiosa', serious: 'seria', tense: 'seria', sad: 'seria', amused: 'guino' }[em];
       let ex = GRAVE ? (porEmo === 'curiosa' ? 'curiosa' : 'seria') : porEmo || (tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz');
       if ((ex === 'feliz' || ex === 'seria' && !GRAVE) && hablando(k, t)) ex = 'habla';   // v52: Lupi «habla» con la voz
@@ -335,7 +339,7 @@
     const bl = bloquesKaraoke(k, HOR ? 34 : 30, HOR ? 34 : 18); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = back((t - B.a) / .16) || (i === 0 ? 1 : 0), maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1)));
-    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : 620) / (Math.max(5, maxc) * .58)))), lh = fs * 1.18, yc = HOR ? 606 : 900, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
+    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : W - 2 * SX - 60) / (Math.max(5, maxc) * .58)))), lh = fs * 1.18, yc = HOR ? 606 : 900, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
     return `<g transform="translate(${W / 2} ${yc}) scale(${(HOR ? .88 + .12 * ent : .96 + .04 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
