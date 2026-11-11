@@ -108,6 +108,7 @@
       `<g opacity="${GRAVE ? .04 : .07}" transform="translate(${mx} ${my}) rotate(${rot.toFixed(2)})">${nube(0, 0, HOR ? 7 : 8)}</g>`;
   }
   function marco() {           // marco naranja de la marca (encima de todo, fino y redondeado)
+    if (!HOR) return '';   // v67 (11-nov-2026): Pablo prefiere los cortos sin marco ni franjas negras, con el fondo hasta los bordes (como En Plata)
     const g = HOR ? 7 : 9, r = HOR ? 26 : 34;
     // v55 (11-nov-2026): TikTok, Instagram y YouTube amplían el corto para llenar los móviles alargados (19,5:9) y recortan ~9 % por
     // cada lado. El marco redondeado va DENTRO de la zona que siempre se ve (SX) y lo de fuera, en negro: en el iPhone las esquinas
