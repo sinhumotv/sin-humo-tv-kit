@@ -141,6 +141,17 @@
     },
     comparar(v, L, d) {
       const a = v.a || {}, b = v.b || {}, na = num(a.valor), nb = num(b.valor), mx = Math.max(Math.abs(na), Math.abs(nb), 1e-9), ah = HOR ? 78 : 76, x0 = Z.x + (HOR ? 140 : 14), wM = Z.w - (HOR ? 280 : 28);
+      if (!na && !nb) {   // v50: sin cifras («Moderación ok» → «Fallos graves»): dos tarjetas con texto y flecha entre ellas
+        const wC = HOR ? Z.w * .4 : Z.w - 20, fs = HOR ? 40 : 34, tarjeta = (o, x, y, c, t0) => {
+          const e = back((L - t0) / .4), ls = partir(String(o.valor || ''), HOR ? 18 : 24), hC = 70 + ls.length * fs * 1.15, cx = x + wC / 2, cy = y + hC / 2;
+          return L < t0 ? '' : `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) translate(${-cx} ${-cy})">` + caja(x, y, wC, hC, 22, c, 5) +
+            peg(x + 24, y + 2, String(o.etiqueta || '').toUpperCase(), HOR ? 22 : 20, INK, '#fff', 'start', 1, -3) +
+            ls.map((l, i) => tx(cx, y + 58 + fs * .8 + i * fs * 1.15, esc(l), fs, c === ORA ? '#fff' : INK, 'middle', 900)).join('') + `</g>`;
+        };
+        if (HOR) return tarjeta(a, Z.x + 40, ZC.y - 80, BLA, .15) + tx(ZC.x, ZC.y + 20, '→', 90, ORA, 'middle', 900, `opacity="${cl((L - .5) / .2)}"`) + tarjeta(b, Z.x + Z.w - 40 - wC, ZC.y - 80, ORA, .6);
+        const x = ZC.x - wC / 2;
+        return tarjeta(a, x, Z.y + 40, BLA, .15) + `<g opacity="${cl((L - .45) / .2).toFixed(2)}" transform="translate(${ZC.x} ${Z.y + 250}) rotate(90)">${tx(0, 26, '→', 80, ORA, 'middle', 900)}</g>` + tarjeta(b, x, Z.y + 310, ORA, .6);
+      }
       const fila = (o, n, y, c, t0) => {
         const p = eo((L - t0) / .9), w = Math.max(ah * 1.1, wM * (Math.abs(n) / mx) * p), op = cl((L - t0) / .15);
         return `<g opacity="${op}">` + tx(x0, y - 16, esc(o.etiqueta || ''), HOR ? 34 : 32, INK, 'start', 900) + caja(x0, y, w, ah, ah * .28, c) +
