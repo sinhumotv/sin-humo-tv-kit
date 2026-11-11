@@ -43,15 +43,15 @@
   let defLupiPuesto = -1;
   function caraM(expr, t, mira = [0, 0]) {
     const [mx, my] = mira, parp = ((t + .7) % 3.3) < .12, guino = expr === 'guino';
-    const ojo = (ex, cerr) => cerr || parp ? `<path d="M${ex - 12} 0 q12 9 24 0" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`
+    const ojo = (ex, cerr) => cerr || parp ? `<path d="M${ex - 12} 0 q12 9 24 0" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>`
       : `<ellipse cx="${ex}" cy="0" rx="12" ry="${expr === 'sorprendida' ? 16 : 14}" fill="#fff" stroke="${INK}" stroke-width="3"/><circle cx="${ex + mx * 4}" cy="${2 + my * 4}" r="7.5" fill="${INK}"/><circle cx="${ex + mx * 4 + 2.5}" cy="${-1.5 + my * 4}" r="2.6" fill="#fff"/>`;
     const cej = { sorprendida: [-26, 0], seria: [-20, -6], enfadada: [-17, -14], curiosa: [-22, 5] }[expr] || [-22, 3];
-    const ceja = (ex, sg) => `<path d="M${ex - 11} ${cej[0] + sg * cej[1] * .5} Q${ex} ${cej[0] - 4} ${ex + 11} ${cej[0] - sg * cej[1] * .5}" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+    const ceja = (ex, sg) => `<path d="M${ex - 11} ${cej[0] + sg * cej[1] * .5} Q${ex} ${cej[0] - 4} ${ex + 11} ${cej[0] - sg * cej[1] * .5}" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>`;
     const boca = {
       sorprendida: `<ellipse cx="0" cy="27" rx="7" ry="9" fill="${INK}"/>`,
-      seria: `<path d="M-9 27 h18" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>`,
-      enfadada: `<path d="M-10 30 q10 -8 20 0" stroke="${INK}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`,
-      curiosa: `<path d="M-6 26 q7 5 13 -1" stroke="${INK}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`,
+      seria: `<path d="M-9 27 h18" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`,
+      enfadada: `<path d="M-10 30 q10 -8 20 0" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+      curiosa: `<path d="M-6 26 q7 5 13 -1" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>`,
       habla: `<path d="M-10 23 q10 ${(8 + 9 * Math.abs(Math.sin(t * 17))).toFixed(1)} 20 0 z" fill="${INK}"/><path d="M-5 ${(27 + 4 * Math.abs(Math.sin(t * 17))).toFixed(1)} q5 3 10 0" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round"/>`,
       guino: `<path d="M-11 22 q11 13 22 0 z" fill="${INK}"/>`,
     }[expr] || `<path d="M-11 22 q11 13 22 0 z" fill="${INK}"/>`;
@@ -67,7 +67,7 @@
     if (!mini) {
       const angD = o.brazos === 'senala' ? -35 : o.brazos === 'saluda' ? -65 + Math.sin(t * 8) * 15 : 35, angI = o.brazos === 'saluda' || o.brazos === 'senala' ? 40 : 35;
       const br = (lado, ang) => { const a = ang * Math.PI / 180, x0 = lado * (R + 6), y0 = 18, x1 = x0 + lado * Math.cos(a) * 62, y1 = y0 + Math.sin(a) * 62;
-        return `<path d="M${x0} ${y0} Q${((x0 + x1) / 2).toFixed(1)} ${((y0 + y1) / 2 + 12).toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="${x1.toFixed(1)}" cy="${y1.toFixed(1)}" r="11" fill="#fff" stroke="${INK}" stroke-width="3"/>`; };
+        return `<path d="M${x0} ${y0} Q${((x0 + x1) / 2).toFixed(1)} ${((y0 + y1) / 2 + 12).toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="${x1.toFixed(1)}" cy="${y1.toFixed(1)}" r="11" fill="#fff" stroke="${INK}" stroke-width="3"/>`; };
       brazos = br(1, angD) + br(-1, angI);
     }
     const lente = `<circle r="${R}" fill="url(#lmL)"/><path d="M${-R * .62} ${-R * .18} A${R * .66} ${R * .66} 0 0 1 ${-R * .1} ${-R * .64}" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" opacity=".9"/><circle cx="${R * .38}" cy="${-R * .44}" r="6" fill="#fff" opacity=".9"/>`;
@@ -233,7 +233,7 @@
       const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1, d * .45));   // v48: en la escena 1 la cifra ya está completa en el fotograma 0
       const yN = ZC.y + (HOR ? 30 : (v.icono ? 70 : 10)), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
       const tB = Math.min(1, d * .45), xb = L - tB, est = xb > 0 && xb < .55 && !GRAVE ? [...Array(12).keys()].map(i => { const a = i / 12 * Math.PI * 2 + .2, r0 = wS * .5 + 10 + 60 * eo(xb / .55), r1 = r0 + 40 * (1 - xb / .55);
-        return `<path d="M${(ZC.x + r0 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r0 * .45 * Math.sin(a)).toFixed(1)} L${(ZC.x + r1 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r1 * .45 * Math.sin(a)).toFixed(1)}" stroke="${INK}" stroke-width="6" stroke-linecap="round" opacity="${(1 - xb / .55).toFixed(2)}"/>`; }).join('') : '';   // v64: estallido al aterrizar
+        return `<path d="M${(ZC.x + r0 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r0 * .45 * Math.sin(a)).toFixed(1)} L${(ZC.x + r1 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r1 * .45 * Math.sin(a)).toFixed(1)}" stroke="${INK}" stroke-width="4" stroke-linecap="round" opacity="${(1 - xb / .55).toFixed(2)}"/>`; }).join('') : '';   // v64: estallido al aterrizar
       return est + `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
         `<g transform="translate(${ZC.x} ${yN}) scale(${ent.toFixed(3)}) translate(${-ZC.x} ${-yN})">${tx(ZC.x, yN, esc(contar(s, p)), size, INK, 'middle', 900, 'letter-spacing="-4"')}</g>` +
         lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 70) + i * (HOR ? 50 : 44), esc(l), HOR ? 42 : 36, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
@@ -282,7 +282,7 @@
       const im = vs.reduce((b, x, i) => Math.abs(num(x)) > Math.abs(num(vs[b])) ? i : b, 0), tM = .25 + im * Math.min(.35, d * .5 / n) + .7, xs = L - tM;
       if (xs > 0 && xs < .7 && vs.length) { const cxs = x0 + im * paso + an / 2, cys = base - Math.max(12, alto * Math.abs(num(vs[im])) / mx) - 56, r = 18 + 40 * eo(xs / .7);
         o += [...Array(8).keys()].map(i => { const a = i * Math.PI / 4; return `<path d="M${(cxs + r * .5 * Math.cos(a)).toFixed(1)} ${(cys + r * .5 * Math.sin(a)).toFixed(1)} L${(cxs + r * Math.cos(a)).toFixed(1)} ${(cys + r * Math.sin(a)).toFixed(1)}" stroke="${ORO}" stroke-width="6" stroke-linecap="round" opacity="${(1 - xs / .7).toFixed(2)}"/>`; }).join(''); }
-      return o + `<path d="M${Z.x} ${base} H${Z.x + Z.w}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
+      return o + `<path d="M${Z.x} ${base} H${Z.x + Z.w}" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
     },
     lista(v, L, d) {
       const it = (v.items || []).slice(0, 4), n = it.length || 1, c = col(v.color), hT = v.titulo ? (HOR ? 74 : 84) : 0, ah = Math.min(HOR ? 80 : 80, (Z.h - hT - 10) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
@@ -292,7 +292,7 @@
         const t0 = .3 + i * (Math.max(1, d - .8) / n), e = back((L - t0) / .4); if (L < t0) return;
         const y = y0 + i * (ah + 18), on = i === act, fs = Math.min(ah * .4, (Z.w - 160) / (Math.max(8, [...String(s)].length) * .56));
         o += `<g transform="translate(${((1 - e) * (i % 2 ? -1 : 1) * 300).toFixed(1)} 0) rotate(${on ? -1 : 0} ${ZC.x} ${y + ah / 2})" opacity="${cl((L - t0) / .12)}">` + caja(Z.x + 8, y, Z.w - 24, ah, ah * .26, on ? c : BLA) +
-          `<circle cx="${Z.x + 8 + ah * .5}" cy="${y + ah / 2}" r="${ah * .3}" fill="${on ? '#fff' : c}" stroke="${INK}" stroke-width="4"/>` + tx(Z.x + 8 + ah * .5, y + ah / 2 + ah * .13, String(i + 1), ah * .36, on ? c : '#fff') +
+          `<circle cx="${Z.x + 8 + ah * .5}" cy="${y + ah / 2}" r="${ah * .3}" fill="${on ? '#fff' : c}" stroke="${INK}" stroke-width="2.5"/>` + tx(Z.x + 8 + ah * .5, y + ah / 2 + ah * .13, String(i + 1), ah * .36, on ? c : '#fff') +
           tx(Z.x + 8 + ah * 1.05, y + ah / 2 + fs * .36, esc(s), fs, on && c !== ORO ? '#fff' : INK, 'start', 800) + `</g>`;
       });
       return o;
@@ -311,7 +311,7 @@
       let o = `<path d="M${x} ${y0} V${y0 + (n - 1) * paso}" stroke="${GRI}" stroke-width="10" stroke-linecap="round"/><path d="M${x} ${y0} V${yF.toFixed(1)}" stroke="${ORA}" stroke-width="10" stroke-linecap="round"/>`;
       hs.forEach((h, i) => {
         const t0 = .2 + i * tramo, on = L >= t0, e = back((L - t0) / .35), y = y0 + i * paso, ult = on && (i === n - 1 || L < t0 + tramo);
-        o += `<circle cx="${x}" cy="${y}" r="${on ? 18 + (ult ? 4 * Math.sin(L * 6) : 0) : 12}" fill="${on ? ORA : BLA}" stroke="${INK}" stroke-width="5"/>`;
+        o += `<circle cx="${x}" cy="${y}" r="${on ? 18 + (ult ? 4 * Math.sin(L * 6) : 0) : 12}" fill="${on ? ORA : BLA}" stroke="${INK}" stroke-width="3"/>`;
         if (on) o += `<g transform="translate(${((1 - e) * 140).toFixed(1)} 0)" opacity="${cl((L - t0) / .12)}">` + peg(x + 46, y + (HOR ? 10 : -6), String(h.fecha || ''), HOR ? 26 : 24, ult ? ORA : INK, '#fff', 'start', 1, -2) +
           tx(x + 46 + (HOR ? 170 : 0), y + (HOR ? 13 : 44), esc(h.texto || ''), HOR ? 38 : 32, INK, 'start', 800) + `</g>`;
       });
@@ -348,7 +348,7 @@
       const c = col(v.color), pct = cl(num(v.valor) / 100), p = eo(cl((L - .15) / Math.min(1.2, d * .5))), r = HOR ? 130 : 140, sw = HOR ? 38 : 42;
       const cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 180, C = 2 * Math.PI * r, e = back(L / .4), s = String(v.valor || '');
       const fsN = Math.min(HOR ? 92 : 96, 2 * r * .82 / (Math.max(3, s.length) * .58)), size = HOR ? 50 : 38, max = HOR ? 22 : 24, alto = altoCin(v.texto, size, max), R = r + sw / 2 + 8;
-      return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${R}" fill="${INK}"/><circle r="${R}" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` +
+      return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${R}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle r="${R}" fill="${BLA}" stroke="${INK}" stroke-width="3"/>` +
         `<circle r="${r}" fill="none" stroke="${GRI}" stroke-width="${sw}"/>` +
         `<circle r="${r}" fill="none" stroke="${c === INK ? ORA : c}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${(C * pct * p).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90)"/>` +
         tx(0, fsN * .35, esc(contar(s, p)), fsN, INK, 'middle', 900, 'letter-spacing="-3"') + `</g>` +
@@ -363,7 +363,7 @@
       for (let i = 0; i < de; i++) {
         const t0 = .1 + i * .06, e = back((L - t0) / .35), on = i < son && L > .8 + i * .12, x = x0 + (i % por) * s + s / 2, y = y0 + Math.floor(i / por) * s * 1.25 + s * .6, f = on ? ORA : GRI;
         if (e <= 0) continue;
-        o += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${(e * (on ? 1 + .05 * Math.sin(L * 5) : 1) * s / 78).toFixed(3)})"><circle cx="0" cy="-24" r="17" fill="${f}" stroke="${INK}" stroke-width="5"/><path d="M-27 36 v-20 a27 24 0 0 1 54 0 v20 z" fill="${f}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>`;
+        o += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${(e * (on ? 1 + .05 * Math.sin(L * 5) : 1) * s / 78).toFixed(3)})"><circle cx="0" cy="-24" r="17" fill="${f}" stroke="${INK}" stroke-width="3"/><path d="M-27 36 v-20 a27 24 0 0 1 54 0 v20 z" fill="${f}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></g>`;
       }
       const xT = HOR ? Z.x + Z.w * .5 + 30 + (Z.w * .5 - 30) / 2 : ZC.x, yT = HOR ? ZC.y - 30 : y0 + filas * s * 1.25 + 46;
       return o + peg(xT, yT, `${son} DE CADA ${de}`, HOR ? 46 : 40, ORA, '#fff', 'middle', eo((L - .8) / .3), -2, back((L - .8) / .4)) +
@@ -377,16 +377,16 @@
         const nom = String(o.nombre || ''), ini = nom.split(/\s+/).filter(Boolean).map(s => s[0]).slice(0, 2).join('').toUpperCase() || '?';
         const fsN = Math.min(HOR ? 32 : 26, (w - 24) / (Math.max(4, nom.length) * .58)), ls = partir(String(o.texto || ''), HOR ? 22 : 12), fs = HOR ? 32 : 27, rC = HOR ? 62 : 56, yC = y + 70 + rC + 16;
         return `<g transform="translate(${((1 - e) * (i ? 1 : -1) * 280).toFixed(1)} 0) rotate(${i ? 1.5 : -1.5} ${cx} ${y + h / 2})">` + caja(x, y, w, h, 26, BLA, 5) +
-          `<path d="M${x} ${y + 70} V${y + 26} a26 26 0 0 1 26 -26 H${x + w - 26} a26 26 0 0 1 26 26 V${y + 70} Z" fill="${c}" stroke="${INK}" stroke-width="5"/>` +
+          `<path d="M${x} ${y + 70} V${y + 26} a26 26 0 0 1 26 -26 H${x + w - 26} a26 26 0 0 1 26 26 V${y + 70} Z" fill="${c}" stroke="${INK}" stroke-width="3"/>` +
           tx(cx, y + 47, esc(nom), fsN, '#fff', 'middle', 900) +
-          `<circle cx="${cx}" cy="${yC}" r="${rC}" fill="${c}" fill-opacity=".16" stroke="${INK}" stroke-width="5"/>` + tx(cx, yC + rC * .3, esc(ini), rC * .85, c, 'middle', 900) +
+          `<circle cx="${cx}" cy="${yC}" r="${rC}" fill="${c}" fill-opacity=".16" stroke="${INK}" stroke-width="3"/>` + tx(cx, yC + rC * .3, esc(ini), rC * .85, c, 'middle', 900) +
           ls.map((l, j) => tx(cx, yC + rC + 50 + j * fs * 1.2, esc(l), fs, INK, 'middle', 800, `opacity="${eo((L - t0 - .3 - j * .08) / .25).toFixed(2)}"`)).join('') + `</g>`;
       };
       const vy = HOR ? ZC.y : Z.y + 30 + (Z.h - 90) / 2, ev = back((L - .6) / .4), pul = 1 + .06 * Math.sin(L * 6);
       const rayo = ev > 0 && !GRAVE ? (() => { const j = Math.floor(L * 12), rr = i => (Math.sin(j * 12.9 + i * 78.2) * 43758.5) % 1, hR = HOR ? Z.h * .7 : Z.h * .75; let dd = `M${ZC.x} ${vy - hR / 2}`;
         for (let i = 1; i <= 6; i++) dd += ` L${(ZC.x + (i % 2 ? 1 : -1) * (8 + 14 * Math.abs(rr(i)))).toFixed(1)} ${(vy - hR / 2 + hR * i / 6).toFixed(1)}`;
         return `<path d="${dd}" fill="none" stroke="${ORO}" stroke-width="10" stroke-linejoin="round" opacity="${(.85 * ev).toFixed(2)}"/><path d="${dd}" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" opacity="${ev.toFixed(2)}"/>`; })() : '';   // v66
-      return lado(v.a, 0) + lado(v.b, 1) + rayo + (ev > 0 ? `<g transform="translate(${ZC.x} ${vy}) rotate(-8) scale(${(ev * pul).toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${HOR ? 54 : 46}" fill="${INK}"/><circle r="${HOR ? 54 : 46}" fill="${ORO}" stroke="${INK}" stroke-width="6"/>${tx(0, HOR ? 17 : 15, 'VS', HOR ? 48 : 40, INK)}</g>` : '');
+      return lado(v.a, 0) + lado(v.b, 1) + rayo + (ev > 0 ? `<g transform="translate(${ZC.x} ${vy}) rotate(-8) scale(${(ev * pul).toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${HOR ? 54 : 46}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle r="${HOR ? 54 : 46}" fill="${ORO}" stroke="${INK}" stroke-width="4"/>${tx(0, HOR ? 17 : 15, 'VS', HOR ? 48 : 40, INK)}</g>` : '');
     },
     // mapa de España con chinchetas en las ciudades nombradas  {"tipo":"mapa","lugares":["Oviedo","Madrid"],"texto":"…"}
     mapa(v, L, d) {
@@ -395,9 +395,9 @@
       const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 10, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
       const dPath = 'M' + ESP.map(([lo, la]) => P_(lo, la).map(n => n.toFixed(1)).join(' ')).join(' L') + ' Z';
       const p = eo(L / .7), f = eo((L - .4) / .4);
-      let o = `<path d="${dPath}" transform="translate(${SOM} ${SOM})" fill="${INK}" opacity="${f.toFixed(2)}"/>` +
-        `<path d="${dPath}" fill="${BLA}" fill-opacity="${f.toFixed(2)}" stroke="${INK}" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - p).toFixed(3)}"/>` +
-        BAL.map(([lo, la, rx, ry]) => { const [x, y] = P_(lo, la); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
+      let o = `<path d="${dPath}" transform="translate(${SOM} ${SOM})" fill="${INK}" opacity="${(f * .22).toFixed(3)}" filter="url(#somS)"/>` +
+        `<path d="${dPath}" fill="${BLA}" fill-opacity="${f.toFixed(2)}" stroke="${INK}" stroke-width="3" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - p).toFixed(3)}"/>` +
+        BAL.map(([lo, la, rx, ry]) => { const [x, y] = P_(lo, la); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="2.5" opacity="${f.toFixed(2)}"/>`; }).join('');
       const ls = (v.lugares || []).map(s => [s, CIUDADES[norm(s)]]).filter(x => x[1]).slice(0, 3);
       // Canarias en recuadro abajo a la izquierda (solo si se nombra algún lugar canario): se trasladan a (-8.6, 36.9) en el mapa
       const CAN = [[-18.0, 27.75, .13, .1], [-17.85, 28.68, .12, .18], [-17.2, 28.1, .12, .1], [-16.55, 28.3, .35, .22], [-15.6, 27.95, .28, .25], [-14.0, 28.4, .45, .22], [-13.6, 29.05, .3, .18]];
@@ -405,19 +405,24 @@
       if (canario) {
         const [bx, by] = P_(-9.5, 35.75), [bx2, by2] = P_(-4.55, 33.9);
         o += `<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${(bx2 - bx).toFixed(1)}" height="${(by2 - by).toFixed(1)}" rx="10" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="8 6" opacity="${f.toFixed(2)}"/>` +
-          CAN.map(([lo, la, rx, ry]) => { const [x, y] = P_(...mov([lo, la])); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
+          CAN.map(([lo, la, rx, ry]) => { const [x, y] = P_(...mov([lo, la])); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="2.5" opacity="${f.toFixed(2)}"/>`; }).join('');
       }
       if (ls.length > 1) {   // v66: ruta discontinua que une los lugares
         const pts = ls.map(([, ll]) => P_(...mov(ll))), q = eio(cl((L - 1.6) / .8));
         if (q > 0) o += `<path d="M${pts.map(p => p.map(z => z.toFixed(1)).join(' ')).join(' L')}" fill="none" stroke="${ROJ}" stroke-width="5" stroke-dasharray="12 10" stroke-dashoffset="${(-L * 40).toFixed(1)}" opacity="${q.toFixed(2)}"/>`;
       }
+      // v71: las etiquetas van encima de todas las chinchetas y, si dos lugares están muy cerca, una va al otro lado y más abajo
+      const PT = ls.map(([, ll]) => P_(...mov(ll))); let etq = '';
       ls.forEach(([nom, [lo, la]], i) => {
         const t0 = .8 + i * .35, e = back((L - t0) / .4); if (e <= 0) return;
         const [x, y] = P_(...mov([lo, la])), cae = (1 - eo((L - t0) / .3)) * 90, rip = frac((L - t0) / 1.2);
+        const cerca = PT.some((p, j) => j < i && Math.hypot(p[0] - x, p[1] - y) < 110), der0 = x > ox + mw * .6, izq = cerca ? !der0 : der0;
         o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(8 + 40 * rip).toFixed(1)}" fill="none" stroke="${ROJ}" stroke-width="4" opacity="${(1 - rip).toFixed(2)}"/>` +
-          `<g transform="translate(${x.toFixed(1)} ${(y - cae).toFixed(1)}) scale(${(e * (HOR ? .5 : .55)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="7"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="5"/></g>` +
-          peg(x + (x > ox + mw * .6 ? -20 : 20), y - (HOR ? 54 : 58), String(nom).toUpperCase(), HOR ? 20 : 20, INK, '#fff', x > ox + mw * .6 ? 'end' : 'start', eo((L - t0 - .2) / .2), -3);
+          `<g transform="translate(${x.toFixed(1)} ${(y - cae).toFixed(1)}) scale(${(e * (HOR ? .5 : .55)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="4.5"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="3"/></g>` +
+          '';
+        etq += peg(x + (izq ? -28 : 28), y - (cerca ? (HOR ? 10 : 6) : (HOR ? 54 : 58)), String(nom).toUpperCase(), 20, INK, '#fff', izq ? 'end' : 'start', eo((L - t0 - .2) / .2), cerca ? 3 : -3);
       });
+      o += etq;
       const size = HOR ? 46 : 36, max = HOR ? 20 : 26;
       return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 46, size, L, { max, t0: .5 }) : '');
     },
@@ -451,7 +456,7 @@
         if (e <= 0) return;
         const ax = der ? x + w - 34 : x + 34;
         o += `<g transform="translate(${ax} ${yy + h}) scale(${e.toFixed(3)}) translate(${-ax} ${-(yy + h)})">` +
-          `<path d="M${ax - 16} ${yy + h - 6} L${ax + (der ? 22 : -22)} ${yy + h + 26} L${ax + 16} ${yy + h - 6} Z" fill="${der ? '#e7eeff' : '#fff0e3'}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>` +
+          `<path d="M${ax - 16} ${yy + h - 6} L${ax + (der ? 22 : -22)} ${yy + h + 26} L${ax + 16} ${yy + h - 6} Z" fill="${der ? '#e7eeff' : '#fff0e3'}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>` +
           caja(x, yy, w, h, 26, der ? '#e7eeff' : '#fff0e3', 5) +
           `<path d="M${ax - 14} ${yy + h - 3} H${ax + 14}" stroke="${der ? '#e7eeff' : '#fff0e3'}" stroke-width="8"/>` +
           peg(der ? x + w - 22 : x + 22, yy + 4, String(ln.quien || '').toUpperCase(), HOR ? 22 : 19, c, '#fff', der ? 'end' : 'start', 1, der ? 2 : -2) +
@@ -468,8 +473,8 @@
       it.forEach((r, i) => {
         const t0 = .25 + (n - 1 - i) * .22, p = eo((L - t0) / .6); if (L < t0) return;
         const y = y0 + i * (ah + 16), w = Math.max(ah * 2.6, wMax * r.n / mx) * p, top = i === 0, fsE = Math.min(ah * .38, (wMax * .62) / (Math.max(5, r.et.length) * .56));
-        o += `<g opacity="${cl((L - t0) / .15)}"><circle cx="${Z.x + ah / 2 + SOM / 2}" cy="${y + ah / 2 + SOM / 2}" r="${ah / 2}" fill="${INK}"/><circle cx="${Z.x + ah / 2}" cy="${y + ah / 2}" r="${ah / 2}" fill="${med[i] || BLA}" stroke="${INK}" stroke-width="4"/>` +
-          tx(Z.x + ah / 2, y + ah / 2 + ah * .16, String(i + 1), ah * .45, INK) + (top ? `<g transform="translate(${Z.x + ah / 2} ${(y - ah * .12 - 4 * Math.abs(Math.sin(L * 3))).toFixed(1)}) rotate(-12) scale(${(ah / 80 * back((L - t0 - .5) / .35)).toFixed(3)})"><path d="M-26 0 L-30 -26 L-14 -12 L0 -32 L14 -12 L30 -26 L26 0 Z" fill="${ORO}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>` : '') + caja(xL, y, w, ah, ah * .3, top ? ORA : BLA, 4) +
+        o += `<g opacity="${cl((L - t0) / .15)}"><circle cx="${Z.x + ah / 2 + SOM / 2}" cy="${y + ah / 2 + SOM / 2}" r="${ah / 2}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle cx="${Z.x + ah / 2}" cy="${y + ah / 2}" r="${ah / 2}" fill="${med[i] || BLA}" stroke="${INK}" stroke-width="2.5"/>` +
+          tx(Z.x + ah / 2, y + ah / 2 + ah * .16, String(i + 1), ah * .45, INK) + (top ? `<g transform="translate(${Z.x + ah / 2} ${(y - ah * .12 - 4 * Math.abs(Math.sin(L * 3))).toFixed(1)}) rotate(-12) scale(${(ah / 80 * back((L - t0 - .5) / .35)).toFixed(3)})"><path d="M-26 0 L-30 -26 L-14 -12 L0 -32 L14 -12 L30 -26 L26 0 Z" fill="${ORO}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></g>` : '') + caja(xL, y, w, ah, ah * .3, top ? ORA : BLA, 4) +
           tx(xL + 18, y + ah / 2 + fsE * .36, esc(r.et), fsE, top ? '#fff' : INK, 'start', 800) +
           tx(xL + w - 16, y + ah / 2 + ah * .15, esc(contar(r.va, p)), ah * .42, top ? '#fff' : INK, 'end', 900) + `</g>`;
       });
@@ -481,9 +486,9 @@
       const m = String(v.fecha || '').toUpperCase().match(/(\d{1,2})\s*(?:DE\s+)?([A-ZÁÉÍÓÚ]{3})/), dia = m ? m[1] : String(v.fecha || '').slice(0, 5), mes = m ? m[2] : '';
       const s = HOR ? 280 : 280, cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 170, x = cx - s / 2, y = cy - s / 2, fl = eo(L / .45), e = back(L / .4);
       let o = `<g transform="translate(${cx} ${y}) scale(${e.toFixed(3)} ${(e * (.3 + .7 * fl)).toFixed(3)}) translate(${-cx} ${-y})">` + caja(x, y, s, s, 26, BLA, 6) +
-        `<path d="M${x} ${y + 84} V${y + 26} a26 26 0 0 1 26 -26 H${x + s - 26} a26 26 0 0 1 26 26 V${y + 84} Z" fill="${ROJ}" stroke="${INK}" stroke-width="6"/>` +
+        `<path d="M${x} ${y + 84} V${y + 26} a26 26 0 0 1 26 -26 H${x + s - 26} a26 26 0 0 1 26 26 V${y + 84} Z" fill="${ROJ}" stroke="${INK}" stroke-width="4"/>` +
         tx(cx, y + 60, esc(mes), 44, '#fff', 'middle', 900, 'letter-spacing="4"') +
-        [-1, 1].map(j => `<rect x="${cx + j * 70 - 9}" y="${y - 22}" width="18" height="44" rx="9" fill="${GRI}" stroke="${INK}" stroke-width="5"/>`).join('') +
+        [-1, 1].map(j => `<rect x="${cx + j * 70 - 9}" y="${y - 22}" width="18" height="44" rx="9" fill="${GRI}" stroke="${INK}" stroke-width="3"/>`).join('') +
         tx(cx, y + 84 + (s - 84) * .5 + 58, esc(dia), 160, INK, 'middle', 900, 'letter-spacing="-6"') + `</g>`;
       // cuenta atrás desde la fecha del vídeo (P.fecha «11 NOV 2026»)
       const hm = String(P.fecha || '').toUpperCase().match(/(\d{1,2})\s+([A-Z]{3})\s+(\d{4})/);
@@ -503,10 +508,10 @@
       const pt = (a, rr) => [cx + rr * Math.cos(a), cy + rr * Math.sin(a)], arc = (a0, a1, c) => { const [x0, y0] = pt(a0, r), [x1, y1] = pt(a1, r); return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" fill="none" stroke="${c}" stroke-width="${sw}"/>`; };
       const e = back(L / .4), R = r + sw / 2 + 16, ang = 180 * pr * cl(p, 0, 1.08) + 2.5 * Math.sin(L * 9) * Math.exp(-Math.max(0, L - 1.1) * 3) * (L > 1.1 ? 1 : 0);
       let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) translate(${-cx} ${-cy})">` +
-        `<path d="M${cx - R + SOM} ${cy + SOM} A${R} ${R} 0 0 1 ${cx + R + SOM} ${cy + SOM} Z" fill="${INK}"/><path d="M${cx - R} ${cy} A${R} ${R} 0 0 1 ${cx + R} ${cy} Z" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` +
+        `<path d="M${cx - R + SOM} ${cy + SOM} A${R} ${R} 0 0 1 ${cx + R + SOM} ${cy + SOM} Z" fill="${INK}" opacity=".22" filter="url(#somS)"/><path d="M${cx - R} ${cy} A${R} ${R} 0 0 1 ${cx + R} ${cy} Z" fill="${BLA}" stroke="${INK}" stroke-width="3"/>` +
         arc(Math.PI, Math.PI * 1.5, VER) + arc(Math.PI * 1.5, Math.PI * 1.8, ORO) + arc(Math.PI * 1.8, Math.PI * 2, ROJ);
       for (let i = 0; i <= 10; i++) { const a = Math.PI * (1 + i / 10), [x0, y0] = pt(a, r - sw / 2 - 8), [x1, y1] = pt(a, r - sw / 2 - (i % 5 ? 20 : 34)); o += `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} L${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${INK}" stroke-width="${i % 5 ? 3 : 5}"/>`; }
-      o += `<g transform="rotate(${ang.toFixed(2)} ${cx} ${cy})"><path d="M${cx} ${cy - 12} L${cx - r + 30} ${cy} L${cx} ${cy + 12} Z" fill="${INK}"/></g><circle cx="${cx}" cy="${cy}" r="22" fill="${ORA}" stroke="${INK}" stroke-width="5"/></g>`;
+      o += `<g transform="rotate(${ang.toFixed(2)} ${cx} ${cy})"><path d="M${cx} ${cy - 12} L${cx - r + 30} ${cy} L${cx} ${cy + 12} Z" fill="${INK}"/></g><circle cx="${cx}" cy="${cy}" r="22" fill="${ORA}" stroke="${INK}" stroke-width="3"/></g>`;
       const size = HOR ? 48 : 38, max = HOR ? 20 : 24;
       return o + tx(cx, cy + (HOR ? 78 : 86), esc(contar(String(v.valor || ''), eo((L - .2) / .9)) + (v.max ? ` / ${v.max}` : '')), HOR ? 60 : 64, INK, 'middle', 900, `opacity="${eo((L - .3) / .3).toFixed(2)}"`) +
         (v.texto ? cinetico(v.texto, HOR ? Z.x + 520 + (Z.w - 520) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : cy + 160, size, L, { max, t0: .5 }) : '');
@@ -522,30 +527,30 @@
       let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 40 : 50), HOR ? 40 : 34, L, { max: HOR ? 46 : 28 }) : '';
       o += [0, 1, 2].map(i => `<path d="M${x0} ${(y0 + (y1 - y0) * i / 2).toFixed(1)} H${x1}" stroke="${INK}" stroke-opacity=".14" stroke-width="3" stroke-dasharray="4 12"/>`).join('');
       o += `<path d="${linea} L${cur[0].toFixed(1)} ${y1} L${x0} ${y1} Z" fill="${ORA}" opacity=".16"/>` +
-        `<path d="${linea}" transform="translate(${SOM / 2} ${SOM / 2})" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<path d="${linea}" transform="translate(${SOM / 2} ${SOM / 2})" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".22" filter="url(#somS)"/>` +
         `<path d="${linea}" fill="none" stroke="${ORA}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`;
-      pts.forEach((q, i) => { if (i > pos + .001) return; o += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="9" fill="${BLA}" stroke="${INK}" stroke-width="4"/>` + tx(q[0], y1 + (HOR ? 40 : 44), esc(et[i] || ''), HOR ? 24 : 22, INK, 'middle', 800); });
-      o += `<circle cx="${cur[0].toFixed(1)}" cy="${cur[1].toFixed(1)}" r="${(16 + 3 * Math.sin(L * 8)).toFixed(1)}" fill="${ORA}" stroke="${INK}" stroke-width="5"/>`;
+      pts.forEach((q, i) => { if (i > pos + .001) return; o += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="9" fill="${BLA}" stroke="${INK}" stroke-width="2.5"/>` + tx(q[0], y1 + (HOR ? 40 : 44), esc(et[i] || ''), HOR ? 24 : 22, INK, 'middle', 800); });
+      o += `<circle cx="${cur[0].toFixed(1)}" cy="${cur[1].toFixed(1)}" r="${(16 + 3 * Math.sin(L * 8)).toFixed(1)}" fill="${ORA}" stroke="${INK}" stroke-width="3"/>`;
       const ult = String((v.valores || [])[n - 1] || ''), ep = back((p - .97) / .03 + (L - Math.min(1.6, d * .6) - .25) / .3);
       if (p > .97) o += peg(Math.min(cur[0], x1 - 20), cur[1] - 34, ult, HOR ? 32 : 30, INK, '#fff', 'middle', 1, -3, cl(ep, 0, 1.2));
-      return o + `<path d="M${x0} ${y1} H${x1 + 20}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
+      return o + `<path d="M${x0} ${y1} H${x1 + 20}" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
     },
     // reparto en tarta (rosco) con leyenda  {"tipo":"reparto","titulo":"…","partes":[{"etiqueta":"Sí","valor":"58"},{"etiqueta":"No","valor":"42"}]}
     reparto(v, L, d) {
       const ps = (v.partes || []).slice(0, 5), tot = ps.reduce((a, b) => a + Math.abs(num(b.valor)), 0) || 1, pal = [ORA, AZU, VER, ORO, MOR];
       const r = HOR ? 140 : 125, sw = HOR ? 70 : 62, cx = HOR ? Z.x + 230 : ZC.x, cy = HOR ? ZC.y : Z.y + (v.titulo ? 215 : 175), C = 2 * Math.PI * r, e = back(L / .4);
-      let acc = 0, o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r + sw / 2 + 6}" fill="${INK}"/><circle r="${r + sw / 2 + 6}" fill="${BLA}" stroke="${INK}" stroke-width="5"/>`;
+      let acc = 0, o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r + sw / 2 + 6}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle r="${r + sw / 2 + 6}" fill="${BLA}" stroke="${INK}" stroke-width="3"/>`;
       ps.forEach((q, i) => {
         const fr = Math.abs(num(q.valor)) / tot, t0 = .2 + i * .25, p = eio((L - t0) / .5), c = q.color ? col(q.color) : pal[i];
         o += `<circle r="${r}" fill="none" stroke="${c}" stroke-width="${sw}" stroke-dasharray="${(C * fr * p).toFixed(1)} ${C.toFixed(1)}" transform="rotate(${(-90 + 360 * acc).toFixed(2)})"/>`;
         acc += fr;
       });
-      o += `<circle r="${r - sw / 2}" fill="none" stroke="${INK}" stroke-width="4"/><circle r="${r + sw / 2}" fill="none" stroke="${INK}" stroke-width="4"/></g>`;
+      o += `<circle r="${r - sw / 2}" fill="none" stroke="${INK}" stroke-width="2.5"/><circle r="${r + sw / 2}" fill="none" stroke="${INK}" stroke-width="2.5"/></g>`;
       const lx = HOR ? Z.x + 470 : Z.x + 20, ly = HOR ? ZC.y - ps.length * 30 : cy + r + sw / 2 + 50, fs = HOR ? 32 : 28;
       ps.forEach((q, i) => {
         const t0 = .3 + i * .25, ee = back((L - t0) / .35), c = q.color ? col(q.color) : pal[i], y = ly + i * (HOR ? 60 : 50), pc = Math.round(Math.abs(num(q.valor)) / tot * 100);
         if (ee <= 0) return;
-        o += `<g transform="translate(${((1 - ee) * -80).toFixed(1)} 0)" opacity="${cl((L - t0) / .15)}"><rect x="${lx}" y="${y - fs * .8}" width="${fs}" height="${fs}" rx="7" fill="${c}" stroke="${INK}" stroke-width="4"/>` +
+        o += `<g transform="translate(${((1 - ee) * -80).toFixed(1)} 0)" opacity="${cl((L - t0) / .15)}"><rect x="${lx}" y="${y - fs * .8}" width="${fs}" height="${fs}" rx="7" fill="${c}" stroke="${INK}" stroke-width="2.5"/>` +
           tx(lx + fs + 16, y, esc(q.etiqueta || ''), fs, INK, 'start', 800) + tx(HOR ? Z.x + Z.w - 20 : Z.x + Z.w - 20, y, esc(/%/.test(String(q.valor)) ? String(q.valor) : (String(q.valor).match(/[a-zA-Z€]/) ? String(q.valor) : pc + ' %')), fs, INK, 'end', 900) + `</g>`;
       });
       return o + (v.titulo ? cinetico(v.titulo, HOR ? lx + (Z.x + Z.w - lx) / 2 : ZC.x, HOR ? Z.y + 30 : Z.y + 22, HOR ? 38 : 32, L, { max: HOR ? 36 : 30 }) : '');
@@ -558,9 +563,9 @@
       const p = eio(cl((L - .15) / .9)), pos = p * (ks.length - 1), ki = Math.min(ks.length - 2, Math.floor(pos)), fr = pos - ki, cur = [ks[ki][0] + (ks[ki + 1][0] - ks[ki][0]) * fr, ks[ki][1] + (ks[ki + 1][1] - ks[ki][1]) * fr];
       const lin = 'M' + ks.slice(0, ki + 1).map(q => q.map(z => z.toFixed(1)).join(' ')).join(' L') + ` L${cur[0].toFixed(1)} ${cur[1].toFixed(1)}`;
       const a = Math.atan2(ks[ki + 1][1] - ks[ki][1], ks[ki + 1][0] - ks[ki][0]) * 180 / Math.PI;
-      let o = `<path d="${lin}" transform="translate(${SOM} ${SOM})" fill="none" stroke="${INK}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><path d="${lin}" fill="none" stroke="${c}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>` +
-        `<g transform="translate(${cur[0].toFixed(1)} ${cur[1].toFixed(1)}) rotate(${a.toFixed(1)})"><path d="M-6 -36 L46 0 L-6 36 Z" fill="${c}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/></g>`;
-      for (let i = 0; i < 3; i++) { const fx = frac(L * 1.4 + i / 3); o += `<path d="M${(cur[0] - 70 - 60 * fx).toFixed(1)} ${(cur[1] + (i - 1) * 26 + (sube ? 30 : -30)).toFixed(1)} h${-40 * (1 - fx)}" stroke="${INK}" stroke-width="5" stroke-linecap="round" opacity="${((1 - fx) * p).toFixed(2)}"/>`; }
+      let o = `<path d="${lin}" transform="translate(${SOM} ${SOM})" fill="none" stroke="${INK}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity=".22" filter="url(#somS)"/><path d="${lin}" fill="none" stroke="${c}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<g transform="translate(${cur[0].toFixed(1)} ${cur[1].toFixed(1)}) rotate(${a.toFixed(1)})"><path d="M-6 -36 L46 0 L-6 36 Z" fill="${c}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/></g>`;
+      for (let i = 0; i < 3; i++) { const fx = frac(L * 1.4 + i / 3); o += `<path d="M${(cur[0] - 70 - 60 * fx).toFixed(1)} ${(cur[1] + (i - 1) * 26 + (sube ? 30 : -30)).toFixed(1)} h${-40 * (1 - fx)}" stroke="${INK}" stroke-width="3" stroke-linecap="round" opacity="${((1 - fx) * p).toFixed(2)}"/>`; }
       const size = HOR ? 46 : 36, max = HOR ? 20 : 24, xT = HOR ? Z.x + 600 + (Z.w - 600) / 2 : ZC.x, yN = HOR ? ZC.y - 20 : y0 + 100;
       return o + `<g transform="translate(${xT} ${yN}) scale(${back((L - .7) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), eo((L - .6) / .6))), HOR ? 110 : 96, c === ORO ? INK : c, 'middle', 900, `letter-spacing="-3" stroke="${INK}" stroke-width="3" paint-order="stroke"`)}</g>` +
         (v.texto ? cinetico(v.texto, xT, yN + (HOR ? 74 : 70), size, L, { max, t0: .8 }) : '');
@@ -572,7 +577,7 @@
       for (let j = 0; j < pilas; j++) for (let i = 0; i < por - (j % 2); i++) {
         const t0 = .15 + (i * pilas + j) * .045, q = cl((L - t0) / .32); if (q <= 0) continue;
         const caida = (1 - eo(q)) * 260, rebote = q < 1 ? 0 : 0, x = bx + j * (cw + 16) + cw / 2, y = by - i * ch - caida + rebote;
-        o += `<g opacity="${cl(q * 3).toFixed(2)}"><ellipse cx="${x}" cy="${(y + 8).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${INK}"/><rect x="${x - cw / 2}" y="${(y - 4).toFixed(1)}" width="${cw}" height="12" fill="#e0a800" stroke="${INK}" stroke-width="4"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${ORO}" stroke="${INK}" stroke-width="4"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2 - 14}" ry="${ch * .32}" fill="none" stroke="#e0a800" stroke-width="3"/></g>`;
+        o += `<g opacity="${cl(q * 3).toFixed(2)}"><ellipse cx="${x}" cy="${(y + 8).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${INK}"/><rect x="${x - cw / 2}" y="${(y - 4).toFixed(1)}" width="${cw}" height="12" fill="#e0a800" stroke="${INK}" stroke-width="2.5"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${ORO}" stroke="${INK}" stroke-width="2.5"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2 - 14}" ry="${ch * .32}" fill="none" stroke="#e0a800" stroke-width="3"/></g>`;
       }
       const brillo = frac(L / 1.6); o += `<path d="M${(bx - 40 + (pilas * cw + 80) * brillo).toFixed(1)} ${by - por * ch - 30} l40 0 l-60 ${por * ch + 40} l-40 0 Z" fill="#fff" opacity=".35"/>`;
       const size = HOR ? 46 : 36, max = HOR ? 20 : 24, xT = HOR ? Z.x + 620 + (Z.w - 620) / 2 : ZC.x, yN = HOR ? ZC.y - 10 : by + 120;
@@ -584,10 +589,10 @@
       const m = String(v.hora || '').match(/(\d{1,2})[:.h ]?(\d{2})?/), hh = m ? +m[1] % 24 : 12, mm = m && m[2] ? +m[2] : 0, p = eio(cl((L - .15) / 1.1));
       const cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 190, r = HOR ? 150 : 160, e = back(L / .4);
       const aM = (360 * 2 + mm * 6) * p, aH = ((hh % 12) * 30 + mm * .5) * p, aS = L * 360 / 1.2;
-      let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="8"/>`;
+      let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="8"/>`;
       for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; o += `<path d="M${((r - 18) * Math.sin(a)).toFixed(1)} ${(-(r - 18) * Math.cos(a)).toFixed(1)} L${((r - (i % 3 ? 32 : 44)) * Math.sin(a)).toFixed(1)} ${(-(r - (i % 3 ? 32 : 44)) * Math.cos(a)).toFixed(1)}" stroke="${INK}" stroke-width="${i % 3 ? 4 : 8}" stroke-linecap="round"/>`; }
       o += `<g transform="rotate(${aH.toFixed(1)})"><path d="M-9 14 L0 ${-r * .5} L9 14 Z" fill="${INK}"/></g><g transform="rotate(${aM.toFixed(1)})"><path d="M-6 16 L0 ${-r * .78} L6 16 Z" fill="${INK}"/></g>` +
-        `<g transform="rotate(${aS.toFixed(1)})"><path d="M0 22 V${-r * .82}" stroke="${ORA}" stroke-width="4"/></g><circle r="14" fill="${ORA}" stroke="${INK}" stroke-width="4"/></g>`;
+        `<g transform="rotate(${aS.toFixed(1)})"><path d="M0 22 V${-r * .82}" stroke="${ORA}" stroke-width="4"/></g><circle r="14" fill="${ORA}" stroke="${INK}" stroke-width="2.5"/></g>`;
       const hs = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`, size = HOR ? 46 : 36, max = HOR ? 20 : 24;
       return o + peg(cx, cy + r + (HOR ? 46 : 52), hs + (/h/i.test(String(v.hora || '')) || true ? ' H' : ''), HOR ? 40 : 40, INK, ORO, 'middle', eo((L - 1.1) / .2), -2, back((L - 1.1) / .35)) +
         (v.texto ? cinetico(v.texto, HOR ? Z.x + 450 + (Z.w - 450) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : cy + r + 130, size, L, { max, t0: .5 }) : '');
@@ -637,7 +642,7 @@
       let o = '', k = 0;
       ps.forEach(q => { for (let j = 0; j < q.s && k < asientos.length; j++, k++) { const [a, rr] = asientos[k]; if (k >= vis) continue; o += `<circle cx="${(cx + rr * Math.cos(a)).toFixed(1)}" cy="${(cy - rr * Math.sin(a)).toFixed(1)}" r="${dr.toFixed(1)}" fill="${q.c}" stroke="${INK}" stroke-width="1.5"/>`; } });
       const may = Math.floor(tot / 2) + 1;
-      if (tot >= 50) o += `<path d="M${cx} ${cy - R1 - 26} V${cy - R0 + 20}" stroke="${INK}" stroke-width="4" stroke-dasharray="8 6" opacity="${eo((L - 1.2) / .3).toFixed(2)}"/>` + peg(cx, cy - R1 - 34, `MAYORÍA ${may}`, HOR ? 22 : 22, INK, '#fff', 'middle', eo((L - 1.2) / .3), 0);
+      if (tot >= 50) o += `<path d="M${cx} ${cy - R1 - 26} V${cy - R0 + 20}" stroke="${INK}" stroke-width="2.5" stroke-dasharray="8 6" opacity="${eo((L - 1.2) / .3).toFixed(2)}"/>` + peg(cx, cy - R1 - 34, `MAYORÍA ${may}`, HOR ? 22 : 22, INK, '#fff', 'middle', eo((L - 1.2) / .3), 0);
       const lx = HOR ? Z.x + 660 : Z.x + 10, ly = HOR ? ZC.y - ps.length * 24 : cy + 50, fs = HOR ? 30 : 26, col2 = !HOR && ps.length > 3;
       ps.forEach((q, i) => {
         const t0 = .4 + i * .15, e = back((L - t0) / .35); if (e <= 0) return;
@@ -678,12 +683,12 @@
         const x = HOR ? Z.x + i * (wB + 70) : ZC.x - wB / 2, y = HOR ? y0 : y0 + i * (hB + gap), act = L < t0 + tramo || i === n - 1, c = [ORA, AZU, VER, MOR][i % 4], cx = x + wB / 2, cy = y + hB / 2;
         const fs = Math.min(HOR ? 34 : 32, (wB - (HOR ? 40 : 110)) / (Math.max(6, String(s).length) * .55));
         o += `<g transform="translate(${cx} ${cy}) scale(${(e * (act ? 1 + .03 * Math.sin(L * 6) : 1)).toFixed(3)}) translate(${-cx} ${-cy})">` + caja(x, y, wB, hB, 24, act ? c : BLA, 5) +
-          `<circle cx="${HOR ? cx : x + 50}" cy="${HOR ? y : cy}" r="30" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` + tx(HOR ? cx : x + 50, (HOR ? y : cy) + 12, String(i + 1), 34, c) +
+          `<circle cx="${HOR ? cx : x + 50}" cy="${HOR ? y : cy}" r="30" fill="${BLA}" stroke="${INK}" stroke-width="3"/>` + tx(HOR ? cx : x + 50, (HOR ? y : cy) + 12, String(i + 1), 34, c) +
           tx(HOR ? cx : x + 96, HOR ? cy + 26 : cy + fs * .36, esc(s), fs, act && c !== ORO ? '#fff' : INK, HOR ? 'middle' : 'start', 800) + `</g>`;
         if (i < n - 1) {
           const pa = eo((L - t0 - tramo + .25) / .3); if (pa <= 0) return;
           o += HOR ? `<path d="M${x + wB + 10} ${cy} h${(50 * pa).toFixed(1)}" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${x + wB + 52} ${cy - 14} l16 14 l-16 14" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` : '')
-            : `<path d="M${cx} ${y + hB + 8} v${((gap - 22) * pa).toFixed(1)}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${cx - 13} ${y + hB + gap - 26} l13 14 l13 -14" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>` : '');
+            : `<path d="M${cx} ${y + hB + 8} v${((gap - 22) * pa).toFixed(1)}" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${cx - 13} ${y + hB + gap - 26} l13 14 l13 -14" fill="none" stroke="${INK}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>` : '');
         }
       });
       return o;
@@ -693,11 +698,11 @@
       const mx = num(v.max) || 45, mn = num(v.min) || 0, pr = cl((num(v.valor) - mn) / (mx - mn)), p = eo(cl((L - .2) / 1)), cx = HOR ? Z.x + 200 : ZC.x - 130, top = HOR ? Z.y + 20 : Z.y + 40, hT = HOR ? 280 : 380, w = 56, rb = 58, by = top + hT + rb * .6;
       const c = pr > .66 ? ROJ : pr > .33 ? ORA : AZU, yF = top + hT - (hT - 10) * pr * p, e = back(L / .4);
       let o = `<g transform="translate(${cx} ${by}) scale(${e.toFixed(3)}) translate(${-cx} ${-by})">` +
-        `<rect x="${cx - w / 2 + SOM}" y="${top + SOM}" width="${w}" height="${hT}" rx="${w / 2}" fill="${INK}"/><circle cx="${cx + SOM}" cy="${by + SOM}" r="${rb}" fill="${INK}"/>` +
-        `<rect x="${cx - w / 2}" y="${top}" width="${w}" height="${hT}" rx="${w / 2}" fill="${BLA}" stroke="${INK}" stroke-width="6"/>` +
+        `<rect x="${cx - w / 2 + SOM}" y="${top + SOM}" width="${w}" height="${hT}" rx="${w / 2}" fill="${INK}" opacity=".22" filter="url(#somS)"/><circle cx="${cx + SOM}" cy="${by + SOM}" r="${rb}" fill="${INK}" opacity=".22" filter="url(#somS)"/>` +
+        `<rect x="${cx - w / 2}" y="${top}" width="${w}" height="${hT}" rx="${w / 2}" fill="${BLA}" stroke="${INK}" stroke-width="4"/>` +
         `<rect x="${cx - w / 2 + 12}" y="${yF.toFixed(1)}" width="${w - 24}" height="${(top + hT - yF + 20).toFixed(1)}" rx="${(w - 24) / 2}" fill="${c}"/>` +
-        `<circle cx="${cx}" cy="${by}" r="${rb}" fill="${c}" stroke="${INK}" stroke-width="6"/><path d="M${cx - 20} ${by - 20} a28 28 0 0 1 22 -12" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/>`;
-      for (let i = 1; i < 5; i++) { const y = top + hT * i / 5; o += `<path d="M${cx + w / 2 + 4} ${y} h18" stroke="${INK}" stroke-width="4"/>`; }
+        `<circle cx="${cx}" cy="${by}" r="${rb}" fill="${c}" stroke="${INK}" stroke-width="4"/><path d="M${cx - 20} ${by - 20} a28 28 0 0 1 22 -12" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/>`;
+      for (let i = 1; i < 5; i++) { const y = top + hT * i / 5; o += `<path d="M${cx + w / 2 + 4} ${y} h18" stroke="${INK}" stroke-width="2.5"/>`; }
       o += `</g>`;
       const xT = HOR ? Z.x + 380 + (Z.w - 380) / 2 : ZC.x + 110, size = HOR ? 46 : 34, max = HOR ? 22 : 14;
       return o + `<g transform="translate(${xT} ${HOR ? ZC.y - 20 : Z.y + 220}) scale(${back((L - .5) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), p)), HOR ? 110 : 84, c, 'middle', 900, `stroke="${INK}" stroke-width="3" paint-order="stroke" letter-spacing="-3"`)}</g>` +
@@ -718,7 +723,7 @@
     },
     // Lupi con la lupa sobre la letra pequeña  {"tipo":"lupa","titulo":"La letra pequeña","texto":"≤ 50 caracteres: el detalle"}
     lupa(v, L, d) {
-      const w = HOR ? 620 : Z.w - 10, h = HOR ? 330 : 380, x = HOR ? Z.x + 20 : ZC.x - w / 2, y = HOR ? ZC.y - h / 2 : Z.y + 20, e = back(L / .45), lineas = 7, fila = 4;
+      const w = HOR ? 620 : Z.w - 10, h = HOR ? 330 : 340, x = HOR ? Z.x + 20 : ZC.x - w / 2, y = HOR ? ZC.y - h / 2 : Z.y + 10, e = back(L / .45), lineas = 7, fila = 4;
       let o = `<g transform="translate(${x + w / 2} ${y + h / 2}) rotate(-2) scale(${e.toFixed(3)}) translate(${-(x + w / 2)} ${-(y + h / 2)})">` + caja(x, y, w, h, 10, '#fbf8f0', 4) +
         (v.titulo ? tx(x + 30, y + 54, esc(v.titulo), HOR ? 34 : 32, INK, 'start', 900) : '');
       for (let i = 0; i < lineas; i++) { const yy = y + 90 + i * ((h - 120) / lineas); o += i === fila ? `<rect x="${x + 30}" y="${yy - 6}" width="${(w - 60) * eo((L - .9) / .4)}" height="16" rx="4" fill="${ORO}"/><rect x="${x + 30}" y="${yy}" width="${w - 60}" height="5" rx="2" fill="${INK}" opacity=".5"/>` : `<rect x="${x + 30}" y="${yy}" width="${(w - 60) * (i % 3 === 2 ? .7 : 1)}" height="5" rx="2" fill="${INK}" opacity=".16"/>`; }
@@ -726,7 +731,7 @@
       const yF = y + 90 + fila * ((h - 120) / lineas), q = eio(cl((L - .2) / .8)), lx = x + 80 + (w * .55 - 80) * q + 20 * Math.sin(L * 2), ly = yF - 20 + 8 * Math.sin(L * 3);
       o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(-25) scale(${HOR ? .95 : 1})">${lupiM({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;
       const size = HOR ? 44 : 36, max = HOR ? 18 : 24;
-      return o + (v.texto ? cinetico(v.texto, HOR ? x + w + (Z.x + Z.w - x - w) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 80, size, L, { max, t0: 1 }) : '');
+      return o + (v.texto ? cinetico(v.texto, HOR ? x + w + (Z.x + Z.w - x - w) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 66, size, L, { max, t0: 1 }) : '');
     },
     // encuesta con barras  {"tipo":"encuesta","pregunta":"¿…?","opciones":[{"texto":"Sí","valor":"58 %"},{"texto":"No","valor":"42 %"}],"fuente":"CIS"}
     encuesta(v, L, d) {
@@ -737,7 +742,7 @@
         const t0 = .3 + i * .15, p = eio(cl((L - t0) / .9)), y = y0 + i * (ah + 18), win = i === gan && p > .99, fs = Math.min(ah * .4, 34);
         o += caja(Z.x + 6, y, Z.w - 20, ah, ah * .3, BLA, 4) + `<rect x="${Z.x + 6}" y="${y}" width="${((Z.w - 20) * num(q.valor) / mx * .98 * p).toFixed(1)}" height="${ah}" rx="${ah * .3}" fill="${win ? ORA : GRI}" opacity="${win ? 1 : .8}"/>` +
           tx(Z.x + 30, y + ah / 2 + fs * .36, esc(q.texto || ''), fs, win ? '#fff' : INK, 'start', 800) + tx(Z.x + Z.w - 34, y + ah / 2 + fs * .36, esc(contar(String(q.valor || ''), p)), fs, INK, 'end', 900) +
-          (win ? `<circle cx="${Z.x + Z.w - 14}" cy="${y}" r="${(16 * back((L - t0 - .95) / .3)).toFixed(1)}" fill="${VER}" stroke="${INK}" stroke-width="4"/>` : '');
+          (win ? `<circle cx="${Z.x + Z.w - 14}" cy="${y}" r="${(16 * back((L - t0 - .95) / .3)).toFixed(1)}" fill="${VER}" stroke="${INK}" stroke-width="2.5"/>` : '');
       });
       return o + (v.fuente ? peg(Z.x + Z.w - 16, y0 + n * (ah + 18) + 24, 'FUENTE: ' + String(v.fuente).toUpperCase(), HOR ? 20 : 18, INK, '#fff', 'end', eo((L - .8) / .3), 0) : '');
     },
@@ -755,7 +760,7 @@
     podio(v, L, d) {
       const it = (v.items || []).slice(0, 3), orden = [1, 0, 2], alt = [HOR ? 250 : 280, HOR ? 180 : 210, HOR ? 130 : 150], med = [ORO, '#c9ccd3', '#d6894a'];
       const wB = HOR ? 220 : 172, gap = HOR ? 18 : 8, base = HOR ? Z.y + Z.h - 10 : Z.y + Z.h - 60, x0 = ZC.x - (3 * wB + 2 * gap) / 2;
-      let o = `<path d="M${x0 - 20} ${base} H${x0 + 3 * wB + 2 * gap + 20}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>`;
+      let o = `<path d="M${x0 - 20} ${base} H${x0 + 3 * wB + 2 * gap + 20}" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>`;
       orden.forEach((pos, col_) => {
         const q = it[pos]; if (!q) return;
         const t0 = .2 + (2 - pos) * .35, p = back((L - t0) / .55), h = alt[pos] * cl(p, 0, 1.1), x = x0 + col_ * (wB + gap), y = base - h;
@@ -763,7 +768,7 @@
         o += caja(x, y, wB, h, 12, pos === 0 ? ORA : BLA, 5) + tx(x + wB / 2, y + Math.min(h - 10, HOR ? 92 : 100), String(pos + 1), HOR ? 84 : 90, pos === 0 ? '#fff' : INK, 'middle', 900, `opacity="${cl(h / 120).toFixed(2)}"`);
         const ep = back((L - t0 - .45) / .35); if (ep <= 0) return;
         const fs = Math.min(HOR ? 32 : 26, (wB - 8) / (Math.max(5, String(q.etiqueta || '').length) * .56));
-        o += `<g transform="translate(${x + wB / 2} ${y - 18}) scale(${ep.toFixed(3)})"><circle cx="0" cy="${HOR ? -96 : -104}" r="28" fill="${med[pos]}" stroke="${INK}" stroke-width="5"/>${tx(0, HOR ? -86 : -94, String(pos + 1), 28, INK)}` +
+        o += `<g transform="translate(${x + wB / 2} ${y - 18}) scale(${ep.toFixed(3)})"><circle cx="0" cy="${HOR ? -96 : -104}" r="28" fill="${med[pos]}" stroke="${INK}" stroke-width="3"/>${tx(0, HOR ? -86 : -94, String(pos + 1), 28, INK)}` +
           tx(0, HOR ? -50 : -46, esc(q.etiqueta || ''), fs, INK, 'middle', 900) + peg(0, -6, String(q.valor || ''), HOR ? 26 : 22, INK, '#fff', 'middle', 1, 0) + `</g>`;
         if (pos === 0 && L > t0 + .6) for (let i = 0; i < 14; i++) { const a = i * 2.4, fr = frac((L - t0 - .6) * .7 + i / 14), cx_ = x + wB / 2 + Math.sin(a * 3.1) * 150 * fr, cy_ = y - 150 - 60 * Math.sin(a) + 260 * fr * fr; o += `<rect x="${cx_.toFixed(1)}" y="${cy_.toFixed(1)}" width="12" height="7" fill="${[ORA, AZU, VER, ORO, ROJ][i % 5]}" transform="rotate(${(a * 60 + L * 300).toFixed(0)} ${cx_.toFixed(1)} ${cy_.toFixed(1)})" opacity="${(1 - fr).toFixed(2)}"/>`; }
       });
@@ -772,12 +777,12 @@
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
       const fw = HOR ? Z.w * .6 : Z.w, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
-      return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}"/>` +
+      return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}" opacity=".22" filter="url(#somS)"/>` +
         `<clipPath id="${id}"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24"/></clipPath><image href="file://${f.ruta}" x="${fx}" y="${fy}" width="${fw}" height="${fh}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
         // v60: la foto queda quieta, pero alrededor hay vida: destello de flash al entrar, un brillo que la cruza y esquinas de visor que enfocan
         `<g clip-path="url(#${id})"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" fill="#fff" opacity="${(L < .55 ? .7 * cl(1 - (L - .3) / .25) * cl((L - .25) / .05) : 0).toFixed(3)}"/>` +
         (L > .6 && L < 1.6 ? `<path d="M${(fx - 200 + (fw + 400) * eio((L - .6) / 1)).toFixed(1)} ${fy} l120 0 l-160 ${fh} l-120 0 Z" fill="#fff" opacity=".28"/>` : '') + `</g>` +
-        `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
+        `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="4.5"/>` +
         `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke"${String(f.credito || '').length * (HOR ? 7.6 : 8.2) > fw - 40 ? ` textLength="${fw - 40}" lengthAdjust="spacingAndGlyphs"` : ''}>${esc(f.credito || '')}</text></g>` +
         (() => { const q = eo((L - .2) / .5), m = 26 + 30 * (1 - q) + 4 * Math.sin(L * 3), lc = 34, c_ = GRAVE ? BLA : ORO, op = cl((L - .2) / .2) * (1 - .35 * cl((L - 1.6) / .4));   // esquinas de visor
           return [[fx + m, fy + m, 1, 1], [fx + fw - m, fy + m, -1, 1], [fx + m, fy + fh - m, 1, -1], [fx + fw - m, fy + fh - m, -1, -1]].map(([x, y, sx, sy]) =>
@@ -793,9 +798,9 @@
         `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>` +
         // v61: una mano pulsa el botón y suena la campana
         (() => { if (L < .9) return ''; const ph = frac((L - .9) / 1.6), pres = ph > .45 && ph < .6, hx = tx0 + (HOR ? 140 : 116) + (1 - eo(cl((L - .9) / .4))) * 90, hy = by + 26 + (pres ? 6 : 0);
-          const mano = `<g transform="translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(-20) scale(${HOR ? 1.1 : .95})"><path d="M0 0 v-34 a9 9 0 0 1 18 0 v26 a9 9 0 0 1 16 2 a9 9 0 0 1 16 4 a9 9 0 0 1 15 6 v22 c0 18 -12 30 -30 30 h-14 c-12 0 -20 -6 -26 -16 l-16 -26 a9 9 0 0 1 14 -10 z" fill="${BLA}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>`;
+          const mano = `<g transform="translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(-20) scale(${HOR ? 1.1 : .95})"><path d="M0 0 v-34 a9 9 0 0 1 18 0 v26 a9 9 0 0 1 16 2 a9 9 0 0 1 16 4 a9 9 0 0 1 15 6 v22 c0 18 -12 30 -30 30 h-14 c-12 0 -20 -6 -26 -16 l-16 -26 a9 9 0 0 1 14 -10 z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></g>`;
           const bx = tx0 - (HOR ? 240 : 196), byy = by, sw = ph > .55 ? 18 * Math.sin((L - .9) * 28) * Math.exp(-(ph - .55) * 8) : 0, eb = back((L - 1.0) / .3);
-          const campana = eb <= 0 ? '' : `<g transform="translate(${bx} ${byy}) rotate(${sw.toFixed(1)} 0 -26) scale(${(eb * (HOR ? 1.1 : .9)).toFixed(3)})"><path d="M-22 14 c4 -6 4 -14 4 -24 a18 18 0 0 1 36 0 c0 10 0 18 4 24 z" fill="${ORO}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><circle cy="20" r="7" fill="${ORO}" stroke="${INK}" stroke-width="4"/><circle cy="-30" r="5" fill="${INK}"/></g>`;
+          const campana = eb <= 0 ? '' : `<g transform="translate(${bx} ${byy}) rotate(${sw.toFixed(1)} 0 -26) scale(${(eb * (HOR ? 1.1 : .9)).toFixed(3)})"><path d="M-22 14 c4 -6 4 -14 4 -24 a18 18 0 0 1 36 0 c0 10 0 18 4 24 z" fill="${ORO}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle cy="20" r="7" fill="${ORO}" stroke="${INK}" stroke-width="2.5"/><circle cy="-30" r="5" fill="${INK}"/></g>`;
           return campana + mano; })();
     },
     cierre(v, L, d) {
@@ -806,7 +811,7 @@
         // v61: bocadillo de comentario con «escribiendo…» (invita a comentar)
         (() => { const e2 = back((L - .9) / .4); if (e2 <= 0) return ''; const bx = HOR ? lx + 120 : lx + 120, by = HOR ? ly - 130 : ly - 70, w = 120, h = 74;
           return `<g transform="translate(${bx} ${by}) rotate(${(6 + 3 * Math.sin(L * 2)).toFixed(2)}) scale(${e2.toFixed(3)})">` + caja(-w / 2, -h / 2, w, h, 26, BLA, 5) +
-            `<path d="M-30 ${h / 2 - 3} l-14 22 l30 -22 Z" fill="${BLA}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><path d="M-32 ${h / 2 - 2} h18" stroke="${BLA}" stroke-width="8"/>` +
+            `<path d="M-30 ${h / 2 - 3} l-14 22 l30 -22 Z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M-32 ${h / 2 - 2} h18" stroke="${BLA}" stroke-width="8"/>` +
             [-1, 0, 1].map(j => `<circle cx="${j * 28}" cy="${(-4 * Math.max(0, Math.sin(L * 7 - j * .9))).toFixed(1)}" r="9" fill="${ORA}"/>`).join('') + `</g>`; })();
     },
   };
@@ -934,7 +939,7 @@
     const an = tr.map(x => Math.round(x.length * fs * .8) + 70), per = an.reduce((a, b) => a + b, 0), off = (t * 70) % per;
     let o = `<rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="${INK}"/><rect x="0" y="${y + h}" width="${W}" height="${H - y - h}" fill="url(#pt2)"/>` +
       `<defs><pattern id="pt2" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.7" fill="#fff" opacity=".08"/></pattern></defs>` +
-      `<rect x="-10" y="${y}" width="${W + 20}" height="${h}" fill="${ORA}" stroke="${INK}" stroke-width="5"/>`;
+      `<rect x="-10" y="${y}" width="${W + 20}" height="${h}" fill="${ORA}" stroke="${INK}" stroke-width="3"/>`;
     for (let x = -off; x < W; x += per) { let xx = x; tr.forEach((s_, n) => { o += `<text x="${(xx + an[n] / 2 - 18).toFixed(1)}" y="${y + h / 2 + fs * .36}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" fill="#fff" letter-spacing="1">${esc(s_)}</text><circle cx="${(xx + an[n] - 18).toFixed(1)}" cy="${y + h / 2}" r="6" fill="${INK}"/>`; xx += an[n]; }); }
     return o;
   }
