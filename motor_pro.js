@@ -1036,18 +1036,18 @@
 
   // ---------- fotograma ----------
   const TR = .3, TRC = .42;
-  // v56 (11-nov-2026): 9 transiciones. Orden fijo que no repite dos seguidas (mezcla.py usa la MISMA regla para el sonido):
+  // v56 (11-nov-2026): 9 transiciones (v76: 12). Orden fijo que no repite dos seguidas (mezcla.py usa la MISMA regla para el sonido):
   // la escena de la mención del canal entra con la cortina de la marca; la sorpresa, tensión o indignación, con glitch;
   // en noticias graves solo las sobrias.
-  const TR_TODAS = ['barrido', 'iris', 'zoom', 'persiana', 'empuje', 'mancha', 'giro', 'cortina', 'glitch'];
+  const TR_TODAS = ['barrido', 'iris', 'zoom', 'persiana', 'empuje', 'mancha', 'giro', 'cortina', 'glitch', 'diagonal', 'rebote', 'burbujas'];   // v76: 12
   const TR_GRAVE = ['barrido', 'zoom', 'empuje', 'iris', 'persiana'];
-  const DUR_TR = { barrido: .3, zoom: .3, cortina: .42, iris: .38, persiana: .4, empuje: .34, giro: .34, glitch: .26, mancha: .46 };
+  const DUR_TR = { barrido: .3, zoom: .3, cortina: .42, iris: .38, persiana: .4, empuje: .34, giro: .34, glitch: .26, mancha: .46, diagonal: .44, rebote: .4, burbujas: .46 };
   let TRS = null;
   function TIPO_TR(k) {
     if (!TRS) {
       TRS = [''];
       for (let j = 1; j < N; j++) {
-        const base = i => GRAVE ? TR_GRAVE[(i * 2) % 5] : TR_TODAS[(i * 5) % 9], tipo = (E[j].visual || {}).tipo, em = String(E[j].voz || '').toLowerCase();
+        const base = i => GRAVE ? TR_GRAVE[(i * 2) % 5] : TR_TODAS[(i * 5) % 12], tipo = (E[j].visual || {}).tipo, em = String(E[j].voz || '').toLowerCase();
         let t = !GRAVE && tipo === 'mencion' ? 'cortina' : !GRAVE && ['surprised', 'tense', 'indignant'].includes(em) ? 'glitch' : base(j);
         if (t === 'glitch' && (TRS[j - 1] === 'glitch' || TRS[j - 2] === 'glitch')) t = base(j) === 'glitch' ? base(j + 1) : base(j);   // glitch, como mucho 1 de cada 3
         if (t === TRS[j - 1]) t = base(j + 1) === t ? base(j + 2) : base(j + 1);
@@ -1099,6 +1099,24 @@
       let d_ = ''; for (let i = 0; i <= 24; i++) { const a = i / 24 * Math.PI * 2, rr = r * (1 + .06 * Math.sin(a * 5 + p * 9)); d_ += (i ? 'L' : 'M') + (cx + rr * Math.cos(a)).toFixed(1) + ' ' + (cy + rr * Math.sin(a)).toFixed(1); }
       svg += (pri ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
       encima = `<path d="${d_}Z" fill="${ORA}"/>` + (Math.abs(p - .5) < .18 ? `<g transform="translate(${W / 2} ${H * .42}) scale(${(1 - Math.abs(p - .5) * 3).toFixed(3)})">${nube(0, 0, HOR ? 6 : 7)}</g>` : '');
+    } else if (tt === 'diagonal' && L < DUR_TR.diagonal) {   // v76: franjas diagonales de la marca (naranja, oro y tinta) que cruzan y destapan el plano nuevo
+      const p = L / DUR_TR.diagonal, cols = [ORA, ORO, INK, ORA], sh = H * .6, bw = W * .5;
+      svg += (p < .5 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
+      cols.forEach((c, i) => { const q = eio(cl((p - i * .06) / .7)), x = -W - sh - bw + (2 * W + 2 * sh + 2 * bw) * q;
+        encima += `<path d="M${(x + sh).toFixed(1)} 0 h${bw} L${(x + bw).toFixed(1)} ${H} h${-bw} Z" fill="${c}"/>`; });
+    } else if (tt === 'rebote' && L < DUR_TR.rebote) {   // v76: el plano anterior se encoge y el nuevo entra con rebote y un pequeño giro
+      const p = L / DUR_TR.rebote, cx = W / 2, cy = H * .45, a = eio(cl(p / .45)), b = back(cl((p - .25) / .75));
+      svg += `<rect width="${W}" height="${H}" fill="${ORA}"/>` +
+        (a < 1 ? `<g opacity="${(1 - a).toFixed(3)}" transform="translate(${cx} ${cy}) scale(${(1 - .5 * a).toFixed(3)}) rotate(${(-6 * a).toFixed(2)}) translate(${-cx} ${-cy})">${escena(k - 1, T.escenas[k - 1].fin - .001)}</g>` : '') +
+        (b > 0 ? `<g transform="translate(${cx} ${cy}) scale(${(.5 + .5 * b).toFixed(3)}) rotate(${(5 * (1 - b)).toFixed(2)}) translate(${-cx} ${-cy})">${escena(k, t)}</g>` : '');
+    } else if (tt === 'burbujas' && L < DUR_TR.burbujas) {   // v76: círculos que crecen por toda la pantalla y destapan el plano nuevo
+      const p = L / DUR_TR.burbujas, cols = HOR ? 6 : 4, filas = HOR ? 4 : 7, cw = W / cols, ch = H / filas, R0 = Math.hypot(cw, ch) * .62;
+      let cp = '', aros = '';
+      for (let i = 0; i < cols; i++) for (let j = 0; j < filas; j++) {
+        const dd = (Math.hypot(i - cols / 2, j - filas / 2) / Math.hypot(cols / 2, filas / 2)), q = eio(cl((p - dd * .35) / .55)), r = R0 * q, x = (i + .5) * cw, y = (j + .5) * ch;
+        if (r > .5) { cp += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}"/>`; if (q < 1) aros += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="${(8 * (1 - q)).toFixed(1)}"/>`; }
+      }
+      svg += escena(k - 1, T.escenas[k - 1].fin - .001) + `<defs><clipPath id="bu">${cp}</clipPath></defs><g clip-path="url(#bu)">${escena(k, t)}</g>` + aros;
     } else if (tt === 'barrido' && L < TR) {                 // barrido rápido con desenfoque de movimiento (alterna de lado y de arriba abajo)
       const p = eio(L / TR), ver = k % 2 === 1, bl = 46 * Math.sin(Math.PI * p), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), dir = k % 4 < 2 ? 1 : -1;
       svg += `<defs><filter id="mb" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${ver ? '0 ' + bl.toFixed(1) : bl.toFixed(1) + ' 0'}"/></filter></defs><g filter="url(#mb)">` +

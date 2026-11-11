@@ -196,11 +196,11 @@ il = int(.5 * SR); it = np.arange(il) / SR
 impacto = np.sin(2 * np.pi * (48 + 70 * np.exp(-it * 18)) * it) * np.exp(-it * 7) + rng.normal(0, 1, il) * np.exp(-it * 60) * .25
 if P.get("golpe_inicial", True): pon(impacto, 0, .9)
 PRO = (P.get("aspecto") or "pro") == "pro"
-# v56 (11-nov-2026): MISMA regla que TIPO_TR de motor_pro.js (9 transiciones), cada una con su sonido
+# v56 (11-nov-2026): MISMA regla que TIPO_TR de motor_pro.js (v76: 12 transiciones), cada una con su sonido
 GRAVE_ = P.get("tono") == "grave"
-TR_TODAS = ["barrido", "iris", "zoom", "persiana", "empuje", "mancha", "giro", "cortina", "glitch"]
+TR_TODAS = ["barrido", "iris", "zoom", "persiana", "empuje", "mancha", "giro", "cortina", "glitch", "diagonal", "rebote", "burbujas"]   # v76: 12
 TR_GRAVE = ["barrido", "zoom", "empuje", "iris", "persiana"]
-def _base(i): return TR_GRAVE[(i * 2) % 5] if GRAVE_ else TR_TODAS[(i * 5) % 9]
+def _base(i): return TR_GRAVE[(i * 2) % 5] if GRAVE_ else TR_TODAS[(i * 5) % 12]
 TRS = [""]
 for j_ in range(1, len(P["escenas"])):
     e_ = P["escenas"][j_]; tipo_ = (e_.get("visual") or {}).get("tipo"); em_ = str(e_.get("voz") or "").lower()
@@ -230,6 +230,12 @@ for k, e in enumerate(T["escenas"][1:], 1):
         pon(whoosh * .6, e["ini"] - .1, .8); pon(pop, e["ini"] + .17, .45)
     elif tr == "glitch":
         pon(glitch_s, e["ini"], .9 if not GRAVE_ else .4)
+    elif tr == "diagonal":
+        pon(whoosh, e["ini"] - .16, 1.0)
+    elif tr == "rebote":
+        pon(whoosh[::-1] * .6, e["ini"] - .1, .7); pon(pop, e["ini"] + .12, .6)
+    elif tr == "burbujas":
+        for q in (0, .08, .16, .24): pon(pop, e["ini"] - .05 + q, .3)
     elif tr == "mancha":
         pon(whoosh, e["ini"] - .1, .9); pon(impacto, e["ini"] + .22, .25)
 for z in P.get("zum", []):
