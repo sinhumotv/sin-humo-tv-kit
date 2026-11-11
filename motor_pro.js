@@ -881,8 +881,8 @@
         (v.titulo ? tx(x + 30, y + 54, esc(v.titulo), HOR ? 34 : 32, INK, 'start', 900) : '');
       for (let i = 0; i < lineas; i++) { const yy = y + 90 + i * ((h - 120) / lineas); o += i === fila ? `<rect x="${x + 30}" y="${yy - 6}" width="${(w - 60) * eo((L - .9) / .4)}" height="16" rx="4" fill="${ORO}"/><rect x="${x + 30}" y="${yy}" width="${w - 60}" height="5" rx="2" fill="${INK}" opacity=".5"/>` : `<rect x="${x + 30}" y="${yy}" width="${(w - 60) * (i % 3 === 2 ? .7 : 1)}" height="5" rx="2" fill="${INK}" opacity=".16"/>`; }
       o += `</g>`;
-      const yF = y + 90 + fila * ((h - 120) / lineas), q = eio(cl((L - .2) / .8)), lx = x + 80 + (w * .55 - 80) * q + 20 * Math.sin(L * 2), ly = yF - 20 + 8 * Math.sin(L * 3);
-      o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(-25) scale(${HOR ? .95 : 1})">${lupiM({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;
+      const yF = y + 90 + fila * ((h - 120) / lineas), q = eio(cl((L - VIAJE) / .8)), ps = cl((L - VIAJE) / .4), lx = x + 80 + (w * .55 - 80) * q + 20 * Math.sin((L - VIAJE) * 2) * ps, ly = yF - 20 + 8 * Math.sin((L - VIAJE) * 3) * ps;
+      if (L >= VIAJE) o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(${(-25 * cl((L - VIAJE) / .2)).toFixed(1)}) scale(${HOR ? .95 : 1})">${lupiM({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;   // v94: llega volando desde la esquina
       const size = HOR ? 44 : 36, max = HOR ? 18 : 24;
       return o + (v.texto ? cinetico(v.texto, HOR ? x + w + (Z.x + Z.w - x - w) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 66, size, L, { max, t0: 1 }) : '');
     },
@@ -1177,8 +1177,10 @@
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
     const lx = HOR ? W - 62 : W - SX - 66, ly = HOR ? H - 196 : 166, s = HOR ? .5 : .46;
     // v90: Lupi nunca cambia de sitio de golpe: vuela de la esquina al centro (mención y cierre) y vuelve después, en arco y girando
-    const grande = q => ['mencion', 'cierre'].includes((E[q] || {}).visual ? E[q].visual.tipo : ''), GX = HOR ? Z.x + 230 : ZC.x, GY = HOR ? ZC.y - 20 : Z.y + 120, GS = HOR ? 1.45 : 1.05;
-    const viaja = (q, ida) => { const a = ida ? [lx, ly, s] : [GX, GY, GS], b = ida ? [GX, GY, GS] : [lx, ly, s], x = a[0] + (b[0] - a[0]) * q, y = a[1] + (b[1] - a[1]) * q - (HOR ? 160 : 140) * Math.sin(Math.PI * q), sc = a[2] + (b[2] - a[2]) * q;
+    const tipoDe = q => (E[q] || {}).visual ? E[q].visual.tipo : '', grande = q => ['mencion', 'cierre', 'lupa'].includes(tipoDe(q));
+    const destino = (q, fin) => { if (tipoDe(q) !== 'lupa') return [HOR ? Z.x + 230 : ZC.x, HOR ? Z.y + Z.h / 2 - 20 : Z.y + 120, HOR ? 1.45 : 1.05];
+      const w = HOR ? 620 : Z.w - 10, h = HOR ? 330 : 340, x = HOR ? Z.x + 20 : ZC.x - w / 2, y = HOR ? Z.y + Z.h / 2 - h / 2 : Z.y + 10; return [x + 80 + (fin ? w * .55 - 80 : 0), y + 90 + 4 * ((h - 120) / 7) - 20, HOR ? .95 : 1]; };   // donde empieza el Lupi de la lupa
+    const viaja = (q, ida) => { const [GX, GY, GS] = destino(ida ? k : k - 1, !ida), a = ida ? (k > 0 && grande(k - 1) ? destino(k - 1, true) : [lx, ly, s]) : [GX, GY, GS], b = ida ? [GX, GY, GS] : [lx, ly, s], x = a[0] + (b[0] - a[0]) * q, y = a[1] + (b[1] - a[1]) * q - (HOR ? 160 : 140) * Math.sin(Math.PI * q), sc = a[2] + (b[2] - a[2]) * q;
       return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${((ida ? -1 : 1) * 360 * eio(q)).toFixed(1)})">${lupiM({ x: 0, y: 0, s: sc, t, expr: 'feliz', brazos: 'saluda', mira: [ida ? -1 : 1, 0] })}</g>`; };
     if (grande(k)) { if (L < VIAJE) o += viaja(eio(L / VIAJE), true); }
     else if (k > 0 && grande(k - 1) && L < VIAJE) o += viaja(eio(L / VIAJE), false);
