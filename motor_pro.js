@@ -1051,7 +1051,12 @@
       const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
-        peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) +
+        (HOR ? peg(tx0, ZC.y + 130, 'sin humo TV', 34, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) :
+          // v95: en vertical, «Comenta» con una flecha animada que señala el botón de comentarios de TikTok / Reels / Shorts (columna derecha)
+          (() => { const yP = Z.y + 320 + hc + 40, q = eio(cl((L - 1) / .5)), b = 6 * Math.sin(L * 6) * cl((L - 1.5) / .3), x1 = tx0 + 92, y1 = yP - 6, x2 = W - 92 + b, y2 = yP + 70 + b;
+            return peg(tx0, yP, 'COMENTA', 30, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4) * (1 + .04 * Math.sin(L * 5))) +
+              (q > 0 ? `<path d="M${x1} ${y1} Q${x2 - 10} ${y1 - 40} ${x2} ${y2}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` +
+                (q > .95 ? `<path d="M${x2 - 18} ${y2 - 12} L${x2} ${y2} L${x2 + 10} ${y2 - 20}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>` : '') : ''); })()) +
         // v61: bocadillo de comentario con «escribiendo…» (invita a comentar)
         (() => { const e2 = back((L - .9) / .4); if (e2 <= 0) return ''; const bx = HOR ? lx + 120 : lx + 120, by = HOR ? ly - 130 : ly - 70, w = 120, h = 74;
           return `<g transform="translate(${bx} ${by}) rotate(${(6 + 3 * Math.sin(L * 2)).toFixed(2)}) scale(${e2.toFixed(3)})">` + caja(-w / 2, -h / 2, w, h, 26, BLA, 5) +
