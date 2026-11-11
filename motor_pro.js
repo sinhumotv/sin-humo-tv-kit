@@ -568,6 +568,127 @@
       const size = HOR ? 40 : 32;
       return o + (v.texto ? cinetico(v.texto, HOR ? cx : ZC.x, HOR ? cy + 70 : ly + Math.ceil(ps.length / (col2 ? 2 : 1)) * 44 + 30, size, L, { max: HOR ? 30 : 28, t0: 1 }) : '');
     },
+    // ===== v59 (11-nov-2026): 8 gráficos animados más =====
+    // contador de rodillos (tipo tragaperras)  {"tipo":"contador","valor":"4.815.000","texto":"…"}
+    contador(v, L, d) {
+      const s = String(v.valor || ''), cs = [...s], dig = cs.filter(c => /\d/.test(c)).length || 1, cw = Math.min(HOR ? 86 : 70, (Z.w - 10 - (cs.length - 1) * 6) / (dig + (cs.length - dig) * .5)), ch = cw * 1.45;
+      const wT = cs.reduce((a, c) => a + (/\d/.test(c) ? cw : cw * .5), 0) + (cs.length - 1) * 6, x0 = ZC.x - wT / 2, yC = HOR ? ZC.y - 30 : Z.y + 170, e = back(L / .4);
+      let x = x0, di = 0, o = `<g transform="translate(${ZC.x} ${yC}) scale(${e.toFixed(3)}) translate(${-ZC.x} ${-yC})">`;
+      cs.forEach(c => {
+        if (/\d/.test(c)) {
+          const t1 = .4 + (dig - 1 - di) * .12 + .5, q = eo(cl((L - .2) / (t1 - .2))), fin = +c, giro = (1 - q) * (8 + di * 3), val = fin + giro, base = Math.floor(val), fr = val - base, id = `cr${di}${Math.round(x)}`;
+          o += caja(x, yC - ch / 2, cw, ch, cw * .16, INK, 4, 5) + `<clipPath id="${id}"><rect x="${x}" y="${yC - ch / 2}" width="${cw}" height="${ch}" rx="${cw * .16}"/></clipPath><g clip-path="url(#${id})">` +
+            tx(x + cw / 2, yC + cw * .36 + fr * ch, String(base % 10), cw, BLA) + tx(x + cw / 2, yC + cw * .36 + fr * ch - ch, String((base + 1) % 10), cw, BLA) +
+            `</g><path d="M${x + 4} ${yC} H${x + cw - 4}" stroke="${BLA}" stroke-opacity=".15" stroke-width="3"/>`;
+          x += cw + 6; di++;
+        } else { o += tx(x + cw * .25, yC + cw * .36, esc(c), cw, INK); x += cw * .5 + 6; }
+      });
+      o += `</g>`;
+      const size = HOR ? 46 : 38, max = HOR ? 30 : 24;
+      return o + (v.texto ? cinetico(v.texto, ZC.x, yC + ch / 2 + (HOR ? 70 : 80), size, L, { max, t0: .9 }) : '');
+    },
+    // pasos de un proceso unidos por flechas  {"tipo":"pasos","items":["Pides cita","Te llaman","Cobras"]}
+    pasos(v, L, d) {
+      const it = (v.items || []).slice(0, 4), n = it.length || 1, tramo = Math.max(.45, (d - .6) / n);
+      const hB = HOR ? 150 : 96, wB = HOR ? (Z.w - (n - 1) * 70) / n : Z.w - 40, gap = HOR ? 70 : Math.min(54, (Z.h - n * hB) / Math.max(1, n - 1));
+      const tot = HOR ? Z.w : n * hB + (n - 1) * gap, y0 = HOR ? ZC.y - hB / 2 : ZC.y - tot / 2;
+      let o = '';
+      it.forEach((s, i) => {
+        const t0 = .2 + i * tramo, e = back((L - t0) / .4); if (e <= 0) return;
+        const x = HOR ? Z.x + i * (wB + 70) : ZC.x - wB / 2, y = HOR ? y0 : y0 + i * (hB + gap), act = L < t0 + tramo || i === n - 1, c = [ORA, AZU, VER, MOR][i % 4], cx = x + wB / 2, cy = y + hB / 2;
+        const fs = Math.min(HOR ? 34 : 32, (wB - (HOR ? 40 : 110)) / (Math.max(6, String(s).length) * .55));
+        o += `<g transform="translate(${cx} ${cy}) scale(${(e * (act ? 1 + .03 * Math.sin(L * 6) : 1)).toFixed(3)}) translate(${-cx} ${-cy})">` + caja(x, y, wB, hB, 24, act ? c : BLA, 5) +
+          `<circle cx="${HOR ? cx : x + 50}" cy="${HOR ? y : cy}" r="30" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` + tx(HOR ? cx : x + 50, (HOR ? y : cy) + 12, String(i + 1), 34, c) +
+          tx(HOR ? cx : x + 96, HOR ? cy + 26 : cy + fs * .36, esc(s), fs, act && c !== ORO ? '#fff' : INK, HOR ? 'middle' : 'start', 800) + `</g>`;
+        if (i < n - 1) {
+          const pa = eo((L - t0 - tramo + .25) / .3); if (pa <= 0) return;
+          o += HOR ? `<path d="M${x + wB + 10} ${cy} h${(50 * pa).toFixed(1)}" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${x + wB + 52} ${cy - 14} l16 14 l-16 14" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` : '')
+            : `<path d="M${cx} ${y + hB + 8} v${((gap - 22) * pa).toFixed(1)}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${cx - 13} ${y + hB + gap - 26} l13 14 l13 -14" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>` : '');
+        }
+      });
+      return o;
+    },
+    // termómetro que se llena  {"tipo":"termometro","valor":"38 °C","max":"45","texto":"…"}
+    termometro(v, L, d) {
+      const mx = num(v.max) || 45, mn = num(v.min) || 0, pr = cl((num(v.valor) - mn) / (mx - mn)), p = eo(cl((L - .2) / 1)), cx = HOR ? Z.x + 200 : ZC.x - 130, top = HOR ? Z.y + 20 : Z.y + 40, hT = HOR ? 280 : 380, w = 56, rb = 58, by = top + hT + rb * .6;
+      const c = pr > .66 ? ROJ : pr > .33 ? ORA : AZU, yF = top + hT - (hT - 10) * pr * p, e = back(L / .4);
+      let o = `<g transform="translate(${cx} ${by}) scale(${e.toFixed(3)}) translate(${-cx} ${-by})">` +
+        `<rect x="${cx - w / 2 + SOM}" y="${top + SOM}" width="${w}" height="${hT}" rx="${w / 2}" fill="${INK}"/><circle cx="${cx + SOM}" cy="${by + SOM}" r="${rb}" fill="${INK}"/>` +
+        `<rect x="${cx - w / 2}" y="${top}" width="${w}" height="${hT}" rx="${w / 2}" fill="${BLA}" stroke="${INK}" stroke-width="6"/>` +
+        `<rect x="${cx - w / 2 + 12}" y="${yF.toFixed(1)}" width="${w - 24}" height="${(top + hT - yF + 20).toFixed(1)}" rx="${(w - 24) / 2}" fill="${c}"/>` +
+        `<circle cx="${cx}" cy="${by}" r="${rb}" fill="${c}" stroke="${INK}" stroke-width="6"/><path d="M${cx - 20} ${by - 20} a28 28 0 0 1 22 -12" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" opacity=".6"/>`;
+      for (let i = 1; i < 5; i++) { const y = top + hT * i / 5; o += `<path d="M${cx + w / 2 + 4} ${y} h18" stroke="${INK}" stroke-width="4"/>`; }
+      o += `</g>`;
+      const xT = HOR ? Z.x + 380 + (Z.w - 380) / 2 : ZC.x + 110, size = HOR ? 46 : 34, max = HOR ? 22 : 14;
+      return o + `<g transform="translate(${xT} ${HOR ? ZC.y - 20 : Z.y + 220}) scale(${back((L - .5) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), p)), HOR ? 110 : 84, c, 'middle', 900, `stroke="${INK}" stroke-width="3" paint-order="stroke" letter-spacing="-3"`)}</g>` +
+        (v.texto ? cinetico(v.texto, xT, (HOR ? ZC.y + 60 : Z.y + 300), size, L, { max, t0: .8 }) : '');
+    },
+    // batería que se carga o se vacía  {"tipo":"bateria","valor":"23 %","texto":"…"}
+    bateria(v, L, d) {
+      const pr = cl(num(v.valor) / 100), p = eo(cl((L - .2) / 1.1)), w = HOR ? 380 : 420, h = HOR ? 180 : 190, x = HOR ? Z.x + 30 : ZC.x - w / 2 - 14, y = HOR ? ZC.y - h / 2 : Z.y + 60, e = back(L / .4);
+      const c = pr < .25 ? ROJ : pr < .6 ? ORO : VER, segs = 5, fl = pr * p, cx = x + w / 2, cy = y + h / 2;
+      let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) translate(${-cx} ${-cy})">` + caja(x, y, w, h, 30, BLA, 7) + `<rect x="${x + w + 4}" y="${cy - 36}" width="26" height="72" rx="10" fill="${INK}"/>`;
+      for (let i = 0; i < segs; i++) {
+        const sw = (w - 36 - (segs - 1) * 10) / segs, sx = x + 18 + i * (sw + 10), lleno = cl(fl * segs - i), parp = pr < .25 && i === 0 ? .55 + .45 * Math.sin(L * 9) : 1;
+        if (lleno > 0) o += `<rect x="${sx}" y="${y + 18}" width="${(sw * lleno).toFixed(1)}" height="${h - 36}" rx="10" fill="${c}" opacity="${parp.toFixed(2)}"/>`;
+      }
+      o += `</g>` + `<g transform="translate(${cx} ${cy + 20})">${tx(0, 0, esc(contar(String(v.valor || ''), p)), HOR ? 74 : 76, INK, 'middle', 900, `stroke="${BLA}" stroke-width="10" paint-order="stroke"`)}</g>`;
+      const size = HOR ? 46 : 38, max = HOR ? 20 : 24;
+      return o + (v.texto ? cinetico(v.texto, HOR ? Z.x + 480 + (Z.w - 480) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 90, size, L, { max, t0: .7 }) : '');
+    },
+    // Lupi con la lupa sobre la letra pequeña  {"tipo":"lupa","titulo":"La letra pequeña","texto":"≤ 50 caracteres: el detalle"}
+    lupa(v, L, d) {
+      const w = HOR ? 620 : Z.w - 10, h = HOR ? 330 : 380, x = HOR ? Z.x + 20 : ZC.x - w / 2, y = HOR ? ZC.y - h / 2 : Z.y + 20, e = back(L / .45), lineas = 7, fila = 4;
+      let o = `<g transform="translate(${x + w / 2} ${y + h / 2}) rotate(-2) scale(${e.toFixed(3)}) translate(${-(x + w / 2)} ${-(y + h / 2)})">` + caja(x, y, w, h, 10, '#fbf8f0', 4) +
+        (v.titulo ? tx(x + 30, y + 54, esc(v.titulo), HOR ? 34 : 32, INK, 'start', 900) : '');
+      for (let i = 0; i < lineas; i++) { const yy = y + 90 + i * ((h - 120) / lineas); o += i === fila ? `<rect x="${x + 30}" y="${yy - 6}" width="${(w - 60) * eo((L - .9) / .4)}" height="16" rx="4" fill="${ORO}"/><rect x="${x + 30}" y="${yy}" width="${w - 60}" height="5" rx="2" fill="${INK}" opacity=".5"/>` : `<rect x="${x + 30}" y="${yy}" width="${(w - 60) * (i % 3 === 2 ? .7 : 1)}" height="5" rx="2" fill="${INK}" opacity=".16"/>`; }
+      o += `</g>`;
+      const yF = y + 90 + fila * ((h - 120) / lineas), q = eio(cl((L - .2) / .8)), lx = x + 80 + (w * .55 - 80) * q + 20 * Math.sin(L * 2), ly = yF - 20 + 8 * Math.sin(L * 3);
+      o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(-25) scale(${HOR ? .95 : 1})">${lupi({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;
+      const size = HOR ? 44 : 36, max = HOR ? 18 : 24;
+      return o + (v.texto ? cinetico(v.texto, HOR ? x + w + (Z.x + Z.w - x - w) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 80, size, L, { max, t0: 1 }) : '');
+    },
+    // encuesta con barras  {"tipo":"encuesta","pregunta":"¿…?","opciones":[{"texto":"Sí","valor":"58 %"},{"texto":"No","valor":"42 %"}],"fuente":"CIS"}
+    encuesta(v, L, d) {
+      const op = (v.opciones || []).slice(0, 4), n = op.length || 1, mx = Math.max(...op.map(q => num(q.valor)), 1e-9), hP = v.pregunta ? (HOR ? 90 : 120) : 0;
+      const ah = Math.min(HOR ? 66 : 80, (Z.h - hP - 30) / n - 18), y0 = Z.y + hP + 10, gan = op.reduce((b, q, i) => num(q.valor) > num(op[b].valor) ? i : b, 0);
+      let o = v.pregunta ? cinetico(v.pregunta, ZC.x, Z.y + (HOR ? 46 : 54), HOR ? 42 : 36, L, { max: HOR ? 40 : 24 }) : '';
+      op.forEach((q, i) => {
+        const t0 = .3 + i * .15, p = eio(cl((L - t0) / .9)), y = y0 + i * (ah + 18), win = i === gan && p > .99, fs = Math.min(ah * .4, 34);
+        o += caja(Z.x + 6, y, Z.w - 20, ah, ah * .3, BLA, 4) + `<rect x="${Z.x + 6}" y="${y}" width="${((Z.w - 20) * num(q.valor) / mx * .98 * p).toFixed(1)}" height="${ah}" rx="${ah * .3}" fill="${win ? ORA : GRI}" opacity="${win ? 1 : .8}"/>` +
+          tx(Z.x + 30, y + ah / 2 + fs * .36, esc(q.texto || ''), fs, win ? '#fff' : INK, 'start', 800) + tx(Z.x + Z.w - 34, y + ah / 2 + fs * .36, esc(contar(String(q.valor || ''), p)), fs, INK, 'end', 900) +
+          (win ? `<circle cx="${Z.x + Z.w - 14}" cy="${y}" r="${(16 * back((L - t0 - .95) / .3)).toFixed(1)}" fill="${VER}" stroke="${INK}" stroke-width="4"/>` : '');
+      });
+      return o + (v.fuente ? peg(Z.x + Z.w - 16, y0 + n * (ah + 18) + 24, 'FUENTE: ' + String(v.fuente).toUpperCase(), HOR ? 20 : 18, INK, '#fff', 'end', eo((L - .8) / .3), 0) : '');
+    },
+    // ÚLTIMA HORA: banda roja con destello y cinta de texto  {"tipo":"ultimahora","texto":"≤ 60 caracteres","cinta":"frase que pasa abajo"}
+    ultimahora(v, L, d) {
+      const e = back(L / .35), fl = Math.sin(L * 10) > 0 ? 1 : .75, yB = HOR ? Z.y + 40 : Z.y + 40, hB = HOR ? 90 : 84, size = HOR ? 56 : 44, max = HOR ? 26 : 18, alto = altoCin(v.texto, size, max);
+      let o = `<g transform="translate(${ZC.x} ${yB + hB / 2}) rotate(-3) scale(${e.toFixed(3)}) translate(${-ZC.x} ${-(yB + hB / 2)})">` + caja(Z.x - 6, yB, Z.w + 12, hB, 14, ROJ, 5) +
+        `<circle cx="${Z.x + 40}" cy="${yB + hB / 2}" r="14" fill="#fff" opacity="${fl}"/>` + tx(Z.x + 70, yB + hB / 2 + (HOR ? 18 : 16), 'ÚLTIMA HORA', HOR ? 50 : 44, '#fff', 'start', 900, 'letter-spacing="1"') + `</g>`;
+      o += cinetico(v.texto, ZC.x, yB + hB + (HOR ? 90 : 110), size, L, { max, t0: .3 });
+      const yC = HOR ? Z.y + Z.h - 30 : yB + hB + 110 + alto + 40, cinta = (String(v.cinta || v.texto || '') + '   •   ').toUpperCase(), wc = cinta.length * (HOR ? 15 : 14.5), off = (L * 140) % wc;
+      return o + `<clipPath id="ci"><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48"/></clipPath><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48" fill="${INK}" opacity="${eo((L - .5) / .3).toFixed(2)}"/>` +
+        `<g clip-path="url(#ci)" opacity="${eo((L - .5) / .3).toFixed(2)}">${[0, 1, 2].map(j => tx(Z.x - off + j * wc, yC + 2, esc(cinta), HOR ? 26 : 25, ORO, 'start', 900)).join('')}</g>`;
+    },
+    // podio de los tres primeros  {"tipo":"podio","items":[{"etiqueta":"Madrid","valor":"1.650 €"},{"etiqueta":"Barcelona","valor":"1.480 €"},{"etiqueta":"Málaga","valor":"1.200 €"}]}
+    podio(v, L, d) {
+      const it = (v.items || []).slice(0, 3), orden = [1, 0, 2], alt = [HOR ? 250 : 280, HOR ? 180 : 210, HOR ? 130 : 150], med = [ORO, '#c9ccd3', '#d6894a'];
+      const wB = HOR ? 220 : 172, gap = HOR ? 18 : 8, base = HOR ? Z.y + Z.h - 10 : Z.y + Z.h - 60, x0 = ZC.x - (3 * wB + 2 * gap) / 2;
+      let o = `<path d="M${x0 - 20} ${base} H${x0 + 3 * wB + 2 * gap + 20}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>`;
+      orden.forEach((pos, col_) => {
+        const q = it[pos]; if (!q) return;
+        const t0 = .2 + (2 - pos) * .35, p = back((L - t0) / .55), h = alt[pos] * cl(p, 0, 1.1), x = x0 + col_ * (wB + gap), y = base - h;
+        if (L < t0) return;
+        o += caja(x, y, wB, h, 12, pos === 0 ? ORA : BLA, 5) + tx(x + wB / 2, y + Math.min(h - 10, HOR ? 92 : 100), String(pos + 1), HOR ? 84 : 90, pos === 0 ? '#fff' : INK, 'middle', 900, `opacity="${cl(h / 120).toFixed(2)}"`);
+        const ep = back((L - t0 - .45) / .35); if (ep <= 0) return;
+        const fs = Math.min(HOR ? 32 : 26, (wB - 8) / (Math.max(5, String(q.etiqueta || '').length) * .56));
+        o += `<g transform="translate(${x + wB / 2} ${y - 18}) scale(${ep.toFixed(3)})"><circle cx="0" cy="${HOR ? -96 : -104}" r="28" fill="${med[pos]}" stroke="${INK}" stroke-width="5"/>${tx(0, HOR ? -86 : -94, String(pos + 1), 28, INK)}` +
+          tx(0, HOR ? -50 : -46, esc(q.etiqueta || ''), fs, INK, 'middle', 900) + peg(0, -6, String(q.valor || ''), HOR ? 26 : 22, INK, '#fff', 'middle', 1, 0) + `</g>`;
+        if (pos === 0 && L > t0 + .6) for (let i = 0; i < 14; i++) { const a = i * 2.4, fr = frac((L - t0 - .6) * .7 + i / 14), cx_ = x + wB / 2 + Math.sin(a * 3.1) * 150 * fr, cy_ = y - 150 - 60 * Math.sin(a) + 260 * fr * fr; o += `<rect x="${cx_.toFixed(1)}" y="${cy_.toFixed(1)}" width="12" height="7" fill="${[ORA, AZU, VER, ORO, ROJ][i % 5]}" transform="rotate(${(a * 60 + L * 300).toFixed(0)} ${cx_.toFixed(1)} ${cy_.toFixed(1)})" opacity="${(1 - fr).toFixed(2)}"/>`; }
+      });
+      return o;
+    },
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
       const fw = HOR ? Z.w * .6 : Z.w + 20, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
@@ -595,7 +716,7 @@
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
     if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
-    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos'].includes(tipo)) return '';
+    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos', 'contador', 'pasos', 'termometro', 'bateria', 'lupa', 'encuesta', 'ultimahora', 'podio'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
     const pos = HOR ? [[Z.x + Z.w - 120, Z.y + 40, 5], [Z.x + Z.w - 150, Z.y + Z.h - 20, -5]] : [[Z.x + Z.w - 130, Z.y + 60, 6], [Z.x + 120, Z.y + Z.h + 8, -5]], cs = [[ORO, INK], [AZU, '#fff']];
