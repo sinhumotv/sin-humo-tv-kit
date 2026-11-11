@@ -273,7 +273,7 @@
       const fila = (o, n, y, c, t0) => {
         const p = eo((L - t0) / .9), w = Math.max(ah * 1.1, wM * (Math.abs(n) / mx) * p), op = cl((L - t0) / .15);
         return `<g opacity="${op}">` + tx(x0, y - 16, esc(o.etiqueta || ''), HOR ? 34 : 32, INK, 'start', 900) + caja(x0, y, w, ah, ah * .28, c) +
-          (w > wM * .5 ? tx(x0 + w - 22, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, c === ORA ? '#fff' : INK, 'end') : tx(x0 + w + 26, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, INK, 'start')) + `</g>`;
+          (w > wM * .5 ? tx(x0 + w - 22, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, c === ORA || c === 'url(#gC1)' ? '#fff' : INK, 'end') : tx(x0 + w + 26, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, INK, 'start')) + `</g>`;
       };
       let dif = '';   // v45: pastilla con la diferencia (+92 %, ×3…) cuando las dos cifras son comparables
       const tiempo = /\b(1[89]|20)\d\d\b|antes|ahora|hoy|ayer|año|mes|semana|actual|anterior|nuev|viej|pasad/i.test(String(a.etiqueta || '') + ' ' + String(b.etiqueta || ''));   // v53: solo si es un antes/después
@@ -283,16 +283,20 @@
         const t0 = 1.3, e2 = back((L - t0) / .4);
         if (L > t0 && Math.abs(pc) >= 3) dif = peg(HOR ? Z.x + Z.w - 120 : Z.x + Z.w - 92, HOR ? ZC.y + 10 : ZC.y + 8, et, HOR ? 36 : 34, pc > 0 ? ROJ : VER, '#fff', 'middle', 1, -6, e2);
       }
-      return fila(a, na, ZC.y - ah - (HOR ? 34 : 70), GRI, .15) + fila(b, nb, ZC.y + (HOR ? 62 : 86), ORA, .6) + dif;
+      const gd = `<defs><linearGradient id="gC0" x1="0" x2="1"><stop offset="0" stop-color="#f3c79b"/><stop offset="1" stop-color="#ffe2c2"/></linearGradient><linearGradient id="gC1" x1="0" x2="1"><stop offset="0" stop-color="${ORA}"/><stop offset="1" stop-color="#ff9a3d"/></linearGradient></defs>`;   // v89: barras con degradado
+      return gd + fila(a, na, ZC.y - ah - (HOR ? 34 : 70), 'url(#gC0)', .15) + fila(b, nb, ZC.y + (HOR ? 62 : 86), 'url(#gC1)', .6) + dif;
     },
     grafico(v, L, d) {
       const vs = (v.valores || []).slice(0, 7), et = v.etiquetas || [], n = vs.length || 1, mx = Math.max(...vs.map(x => Math.abs(num(x))), 1e-9), base = Z.y + Z.h - (HOR ? 50 : 66), alto = Z.h - (HOR ? 160 : 220);
       const paso = Math.min(HOR ? 190 : 150, Z.w / n), an = paso * .6, x0 = ZC.x - paso * n / 2 + (paso - an) / 2;
       let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 36 : 40), HOR ? 40 : 34, L, { max: HOR ? 46 : 30 }) : '';
       o += [1, 2, 3].map(i => `<path d="M${Z.x} ${base - alto * i / 3} H${Z.x + Z.w}" stroke="${INK}" stroke-opacity=".16" stroke-width="3" stroke-dasharray="4 12"/>`).join('');
+      // v89: barras con degradado y brillo (antes, beis plano); la destacada en naranja intenso
+      o += `<defs><linearGradient id="gB0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2c2"/><stop offset="1" stop-color="#f3c79b"/></linearGradient><linearGradient id="gB1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a3d"/><stop offset="1" stop-color="${ORA}"/></linearGradient></defs>`;
       vs.forEach((x, i) => {
         const t0 = .25 + i * Math.min(.35, d * .5 / n), p = back((L - t0) / .7), h = Math.max(12, alto * Math.abs(num(x)) / mx * p), xx = x0 + i * paso, ult = i === n - 1, op = cl((L - t0) / .12);
-        o += `<g opacity="${op}">` + caja(xx, base - h, an, h, Math.min(14, an * .16), ult ? ORA : GRI) +
+        o += `<g opacity="${op}">` + caja(xx, base - h, an, h, Math.min(14, an * .16), ult ? 'url(#gB1)' : 'url(#gB0)') +
+          `<rect x="${(xx + an * .14).toFixed(1)}" y="${(base - h + 8).toFixed(1)}" width="${(an * .14).toFixed(1)}" height="${Math.max(0, h - 16).toFixed(1)}" rx="${(an * .07).toFixed(1)}" fill="#fff" opacity=".35"/>` +
           tx(xx + an / 2, base - h - 16, esc(contar(String(x), cl((L - t0) / .7))), Math.min(HOR ? 40 : 32, an * .45), INK) +
           tx(xx + an / 2, base + (HOR ? 42 : 48), esc(et[i] || ''), Math.min(HOR ? 28 : 24, paso * .3), INK, 'middle', 800) + `</g>`;
       });
@@ -338,11 +342,13 @@
       return o;
     },
     icono(v, L, d) {
-      const c = col(v.color), ix = HOR ? Z.x + 190 : ZC.x, iy = HOR ? ZC.y : Z.y + 140, size = HOR ? 58 : 44, max = HOR ? 19 : 22, alto = altoCin(v.texto, size, max);
-      const tx0 = HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, ty = HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 300 + size * .5;
+      const c = col(v.color), ix = HOR ? Z.x + 190 : ZC.x, iy = HOR ? ZC.y : Z.y + 175, size = HOR ? 58 : 44, max = HOR ? 19 : 22, alto = altoCin(v.texto, size, max);
+      const tx0 = HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, ty = HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 345 + size * .5;
       const R0 = HOR ? 150 : 112, ondas = [0, 1].map(j => { const f = frac(L / 1.8 + j / 2); return `<circle cx="${ix}" cy="${iy}" r="${(R0 + 10 + 70 * f).toFixed(1)}" fill="none" stroke="${c}" stroke-width="${(6 * (1 - f)).toFixed(1)}" opacity="${(.5 * (1 - f) * cl(L / .4)).toFixed(2)}"/>`; }).join('');
       const orbita = atras => [0, 1, 2].map(j => { const a = L * 1.3 + j * 2.094, r = R0 + 26; if ((Math.sin(a) < 0) !== atras) return ''; return `<circle cx="${(ix + r * Math.cos(a)).toFixed(1)}" cy="${(iy + r * .45 * Math.sin(a)).toFixed(1)}" r="${j === 0 ? 11 : 7}" fill="${[ORA, ORO, c][j]}" stroke="${INK}" stroke-width="3" opacity="${cl((L - .3) / .3).toFixed(2)}"/>`; }).join('');   // v61: ondas y órbita (por detrás en la mitad de arriba)
-      return ondas + orbita(true) + `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, R0, L, 0, v.icono, c)}</g>` + orbita(false) +
+      const halo = `<defs><radialGradient id="gI"><stop offset=".55" stop-color="${c}" stop-opacity=".32"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient></defs><circle cx="${ix}" cy="${iy}" r="${(R0 * (1.4 + .05 * Math.sin(L * 2))).toFixed(1)}" fill="url(#gI)" opacity="${eo(L / .5).toFixed(2)}"/>` +   // v89: halo de color detrás del icono
+        `<circle cx="${ix}" cy="${iy}" r="${R0 + 34}" fill="none" stroke="${c}" stroke-width="4" stroke-dasharray="3 16" stroke-linecap="round" opacity="${(.6 * eo((L - .2) / .4)).toFixed(2)}" transform="rotate(${(L * 25).toFixed(1)} ${ix} ${iy})"/>`;
+      return halo + ondas + orbita(true) + `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, R0, L, 0, v.icono, c)}</g>` + orbita(false) +
         cinetico(v.texto, tx0, ty, size, L, { max, t0: .2 }) +
         (v.etiqueta ? peg(tx0 + (HOR ? 120 : 110), ty + alto + 6, String(v.etiqueta), HOR ? 28 : 24, c === ORA ? AZU : c, '#fff', 'middle', eo((L - .8) / .25), 4, back((L - .8) / .35)) : '');
     },
