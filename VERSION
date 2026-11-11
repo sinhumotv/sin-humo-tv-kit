@@ -88,3 +88,4 @@ v81 2026-11-11: diálogo horizontal sin pisar a Lupi
 v82 2026-11-11: miniatura de YouTube con el Lupi y el logo modernos de los vídeos
 v83 2026-11-11: textos en líneas equilibradas; listas, checklist, pasos y línea de tiempo aparecen cuando la voz nombra cada elemento (y su sonido también)
 v84 2026-11-11: el mapa se encoge si su texto es largo (el texto nunca baja hasta los subtítulos)
+v85 2026-11-11: listas y checklist muestran huecos punteados de lo que falta por nombrar (la pantalla nunca se queda vacía)

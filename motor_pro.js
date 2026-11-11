@@ -303,7 +303,9 @@
       const act = Math.max(0, T0.filter(x => L >= x).length - 1);
       let o = v.titulo ? cinetico(v.titulo, HOR ? Z.x + 20 : ZC.x, Z.y + (HOR ? 46 : 62), HOR ? 46 : 38, L, { max: HOR ? 48 : 28, anchor: HOR ? 'start' : 'middle' }) : '';
       it.forEach((s, i) => {
-        const t0 = T0[i], e = back((L - t0) / .4); if (L < t0) return;
+        const t0 = T0[i], e = back((L - t0) / .4);
+        if (L < t0 + .12) o += hueco(Z.x + 8, y0 + i * (ah + 18), Z.w - 24, ah, ah * .26, i + 1, L);
+        if (L < t0) return;
         const y = y0 + i * (ah + 18), on = i === act, fs = Math.min(ah * .4, (Z.w - 160) / (Math.max(8, [...String(s)].length) * .56));
         o += `<g transform="translate(${((1 - e) * (i % 2 ? -1 : 1) * 300).toFixed(1)} 0) rotate(${on ? -1 : 0} ${ZC.x} ${y + ah / 2})" opacity="${cl((L - t0) / .12)}">` + caja(Z.x + 8, y, Z.w - 24, ah, ah * .26, on ? c : BLA) +
           `<circle cx="${Z.x + 8 + ah * .5}" cy="${y + ah / 2}" r="${ah * .3}" fill="${on ? '#fff' : c}" stroke="${INK}" stroke-width="2.5"/>` + tx(Z.x + 8 + ah * .5, y + ah / 2 + ah * .13, String(i + 1), ah * .36, on ? c : '#fff') +
@@ -617,7 +619,9 @@
       const it = (v.items || []).slice(0, 4), T0 = entradas(k, it.map(q => String((q || {}).texto || q)), d, .25), n = it.length || 1, hT = v.titulo ? (HOR ? 70 : 80) : 0, ah = Math.min(HOR ? 76 : 84, (Z.h - hT) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
       let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 44 : 56), HOR ? 40 : 36, L, { max: HOR ? 46 : 28 }) : '';
       it.forEach((q, i) => {
-        const t0 = T0[i], e = back((L - t0) / .4); if (e <= 0) return;
+        const t0 = T0[i], e = back((L - t0) / .4);
+        if (L < t0 + .12) o += hueco(Z.x + 10, y0 + i * (ah + 18), Z.w - 20, ah, ah * .28, '', L);
+        if (e <= 0) return;
         const y = y0 + i * (ah + 18), ok = q.ok !== false && q.ok !== 'false', c = ok ? VER : ROJ, s = String(q.texto || ''), fs = Math.min(ah * .4, (Z.w - ah - 60) / (Math.max(8, s.length) * .56));
         const pm = eo((L - t0 - .25) / .3), bxx = Z.x + 10, cxk = bxx + ah / 2, cyk = y + ah / 2, rr = ah * .3;
         const marca = ok ? `<path d="M${cxk - rr * .6} ${cyk} l${rr * .45} ${rr * .5} l${rr * .85} ${-rr * .95}" fill="none" stroke="#fff" stroke-width="${ah * .12}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - pm).toFixed(3)}"/>`
@@ -949,6 +953,8 @@
   // v71: cada elemento de una lista aparece cuando la voz lo nombra (si no se nombra, a intervalos iguales como antes)
   const _nrm = w => String(w || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9ñ]/g, '');
   const ENTRAN = {};
+  // v85: hueco punteado donde va a aparecer un elemento que la voz aún no ha nombrado (la pantalla nunca se queda vacía)
+  const hueco = (x, y, w, h, rx, n, L) => { const op = .55 * eo((L - .15) / .35); return op <= 0 ? '' : `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="#fff" fill-opacity=".35" stroke="${INK}" stroke-opacity=".28" stroke-width="2.5" stroke-dasharray="10 9" opacity="${op.toFixed(2)}"/>` + (n === '' ? `<rect x="${(x + h * .5 - h * .36).toFixed(1)}" y="${(y + h * .14).toFixed(1)}" width="${(h * .72).toFixed(1)}" height="${(h * .72).toFixed(1)}" rx="${(h * .16).toFixed(1)}"` : `<circle cx="${(x + h * .5).toFixed(1)}" cy="${(y + h / 2).toFixed(1)}" r="${(h * .3).toFixed(1)}"`) + ` fill="none" stroke="${INK}" stroke-opacity=".25" stroke-width="2.5" opacity="${op.toFixed(2)}"/>` + tx(x + h * .5, y + h / 2 + h * .13, String(n), h * .36, INK, 'middle', 900, `opacity="${(op * .35).toFixed(2)}"`); };
   function entradas(k, its, d, ini = .3, paso) {
     const key = k + '|' + its.join('§'); if (ENTRAN[key]) return ENTRAN[key];
     const n = its.length || 1, p0 = paso || Math.max(.45, (d - .8) / n), ps = k == null ? [] : palabras(k).map(p => ({ w: _nrm(p.w), a: p.a - T.escenas[k].ini + (k === 0 ? 1 : 0) }));   // al tiempo de la escena (L)
