@@ -37,11 +37,19 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+      - name: Caché del modelo de voz (Qwen)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-qwen3-tts-base-1.7b
       - name: Programas
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
           mkdir -p ~/.fonts && cp fonts/*.otf ~/.fonts/ && fc-cache -f > /dev/null
           pip install -q numpy pillow faster-whisper num2words
+          # (12-nov-2026) voz propia del canal con Qwen3-TTS (gratis, sin límites)
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -q qwen-tts soundfile librosa
           npm i -s --no-save playwright@1.63.0 > /dev/null && npx playwright install --with-deps chromium > /dev/null
       - name: Hacer y programar el largo
         env:

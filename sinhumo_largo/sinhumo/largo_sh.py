@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """LARGO de sin humo TV hecho SIN Claude (7-nov-2026), igual que la skill «video-largo-sin-humo-tv»: unos 8 minutos en 16:9 con
 el kit del canal (motor_h.js: Lupi, capítulos, plantillas), 5 capítulos, hasta 6 fotos reales de Wikimedia Commons en escenas
-propias, voz Puck de Gemini con acento de España (un solo modelo de principio a fin), miniatura con foto real.
+propias, voz propia del canal con Qwen3-TTS (Gemini Puck de reserva), miniatura con foto real.
 
 Uso: python3 plataforma/sinhumo/largo_sh.py <noticia.json> <carpeta>
   noticia.json = {tema, hechos (texto largo y comprobado), fuentes[], enlaces[], grave, fotos[] (búsquedas en Commons)}
@@ -122,7 +122,7 @@ if not fotos:
 json.dump(fotos, open(os.path.join(D, 'creditos.json'), 'w'), ensure_ascii=False)
 print('fotos:', len(fotos), flush=True)
 
-# ---------- 2) GUION (5 capítulos, ~80 escenas, unos 8 minutos con la voz de Gemini) ----------
+# ---------- 2) GUION (5 capítulos, ~80 escenas, unos 8 minutos de voz) ----------
 print('· guion', flush=True)
 fotos_txt = '\n'.join(f'  FOTO{i + 1}: {f["que"]} ({f["titulo"]})' for i, f in enumerate(fotos))
 REGLAS = f"""Eres el guionista de «sin humo TV», canal de YouTube de noticias que cuenta los hechos sin humo, en ESPAÑOL DE ESPAÑA.
@@ -132,6 +132,7 @@ si un dato solo lo da una fuente, dilo como «según <fuente>»; no inventes cif
 Contenido: contexto (qué ha pasado), por qué importa, datos clave, posturas de cada parte (neutral, mismo espacio), qué puede pasar ahora y qué significa
 para el espectador. Política: solo hechos y NEUTRALIDAD ESTRICTA: si salen partidos o políticos, el mismo espacio para cada parte (Gobierno y oposición, y cada partido que cites), nunca más de 2 escenas seguidas sobre un mismo partido, y nada de insultos ni descalificaciones literales («mafia», «te come»…): cuéntalo como «críticas duras» sin repetirlas. Antes que declaraciones de partido, prioriza instituciones, datos y cómo afecta a la gente. {'Hay víctimas: tono serio y respetuoso; no identifiques a víctimas ni a menores; nadie es culpable sin condena.' if GRAVE else ''}
 Frases cortas (8-15 palabras), tono de narrador curioso y cercano, pausado. Una idea por escena (4-9 segundos).
+La voz que lo lee NO interpreta acotaciones ni susurra: el tono tiene que estar en el propio texto (preguntas con ¿?, exclamaciones con ¡!, puntos suspensivos para la intriga). Nunca escribas acotaciones como «(en voz baja)» ni etiquetas entre corchetes.
 LENGUAJE DE LA CALLE: palabras sencillas, como se lo contarías a un amigo («votos», no «sufragios»; «elecciones», no «proceso comicial»; «dijo», no «manifestó»;
 «pidió», no «formalizó la petición»). Nada de jerga jurídica o administrativa; si una sigla o un término técnico es imprescindible, explícalo en la misma frase la primera vez.
 Cada escena aporta algo NUEVO y concreto (un dato, un nombre, una fecha, una consecuencia): nada de frases de relleno ni de repetir lo ya dicho.
@@ -316,13 +317,24 @@ def _hablado():
         json.dump(Pj, open(os.path.join(D, 'proyecto.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('hablado:', _hablado(), flush=True)
 
-# ---------- 4) VOZ: un solo modelo de principio a fin, acento de España ----------
+# ---------- 4) VOZ: la voz propia del canal con Qwen3-TTS (gratis, sin límites); Gemini solo de reserva ----------
+# (12-nov-2026) Pablo eligió la voz de Qwen copiando la voz del canal: misma voz siempre y sin cuotas. No actúa
+# susurros ni emociones por encargo: el guion transmite el tono con el texto (preguntas, exclamaciones, puntos suspensivos).
 print('· voz', flush=True)
-r = subprocess.run(['python3', os.path.join(PLAT, 'v2', 'voz.py'), D, '--voz', 'Puck', '--tono', 'noticias_grave' if GRAVE else 'noticias'],
-                   capture_output=True, text=True, env=dict(os.environ, VOZ_ESTRICTA='1', VOZ_REINICIA='1', VOZ_CPS='13.5'), timeout=2400)
+KIT = os.path.dirname(PLAT)
+if os.path.exists(os.path.join(D, 'voz.mp3')):
+    os.remove(os.path.join(D, 'voz.mp3'))
+r = subprocess.run(['python3', os.path.join(KIT, 'voz_qwen.py'), D, '--voz', 'sinhumo'],
+                   capture_output=True, text=True, timeout=3 * 3600)
+VOZ_USADA = 'Qwen (voz propia de sin humo TV)'
 if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
-    sys.exit('FALLO voz: ' + (r.stdout + r.stderr)[-400:])
-print(r.stdout.strip().splitlines()[-1], flush=True)
+    print('voz Qwen falló, paso a Gemini: ' + (r.stdout + r.stderr)[-300:], flush=True)
+    r = subprocess.run(['python3', os.path.join(PLAT, 'v2', 'voz.py'), D, '--voz', 'Puck', '--tono', 'noticias_grave' if GRAVE else 'noticias'],
+                       capture_output=True, text=True, env=dict(os.environ, VOZ_ESTRICTA='1', VOZ_REINICIA='1', VOZ_CPS='13.5'), timeout=2400)
+    VOZ_USADA = 'Gemini Puck (reserva)'
+    if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
+        sys.exit('FALLO voz: ' + (r.stdout + r.stderr)[-400:])
+print(r.stdout.strip().splitlines()[-1], '·', VOZ_USADA, flush=True)
 
 # ---------- 5) MONTAJE con el kit: alineado, tiempos, render, mezcla, miniatura ----------
 print('· montaje', flush=True)
