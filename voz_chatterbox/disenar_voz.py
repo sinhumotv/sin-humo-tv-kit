@@ -12,15 +12,17 @@ import torch
 
 TEXTO = ("¡Ojo con esto! Hoy el Gobierno ha aprobado una medida que va a tocar el bolsillo de millones de "
          "españoles. Y escuchad bien, porque casi nadie se ha enterado. ¿Y sabéis lo mejor? Que esto acaba de empezar.")
-BASE = ("Hombre español de unos 28 años, de Madrid, con acento castellano de España muy natural (la zeta y la erre "
-        "doble bien marcadas). Voz de tono medio-grave, cálida y con cuerpo, nada aguda. Youtuber de noticias con mucha "
-        "chispa y personalidad: habla rápido y con energía, sonríe al hablar, sube y baja el tono constantemente, "
-        "cercano como un amigo que te cuenta algo increíble, espontáneo y nada de locutor.")
+# Descripción en inglés: el modelo la sigue mucho mejor (en español salían voces agudas/femeninas).
+BASE = ("A young adult MALE voice, about 28 years old, a man from Madrid, Spain, speaking native Castilian Spanish "
+        "(European Spanish accent, clear theta 'z' and strongly rolled double 'rr'). Medium-low male pitch, warm and full "
+        "voice, definitely not high-pitched. Energetic Spanish news YouTuber with lots of charisma: talks fast with energy, "
+        "smiles while talking, lively ups and downs in intonation, close and friendly like a friend telling you something "
+        "incredible, spontaneous and natural, not a radio announcer.")
 VARIANTES = [
     BASE,
-    BASE + " Un punto más grave y con un toque pícaro.",
-    BASE + " Un punto más joven y enérgico, muy expresivo.",
-    BASE + " Algo más pausado en las pausas dramáticas, con intriga.",
+    BASE + " Slightly deeper voice with a cheeky, playful touch.",
+    BASE + " Very expressive and dynamic, a bit more excited.",
+    BASE + " Uses dramatic pauses with suspense and intrigue.",
 ]
 
 
