@@ -99,7 +99,7 @@
     return `<defs><linearGradient id="gF" x1="0" y1="0" x2=".35" y2="1"><stop offset="0" stop-color="${BG2[0]}"/><stop offset="1" stop-color="${BG2[1]}"/></linearGradient>` +
       `<filter id="hb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="${HOR ? 14 : 16}"/></filter>` +
       `<radialGradient id="gL"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>` +
-      `<rect width="${W}" height="${H}" fill="url(#gF)"/>` +
+      `<rect width="${W}" height="${H}" fill="url(#gF)"/>` + (GRAVE ? '' : `<rect width="${W}" height="${H}" fill="${['#ffffff', '#ffb59a', '#ffd36b'][k % 3]}" opacity="${[0, .12, .14][k % 3]}"/>`) +   // v64: tono distinto por escena
       `<circle cx="${(W * (.3 + .1 * Math.sin(t * .3 + k))).toFixed(1)}" cy="${(H * .3).toFixed(1)}" r="${Math.max(W, H) * .45}" fill="url(#gL)"/>` +
       [0, 1, 2].map(i => humo(i, t + k * 1.7)).join('') +
       // v60: partículas de humo que suben despacio (vida en el fondo)
@@ -176,7 +176,9 @@
     cifra(v, L, d) {
       const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1, d * .45));   // v48: en la escena 1 la cifra ya está completa en el fotograma 0
       const yN = ZC.y + (HOR ? 30 : (v.icono ? 70 : 10)), ent = back(L / .4), lab = partir(v.texto || '', HOR ? 36 : 26), wS = size * Math.max(3, s.length) * .58;
-      return `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
+      const tB = Math.min(1, d * .45), xb = L - tB, est = xb > 0 && xb < .55 && !GRAVE ? [...Array(12).keys()].map(i => { const a = i / 12 * Math.PI * 2 + .2, r0 = wS * .5 + 10 + 60 * eo(xb / .55), r1 = r0 + 40 * (1 - xb / .55);
+        return `<path d="M${(ZC.x + r0 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r0 * .45 * Math.sin(a)).toFixed(1)} L${(ZC.x + r1 * Math.cos(a)).toFixed(1)} ${(yN - size * .3 + r1 * .45 * Math.sin(a)).toFixed(1)}" stroke="${INK}" stroke-width="6" stroke-linecap="round" opacity="${(1 - xb / .55).toFixed(2)}"/>`; }).join('') : '';   // v64: estallido al aterrizar
+      return est + `<rect x="${(ZC.x - wS / 2 * eo((L - .15) / .4)).toFixed(1)}" y="${(yN - size * .3).toFixed(1)}" width="${(wS * eo((L - .15) / .4)).toFixed(1)}" height="${(size * .36).toFixed(1)}" rx="${size * .06}" fill="${c === INK ? ORO : c}" opacity=".9" transform="rotate(-1.5 ${ZC.x} ${yN})"/>` +
         `<g transform="translate(${ZC.x} ${yN}) scale(${ent.toFixed(3)}) translate(${-ZC.x} ${-yN})">${tx(ZC.x, yN, esc(contar(s, p)), size, INK, 'middle', 900, 'letter-spacing="-4"')}</g>` +
         lab.map((l, i) => tx(ZC.x, yN + (HOR ? 74 : 70) + i * (HOR ? 50 : 44), esc(l), HOR ? 42 : 36, INK, 'middle', 800, `opacity="${eo((L - .45 - i * .1) / .3).toFixed(2)}"`)).join('') +
         (v.icono ? (HOR ? sticker(Z.x + 30, Z.y + 40, 54, L, .25, v.icono, c) : `<g transform="translate(0 ${(4 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ZC.x, yN - size * .62 - 118, 74, L, 0, v.icono, c)}</g>`) : '');
@@ -266,13 +268,18 @@
     pregunta(v, L, d) {
       const size = HOR ? 60 : 48, max = HOR ? 18 : 20, alto = altoCin(v.texto, size, max), qx = HOR ? Z.x + 190 : ZC.x, qy = HOR ? ZC.y + 120 : Z.y + 230, e = back(L / .5), fs = HOR ? 380 : 260;
       const q = (dx, dy, f, st) => `<text x="${dx}" y="${dy}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" fill="${f}"${st ? ` stroke="${INK}" stroke-width="10" stroke-linejoin="round"` : ''}>?</text>`;
-      return `<g transform="translate(${qx} ${qy}) rotate(${(-9 + 7 * Math.sin(L * 1.8)).toFixed(2)}) scale(${e.toFixed(3)})">${q(SOM + 2, SOM + 2, INK, true)}${q(0, 0, ORA, true)}</g>` +
+      const mini = [...Array(6).keys()].map(i => { const f = frac(L * .45 + i / 6), a = i * 1.7, x = qx + Math.cos(a) * (HOR ? 190 : 170) + 14 * Math.sin(L * 2 + i), y = qy - fs * .35 + Math.sin(a) * 90 - 60 * f;   // v64: interrogaciones que flotan
+        return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="Inter" font-weight="900" font-size="${32 + 14 * frac(i * .37)}" text-anchor="middle" fill="${[ORA, AZU, ORO][i % 3]}" stroke="${INK}" stroke-width="3" paint-order="stroke" opacity="${(Math.sin(Math.PI * f) * cl((L - .4) / .3)).toFixed(2)}" transform="rotate(${(-20 + 40 * frac(i * .53)).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})">?</text>`; }).join('');
+      return mini + `<g transform="translate(${qx} ${qy}) rotate(${(-9 + 7 * Math.sin(L * 1.8)).toFixed(2)}) scale(${e.toFixed(3)})">${q(SOM + 2, SOM + 2, INK, true)}${q(0, 0, ORA, true)}</g>` +
         cinetico(v.texto, HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 330, size, L, { max, t0: .25 });
     },
     titular(v, L, d) {
       const s = String(v.texto || ''), max = HOR ? 20 : 14, size = Math.min(HOR ? 124 : 84, (Z.w * .98) / (Math.min(max, Math.max(...partir(s.replace(/\*/g, ''), max).map(l => l.length), 4)) * .6));
-      const alto = altoCin(s, size, max);
-      return cinetico(s, ZC.x, ZC.y - alto / 2 + size * .82, size, L, { max, paso: .11, clave: col(v.color) });
+      const alto = altoCin(s, size, max), ls = partir(s.replace(/\*/g, ''), max), wl = Math.min(Z.w, Math.max(...ls.map(l => l.length)) * size * .56), yU = ZC.y + alto / 2 + 18;
+      const q = eio((L - .6 - ls.join(' ').split(' ').length * .11) / .45);   // v64: subrayado «a mano» cuando ha entrado el titular
+      let ond = `M${(ZC.x - wl / 2).toFixed(1)} ${yU}`; for (let i = 1; i <= 8; i++) ond += ` Q${(ZC.x - wl / 2 + wl * (i - .5) / 8).toFixed(1)} ${(yU + (i % 2 ? 10 : -6)).toFixed(1)} ${(ZC.x - wl / 2 + wl * i / 8).toFixed(1)} ${(yU + (i % 2 ? 2 : 0)).toFixed(1)}`;
+      return cinetico(s, ZC.x, ZC.y - alto / 2 + size * .82, size, L, { max, paso: .11, clave: col(v.color) }) +
+        (q > 0 ? `<path d="${ond}" fill="none" stroke="${GRAVE ? INK : ORA}" stroke-width="9" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` : '');
     },
     // ===== v56 (11-nov-2026): 8 gráficos nuevos para que no se repitan siempre los mismos =====
     // porcentaje: anillo que se llena con la cifra en el centro  {"tipo":"porcentaje","valor":"33,6 %","texto":"…","color":"rojo"}
@@ -770,7 +777,7 @@
     const amp = 9 * Math.exp(-x * 9); return [amp * Math.sin(x * 70), amp * .6 * Math.cos(x * 55)];
   }
   function asoma(k, t) {        // v60: en sorpresa/emoción, Lupi se asoma por la derecha con un «!» en la primera palabra clave
-    if (GRAVE || HOR || !['surprised', 'excited', 'emphatic', 'amused'].includes(EMO(k))) return '';
+    if (GRAVE || HOR || k === 0 || !['surprised', 'excited', 'emphatic', 'amused'].includes(EMO(k)) || !['titular', 'pregunta', 'icono', 'frase'].includes((E[k].visual || {}).tipo) || fotoDe(k)) return '';   // solo donde la esquina está libre
     const a = claves(k)[0]; if (a == null) return ''; const x = t - a; if (x < -.05 || x > 1.3) return '';
     const sal = x < .25 ? back((x + .05) / .3) : x > 1 ? 1 - eio((x - 1) / .3) : 1, lx = SX + 30 + 50 * sal, ly = 812;   // por la izquierda (a la derecha están los botones de TikTok)
     return `<g transform="translate(${lx.toFixed(1)} ${ly}) rotate(${(16 - 4 * Math.sin(t * 6)).toFixed(1)})" opacity="${cl(sal * 1.5).toFixed(2)}">${lupi({ x: 0, y: 0, s: .5, t, expr: 'sorprendida', mira: [1, -.3], brazos: 'senala' })}</g>` +
