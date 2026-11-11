@@ -86,3 +86,4 @@
 2026-11-10|15:00|El misterio del Ourang Medan|nadie|YO 6af2f1210f3180d1203e0e3f IN 6af2f12217d2b2f30cff82f8 TI 6af2f12217d2b2f30cff8323|img=mixto|14:47
 2026-11-10|18:00|El desastre de la presa de Vajont|error|YO 6af2f281ba579c00246fe676 IN 6af2f281ba579c00246fe6c3 TI 6af2f282fe6796a7146fa7d0|img=mixto|17:44
 2026-11-10|21:00|El enigma del Manuscrito Voynich|pregunta|YO 6af2f490ba579c00247091ea IN 6af2f49117d2b2f30c00a9a4 TI 6af2f4920f3180d1203f3f33|img=mixto|20:25
+2026-11-11|12:00|La carga de Juan el Ciego|sabias|YO 6af43cac11af97e72101b5c7 IN 6af43cafc05a77e35e98116a TI 6af43cb2db6e84f20bec0ff5|img=mixto|12:35
