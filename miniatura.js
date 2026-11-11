@@ -15,8 +15,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Inter;font-weight:800;src:url('${f('Inter-ExtraBold.otf')}')}
 @font-face{font-family:Inter;font-weight:900;src:url('${f('Inter-Black.otf')}')}
 html,body{margin:0;background:#2a2433}#c{width:1280px;height:720px}</style></head><body><div id="c"></div>
-<script>window.PROY={escenas:[]};window.TIEMPOS={escenas:[],duracion:1};window.ESCENAS=[];</script>
-<script src="${path.join(KIT, 'motor.js')}"></script>
+<script>window.PROY={escenas:[],aspecto:'pro',formato:'YOUTUBE'};window.TIEMPOS={escenas:[],duracion:1};window.ESCENAS=[];</script>
+<script src="${path.join(KIT, 'motor.js')}"></script><script>try{document.write('<scr'+'ipt src="${path.join(KIT, 'motor_pro.js')}"></scr'+'ipt>')}catch(e){}</script>
 <script>
 const O=${JSON.stringify(O)}, {A,lupi}=window.SH, esc=A.esc;
 const COL={rojo:A.ROJ,azul:A.AZU,verde:A.VER,oro:A.ORO,naranja:A.ORA,morado:'#6b4fa3'};
@@ -43,11 +43,14 @@ const SUB_X=50, SUB_MAX=670, SUB_Y=y2+30;
 if(O.sub){const ss=fit(O.sub,56,SUB_MAX-50,34);svg+='<rect id="subr" x="'+SUB_X+'" y="'+SUB_Y+'" width="'+SUB_MAX+'" height="'+(ss+34)+'" rx="16" fill="'+A.ORO+'" stroke="'+A.INK+'" stroke-width="6"/><text id="subt" x="75" y="'+(SUB_Y+ss+6)+'" font-family="Inter" font-weight="900" font-size="'+ss+'" fill="'+A.INK+'">'+esc(O.sub)+'</text>';}
 // dato o icono protagonista junto a Lupi
 if(O.icono&&A[O.icono]){svg+=O.icono==='calendario'?A.calendario(820,600,1.25,O.dato_sub||'',O.dato||'',c):A.esc_(820,600,1.4,A[O.icono](820,600,1));}
-else if(O.dato){svg+=A.txtC(870,600,O.dato,150,c,'middle',14);}
+else if(O.dato){svg+=A.txtC(830,600,O.dato,O.dato.length>4?130:150,c,'middle',14);}
 // Lupi grande
-svg+=lupi({x:1060,y:300,s:2.3,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'abajo',t:.3});
+// v82: Lupi y logo modernos (los mismos de los vídeos) si el motor pro está; si no, los de antes
+const ARTE=window.SH_ARTE;
+if(ARTE){svg+=ARTE.DEF_LUPI+ARTE.lupiM({x:1060,y:300,s:O.lupi_s||2.1,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'',t:.3});}
+else svg+=lupi({x:1060,y:300,s:2.3,expr:O.expr||'sorprendida',mira:[-.7,.2],brazos:'abajo',t:.3});
 // marca
-svg+='<g transform="translate(60 670)"><rect x="-14" y="-38" width="250" height="52" rx="14" fill="'+A.INK+'" stroke="'+A.CRE+'" stroke-width="3"/><text x="111" y="-2" font-family="Inter" font-weight="900" font-size="30" fill="'+A.CRE+'" text-anchor="middle">sin humo TV</text></g>';
+if(ARTE){svg+=ARTE.logoM(80,660,1.35,oscuro);}else svg+='<g transform="translate(60 670)"><rect x="-14" y="-38" width="250" height="52" rx="14" fill="'+A.INK+'" stroke="'+A.CRE+'" stroke-width="3"/><text x="111" y="-2" font-family="Inter" font-weight="900" font-size="30" fill="'+A.CRE+'" text-anchor="middle">sin humo TV</text></g>';
 svg+='</svg>';
 document.getElementById('c').innerHTML=svg;
 window.ajustar=()=>{const st=document.getElementById('subt'),sr=document.getElementById('subr');if(!st)return;

@@ -79,12 +79,13 @@
     return `<g transform="translate(${o.x} ${o.y}) rotate(${rot}) scale(${s})">${sombra}${mango}${brazos}${lente}${cara_}${texto}${aro}${gorra}</g>`;
   }
   // logo moderno: insignia naranja con la nube tachada en blanco + «sin humo» + pastilla «TV»
-  function logoM(x, y, esc_ = 1) {
+  function logoM(x, y, esc_ = 1, claro = false) {
     return `<g transform="translate(${x} ${y}) scale(${esc_})"><rect x="-21" y="-21" width="42" height="42" rx="12" fill="url(#lmA)"/><rect x="-21" y="-21" width="42" height="21" rx="12" fill="#fff" opacity=".12"/>` +
       `<path d="M-11 6 a6 6 0 0 1 1.5 -11 a8 8 0 0 1 15 -2 a6 6 0 0 1 4.5 11 Z" fill="#fff"/><path d="M-12 -10 L12 10" stroke="${ORA}" stroke-width="7" stroke-linecap="round"/><path d="M-12 -10 L12 10" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>` +
-      `<text x="32" y="10" font-family="Inter" font-weight="900" font-size="28" letter-spacing="-.8" fill="${INK}">sin humo</text>` +
-      `<rect x="158" y="-14" width="40" height="28" rx="8" fill="${INK}"/><text x="178" y="7" font-family="Inter" font-weight="900" font-size="18" text-anchor="middle" fill="#fff">TV</text></g>`;
+      `<text x="32" y="10" font-family="Inter" font-weight="900" font-size="28" letter-spacing="-.8" fill="${claro ? '#fff' : INK}">sin humo</text>` +
+      `<rect x="158" y="-14" width="40" height="28" rx="8" fill="${claro ? ORA : INK}"/><text x="178" y="7" font-family="Inter" font-weight="900" font-size="18" text-anchor="middle" fill="#fff">TV</text></g>`;
   }
+  window.SH_ARTE = { DEF_LUPI, lupiM, logoM };   // v82: la miniatura de YouTube usa el mismo Lupi y logo modernos
 
   // ---------- piezas básicas ----------
   const partir = (s, max) => { const ls = []; let l = ''; for (const w of String(s || '').split(/\s+/).filter(Boolean)) { if (l && (l + ' ' + w).replace(/[§*]/g, '').length > max) { ls.push(l); l = w; } else l = l ? l + ' ' + w : w; } if (l) ls.push(l); return ls; };
