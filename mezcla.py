@@ -194,6 +194,16 @@ for k, e in enumerate(T["escenas"][1:], 1):
 for z in P.get("zum", []):
     pon(zum, z, .8)
 pon(pop, T["escenas"][-1]["voz_fin"] + .05)  # pop final
+# v52 (11-nov-2026): «tic» muy suave en cada palabra clave (*así*), a la vez que el empujón de cámara del motor pro
+if PRO and P.get("tono") != "grave":
+    tl_ = int(.05 * SR); tt_ = np.arange(tl_) / SR
+    tic = np.sin(2 * np.pi * 1700 * tt_) * np.exp(-tt_ * 90) + np.sin(2 * np.pi * 120 * tt_) * np.exp(-tt_ * 40) * .6
+    for e, s_ in zip(P["escenas"], T["escenas"]):
+        ws, pal = str(e.get("subtitulo") or "").split(), s_.get("palabras") or []
+        if len(ws) != len(pal): continue
+        for i, w in enumerate(ws):
+            if w.startswith("*"):   # empieza un grupo de palabras clave
+                pon(tic, pal[i][0] - .01, .22)
 sfx /= np.max(np.abs(sfx)) + 1e-9
 guarda(sfx[:int(DUR * SR)], "efectos")
 

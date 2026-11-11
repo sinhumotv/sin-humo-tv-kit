@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v47, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v52, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -231,14 +231,14 @@
     },
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
-      const fw = HOR ? Z.w * .6 : Z.w - 20, fh = HOR ? Z.h - 10 : Z.h - alto - 56, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 16), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
+      const fw = HOR ? Z.w * .6 : W - 44, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
       return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}"/>` +
         `<clipPath id="${id}"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24"/></clipPath><image href="file://${f.ruta}" x="${fx}" y="${fy}" width="${fw}" height="${fh}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
         `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
         `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke">${esc(f.credito || '')}</text></g>` +
         peg(fx + 92, fy + 44, 'FOTO REAL', HOR ? 22 : 18, ROJ, '#fff', 'middle', eo((L - .3) / .2), -6, back((L - .3) / .35)) +
         (f.etiqueta ? peg(fx + fw - 86, fy + fh - 40, f.etiqueta, HOR ? 24 : 20, ORO, INK, 'middle', eo((L - .5) / .2), 5, back((L - .5) / .35)) : '') +
-        cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 30 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
+        cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 22 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
     },
     mencion(v, L, d) {
       const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
@@ -263,14 +263,48 @@
     return cl_.slice(0, 2).map((o, i) => t < o.a ? '' : peg(pos[i][0], pos[i][1], o.w.toUpperCase(), HOR ? 28 : 32, cs[i][0], cs[i][1], 'middle', 1, pos[i][2] + 2 * Math.sin(t * 1.7 + i), back((t - o.a) / .35))).join('');
   }
 
+  // ---------- v52 (11-nov-2026): la imagen reacciona a la voz ----------
+  // E[k].voz = etiqueta de interpretación de la escena (excited, whispers, indignant…; la elige el guion y la usa la voz de Gemini)
+  const EMO = k => String((E[k] || {}).voz || '').toLowerCase();
+  const SUSURRO = k => ['whispers', 'conspiratorial'].includes(EMO(k));
+  const PALS = {};
+  function palabras(k) {        // todas las palabras de la escena con su segundo real y si son clave
+    if (!PALS[k]) { PALS[k] = []; try { bloquesKaraoke(k, HOR ? 34 : 30, HOR ? 34 : 18).forEach(b => b.ls.forEach(ln => ln.forEach(p => PALS[k].push(p)))); } catch (e) {} }
+    return PALS[k];
+  }
+  const CLAVES = {};
+  function claves(k) {          // segundo en que empieza cada grupo de palabras clave (*así*)
+    if (!CLAVES[k]) { const ps = palabras(k); CLAVES[k] = ps.filter((p, i) => p.clave && !(i > 0 && ps[i - 1].clave)).map(p => p.a); }
+    return CLAVES[k];
+  }
+  const hablando = (k, t) => palabras(k).some(p => t >= p.a && t < p.b);
+  function golpe(k, t) {        // empujón de cámara en cada palabra clave: sube en 0,07 s y vuelve en ~0,5 s
+    let g = 0; for (const a of claves(k)) { const x = t - a; if (x >= -.07 && x < .6) g = Math.max(g, x < 0 ? (x + .07) / .07 : Math.exp(-x * 7)); }
+    return g;
+  }
+  function sacudida(k, t) {     // sorpresa: sacudida corta en la primera palabra clave
+    if (GRAVE || !['surprised', 'excited', 'emphatic'].includes(EMO(k))) return [0, 0];
+    const a = claves(k)[0]; if (a == null) return [0, 0]; const x = t - a; if (x < 0 || x > .35) return [0, 0];
+    const amp = 9 * Math.exp(-x * 9); return [amp * Math.sin(x * 70), amp * .6 * Math.cos(x * 55)];
+  }
+  function ambiente(k, t, L) {  // capa de emoción encima del plano (debajo de subtítulos y cabecera)
+    const e = EMO(k), ent = eo(L / .45);
+    if (SUSURRO(k)) return `<defs><radialGradient id="vg" cx=".5" cy=".45" r=".75"><stop offset=".45" stop-color="${INK}" stop-opacity="0"/><stop offset="1" stop-color="${INK}" stop-opacity="${(.42 * ent).toFixed(3)}"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#vg)"/>`;
+    if (e === 'indignant' && !GRAVE) return `<rect x="10" y="10" width="${W - 20}" height="${H - 20}" rx="40" fill="none" stroke="${ROJ}" stroke-width="44" opacity="${(ent * (.16 + .1 * Math.sin(t * 6))).toFixed(3)}" filter="url(#hb)"/>`;
+    if (['tense', 'sad'].includes(e)) return `<rect width="${W}" height="${H}" fill="#3a4a63" opacity="${(.07 * ent).toFixed(3)}"/>`;
+    return '';
+  }
+
   // ---------- una escena completa ----------
   function escena(k, t) {
     const S = T.escenas[k], L = Math.max(0, t - S.ini) + (k === 0 ? 1 : 0), d = Math.max(1, S.fin - S.ini), v = E[k].visual || { tipo: 'icono', icono: 'alerta', texto: E[k].titulo };
     const f = fotoDe(k), tipo = f ? 'foto' : (G[v.tipo] ? v.tipo : 'icono');
     let g = ''; try { g = G[tipo](v, L, d, k) || ''; } catch (e) { g = G.icono({ icono: 'alerta', texto: E[k].titulo || '' }, L, d); }
-    const z = 1 + .02 * cl(L / d);   // v45: sin agrandar (Pablo lo veía todo demasiado grande)
+    const ini = k === 0 ? Math.max(0, .3 - (t - S.ini)) / .3 : 0;   // v52: arranque con golpe de zoom (con el impacto de sonido del segundo 0)
+    const z = 1 + .02 * cl(L / d) + .045 * golpe(k, t) + .045 * eo(ini), [sx, sy] = sacudida(k, t);
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
-      `<g transform="translate(${ZC.x} ${ZC.y}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L));
+      `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy).toFixed(1)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) +
+      ambiente(k, t, L) + (k === 0 && t - S.ini > 0 && t - S.ini < .3 ? `<rect width="${W}" height="${H}" fill="#fff" opacity="${(.4 * Math.sin(Math.PI * (t - S.ini) / .3)).toFixed(3)}"/>` : '')   // destello (el fotograma 0 queda limpio para la miniatura);
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
   function rotulo(k, L) {
@@ -286,7 +320,11 @@
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
     if (tp !== 'mencion' && tp !== 'cierre') {
       const lx = HOR ? W - 62 : W - 78, ly = HOR ? H - 196 : 96, s = HOR ? .5 : .46;
-      o += lupi({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: GRAVE ? 'seria' : tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz', mira: [HOR ? -1 : -.6, HOR ? -.4 : .8], brazos: L < 1 ? 'senala' : '' });
+      const em = EMO(k), porEmo = { surprised: 'sorprendida', excited: 'sorprendida', emphatic: 'sorprendida', indignant: 'enfadada', whispers: 'curiosa', conspiratorial: 'guino', curious: 'curiosa', serious: 'seria', tense: 'seria', sad: 'seria', amused: 'guino' }[em];
+      let ex = GRAVE ? (porEmo === 'curiosa' ? 'curiosa' : 'seria') : porEmo || (tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz');
+      if ((ex === 'feliz' || ex === 'seria' && !GRAVE) && hablando(k, t)) ex = 'habla';   // v52: Lupi «habla» con la voz
+      const mira = SUSURRO(k) ? [HOR ? -1 : -1, 0] : [HOR ? -1 : -.6, HOR ? -.4 : .8];
+      o += lupi({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: ex, mira, brazos: L < 1 ? 'senala' : '' });
     }
     return o;
   }
@@ -294,13 +332,13 @@
     const bl = bloquesKaraoke(k, HOR ? 34 : 30, HOR ? 34 : 18); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = back((t - B.a) / .16) || (i === 0 ? 1 : 0), maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1)));
-    const fs = Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : 620) / (Math.max(5, maxc) * .58))), lh = fs * 1.18, yc = HOR ? 606 : 900, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
+    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : 620) / (Math.max(5, maxc) * .58)))), lh = fs * 1.18, yc = HOR ? 606 : 900, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
     return `<g transform="translate(${W / 2} ${yc}) scale(${(HOR ? .88 + .12 * ent : .96 + .04 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
         return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : ''}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
-      return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
+      return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}"${su ? ' font-style="italic"' : ''} text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
   }
   function barra(t) {            // v47: vuelve Lupi a la barra (tumbada, con los segundos en la lente, bote y destello cada segundo)

@@ -52,3 +52,4 @@ v48 · 2026-11-11 · revisión a fondo de los cortos: la cifra de la escena 1 ya
 v49 · 2026-11-11 · hablado.py: separa las cifras pegadas a una palabra («20minutos» → «veinte minutos»); hacían fallar el corto entero
 v50 · 2026-11-11 · comparar sin cifras (Antes «Moderación ok» → Ahora «Fallos graves»): dos tarjetas con su texto y flecha, en vez de dos cuadraditos vacíos
 v51 · 2026-11-11 · cortos: zona del gráfico un poco más abajo y más alta (menos hueco vacío antes de los subtítulos)
+v52 · 2026-11-11 · la imagen reacciona a la voz: empujón de cámara + «tic» suave en cada palabra clave; emoción de cada escena (etiqueta de la voz) visible: susurro = bordes oscuros y subtítulos en cursiva, sorpresa = sacudida, indignación = marco rojo que late, tensión/tristeza = tono más frío; Lupi pone la cara de la emoción (nueva cara de enfado) y mueve la boca cuando suena la voz; arranque con golpe de zoom y destello (el fotograma 0 limpio); fotos más grandes en los cortos

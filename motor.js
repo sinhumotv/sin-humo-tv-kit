@@ -160,13 +160,16 @@
       ? `<path d="M${ex - 13} ${dy + 2} q13 -12 26 0" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`
       : `<ellipse cx="${ex}" cy="${dy}" rx="13" ry="${17 * b}" fill="#fff" stroke="${INK}" stroke-width="4"/>` +
       (b > .5 ? `<circle cx="${ex + mx * 5}" cy="${dy + 2 + my * 5}" r="6.5" fill="${INK}"/><circle cx="${ex + mx * 5 + 2}" cy="${dy - 1 + my * 5}" r="2" fill="#fff"/>` : '');
-    const cej = { curiosa: [-8, 4], sorprendida: [-16, 0], seria: [-6, -8], guino: [-9, 4] }[expr] || [-8, 4];
+    const cej = { curiosa: [-8, 4], sorprendida: [-16, 0], seria: [-6, -8], guino: [-9, 4], enfadada: [-2, -16], habla: [-9, 4] }[expr] || [-8, 4];
     const ceja = (ex, s) => `<path d="M${ex - 14} ${dy + cej[0] - 10 + s * cej[1] * .5} L${ex + 14} ${dy + cej[0] - 10 - s * cej[1] * .5}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>`;
     const boca = {
       curiosa: `<path d="M-8 ${dy + 30} q8 6 16 0" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`,
       sorprendida: `<ellipse cx="0" cy="${dy + 32}" rx="7" ry="9" fill="${INK}"/>`,
       seria: `<path d="M-9 ${dy + 31} h18" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`,
       guino: `<path d="M-12 ${dy + 27} q12 12 24 0" stroke="${INK}" stroke-width="5" fill="${CRE}" stroke-linecap="round"/>`,
+      // (11-nov-2026) enfado (indignación) y boca que se mueve al hablar
+      enfadada: `<path d="M-11 ${dy + 34} q11 -9 22 0" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`,
+      habla: `<ellipse cx="0" cy="${dy + 30}" rx="${(9 - 2 * Math.abs(Math.sin(t * 9))).toFixed(1)}" ry="${(2 + 7 * Math.abs(Math.sin(t * 17))).toFixed(1)}" fill="${INK}"/>`,
     }[expr] || '';
     return `<g transform="scale(${escala})">${ceja(-20, 1)}${ceja(20, -1)}${ojo(-20, false)}${ojo(20, expr === 'guino')}${boca}</g>`;
   }
