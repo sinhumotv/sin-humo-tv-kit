@@ -407,7 +407,7 @@
         o += `<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${(bx2 - bx).toFixed(1)}" height="${(by2 - by).toFixed(1)}" rx="10" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="8 6" opacity="${f.toFixed(2)}"/>` +
           CAN.map(([lo, la, rx, ry]) => { const [x, y] = P_(...mov([lo, la])); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="2.5" opacity="${f.toFixed(2)}"/>`; }).join('');
       }
-      if (ls.length > 1) {   // v66: ruta discontinua que une los lugares
+      if (ls.length > 1 && (v.ruta === true || v.ruta === 'true')) {   // v66: ruta discontinua que une los lugares (v74: solo si hay trayecto real)
         const pts = ls.map(([, ll]) => P_(...mov(ll))), q = eio(cl((L - 1.6) / .8));
         if (q > 0) o += `<path d="M${pts.map(p => p.map(z => z.toFixed(1)).join(' ')).join(' L')}" fill="none" stroke="${ROJ}" stroke-width="5" stroke-dasharray="12 10" stroke-dashoffset="${(-L * 40).toFixed(1)}" opacity="${q.toFixed(2)}"/>`;
       }
