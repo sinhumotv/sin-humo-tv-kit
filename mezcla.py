@@ -324,6 +324,9 @@ if GSFX:
             for i in range(son): at(ding(1175 + 150 * i), .8 + i * .12, .4)
         elif tp == "mapa":
             for i, _ in enumerate((v.get("lugares") or [])[:3]): at(golpe_seco(), .8 + i * .35 + .28, .6)
+        elif tp == "mundo":   # v75: zoom (silbido que baja) y golpe por cada chincheta
+            at(subida(1.2, 1200, 380) * .7, .15, .7)
+            for i, _ in enumerate((v.get("paises") or [])[:3]): at(golpe_seco(), 1.3 + i * .3 + .28, .6)
         elif tp == "balanza":   # v73: crujido al balancearse y golpe suave al asentarse
             at(roce(.25), .35, .4); at(roce(.2), .9, .35); at(golpe_seco() * .5, 1.6, .5)
         elif tp == "iceberg":   # v73: inmersión y un «ding» grave por cada dato de abajo

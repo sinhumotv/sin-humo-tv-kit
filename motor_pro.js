@@ -756,6 +756,47 @@
       return o + `<clipPath id="ci"><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48"/></clipPath><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48" fill="${INK}" opacity="${eo((L - .5) / .3).toFixed(2)}"/>` +
         `<g clip-path="url(#ci)" opacity="${eo((L - .5) / .3).toFixed(2)}">${[0, 1, 2].map(j => tx(Z.x - off + j * wc, yC + 2, esc(cinta), HOR ? 26 : 25, ORO, 'start', 900)).join('')}</g>`;
     },
+    // v75: mapa del mundo con zoom desde el planeta hasta los países de la noticia  {"tipo":"mundo","paises":["Ucrania","Rusia"],"texto":"≤ 30"}
+    mundo(v, L, d) {
+      const M = window.MUNDO; if (!M) return this.icono({ icono: 'globo', texto: v.texto || '' }, L, d);
+      if (!M._bb) M._bb = M.p.map(p => p[3].map(r => { let a = 1e9, b = -1e9, c = 1e9, e = -1e9; for (let i = 0; i < r.length; i += 2) { a = Math.min(a, r[i]); b = Math.max(b, r[i]); c = Math.min(c, r[i + 1]); e = Math.max(e, r[i + 1]); } return [a / 10, b / 10, c / 10, e / 10]; }));
+      const busca = s => { let n = norm(s); n = M.al[n] || n; return M.p.findIndex(p => p[0].split('|').includes(n) || p[1] === n); };
+      const sel = (v.paises || v.lugares || []).map(s => [s, busca(s)]).filter(x => x[1] >= 0).slice(0, 3);
+      const bx = HOR ? Z.x + 10 : Z.x, by = HOR ? Z.y + 26 : Z.y + 4, bw = HOR ? 700 : Z.w, bh = HOR ? Z.h - 40 : (v.texto ? Z.h - 120 : Z.h - 40);
+      // caja objetivo: la de la parte principal de los países elegidos, con margen
+      let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9;
+      sel.forEach(([, i]) => { const b = M.p[i][4]; if (b) { x0 = Math.min(x0, b[0] / 10); x1 = Math.max(x1, b[1] / 10); y0 = Math.min(y0, b[2] / 10); y1 = Math.max(y1, b[3] / 10); } });
+      if (!sel.length) { x0 = -10; x1 = 30; y0 = 35; y1 = 60; }
+      const cxT = (x0 + x1) / 2, cyT = (y0 + y1) / 2, co = Math.cos(cyT * Math.PI / 180);
+      const spanX = Math.max(22, (x1 - x0) * 1.7) * co, spanY = Math.max(16, (y1 - y0) * 1.7), kT = Math.min(bw / spanX, bh / spanY);
+      const kW = Math.min(bw / (340 * co), bh / 150), q = eio(cl((L - .15) / 1.3));
+      const k = Math.exp(Math.log(kW) + (Math.log(kT) - Math.log(kW)) * q), clon = 10 + (cxT - 10) * q, clat = 25 + (cyT - 25) * q;
+      const P = (lo, la) => [bx + bw / 2 + (lo - clon) * co * k, by + bh / 2 - (la - clat) * k];
+      const vx0 = clon - bw / 2 / (co * k), vx1 = clon + bw / 2 / (co * k), vy0 = clat - bh / 2 / k, vy1 = clat + bh / 2 / k;
+      const elegido = new Set(sel.map(x => x[1])), e = back(L / .45);
+      let paths = '', hl = '';
+      M.p.forEach((p, i) => p[3].forEach((r, j) => {
+        const b = M._bb[i][j]; if (b[1] < vx0 || b[0] > vx1 || b[3] < vy0 || b[2] > vy1) return;
+        let dd = ''; for (let n = 0; n < r.length; n += 2) { const [x, y] = P(r[n] / 10, r[n + 1] / 10); dd += (n ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); }
+        if (elegido.has(i)) hl += dd + 'Z'; else paths += dd + 'Z';
+      }));
+      const cid = 'mundoClip' + (HOR ? 'h' : 'v'), fe = eo((L - .9) / .5);
+      let o = `<g transform="translate(${bx + bw / 2} ${by + bh / 2}) scale(${e.toFixed(3)}) translate(${-(bx + bw / 2)} ${-(by + bh / 2)})">` +
+        `<clipPath id="${cid}"><rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="26"/></clipPath>` +
+        caja(bx, by, bw, bh, 26, '#d6ebf7', 3) +
+        `<g clip-path="url(#${cid})"><path d="${paths}" fill="${BLA}" stroke="${INK}" stroke-width="1.2" stroke-linejoin="round" opacity=".95"/>` +
+        `<path d="${hl}" fill="${ORA}" fill-opacity="${(.25 + .75 * fe).toFixed(2)}" stroke="${INK}" stroke-width="2.2" stroke-linejoin="round"/></g>` +
+        `<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="26" fill="none" stroke="${INK}" stroke-width="3"/></g>`;
+      sel.forEach(([nom, i], n) => {
+        const t0 = 1.3 + n * .3, ep = back((L - t0) / .4); if (ep <= 0) return;
+        const [x, y] = P(...M.p[i][2]); if (x < bx + 20 || x > bx + bw - 20 || y < by + 30 || y > by + bh - 10) return;
+        const cerca = sel.some(([, j], m) => m < n && Math.hypot(P(...M.p[j][2])[0] - x, P(...M.p[j][2])[1] - y) < 110), izq = cerca ? !(x > bx + bw * .62) && x > bx + 150 || x > bx + bw * .62 && !cerca : x > bx + bw * .62;
+        o += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${(ep * (HOR ? .5 : .5)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="4.5"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="3"/></g>` +
+          peg(x + (izq ? -24 : 24), y - (cerca ? 2 : 50), String(nom).toUpperCase(), 20, INK, '#fff', izq ? 'end' : 'start', eo((L - t0 - .2) / .2), cerca ? 3 : -3);
+      });
+      const size = HOR ? 44 : 34, max = HOR ? 18 : 26;
+      return o + (v.texto ? cinetico(v.texto, HOR ? bx + bw + (Z.x + Z.w - bx - bw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : by + bh + 66, size, L, { max, t0: .9 }) : '');
+    },
     // v73: balanza que se inclina (dos posturas, sin tomar partido: se inclina solo si lo dicen los datos)
     // {"tipo":"balanza","izq":"≤ 18 caracteres","der":"≤ 18","inclina":"izq|der|igual","texto":"≤ 40, opcional"}
     balanza(v, L, d) {
@@ -867,7 +908,7 @@
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
     if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
-    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos', 'contador', 'pasos', 'termometro', 'bateria', 'lupa', 'encuesta', 'ultimahora', 'podio', 'balanza', 'iceberg'].includes(tipo)) return '';
+    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos', 'contador', 'pasos', 'termometro', 'bateria', 'lupa', 'encuesta', 'ultimahora', 'podio', 'balanza', 'iceberg', 'mundo'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
     const pos = HOR ? [[Z.x + Z.w - 120, Z.y + 40, 5], [Z.x + Z.w - 150, Z.y + Z.h - 20, -5]] : [[Z.x + Z.w - 130, Z.y + 60, 6], [Z.x + 120, Z.y + Z.h + 8, -5]], cs = [[ORO, INK], [AZU, '#fff']];
