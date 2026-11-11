@@ -104,6 +104,9 @@ NUM = r"\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?"
 def normaliza(t):
     t = t.replace(" ", " ").replace(" ", " ")
     t = re.sub(r"sin humo TV", "sin humo te uve", t, flags=re.I)
+    # (11-nov-2026) cifras pegadas a una palabra («20minutos», «3millones»): se separan para poder leerlas
+    # (un corto falló porque «20minutos» quedaba sin convertir)
+    t = re.sub(r"(\d)([a-záéíóúñA-ZÁÉÍÓÚÑ]{3,})", r"\1 \2", t)
     # siglas con puntos
     for k in ("EE. UU.", "EE.UU."):
         t = t.replace(k, SIGLAS[k])
