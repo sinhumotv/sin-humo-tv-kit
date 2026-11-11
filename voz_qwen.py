@@ -18,7 +18,6 @@ Sale con código 2 si alguna escena no sale bien: quien lo llama pasa a la voz d
 import difflib, os, re, subprocess, sys, time, unicodedata
 import numpy as np
 import soundfile as sf
-import torch
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 ETIQ = re.compile(r"\[[^\]]{1,20}\]\s*")
@@ -79,6 +78,7 @@ def generar(escenas, voz="sinhumo", device="cpu", log=print):
     """Devuelve (audio float32, sr, repeticiones). device="cuda" en el servidor con GPU."""
     ref = os.path.join(AQUI, "voces", f"{voz}.wav")
     ref_txt = open(os.path.join(AQUI, "voces", f"{voz}.txt"), encoding="utf-8").read().strip()
+    import torch
     from qwen_tts import Qwen3TTSModel
     if device == "cpu":
         torch.set_num_threads(os.cpu_count() or 4)
