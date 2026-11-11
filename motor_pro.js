@@ -18,7 +18,7 @@
   const HOR = P.formato === 'YOUTUBE', W = HOR ? 1280 : 720, H = HOR ? 720 : 1280;
   const { A, lupi, nube, bloquesKaraoke } = SH, icono = SH.icono || ((n, x, y, s) => A.alerta(x, y, s));
   const BG = '#fbf2dc', INK = '#1b1721', ORA = '#f2681c', ORO = '#ffc61a', VER = '#14a596', ROJ = '#e5372b', AZU = '#2f62e6', MOR = '#6b4fa3', GRI = '#cfc5b0', BLA = '#fffdf7';
-  const COL = { rojo: ROJ, azul: AZU, verde: VER, oro: ORO, naranja: ORA, morado: MOR, crema: BLA, tinta: INK };
+  const COL = { rojo: ROJ, azul: AZU, verde: VER, oro: ORO, naranja: ORA, morado: MOR, crema: BLA, tinta: INK, celeste: '#3fa9e0', rosa: '#e0479e', gris: '#8f887c', amarillo: '#f2c80f', granate: '#8e1b2b', negro: INK };
   const col = c => COL[c] || (/^#/.test(c || '') ? c : ORA);
   const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
   const eo = x => 1 - Math.pow(1 - cl(x), 3), eio = x => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
@@ -416,6 +416,158 @@
       const size = HOR ? 48 : 38, max = HOR ? 20 : 24;
       return o + (v.texto ? cinetico(v.texto, HOR ? Z.x + 440 + (Z.w - 440) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + s + 120, size, L, { max, t0: .4 }) : '');
     },
+    // ===== v58 (11-nov-2026): 9 gráficos animados más =====
+    // velocímetro con aguja (riesgo, nivel, nota…)  {"tipo":"medidor","valor":"8,2","max":"10","texto":"…"}
+    medidor(v, L, d) {
+      const mx = num(v.max) || 100, pr = cl(num(v.valor) / mx), p = back((L - .2) / .9), cx = HOR ? Z.x + 250 : ZC.x, cy = HOR ? ZC.y + 95 : Z.y + 250, r = HOR ? 180 : 200, sw = HOR ? 36 : 40;
+      const pt = (a, rr) => [cx + rr * Math.cos(a), cy + rr * Math.sin(a)], arc = (a0, a1, c) => { const [x0, y0] = pt(a0, r), [x1, y1] = pt(a1, r); return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}" fill="none" stroke="${c}" stroke-width="${sw}"/>`; };
+      const e = back(L / .4), R = r + sw / 2 + 16, ang = 180 * pr * cl(p, 0, 1.08) + 2.5 * Math.sin(L * 9) * Math.exp(-Math.max(0, L - 1.1) * 3) * (L > 1.1 ? 1 : 0);
+      let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) translate(${-cx} ${-cy})">` +
+        `<path d="M${cx - R + SOM} ${cy + SOM} A${R} ${R} 0 0 1 ${cx + R + SOM} ${cy + SOM} Z" fill="${INK}"/><path d="M${cx - R} ${cy} A${R} ${R} 0 0 1 ${cx + R} ${cy} Z" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` +
+        arc(Math.PI, Math.PI * 1.5, VER) + arc(Math.PI * 1.5, Math.PI * 1.8, ORO) + arc(Math.PI * 1.8, Math.PI * 2, ROJ);
+      for (let i = 0; i <= 10; i++) { const a = Math.PI * (1 + i / 10), [x0, y0] = pt(a, r - sw / 2 - 8), [x1, y1] = pt(a, r - sw / 2 - (i % 5 ? 20 : 34)); o += `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} L${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${INK}" stroke-width="${i % 5 ? 3 : 5}"/>`; }
+      o += `<g transform="rotate(${ang.toFixed(2)} ${cx} ${cy})"><path d="M${cx} ${cy - 12} L${cx - r + 30} ${cy} L${cx} ${cy + 12} Z" fill="${INK}"/></g><circle cx="${cx}" cy="${cy}" r="22" fill="${ORA}" stroke="${INK}" stroke-width="5"/></g>`;
+      const size = HOR ? 48 : 38, max = HOR ? 20 : 24;
+      return o + tx(cx, cy + (HOR ? 78 : 86), esc(contar(String(v.valor || ''), eo((L - .2) / .9)) + (v.max ? ` / ${v.max}` : '')), HOR ? 60 : 64, INK, 'middle', 900, `opacity="${eo((L - .3) / .3).toFixed(2)}"`) +
+        (v.texto ? cinetico(v.texto, HOR ? Z.x + 520 + (Z.w - 520) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : cy + 160, size, L, { max, t0: .5 }) : '');
+    },
+    // gráfica de líneas que se dibuja sola  {"tipo":"evolucion","titulo":"…","valores":["1,2","1,9","3,4"],"etiquetas":["2020","2023","2026"]}
+    evolucion(v, L, d) {
+      const vs = (v.valores || []).slice(0, 8).map(num), et = v.etiquetas || [], n = Math.max(2, vs.length), mn = Math.min(...vs), mxv = Math.max(...vs), rg = (mxv - mn) || 1;
+      const hT = v.titulo ? (HOR ? 64 : 76) : 0, x0 = Z.x + (HOR ? 40 : 30), x1 = Z.x + Z.w - (HOR ? 70 : 50), y0 = Z.y + hT + (HOR ? 40 : 60), y1 = Z.y + Z.h - (HOR ? 54 : 80);
+      const P_ = i => [x0 + (x1 - x0) * i / (n - 1), y1 - (y1 - y0) * ((vs[i] - mn) / rg * .85 + .1)], pts = vs.map((_, i) => P_(i));
+      const p = eio(cl((L - .25) / Math.min(1.6, d * .6))), pos = p * (n - 1), ki = Math.min(n - 2, Math.floor(pos)), fr = pos - ki;
+      const cur = pts.length > 1 ? [pts[ki][0] + (pts[ki + 1][0] - pts[ki][0]) * fr, pts[ki][1] + (pts[ki + 1][1] - pts[ki][1]) * fr] : pts[0];
+      const linea = 'M' + pts.slice(0, ki + 1).map(q => q.map(z => z.toFixed(1)).join(' ')).join(' L') + ` L${cur[0].toFixed(1)} ${cur[1].toFixed(1)}`;
+      let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 40 : 50), HOR ? 40 : 34, L, { max: HOR ? 46 : 28 }) : '';
+      o += [0, 1, 2].map(i => `<path d="M${x0} ${(y0 + (y1 - y0) * i / 2).toFixed(1)} H${x1}" stroke="${INK}" stroke-opacity=".14" stroke-width="3" stroke-dasharray="4 12"/>`).join('');
+      o += `<path d="${linea} L${cur[0].toFixed(1)} ${y1} L${x0} ${y1} Z" fill="${ORA}" opacity=".16"/>` +
+        `<path d="${linea}" transform="translate(${SOM / 2} ${SOM / 2})" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<path d="${linea}" fill="none" stroke="${ORA}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`;
+      pts.forEach((q, i) => { if (i > pos + .001) return; o += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="9" fill="${BLA}" stroke="${INK}" stroke-width="4"/>` + tx(q[0], y1 + (HOR ? 40 : 44), esc(et[i] || ''), HOR ? 24 : 22, INK, 'middle', 800); });
+      o += `<circle cx="${cur[0].toFixed(1)}" cy="${cur[1].toFixed(1)}" r="${(16 + 3 * Math.sin(L * 8)).toFixed(1)}" fill="${ORA}" stroke="${INK}" stroke-width="5"/>`;
+      const ult = String((v.valores || [])[n - 1] || ''), ep = back((p - .97) / .03 + (L - Math.min(1.6, d * .6) - .25) / .3);
+      if (p > .97) o += peg(Math.min(cur[0], x1 - 20), cur[1] - 34, ult, HOR ? 32 : 30, INK, '#fff', 'middle', 1, -3, cl(ep, 0, 1.2));
+      return o + `<path d="M${x0} ${y1} H${x1 + 20}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
+    },
+    // reparto en tarta (rosco) con leyenda  {"tipo":"reparto","titulo":"…","partes":[{"etiqueta":"Sí","valor":"58"},{"etiqueta":"No","valor":"42"}]}
+    reparto(v, L, d) {
+      const ps = (v.partes || []).slice(0, 5), tot = ps.reduce((a, b) => a + Math.abs(num(b.valor)), 0) || 1, pal = [ORA, AZU, VER, ORO, MOR];
+      const r = HOR ? 140 : 125, sw = HOR ? 70 : 62, cx = HOR ? Z.x + 230 : ZC.x, cy = HOR ? ZC.y : Z.y + (v.titulo ? 215 : 175), C = 2 * Math.PI * r, e = back(L / .4);
+      let acc = 0, o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r + sw / 2 + 6}" fill="${INK}"/><circle r="${r + sw / 2 + 6}" fill="${BLA}" stroke="${INK}" stroke-width="5"/>`;
+      ps.forEach((q, i) => {
+        const fr = Math.abs(num(q.valor)) / tot, t0 = .2 + i * .25, p = eio((L - t0) / .5), c = q.color ? col(q.color) : pal[i];
+        o += `<circle r="${r}" fill="none" stroke="${c}" stroke-width="${sw}" stroke-dasharray="${(C * fr * p).toFixed(1)} ${C.toFixed(1)}" transform="rotate(${(-90 + 360 * acc).toFixed(2)})"/>`;
+        acc += fr;
+      });
+      o += `<circle r="${r - sw / 2}" fill="none" stroke="${INK}" stroke-width="4"/><circle r="${r + sw / 2}" fill="none" stroke="${INK}" stroke-width="4"/></g>`;
+      const lx = HOR ? Z.x + 470 : Z.x + 20, ly = HOR ? ZC.y - ps.length * 30 : cy + r + sw / 2 + 50, fs = HOR ? 32 : 28;
+      ps.forEach((q, i) => {
+        const t0 = .3 + i * .25, ee = back((L - t0) / .35), c = q.color ? col(q.color) : pal[i], y = ly + i * (HOR ? 60 : 50), pc = Math.round(Math.abs(num(q.valor)) / tot * 100);
+        if (ee <= 0) return;
+        o += `<g transform="translate(${((1 - ee) * -80).toFixed(1)} 0)" opacity="${cl((L - t0) / .15)}"><rect x="${lx}" y="${y - fs * .8}" width="${fs}" height="${fs}" rx="7" fill="${c}" stroke="${INK}" stroke-width="4"/>` +
+          tx(lx + fs + 16, y, esc(q.etiqueta || ''), fs, INK, 'start', 800) + tx(HOR ? Z.x + Z.w - 20 : Z.x + Z.w - 20, y, esc(/%/.test(String(q.valor)) ? String(q.valor) : (String(q.valor).match(/[a-zA-Z€]/) ? String(q.valor) : pc + ' %')), fs, INK, 'end', 900) + `</g>`;
+      });
+      return o + (v.titulo ? cinetico(v.titulo, HOR ? lx + (Z.x + Z.w - lx) / 2 : ZC.x, HOR ? Z.y + 30 : Z.y + 22, HOR ? 38 : 32, L, { max: HOR ? 36 : 30 }) : '');
+    },
+    // flecha de tendencia en zigzag  {"tipo":"tendencia","sentido":"sube","valor":"+12 %","texto":"…","color":"rojo"}
+    tendencia(v, L, d) {
+      const sube = !/baj|cae|desc|menos/i.test(String(v.sentido || '')), c = v.color ? col(v.color) : (sube ? VER : ROJ), w = HOR ? 500 : Z.w - 110, h = HOR ? 290 : 290;
+      const x0 = HOR ? Z.x + 20 : ZC.x - w / 2, y0 = HOR ? ZC.y + h / 2 : Z.y + 30 + h, fy = f => sube ? y0 - h * f : y0 - h + h * f;
+      const ks = [[0, .05], [.22, .38], [.36, .22], [.58, .6], [.72, .46], [1, .95]].map(([a, b]) => [x0 + w * a, fy(b)]);
+      const p = eio(cl((L - .15) / .9)), pos = p * (ks.length - 1), ki = Math.min(ks.length - 2, Math.floor(pos)), fr = pos - ki, cur = [ks[ki][0] + (ks[ki + 1][0] - ks[ki][0]) * fr, ks[ki][1] + (ks[ki + 1][1] - ks[ki][1]) * fr];
+      const lin = 'M' + ks.slice(0, ki + 1).map(q => q.map(z => z.toFixed(1)).join(' ')).join(' L') + ` L${cur[0].toFixed(1)} ${cur[1].toFixed(1)}`;
+      const a = Math.atan2(ks[ki + 1][1] - ks[ki][1], ks[ki + 1][0] - ks[ki][0]) * 180 / Math.PI;
+      let o = `<path d="${lin}" transform="translate(${SOM} ${SOM})" fill="none" stroke="${INK}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><path d="${lin}" fill="none" stroke="${c}" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>` +
+        `<g transform="translate(${cur[0].toFixed(1)} ${cur[1].toFixed(1)}) rotate(${a.toFixed(1)})"><path d="M-6 -36 L46 0 L-6 36 Z" fill="${c}" stroke="${INK}" stroke-width="6" stroke-linejoin="round"/></g>`;
+      for (let i = 0; i < 3; i++) { const fx = frac(L * 1.4 + i / 3); o += `<path d="M${(cur[0] - 70 - 60 * fx).toFixed(1)} ${(cur[1] + (i - 1) * 26 + (sube ? 30 : -30)).toFixed(1)} h${-40 * (1 - fx)}" stroke="${INK}" stroke-width="5" stroke-linecap="round" opacity="${((1 - fx) * p).toFixed(2)}"/>`; }
+      const size = HOR ? 46 : 36, max = HOR ? 20 : 24, xT = HOR ? Z.x + 600 + (Z.w - 600) / 2 : ZC.x, yN = HOR ? ZC.y - 20 : y0 + 100;
+      return o + `<g transform="translate(${xT} ${yN}) scale(${back((L - .7) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), eo((L - .6) / .6))), HOR ? 110 : 96, c === ORO ? INK : c, 'middle', 900, `letter-spacing="-3" stroke="${INK}" stroke-width="3" paint-order="stroke"`)}</g>` +
+        (v.texto ? cinetico(v.texto, xT, yN + (HOR ? 74 : 70), size, L, { max, t0: .8 }) : '');
+    },
+    // monedas que caen y se apilan + cantidad  {"tipo":"dinero","valor":"1.150 €","texto":"…"}
+    dinero(v, L, d) {
+      const pilas = HOR ? 4 : 3, por = 6, cw = HOR ? 110 : 120, ch = 22, bx = HOR ? Z.x + 60 : ZC.x - (pilas * cw + (pilas - 1) * 16) / 2, by = HOR ? ZC.y + 150 : Z.y + 300;
+      let o = '';
+      for (let j = 0; j < pilas; j++) for (let i = 0; i < por - (j % 2); i++) {
+        const t0 = .15 + (i * pilas + j) * .045, q = cl((L - t0) / .32); if (q <= 0) continue;
+        const caida = (1 - eo(q)) * 260, rebote = q < 1 ? 0 : 0, x = bx + j * (cw + 16) + cw / 2, y = by - i * ch - caida + rebote;
+        o += `<g opacity="${cl(q * 3).toFixed(2)}"><ellipse cx="${x}" cy="${(y + 8).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${INK}"/><rect x="${x - cw / 2}" y="${(y - 4).toFixed(1)}" width="${cw}" height="12" fill="#e0a800" stroke="${INK}" stroke-width="4"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2}" ry="${ch * .55}" fill="${ORO}" stroke="${INK}" stroke-width="4"/><ellipse cx="${x}" cy="${(y - 4).toFixed(1)}" rx="${cw / 2 - 14}" ry="${ch * .32}" fill="none" stroke="#e0a800" stroke-width="3"/></g>`;
+      }
+      const brillo = frac(L / 1.6); o += `<path d="M${(bx - 40 + (pilas * cw + 80) * brillo).toFixed(1)} ${by - por * ch - 30} l40 0 l-60 ${por * ch + 40} l-40 0 Z" fill="#fff" opacity=".35"/>`;
+      const size = HOR ? 46 : 36, max = HOR ? 20 : 24, xT = HOR ? Z.x + 620 + (Z.w - 620) / 2 : ZC.x, yN = HOR ? ZC.y - 10 : by + 120;
+      return o + `<g transform="translate(${xT} ${yN}) scale(${back((L - .5) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), eo((L - .4) / .9))), HOR ? 104 : 92, INK, 'middle', 900, 'letter-spacing="-3"')}</g>` +
+        (v.texto ? cinetico(v.texto, xT, yN + (HOR ? 72 : 66), size, L, { max, t0: .8 }) : '');
+    },
+    // reloj con agujas que giran hasta la hora  {"tipo":"reloj","hora":"21:55","texto":"…"}
+    reloj(v, L, d) {
+      const m = String(v.hora || '').match(/(\d{1,2})[:.h ]?(\d{2})?/), hh = m ? +m[1] % 24 : 12, mm = m && m[2] ? +m[2] : 0, p = eio(cl((L - .15) / 1.1));
+      const cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 190, r = HOR ? 150 : 160, e = back(L / .4);
+      const aM = (360 * 2 + mm * 6) * p, aH = ((hh % 12) * 30 + mm * .5) * p, aS = L * 360 / 1.2;
+      let o = `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="8"/>`;
+      for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; o += `<path d="M${((r - 18) * Math.sin(a)).toFixed(1)} ${(-(r - 18) * Math.cos(a)).toFixed(1)} L${((r - (i % 3 ? 32 : 44)) * Math.sin(a)).toFixed(1)} ${(-(r - (i % 3 ? 32 : 44)) * Math.cos(a)).toFixed(1)}" stroke="${INK}" stroke-width="${i % 3 ? 4 : 8}" stroke-linecap="round"/>`; }
+      o += `<g transform="rotate(${aH.toFixed(1)})"><path d="M-9 14 L0 ${-r * .5} L9 14 Z" fill="${INK}"/></g><g transform="rotate(${aM.toFixed(1)})"><path d="M-6 16 L0 ${-r * .78} L6 16 Z" fill="${INK}"/></g>` +
+        `<g transform="rotate(${aS.toFixed(1)})"><path d="M0 22 V${-r * .82}" stroke="${ORA}" stroke-width="4"/></g><circle r="14" fill="${ORA}" stroke="${INK}" stroke-width="4"/></g>`;
+      const hs = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`, size = HOR ? 46 : 36, max = HOR ? 20 : 24;
+      return o + peg(cx, cy + r + (HOR ? 46 : 52), hs + (/h/i.test(String(v.hora || '')) || true ? ' H' : ''), HOR ? 40 : 40, INK, ORO, 'middle', eo((L - 1.1) / .2), -2, back((L - 1.1) / .35)) +
+        (v.texto ? cinetico(v.texto, HOR ? Z.x + 450 + (Z.w - 450) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : cy + r + 130, size, L, { max, t0: .5 }) : '');
+    },
+    // lista de comprobación con ✓ y ✗  {"tipo":"checklist","titulo":"…","items":[{"texto":"…","ok":true},{"texto":"…","ok":false}]}
+    checklist(v, L, d) {
+      const it = (v.items || []).slice(0, 4), n = it.length || 1, hT = v.titulo ? (HOR ? 70 : 80) : 0, ah = Math.min(HOR ? 76 : 84, (Z.h - hT) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
+      let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 44 : 56), HOR ? 40 : 36, L, { max: HOR ? 46 : 28 }) : '';
+      it.forEach((q, i) => {
+        const t0 = .25 + i * Math.max(.45, (d - .8) / n), e = back((L - t0) / .4); if (e <= 0) return;
+        const y = y0 + i * (ah + 18), ok = q.ok !== false && q.ok !== 'false', c = ok ? VER : ROJ, s = String(q.texto || ''), fs = Math.min(ah * .4, (Z.w - ah - 60) / (Math.max(8, s.length) * .56));
+        const pm = eo((L - t0 - .25) / .3), bxx = Z.x + 10, cxk = bxx + ah / 2, cyk = y + ah / 2, rr = ah * .3;
+        const marca = ok ? `<path d="M${cxk - rr * .6} ${cyk} l${rr * .45} ${rr * .5} l${rr * .85} ${-rr * .95}" fill="none" stroke="#fff" stroke-width="${ah * .12}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - pm).toFixed(3)}"/>`
+          : `<path d="M${cxk - rr * .55} ${cyk - rr * .55} l${rr * 1.1} ${rr * 1.1} M${cxk + rr * .55} ${cyk - rr * .55} l${-rr * 1.1} ${rr * 1.1}" fill="none" stroke="#fff" stroke-width="${ah * .12}" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - pm).toFixed(3)}"/>`;
+        o += `<g transform="translate(${((1 - e) * 240).toFixed(1)} 0)" opacity="${cl((L - t0) / .12)}">` + caja(bxx, y, Z.w - 20, ah, ah * .28, BLA) +
+          `<rect x="${cxk - ah * .36}" y="${cyk - ah * .36}" width="${ah * .72}" height="${ah * .72}" rx="${ah * .16}" fill="${pm > 0 ? c : BLA}" stroke="${INK}" stroke-width="4"/>` + marca +
+          tx(bxx + ah + 10, cyk + fs * .36, esc(s), fs, INK, 'start', 800) + `</g>`;
+      });
+      return o;
+    },
+    // semáforo de alerta (amarillo, naranja, rojo)  {"tipo":"alerta","nivel":"rojo","texto":"…"}
+    alerta(v, L, d) {
+      const niv = /roj/i.test(v.nivel) ? 2 : /naranj/i.test(v.nivel) ? 1 : 0, cs = [ORO, ORA, ROJ], nm = ['AMARILLO', 'NARANJA', 'ROJO'];
+      const cx = HOR ? Z.x + 200 : ZC.x - (HOR ? 0 : 150), cy = HOR ? ZC.y : Z.y + 200, w = 130, h = 360, e = back(L / .4), on = L > .5 + niv * .25;
+      let o = '';
+      if (on) { const rot = L * 40; let rays = ''; for (let i = 0; i < 10; i++) { const a0 = (i / 10) * Math.PI * 2 + rot * Math.PI / 180, a1 = a0 + Math.PI / 12, Rr = 300; rays += `M0 0L${(Rr * Math.cos(a0)).toFixed(0)} ${(Rr * Math.sin(a0)).toFixed(0)}L${(Rr * Math.cos(a1)).toFixed(0)} ${(Rr * Math.sin(a1)).toFixed(0)}Z`; }
+        o += `<g transform="translate(${cx} ${cy - h / 2 + 60 + (2 - niv) * 110})"><path d="${rays}" fill="${cs[niv]}" opacity="${(.18 + .08 * Math.sin(L * 8)).toFixed(3)}"/></g>`; }
+      o += `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) translate(${-cx} ${-cy})">` + caja(cx - w / 2, cy - h / 2, w, h, 34, INK, 5);
+      for (let i = 0; i < 3; i++) {
+        const lvl = 2 - i, yy = cy - h / 2 + 60 + i * 110, act = lvl === niv && on, lit = act || (lvl < niv && L > .5 + lvl * .25 && L < .5 + niv * .25);   // se van encendiendo hasta su nivel y queda solo esa
+        o += `<circle cx="${cx}" cy="${yy}" r="44" fill="${lit ? cs[lvl] : '#3b3640'}" stroke="${BLA}" stroke-width="4" opacity="1"/>` + (act ? `<circle cx="${cx}" cy="${yy}" r="${(48 + 14 * frac(L * 1.5)).toFixed(1)}" fill="none" stroke="${cs[lvl]}" stroke-width="6" opacity="${(1 - frac(L * 1.5)).toFixed(2)}"/>` : '');
+      }
+      o += `</g>`;
+      const size = HOR ? 46 : 34, max = HOR ? 20 : 12, xT = HOR ? Z.x + 420 + (Z.w - 420) / 2 : cx + w / 2 + 25 + (Z.x + Z.w - cx - w / 2 - 25) / 2;
+      return o + peg(xT, HOR ? ZC.y - 40 : cy - 60, 'AVISO ' + nm[niv], HOR ? 46 : 32, cs[niv], niv === 0 ? INK : '#fff', 'middle', on ? 1 : 0, -3, back((L - .5 - niv * .25) / .35)) +
+        (v.texto ? cinetico(v.texto, xT, HOR ? ZC.y + 40 : cy + 10, size, L, { max, t0: .9 }) : '');
+    },
+    // hemiciclo de escaños  {"tipo":"escanos","partidos":[{"nombre":"PP","valor":"137","color":"azul"},…],"texto":"…"}
+    escanos(v, L, d) {
+      const ps = (v.partidos || []).slice(0, 7).map((q, i) => ({ n: String(q.nombre || ''), s: Math.max(0, Math.round(num(q.valor))), c: q.color ? col(q.color) : [AZU, ROJ, VER, MOR, ORO, ORA, INK][i] }));
+      const tot = Math.min(400, ps.reduce((a, b) => a + b.s, 0)) || 1, filas = tot > 200 ? 9 : 7, cx = HOR ? Z.x + 310 : ZC.x, cy = HOR ? ZC.y + 150 : Z.y + 330, R1 = HOR ? 250 : 262, R0 = R1 * .42;
+      const rad = [...Array(filas).keys()].map(i => R0 + (R1 - R0) * i / (filas - 1)), sumR = rad.reduce((a, b) => a + b, 0);
+      let asientos = []; let quedan = tot;
+      rad.forEach((rr, i) => { const nfila = i === filas - 1 ? quedan : Math.round(tot * rr / sumR); quedan -= nfila; for (let j = 0; j < nfila; j++) { const a = Math.PI * (1 - (j + .5) / nfila); asientos.push([a, rr]); } });
+      asientos.sort((a, b) => b[0] - a[0] || a[1] - b[1]);
+      const dr = Math.min(11, (R1 - R0) / filas * .42), p = eio(cl((L - .2) / 1.2)), vis = Math.floor(asientos.length * p);
+      let o = '', k = 0;
+      ps.forEach(q => { for (let j = 0; j < q.s && k < asientos.length; j++, k++) { const [a, rr] = asientos[k]; if (k >= vis) continue; o += `<circle cx="${(cx + rr * Math.cos(a)).toFixed(1)}" cy="${(cy - rr * Math.sin(a)).toFixed(1)}" r="${dr.toFixed(1)}" fill="${q.c}" stroke="${INK}" stroke-width="1.5"/>`; } });
+      const may = Math.floor(tot / 2) + 1;
+      if (tot >= 50) o += `<path d="M${cx} ${cy - R1 - 26} V${cy - R0 + 20}" stroke="${INK}" stroke-width="4" stroke-dasharray="8 6" opacity="${eo((L - 1.2) / .3).toFixed(2)}"/>` + peg(cx, cy - R1 - 34, `MAYORÍA ${may}`, HOR ? 22 : 22, INK, '#fff', 'middle', eo((L - 1.2) / .3), 0);
+      const lx = HOR ? Z.x + 660 : Z.x + 10, ly = HOR ? ZC.y - ps.length * 24 : cy + 50, fs = HOR ? 30 : 26, col2 = !HOR && ps.length > 3;
+      ps.forEach((q, i) => {
+        const t0 = .4 + i * .15, e = back((L - t0) / .35); if (e <= 0) return;
+        const x = col2 ? lx + (i % 2) * (Z.w / 2) : lx, y = ly + (col2 ? Math.floor(i / 2) : i) * (HOR ? 50 : 44);
+        o += `<g opacity="${cl((L - t0) / .15)}"><circle cx="${x + 14}" cy="${y - fs * .35}" r="13" fill="${q.c}" stroke="${INK}" stroke-width="3"/>` + tx(x + 38, y, esc(q.n), fs, INK, 'start', 800) +
+          tx(x + (col2 ? Z.w / 2 - 30 : (HOR ? Z.x + Z.w - lx - 10 : Z.w - 30)), y, esc(contar(String(q.s), eo((L - t0) / .8))), fs, INK, 'end', 900) + `</g>`;
+      });
+      const size = HOR ? 40 : 32;
+      return o + (v.texto ? cinetico(v.texto, HOR ? cx : ZC.x, HOR ? cy + 70 : ly + Math.ceil(ps.length / (col2 ? 2 : 1)) * 44 + 30, size, L, { max: HOR ? 30 : 28, t0: 1 }) : '');
+    },
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
       const fw = HOR ? Z.w * .6 : Z.w + 20, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
@@ -443,7 +595,7 @@
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
     if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
-    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha'].includes(tipo)) return '';
+    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
     const pos = HOR ? [[Z.x + Z.w - 120, Z.y + 40, 5], [Z.x + Z.w - 150, Z.y + Z.h - 20, -5]] : [[Z.x + Z.w - 130, Z.y + 60, 6], [Z.x + 120, Z.y + Z.h + 8, -5]], cs = [[ORO, INK], [AZU, '#fff']];
