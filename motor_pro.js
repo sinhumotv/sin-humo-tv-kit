@@ -778,7 +778,7 @@
         `<g clip-path="url(#${id})"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" fill="#fff" opacity="${(L < .55 ? .7 * cl(1 - (L - .3) / .25) * cl((L - .25) / .05) : 0).toFixed(3)}"/>` +
         (L > .6 && L < 1.6 ? `<path d="M${(fx - 200 + (fw + 400) * eio((L - .6) / 1)).toFixed(1)} ${fy} l120 0 l-160 ${fh} l-120 0 Z" fill="#fff" opacity=".28"/>` : '') + `</g>` +
         `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
-        `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke">${esc(f.credito || '')}</text></g>` +
+        `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke"${String(f.credito || '').length * (HOR ? 7.6 : 8.2) > fw - 40 ? ` textLength="${fw - 40}" lengthAdjust="spacingAndGlyphs"` : ''}>${esc(f.credito || '')}</text></g>` +
         (() => { const q = eo((L - .2) / .5), m = 26 + 30 * (1 - q) + 4 * Math.sin(L * 3), lc = 34, c_ = GRAVE ? BLA : ORO, op = cl((L - .2) / .2) * (1 - .35 * cl((L - 1.6) / .4));   // esquinas de visor
           return [[fx + m, fy + m, 1, 1], [fx + fw - m, fy + m, -1, 1], [fx + m, fy + fh - m, 1, -1], [fx + fw - m, fy + fh - m, -1, -1]].map(([x, y, sx, sy]) =>
             `<path d="M${x} ${y + sy * lc} V${y} H${x + sx * lc}" fill="none" stroke="${c_}" stroke-width="7" stroke-linecap="round" opacity="${op.toFixed(2)}" transform="rotate(-1.5 ${cx} ${cy})"/>`).join(''); })() +
