@@ -163,6 +163,10 @@
     'fuenlabrada': [-3.8, 40.28], 'torrejon': [-3.48, 40.46], 'cordoba ': [-4.78, 37.89], 'galicia': [-8.0, 42.8], 'asturias': [-5.9, 43.3],
     'cantabria': [-4.0, 43.2], 'pais vasco': [-2.6, 43.05], 'euskadi': [-2.6, 43.05], 'navarra': [-1.65, 42.7], 'la rioja': [-2.5, 42.3], 'aragon': [-0.7, 41.5],
     'cataluna': [1.5, 41.8], 'catalunya': [1.5, 41.8], 'comunidad valenciana': [-0.6, 39.3], 'region de murcia': [-1.4, 38.0], 'andalucia': [-4.6, 37.4],
+    // Canarias: se dibujan en un recuadro (como en los mapas del tiempo); coordenadas reales, el recuadro las traslada
+    'canarias': [-15.6, 28.3], 'islas canarias': [-15.6, 28.3], 'tenerife': [-16.55, 28.3], 'santa cruz de tenerife': [-16.25, 28.47], 'gran canaria': [-15.6, 27.95],
+    'las palmas': [-15.43, 28.12], 'las palmas de gran canaria': [-15.43, 28.12], 'la palma': [-17.85, 28.68], 'lanzarote': [-13.6, 29.05], 'fuerteventura': [-14.0, 28.4],
+    'la gomera': [-17.2, 28.1], 'el hierro': [-18.0, 27.75], 'la graciosa': [-13.5, 29.25], 'arrecife': [-13.55, 28.96],
     'extremadura': [-6.2, 39.2], 'castilla la mancha': [-3.0, 39.5], 'castilla y leon': [-4.6, 41.7], 'comunidad de madrid': [-3.7, 40.45], 'baleares': [2.95, 39.62],
   };
   const G = {
@@ -310,7 +314,8 @@
     },
     // mapa de España con chinchetas en las ciudades nombradas  {"tipo":"mapa","lugares":["Oviedo","Madrid"],"texto":"…"}
     mapa(v, L, d) {
-      const lon0 = -9.6, lat0 = 43.95, k = HOR ? 44 : Math.min(55, Z.w / 9.96), kx = k * .766, mw = 13.4 * kx, mh = 8.2 * k;
+      const can0 = (v.lugares || []).some(s => (CIUDADES[norm(s)] || [0])[0] < -12), alto = can0 ? 10.1 : 8.2;   // con Canarias, el mapa baja hasta su recuadro
+      const lon0 = -9.6, lat0 = 43.95, k = HOR ? Math.min(44, 380 / alto) : Math.min(55, Z.w / 9.96, (Z.h - 90) / alto), kx = k * .766, mw = 13.4 * kx, mh = alto * k;
       const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 10, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
       const dPath = 'M' + ESP.map(([lo, la]) => P_(lo, la).map(n => n.toFixed(1)).join(' ')).join(' L') + ' Z';
       const p = eo(L / .7), f = eo((L - .4) / .4);
@@ -318,9 +323,17 @@
         `<path d="${dPath}" fill="${BLA}" fill-opacity="${f.toFixed(2)}" stroke="${INK}" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - p).toFixed(3)}"/>` +
         BAL.map(([lo, la, rx, ry]) => { const [x, y] = P_(lo, la); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
       const ls = (v.lugares || []).map(s => [s, CIUDADES[norm(s)]]).filter(x => x[1]).slice(0, 3);
+      // Canarias en recuadro abajo a la izquierda (solo si se nombra algún lugar canario): se trasladan a (-8.6, 36.9) en el mapa
+      const CAN = [[-18.0, 27.75, .13, .1], [-17.85, 28.68, .12, .18], [-17.2, 28.1, .12, .1], [-16.55, 28.3, .35, .22], [-15.6, 27.95, .28, .25], [-14.0, 28.4, .45, .22], [-13.6, 29.05, .3, .18]];
+      const canario = ls.some(([, [lo, la]]) => lo < -12), mov = ([lo, la]) => lo < -12 ? [lo + 8.7, la + 6.25] : [lo, la];
+      if (canario) {
+        const [bx, by] = P_(-9.5, 35.75), [bx2, by2] = P_(-4.55, 33.9);
+        o += `<rect x="${bx.toFixed(1)}" y="${by.toFixed(1)}" width="${(bx2 - bx).toFixed(1)}" height="${(by2 - by).toFixed(1)}" rx="10" fill="none" stroke="${INK}" stroke-width="3" stroke-dasharray="8 6" opacity="${f.toFixed(2)}"/>` +
+          CAN.map(([lo, la, rx, ry]) => { const [x, y] = P_(...mov([lo, la])); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
+      }
       ls.forEach(([nom, [lo, la]], i) => {
         const t0 = .8 + i * .35, e = back((L - t0) / .4); if (e <= 0) return;
-        const [x, y] = P_(lo, la), cae = (1 - eo((L - t0) / .3)) * 90, rip = frac((L - t0) / 1.2);
+        const [x, y] = P_(...mov([lo, la])), cae = (1 - eo((L - t0) / .3)) * 90, rip = frac((L - t0) / 1.2);
         o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(8 + 40 * rip).toFixed(1)}" fill="none" stroke="${ROJ}" stroke-width="4" opacity="${(1 - rip).toFixed(2)}"/>` +
           `<g transform="translate(${x.toFixed(1)} ${(y - cae).toFixed(1)}) scale(${(e * (HOR ? .5 : .55)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="7"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="5"/></g>` +
           peg(x + (x > ox + mw * .6 ? -20 : 20), y - (HOR ? 54 : 58), String(nom).toUpperCase(), HOR ? 20 : 20, INK, '#fff', x > ox + mw * .6 ? 'end' : 'start', eo((L - t0 - .2) / .2), -3);
