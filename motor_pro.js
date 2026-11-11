@@ -933,6 +933,11 @@
       svg += pie(t) + cabecera(k, t, L) + subtitulos(k, t) + barra(t);
       if (k === N - 1 && P.fuentes) svg += `<text x="${W / 2}" y="${HOR ? H - 8 : 1076}" font-family="Inter" font-weight="700" font-size="${HOR ? 16 : 18}" text-anchor="middle" fill="${INK}" fill-opacity=".75">Fuentes: ${esc(P.fuentes)}</text>`;
     }
+    // v62: bucle sin salto (cortos): en los últimos 0,35 s se funde con el primer plano, que es el que se ve al volver a empezar
+    if (!HOR && !window.LIMPIO && N > 1 && t > DUR - .35) {
+      const q = eio((t - (DUR - .35)) / .35);
+      svg += `<g opacity="${q.toFixed(3)}">${escena(0, T.escenas[0].ini)}${cabecera(0, T.escenas[0].ini, 0)}${subtitulos(0, T.escenas[0].ini)}${barra(0)}</g>`;
+    }
     svg += encima + (window.LIMPIO ? '' : marco()) + '</svg>';
     document.getElementById('lienzo').innerHTML = svg;
     cajas();
