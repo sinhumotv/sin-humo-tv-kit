@@ -133,6 +133,14 @@
         const sm = mk(0, b.height * .2, INK, false); sm.setAttribute('opacity', '.22'); sm.setAttribute('filter', 'url(#somS)');
         el.parentNode.insertBefore(sm, el); el.parentNode.insertBefore(mk(0, 0, el.getAttribute('data-peg'), true), el);
       });
+      // v80c: el emoji de la cabecera se coloca midiendo el rótulo de verdad (justo a su derecha)
+      document.querySelectorAll('#lienzo g[data-emo]').forEach(g => {
+        const peg_ = g.previousElementSibling, txt = peg_ && peg_.querySelector('text[data-peg]'); if (!txt) return;
+        const rc = txt.getBoundingClientRect(), M_ = g.parentNode.getScreenCTM(); if (!rc.width || !M_) return;
+        const [rot, sc, gap] = g.getAttribute('data-emo').split('|').map(Number), inv = M_.inverse(), pt = document.querySelector('#lienzo svg, svg').createSVGPoint();
+        pt.x = rc.right; pt.y = rc.top + rc.height / 2; const q = pt.matrixTransform(inv);
+        g.setAttribute('transform', `translate(${(q.x + gap).toFixed(1)} ${(q.y - 2).toFixed(1)}) rotate(${rot}) scale(${sc})`);
+      });
       if (SH.resalta) SH.resalta();
     } catch (e) { }
   }
@@ -984,7 +992,7 @@
     const emo = !GRAVE && E[k].emoji && !['mencion', 'cierre'].includes((E[k].visual || {}).tipo) ? String(E[k].emoji).trim().slice(0, 8) : '', fsR = HOR ? 30 : 26, xR = HOR ? Z.x + 6 : ZC.x, yR = HOR ? 104 : 266;
     let em = '';
     if (emo) { const wR = tit.length * fsR * .6 + fsR, xe = HOR ? xR + wR + 26 : xR + wR / 2 + 30, ee = back((L - .25) / .35);
-      if (ee > 0) em = `<g transform="translate(${xe.toFixed(1)} ${yR - fsR * .35}) rotate(${(10 * Math.sin(L * 3.2)).toFixed(2)}) scale(${ee.toFixed(3)})"><text x="0" y="${(fsR * .5).toFixed(1)}" font-family="Noto Color Emoji" font-size="${(fsR * 1.5).toFixed(0)}" text-anchor="middle">${esc(emo)}</text></g>`; }
+      if (ee > 0) em = `<g data-emo="${(10 * Math.sin(L * 3.2)).toFixed(2)}|${ee.toFixed(3)}|${(fsR * 1.75).toFixed(1)}" transform="translate(${xe.toFixed(1)} ${yR - fsR * .35}) rotate(${(10 * Math.sin(L * 3.2)).toFixed(2)}) scale(${ee.toFixed(3)})"><text x="0" y="${(fsR * .5).toFixed(1)}" font-family="Noto Color Emoji" font-size="${(fsR * 1.5).toFixed(0)}" text-anchor="middle" data-emot="1">${esc(emo)}</text></g>`; }
     return peg(xR, yR, tit, fsR, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4)) + em;
   }
 
