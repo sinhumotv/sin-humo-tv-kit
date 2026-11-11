@@ -4,11 +4,19 @@ name: Prueba voz Chatterbox
 
 on:
   workflow_dispatch:
+    inputs:
+      pruebas:
+        description: 'Carpetas a probar, p. ej. ["pruebas/1_preguntas","pruebas/2_susurros"] (vacío = prueba)'
+        default: ""
 
 jobs:
   voz:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        prueba: ${{ fromJSON(inputs.pruebas || '["prueba"]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,8 +34,8 @@ jobs:
       - name: Generar voz
         env:
           PYTHONPATH: /tmp/space/chatterbox/src
-        run: python3 voz_chatterbox/voz.py voz_chatterbox/prueba
+        run: python3 voz_chatterbox/voz.py voz_chatterbox/${{ matrix.prueba }}
       - uses: actions/upload-artifact@v4
         with:
-          name: prueba-voz-chatterbox
-          path: voz_chatterbox/prueba/voz.mp3
+          name: voz-${{ strategy.job-index }}
+          path: voz_chatterbox/${{ matrix.prueba }}/voz.mp3
