@@ -38,7 +38,8 @@
   const DEF_LUPI = `<defs><radialGradient id="lmL" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e3f3fb"/><stop offset="1" stop-color="#9fd2ea"/></radialGradient>` +
     `<linearGradient id="lmA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".5" stop-color="${ORA}"/><stop offset="1" stop-color="#d9480f"/></linearGradient>` +
     `<linearGradient id="lmM" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#c2410c"/></linearGradient>` +
-    `<filter id="lmS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter></defs>`;
+    `<filter id="lmS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>` +
+    `<filter id="somS" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="7"/></filter></defs>`;   // v69: sombra suave de tarjetas
   let defLupiPuesto = -1;
   function caraM(expr, t, mira = [0, 0]) {
     const [mx, my] = mira, parp = ((t + .7) % 3.3) < .12, guino = expr === 'guino';
@@ -90,8 +91,9 @@
   const tx = (x, y, s, size, fill = INK, anchor = 'middle', peso = 900, extra = '') =>
     `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="Inter" font-weight="${peso}" font-size="${size.toFixed(1)}" text-anchor="${anchor}" fill="${fill}" letter-spacing="-.5" ${extra}>${s}</text>`;
   // caja tipo pegatina: sombra dura + relleno + borde negro
+  // v69: estilo moderno: sombra suave difuminada (antes, sombra negra dura) y contorno fino
   const caja = (x, y, w, h, rx, fill = BLA, sw = 5, som = SOM) =>
-    `<rect x="${(x + som).toFixed(1)}" y="${(y + som).toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="${INK}"/><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="${fill}" stroke="${INK}" stroke-width="${sw}"/>`;
+    `<rect x="${(x + 2).toFixed(1)}" y="${(y + som * 1.2).toFixed(1)}" width="${(w - 4).toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="${INK}" opacity=".2" filter="url(#somS)"/><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" rx="${rx}" fill="${fill}" stroke="${INK}" stroke-width="${Math.min(sw, 3)}"/>`;
   // titular cinético: palabra a palabra; las *claves* (o, si no hay, la palabra más larga) llevan franja naranja detrás
   function cinetico(texto, cx, y0, size, L, opt = {}) {
     const max = opt.max || 14, paso = opt.paso || .07, bruto = String(texto || '').replace(/\*/g, '§'), ls = partir(bruto, max), lh = size * 1.14;
@@ -127,8 +129,9 @@
       });
       document.querySelectorAll('#lienzo text[data-peg]').forEach(el => {
         const b = el.getBBox(); if (!b.width) return;
-        const mx = b.height * .5, my = b.height * .22, mk = (dx, dy, fill, st) => { const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', b.x - mx + dx); r.setAttribute('y', b.y - my + dy); r.setAttribute('width', b.width + 2 * mx); r.setAttribute('height', b.height + 2 * my); r.setAttribute('rx', b.height * .28); r.setAttribute('fill', fill); if (st) { r.setAttribute('stroke', INK); r.setAttribute('stroke-width', Math.max(3, b.height * .12)); } return r; };
-        el.parentNode.insertBefore(mk(b.height * .16, b.height * .16, INK, false), el); el.parentNode.insertBefore(mk(0, 0, el.getAttribute('data-peg'), true), el);
+        const mx = b.height * .5, my = b.height * .22, mk = (dx, dy, fill, st) => { const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', b.x - mx + dx); r.setAttribute('y', b.y - my + dy); r.setAttribute('width', b.width + 2 * mx); r.setAttribute('height', b.height + 2 * my); r.setAttribute('rx', b.height * .28); r.setAttribute('fill', fill); if (st) { r.setAttribute('stroke', INK); r.setAttribute('stroke-width', Math.max(2, b.height * .07)); } return r; };
+        const sm = mk(0, b.height * .2, INK, false); sm.setAttribute('opacity', '.22'); sm.setAttribute('filter', 'url(#somS)');
+        el.parentNode.insertBefore(sm, el); el.parentNode.insertBefore(mk(0, 0, el.getAttribute('data-peg'), true), el);
       });
       if (SH.resalta) SH.resalta();
     } catch (e) { }
@@ -191,7 +194,7 @@
     const v = tot * eo(p), e = Math.floor(v + 1e-9), s = e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, /\./.test(m[2]) ? '.' : '');
     return m[1] + s + (dec ? ',' + (v - e).toFixed(dec).slice(2) : '') + m[4];
   }
-  const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="5"/><g transform="scale(${(r / 150).toFixed(3)})">${icono(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
+  const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="0" cy="${SOM * 1.3}" r="${r}" fill="${INK}" opacity=".2" filter="url(#somS)"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="3"/><g transform="scale(${(r / 150).toFixed(3)})">${icono(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
   // ---------- v56: datos del mapa de España (contorno simplificado, lon/lat) ----------
   const ESP = [[-8.9, 43.2], [-8.3, 43.55], [-7.7, 43.75], [-7.0, 43.55], [-5.8, 43.65], [-4.5, 43.42], [-3.8, 43.48], [-3.0, 43.35], [-1.8, 43.38],
     [-1.4, 43.05], [-0.7, 42.85], [0.7, 42.82], [1.5, 42.45], [2.6, 42.35], [3.2, 42.32], [3.15, 41.9], [2.2, 41.4], [1.0, 41.05], [0.85, 40.7],
