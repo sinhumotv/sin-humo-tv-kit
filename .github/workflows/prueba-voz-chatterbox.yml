@@ -1,0 +1,34 @@
+# Prueba de la voz propia de sin humo TV con Chatterbox (español de España), gratis en GitHub (CPU).
+# Genera voz_chatterbox/prueba/voz.mp3 y la deja como artefacto, con el tiempo que ha tardado.
+name: Prueba voz Chatterbox
+
+on:
+  workflow_dispatch:
+    inputs:
+      expresividad:
+        description: "0.5 normal · 0.7 expresiva · 0.9 muy expresiva"
+        default: "0.7"
+
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch==2.8.0 torchaudio==2.8.0
+          pip install -q numpy==1.26.0 resampy==0.4.3 librosa==0.10.0 s3tokenizer transformers==4.46.3 diffusers==0.29.0 \
+            omegaconf==2.3.0 resemble-perth==1.0.1 silero-vad==5.1.2 conformer==0.3.2 safetensors huggingface_hub
+      - name: Código del modelo oficial (Space de Resemble AI, español de España)
+        run: |
+          python3 -c "from huggingface_hub import snapshot_download; snapshot_download('ResembleAI/Chatterbox-Multilingual-TTS-es-es', repo_type='space', local_dir='/tmp/space', allow_patterns=['chatterbox/*'])"
+      - name: Generar voz
+        env:
+          PYTHONPATH: /tmp/space/chatterbox/src
+        run: python3 voz_chatterbox/voz.py voz_chatterbox/prueba --expresividad ${{ inputs.expresividad }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prueba-voz-chatterbox
+          path: voz_chatterbox/prueba/voz.mp3
