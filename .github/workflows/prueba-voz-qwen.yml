@@ -1,0 +1,34 @@
+# Pruebas de la voz de sin humo TV con Qwen3-TTS (Alibaba, Apache 2.0) copiando la voz del canal. Gratis en GitHub (CPU).
+name: Prueba voz Qwen
+
+on:
+  workflow_dispatch:
+
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        grupo: ["1_preguntas 2_susurros", "3_exaltacion 4_intriga", "5_corto_completo"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -q -U qwen-tts soundfile
+      - name: Generar voz
+        run: |
+          D=""; for g in ${{ matrix.grupo }}; do D="$D voz_chatterbox/pruebas_qwen/$g"; done
+          python3 voz_chatterbox/voz_qwen.py $D
+          mkdir -p salida; for g in ${{ matrix.grupo }}; do
+            ffmpeg -loglevel error -y -i voz_chatterbox/pruebas_qwen/$g/voz.wav -af loudnorm=I=-16 -b:a 160k salida/$g.mp3; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qwen-${{ strategy.job-index }}
+          path: salida/*.mp3
