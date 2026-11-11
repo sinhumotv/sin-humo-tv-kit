@@ -177,20 +177,42 @@ il = int(.5 * SR); it = np.arange(il) / SR
 impacto = np.sin(2 * np.pi * (48 + 70 * np.exp(-it * 18)) * it) * np.exp(-it * 7) + rng.normal(0, 1, il) * np.exp(-it * 60) * .25
 if P.get("golpe_inicial", True): pon(impacto, 0, .9)
 PRO = (P.get("aspecto") or "pro") == "pro"
+# v56 (11-nov-2026): MISMA regla que TIPO_TR de motor_pro.js (9 transiciones), cada una con su sonido
+GRAVE_ = P.get("tono") == "grave"
+TR_TODAS = ["barrido", "iris", "zoom", "persiana", "empuje", "mancha", "giro", "cortina", "glitch"]
+TR_GRAVE = ["barrido", "zoom", "empuje", "iris", "persiana"]
+def _base(i): return TR_GRAVE[(i * 2) % 5] if GRAVE_ else TR_TODAS[(i * 5) % 9]
+TRS = [""]
+for j_ in range(1, len(P["escenas"])):
+    e_ = P["escenas"][j_]; tipo_ = (e_.get("visual") or {}).get("tipo"); em_ = str(e_.get("voz") or "").lower()
+    t_ = "cortina" if (not GRAVE_ and tipo_ == "mencion") else "glitch" if (not GRAVE_ and em_ in ("surprised", "tense", "indignant")) else _base(j_)
+    if t_ == "glitch" and "glitch" in TRS[max(0, j_ - 2):j_]: t_ = _base(j_ + 1) if _base(j_) == "glitch" else _base(j_)
+    if t_ == TRS[j_ - 1]: t_ = _base(j_ + 2) if _base(j_ + 1) == t_ else _base(j_ + 1)
+    TRS.append(t_)
+gl_ = int(.26 * SR); gt_ = np.arange(gl_) / SR
+glitch_s = (rng.normal(0, 1, gl_) * (np.sign(np.sin(2 * np.pi * 37 * gt_)) * .5 + .5) + np.sign(np.sin(2 * np.pi * 220 * gt_)) * .3) * np.exp(-gt_ * 6) * .5
 for k, e in enumerate(T["escenas"][1:], 1):
     if not PRO:
         pon(whoosh, e["ini"] - .3, .9)           # en el respiro entre escenas, no encima de palabras
         continue
-    # v48: cada transición del motor pro con su sonido (mismo orden que TIPO_TR en motor_pro.js), centrado en el movimiento
-    tr = ["barrido", "zoom", "barrido", "cortina"][k % 4]
-    if tr == "barrido":
+    tr = TRS[k] if k < len(TRS) else "barrido"
+    if tr in ("barrido", "empuje"):
         pon(whoosh, e["ini"] - .2, .9)
     elif tr == "zoom":
-        pon(whoosh[::-1] * .8, e["ini"] - .3, .9)   # sube y corta justo cuando entra el plano nuevo
-        pon(pop, e["ini"] + .02, .5)
-    else:
-        pon(whoosh, e["ini"] - .14, 1.0)
-        pon(impacto, e["ini"] + .2, .35)            # golpe suave de la marca cuando la cortina tapa la pantalla
+        pon(whoosh[::-1] * .8, e["ini"] - .3, .9); pon(pop, e["ini"] + .02, .5)
+    elif tr == "cortina":
+        pon(whoosh, e["ini"] - .14, 1.0); pon(impacto, e["ini"] + .2, .35)
+    elif tr == "iris":
+        pon(zum, e["ini"] - .12, .55)
+    elif tr == "persiana":
+        pon(whoosh[: len(whoosh) // 2], e["ini"] - .05, .8)
+        for q in (0, .1, .2): pon(pop, e["ini"] + q, .25)
+    elif tr == "giro":
+        pon(whoosh * .6, e["ini"] - .1, .8); pon(pop, e["ini"] + .17, .45)
+    elif tr == "glitch":
+        pon(glitch_s, e["ini"], .9 if not GRAVE_ else .4)
+    elif tr == "mancha":
+        pon(whoosh, e["ini"] - .1, .9); pon(impacto, e["ini"] + .22, .25)
 for z in P.get("zum", []):
     pon(zum, z, .8)
 pon(pop, T["escenas"][-1]["voz_fin"] + .05)  # pop final

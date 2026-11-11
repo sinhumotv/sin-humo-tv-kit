@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v55, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v56, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -136,6 +136,35 @@
     return m[1] + s + (dec ? ',' + (v - e).toFixed(dec).slice(2) : '') + m[4];
   }
   const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${r}" fill="${INK}"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="5"/><g transform="scale(${(r / 150).toFixed(3)})">${icono(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
+  // ---------- v56: datos del mapa de España (contorno simplificado, lon/lat) ----------
+  const ESP = [[-8.9, 43.2], [-8.3, 43.55], [-7.7, 43.75], [-7.0, 43.55], [-5.8, 43.65], [-4.5, 43.42], [-3.8, 43.48], [-3.0, 43.35], [-1.8, 43.38],
+    [-1.4, 43.05], [-0.7, 42.85], [0.7, 42.82], [1.5, 42.45], [2.6, 42.35], [3.2, 42.32], [3.15, 41.9], [2.2, 41.4], [1.0, 41.05], [0.85, 40.7],
+    [0.0, 40.0], [-0.3, 39.45], [0.2, 38.75], [-0.5, 38.3], [-0.75, 37.62], [-1.6, 37.25], [-2.1, 36.75], [-3.5, 36.72], [-4.45, 36.68],
+    [-5.3, 36.18], [-5.62, 36.0], [-6.25, 36.45], [-6.45, 36.85], [-7.4, 37.18], [-7.5, 37.6], [-7.05, 38.2], [-7.3, 38.8], [-7.0, 39.25],
+    [-7.5, 39.7], [-6.9, 40.25], [-6.8, 41.0], [-6.2, 41.6], [-6.6, 41.95], [-7.2, 41.88], [-8.1, 41.85], [-8.85, 41.9], [-8.9, 42.4], [-9.3, 42.9], [-9.2, 43.15]];
+  const BAL = [[2.95, 39.62, .45, .28], [4.05, 39.97, .2, .1], [1.42, 38.98, .14, .12]];   // Mallorca, Menorca, Ibiza (lon, lat, radio x, radio y en grados)
+  const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z ]/g, '').trim();
+  const CIUDADES = {
+    'madrid': [-3.7, 40.42], 'barcelona': [2.17, 41.39], 'valencia': [-0.38, 39.47], 'sevilla': [-5.98, 37.39], 'zaragoza': [-0.88, 41.65], 'malaga': [-4.42, 36.72],
+    'murcia': [-1.13, 37.99], 'cartagena': [-0.98, 37.6], 'bilbao': [-2.93, 43.26], 'oviedo': [-5.85, 43.36], 'gijon': [-5.66, 43.54], 'toledo': [-4.02, 39.86],
+    'valladolid': [-4.72, 41.65], 'a coruna': [-8.4, 43.37], 'la coruna': [-8.4, 43.37], 'santiago de compostela': [-8.54, 42.88], 'santiago': [-8.54, 42.88],
+    'vigo': [-8.72, 42.24], 'granada': [-3.6, 37.18], 'cordoba': [-4.78, 37.89], 'alicante': [-0.48, 38.35], 'elche': [-0.7, 38.27], 'palma': [2.65, 39.57],
+    'palma de mallorca': [2.65, 39.57], 'mallorca': [2.95, 39.62], 'ibiza': [1.42, 38.98], 'menorca': [4.05, 39.97], 'pamplona': [-1.64, 42.81],
+    'san sebastian': [-1.98, 43.32], 'donostia': [-1.98, 43.32], 'santander': [-3.8, 43.46], 'salamanca': [-5.66, 40.96], 'cadiz': [-6.29, 36.53],
+    'jerez': [-6.14, 36.69], 'huelva': [-6.95, 37.26], 'almeria': [-2.46, 36.84], 'badajoz': [-6.97, 38.88], 'caceres': [-6.37, 39.47], 'merida': [-6.34, 38.92],
+    'logrono': [-2.45, 42.47], 'vitoria': [-2.67, 42.85], 'leon': [-5.57, 42.6], 'burgos': [-3.7, 42.34], 'zamora': [-5.75, 41.5], 'avila': [-4.7, 40.66],
+    'segovia': [-4.12, 40.95], 'soria': [-2.47, 41.76], 'palencia': [-4.53, 42.01], 'guadalajara': [-3.17, 40.63], 'cuenca': [-2.13, 40.07],
+    'ciudad real': [-3.93, 38.98], 'albacete': [-1.86, 38.99], 'jaen': [-3.79, 37.77], 'lugo': [-7.56, 43.01], 'ourense': [-7.86, 42.34],
+    'pontevedra': [-8.65, 42.43], 'huesca': [-0.41, 42.14], 'teruel': [-1.11, 40.34], 'lleida': [0.62, 41.62], 'lerida': [0.62, 41.62],
+    'girona': [2.82, 41.98], 'gerona': [2.82, 41.98], 'tarragona': [1.25, 41.12], 'castellon': [-0.05, 39.99], 'benidorm': [-0.13, 38.54],
+    'lorca': [-1.7, 37.68], 'marbella': [-4.88, 36.51], 'algeciras': [-5.45, 36.13], 'ceuta': [-5.32, 35.89], 'melilla': [-2.94, 35.29],
+    'urda': [-3.71, 39.41], 'talavera': [-4.83, 39.96], 'ponferrada': [-6.6, 42.55], 'aviles': [-5.92, 43.56], 'reus': [1.1, 41.15], 'sabadell': [2.11, 41.55],
+    'terrassa': [2.01, 41.56], 'mostoles': [-3.86, 40.32], 'alcala de henares': [-3.36, 40.48], 'getafe': [-3.73, 40.31], 'leganes': [-3.76, 40.33],
+    'fuenlabrada': [-3.8, 40.28], 'torrejon': [-3.48, 40.46], 'cordoba ': [-4.78, 37.89], 'galicia': [-8.0, 42.8], 'asturias': [-5.9, 43.3],
+    'cantabria': [-4.0, 43.2], 'pais vasco': [-2.6, 43.05], 'euskadi': [-2.6, 43.05], 'navarra': [-1.65, 42.7], 'la rioja': [-2.5, 42.3], 'aragon': [-0.7, 41.5],
+    'cataluna': [1.5, 41.8], 'catalunya': [1.5, 41.8], 'comunidad valenciana': [-0.6, 39.3], 'region de murcia': [-1.4, 38.0], 'andalucia': [-4.6, 37.4],
+    'extremadura': [-6.2, 39.2], 'castilla la mancha': [-3.0, 39.5], 'castilla y leon': [-4.6, 41.7], 'comunidad de madrid': [-3.7, 40.45], 'baleares': [2.95, 39.62],
+  };
   const G = {
     cifra(v, L, d) {
       const c = col(v.color), s = String(v.valor || ''), size = Math.min(HOR ? 210 : 150, Z.w * .94 / (Math.max(3, s.length) * .6)), p = cl(L / Math.min(1, d * .45));   // v48: en la escena 1 la cifra ya está completa en el fotograma 0
@@ -236,6 +265,144 @@
       const alto = altoCin(s, size, max);
       return cinetico(s, ZC.x, ZC.y - alto / 2 + size * .82, size, L, { max, paso: .11, clave: col(v.color) });
     },
+    // ===== v56 (11-nov-2026): 8 gráficos nuevos para que no se repitan siempre los mismos =====
+    // porcentaje: anillo que se llena con la cifra en el centro  {"tipo":"porcentaje","valor":"33,6 %","texto":"…","color":"rojo"}
+    porcentaje(v, L, d) {
+      const c = col(v.color), pct = cl(num(v.valor) / 100), p = eo(cl((L - .15) / Math.min(1.2, d * .5))), r = HOR ? 130 : 140, sw = HOR ? 38 : 42;
+      const cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 180, C = 2 * Math.PI * r, e = back(L / .4), s = String(v.valor || '');
+      const fsN = Math.min(HOR ? 92 : 96, 2 * r * .82 / (Math.max(3, s.length) * .58)), size = HOR ? 50 : 38, max = HOR ? 22 : 24, alto = altoCin(v.texto, size, max), R = r + sw / 2 + 8;
+      return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${R}" fill="${INK}"/><circle r="${R}" fill="${BLA}" stroke="${INK}" stroke-width="5"/>` +
+        `<circle r="${r}" fill="none" stroke="${GRI}" stroke-width="${sw}"/>` +
+        `<circle r="${r}" fill="none" stroke="${c === INK ? ORA : c}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${(C * pct * p).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90)"/>` +
+        tx(0, fsN * .35, esc(contar(s, p)), fsN, INK, 'middle', 900, 'letter-spacing="-3"') + `</g>` +
+        cinetico(v.texto, HOR ? Z.x + 450 + (Z.w - 450) / 2 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : cy + R + 64, size, L, { max, t0: .35 });
+    },
+    // proporcion: «1 de cada 3» con muñequitos  {"tipo":"proporcion","son":1,"de":3,"texto":"…"}
+    proporcion(v, L, d) {
+      const de = Math.max(2, Math.min(10, Math.round(num(v.de) || 10))), son = Math.max(1, Math.min(de, Math.round(num(v.son) || 1)));
+      const por = de <= 5 ? de : Math.ceil(de / 2), filas = Math.ceil(de / por), s = Math.min(HOR ? 105 : 100, (HOR ? Z.w * .5 : Z.w) / por);
+      const x0 = HOR ? Z.x + 10 : ZC.x - s * por / 2, y0 = HOR ? ZC.y - s * 1.25 * filas / 2 : Z.y + 30;
+      let o = '';
+      for (let i = 0; i < de; i++) {
+        const t0 = .1 + i * .06, e = back((L - t0) / .35), on = i < son && L > .8 + i * .12, x = x0 + (i % por) * s + s / 2, y = y0 + Math.floor(i / por) * s * 1.25 + s * .6, f = on ? ORA : GRI;
+        if (e <= 0) continue;
+        o += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${(e * (on ? 1 + .05 * Math.sin(L * 5) : 1) * s / 78).toFixed(3)})"><circle cx="0" cy="-24" r="17" fill="${f}" stroke="${INK}" stroke-width="5"/><path d="M-27 36 v-20 a27 24 0 0 1 54 0 v20 z" fill="${f}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>`;
+      }
+      const xT = HOR ? Z.x + Z.w * .5 + 30 + (Z.w * .5 - 30) / 2 : ZC.x, yT = HOR ? ZC.y - 30 : y0 + filas * s * 1.25 + 46;
+      return o + peg(xT, yT, `${son} DE CADA ${de}`, HOR ? 46 : 40, ORA, '#fff', 'middle', eo((L - .8) / .3), -2, back((L - .8) / .4)) +
+        cinetico(v.texto, xT, yT + (HOR ? 84 : 78), HOR ? 40 : 34, L, { max: HOR ? 24 : 26, t0: 1 });
+    },
+    // versus: cara a cara de dos personas, partidos o posturas  {"tipo":"versus","a":{"nombre":"…","texto":"…"},"b":{…}}
+    versus(v, L, d) {
+      const lado = (o, i) => {
+        o = o || {}; const t0 = .1 + i * .3, e = back((L - t0) / .45); if (e <= 0) return '';
+        const w = HOR ? Z.w * .4 : Z.w / 2 - 20, x = i ? Z.x + Z.w - w : Z.x, y = HOR ? Z.y + 20 : Z.y + 30, h = HOR ? Z.h - 40 : Z.h - 90, c = i ? AZU : ORA, cx = x + w / 2;
+        const nom = String(o.nombre || ''), ini = nom.split(/\s+/).filter(Boolean).map(s => s[0]).slice(0, 2).join('').toUpperCase() || '?';
+        const fsN = Math.min(HOR ? 32 : 26, (w - 24) / (Math.max(4, nom.length) * .58)), ls = partir(String(o.texto || ''), HOR ? 22 : 12), fs = HOR ? 32 : 27, rC = HOR ? 62 : 56, yC = y + 70 + rC + 16;
+        return `<g transform="translate(${((1 - e) * (i ? 1 : -1) * 280).toFixed(1)} 0) rotate(${i ? 1.5 : -1.5} ${cx} ${y + h / 2})">` + caja(x, y, w, h, 26, BLA, 5) +
+          `<path d="M${x} ${y + 70} V${y + 26} a26 26 0 0 1 26 -26 H${x + w - 26} a26 26 0 0 1 26 26 V${y + 70} Z" fill="${c}" stroke="${INK}" stroke-width="5"/>` +
+          tx(cx, y + 47, esc(nom), fsN, '#fff', 'middle', 900) +
+          `<circle cx="${cx}" cy="${yC}" r="${rC}" fill="${c}" fill-opacity=".16" stroke="${INK}" stroke-width="5"/>` + tx(cx, yC + rC * .3, esc(ini), rC * .85, c, 'middle', 900) +
+          ls.map((l, j) => tx(cx, yC + rC + 50 + j * fs * 1.2, esc(l), fs, INK, 'middle', 800, `opacity="${eo((L - t0 - .3 - j * .08) / .25).toFixed(2)}"`)).join('') + `</g>`;
+      };
+      const vy = HOR ? ZC.y : Z.y + 30 + (Z.h - 90) / 2, ev = back((L - .6) / .4), pul = 1 + .06 * Math.sin(L * 6);
+      return lado(v.a, 0) + lado(v.b, 1) + (ev > 0 ? `<g transform="translate(${ZC.x} ${vy}) rotate(-8) scale(${(ev * pul).toFixed(3)})"><circle cx="${SOM}" cy="${SOM}" r="${HOR ? 54 : 46}" fill="${INK}"/><circle r="${HOR ? 54 : 46}" fill="${ORO}" stroke="${INK}" stroke-width="6"/>${tx(0, HOR ? 17 : 15, 'VS', HOR ? 48 : 40, INK)}</g>` : '');
+    },
+    // mapa de España con chinchetas en las ciudades nombradas  {"tipo":"mapa","lugares":["Oviedo","Madrid"],"texto":"…"}
+    mapa(v, L, d) {
+      const lon0 = -9.6, lat0 = 43.95, k = HOR ? 44 : Math.min(55, Z.w / 9.96), kx = k * .766, mw = 13.4 * kx, mh = 8.2 * k;
+      const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 10, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
+      const dPath = 'M' + ESP.map(([lo, la]) => P_(lo, la).map(n => n.toFixed(1)).join(' ')).join(' L') + ' Z';
+      const p = eo(L / .7), f = eo((L - .4) / .4);
+      let o = `<path d="${dPath}" transform="translate(${SOM} ${SOM})" fill="${INK}" opacity="${f.toFixed(2)}"/>` +
+        `<path d="${dPath}" fill="${BLA}" fill-opacity="${f.toFixed(2)}" stroke="${INK}" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - p).toFixed(3)}"/>` +
+        BAL.map(([lo, la, rx, ry]) => { const [x, y] = P_(lo, la); return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${rx * kx}" ry="${ry * k}" fill="${BLA}" stroke="${INK}" stroke-width="4" opacity="${f.toFixed(2)}"/>`; }).join('');
+      const ls = (v.lugares || []).map(s => [s, CIUDADES[norm(s)]]).filter(x => x[1]).slice(0, 3);
+      ls.forEach(([nom, [lo, la]], i) => {
+        const t0 = .8 + i * .35, e = back((L - t0) / .4); if (e <= 0) return;
+        const [x, y] = P_(lo, la), cae = (1 - eo((L - t0) / .3)) * 90, rip = frac((L - t0) / 1.2);
+        o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(8 + 40 * rip).toFixed(1)}" fill="none" stroke="${ROJ}" stroke-width="4" opacity="${(1 - rip).toFixed(2)}"/>` +
+          `<g transform="translate(${x.toFixed(1)} ${(y - cae).toFixed(1)}) scale(${(e * (HOR ? .5 : .55)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="7"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="5"/></g>` +
+          peg(x + (x > ox + mw * .6 ? -20 : 20), y - (HOR ? 54 : 58), String(nom).toUpperCase(), HOR ? 20 : 20, INK, '#fff', x > ox + mw * .6 ? 'end' : 'start', eo((L - t0 - .2) / .2), -3);
+      });
+      const size = HOR ? 46 : 36, max = HOR ? 20 : 26;
+      return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 46, size, L, { max, t0: .5 }) : '');
+    },
+    // recorte de periódico con el titular subrayado  {"tipo":"prensa","medio":"El País","texto":"titular tal cual"}
+    prensa(v, L, d) {
+      const w = HOR ? 820 : Z.w, x = ZC.x - w / 2, fs = HOR ? 46 : 38, ls = partir(String(v.texto || '').replace(/\*/g, ''), HOR ? 26 : 22);
+      const h = (HOR ? 140 : 130) + ls.length * fs * 1.14 + (HOR ? 90 : 110), y = ZC.y - h / 2 - (HOR ? 0 : 20), e = back(L / .45), pM = eo((L - .55) / .6), serif = `Georgia, 'DejaVu Serif', serif`;
+      let o = `<g transform="translate(${ZC.x} ${ZC.y}) rotate(${(-2.5 + .4 * Math.sin(L * 1.3)).toFixed(2)}) scale(${e.toFixed(3)}) translate(${-ZC.x} ${-ZC.y})">` + caja(x, y, w, h, 4, '#fbf8f0', 4) +
+        `<text x="${ZC.x}" y="${y + (HOR ? 62 : 58)}" font-family="${serif}" font-weight="900" font-size="${HOR ? 48 : 40}" text-anchor="middle" fill="${INK}">${esc(v.medio || '')}</text>` +
+        `<path d="M${x + 22} ${y + (HOR ? 84 : 78)} H${x + w - 22} M${x + 22} ${y + (HOR ? 91 : 85)} H${x + w - 22}" stroke="${INK}" stroke-width="2.5"/>`;
+      const y1 = y + (HOR ? 140 : 128);
+      ls.forEach((l, i) => {
+        const yy = y1 + i * fs * 1.14, wl = Math.min(w - 40, l.length * fs * .52), pi_ = cl(pM * ls.length - i);
+        o += `<rect x="${(ZC.x - wl / 2 - 8).toFixed(1)}" y="${(yy - fs * .78).toFixed(1)}" width="${((wl + 16) * pi_).toFixed(1)}" height="${(fs * .95).toFixed(1)}" fill="${ORO}" opacity=".8"/>` +
+          `<text x="${ZC.x}" y="${yy.toFixed(1)}" font-family="${serif}" font-weight="900" font-size="${fs}" text-anchor="middle" fill="${INK}">${esc(l)}</text>`;
+      });
+      const yg = y1 + ls.length * fs * 1.14;
+      for (let i = 0; i < 3; i++) o += `<rect x="${x + 28}" y="${(yg + i * 20).toFixed(1)}" width="${((w - 56) * (i === 2 ? .55 : 1)).toFixed(1)}" height="8" rx="4" fill="${INK}" opacity=".13"/>`;
+      return o + `</g>` + peg(x + w - 30, y + h + 6, 'FUENTE', HOR ? 22 : 20, ROJ, '#fff', 'end', eo((L - .4) / .2), 4);
+    },
+    // diálogo con bocadillos (quién dijo qué)  {"tipo":"dialogo","lineas":[{"quien":"Broncano","texto":"…"},{"quien":"Abascal","texto":"…"}]}
+    dialogo(v, L, d) {
+      const ls = (v.lineas || []).slice(0, 3), n = ls.length || 1, fs = HOR ? 34 : 31, maxc = HOR ? 32 : 21;
+      const bl = ls.map(o => partir(String(o.texto || ''), maxc)), al = bl.map(b => b.length * fs * 1.2 + (HOR ? 54 : 56)), tot = al.reduce((a, b) => a + b, 0) + (n - 1) * 30;
+      const quien = [...new Set(ls.map(o => String(o.quien || '')))];
+      let y = ZC.y - tot / 2, o = '';
+      ls.forEach((ln, i) => {
+        const t0 = .15 + i * Math.max(.5, (d - .6) / n), e = back((L - t0) / .4), der = quien.indexOf(String(ln.quien || '')) % 2 === 1, b = bl[i], h = al[i];
+        const w = Math.min(HOR ? 760 : Z.w - 30, Math.max(...b.map(l => l.length), String(ln.quien || '').length) * fs * .56 + 64), x = der ? Z.x + Z.w - w : Z.x, c = der ? AZU : ORA, yy = y;
+        y += h + 30;
+        if (e <= 0) return;
+        const ax = der ? x + w - 34 : x + 34;
+        o += `<g transform="translate(${ax} ${yy + h}) scale(${e.toFixed(3)}) translate(${-ax} ${-(yy + h)})">` +
+          `<path d="M${ax - 16} ${yy + h - 6} L${ax + (der ? 22 : -22)} ${yy + h + 26} L${ax + 16} ${yy + h - 6} Z" fill="${der ? '#e7eeff' : '#fff0e3'}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>` +
+          caja(x, yy, w, h, 26, der ? '#e7eeff' : '#fff0e3', 5) +
+          `<path d="M${ax - 14} ${yy + h - 3} H${ax + 14}" stroke="${der ? '#e7eeff' : '#fff0e3'}" stroke-width="8"/>` +
+          peg(der ? x + w - 22 : x + 22, yy + 4, String(ln.quien || '').toUpperCase(), HOR ? 22 : 19, c, '#fff', der ? 'end' : 'start', 1, der ? 2 : -2) +
+          b.map((l, j) => tx(der ? x + w - 26 : x + 26, yy + (HOR ? 54 : 56) + j * fs * 1.2, esc(l), fs, INK, der ? 'end' : 'start', 800)).join('') + `</g>`;
+      });
+      return o;
+    },
+    // ranking con medallas (de mayor a menor)  {"tipo":"ranking","titulo":"…","items":[{"etiqueta":"Madrid","valor":"1.150 €"},…]}
+    ranking(v, L, d) {
+      const it = (v.items || []).slice(0, 5).map(o => ({ et: String(o.etiqueta || ''), va: String(o.valor || ''), n: Math.abs(num(o.valor)) })).sort((a, b) => b.n - a.n), n = it.length || 1;
+      const mx = Math.max(...it.map(o => o.n), 1e-9), hT = v.titulo ? (HOR ? 70 : 80) : 0, ah = Math.min(HOR ? 60 : 74, (Z.h - hT) / n - 16), y0 = Z.y + hT + (Z.h - hT - n * (ah + 16)) / 2;
+      const xL = Z.x + ah + 14, wMax = Z.w - ah - 14, med = [ORO, '#c9ccd3', '#d6894a'];
+      let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 44 : 54), HOR ? 40 : 34, L, { max: HOR ? 46 : 28 }) : '';
+      it.forEach((r, i) => {
+        const t0 = .25 + (n - 1 - i) * .22, p = eo((L - t0) / .6); if (L < t0) return;
+        const y = y0 + i * (ah + 16), w = Math.max(ah * 2.6, wMax * r.n / mx) * p, top = i === 0, fsE = Math.min(ah * .38, (wMax * .62) / (Math.max(5, r.et.length) * .56));
+        o += `<g opacity="${cl((L - t0) / .15)}"><circle cx="${Z.x + ah / 2 + SOM / 2}" cy="${y + ah / 2 + SOM / 2}" r="${ah / 2}" fill="${INK}"/><circle cx="${Z.x + ah / 2}" cy="${y + ah / 2}" r="${ah / 2}" fill="${med[i] || BLA}" stroke="${INK}" stroke-width="4"/>` +
+          tx(Z.x + ah / 2, y + ah / 2 + ah * .16, String(i + 1), ah * .45, INK) + caja(xL, y, w, ah, ah * .3, top ? ORA : BLA, 4) +
+          tx(xL + 18, y + ah / 2 + fsE * .36, esc(r.et), fsE, top ? '#fff' : INK, 'start', 800) +
+          tx(xL + w - 16, y + ah / 2 + ah * .15, esc(contar(r.va, p)), ah * .42, top ? '#fff' : INK, 'end', 900) + `</g>`;
+      });
+      return o;
+    },
+    // calendario con cuenta atrás  {"tipo":"fecha","fecha":"29 NOV","texto":"elecciones generales"}
+    fecha(v, L, d) {
+      const MES = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'], ME = s => MES.indexOf(String(s || '').slice(0, 3).toUpperCase().replace('É', 'E'));
+      const m = String(v.fecha || '').toUpperCase().match(/(\d{1,2})\s*(?:DE\s+)?([A-ZÁÉÍÓÚ]{3})/), dia = m ? m[1] : String(v.fecha || '').slice(0, 5), mes = m ? m[2] : '';
+      const s = HOR ? 280 : 280, cx = HOR ? Z.x + 220 : ZC.x, cy = HOR ? ZC.y : Z.y + 170, x = cx - s / 2, y = cy - s / 2, fl = eo(L / .45), e = back(L / .4);
+      let o = `<g transform="translate(${cx} ${y}) scale(${e.toFixed(3)} ${(e * (.3 + .7 * fl)).toFixed(3)}) translate(${-cx} ${-y})">` + caja(x, y, s, s, 26, BLA, 6) +
+        `<path d="M${x} ${y + 84} V${y + 26} a26 26 0 0 1 26 -26 H${x + s - 26} a26 26 0 0 1 26 26 V${y + 84} Z" fill="${ROJ}" stroke="${INK}" stroke-width="6"/>` +
+        tx(cx, y + 60, esc(mes), 44, '#fff', 'middle', 900, 'letter-spacing="4"') +
+        [-1, 1].map(j => `<rect x="${cx + j * 70 - 9}" y="${y - 22}" width="18" height="44" rx="9" fill="${GRI}" stroke="${INK}" stroke-width="5"/>`).join('') +
+        tx(cx, y + 84 + (s - 84) * .5 + 58, esc(dia), 160, INK, 'middle', 900, 'letter-spacing="-6"') + `</g>`;
+      // cuenta atrás desde la fecha del vídeo (P.fecha «11 NOV 2026»)
+      const hm = String(P.fecha || '').toUpperCase().match(/(\d{1,2})\s+([A-Z]{3})\s+(\d{4})/);
+      if (m && hm && ME(mes) >= 0 && ME(hm[2]) >= 0) {
+        const a = +hm[3], hoy = Date.UTC(a, ME(hm[2]), +hm[1]); let f = Date.UTC(a, ME(mes), +dia);
+        if (f < hoy - 200 * 864e5) f = Date.UTC(a + 1, ME(mes), +dia);
+        const dd = Math.round((f - hoy) / 864e5), et = dd === 0 ? 'ES HOY' : dd === 1 ? 'MAÑANA' : dd > 1 && dd < 400 ? `FALTAN ${dd} DÍAS` : dd === -1 ? 'FUE AYER' : '';
+        if (et) o += peg(cx + (HOR ? 0 : 0), y + s + (HOR ? 40 : 46), et, HOR ? 30 : 30, ORA, '#fff', 'middle', eo((L - .6) / .2), -3, back((L - .6) / .35));
+      }
+      const size = HOR ? 48 : 38, max = HOR ? 20 : 24;
+      return o + (v.texto ? cinetico(v.texto, HOR ? Z.x + 440 + (Z.w - 440) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + s + 120, size, L, { max, t0: .4 }) : '');
+    },
     foto(v, L, d, k) {
       const f = fotoDe(k) || {}, txt = f.texto || v.texto || '', size = HOR ? 50 : 38, max = HOR ? 20 : 26, alto = altoCin(txt, size, max), e = back(L / .45);
       const fw = HOR ? Z.w * .6 : Z.w + 20, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
@@ -263,7 +430,7 @@
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
     if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
-    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase'].includes(tipo)) return '';
+    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
     const pos = HOR ? [[Z.x + Z.w - 120, Z.y + 40, 5], [Z.x + Z.w - 150, Z.y + Z.h - 20, -5]] : [[Z.x + Z.w - 130, Z.y + 60, 6], [Z.x + 120, Z.y + Z.h + 8, -5]], cs = [[ORO, INK], [AZU, '#fff']];
@@ -371,8 +538,27 @@
   }
 
   // ---------- fotograma ----------
-  const TR = .3, TRC = .42;   // v45: tres transiciones que se alternan: barrido con desenfoque, zoom y cortina naranja
-  const TIPO_TR = k => ['barrido', 'zoom', 'barrido', 'cortina'][k % 4];
+  const TR = .3, TRC = .42;
+  // v56 (11-nov-2026): 9 transiciones. Orden fijo que no repite dos seguidas (mezcla.py usa la MISMA regla para el sonido):
+  // la escena de la mención del canal entra con la cortina de la marca; la sorpresa, tensión o indignación, con glitch;
+  // en noticias graves solo las sobrias.
+  const TR_TODAS = ['barrido', 'iris', 'zoom', 'persiana', 'empuje', 'mancha', 'giro', 'cortina', 'glitch'];
+  const TR_GRAVE = ['barrido', 'zoom', 'empuje', 'iris', 'persiana'];
+  const DUR_TR = { barrido: .3, zoom: .3, cortina: .42, iris: .38, persiana: .4, empuje: .34, giro: .34, glitch: .26, mancha: .46 };
+  let TRS = null;
+  function TIPO_TR(k) {
+    if (!TRS) {
+      TRS = [''];
+      for (let j = 1; j < N; j++) {
+        const base = i => GRAVE ? TR_GRAVE[(i * 2) % 5] : TR_TODAS[(i * 5) % 9], tipo = (E[j].visual || {}).tipo, em = String(E[j].voz || '').toLowerCase();
+        let t = !GRAVE && tipo === 'mencion' ? 'cortina' : !GRAVE && ['surprised', 'tense', 'indignant'].includes(em) ? 'glitch' : base(j);
+        if (t === 'glitch' && (TRS[j - 1] === 'glitch' || TRS[j - 2] === 'glitch')) t = base(j) === 'glitch' ? base(j + 1) : base(j);   // glitch, como mucho 1 de cada 3
+        if (t === TRS[j - 1]) t = base(j + 1) === t ? base(j + 2) : base(j + 1);
+        TRS.push(t);
+      }
+    }
+    return TRS[k] || 'barrido';
+  }
   window.render = function (t) {
     t = cl(t, 0, DUR - .001);
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
@@ -390,6 +576,32 @@
       encima = `<path d="M${(x + sh).toFixed(1)} 0 H${(x + W + sh).toFixed(1)} L${(x + W).toFixed(1)} ${H} H${x.toFixed(1)} Z" fill="${ORA}"/>` +
         `<path d="M${(x + W + sh).toFixed(1)} 0 l28 0 L${(x + W + 28).toFixed(1)} ${H} l-28 0 Z" fill="${INK}"/>` +
         `<g opacity="${cl(1 - Math.abs(p - .5) * 3).toFixed(2)}" transform="translate(${W / 2} ${H * .42}) scale(${(.9 + .1 * eo(1 - Math.abs(p - .5) * 2)).toFixed(3)})">${nube(HOR ? -215 : -190, 0, HOR ? 2.2 : 2.2)}<text x="${HOR ? 45 : 42}" y="20" font-family="Inter" font-weight="900" font-size="${HOR ? 64 : 58}" text-anchor="middle" fill="#fff">sin humo TV</text></g>`;
+    } else if (tt === 'iris' && L < DUR_TR.iris) {      // círculo que se abre desde el centro con aro naranja
+      const p = eio(L / DUR_TR.iris), cx = W / 2, cy = H * .42, r = Math.hypot(W, H) * .62 * p;
+      svg += escena(k - 1, T.escenas[k - 1].fin - .001) + `<defs><clipPath id="ir"><circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}"/></clipPath></defs><g clip-path="url(#ir)">${escena(k, t)}</g>` +
+        `<circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}" fill="none" stroke="${GRAVE ? INK : ORA}" stroke-width="${(18 * (1 - p) + 4).toFixed(1)}"/>`;
+    } else if (tt === 'persiana' && L < DUR_TR.persiana) {   // persianas: franjas que entran alternando lado
+      const p = L / DUR_TR.persiana, nb = HOR ? 6 : 9, bh = H / nb;
+      let cp = ''; for (let i = 0; i < nb; i++) { const q = eio(cl((p - i * .045) / .6)), w = W * q; cp += `<rect x="${(i % 2 ? W - w : 0).toFixed(1)}" y="${(i * bh).toFixed(1)}" width="${w.toFixed(1)}" height="${(bh + 1).toFixed(1)}"/>`; }
+      svg += escena(k - 1, T.escenas[k - 1].fin - .001) + `<defs><clipPath id="pe">${cp}</clipPath></defs><g clip-path="url(#pe)">${escena(k, t)}</g>`;
+    } else if (tt === 'empuje' && L < DUR_TR.empuje) {   // empuje hacia arriba con rebote y costura naranja
+      const p = L / DUR_TR.empuje, q = back(p), dy = H * (1 - q), ver = !HOR;
+      svg += `<g transform="translate(${ver ? 0 : (-W * eio(p)).toFixed(1)} ${ver ? (-H * eio(p)).toFixed(1) : 0})">${escena(k - 1, T.escenas[k - 1].fin - .001)}</g>` +
+        `<g transform="translate(${ver ? 0 : (W * (1 - q)).toFixed(1)} ${ver ? dy.toFixed(1) : 0})">${escena(k, t)}${ver ? `<rect x="0" y="-14" width="${W}" height="14" fill="${GRAVE ? INK : ORA}"/>` : `<rect x="-14" y="0" width="14" height="${H}" fill="${GRAVE ? INK : ORA}"/>`}</g>`;
+    } else if (tt === 'giro' && L < DUR_TR.giro) {        // giro de carta: el plano se da la vuelta
+      const p = eio(L / DUR_TR.giro), pri = p < .5, sx = Math.max(.002, Math.abs(Math.cos(Math.PI * p))), sk = (pri ? 1 : -1) * 6 * Math.sin(Math.PI * p), cx = W / 2, cy = H / 2;
+      svg += `<rect width="${W}" height="${H}" fill="${INK}"/><g transform="translate(${cx} ${cy}) skewY(${sk.toFixed(2)}) scale(${sx.toFixed(3)} ${(1 - .08 * Math.sin(Math.PI * p)).toFixed(3)}) translate(${-cx} ${-cy})">${pri ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t)}</g>`;
+    } else if (tt === 'glitch' && L < DUR_TR.glitch) {    // glitch: separación de colores y franjas desplazadas
+      const p = L / DUR_TR.glitch, dx = 22 * Math.sin(Math.PI * p), base = p < .45 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t);
+      const rnd = i => frac(Math.sin((k + 1) * 91.7 + i * 47.3 + Math.floor(p * 9) * 13.1) * 43758.5);
+      let cp = '', tr = ''; for (let i = 0; i < 5; i++) { const y = rnd(i) * H, h = 20 + rnd(i + 9) * 90; cp += `<clipPath id="gs${i}"><rect x="0" y="${y.toFixed(0)}" width="${W}" height="${h.toFixed(0)}"/></clipPath>`; tr += `<g clip-path="url(#gs${i})"><g transform="translate(${((rnd(i + 3) - .5) * 80 * Math.sin(Math.PI * p)).toFixed(1)} 0)">${base}</g></g>`; }
+      svg += `<defs><filter id="gl" x="-5%" y="0" width="110%" height="100%"><feOffset in="SourceGraphic" dx="${dx.toFixed(1)}" result="a"/><feColorMatrix in="a" type="matrix" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="r"/><feOffset in="SourceGraphic" dx="${(-dx).toFixed(1)}" result="b"/><feColorMatrix in="b" type="matrix" values="0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" result="gb"/><feBlend in="r" in2="gb" mode="screen"/></filter>${cp}</defs>` +
+        `<g filter="url(#gl)">${base}</g>${tr}`;
+    } else if (tt === 'mancha' && L < DUR_TR.mancha) {    // mancha de tinta naranja: crece desde una esquina y se retira hacia la contraria
+      const p = L / DUR_TR.mancha, Rm = Math.hypot(W, H) * 1.08, pri = p < .5, q = pri ? eio(p * 2) : eio((1 - p) * 2), cx = pri ? 0 : W, cy = pri ? H : 0, r = Rm * q;
+      let d_ = ''; for (let i = 0; i <= 24; i++) { const a = i / 24 * Math.PI * 2, rr = r * (1 + .06 * Math.sin(a * 5 + p * 9)); d_ += (i ? 'L' : 'M') + (cx + rr * Math.cos(a)).toFixed(1) + ' ' + (cy + rr * Math.sin(a)).toFixed(1); }
+      svg += (pri ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
+      encima = `<path d="${d_}Z" fill="${ORA}"/>` + (Math.abs(p - .5) < .18 ? `<g transform="translate(${W / 2} ${H * .42}) scale(${(1 - Math.abs(p - .5) * 3).toFixed(3)})">${nube(0, 0, HOR ? 6 : 7)}</g>` : '');
     } else if (tt === 'barrido' && L < TR) {                 // barrido rápido con desenfoque de movimiento (alterna de lado y de arriba abajo)
       const p = eio(L / TR), ver = k % 2 === 1, bl = 46 * Math.sin(Math.PI * p), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), dir = k % 4 < 2 ? 1 : -1;
       svg += `<defs><filter id="mb" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="${ver ? '0 ' + bl.toFixed(1) : bl.toFixed(1) + ' 0'}"/></filter></defs><g filter="url(#mb)">` +
