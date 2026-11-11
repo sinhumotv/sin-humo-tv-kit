@@ -227,6 +227,97 @@ if PRO and P.get("tono") != "grave":
             if w.startswith("*"):   # empieza un grupo de palabras clave
                 pon(tic, pal[i][0] - .01, .22)
 sfx /= np.max(np.abs(sfx)) + 1e-9
+# ---------- v60 (11-nov-2026): sonido propio de cada gráfico del motor pro, a tiempo con su animación ----------
+def _t(d): return np.arange(int(d * SR)) / SR
+def tono(f0, f1, d, dec=6, onda="sin"):
+    t = _t(d); f = f0 + (f1 - f0) * t / d; fase = 2 * np.pi * np.cumsum(f) / SR
+    x = np.sin(fase) if onda == "sin" else np.sign(np.sin(fase)) * .5
+    return x * np.exp(-t * dec) * np.minimum(1, t / .004)
+def suma(*xs):
+    n = max(len(x) for x in xs); o = np.zeros(n)
+    for x in xs: o[:len(x)] += x
+    return o
+def clic(f=2400, d=.03): return tono(f, f * .7, d, 120)
+def tintineo(): return suma(tono(2900, 2900, .25, 14), .6 * tono(4350, 4350, .2, 18), .3 * tono(6100, 6100, .12, 25)) * .45
+def ding(f=1320): return suma(tono(f, f, .6, 5), .4 * tono(f * 2, f * 2, .4, 8)) * .5
+def zumbido(): return tono(150, 140, .28, 6, "cuad") * .6
+def subida(d=.9, f0=300, f1=1100): t = _t(d); return tono(f0, f1, d, 0) * np.sin(np.pi * t / d) * .35
+def golpe_seco(): t = _t(.18); return (np.sin(2 * np.pi * (90 + 120 * np.exp(-t * 30)) * t) * np.exp(-t * 18) + rng.normal(0, 1, len(t)) * np.exp(-t * 80) * .3) * .8
+def roce(d=.3): t = _t(d); return np.convolve(rng.normal(0, 1, len(t)), np.ones(25) / 25, "same") * np.sin(np.pi * t / d) * .5
+def aplauso(d=1.2):
+    x = np.zeros(int(d * SR))
+    for _ in range(int(d * 40)):
+        i = int(rng.uniform(0, len(x) - 2000)); b = rng.normal(0, 1, 1200) * np.exp(-np.arange(1200) / 150); x[i:i + 1200] += b * rng.uniform(.3, 1)
+    return x * np.sin(np.pi * np.arange(len(x)) / len(x)) * .25
+def sintonia(): return np.concatenate([ding(988)[:int(.14 * SR)], ding(1318)[:int(.14 * SR)], ding(1760)]) * .8
+def alarma(d=.8): t = _t(d); f = np.where((t * 4).astype(int) % 2 == 0, 880, 660); return np.sin(2 * np.pi * np.cumsum(f) / SR) * .25 * np.minimum(1, (d - t) / .05)
+GSFX = PRO and str(P.get("sonido_graficos", "si")) != "no"
+if GSFX:
+    for k, (e, s_) in enumerate(zip(P["escenas"], T["escenas"])):
+        v = e.get("visual") or {}; tp = v.get("tipo"); d = max(1.0, s_["fin"] - s_["ini"])
+        b = s_["ini"] - (1 if k == 0 else 0)          # en la escena 1 la animación ya está hecha en el fotograma 0
+        g = .5 if GRAVE_ else 1.0
+        def at(x, dt, gain=1.0):
+            if b + dt >= s_["ini"] - .02: pon(x, b + dt, gain * g)
+        if tp == "cifra" and any(c.isdigit() for c in str(v.get("valor") or "")):
+            fin = min(1.0, d * .45)
+            for q in np.arange(.03, fin, .06): at(clic(1600 + 1400 * q / fin, .02), q, .35)
+            at(golpe_seco() * .6, fin, .6)
+        elif tp == "contador":
+            cs = [c for c in str(v.get("valor") or "") if c.isdigit()]; n = max(1, len(cs)); fin = .9 + .12 * (n - 1)
+            for q in np.arange(.2, fin, .055): at(clic(1800 + rng.uniform(-200, 200)), q, .5)
+            for i in range(n): at(golpe_seco() * .5, .9 + .12 * i, .5)
+        elif tp == "dinero":
+            for i in range(17): at(tintineo(), .15 + i * .045 + .3, .35)
+        elif tp == "alerta":
+            niv = 2 if "roj" in str(v.get("nivel")) else 1 if "naranj" in str(v.get("nivel")) else 0
+            for l in range(niv + 1): at(tono(600 + 200 * l, 600 + 200 * l, .12, 10), .5 + l * .25, .5)
+            at(alarma(), .5 + niv * .25 + .1, .7)
+        elif tp == "reloj":
+            at(subida(1.1, 500, 1400) * .6, .15); at(ding(1568), 1.25, .8)
+            for q in np.arange(1.6, d - .2, .5): at(clic(3000 if int(q * 2) % 2 else 2200, .02), q, .4)
+        elif tp == "checklist":
+            it = (v.get("items") or [])[:4]; n = max(1, len(it))
+            for i, q in enumerate(it):
+                ok = q.get("ok") not in (False, "false") if isinstance(q, dict) else True
+                at(ding(1480) if ok else zumbido(), .25 + i * max(.45, (d - .8) / n) + .25, .7)
+        elif tp == "ultimahora":
+            at(sintonia(), 0, .8)
+        elif tp == "podio":
+            for pos in (2, 1, 0): at(subida(.5, 200, 600), .2 + (2 - pos) * .35, .6)
+            at(aplauso(), .2 + 2 * .35 + .55, .9); at(ding(1760), .2 + 2 * .35 + .45, .5)
+        elif tp == "escanos":
+            for q in np.arange(.2, 1.4, .06): at(clic(1200 + 900 * (q - .2), .02), q, .25)
+        elif tp in ("tendencia", "evolucion", "porcentaje", "termometro", "medidor"):
+            baja = tp == "tendencia" and any(w in str(v.get("sentido", "")).lower() for w in ("baj", "cae", "desc", "menos"))
+            at(subida(1.0, 900, 300) if baja else subida(1.0), .15, .8); at(ding(1320 if not baja else 880), 1.15, .5)
+        elif tp == "bateria":
+            for i in range(5): at(tono(700 + 120 * i, 700 + 120 * i, .08, 20), .2 + i * .2, .45)
+        elif tp == "proporcion":
+            de = min(10, max(2, int(float(str(v.get("de") or 10).replace(",", ".") or 10))))
+            son = min(de, max(1, int(float(str(v.get("son") or 1).replace(",", ".") or 1))))
+            for i in range(de): at(clic(1500, .025), .1 + i * .06, .4)
+            for i in range(son): at(ding(1175 + 150 * i), .8 + i * .12, .4)
+        elif tp == "mapa":
+            for i, _ in enumerate((v.get("lugares") or [])[:3]): at(golpe_seco(), .8 + i * .35 + .28, .6)
+        elif tp == "versus":
+            at(roce(), .1, .5); at(roce(), .4, .5); at(impacto, .6, .5)
+        elif tp == "fecha":
+            at(roce(.25), 0, .6); at(golpe_seco(), .6, .5)
+        elif tp == "lupa":
+            at(subida(.6, 1200, 2400) * .5, .9)
+        elif tp == "encuesta":
+            at(roce(.9), .3, .4); at(ding(1568), 1.3, .5)
+        elif tp == "prensa":
+            at(roce(.3), 0, .7); at(roce(.5) * .6, .55, .5)
+        elif tp == "dialogo":
+            n = max(1, len((v.get("lineas") or [])[:3]))
+            for i in range(n): at(pop, .15 + i * max(.5, (d - .6) / n), .8)
+        elif tp in ("ranking", "lista", "pasos"):
+            it = (v.get("items") or [])[:5]; n = max(1, len(it))
+            for i in range(n):
+                q = (.25 + (n - 1 - i) * .22) if tp == "ranking" else (.3 + i * (max(1, d - .8) / n) if tp == "lista" else .2 + i * max(.45, (d - .6) / n))
+                at(pop, q, .6)
 guarda(sfx[:int(DUR * SR)], "efectos")
 
 # ---------- mezcla ----------

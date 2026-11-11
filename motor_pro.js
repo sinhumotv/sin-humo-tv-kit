@@ -102,6 +102,9 @@
       `<rect width="${W}" height="${H}" fill="url(#gF)"/>` +
       `<circle cx="${(W * (.3 + .1 * Math.sin(t * .3 + k))).toFixed(1)}" cy="${(H * .3).toFixed(1)}" r="${Math.max(W, H) * .45}" fill="url(#gL)"/>` +
       [0, 1, 2].map(i => humo(i, t + k * 1.7)).join('') +
+      // v60: partículas de humo que suben despacio (vida en el fondo)
+      [...Array(HOR ? 14 : 12).keys()].map(i => { const sp = .035 + .02 * frac(i * .37), f = frac(t * sp + i * .618), x = W * frac(i * .414 + .13) + 30 * Math.sin(t * .7 + i), y = H * (1.05 - 1.1 * f), r = 4 + 9 * frac(i * .73);
+        return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${GRAVE ? INK : (i % 3 ? '#fff' : ORA)}" opacity="${((GRAVE ? .05 : .22) * Math.sin(Math.PI * f)).toFixed(3)}"/>`; }).join('') +
       `<g opacity="${GRAVE ? .04 : .07}" transform="translate(${mx} ${my}) rotate(${rot.toFixed(2)})">${nube(0, 0, HOR ? 7 : 8)}</g>`;
   }
   function marco() {           // marco naranja de la marca (encima de todo, fino y redondeado)
@@ -694,8 +697,14 @@
       const fw = HOR ? Z.w * .6 : Z.w + 20, fh = HOR ? Z.h - 10 : Z.h - alto - 40, fx = HOR ? Z.x : ZC.x - fw / 2, fy = Z.y + (HOR ? 10 : 6), cx = fx + fw / 2, cy = fy + fh / 2, id = 'fc' + k;
       return `<g transform="translate(${cx} ${cy}) scale(${e.toFixed(3)}) rotate(-1.5) translate(${-cx} ${-cy})"><rect x="${fx + SOM + 3}" y="${fy + SOM + 3}" width="${fw}" height="${fh}" rx="24" fill="${INK}"/>` +
         `<clipPath id="${id}"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24"/></clipPath><image href="file://${f.ruta}" x="${fx}" y="${fy}" width="${fw}" height="${fh}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${id})"/>` +
+        // v60: la foto queda quieta, pero alrededor hay vida: destello de flash al entrar, un brillo que la cruza y esquinas de visor que enfocan
+        `<g clip-path="url(#${id})"><rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" fill="#fff" opacity="${(L < .55 ? .7 * cl(1 - (L - .3) / .25) * cl((L - .25) / .05) : 0).toFixed(3)}"/>` +
+        (L > .6 && L < 1.6 ? `<path d="M${(fx - 200 + (fw + 400) * eio((L - .6) / 1)).toFixed(1)} ${fy} l120 0 l-160 ${fh} l-120 0 Z" fill="#fff" opacity=".28"/>` : '') + `</g>` +
         `<rect x="${fx}" y="${fy}" width="${fw}" height="${fh}" rx="24" fill="none" stroke="${INK}" stroke-width="7"/>` +
         `<text x="${fx + fw - 16}" y="${fy + fh - 14}" font-family="Inter" font-weight="700" font-size="${HOR ? 14 : 15}" text-anchor="end" fill="#fff" stroke="${INK}" stroke-width="4" paint-order="stroke">${esc(f.credito || '')}</text></g>` +
+        (() => { const q = eo((L - .2) / .5), m = 26 + 30 * (1 - q) + 4 * Math.sin(L * 3), lc = 34, c_ = GRAVE ? BLA : ORO, op = cl((L - .2) / .2) * (1 - .35 * cl((L - 1.6) / .4));   // esquinas de visor
+          return [[fx + m, fy + m, 1, 1], [fx + fw - m, fy + m, -1, 1], [fx + m, fy + fh - m, 1, -1], [fx + fw - m, fy + fh - m, -1, -1]].map(([x, y, sx, sy]) =>
+            `<path d="M${x} ${y + sy * lc} V${y} H${x + sx * lc}" fill="none" stroke="${c_}" stroke-width="7" stroke-linecap="round" opacity="${op.toFixed(2)}" transform="rotate(-1.5 ${cx} ${cy})"/>`).join(''); })() +
         peg(fx + 92, fy + 44, 'FOTO REAL', HOR ? 22 : 18, ROJ, '#fff', 'middle', eo((L - .3) / .2), -6, back((L - .3) / .35)) +
         (f.etiqueta ? peg(fx + fw - 86, fy + fh - 40, f.etiqueta, HOR ? 24 : 20, ORO, INK, 'middle', eo((L - .5) / .2), 5, back((L - .5) / .35)) : '') +
         cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 22 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
@@ -747,6 +756,13 @@
     const a = claves(k)[0]; if (a == null) return [0, 0]; const x = t - a; if (x < 0 || x > .35) return [0, 0];
     const amp = 9 * Math.exp(-x * 9); return [amp * Math.sin(x * 70), amp * .6 * Math.cos(x * 55)];
   }
+  function asoma(k, t) {        // v60: en sorpresa/emoción, Lupi se asoma por la derecha con un «!» en la primera palabra clave
+    if (GRAVE || HOR || !['surprised', 'excited', 'emphatic', 'amused'].includes(EMO(k))) return '';
+    const a = claves(k)[0]; if (a == null) return ''; const x = t - a; if (x < -.05 || x > 1.3) return '';
+    const sal = x < .25 ? back((x + .05) / .3) : x > 1 ? 1 - eio((x - 1) / .3) : 1, lx = SX + 30 + 50 * sal, ly = 790;   // por la izquierda (a la derecha están los botones de TikTok)
+    return `<g transform="translate(${lx.toFixed(1)} ${ly}) rotate(${(16 - 4 * Math.sin(t * 6)).toFixed(1)})" opacity="${cl(sal * 1.5).toFixed(2)}">${lupi({ x: 0, y: 0, s: .5, t, expr: 'sorprendida', mira: [1, -.3], brazos: 'senala' })}</g>` +
+      peg(lx + 52, ly - 62, '!', 40, ROJ, '#fff', 'middle', cl(sal), 10, back((x - .1) / .25));
+  }
   function ambiente(k, t, L) {  // capa de emoción encima del plano (debajo de subtítulos y cabecera)
     const e = EMO(k), ent = eo(L / .45);
     if (SUSURRO(k)) return `<defs><radialGradient id="vg" cx=".5" cy=".45" r=".75"><stop offset=".45" stop-color="${INK}" stop-opacity="0"/><stop offset="1" stop-color="${INK}" stop-opacity="${(.42 * ent).toFixed(3)}"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#vg)"/>`;
@@ -764,7 +780,7 @@
     const z = 1 + .02 * cl(L / d) + .045 * golpe(k, t) + .045 * eo(ini), [sx, sy] = sacudida(k, t);
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
       `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy + (tipo === 'foto' ? 0 : 5 * Math.sin(L * 1.6 + k))).toFixed(1)}) rotate(${(tipo === 'foto' ? 0 : .5 * Math.sin(L * .9 + k * 2)).toFixed(3)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) +
-      ambiente(k, t, L) + (k === 0 && t - S.ini > 0 && t - S.ini < .3 ? `<rect width="${W}" height="${H}" fill="#fff" opacity="${(.4 * Math.sin(Math.PI * (t - S.ini) / .3)).toFixed(3)}"/>` : '')   // destello (el fotograma 0 queda limpio para la miniatura);
+      ambiente(k, t, L) + asoma(k, t) + (k === 0 && t - S.ini > 0 && t - S.ini < .3 ? `<rect width="${W}" height="${H}" fill="#fff" opacity="${(.4 * Math.sin(Math.PI * (t - S.ini) / .3)).toFixed(3)}"/>` : '')   // destello (el fotograma 0 queda limpio para la miniatura);
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
   function rotulo(k, L) {
