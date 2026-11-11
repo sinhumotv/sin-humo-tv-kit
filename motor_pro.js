@@ -463,7 +463,7 @@
       let y = ZC.y - tot / 2, o = '';
       ls.forEach((ln, i) => {
         const t0 = .15 + i * Math.max(.5, (d - .6) / n), e = back((L - t0) / .4), der = quien.indexOf(String(ln.quien || '')) % 2 === 1, b = bl[i], h = al[i];
-        const w = Math.min(HOR ? 760 : Z.w - 30, Math.max(...b.map(l => l.length), String(ln.quien || '').length) * fs * .56 + 64), x = der ? Z.x + Z.w - w : Z.x, c = der ? AZU : ORA, yy = y;
+        const w = Math.min(HOR ? 760 : Z.w - 30, Math.max(...b.map(l => l.length), String(ln.quien || '').length) * fs * .56 + 64), x = der ? Z.x + Z.w - w - (HOR ? 90 : 0) : Z.x, c = der ? AZU : ORA, yy = y;   // v81: en horizontal deja sitio a Lupi (abajo a la derecha)
         y += h + 30;
         if (e <= 0) return;
         const ax = der ? x + w - 34 : x + 34;
