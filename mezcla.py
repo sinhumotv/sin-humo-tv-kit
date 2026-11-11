@@ -377,6 +377,16 @@ if GSFX:
             for i in range(n):
                 q = (.25 + (n - 1 - i) * .22) if tp == "ranking" else entradas(k, [str(x.get("texto") if isinstance(x, dict) else x) for x in it[:4]], d, .3 if tp == "lista" else .2, None if tp == "lista" else max(.45, (d - .6) / n))[min(i, 3)]
                 at(pop, q, .6)
+# v88: «boing» corto cuando salta el emoji de reacción (en la primera palabra clave de la escena)
+if PRO and P.get("tono") != "grave":
+    for e, s_ in zip(P["escenas"], T["escenas"]):
+        if not str(e.get("reaccion") or "").strip() or (e.get("visual") or {}).get("tipo") in ("mencion", "cierre"): continue
+        ws, pal = str(e.get("subtitulo") or "").split(), s_.get("palabras") or []
+        t0 = next((pal[i][0] for i, w in enumerate(ws) if w.startswith("*")), None) if len(ws) == len(pal) else None
+        if t0 is None: t0 = s_["ini"] + min(1.2, (s_["fin"] - s_["ini"]) * .3)
+        tb = np.arange(int(.22 * SR)) / SR
+        boing = np.sin(2 * np.pi * np.cumsum(300 + 700 * (tb / .22) ** .5) / SR) * np.exp(-tb * 14) * np.minimum(1, tb / .005)
+        pon(boing * .5 + pop[:len(boing)] * .4 if len(pop) >= len(boing) else boing * .6, t0, .7)
 guarda(sfx[:int(DUR * SR)], "efectos")
 
 # ---------- mezcla ----------
