@@ -257,7 +257,9 @@
     icono(v, L, d) {
       const c = col(v.color), ix = HOR ? Z.x + 190 : ZC.x, iy = HOR ? ZC.y : Z.y + 140, size = HOR ? 58 : 44, max = HOR ? 19 : 22, alto = altoCin(v.texto, size, max);
       const tx0 = HOR ? Z.x + 400 + (Z.w - 400) / 2 : ZC.x, ty = HOR ? ZC.y - alto / 2 + size * .8 : Z.y + 300 + size * .5;
-      return `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, HOR ? 150 : 112, L, 0, v.icono, c)}</g>` +
+      const R0 = HOR ? 150 : 112, ondas = [0, 1].map(j => { const f = frac(L / 1.8 + j / 2); return `<circle cx="${ix}" cy="${iy}" r="${(R0 + 10 + 70 * f).toFixed(1)}" fill="none" stroke="${c}" stroke-width="${(6 * (1 - f)).toFixed(1)}" opacity="${(.5 * (1 - f) * cl(L / .4)).toFixed(2)}"/>`; }).join('');
+      const orbita = atras => [0, 1, 2].map(j => { const a = L * 1.3 + j * 2.094, r = R0 + 26; if ((Math.sin(a) < 0) !== atras) return ''; return `<circle cx="${(ix + r * Math.cos(a)).toFixed(1)}" cy="${(iy + r * .45 * Math.sin(a)).toFixed(1)}" r="${j === 0 ? 11 : 7}" fill="${[ORA, ORO, c][j]}" stroke="${INK}" stroke-width="3" opacity="${cl((L - .3) / .3).toFixed(2)}"/>`; }).join('');   // v61: ondas y órbita (por detrás en la mitad de arriba)
+      return ondas + orbita(true) + `<g transform="translate(0 ${(5 * Math.sin(L * 2.2)).toFixed(1)})">${sticker(ix, iy, R0, L, 0, v.icono, c)}</g>` + orbita(false) +
         cinetico(v.texto, tx0, ty, size, L, { max, t0: .2 }) +
         (v.etiqueta ? peg(tx0 + (HOR ? 120 : 110), ty + alto + 6, String(v.etiqueta), HOR ? 28 : 24, c === ORA ? AZU : c, '#fff', 'middle', eo((L - .8) / .25), 4, back((L - .8) / .35)) : '');
     },
