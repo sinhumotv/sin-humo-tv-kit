@@ -405,7 +405,7 @@
     // mapa de España con chinchetas en las ciudades nombradas  {"tipo":"mapa","lugares":["Oviedo","Madrid"],"texto":"…"}
     mapa(v, L, d) {
       const can0 = (v.lugares || []).some(s => (CIUDADES[norm(s)] || [0])[0] < -12), alto = can0 ? 10.1 : 8.2;   // con Canarias, el mapa baja hasta su recuadro
-      const lon0 = -9.6, lat0 = 43.95, k = HOR ? Math.min(44, 380 / alto) : Math.min(55, Z.w / 9.96, (Z.h - 90) / alto), kx = k * .766, mw = 13.4 * kx, mh = alto * k;
+      const lon0 = -9.6, lat0 = 43.95, hTx = !HOR && v.texto ? altoCin(v.texto, 36, 26) + 26 : 56, k = HOR ? Math.min(44, 380 / alto) : Math.min(55, Z.w / 9.96, (Z.h - 34 - hTx) / alto), kx = k * .766, mw = 13.4 * kx, mh = alto * k;
       const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 34, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
       const dPath = 'M' + ESP.map(([lo, la]) => P_(lo, la).map(n => n.toFixed(1)).join(' ')).join(' L') + ' Z';
       const p = eo(L / .7), f = eo((L - .4) / .4);
@@ -439,7 +439,7 @@
       });
       o += etq;
       const size = HOR ? 46 : 36, max = HOR ? 20 : 26;
-      return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 42, size, L, { max, t0: .5 }) : '');
+      return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 40, size, L, { max, t0: .5 }) : '');
     },
     // recorte de periódico con el titular subrayado  {"tipo":"prensa","medio":"El País","texto":"titular tal cual"}
     prensa(v, L, d) {
