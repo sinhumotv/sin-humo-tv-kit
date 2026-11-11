@@ -88,3 +88,4 @@
 2026-11-10|21:00|El enigma del Manuscrito Voynich|pregunta|YO 6af2f490ba579c00247091ea IN 6af2f49117d2b2f30c00a9a4 TI 6af2f4920f3180d1203f3f33|img=mixto|20:25
 2026-11-11|12:00|La carga de Juan el Ciego|sabias|YO 6af43cac11af97e72101b5c7 IN 6af43cafc05a77e35e98116a TI 6af43cb2db6e84f20bec0ff5|img=mixto|12:35
 2026-11-11|15:00|El collar de la reina|final|YO 6af43ddfdb6e84f20beccfab IN 6af43ddf658ef0788e22880f TI 6af43de027d84871c7ebac86|img=mixto|15:18
+2026-11-11|18:00|El hundimiento del Lusitania|cuenta|YO 6af43f63f41d6d2bbb630b39 IN 6af43f63658ef0788e232098 TI 6af43f64fdd6ae2d257efcd3|img=mixto|18:33
