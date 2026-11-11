@@ -1100,10 +1100,10 @@
       svg += (pri ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
       encima = `<path d="${d_}Z" fill="${ORA}"/>` + (Math.abs(p - .5) < .18 ? `<g transform="translate(${W / 2} ${H * .42}) scale(${(1 - Math.abs(p - .5) * 3).toFixed(3)})">${nube(0, 0, HOR ? 6 : 7)}</g>` : '');
     } else if (tt === 'diagonal' && L < DUR_TR.diagonal) {   // v76: franjas diagonales de la marca (naranja, oro y tinta) que cruzan y destapan el plano nuevo
-      const p = L / DUR_TR.diagonal, cols = [ORA, ORO, INK, ORA], sh = H * .6, bw = W * .5;
+      // banda ancha en diagonal hecha de franjas pegadas (oro · tinta · naranja · oro): a mitad tapa toda la pantalla y ahí cambia el plano
+      const p = eio(L / DUR_TR.diagonal), sh = H * .55, fr = [[ORO, 46], [INK, 26], [ORA, W + 2 * sh], [INK, 18], [ORO, 60]], tot = fr.reduce((a, f) => a + f[1], 0), x0 = W + sh - (W + sh + tot + sh) * p;
       svg += (p < .5 ? escena(k - 1, T.escenas[k - 1].fin - .001) : escena(k, t));
-      cols.forEach((c, i) => { const q = eio(cl((p - i * .06) / .7)), x = -W - sh - bw + (2 * W + 2 * sh + 2 * bw) * q;
-        encima += `<path d="M${(x + sh).toFixed(1)} 0 h${bw} L${(x + bw).toFixed(1)} ${H} h${-bw} Z" fill="${c}"/>`; });
+      let xx = x0; fr.forEach(([c, w]) => { encima += `<path d="M${(xx + sh).toFixed(1)} 0 h${w} L${(xx + w).toFixed(1)} ${H} h${-w} Z" fill="${c}"/>`; xx += w; });
     } else if (tt === 'rebote' && L < DUR_TR.rebote) {   // v76: el plano anterior se encoge y el nuevo entra con rebote y un pequeño giro
       const p = L / DUR_TR.rebote, cx = W / 2, cy = H * .45, a = eio(cl(p / .45)), b = back(cl((p - .25) / .75));
       svg += `<rect width="${W}" height="${H}" fill="${ORA}"/>` +
