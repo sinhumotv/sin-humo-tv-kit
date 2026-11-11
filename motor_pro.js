@@ -1,4 +1,4 @@
-/* sin humo TV · MOTOR PRO (v63, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
+/* sin humo TV · MOTOR PRO (v68, 11-nov-2026) · cortos (720x1280) y largos (1280x720)
    Pablo: «los vídeos tendrían que ser muchísimo más dinámicos y mejor visualmente, pero una barbaridad. Me da igual que cambie entero
    el estilo, mientras mantengas el tono naranja». Y como referencia de lo que le gusta, un corto de noticias animadas: fondo claro y
    limpio, dibujos planos tipo pegatina, letra negra muy gruesa, la palabra clave con franja naranja, elementos que saltan a pantalla
@@ -32,6 +32,58 @@
   const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: SX + 26, y: 318, w: W - 2 * SX - 52, h: 514 };   // v63: todo baja ~40 px (arriba están los menús de TikTok e Instagram)   // zona del gráfico
   const ZC = { x: Z.x + Z.w / 2, y: Z.y + Z.h / 2 };
   const SOM = HOR ? 7 : 8;                // desplazamiento de la sombra dura
+  // ===== v68 (11-nov-2026): Lupi, barra de progreso y logo modernos (pedido de Pablo) =====
+  // Lupi moderno: lente de cristal con degradado y brillo, aro degradado naranja-oro, ojos grandes con brillos, mejillas,
+  // contornos finos y sombra suave. Misma interfaz que lupi() de motor.js (x, y, s, t, rot, expr, mira, brazos, mini, sinCara, texto, fs).
+  const DEF_LUPI = `<defs><radialGradient id="lmL" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e3f3fb"/><stop offset="1" stop-color="#9fd2ea"/></radialGradient>` +
+    `<linearGradient id="lmA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".5" stop-color="${ORA}"/><stop offset="1" stop-color="#d9480f"/></linearGradient>` +
+    `<linearGradient id="lmM" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#c2410c"/></linearGradient>` +
+    `<filter id="lmS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter></defs>`;
+  let defLupiPuesto = -1;
+  function caraM(expr, t, mira = [0, 0]) {
+    const [mx, my] = mira, parp = ((t + .7) % 3.3) < .12, guino = expr === 'guino';
+    const ojo = (ex, cerr) => cerr || parp ? `<path d="M${ex - 12} 0 q12 9 24 0" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`
+      : `<ellipse cx="${ex}" cy="0" rx="12" ry="${expr === 'sorprendida' ? 16 : 14}" fill="#fff" stroke="${INK}" stroke-width="3"/><circle cx="${ex + mx * 4}" cy="${2 + my * 4}" r="7.5" fill="${INK}"/><circle cx="${ex + mx * 4 + 2.5}" cy="${-1.5 + my * 4}" r="2.6" fill="#fff"/>`;
+    const cej = { sorprendida: [-26, 0], seria: [-20, -6], enfadada: [-17, -14], curiosa: [-22, 5] }[expr] || [-22, 3];
+    const ceja = (ex, sg) => `<path d="M${ex - 11} ${cej[0] + sg * cej[1] * .5} Q${ex} ${cej[0] - 4} ${ex + 11} ${cej[0] - sg * cej[1] * .5}" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+    const boca = {
+      sorprendida: `<ellipse cx="0" cy="27" rx="7" ry="9" fill="${INK}"/>`,
+      seria: `<path d="M-9 27 h18" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>`,
+      enfadada: `<path d="M-10 30 q10 -8 20 0" stroke="${INK}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`,
+      curiosa: `<path d="M-6 26 q7 5 13 -1" stroke="${INK}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`,
+      habla: `<path d="M-10 23 q10 ${(8 + 9 * Math.abs(Math.sin(t * 17))).toFixed(1)} 20 0 z" fill="${INK}"/><path d="M-5 ${(27 + 4 * Math.abs(Math.sin(t * 17))).toFixed(1)} q5 3 10 0" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round"/>`,
+      guino: `<path d="M-11 22 q11 13 22 0 z" fill="${INK}"/>`,
+    }[expr] || `<path d="M-11 22 q11 13 22 0 z" fill="${INK}"/>`;
+    return `<g>` + `<ellipse cx="-34" cy="16" rx="9" ry="5" fill="#ff7a7a" opacity=".45"/><ellipse cx="34" cy="16" rx="9" ry="5" fill="#ff7a7a" opacity=".45"/>` +
+      ceja(-19, 1) + ceja(19, -1) + ojo(-19, false) + ojo(19, guino) + boca + `</g>`;
+  }
+  function lupiM(o) {
+    const R = 60, s = o.s || 1, t = o.t || 0, rot = o.rot || 0, mini = !!o.mini, sw = Math.sin(t * 3) * 4;
+    const sombra = mini ? '' : `<ellipse cx="0" cy="${R + 112}" rx="44" ry="9" fill="${INK}" opacity=".18" filter="url(#lmS)"/>`;
+    const mango = `<g transform="rotate(${(sw * .4).toFixed(2)} 0 ${R})"><rect x="-14" y="${R + 2}" width="28" height="${mini ? 60 : 96}" rx="14" fill="url(#lmM)" stroke="${INK}" stroke-width="3"/>` +
+      `<rect x="-7" y="${R + 10}" width="6" height="${mini ? 40 : 74}" rx="3" fill="#fff" opacity=".35"/></g>`;
+    let brazos = '';
+    if (!mini) {
+      const angD = o.brazos === 'senala' ? -35 : o.brazos === 'saluda' ? -65 + Math.sin(t * 8) * 15 : 35, angI = o.brazos === 'saluda' || o.brazos === 'senala' ? 40 : 35;
+      const br = (lado, ang) => { const a = ang * Math.PI / 180, x0 = lado * (R + 6), y0 = 18, x1 = x0 + lado * Math.cos(a) * 62, y1 = y0 + Math.sin(a) * 62;
+        return `<path d="M${x0} ${y0} Q${((x0 + x1) / 2).toFixed(1)} ${((y0 + y1) / 2 + 12).toFixed(1)} ${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="${x1.toFixed(1)}" cy="${y1.toFixed(1)}" r="11" fill="#fff" stroke="${INK}" stroke-width="3"/>`; };
+      brazos = br(1, angD) + br(-1, angI);
+    }
+    const lente = `<circle r="${R}" fill="url(#lmL)"/><path d="M${-R * .62} ${-R * .18} A${R * .66} ${R * .66} 0 0 1 ${-R * .1} ${-R * .64}" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" opacity=".9"/><circle cx="${R * .38}" cy="${-R * .44}" r="6" fill="#fff" opacity=".9"/>`;
+    const cara_ = o.sinCara || mini ? '' : caraM(o.expr || 'feliz', t, o.mira || [0, 0]);
+    const texto = o.texto !== undefined ? `<g transform="rotate(${-rot})"><text y="${((o.fs || 20) * .36).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${o.fs || 20}" text-anchor="middle" fill="${INK}">${o.texto}</text></g>` : '';
+    const aro = `<circle r="${R + 1}" fill="none" stroke="${INK}" stroke-width="15"/><circle r="${R + 1}" fill="none" stroke="url(#lmA)" stroke-width="10"/>`;
+    const gorra = mini ? '' : `<g transform="translate(0 ${-R - 6}) rotate(-8)"><path d="M-32 6 Q-30 -28 0 -30 Q30 -28 32 6 Z" fill="${INK}" stroke="${INK}" stroke-width="3"/><path d="M-26 -2 Q-22 -22 0 -24" stroke="#fff" stroke-width="4" fill="none" opacity=".18" stroke-linecap="round"/>` +
+      `<path d="M14 4 Q46 0 58 10 Q40 14 14 10 Z" fill="${ORA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle cy="-29" r="5" fill="${ORA}"/></g>`;
+    return `<g transform="translate(${o.x} ${o.y}) rotate(${rot}) scale(${s})">${sombra}${mango}${brazos}${lente}${cara_}${texto}${aro}${gorra}</g>`;
+  }
+  // logo moderno: insignia naranja con la nube tachada en blanco + «sin humo» + pastilla «TV»
+  function logoM(x, y, esc_ = 1) {
+    return `<g transform="translate(${x} ${y}) scale(${esc_})"><rect x="-21" y="-21" width="42" height="42" rx="12" fill="url(#lmA)"/><rect x="-21" y="-21" width="42" height="21" rx="12" fill="#fff" opacity=".12"/>` +
+      `<path d="M-11 6 a6 6 0 0 1 1.5 -11 a8 8 0 0 1 15 -2 a6 6 0 0 1 4.5 11 Z" fill="#fff"/><path d="M-12 -10 L12 10" stroke="${ORA}" stroke-width="7" stroke-linecap="round"/><path d="M-12 -10 L12 10" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>` +
+      `<text x="32" y="10" font-family="Inter" font-weight="900" font-size="28" letter-spacing="-.8" fill="${INK}">sin humo</text>` +
+      `<rect x="158" y="-14" width="40" height="28" rx="8" fill="${INK}"/><text x="178" y="7" font-family="Inter" font-weight="900" font-size="18" text-anchor="middle" fill="#fff">TV</text></g>`;
+  }
 
   // ---------- piezas básicas ----------
   const partir = (s, max) => { const ls = []; let l = ''; for (const w of String(s || '').split(/\s+/).filter(Boolean)) { if (l && (l + ' ' + w).replace(/[§*]/g, '').length > max) { ls.push(l); l = w; } else l = l ? l + ' ' + w : w; } if (l) ls.push(l); return ls; };
@@ -669,7 +721,7 @@
       for (let i = 0; i < lineas; i++) { const yy = y + 90 + i * ((h - 120) / lineas); o += i === fila ? `<rect x="${x + 30}" y="${yy - 6}" width="${(w - 60) * eo((L - .9) / .4)}" height="16" rx="4" fill="${ORO}"/><rect x="${x + 30}" y="${yy}" width="${w - 60}" height="5" rx="2" fill="${INK}" opacity=".5"/>` : `<rect x="${x + 30}" y="${yy}" width="${(w - 60) * (i % 3 === 2 ? .7 : 1)}" height="5" rx="2" fill="${INK}" opacity=".16"/>`; }
       o += `</g>`;
       const yF = y + 90 + fila * ((h - 120) / lineas), q = eio(cl((L - .2) / .8)), lx = x + 80 + (w * .55 - 80) * q + 20 * Math.sin(L * 2), ly = yF - 20 + 8 * Math.sin(L * 3);
-      o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(-25) scale(${HOR ? .95 : 1})">${lupi({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;
+      o += `<g transform="translate(${lx.toFixed(1)} ${ly.toFixed(1)}) rotate(-25) scale(${HOR ? .95 : 1})">${lupiM({ x: 0, y: 0, s: 1, t: L, expr: 'curiosa', mira: [0, .6] })}</g>`;
       const size = HOR ? 44 : 36, max = HOR ? 18 : 24;
       return o + (v.texto ? cinetico(v.texto, HOR ? x + w + (Z.x + Z.w - x - w) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : y + h + 80, size, L, { max, t0: 1 }) : '');
     },
@@ -733,7 +785,7 @@
     },
     mencion(v, L, d) {
       const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
-      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
+      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 320, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 }) +
         `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>` +
         // v61: una mano pulsa el botón y suena la campana
@@ -745,7 +797,7 @@
     },
     cierre(v, L, d) {
       const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
-      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
+      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
         peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) +
         // v61: bocadillo de comentario con «escribiendo…» (invita a comentar)
@@ -793,7 +845,7 @@
     if (GRAVE || HOR || k === 0 || !['surprised', 'excited', 'emphatic', 'amused'].includes(EMO(k)) || !['titular', 'pregunta', 'icono', 'frase'].includes((E[k].visual || {}).tipo) || fotoDe(k)) return '';   // solo donde la esquina está libre
     const a = claves(k)[0]; if (a == null) return ''; const x = t - a; if (x < -.05 || x > 1.3) return '';
     const sal = x < .25 ? back((x + .05) / .3) : x > 1 ? 1 - eio((x - 1) / .3) : 1, lx = SX + 30 + 50 * sal, ly = 812;   // por la izquierda (a la derecha están los botones de TikTok)
-    return `<g transform="translate(${lx.toFixed(1)} ${ly}) rotate(${(16 - 4 * Math.sin(t * 6)).toFixed(1)})" opacity="${cl(sal * 1.5).toFixed(2)}">${lupi({ x: 0, y: 0, s: .5, t, expr: 'sorprendida', mira: [1, -.3], brazos: 'senala' })}</g>` +
+    return `<g transform="translate(${lx.toFixed(1)} ${ly}) rotate(${(16 - 4 * Math.sin(t * 6)).toFixed(1)})" opacity="${cl(sal * 1.5).toFixed(2)}">${lupiM({ x: 0, y: 0, s: .5, t, expr: 'sorprendida', mira: [1, -.3], brazos: 'senala' })}</g>` +
       peg(lx + 52, ly - 62, '!', 40, ROJ, '#fff', 'middle', cl(sal), 10, back((x - .1) / .25));
   }
   function ambiente(k, t, L) {  // capa de emoción encima del plano (debajo de subtítulos y cabecera)
@@ -831,7 +883,7 @@
   // ---------- capas fijas ----------
   function cabecera(k, t, L) {
     const ci = CAPS.reduce((a, c, i) => (c.desde <= k ? i : a), -1), tp = (E[k].visual || {}).tipo;
-    let o = `<g>${nube(HOR ? 96 : SX + 42, HOR ? 44 : 162, HOR ? .95 : 1.15)}<text x="${HOR ? 130 : SX + 80}" y="${HOR ? 54 : 174}" font-family="Inter" font-weight="900" font-size="${HOR ? 28 : 30}" fill="${INK}">sin humo TV</text></g>`;
+    let o = logoM(HOR ? 100 : SX + 46, HOR ? 46 : 166, HOR ? .82 : .88);   // v68: logo moderno
     if (k === 0 && P.fecha) o += peg(HOR ? 400 : 422, HOR ? 53 : 173, P.fecha, HOR ? 20 : 22, ORO, INK, 'middle', 1, 3);
     if (HOR && ci >= 0) { const sig = CAPS.find(x => x.desde === k + 1), d = Math.max(1, T.escenas[k].fin - T.escenas[k].ini), av = sig && L > d * .4; o += peg(W - 110, 52, av ? 'A CONTINUACIÓN  ▸  ' + String(sig.titulo).toUpperCase() : `${ci + 1}/${CAPS.length} · ${String(CAPS[ci].titulo).toUpperCase()}`, 20, av ? ORO : ORA, av ? INK : '#fff', 'end', 1, 0, av ? back((L - d * .4) / .35) : 1); }
     if (tp !== 'mencion' && tp !== 'cierre') {
@@ -840,7 +892,7 @@
       let ex = GRAVE ? (porEmo === 'curiosa' ? 'curiosa' : 'seria') : porEmo || (tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz');
       if ((ex === 'feliz' || ex === 'seria' && !GRAVE) && hablando(k, t)) ex = 'habla';   // v52: Lupi «habla» con la voz
       const mira = SUSURRO(k) ? [HOR ? -1 : -1, 0] : [HOR ? -1 : -.6, HOR ? -.4 : .8];
-      o += lupi({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: ex, mira, brazos: L < 1 ? 'senala' : '' });
+      o += lupiM({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: ex, mira, brazos: L < 1 ? 'senala' : '' });
     }
     return o;
   }
@@ -857,14 +909,19 @@
       return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}"${su ? ' font-style="italic"' : ''} text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
   }
-  function barra(t) {            // v47: vuelve Lupi a la barra (tumbada, con los segundos en la lente, bote y destello cada segundo)
-    const y = HOR ? H - 30 : 1040, x0 = HOR ? 80 : 110, w = HOR ? W - 160 : W - 220, p = cl(t / DUR), xk = x0 + w * p;
-    const seg = Math.max(0, Math.ceil(DUR - t)), ft = t % 1, flash = ft < .18 ? (1 - ft / .18) : 0, bote = Math.sin(t * Math.PI * 4) * 2;
-    let o = `<rect x="${x0}" y="${y - 5}" width="${w}" height="10" rx="5" fill="${INK}" fill-opacity=".14"/><rect x="${x0}" y="${y - 5}" width="${Math.max(0, xk - x0).toFixed(1)}" height="10" rx="5" fill="${ORA}"/>`;
+  function barra(t) {            // v68: barra moderna: fina, degradado con brillo, puntos de cada escena y la lente de Lupi con los segundos
+    const y = HOR ? H - 30 : 1040, x0 = HOR ? 80 : 110, w = HOR ? W - 160 : W - 220, p = cl(t / DUR), xk = x0 + w * p, seg = Math.max(0, Math.ceil(DUR - t));
+    const ft = t % 1, puls = ft < .2 ? 1 - ft / .2 : 0;
+    let o = `<defs><linearGradient id="bgF" x1="0" x2="1"><stop offset="0" stop-color="#ffc34d"/><stop offset="1" stop-color="${ORA}"/></linearGradient><filter id="bgG" x="-10%" y="-300%" width="120%" height="700%"><feGaussianBlur stdDeviation="5"/></filter></defs>` +
+      `<rect x="${x0}" y="${y - 4}" width="${w}" height="8" rx="4" fill="${INK}" fill-opacity=".12"/>` +
+      `<rect x="${x0}" y="${y - 5}" width="${Math.max(0, xk - x0).toFixed(1)}" height="10" rx="5" fill="${ORA}" opacity=".5" filter="url(#bgG)"/>` +
+      `<rect x="${x0}" y="${y - 4}" width="${Math.max(0, xk - x0).toFixed(1)}" height="8" rx="4" fill="url(#bgF)"/>`;
+    o += T.escenas.slice(1).map(e => { const xx = x0 + w * e.ini / DUR, pas = xx <= xk; return `<circle cx="${xx.toFixed(1)}" cy="${y}" r="3.2" fill="${pas ? '#fff' : INK}" fill-opacity="${pas ? .95 : .28}"/>`; }).join('');
     if (HOR) o += CAPS.map(c => `<rect x="${(x0 + w * (T.escenas[c.desde] ? T.escenas[c.desde].ini : 0) / DUR - 2).toFixed(1)}" y="${y - 9}" width="4" height="18" rx="2" fill="${INK}"/>`).join('');
-    return o + lupi({ x: xk, y: y + bote, s: 22 / 60, rot: 90, mini: true, sinCara: true, t, texto: seg, fs: 20 / (22 / 60) }) +
-      (flash > 0 ? `<circle cx="${xk.toFixed(1)}" cy="${(y + bote).toFixed(1)}" r="${(24 + 10 * (1 - flash)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="3" opacity="${flash.toFixed(2)}"/>` : '');
+    return o + (puls > 0 ? `<circle cx="${xk.toFixed(1)}" cy="${y}" r="${(26 + 10 * (1 - puls)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="3" opacity="${(puls * .8).toFixed(2)}"/>` : '') +
+      lupiM({ x: xk, y, s: .34, rot: 90, mini: true, sinCara: true, t, texto: seg, fs: 21 / .34 });
   }
+
 
   // v44 · pie de los cortos: cinta de titulares que corre + base oscura. Llena la zona que tapan los textos de YouTube/TikTok/Instagram
   // (antes quedaba crema vacío) y hace que el título blanco de la aplicación se lea mejor.
@@ -905,7 +962,7 @@
     t = cl(t, 0, DUR - .001);
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
     const S = T.escenas[k], L = t - S.ini;
-    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG2[0]}"/>`;
+    let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}"><rect width="${W}" height="${H}" fill="${BG2[0]}"/>` + DEF_LUPI;
     const tt = k > 0 ? TIPO_TR(k) : ''; let encima = '';
     if (tt === 'zoom' && L < TR) {         // zoom: el plano anterior se acerca y se funde, el nuevo llega desde un poco más pequeño
       const p = eio(L / TR), ant = escena(k - 1, T.escenas[k - 1].fin - .001), nue = escena(k, t), cx = W / 2, cy = H * .42;
