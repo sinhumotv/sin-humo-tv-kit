@@ -105,7 +105,9 @@
   }
   function marco() {           // marco naranja de la marca (encima de todo, fino y redondeado)
     const g = HOR ? 7 : 9, r = HOR ? 26 : 34;
-    return `<rect x="${g / 2}" y="${g / 2}" width="${W - g}" height="${H - g}" rx="${r}" fill="none" stroke="${GRAVE ? '#8a8378' : ORA}" stroke-width="${g}"/>`;
+    // v54: en los cortos, lo que queda fuera de las esquinas redondeadas va en negro (en el móvil el vídeo se ve redondeado de verdad)
+    const esq = HOR ? '' : `<path d="M0 0H${W}V${H}H0Z M${r} 0 H${W - r} A${r} ${r} 0 0 1 ${W} ${r} V${H - r} A${r} ${r} 0 0 1 ${W - r} ${H} H${r} A${r} ${r} 0 0 1 0 ${H - r} V${r} A${r} ${r} 0 0 1 ${r} 0 Z" fill="#000" fill-rule="evenodd"/>`;
+    return esq + `<rect x="${g / 2}" y="${g / 2}" width="${W - g}" height="${H - g}" rx="${r}" fill="none" stroke="${GRAVE ? '#8a8378' : ORA}" stroke-width="${g}"/>`;
   }
   const rayos = (cx, cy, t, op) => { let d = ''; for (let i = 0; i < 12; i++) { const a0 = (i / 12) * Math.PI * 2 + t * .5, a1 = a0 + Math.PI / 12, R = Math.max(W, H) * 1.2; d += `M${cx} ${cy}L${(cx + R * Math.cos(a0)).toFixed(0)} ${(cy + R * Math.sin(a0)).toFixed(0)}L${(cx + R * Math.cos(a1)).toFixed(0)} ${(cy + R * Math.sin(a1)).toFixed(0)}Z`; } return `<path d="${d}" fill="${ORA}" opacity="${op.toFixed(3)}"/>`; };
 
