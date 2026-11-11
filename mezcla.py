@@ -284,6 +284,7 @@ if GSFX:
         g = .5 if GRAVE_ else 1.0
         def at(x, dt, gain=1.0):
             if b + dt >= s_["ini"] - .02: pon(x, b + dt, gain * g)
+        if e.get("emoji") and not GRAVE_ and tp not in ("mencion", "cierre"): at(pop, .27, .25)   # v79: el emoji de la cabecera salta
         if tp == "mencion" and not GRAVE_:
             for q in np.arange(.9 + 1.6 * .45, d - .1, 1.6):
                 at(clic(900, .04), q, .6); at(suma(ding(1046), .7 * ding(1318)) * .8, q + .16, .5)

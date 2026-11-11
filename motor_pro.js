@@ -977,7 +977,12 @@
         ls.map((l, i) => tx(ZC.x, y + 13 + fs * .86 + i * fs * 1.18, esc(l), fs, '#fff', 'middle', 900)).join('') + `</g>`;
     }
     const tit = String(E[k].titulo || ''); if (!tit) return '';
-    return peg(HOR ? Z.x + 6 : ZC.x, HOR ? 104 : 266, tit, HOR ? 30 : 26, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4));
+    // v79: emoji de la escena (opcional, nunca en noticias graves) que salta al lado del rótulo y se balancea
+    const emo = !GRAVE && E[k].emoji && !['mencion', 'cierre'].includes((E[k].visual || {}).tipo) ? String(E[k].emoji).trim().slice(0, 8) : '', fsR = HOR ? 30 : 26, xR = HOR ? Z.x + 6 : ZC.x, yR = HOR ? 104 : 266;
+    let em = '';
+    if (emo) { const wR = tit.length * fsR * .6 + fsR, xe = HOR ? xR + wR + 34 : xR + wR / 2 + 36, ee = back((L - .25) / .35);
+      if (ee > 0) em = `<g transform="translate(${xe.toFixed(1)} ${yR - fsR * .35}) rotate(${(10 * Math.sin(L * 3.2)).toFixed(2)}) scale(${ee.toFixed(3)})"><text x="0" y="${(fsR * .5).toFixed(1)}" font-family="Noto Color Emoji" font-size="${(fsR * 1.5).toFixed(0)}" text-anchor="middle">${esc(emo)}</text></g>`; }
+    return peg(xR, yR, tit, fsR, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4)) + em;
   }
 
   // ---------- capas fijas ----------
