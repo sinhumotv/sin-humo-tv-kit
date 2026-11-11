@@ -16,6 +16,7 @@ import torch, torchaudio as ta
 AQUI = os.path.dirname(os.path.abspath(__file__))
 # registro: (muestra de referencia, expresividad, cfg, temperatura)
 REGISTROS = {
+    # Susurro: solo más bajo de intensidad (sin filtros: sonaban a enlatado).
     # (11-nov-2026) TODOS con la muestra original de la voz 6: las muestras emocionales sacadas con ElevenLabs v4
     # perdían el acento de España y Chatterbox lo copiaba. El registro se consigue con los ajustes y, en el susurro,
     # con un tratamiento de audio (más bajo, sin graves, más íntimo).
@@ -36,19 +37,27 @@ def piezas(escena):
             continue
         partes = [p for p in re.split(r"(?<=[.!?…])\s+", trozo.strip()) if p]
         for p in partes:
-            if out and out[-1][0] == reg and len(out[-1][1]) < 40:
-                out[-1] = (reg, out[-1][1] + " " + p)   # frases muy cortas se juntan (suenan más naturales)
+            if out and out[-1][0] == reg and len(out[-1][1]) + len(p) < 280:
+                out[-1] = (reg, out[-1][1] + " " + p)   # se dice de un tirón todo lo que se pueda: suena más natural y sin cortes
             else:
                 out.append((reg, p))
     return out
 
 
-def susurro(w, sr):
-    """Voz baja e íntima: quita graves, suaviza y baja el volumen (sin que suene a efecto)."""
-    import torchaudio.functional as F
-    w = F.highpass_biquad(w, sr, 260)
-    w = F.lowpass_biquad(w, sr, 7000)
-    return w * 0.55
+def recortar(w, sr, umbral=0.02, margen=0.06):
+    """Quita el silencio que Chatterbox deja al principio y al final de cada trozo (las pausas largas)."""
+    env = w.abs().squeeze(0)
+    win = int(sr * 0.02)
+    e = torch.nn.functional.avg_pool1d(env[None, None], win, win).squeeze()
+    on = (e > umbral * e.max()).nonzero()
+    if len(on) == 0:
+        return w
+    a = max(0, int(on[0]) * win - int(sr * margen))
+    b = min(w.shape[1], (int(on[-1]) + 1) * win + int(sr * margen))
+    w = w[:, a:b]
+    f = int(sr * 0.01)
+    w[:, :f] *= torch.linspace(0, 1, f); w[:, -f:] *= torch.linspace(1, 0, f)
+    return w
 
 
 def main():
@@ -67,12 +76,9 @@ def main():
             torch.manual_seed(1000 + n); n += 1   # semilla distinta por frase: entonación menos repetitiva
             w = m.generate(f, language_id="es", audio_prompt_path=os.path.join(AQUI, ref),
                            exaggeration=ex, cfg_weight=cfg, temperature=temp)
-            if reg == "susurro":
-                w = susurro(w, sr)
-            trozos.append(w)
-            pausa = 0.45 if f.endswith("...") or f.endswith("…") else 0.25
-            trozos.append(torch.zeros(1, int(sr * pausa)))
-        trozos[-1] = torch.zeros(1, int(sr * 0.7))
+            trozos.append(recortar(w, sr))
+            trozos.append(torch.zeros(1, int(sr * 0.12)))
+        trozos[-1] = torch.zeros(1, int(sr * 0.35))
     audio = torch.cat(trozos[:-1], dim=1)
     dur = audio.shape[1] / sr
     print(f"AUDIO {dur:.1f}s generado en {time.time()-t1:.0f}s (x{(time.time()-t1)/dur:.1f} del tiempo real)", flush=True)
