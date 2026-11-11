@@ -86,3 +86,4 @@
 2026-11-10|15:00|La crisis de metales por la IA|final|YO 6af2efe7fe6796a7146ea647 IN 6af2efe817d2b2f30cff23dd TI 6af2efe9ba579c00246efc6b|img=mixto|15:07
 2026-11-10|18:00|El ojo detector de falsedades|cuenta|YO 6af2f0f317d2b2f30cff7893 IN 6af2f0f4fe6796a7146efa42 TI 6af2f0f4fe6796a7146efa6e|img=mixto|17:24
 2026-11-10|21:00|Asistentes personales en 2100|consecuencia|YO 6af2f2157bf84372feba8cda IN 6af2f216ba579c00246fa8aa TI 6af2f21617d2b2f30cffc46a|img=mixto|21:39
+2026-11-11|12:00|El truco de la autoría en la IA|pregunta|YO 6af43ca4c05a77e35e97fcc9 IN 6af43ca6c05a77e35e98025a TI 6af43caa11af97e72101ae2a|img=mixto|11:41
