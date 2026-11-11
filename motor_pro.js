@@ -88,7 +88,9 @@
   window.SH_ARTE = { DEF_LUPI, lupiM, logoM };   // v82: la miniatura de YouTube usa el mismo Lupi y logo modernos
 
   // ---------- piezas básicas ----------
-  const partir = (s, max) => { const ls = []; let l = ''; for (const w of String(s || '').split(/\s+/).filter(Boolean)) { if (l && (l + ' ' + w).replace(/[§*]/g, '').length > max) { ls.push(l); l = w; } else l = l ? l + ' ' + w : w; } if (l) ls.push(l); return ls; };
+  const partir0 = (s, max) => { const ls = []; let l = ''; for (const w of String(s || '').split(/\s+/).filter(Boolean)) { if (l && (l + ' ' + w).replace(/[§*]/g, '').length > max) { ls.push(l); l = w; } else l = l ? l + ' ' + w : w; } if (l) ls.push(l); return ls; };
+  // v71: líneas equilibradas (sin una palabra huérfana en la última): el ancho más estrecho que da el mismo nº de líneas
+  const partir = (s, max) => { const g = partir0(s, max); if (g.length < 2) return g; let m = max; while (m > 6 && partir0(s, m - 1).length === g.length) m--; return partir0(s, m); };
   const tx = (x, y, s, size, fill = INK, anchor = 'middle', peso = 900, extra = '') =>
     `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" font-family="Inter" font-weight="${peso}" font-size="${size.toFixed(1)}" text-anchor="${anchor}" fill="${fill}" letter-spacing="-.5" ${extra}>${s}</text>`;
   // caja tipo pegatina: sombra dura + relleno + borde negro
@@ -296,12 +298,12 @@
         o += [...Array(8).keys()].map(i => { const a = i * Math.PI / 4; return `<path d="M${(cxs + r * .5 * Math.cos(a)).toFixed(1)} ${(cys + r * .5 * Math.sin(a)).toFixed(1)} L${(cxs + r * Math.cos(a)).toFixed(1)} ${(cys + r * Math.sin(a)).toFixed(1)}" stroke="${ORO}" stroke-width="6" stroke-linecap="round" opacity="${(1 - xs / .7).toFixed(2)}"/>`; }).join(''); }
       return o + `<path d="M${Z.x} ${base} H${Z.x + Z.w}" stroke="${INK}" stroke-width="4" stroke-linecap="round"/>`;
     },
-    lista(v, L, d) {
-      const it = (v.items || []).slice(0, 4), n = it.length || 1, c = col(v.color), hT = v.titulo ? (HOR ? 74 : 84) : 0, ah = Math.min(HOR ? 80 : 80, (Z.h - hT - 10) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
-      const act = Math.min(n - 1, Math.floor(cl((L - .3) / Math.max(1, d - .8)) * n));
+    lista(v, L, d, k) {
+      const it = (v.items || []).slice(0, 4), T0 = entradas(k, it.map(String), d), n = it.length || 1, c = col(v.color), hT = v.titulo ? (HOR ? 74 : 84) : 0, ah = Math.min(HOR ? 80 : 80, (Z.h - hT - 10) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
+      const act = Math.max(0, T0.filter(x => L >= x).length - 1);
       let o = v.titulo ? cinetico(v.titulo, HOR ? Z.x + 20 : ZC.x, Z.y + (HOR ? 46 : 62), HOR ? 46 : 38, L, { max: HOR ? 48 : 28, anchor: HOR ? 'start' : 'middle' }) : '';
       it.forEach((s, i) => {
-        const t0 = .3 + i * (Math.max(1, d - .8) / n), e = back((L - t0) / .4); if (L < t0) return;
+        const t0 = T0[i], e = back((L - t0) / .4); if (L < t0) return;
         const y = y0 + i * (ah + 18), on = i === act, fs = Math.min(ah * .4, (Z.w - 160) / (Math.max(8, [...String(s)].length) * .56));
         o += `<g transform="translate(${((1 - e) * (i % 2 ? -1 : 1) * 300).toFixed(1)} 0) rotate(${on ? -1 : 0} ${ZC.x} ${y + ah / 2})" opacity="${cl((L - t0) / .12)}">` + caja(Z.x + 8, y, Z.w - 24, ah, ah * .26, on ? c : BLA) +
           `<circle cx="${Z.x + 8 + ah * .5}" cy="${y + ah / 2}" r="${ah * .3}" fill="${on ? '#fff' : c}" stroke="${INK}" stroke-width="2.5"/>` + tx(Z.x + 8 + ah * .5, y + ah / 2 + ah * .13, String(i + 1), ah * .36, on ? c : '#fff') +
@@ -317,12 +319,12 @@
         cinetico(v.texto, ZC.x, y + (HOR ? 76 : 104) + size * .5, size, L, { max, t0: .3, paso: Math.min(.1, d * .5 / Math.max(6, String(v.texto || '').split(' ').length)) }) +
         (v.fuente ? peg(ZC.x + (HOR ? 300 : 150), y + hC + 4, v.fuente, HOR ? 26 : 30, INK, '#fff', 'middle', eo((L - d * .45) / .3), -3, back((L - d * .45) / .35)) : '');
     },
-    linea(v, L, d) {
-      const hs = (v.hitos || []).slice(0, 5), n = hs.length || 1, paso = Math.min(HOR ? 92 : 122, (Z.h - 10) / n), y0 = ZC.y - paso * (n - 1) / 2, x = HOR ? Z.x + 240 : ZC.x - Math.min(200, 40 + Math.max(...hs.map(h => Math.max(String(h.texto || '').length * 17, String(h.fecha || '').length * 15))) / 2);
-      const tramo = Math.max(1, d - .8) / n, prog = cl((L - .2) / Math.max(1, d - .8)), yF = y0 + (n - 1) * paso * prog;
+    linea(v, L, d, k) {
+      const hs = (v.hitos || []).slice(0, 5), T0 = entradas(k, hs.map(h => String(h.fecha || '') + ' ' + String(h.texto || '')), d, .2, Math.max(1, d - .8) / Math.max(1, hs.length)), n = hs.length || 1, paso = Math.min(HOR ? 92 : 122, (Z.h - 10) / n), y0 = ZC.y - paso * (n - 1) / 2, x = HOR ? Z.x + 240 : ZC.x - Math.min(200, 40 + Math.max(...hs.map(h => Math.max(String(h.texto || '').length * 17, String(h.fecha || '').length * 15))) / 2);
+      const tramo = Math.max(1, d - .8) / n, ia = T0.filter(x => L >= x).length - 1, prog = ia < 0 ? 0 : ia >= n - 1 ? 1 : (ia + eo((L - T0[ia]) / Math.max(.3, T0[ia + 1] - T0[ia]))) / (n - 1), yF = y0 + (n - 1) * paso * prog;
       let o = `<path d="M${x} ${y0} V${y0 + (n - 1) * paso}" stroke="${GRI}" stroke-width="10" stroke-linecap="round"/><path d="M${x} ${y0} V${yF.toFixed(1)}" stroke="${ORA}" stroke-width="10" stroke-linecap="round"/>`;
       hs.forEach((h, i) => {
-        const t0 = .2 + i * tramo, on = L >= t0, e = back((L - t0) / .35), y = y0 + i * paso, ult = on && (i === n - 1 || L < t0 + tramo);
+        const t0 = T0[i], on = L >= t0, e = back((L - t0) / .35), y = y0 + i * paso, ult = on && (i === n - 1 || L < T0[i + 1]);
         o += `<circle cx="${x}" cy="${y}" r="${on ? 18 + (ult ? 4 * Math.sin(L * 6) : 0) : 12}" fill="${on ? ORA : BLA}" stroke="${INK}" stroke-width="3"/>`;
         if (on) o += `<g transform="translate(${((1 - e) * 140).toFixed(1)} 0)" opacity="${cl((L - t0) / .12)}">` + peg(x + 46, y + (HOR ? 10 : -6), String(h.fecha || ''), HOR ? 26 : 24, ult ? ORA : INK, '#fff', 'start', 1, -2) +
           tx(x + 46 + (HOR ? 170 : 0), y + (HOR ? 13 : 44), esc(h.texto || ''), HOR ? 38 : 32, INK, 'start', 800) + `</g>`;
@@ -611,11 +613,11 @@
         (v.texto ? cinetico(v.texto, HOR ? Z.x + 450 + (Z.w - 450) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : cy + r + 130, size, L, { max, t0: .5 }) : '');
     },
     // lista de comprobación con ✓ y ✗  {"tipo":"checklist","titulo":"…","items":[{"texto":"…","ok":true},{"texto":"…","ok":false}]}
-    checklist(v, L, d) {
-      const it = (v.items || []).slice(0, 4), n = it.length || 1, hT = v.titulo ? (HOR ? 70 : 80) : 0, ah = Math.min(HOR ? 76 : 84, (Z.h - hT) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
+    checklist(v, L, d, k) {
+      const it = (v.items || []).slice(0, 4), T0 = entradas(k, it.map(q => String((q || {}).texto || q)), d, .25), n = it.length || 1, hT = v.titulo ? (HOR ? 70 : 80) : 0, ah = Math.min(HOR ? 76 : 84, (Z.h - hT) / n - 18), y0 = Z.y + hT + (Z.h - hT - n * (ah + 18)) / 2;
       let o = v.titulo ? cinetico(v.titulo, ZC.x, Z.y + (HOR ? 44 : 56), HOR ? 40 : 36, L, { max: HOR ? 46 : 28 }) : '';
       it.forEach((q, i) => {
-        const t0 = .25 + i * Math.max(.45, (d - .8) / n), e = back((L - t0) / .4); if (e <= 0) return;
+        const t0 = T0[i], e = back((L - t0) / .4); if (e <= 0) return;
         const y = y0 + i * (ah + 18), ok = q.ok !== false && q.ok !== 'false', c = ok ? VER : ROJ, s = String(q.texto || ''), fs = Math.min(ah * .4, (Z.w - ah - 60) / (Math.max(8, s.length) * .56));
         const pm = eo((L - t0 - .25) / .3), bxx = Z.x + 10, cxk = bxx + ah / 2, cyk = y + ah / 2, rr = ah * .3;
         const marca = ok ? `<path d="M${cxk - rr * .6} ${cyk} l${rr * .45} ${rr * .5} l${rr * .85} ${-rr * .95}" fill="none" stroke="#fff" stroke-width="${ah * .12}" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - pm).toFixed(3)}"/>`
@@ -686,20 +688,20 @@
       return o + (v.texto ? cinetico(v.texto, ZC.x, yC + ch / 2 + (HOR ? 70 : 80), size, L, { max, t0: .9 }) : '');
     },
     // pasos de un proceso unidos por flechas  {"tipo":"pasos","items":["Pides cita","Te llaman","Cobras"]}
-    pasos(v, L, d) {
-      const it = (v.items || []).slice(0, 4), n = it.length || 1, tramo = Math.max(.45, (d - .6) / n);
+    pasos(v, L, d, k) {
+      const it = (v.items || []).slice(0, 4), n = it.length || 1, tramo = Math.max(.45, (d - .6) / n), T0 = entradas(k, it.map(q => String((q || {}).texto || q)), d, .2, tramo);
       const hB = HOR ? 150 : 96, wB = HOR ? (Z.w - (n - 1) * 70) / n : Z.w - 40, gap = HOR ? 70 : Math.min(54, (Z.h - n * hB) / Math.max(1, n - 1));
       const tot = HOR ? Z.w : n * hB + (n - 1) * gap, y0 = HOR ? ZC.y - hB / 2 : ZC.y - tot / 2;
       let o = '';
       it.forEach((s, i) => {
-        const t0 = .2 + i * tramo, e = back((L - t0) / .4); if (e <= 0) return;
-        const x = HOR ? Z.x + i * (wB + 70) : ZC.x - wB / 2, y = HOR ? y0 : y0 + i * (hB + gap), act = L < t0 + tramo || i === n - 1, c = [ORA, AZU, VER, MOR][i % 4], cx = x + wB / 2, cy = y + hB / 2;
+        const t0 = T0[i], e = back((L - t0) / .4); if (e <= 0) return;
+        const x = HOR ? Z.x + i * (wB + 70) : ZC.x - wB / 2, y = HOR ? y0 : y0 + i * (hB + gap), act = i === n - 1 || L < T0[i + 1], c = [ORA, AZU, VER, MOR][i % 4], cx = x + wB / 2, cy = y + hB / 2;
         const fs = Math.min(HOR ? 34 : 32, (wB - (HOR ? 40 : 110)) / (Math.max(6, String(s).length) * .55));
         o += `<g transform="translate(${cx} ${cy}) scale(${(e * (act ? 1 + .03 * Math.sin(L * 6) : 1)).toFixed(3)}) translate(${-cx} ${-cy})">` + caja(x, y, wB, hB, 24, act ? c : BLA, 5) +
           `<circle cx="${HOR ? cx : x + 50}" cy="${HOR ? y : cy}" r="30" fill="${BLA}" stroke="${INK}" stroke-width="3"/>` + tx(HOR ? cx : x + 50, (HOR ? y : cy) + 12, String(i + 1), 34, c) +
           tx(HOR ? cx : x + 96, HOR ? cy + 26 : cy + fs * .36, esc(s), fs, act && c !== ORO ? '#fff' : INK, HOR ? 'middle' : 'start', 800) + `</g>`;
         if (i < n - 1) {
-          const pa = eo((L - t0 - tramo + .25) / .3); if (pa <= 0) return;
+          const pa = eo((L - T0[i + 1] + .3) / .3); if (pa <= 0) return;
           o += HOR ? `<path d="M${x + wB + 10} ${cy} h${(50 * pa).toFixed(1)}" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${x + wB + 52} ${cy - 14} l16 14 l-16 14" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` : '')
             : `<path d="M${cx} ${y + hB + 8} v${((gap - 22) * pa).toFixed(1)}" stroke="${INK}" stroke-width="4.5" stroke-linecap="round"/>` + (pa > .9 ? `<path d="M${cx - 13} ${y + hB + gap - 26} l13 14 l13 -14" fill="none" stroke="${INK}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>` : '');
         }
@@ -944,6 +946,21 @@
     return CLAVES[k];
   }
   const hablando = (k, t) => palabras(k).some(p => t >= p.a && t < p.b);
+  // v71: cada elemento de una lista aparece cuando la voz lo nombra (si no se nombra, a intervalos iguales como antes)
+  const _nrm = w => String(w || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9ñ]/g, '');
+  const ENTRAN = {};
+  function entradas(k, its, d, ini = .3, paso) {
+    const key = k + '|' + its.join('§'); if (ENTRAN[key]) return ENTRAN[key];
+    const n = its.length || 1, p0 = paso || Math.max(.45, (d - .8) / n), ps = k == null ? [] : palabras(k).map(p => ({ w: _nrm(p.w), a: p.a - T.escenas[k].ini + (k === 0 ? 1 : 0) }));   // al tiempo de la escena (L)
+    let desde = 0; const r = its.map((s, i) => {
+      const cl4 = String(s || '').split(/\s+/).map(_nrm).filter(w => w.length >= 4 || /\d/.test(w));
+      for (let j = desde; j < ps.length && cl4.length; j++) if (cl4.some(c => ps[j].w === c || (c.length > 5 && ps[j].w.startsWith(c.slice(0, 5))))) { desde = j + 1; return Math.max(.15, ps[j].a - .2); }
+      return null;
+    });
+    // los no nombrados: repartidos; y nunca antes que el anterior (+0,3 s)
+    let prev = -1; for (let i = 0; i < n; i++) { if (r[i] == null) r[i] = ini + i * p0; if (prev >= 0 && r[i] < prev + .3) r[i] = prev + .3; prev = r[i]; }
+    return (ENTRAN[key] = r);
+  }
   function golpe(k, t) {        // empujón de cámara en cada palabra clave: sube en 0,07 s y vuelve en ~0,5 s
     let g = 0; for (const a of claves(k)) { const x = t - a; if (x >= -.07 && x < .6) g = Math.max(g, x < 0 ? (x + .07) / .07 : Math.exp(-x * 7)); }
     return g;
