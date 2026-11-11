@@ -75,28 +75,22 @@ class Oido:
         return " ".join(s.text for s in segs)
 
 
-def main():
-    a = sys.argv[1:]
-    D = a[0]
-    voz = a[a.index("--voz") + 1] if "--voz" in a else "sinhumo"
+def generar(escenas, voz="sinhumo", device="cpu", log=print):
+    """Devuelve (audio float32, sr, repeticiones). device="cuda" en el servidor con GPU."""
     ref = os.path.join(AQUI, "voces", f"{voz}.wav")
     ref_txt = open(os.path.join(AQUI, "voces", f"{voz}.txt"), encoding="utf-8").read().strip()
-    texto = ETIQ.sub("", open(os.path.join(D, "voz.txt"), encoding="utf-8").read())
-    escenas = [" ".join(e.split()) for e in re.split(r"\n\s*\n", texto) if e.strip()]
-    if not escenas:
-        sys.exit("voz.txt vacío")
-
     from qwen_tts import Qwen3TTSModel
-    torch.set_num_threads(os.cpu_count() or 4)
+    if device == "cpu":
+        torch.set_num_threads(os.cpu_count() or 4)
     t0 = time.time()
-    m = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map="cpu", dtype=torch.float32)
+    m = Qwen3TTSModel.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base", device_map=device,
+                                      dtype=torch.bfloat16 if device != "cpu" else torch.float32)
     prompt = m.create_voice_clone_prompt(ref_audio=ref, ref_text=ref_txt, x_vector_only_mode=False)
     w_ref, sr_ref = sf.read(ref, dtype="float32")
     tono_ref = tono(w_ref if w_ref.ndim == 1 else w_ref.mean(1), sr_ref)
     oido = Oido()
-    print(f"Qwen listo en {time.time()-t0:.0f}s · {len(escenas)} escenas · tono de referencia {tono_ref:.0f} Hz", flush=True)
-
-    partes, sr, t1, repetidas = [], 24000, time.time(), 0
+    log(f"Qwen listo en {time.time()-t0:.0f}s · {len(escenas)} escenas · tono de referencia {tono_ref:.0f} Hz")
+    partes, sr, repetidas = [], 24000, 0
     for i, esc in enumerate(escenas):
         mejor, nota_mejor = None, -1.0
         for intento in range(INTENTOS):
@@ -116,24 +110,47 @@ def main():
             if ok:
                 break
             repetidas += 1
-            print(f"escena {i+1}: repito (parecido {parecido:.2f}, tono {t:.0f} Hz, {cps:.0f} car/s) → «{oido_txt[:70]}»", flush=True)
+            log(f"escena {i+1}: repito (parecido {parecido:.2f}, tono {t:.0f} Hz, {cps:.0f} car/s) → «{oido_txt[:70]}»")
         else:
             if nota_mejor < 0.6:
-                print(f"FALLO: la escena {i+1} no sale bien tras {INTENTOS} intentos", flush=True)
-                sys.exit(2)
-            print(f"escena {i+1}: me quedo con el mejor intento (nota {nota_mejor:.2f})", flush=True)
+                raise RuntimeError(f"la escena {i+1} no sale bien tras {INTENTOS} intentos")
+            log(f"escena {i+1}: me quedo con el mejor intento (nota {nota_mejor:.2f})")
         partes += [mejor, np.zeros(int(sr * PAUSA), np.float32)]
-
     audio = np.concatenate(partes[:-1])
-    pico = float(np.abs(audio).max()) or 1.0
-    audio = audio / pico * 0.9
+    audio = audio / (float(np.abs(audio).max()) or 1.0) * 0.9
+    return audio.astype(np.float32), sr, repetidas
+
+
+def escenas_de(D):
+    texto = ETIQ.sub("", open(os.path.join(D, "voz.txt"), encoding="utf-8").read())
+    return [" ".join(e.split()) for e in re.split(r"\n\s*\n", texto) if e.strip()]
+
+
+def main():
+    a = sys.argv[1:]
+    D = a[0]
+    voz = a[a.index("--voz") + 1] if "--voz" in a else "sinhumo"
+    escenas = escenas_de(D)
+    if not escenas:
+        sys.exit("voz.txt vacío")
+    t1 = time.time()
+    try:
+        if os.environ.get("VOZ_QWEN_REMOTO"):   # en el servidor: la GPU de Modal (función voz_qwen de explicalo-fabrica)
+            import io, modal
+            f = modal.Function.from_name(os.environ.get("VOZ_QWEN_APP", "explicalo-fabrica"), "voz_qwen")
+            audio, sr = sf.read(io.BytesIO(f.remote(escenas, voz)), dtype="float32")
+            rep = "?"
+        else:
+            audio, sr, rep = generar(escenas, voz, log=lambda x: print(x, flush=True))
+    except Exception as x:
+        print(f"FALLO: {str(x)[:300]}", flush=True)
+        sys.exit(2)
     wav = os.path.join(D, "voz_qwen.wav")
     sf.write(wav, audio, sr)
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", wav, "-ac", "1", "-ar", "44100", "-b:a", "192k",
                     os.path.join(D, "voz.mp3")], check=True)
     dur = len(audio) / sr
-    print(f"VOZ QWEN OK: {dur:.1f}s de audio en {time.time()-t1:.0f}s (x{(time.time()-t1)/dur:.1f}), "
-          f"{repetidas} repeticiones", flush=True)
+    print(f"VOZ QWEN OK: {dur:.1f}s de audio en {time.time()-t1:.0f}s (x{(time.time()-t1)/dur:.1f}), {rep} repeticiones", flush=True)
 
 
 if __name__ == "__main__":
