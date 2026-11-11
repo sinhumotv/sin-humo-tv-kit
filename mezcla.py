@@ -36,8 +36,23 @@ def guarda(x, nombre):
 # progresión de 8 compases y cambios cada pocos compases (entrada sin batería, cortes, tramos más tranquilos) para que no sea
 # un bucle idéntico durante todo el vídeo. Tres ambientes según "tono": tensa (La menor), ligera (Do mayor) y grave
 # (Re menor, lenta y sin batería). "musica": "clasica" en proyecto.json vuelve a la anterior.
+# v72 (11-nov-2026): cada vídeo con su propia variante (progresión, tonalidad y tempo elegidos con el título como semilla),
+# para que los cortos seguidos no suenen todos igual; el mismo vídeo siempre suena igual si se rehace.
+import zlib
+_rv = np.random.default_rng(zlib.crc32(str(P.get("titulo_noticia") or P.get("titulo") or "").encode()))
+_TR = int(_rv.choice([-3, -2, -1, 0, 1, 2]))
+_ALT = {"tensa": [None,
+                  [[57, 60, 64], [52, 55, 59], [53, 57, 60], [55, 59, 62], [57, 60, 64], [52, 55, 59], [50, 53, 57], [52, 56, 59]],
+                  [[57, 60, 64], [55, 59, 62], [53, 57, 60], [52, 56, 59]] * 2,
+                  [[57, 60, 64], [48, 52, 55], [55, 59, 62], [50, 54, 57], [57, 60, 64], [48, 52, 55], [53, 57, 60], [52, 56, 59]]],
+        "ligera": [None,
+                   [[53, 57, 60], [48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62], [55, 59, 62]]],
+        "grave": [None, [[50, 53, 57], [46, 50, 53], [43, 46, 50], [45, 49, 52]] * 2]}
+_PV = _rv.integers(0, 99)
+_DBPM = int(_rv.integers(-6, 7))
+
 def musica_nueva():
-    bpm = {"tensa": 104, "ligera": 112, "grave": 84}.get(tono, 104)
+    bpm = {"tensa": 104, "ligera": 112, "grave": 84}.get(tono, 104) + _DBPM
     beat = 60 / bpm; compas = 4 * beat
     n = int((DUR + 2) * SR)
     hz = lambda m: 440.0 * 2 ** ((m - 69) / 12)
@@ -45,6 +60,10 @@ def musica_nueva():
     PROG = {"tensa": [[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60], [50, 53, 57], [52, 56, 59]],
             "ligera": [[48, 52, 55], [55, 59, 62], [57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62], [53, 57, 60], [55, 59, 62]],
             "grave": [[50, 53, 57], [46, 50, 53], [53, 57, 60], [48, 52, 55], [50, 53, 57], [46, 50, 53], [55, 58, 62], [57, 61, 64]]}[tono if tono in ("tensa", "ligera", "grave") else "tensa"]
+    _alts = _ALT.get(tono if tono in _ALT else "tensa"); _p = _alts[_PV % len(_alts)]
+    if _p: PROG = _p
+    PROG = [[m + _TR for m in ac] for ac in PROG]
+    print(f"música: tono {tono}, variante {_PV % len(_alts)}, transporte {_TR:+d}, {bpm} bpm")
     grave = tono == "grave"
     pad, bajo, arp, bat = np.zeros(n), np.zeros(n), np.zeros(n), np.zeros(n)
 
