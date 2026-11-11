@@ -958,7 +958,7 @@
       return null;
     });
     // los no nombrados: repartidos; y nunca antes que el anterior (+0,3 s)
-    let prev = -1; for (let i = 0; i < n; i++) { if (r[i] == null) r[i] = ini + i * p0; if (prev >= 0 && r[i] < prev + .3) r[i] = prev + .3; prev = r[i]; }
+    let prev = -1; for (let i = 0; i < n; i++) { if (r[i] == null) r[i] = prev < 0 ? ini + i * p0 : Math.max(ini + i * p0, prev + Math.max(.3, Math.min(p0, (d - .5 - prev) / (n - i)))); if (prev >= 0 && r[i] < prev + .3) r[i] = prev + .3; prev = r[i]; }
     return (ENTRAN[key] = r);
   }
   function golpe(k, t) {        // empujón de cámara en cada palabra clave: sube en 0,07 s y vuelve en ~0,5 s

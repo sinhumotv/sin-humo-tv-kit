@@ -277,6 +277,26 @@ def aplauso(d=1.2):
 def sintonia(): return np.concatenate([ding(988)[:int(.14 * SR)], ding(1318)[:int(.14 * SR)], ding(1760)]) * .8
 def alarma(d=.8): t = _t(d); f = np.where((t * 4).astype(int) % 2 == 0, 880, 660); return np.sin(2 * np.pi * np.cumsum(f) / SR) * .25 * np.minimum(1, (d - t) / .05)
 GSFX = PRO and str(P.get("sonido_graficos", "si")) != "no"
+# v83: mismo cálculo que entradas() de motor_pro.js: cada elemento de una lista entra cuando la voz lo nombra
+import unicodedata
+def _nrm(w): return re.sub(r"[^a-z0-9ñ]", "", "".join(c for c in unicodedata.normalize("NFD", str(w).lower()) if unicodedata.category(c) != "Mn"))
+def entradas(k, its, d, ini=.3, paso=None):
+    e, s_ = P["escenas"][k], T["escenas"][k]; n = max(1, len(its)); p0 = paso or max(.45, (d - .8) / n)
+    ws = str(e.get("subtitulo") or e.get("hablado") or "").replace("*", "").split(); pal = s_.get("palabras") or []
+    if len(ws) == len(pal): ps = [(_nrm(w), a - s_["ini"] + (1 if k == 0 else 0)) for w, (a, *_r) in zip(ws, pal)]
+    else: ps = []
+    r, desde = [], 0
+    for it in its:
+        cl4 = [c for c in map(_nrm, str(it or "").split()) if len(c) >= 4 or re.search(r"\d", c)]; hit = None
+        for j in range(desde, len(ps)):
+            if cl4 and any(ps[j][0] == c or (len(c) > 5 and ps[j][0].startswith(c[:5])) for c in cl4): desde = j + 1; hit = max(.15, ps[j][1] - .2); break
+        r.append(hit)
+    prev = -1
+    for i in range(len(r)):
+        if r[i] is None: r[i] = ini + i * p0 if prev < 0 else max(ini + i * p0, prev + max(.3, min(p0, (d - .5 - prev) / (len(r) - i))))
+        if prev >= 0 and r[i] < prev + .3: r[i] = prev + .3
+        prev = r[i]
+    return r
 if GSFX:
     for k, (e, s_) in enumerate(zip(P["escenas"], T["escenas"])):
         v = e.get("visual") or {}; tp = v.get("tipo"); d = max(1.0, s_["fin"] - s_["ini"])
@@ -311,7 +331,7 @@ if GSFX:
             it = (v.get("items") or [])[:4]; n = max(1, len(it))
             for i, q in enumerate(it):
                 ok = q.get("ok") not in (False, "false") if isinstance(q, dict) else True
-                at(ding(1480) if ok else zumbido(), .25 + i * max(.45, (d - .8) / n) + .25, .7)
+                at(ding(1480) if ok else zumbido(), entradas(k, [str(x.get("texto") if isinstance(x, dict) else x) for x in it], d, .25)[i] + .25, .7)
         elif tp == "ultimahora":
             at(sintonia(), 0, .8)
         elif tp == "podio":
@@ -353,9 +373,9 @@ if GSFX:
             n = max(1, len((v.get("lineas") or [])[:3]))
             for i in range(n): at(pop, .15 + i * max(.5, (d - .6) / n), .8)
         elif tp in ("ranking", "lista", "pasos"):
-            it = (v.get("items") or [])[:5]; n = max(1, len(it))
+            it = (v.get("items") or [])[:5 if tp == "ranking" else 4]; n = max(1, len(it))
             for i in range(n):
-                q = (.25 + (n - 1 - i) * .22) if tp == "ranking" else (.3 + i * (max(1, d - .8) / n) if tp == "lista" else .2 + i * max(.45, (d - .6) / n))
+                q = (.25 + (n - 1 - i) * .22) if tp == "ranking" else entradas(k, [str(x.get("texto") if isinstance(x, dict) else x) for x in it[:4]], d, .3 if tp == "lista" else .2, None if tp == "lista" else max(.45, (d - .6) / n))[min(i, 3)]
                 at(pop, q, .6)
 guarda(sfx[:int(DUR * SR)], "efectos")
 
