@@ -167,6 +167,10 @@
       `<radialGradient id="gL"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>` +
       `<rect width="${W}" height="${H}" fill="url(#gF)"/>` + (GRAVE ? '' : `<rect width="${W}" height="${H}" fill="${['#ffffff', '#ffb59a', '#ffd36b'][k % 3]}" opacity="${[0, .12, .14][k % 3]}"/>`) +   // v64: tono distinto por escena
       `<circle cx="${(W * (.3 + .1 * Math.sin(t * .3 + k))).toFixed(1)}" cy="${(H * .3).toFixed(1)}" r="${Math.max(W, H) * .45}" fill="url(#gL)"/>` +
+      // v86: manchas de luz de color que flotan despacio por el fondo (aurora cálida), más vivas en cada palabra clave
+      (GRAVE ? '' : `<defs>${['#ff7a2f', '#ffc23d', '#ff6f91'].map((c, i) => `<radialGradient id="gA${i}"><stop offset="0" stop-color="${c}" stop-opacity=".55"/><stop offset=".6" stop-color="${c}" stop-opacity=".16"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>`).join('')}</defs>` +
+        [0, 1, 2].map(i => { const ph = i * 2.1 + k * .9, x = W * (.5 + .42 * Math.sin(t * (.11 + .03 * i) + ph)), y = H * (.45 + .38 * Math.cos(t * (.09 + .02 * i) + ph * 1.3)), r = Math.max(W, H) * (.38 + .06 * Math.sin(t * .4 + i));
+          return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="url(#gA${i})" opacity="${((i === 2 ? .45 : .7) * (1 + .5 * golpe(k, t))).toFixed(3)}"/>`; }).join('')) +
       [0, 1, 2].map(i => humo(i, t + k * 1.7)).join('') +
       // v60: partículas de humo que suben despacio (vida en el fondo)
       [...Array(HOR ? 14 : 12).keys()].map(i => { const sp = .035 + .02 * frac(i * .37), f = frac(t * sp + i * .618), x = W * frac(i * .414 + .13) + 30 * Math.sin(t * .7 + i), y = H * (1.05 - 1.1 * f), r = 4 + 9 * frac(i * .73);
@@ -1037,14 +1041,16 @@
     return o;
   }
   function subtitulos(k, t) {
-    const bl = bloquesKaraoke(k, HOR ? 34 : 30, HOR ? 34 : 18); if (!bl.length) return '';
+    // v86: en vertical, bloques más cortos (2 líneas de ~14 letras) y letra MUCHO más grande, que entra de golpe con rebote
+    const bl = bloquesKaraoke(k, HOR ? 34 : 24, HOR ? 34 : 14); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = back((t - B.a) / .16) || (i === 0 ? 1 : 0), maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1)));
-    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 46, Math.floor((HOR ? 1000 : W - 2 * SX - 60) / (Math.max(5, maxc) * .58)))), lh = fs * 1.18, yc = HOR ? 606 : 914, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
-    return `<g transform="translate(${W / 2} ${yc}) scale(${(HOR ? .88 + .12 * ent : .96 + .04 * ent).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
+    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 60, Math.floor((HOR ? 1000 : W - 2 * SX - 40) / (Math.max(5, maxc) * .58)))), lh = fs * 1.12, yc = HOR ? 606 : 920, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
+    const pe = HOR ? 0 : cl((t - B.a) / .3), giro = HOR ? 0 : (i % 2 ? 1 : -1) * 2.5 * (1 - eo(pe));
+    return `<g transform="translate(${W / 2} ${yc}) rotate(${giro.toFixed(2)}) scale(${(HOR ? .88 + .12 * ent : (i === 0 && k === 0 ? 1 : .7 + .3 * ent)).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
         const ahora = t >= p.a && t < p.b, dicho = t >= p.b, pp = ahora ? cl((t - p.a) / .1) : 1;
-        return `<tspan fill="${ahora ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : (p.clave ? ` font-size="${(fs * (1 + .14 * Math.sin(Math.PI * cl((t - p.a) / .22)))).toFixed(1)}"` : '')}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
+        return `<tspan fill="${ahora || (!HOR && p.clave && dicho) ? ORA : INK}"${ahora ? ` data-a="1"${HOR ? ` font-size="${(fs * (1 + .12 * (1 - pp))).toFixed(1)}"` : (p.clave ? ` font-size="${(fs * (1 + .14 * Math.sin(Math.PI * cl((t - p.a) / .22)))).toFixed(1)}"` : '')}` : ''} fill-opacity="${ahora || dicho ? 1 : (HOR ? .42 : .55)}">${esc(p.w.replace(/⁠/g, ' '))}</tspan>`;
       }).join(' ');
       return `<text x="${W / 2}" y="${(y0 + j * lh).toFixed(1)}" font-family="Inter" font-weight="900" font-size="${fs}"${su ? ' font-style="italic"' : ''} text-anchor="middle" letter-spacing="-.5" stroke="${BG2[0]}" stroke-width="${(fs * .22).toFixed(1)}" paint-order="stroke" stroke-linejoin="round" xml:space="preserve">${sp}</text>`;
     }).join('') + `</g>`;
