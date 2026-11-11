@@ -4,10 +4,6 @@ name: Prueba voz Chatterbox
 
 on:
   workflow_dispatch:
-    inputs:
-      expresividad:
-        description: "0.5 normal · 0.7 expresiva · 0.9 muy expresiva"
-        default: "0.7"
 
 jobs:
   voz:
@@ -30,7 +26,7 @@ jobs:
       - name: Generar voz
         env:
           PYTHONPATH: /tmp/space/chatterbox/src
-        run: python3 voz_chatterbox/voz.py voz_chatterbox/prueba --expresividad ${{ inputs.expresividad }}
+        run: python3 voz_chatterbox/voz.py voz_chatterbox/prueba
       - uses: actions/upload-artifact@v4
         with:
           name: prueba-voz-chatterbox
