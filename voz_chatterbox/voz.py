@@ -21,8 +21,8 @@ REGISTROS = {
     # perdían el acento de España y Chatterbox lo copiaba. El registro se consigue con los ajustes y, en el susurro,
     # con un tratamiento de audio (más bajo, sin graves, más íntimo).
     "normal":  ("referencia.wav", 0.80, 0.35, 0.75),
-    "emocion": ("referencia.wav", 1.05, 0.30, 0.80),
-    "intriga": ("referencia.wav", 0.60, 0.45, 0.75),
+    "emocion": ("referencia.wav", 1.60, 0.25, 0.90),
+    "intriga": ("referencia.wav", 0.70, 0.40, 0.80),
     "susurro": ("referencia.wav", 0.35, 0.50, 0.70),
 }
 ETIQ = re.compile(r"\[(susurro|emoci[oó]n|intriga|normal)\]", re.I)
@@ -37,7 +37,8 @@ def piezas(escena):
             continue
         partes = [p for p in re.split(r"(?<=[.!?…])\s+", trozo.strip()) if p]
         for p in partes:
-            if out and out[-1][0] == reg and len(out[-1][1]) + len(p) < 280:
+            # las preguntas van solas: así el modelo sube el tono al final, como una pregunta de verdad
+            if out and out[-1][0] == reg and len(out[-1][1]) + len(p) < 280 and not out[-1][1].endswith("?") and not p.endswith("?"):
                 out[-1] = (reg, out[-1][1] + " " + p)   # se dice de un tirón todo lo que se pueda: suena más natural y sin cortes
             else:
                 out.append((reg, p))
