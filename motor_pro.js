@@ -797,6 +797,13 @@
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
   function rotulo(k, L) {
+    // v62: en la PRIMERA escena de los cortos, el titular de la noticia grande (mucha gente empieza a ver sin sonido)
+    if (k === 0 && !HOR && P.titulo_noticia) {
+      let ls = partir(String(P.titulo_noticia), 24), fs = 34; if (ls.length > 2) { ls = partir(String(P.titulo_noticia), 30); fs = 28; } ls = ls.slice(0, 3); const w = Math.min(W - 2 * SX - 40, Math.max(...ls.map(l => l.length)) * fs * .56 + 44), h = ls.length * fs * 1.18 + 26, x = ZC.x - w / 2, y = 150;
+      return `<g transform="translate(${ZC.x} ${y + h / 2}) rotate(-1.5) scale(${back(L / .4).toFixed(3)}) translate(${-ZC.x} ${-(y + h / 2)})">` + caja(x, y, w, h, 16, INK, 0, 6) +
+        `<rect x="${x + 18}" y="${y + h - 9}" width="${((w - 36) * eo((L - .2) / .5)).toFixed(1)}" height="5" rx="2" fill="${ORA}"/>` +
+        ls.map((l, i) => tx(ZC.x, y + 13 + fs * .86 + i * fs * 1.18, esc(l), fs, '#fff', 'middle', 900)).join('') + `</g>`;
+    }
     const tit = String(E[k].titulo || ''); if (!tit) return '';
     return peg(HOR ? Z.x + 6 : ZC.x, HOR ? 104 : 196, tit, HOR ? 30 : 26, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4));
   }
