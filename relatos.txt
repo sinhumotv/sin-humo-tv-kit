@@ -98,3 +98,4 @@
 2026-11-11|12:00|Procne y Filomela|pregunta|YO 6af4191b095081ea08c1c8cb IN 6af4191b1da76fd3d2cb10bf TI 6af4191c54dc8a476483ec7c|img=mixto|12:17
 2026-11-11|15:00|El rapto de Ganimedes|increible|YO 6af41d1133d9422c21b374a2 IN 6af41d127e9ab194b7f95fb7 TI 6af41d1327e91ec769badd3c|img=mixto|14:56
 2026-11-11|18:00|El mito de Adonis|sabias|YO 6af42169dad19848c695e69a IN 6af4216a3ccc64b07b82a417 TI 6af4216b33d9422c21b4ce2f|img=mixto|17:34
+2026-11-11|21:00|Los gigantes Alóadas|consecuencia|YO 6af4258c3ccc64b07b83fece IN 6af4258c7e9ab194b7fbf565 TI 6af4258d60e4cf0fafb2a258|img=ia|20:36
