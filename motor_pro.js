@@ -212,7 +212,89 @@
   }
   // v80: iconos extra dibujados con emoji (Noto Color Emoji): más vocabulario para noticias variadas
   const ICO_EMO = { avion: '✈️', tren: '🚆', hospital: '🏥', escuela: '🏫', movil: '📱', fuego: '🔥', lluvia: '🌧️', nieve: '❄️', sol: '☀️', microfono: '🎤', tele: '📺', futbol: '⚽', urna: '🗳️', candado: '🔒', ordenador: '💻', barco: '🚢', camion: '🚚', medicina: '💊', virus: '🦠', trigo: '🌾', fabrica: '🏭', policia: '🚓', ambulancia: '🚑', bombero: '🚒', agua: '💧', terremoto: '🌋', arbol: '🌳', cohete: '🚀', robot: '🤖', grafica: '📈', bajada: '📉', bombilla: '💡', libro: '📚', maleta: '🧳', comida: '🍽️', gasolina: '⛽', llave: '🔑', regalo: '🎁', trofeo: '🏆', musica: '🎵', cine: '🎬' };
-  const iconoX = (n, x, y, s, L, c) => ICO_EMO[n] ? `<text x="${x}" y="${y + 62 * s}" font-family="Noto Color Emoji" font-size="${(175 * s).toFixed(0)}" text-anchor="middle">${ICO_EMO[n]}</text>` : icono(n, x, y, s, L, c);
+  // ---------- v91: EMOTICONOS PROPIOS de sin humo TV (vectoriales, con contorno, degradados y animados) ----------
+  // Pablo: «en vez de emoticonos como los del WhatsApp, emoticonos más sofisticados y mejor hechos, todo animado».
+  // Cada uno se dibuja en una caja de 100 x 100 centrada en (0, 0). emojiVec(caracter, tamaño, t) los pinta; los que no
+  // están dibujados aquí y existen como icono vectorial del kit salen dentro de una pegatina redonda; el resto no se pinta.
+  const EK = `stroke="${INK}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"`;
+  const parp = (t, f = 0) => { const x = (t + f) % 2.8; return x < .12 ? .12 : 1; };   // parpadeo cada 2,8 s
+  const EDEF = `<defs><radialGradient id="eF" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#fff3a6"/><stop offset=".5" stop-color="#ffc93c"/><stop offset="1" stop-color="#ff9420"/></radialGradient>` +
+    `<radialGradient id="eR" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#ffb08a"/><stop offset=".5" stop-color="#ff5a3c"/><stop offset="1" stop-color="#d42a1e"/></radialGradient>` +
+    `<linearGradient id="eL" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e5372b"/><stop offset=".45" stop-color="#ff8a1f"/><stop offset="1" stop-color="#ffe14d"/></linearGradient>` +
+    `<linearGradient id="eV" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7be3a2"/><stop offset="1" stop-color="#1f9d61"/></linearGradient>` +
+    `<linearGradient id="eA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fd4ff"/><stop offset="1" stop-color="#2f62e6"/></linearGradient>` +
+    `<linearGradient id="eO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff07a"/><stop offset="1" stop-color="#ffb21a"/></linearGradient></defs>`;
+  const cara = (fill = 'url(#eF)') => `<circle r="46" fill="${fill}" ${EK}/><ellipse cx="-17" cy="-25" rx="14" ry="7" fill="#fff" opacity=".5" transform="rotate(-30 -17 -25)"/>`;
+  const ojo = (x, y, r, mx, my, b = 1) => `<g transform="translate(${x} ${y}) scale(1 ${b})"><ellipse rx="${r}" ry="${r * 1.15}" fill="#fff" ${EK} stroke-width="3"/><circle cx="${(mx * r * .45).toFixed(1)}" cy="${(my * r * .45).toFixed(1)}" r="${(r * .5).toFixed(1)}" fill="${INK}"/><circle cx="${(mx * r * .45 - r * .18).toFixed(1)}" cy="${(my * r * .45 - r * .2).toFixed(1)}" r="${(r * .16).toFixed(1)}" fill="#fff"/></g>`;
+  const mejillas = `<ellipse cx="-27" cy="12" rx="8" ry="5" fill="#ff6f91" opacity=".45"/><ellipse cx="27" cy="12" rx="8" ry="5" fill="#ff6f91" opacity=".45"/>`;
+  const gota = (x, y, s = 1, c = '#7cc8ff') => `<path transform="translate(${x} ${y}) scale(${s})" d="M0 -12 C6 -3 9 2 9 6 A9 9 0 0 1 -9 6 C-9 2 -6 -3 0 -12 Z" fill="${c}" ${EK} stroke-width="3"/><ellipse cx="${x - 3 * s}" cy="${y + 3 * s}" rx="${2 * s}" ry="${3 * s}" fill="#fff" opacity=".7"/>`;
+  const EMV = {
+    sorpresa: t => { const m = 12 + 3 * Math.sin(t * 9); return cara() + ojo(-16, -10, 11, 0, .1, parp(t)) + ojo(16, -10, 11, 0, .1, parp(t)) +
+      `<path d="M-30 -30 Q-18 -40 -6 -32 M30 -30 Q18 -40 6 -32" fill="none" ${EK}/><ellipse cx="0" cy="22" rx="9" ry="${m.toFixed(1)}" fill="#7a1f2b" ${EK}/>` +
+      `<ellipse cx="-38" cy="18" rx="9" ry="14" fill="url(#eF)" ${EK} transform="rotate(20 -38 18)"/><ellipse cx="38" cy="18" rx="9" ry="14" fill="url(#eF)" ${EK} transform="rotate(-20 38 18)"/>` + gota(30, -36 + 6 * ((t * 1.3) % 1), .9); },
+    explota: t => { const p = 1 + .15 * Math.sin(t * 10), r = (t * 90) % 360;
+      return `<g transform="translate(0 -40) rotate(${r.toFixed(0)}) scale(${p.toFixed(2)})"><path d="${[...Array(16).keys()].map(i => { const a = i * Math.PI / 8, R = i % 2 ? 16 : 34; return (i ? 'L' : 'M') + (Math.cos(a) * R).toFixed(1) + ' ' + (Math.sin(a) * R).toFixed(1); }).join(' ')}Z" fill="url(#eL)" ${EK}/></g>` +
+        cara() + `<path d="M-42 -14 Q0 -30 42 -14" fill="none" ${EK}/>` + ojo(-16, 2, 10, Math.sin(t * 6), 0) + ojo(16, 2, 10, -Math.sin(t * 6), 0) + `<ellipse cx="0" cy="28" rx="11" ry="8" fill="#7a1f2b" ${EK}/>`; },
+    mueca: t => cara() + ojo(-16, -10, 10, .3, 0, parp(t)) + ojo(16, -10, 10, .3, 0, parp(t)) + `<path d="M-30 -27 L-6 -22 M30 -27 L6 -22" ${EK}/>` +
+      `<rect x="-26" y="10" width="52" height="22" rx="10" fill="#fff" ${EK}/><path d="M-26 21 H26 M-13 10 V32 M0 10 V32 M13 10 V32" ${EK} stroke-width="3"/>` + gota(34, -30, .8),
+    piensa: t => { const ce = 3 * Math.sin(t * 2); return cara() + ojo(-16, -10, 10, .6, -.7, parp(t)) + ojo(16, -10, 10, .6, -.7, parp(t)) +
+      `<path d="M-30 -26 Q-18 -30 -6 -26 M8 ${-32 - ce} Q20 ${-38 - ce} 30 ${-30 - ce}" fill="none" ${EK}/><path d="M-12 24 Q4 18 18 20" fill="none" ${EK}/>` +
+      `<g transform="translate(${(18 + 2 * Math.sin(t * 3)).toFixed(1)} 38) rotate(-20)"><rect x="-14" y="-10" width="30" height="20" rx="10" fill="url(#eF)" ${EK}/><rect x="-4" y="-30" width="10" height="24" rx="5" fill="url(#eF)" ${EK}/></g>`; },
+    enfado: t => { const v = (t * .9) % 1; return cara('url(#eR)') + `<path d="M-32 -30 L-6 -18 M32 -30 L6 -18" ${EK} stroke-width="5"/>` + ojo(-16, -6, 9, 0, 0) + ojo(16, -6, 9, 0, 0) + `<path d="M-18 30 Q0 16 18 30" fill="none" ${EK}/>` +
+      [-1, 1].map(s => `<g opacity="${(1 - v).toFixed(2)}" transform="translate(${s * (40 + 18 * v)} ${-30 - 20 * v}) scale(${(.6 + .6 * v).toFixed(2)})"><circle r="9" fill="#fff" ${EK} stroke-width="3"/><circle cx="${s * 9}" cy="-6" r="7" fill="#fff" ${EK} stroke-width="3"/></g>`).join(''); },
+    risa: t => { const b = Math.sin(t * 14); return `<g transform="rotate(${(8 * b).toFixed(1)})">` + cara() + `<path d="M-26 -12 Q-16 -24 -6 -12 M6 -12 Q16 -24 26 -12" fill="none" ${EK}/>` +
+      `<path d="M-28 6 Q0 6 28 6 Q24 36 0 36 Q-24 36 -28 6 Z" fill="#7a1f2b" ${EK}/><path d="M-22 7 H22 V13 Q0 16 -22 13 Z" fill="#fff"/>` + gota(-40, -6 + 4 * b, .9) + gota(40, -6 - 4 * b, .9) + mejillas + `</g>`; },
+    ojosblanco: t => `<g transform="rotate(${(-6 + 3 * Math.sin(t * 1.5)).toFixed(1)})">` + cara() + ojo(-16, -10, 11, .2 * Math.sin(t * 2), -1) + ojo(16, -10, 11, .2 * Math.sin(t * 2), -1) + `<path d="M-14 24 H14" ${EK}/></g>`,
+    triste: t => { const c = (t * .8) % 1; return cara() + `<path d="M-30 -22 Q-20 -32 -8 -30 M30 -22 Q20 -32 8 -30" fill="none" ${EK}/>` + ojo(-16, -8, 10, 0, .4, parp(t)) + ojo(16, -8, 10, 0, .4, parp(t)) +
+      `<path d="M-16 30 Q0 18 16 30" fill="none" ${EK}/>` + `<g opacity="${(1 - c * c).toFixed(2)}">${gota(-20, 6 + 34 * c, .9)}</g>`; },
+    guino: t => cara() + ojo(-16, -10, 10, .2, 0, parp(t)) + `<path d="M8 -10 Q16 ${-16 + 3 * Math.sin(t * 6)} 26 -10" fill="none" ${EK}/><path d="M-20 16 Q0 34 20 16" fill="none" ${EK}/>` + mejillas,
+    ojos: t => { const m = Math.sin(t * 2.2), b = parp(t); return ojo(-22, 0, 22, m, .1, b) + ojo(22, 0, 22, m, .1, b); },
+    fuego: t => { const f = (a, s) => 1 + a * Math.sin(t * s); return `<g transform="translate(0 46)"><path transform="scale(${f(.05, 11).toFixed(3)} ${f(.1, 9).toFixed(3)})" d="M0 0 C-34 0 -42 -26 -30 -50 C-26 -38 -18 -36 -16 -42 C-20 -64 -6 -84 6 -96 C6 -78 22 -70 30 -54 C34 -62 34 -70 32 -76 C46 -60 44 -30 34 -14 C28 -4 16 0 0 0 Z" fill="url(#eL)" ${EK}/>` +
+      `<path transform="scale(${f(.08, 13).toFixed(3)} ${f(.14, 10).toFixed(3)})" d="M0 -4 C-16 -4 -20 -18 -12 -32 C-8 -24 -2 -24 0 -30 C2 -44 10 -50 14 -54 C14 -42 22 -34 20 -20 C18 -10 10 -4 0 -4 Z" fill="#fff4a3"/></g>`; },
+    dinero: t => { const w = 25 * Math.sin(t * 16), y = 4 * Math.sin(t * 4); return `<g transform="translate(0 ${y.toFixed(1)})">` + [-1, 1].map(s => `<g transform="translate(${s * 30} -6) rotate(${(s * (-20 + w)).toFixed(1)})"><path d="M0 0 C${s * 14} -24 ${s * 34} -26 ${s * 44} -18 C${s * 34} -10 ${s * 30} -2 ${s * 22} 2 C${s * 30} 6 ${s * 30} 10 ${s * 22} 12 Z" fill="#fff" ${EK} stroke-width="3"/></g>`).join('') +
+      `<g transform="rotate(-8)"><rect x="-36" y="-20" width="72" height="42" rx="8" fill="url(#eV)" ${EK}/><rect x="-28" y="-13" width="56" height="28" rx="5" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2.5"/><circle r="11" fill="#fff" ${EK} stroke-width="3"/><text y="6" font-family="Inter" font-weight="900" font-size="17" text-anchor="middle" fill="#1f9d61">€</text></g></g>`; },
+    explosion: t => { const p = 1 + .1 * Math.sin(t * 12), st = (n, R, r) => [...Array(n * 2).keys()].map(i => { const a = i * Math.PI / n + .2, q = i % 2 ? r : R; return (i ? 'L' : 'M') + (Math.cos(a) * q).toFixed(1) + ' ' + (Math.sin(a) * q).toFixed(1); }).join(' ') + 'Z';
+      return `<g transform="rotate(${(t * 20 % 360).toFixed(0)}) scale(${p.toFixed(3)})"><path d="${st(10, 48, 28)}" fill="#e5372b" ${EK}/><path d="${st(8, 32, 18)}" fill="#ffb21a"/><path d="${st(6, 18, 10)}" fill="#fff4a3"/></g>`; },
+    alerta: t => { const g = .5 + .5 * Math.sin(t * 7); return `<circle r="${(44 + 6 * g).toFixed(1)}" fill="#ffc61a" opacity="${(.25 * g).toFixed(2)}"/><path d="M0 -40 L44 36 H-44 Z" fill="url(#eO)" ${EK} stroke-width="5"/><rect x="-5" y="-16" width="10" height="30" rx="5" fill="${INK}"/><circle cy="25" r="6" fill="${INK}"/>`; },
+    rayo: t => `<circle r="${(36 + 8 * Math.abs(Math.sin(t * 10))).toFixed(1)}" fill="#ffe14d" opacity=".25"/><g transform="rotate(${(4 * Math.sin(t * 9)).toFixed(1)})"><path d="M8 -46 L-26 6 H-2 L-12 46 L26 -8 H2 Z" fill="#ffc61a" ${EK}/><path d="M4 -34 L-14 2" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/></g>`,
+    corazon: t => { const p = 1 + .12 * Math.max(0, Math.sin(t * 7)) ** 4; return `<g transform="scale(${p.toFixed(3)})"><path d="M0 40 C-40 12 -46 -6 -42 -20 C-38 -38 -14 -42 0 -22 C14 -42 38 -38 42 -20 C46 -6 40 12 0 40 Z" fill="url(#eR)" ${EK}/><ellipse cx="-20" cy="-20" rx="8" ry="5" fill="#fff" opacity=".55" transform="rotate(-35 -20 -20)"/></g>`; },
+    brillo: t => [[0, 0, 40, 0], [-30, -28, 16, 1.3], [30, 26, 14, 2.1]].map(([x, y, r, f]) => { const p = .75 + .25 * Math.sin(t * 6 + f * 3); return `<path transform="translate(${x} ${y}) scale(${p.toFixed(3)}) rotate(${(t * 30 + f * 40) % 360})" d="M0 ${-r} Q${r * .16} ${-r * .16} ${r} 0 Q${r * .16} ${r * .16} 0 ${r} Q${-r * .16} ${r * .16} ${-r} 0 Q${-r * .16} ${-r * .16} 0 ${-r} Z" fill="url(#eO)" ${EK} stroke-width="3"/>`; }).join(''),
+    aplauso: t => { const a = Math.abs(Math.sin(t * 9)), mano = sg => `<g transform="translate(${(sg * (4 + 10 * a)).toFixed(1)} 4) rotate(${(sg * (10 + 16 * a)).toFixed(1)})"><path d="M${sg * -2} 34 C${sg * -18} 34 ${sg * -20} 20 ${sg * -20} 6 V-26 A6 6 0 0 1 ${sg * -8} -26 V-6 V-34 A6 6 0 0 1 ${sg * 4} -34 V-6 V-30 A6 6 0 0 1 ${sg * 16} -30 V0 C${sg * 16} 20 ${sg * 12} 34 ${sg * -2} 34 Z" fill="url(#eF)" ${EK} stroke-width="3.5"/><path d="M${sg * 16} 4 C${sg * 26} -6 ${sg * 32} 2 ${sg * 24} 12 L${sg * 14} 22" fill="url(#eF)" ${EK} stroke-width="3.5"/></g>`;
+      return mano(-1) + mano(1) + `<path d="M-40 -36 l-8 -8 M0 -50 V-60 M40 -36 l8 -8" ${EK} opacity="${(1 - a).toFixed(2)}"/>`; },
+    check: t => `<g transform="scale(${(1 + .05 * Math.sin(t * 5)).toFixed(3)})"><rect x="-40" y="-40" width="80" height="80" rx="20" fill="url(#eV)" ${EK}/><path d="M-20 0 L-5 16 L22 -16" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></g>`,
+    cruz: t => `<g transform="rotate(${(5 * Math.sin(t * 6)).toFixed(1)})"><rect x="-40" y="-40" width="80" height="80" rx="20" fill="url(#eR)" ${EK}/><path d="M-18 -18 L18 18 M18 -18 L-18 18" stroke="#fff" stroke-width="10" stroke-linecap="round"/></g>`,
+    pregunta: t => `<g transform="rotate(${(10 * Math.sin(t * 3)).toFixed(1)})"><text y="34" font-family="Inter" font-weight="900" font-size="104" text-anchor="middle" fill="url(#eR)" stroke="${INK}" stroke-width="5" paint-order="stroke" stroke-linejoin="round">?</text></g>`,
+    exclama: t => `<g transform="scale(${(1 + .08 * Math.sin(t * 9)).toFixed(3)})"><text y="36" font-family="Inter" font-weight="900" font-size="104" text-anchor="middle" fill="url(#eR)" stroke="${INK}" stroke-width="5" paint-order="stroke" stroke-linejoin="round">!</text></g>`,
+    sube: t => { const p = (t * .7) % 1.2, q = Math.min(1, p); return `<rect x="-42" y="-42" width="84" height="84" rx="18" fill="#fff" ${EK}/><path d="M-28 24 L-8 4 L6 14 L28 -16" fill="none" stroke="${VER}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` + (q > .95 ? `<path d="M14 -18 L30 -18 L30 -2" fill="none" stroke="${VER}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` : ''); },
+    baja: t => { const p = (t * .7) % 1.2, q = Math.min(1, p); return `<rect x="-42" y="-42" width="84" height="84" rx="18" fill="#fff" ${EK}/><path d="M-28 -18 L-8 2 L6 -8 L28 22" fill="none" stroke="${ROJ}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` + (q > .95 ? `<path d="M14 24 L30 24 L30 8" fill="none" stroke="${ROJ}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` : ''); },
+    megafono: t => { const o = (t * 1.5) % 1; return `<g transform="rotate(-15)"><path d="M-34 -10 H-18 L18 -34 V34 L-18 10 H-34 Z" fill="url(#eR)" ${EK}/><rect x="-28" y="8" width="12" height="22" rx="4" fill="#fff" ${EK} stroke-width="3"/>` +
+      [0, 1].map(j => { const f = (o + j * .5) % 1; return `<path d="M${28 + 14 * f} -18 Q${40 + 18 * f} 0 ${28 + 14 * f} 18" fill="none" ${EK} opacity="${(1 - f).toFixed(2)}"/>`; }).join('') + `</g>`; },
+    sol: t => `<g transform="rotate(${(t * 25 % 360).toFixed(0)})">${[...Array(10).keys()].map(i => `<path transform="rotate(${i * 36})" d="M0 -46 L7 -32 H-7 Z" fill="url(#eO)" ${EK} stroke-width="3"/>`).join('')}</g><circle r="26" fill="url(#eF)" ${EK}/>` + `<path d="M-10 4 Q0 12 10 4" fill="none" ${EK} stroke-width="3"/><circle cx="-9" cy="-6" r="3" fill="${INK}"/><circle cx="9" cy="-6" r="3" fill="${INK}"/>`,
+    lluvia: t => [...Array(5).keys()].map(i => { const f = (t * 1.6 + i * .37) % 1; return `<path d="M${-28 + i * 14} ${10 + 34 * f} l-4 10" stroke="#2f62e6" stroke-width="5" stroke-linecap="round" opacity="${(1 - f).toFixed(2)}"/>`; }).join('') +
+      `<path d="M-36 10 A16 16 0 0 1 -26 -18 A22 22 0 0 1 14 -24 A16 16 0 0 1 38 -4 A14 14 0 0 1 30 10 Z" fill="#fff" ${EK}/>`,
+    nieve: t => `<g transform="rotate(${(t * 30 % 360).toFixed(0)})">${[0, 60, 120].map(a => `<g transform="rotate(${a})"><path d="M0 -42 V42 M-10 -32 L0 -22 L10 -32 M-10 32 L0 22 L10 32" fill="none" stroke="#2f62e6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>`).join('')}</g><circle r="8" fill="#fff" ${EK} stroke-width="3"/>`,
+    gota: t => `<g transform="scale(${(1 + .05 * Math.sin(t * 6)).toFixed(3)} ${(1 - .05 * Math.sin(t * 6)).toFixed(3)})"><path d="M0 -44 C18 -16 30 0 30 14 A30 30 0 0 1 -30 14 C-30 0 -18 -16 0 -44 Z" fill="url(#eA)" ${EK}/><ellipse cx="-12" cy="10" rx="6" ry="10" fill="#fff" opacity=".6"/></g>`,
+    bombilla: t => { const g = .5 + .5 * Math.sin(t * 5); return `<circle cy="-8" r="${(40 + 6 * g).toFixed(1)}" fill="#ffe14d" opacity="${(.3 * g).toFixed(2)}"/><path d="M-14 22 C-14 10 -30 2 -30 -14 A30 30 0 0 1 30 -14 C30 2 14 10 14 22 Z" fill="url(#eO)" ${EK}/><rect x="-14" y="22" width="28" height="16" rx="4" fill="#cfc5b0" ${EK} stroke-width="3"/><path d="M-6 6 L0 -6 L6 6" fill="none" stroke="#ff8a1f" stroke-width="3"/>`; },
+  };
+  const EMOJI_VEC = { '😱': 'sorpresa', '😮': 'sorpresa', '😲': 'sorpresa', '😳': 'sorpresa', '🤯': 'explota', '😬': 'mueca', '😅': 'mueca', '🤔': 'piensa', '🧐': 'piensa', '😡': 'enfado', '😠': 'enfado', '😤': 'enfado', '🤬': 'enfado',
+    '😂': 'risa', '🤣': 'risa', '😆': 'risa', '😄': 'risa', '🙄': 'ojosblanco', '😒': 'ojosblanco', '😢': 'triste', '😥': 'triste', '😔': 'triste', '😭': 'triste', '😞': 'triste', '😉': 'guino', '😏': 'guino', '👀': 'ojos',
+    '🔥': 'fuego', '💸': 'dinero', '💰': 'dinero', '💶': 'dinero', '💵': 'dinero', '🤑': 'dinero', '💥': 'explosion', '⚠': 'alerta', '🚨': 'alerta', '⚡': 'rayo', '❤': 'corazon', '💔': 'corazon', '👏': 'aplauso', '🙌': 'aplauso',
+    '✨': 'brillo', '⭐': 'brillo', '🌟': 'brillo', '✅': 'check', '✔': 'check', '❌': 'cruz', '🚫': 'cruz', '❓': 'pregunta', '❔': 'pregunta', '❗': 'exclama', '‼': 'exclama', '📈': 'sube', '📉': 'baja', '📢': 'megafono', '📣': 'megafono',
+    '☀': 'sol', '🌞': 'sol', '🌧': 'lluvia', '☔': 'lluvia', '🌦': 'lluvia', '⛈': 'lluvia', '❄': 'nieve', '🌨': 'nieve', '💧': 'gota', '🌊': 'gota', '💡': 'bombilla' };
+  // emojis que ya existen como icono vectorial del kit (motor_v.js): salen en una pegatina redonda
+  const EMOJI_ICO = { '🏠': 'casa', '🏡': 'casa', '🏘': 'casa', '⚖': 'balanza', '🚗': 'coche', '🚙': 'coche', '🏢': 'edificio', '🏬': 'edificio', '🏦': 'banco', '🏛': 'banco', '📄': 'documento', '📝': 'documento', '📰': 'documento', '📋': 'documento',
+    '📍': 'pin', '🛡': 'escudo', '⏰': 'reloj', '⏱': 'reloj', '🕒': 'reloj', '⌛': 'reloj', '📅': 'calendario', '🗓': 'calendario', '🌡': 'termometro', '🌍': 'globo', '🌎': 'globo', '🌐': 'globo', '👑': 'corona', '🏅': 'medalla', '🥇': 'medalla',
+    '🔨': 'mazo', '🕊': 'paloma', '🛒': 'carrito', '🪙': 'moneda', '💳': 'cartera', '👛': 'cartera', '🕯': 'vela', '🛢': 'barril', '👤': 'persona', '🧑': 'persona' };
+  const emojiClave = ch => String(ch || '').replace(/[️‍]/g, '').trim();
+  const tieneEmoji = ch => { const c = emojiClave(ch); return !!(EMOJI_VEC[c] || EMOJI_ICO[c]); };
+  function emojiVec(ch, size, t) {
+    const c = emojiClave(ch), n = EMOJI_VEC[c], k = size / 100;
+    if (n) return `<g transform="scale(${k.toFixed(3)})">${EDEF}${EMV[n](t)}</g>`;
+    const ic = EMOJI_ICO[c]; if (!ic) return '';
+    return `<g transform="scale(${k.toFixed(3)})"><circle r="46" fill="${BLA}" ${EK}/><g transform="scale(${['balanza', 'mazo', 'paloma', 'globo'].includes(ic) ? .26 : .32})">${icono(ic, 0, 0, 1.1, t)}</g></g>`;
+  }
+  const ICO_VEC = { fuego: 'fuego', lluvia: 'lluvia', nieve: 'nieve', sol: 'sol', agua: 'gota', grafica: 'sube', bajada: 'baja', bombilla: 'bombilla' };   // v91: estos iconos, con el dibujo propio
+  const iconoX = (n, x, y, s, L, c) => ICO_VEC[n] ? `<g transform="translate(${x} ${y}) scale(${(1.9 * s).toFixed(3)})">${EDEF}${EMV[ICO_VEC[n]](L)}</g>` : ICO_EMO[n] ? `<text x="${x}" y="${y + 62 * s}" font-family="Noto Color Emoji" font-size="${(175 * s).toFixed(0)}" text-anchor="middle">${ICO_EMO[n]}</text>` : icono(n, x, y, s, L, c);
   const sticker = (x, y, r, L, t0, nombre, c) => { const e = back((L - t0) / .4); return e <= 0 ? '' : `<g transform="translate(${x} ${y}) rotate(${(-6 + 3 * Math.sin(L * 1.4)).toFixed(2)}) scale(${e.toFixed(3)})"><circle cx="0" cy="${SOM * 1.3}" r="${r}" fill="${INK}" opacity=".2" filter="url(#somS)"/><circle cx="0" cy="0" r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="3"/><g transform="scale(${(r / 150).toFixed(3)})">${iconoX(nombre, 0, 0, 1.25, L, c)}</g></g>`; };
   // ---------- v56: datos del mapa de España (contorno simplificado, lon/lat) ----------
   const ESP = [[-8.9, 43.2], [-8.3, 43.55], [-7.7, 43.75], [-7.0, 43.55], [-5.8, 43.65], [-4.5, 43.42], [-3.8, 43.48], [-3.0, 43.35], [-1.8, 43.38],
@@ -1017,7 +1099,7 @@
   // v88: emoji de REACCIÓN grande (😱 💸 👀 🔥…) que salta en la palabra clave de la escena, se balancea y se va (como las
   // pegatinas de los editores de TikTok). Lo elige el guion ("reaccion"), nunca en noticias graves ni en mención/cierre.
   function reaccion(k, t) {
-    const em = String(E[k].reaccion || '').trim().slice(0, 8), tp = (E[k].visual || {}).tipo; if (!em || GRAVE || ['mencion', 'cierre'].includes(tp)) return '';
+    const em = String(E[k].reaccion || '').trim().slice(0, 8), tp = (E[k].visual || {}).tipo; if (!em || !tieneEmoji(em) || GRAVE || ['mencion', 'cierre'].includes(tp)) return '';   // v91: solo emoticonos propios
     const S = T.escenas[k], c = claves(k), t0 = c.length ? c[0] : S.ini + Math.min(1.2, (S.fin - S.ini) * .3), x = t - t0, vida = 1.6;
     if (x < 0 || x > vida) return '';
     // en vertical: abajo a la izquierda (la columna de botones de TikTok/Reels está a la derecha, de media pantalla para abajo);
@@ -1027,7 +1109,7 @@
     let o = `<g transform="translate(${cx.toFixed(1)} ${cy.toFixed(1)}) rotate(${rot.toFixed(1)}) scale(${(e * sale).toFixed(3)})">`;
     const an = eo(x / .45); if (an < 1) o += `<circle r="${(fs * (.5 + .55 * an)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="${(8 * (1 - an)).toFixed(1)}" opacity="${(1 - an).toFixed(2)}"/>` +
       [...Array(8).keys()].map(i => { const a_ = i * Math.PI / 4 + .3, r1 = fs * (.55 + .35 * an), r2 = r1 + 22 * (1 - an); return `<path d="M${(Math.cos(a_) * r1).toFixed(1)} ${(Math.sin(a_) * r1).toFixed(1)} L${(Math.cos(a_) * r2).toFixed(1)} ${(Math.sin(a_) * r2).toFixed(1)}" stroke="${i % 2 ? ORO : ORA}" stroke-width="6" stroke-linecap="round" opacity="${(1 - an).toFixed(2)}"/>`; }).join('');
-    return o + `<ellipse cx="0" cy="${fs * .52}" rx="${fs * .32}" ry="${fs * .07}" fill="${INK}" opacity=".15"/><text x="0" y="${(fs * .36).toFixed(1)}" font-family="Noto Color Emoji" font-size="${fs}" text-anchor="middle">${esc(em)}</text></g>`;
+    return o + `<ellipse cx="0" cy="${fs * .52}" rx="${fs * .32}" ry="${fs * .07}" fill="${INK}" opacity=".15"/>${emojiVec(em, fs * 1.05, x + 1.3)}</g>`;
   }
   function rotulo(k, L) {
     // v62: en la PRIMERA escena de los cortos, el titular de la noticia grande (mucha gente empieza a ver sin sonido)
@@ -1039,10 +1121,10 @@
     }
     const tit = String(E[k].titulo || ''); if (!tit) return '';
     // v79: emoji de la escena (opcional, nunca en noticias graves) que salta al lado del rótulo y se balancea
-    const emo = !GRAVE && E[k].emoji && !['mencion', 'cierre'].includes((E[k].visual || {}).tipo) ? String(E[k].emoji).trim().slice(0, 8) : '', fsR = HOR ? 30 : 30, xR = HOR ? Z.x + 6 : ZC.x, yR = HOR ? 104 : 266;   // v87: rótulo de escena más grande en vertical
+    const emo = !GRAVE && E[k].emoji && tieneEmoji(E[k].emoji) && !['mencion', 'cierre'].includes((E[k].visual || {}).tipo) ? String(E[k].emoji).trim().slice(0, 8) : '', fsR = HOR ? 30 : 30, xR = HOR ? Z.x + 6 : ZC.x, yR = HOR ? 104 : 266;   // v87: rótulo de escena más grande en vertical
     let em = '';
     if (emo) { const wR = tit.length * fsR * .6 + fsR, xe = HOR ? xR + wR + 26 : xR + wR / 2 + 30, ee = back((L - .25) / .35);
-      if (ee > 0) em = `<g data-emo="${(10 * Math.sin(L * 3.2)).toFixed(2)}|${ee.toFixed(3)}|${(fsR * 1.75).toFixed(1)}" transform="translate(${xe.toFixed(1)} ${yR - fsR * .35}) rotate(${(10 * Math.sin(L * 3.2)).toFixed(2)}) scale(${ee.toFixed(3)})"><text x="0" y="${(fsR * .5).toFixed(1)}" font-family="Noto Color Emoji" font-size="${(fsR * 1.5).toFixed(0)}" text-anchor="middle" data-emot="1">${esc(emo)}</text></g>`; }
+      if (ee > 0) em = `<g data-emo="${(10 * Math.sin(L * 3.2)).toFixed(2)}|${ee.toFixed(3)}|${(fsR * 1.75).toFixed(1)}" transform="translate(${xe.toFixed(1)} ${yR - fsR * .35}) rotate(${(10 * Math.sin(L * 3.2)).toFixed(2)}) scale(${ee.toFixed(3)})"><g data-emot="1">${emojiVec(emo, fsR * 1.7, L)}</g></g>`; }   /* v91: emoticono propio (no el de WhatsApp) */
     return peg(xR, yR, tit, fsR, INK, BLA, HOR ? 'start' : 'middle', 1, -2, back(L / .4)) + em;
   }
 
@@ -1132,6 +1214,7 @@
     }
     return TRS[k] || 'barrido';
   }
+  window.EMOJIVEC = emojiVec;   // v91: para la galería de emoticonos (pruebas)
   window.render = function (t) {
     t = cl(t, 0, DUR - .001);
     let k = T.escenas.findIndex(s => t < s.fin); if (k < 0) k = N - 1;
