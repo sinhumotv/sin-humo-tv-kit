@@ -99,7 +99,9 @@ if cand:
     lista = '\n'.join(f'{i}. {c["titulo"]} · {c["desc"]}' for i, c in enumerate(cand))
     elec = gemini(f'Noticia: «{N["tema"]}». {N["hechos"][:900]}\nFotos libres de Wikimedia Commons:\n{lista}\n'
                   f'Elige hasta {MAX_FOTOS} DISTINTAS (cuantas más válidas, mejor; sin repetir el mismo sitio o persona más de 2 veces) que muestren de verdad a quien o lo que sale en la noticia (personas públicas, lugares, edificios, '
-                  'instituciones, objetos). La PRIMERA va en la miniatura: nunca un político de partido (mejor un lugar, una institución o la escena). '
+                  'instituciones, objetos). La PRIMERA va en la miniatura y tiene que contar el ASUNTO de un vistazo (11-nov-2026: salió un hotel cualquiera en una '
+                  'miniatura sobre la huelga general): la escena típica de la noticia (huelga → manifestación o piquetes; elecciones → urnas; incendio → fuego y '
+                  'bomberos; vivienda → bloques de pisos), nunca un edificio genérico de fondo ni un político de partido; sin pancartas con insultos o palabrotas. '
                   'Si eliges políticos, de varias partes, nunca solo de un partido. '
                   'Nunca menores, víctimas, primeros planos de personas que no sean cargos públicos, logos ni carteles '
                   'de partidos. Responde solo JSON: {"elegidas": [números]}', 0.2)

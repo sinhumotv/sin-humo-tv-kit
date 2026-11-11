@@ -136,7 +136,9 @@ def _sh_noticia_larga(previos):
         '"hechos": "450-700 palabras en español de España, ordenadas así: qué ha pasado (con fechas), contexto y antecedentes, datos clave con cifras, '
         'qué dice cada parte, qué puede pasar ahora y cómo afecta a la gente", "fuentes": ["los medios usados"], "grave": true si hay víctimas o tragedia, '
         '"fotos": ["8 búsquedas DISTINTAS para FOTOS REALES en Wikimedia Commons (cuantas más fotos reales lleve el vídeo, mejor): nombres propios de personas públicas, lugares, edificios, instituciones u '
-        'objetos de la noticia; nunca víctimas ni particulares"]}'), 0.3)
+        'objetos de la noticia; nunca víctimas ni particulares; LA PRIMERA, la ESCENA que resume el asunto de un vistazo para la miniatura, en español y '
+        'como se titula en Commons (huelga → «Huelga general manifestación Madrid»; elecciones → «urna colegio electoral España»; vivienda → «edificio de viviendas '
+        'alquiler España»; incendio → «incendio forestal bomberos España»)"]}'), 0.3)   # (11-nov-2026) Pablo: el fondo de la miniatura tiene que tener que ver con la noticia
     if len(str(n.get('hechos') or '').split()) < 300: raise RuntimeError('la noticia elegida no tiene datos suficientes para un largo')
     n['fuentes'] = [f for f in (n.get('fuentes') or []) if f] or sorted({x['medio'] for x in elegidos})
     n['enlaces'] = [x['url'] for x in elegidos]; n['fuentes_enlaces'] = [x['medio'] for x in elegidos]; n['modelo'] = modelo
