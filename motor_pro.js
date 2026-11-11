@@ -222,6 +222,10 @@
           tx(xx + an / 2, base - h - 16, esc(contar(String(x), cl((L - t0) / .7))), Math.min(HOR ? 40 : 32, an * .45), INK) +
           tx(xx + an / 2, base + (HOR ? 42 : 48), esc(et[i] || ''), Math.min(HOR ? 28 : 24, paso * .3), INK, 'middle', 800) + `</g>`;
       });
+      // v65: destello en la barra más alta cuando termina de subir
+      const im = vs.reduce((b, x, i) => Math.abs(num(x)) > Math.abs(num(vs[b])) ? i : b, 0), tM = .25 + im * Math.min(.35, d * .5 / n) + .7, xs = L - tM;
+      if (xs > 0 && xs < .7 && vs.length) { const cxs = x0 + im * paso + an / 2, cys = base - Math.max(12, alto * Math.abs(num(vs[im])) / mx) - 56, r = 18 + 40 * eo(xs / .7);
+        o += [...Array(8).keys()].map(i => { const a = i * Math.PI / 4; return `<path d="M${(cxs + r * .5 * Math.cos(a)).toFixed(1)} ${(cys + r * .5 * Math.sin(a)).toFixed(1)} L${(cxs + r * Math.cos(a)).toFixed(1)} ${(cys + r * Math.sin(a)).toFixed(1)}" stroke="${ORO}" stroke-width="6" stroke-linecap="round" opacity="${(1 - xs / .7).toFixed(2)}"/>`; }).join(''); }
       return o + `<path d="M${Z.x} ${base} H${Z.x + Z.w}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`;
     },
     lista(v, L, d) {
@@ -240,7 +244,8 @@
     frase(v, L, d) {
       const size = HOR ? 48 : 40, max = HOR ? 38 : 24, alto = altoCin(v.texto, size, max), hC = alto + (HOR ? 110 : 150), wC = HOR ? Z.w - 160 : Z.w - 16, x = ZC.x - wC / 2, y = ZC.y - hC / 2, e = back(L / .4);
       return `<g transform="translate(${ZC.x} ${ZC.y}) scale(${e.toFixed(3)}) rotate(-1) translate(${-ZC.x} ${-ZC.y})">` + caja(x, y, wC, hC, 26, BLA, 6, SOM + 3) +
-        `<text x="${x + 22}" y="${y + (HOR ? 96 : 112)}" font-family="Georgia, serif" font-weight="900" font-size="${HOR ? 170 : 140}" fill="${ORA}">“</text></g>` +
+        `<text x="${x + 22}" y="${y + (HOR ? 96 : 112)}" font-family="Georgia, serif" font-weight="900" font-size="${HOR ? 170 : 140}" fill="${ORA}">“</text>` +
+        `<text x="${x + wC - 22}" y="${y + (HOR ? 96 : 112)}" font-family="Georgia, serif" font-weight="900" font-size="${HOR ? 170 : 140}" text-anchor="end" fill="${ORA}" opacity="${eo((L - d * .55) / .25).toFixed(2)}" transform="rotate(${(8 * (1 - eo((L - d * .55) / .3))).toFixed(1)} ${x + wC - 60} ${y + 60})">”</text></g>` +   // v65: cierre de comillas al acabar la frase
         cinetico(v.texto, ZC.x, y + (HOR ? 76 : 104) + size * .5, size, L, { max, t0: .3, paso: Math.min(.1, d * .5 / Math.max(6, String(v.texto || '').split(' ').length)) }) +
         (v.fuente ? peg(ZC.x + (HOR ? 300 : 150), y + hC + 4, v.fuente, HOR ? 26 : 30, INK, '#fff', 'middle', eo((L - d * .45) / .3), -3, back((L - d * .45) / .35)) : '');
     },
