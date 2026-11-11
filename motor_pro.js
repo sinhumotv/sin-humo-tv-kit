@@ -713,13 +713,24 @@
       const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 320, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 }) +
-        `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>`;
+        `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>` +
+        // v61: una mano pulsa el botón y suena la campana
+        (() => { if (L < .9) return ''; const ph = frac((L - .9) / 1.6), pres = ph > .45 && ph < .6, hx = tx0 + (HOR ? 140 : 116) + (1 - eo(cl((L - .9) / .4))) * 90, hy = by + 26 + (pres ? 6 : 0);
+          const mano = `<g transform="translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(-20) scale(${HOR ? 1.1 : .95})"><path d="M0 0 v-34 a9 9 0 0 1 18 0 v26 a9 9 0 0 1 16 2 a9 9 0 0 1 16 4 a9 9 0 0 1 15 6 v22 c0 18 -12 30 -30 30 h-14 c-12 0 -20 -6 -26 -16 l-16 -26 a9 9 0 0 1 14 -10 z" fill="${BLA}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>`;
+          const bx = tx0 - (HOR ? 240 : 196), byy = by, sw = ph > .55 ? 18 * Math.sin((L - .9) * 28) * Math.exp(-(ph - .55) * 8) : 0, eb = back((L - 1.0) / .3);
+          const campana = eb <= 0 ? '' : `<g transform="translate(${bx} ${byy}) rotate(${sw.toFixed(1)} 0 -26) scale(${(eb * (HOR ? 1.1 : .9)).toFixed(3)})"><path d="M-22 14 c4 -6 4 -14 4 -24 a18 18 0 0 1 36 0 c0 10 0 18 4 24 z" fill="${ORO}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><circle cy="20" r="7" fill="${ORO}" stroke="${INK}" stroke-width="4"/><circle cy="-30" r="5" fill="${INK}"/></g>`;
+          return campana + mano; })();
     },
     cierre(v, L, d) {
       const e = back(L / .5), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupi({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
         cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
-        peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4));
+        peg(tx0, HOR ? ZC.y + 130 : Z.y + 320 + hc + 40, 'sin humo TV', HOR ? 34 : 28, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) +
+        // v61: bocadillo de comentario con «escribiendo…» (invita a comentar)
+        (() => { const e2 = back((L - .9) / .4); if (e2 <= 0) return ''; const bx = HOR ? lx + 120 : lx + 120, by = HOR ? ly - 130 : ly - 70, w = 120, h = 74;
+          return `<g transform="translate(${bx} ${by}) rotate(${(6 + 3 * Math.sin(L * 2)).toFixed(2)}) scale(${e2.toFixed(3)})">` + caja(-w / 2, -h / 2, w, h, 26, BLA, 5) +
+            `<path d="M-30 ${h / 2 - 3} l-14 22 l30 -22 Z" fill="${BLA}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><path d="M-32 ${h / 2 - 2} h18" stroke="${BLA}" stroke-width="8"/>` +
+            [-1, 0, 1].map(j => `<circle cx="${j * 28}" cy="${(-4 * Math.max(0, Math.sin(L * 7 - j * .9))).toFixed(1)}" r="9" fill="${ORA}"/>`).join('') + `</g>`; })();
     },
   };
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)

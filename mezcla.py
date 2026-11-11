@@ -259,7 +259,12 @@ if GSFX:
         g = .5 if GRAVE_ else 1.0
         def at(x, dt, gain=1.0):
             if b + dt >= s_["ini"] - .02: pon(x, b + dt, gain * g)
-        if tp == "cifra" and any(c.isdigit() for c in str(v.get("valor") or "")):
+        if tp == "mencion" and not GRAVE_:
+            for q in np.arange(.9 + 1.6 * .45, d - .1, 1.6):
+                at(clic(900, .04), q, .6); at(suma(ding(1046), .7 * ding(1318)) * .8, q + .16, .5)
+        elif tp == "cierre":
+            at(pop, .9, .6)
+        elif tp == "cifra" and any(c.isdigit() for c in str(v.get("valor") or "")):
             fin = min(1.0, d * .45)
             for q in np.arange(.03, fin, .06): at(clic(1600 + 1400 * q / fin, .02), q, .35)
             at(golpe_seco() * .6, fin, .6)
