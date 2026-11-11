@@ -1,0 +1,31 @@
+# Crea candidatas de la voz propia de sin humo TV con Qwen3-TTS VoiceDesign (solo descripción, sin audio de terceros).
+name: Diseñar voz Qwen
+
+on:
+  workflow_dispatch:
+
+jobs:
+  voz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -q -U qwen-tts soundfile
+      - name: Crear candidatas
+        run: |
+          python3 voz_chatterbox/disenar_voz.py salida
+          for f in salida/*.wav; do ffmpeg -loglevel error -y -i "$f" -af loudnorm=I=-16 -b:a 160k "${f%.wav}.mp3"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidatas-voz-qwen
+          path: |
+            salida/*.wav
+            salida/*.mp3
+            salida/descripciones.txt
