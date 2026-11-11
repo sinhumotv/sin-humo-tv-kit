@@ -24,8 +24,10 @@ REGISTROS = {
     "emocion": ("referencia.wav", 1.60, 0.25, 0.90),
     "intriga": ("referencia.wav", 0.70, 0.40, 0.80),
     "susurro": ("referencia.wav", 0.35, 0.50, 0.70),
+    # vocalización muy clara (el modelo se ciñe más a su pronunciación de España: erres, sílabas)
+    "claro":   ("referencia.wav", 0.50, 0.70, 0.60),
 }
-ETIQ = re.compile(r"\[(susurro|emoci[oó]n|intriga|normal)\]", re.I)
+ETIQ = re.compile(r"\[(susurro|emoci[oó]n|intriga|normal|claro)\]", re.I)
 
 
 def piezas(escena):
