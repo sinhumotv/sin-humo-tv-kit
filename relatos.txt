@@ -95,3 +95,4 @@
 2026-11-10|18:00|La venganza de Orestes|sabias|YO 6af2d18ce261c09accac2554 IN 6af2d18dd35dff5701eab94c TI 6af2d18ed35dff5701eab97d|img=mixto|18:20
 2026-11-10|21:00|El dragón de las Hespérides|nadie|YO 6af2d6f86043a21c9f59aaaf IN 6af2d6f969951ef15d5840d3 TI 6af2d6face343d8a01840042|img=ia|20:38
 2026-11-11|08:00|Los bueyes de Gerión|final|YO 6af416139a3abc82a1d7da8c IN 6af416149a3abc82a1d7dadc TI 6af416159a3abc82a1d7db35|img=ia|08:32
+2026-11-11|12:00|Procne y Filomela|pregunta|YO 6af4191b095081ea08c1c8cb IN 6af4191b1da76fd3d2cb10bf TI 6af4191c54dc8a476483ec7c|img=mixto|12:17
