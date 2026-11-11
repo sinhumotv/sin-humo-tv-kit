@@ -1036,17 +1036,39 @@
         cinetico(txt, HOR ? fx + fw + (Z.w - fw) / 2 + 10 : ZC.x, HOR ? ZC.y - alto / 2 + size * .8 : fy + fh + 22 + size * .7, size, L, { max: HOR ? 14 : max, t0: .35 });
     },
     mencion(v, L, d) {
-      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26),   /* v90: Lupi llega volando desde la esquina y rebota al aterrizar */ lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 120 : Z.y + 320 + hm + 50, pul = 1 + .05 * Math.sin(L * 5), clic = frac(L / 1.6) > .8 ? .94 : 1;
-      return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : 'feliz', brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
-        cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 320, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 }) +
-        // v78: en noticias graves, sin botón, sin mano ni campana: solo Lupi seria y la frase
-        (GRAVE ? '' : `<g transform="translate(${tx0} ${by}) scale(${(pul * clic * back((L - .6) / .4)).toFixed(3)})">${HOR ? caja(-190, -44, 380, 88, 44, ROJ, 6) : caja(-150, -36, 300, 72, 36, ROJ, 5)}<text x="0" y="${HOR ? 15 : 12}" font-family="Inter" font-weight="900" font-size="${HOR ? 40 : 32}" text-anchor="middle" fill="#fff">SUSCRÍBETE</text></g>`) +
-        // v61: una mano pulsa el botón y suena la campana
-        (() => { if (L < .9 || GRAVE) return ''; const ph = frac((L - .9) / 1.6), pres = ph > .45 && ph < .6, hx = tx0 + (HOR ? 140 : 116) + (1 - eo(cl((L - .9) / .4))) * 90, hy = by + 26 + (pres ? 6 : 0);
-          const mano = `<g transform="translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(-20) scale(${HOR ? 1.1 : .95})"><path d="M0 0 v-34 a9 9 0 0 1 18 0 v26 a9 9 0 0 1 16 2 a9 9 0 0 1 16 4 a9 9 0 0 1 15 6 v22 c0 18 -12 30 -30 30 h-14 c-12 0 -20 -6 -26 -16 l-16 -26 a9 9 0 0 1 14 -10 z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></g>`;
-          const bx = tx0 - (HOR ? 240 : 196), byy = by, sw = ph > .55 ? 18 * Math.sin((L - .9) * 28) * Math.exp(-(ph - .55) * 8) : 0, eb = back((L - 1.0) / .3);
-          const campana = eb <= 0 ? '' : `<g transform="translate(${bx} ${byy}) rotate(${sw.toFixed(1)} 0 -26) scale(${(eb * (HOR ? 1.1 : .9)).toFixed(3)})"><path d="M-22 14 c4 -6 4 -14 4 -24 a18 18 0 0 1 36 0 c0 10 0 18 4 24 z" fill="${ORO}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle cy="20" r="7" fill="${ORO}" stroke="${INK}" stroke-width="2.5"/><circle cy="-30" r="5" fill="${INK}"/></g>`;
-          return campana + mano; })();
+      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26),   /* v90: Lupi llega volando desde la esquina y rebota al aterrizar */ lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, hm = HOR ? 0 : altoCin(v.texto || 'Los hechos, sin humo', 44, 22), by = HOR ? ZC.y + 100 : Z.y + 300 + hm + 44;
+      let o = `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: GRAVE ? 'seria' : (L > 1.6 ? 'guino' : 'feliz'), brazos: GRAVE ? '' : 'saluda', mira: [0, 0] })}</g>` +
+        cinetico(v.texto || 'Los hechos, sin humo', tx0, HOR ? ZC.y - 70 : Z.y + 300, HOR ? 58 : 44, L, { max: HOR ? 20 : 22, t0: .2 });
+      if (GRAVE) return o;   // v78: en noticias graves, sin botones: solo Lupi seria y la frase
+      // v97: botones de verdad (Pablo: «hay que currarse los botones, es lo que engancha»): SUSCRÍBETE brillante que una mano pulsa
+      // → onda + confeti → se convierte en «SUSCRITO ✓» gris, la campana suena con su «+1», y salen ME GUSTA, COMENTA y COMPARTE
+      const f = Math.min(1, Math.max(.55, (d - .4) / 2.6)), T_ = x => x * f, tP = T_(1.35), pr = L - tP, pulsado = pr > 0;
+      const w = HOR ? 400 : 330, h = HOR ? 92 : 78, apr = pr > -.08 && pr < .12 ? .9 : 1, eB = back((L - T_(.55)) / .4) * apr * (1 + (pulsado ? 0 : .04 * Math.sin(L * 6)));
+      o += `<g transform="translate(${tx0} ${by}) scale(${eB.toFixed(3)})">` + boton(-w / 2, -h / 2, w, h, pulsado ? 'SUSCRITO' : 'SUSCRÍBETE', pulsado ? '#9a97a3' : '#ff3b30', pulsado ? '#6f6c78' : '#c4161c', HOR ? 38 : 32, pulsado ? 'check' : 'play', L) + `</g>`;
+      if (pr > 0 && pr < .7) { const q = eo(pr / .7);   // onda y confeti al pulsar
+        o += `<rect x="${(tx0 - w / 2 - 30 * q).toFixed(1)}" y="${(by - h / 2 - 30 * q).toFixed(1)}" width="${(w + 60 * q).toFixed(1)}" height="${(h + 60 * q).toFixed(1)}" rx="${(h / 2 + 30 * q).toFixed(1)}" fill="none" stroke="#ff3b30" stroke-width="${(8 * (1 - q)).toFixed(1)}" opacity="${(1 - q).toFixed(2)}"/>` +
+          [...Array(16).keys()].map(i => { const a = i / 16 * Math.PI * 2, r = (w * .45 + 120 * q), x = tx0 + Math.cos(a) * r * (1 + .1 * (i % 3)), y = by + Math.sin(a) * r * .45 + 60 * q * q;
+            return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="12" height="7" rx="2" fill="${[ORA, AZU, VER, ORO, ROJ][i % 5]}" transform="rotate(${(i * 47 + pr * 500).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})" opacity="${(1 - q * q).toFixed(2)}"/>`; }).join(''); }
+      // mano que entra, pulsa y se va
+      const mE = eo(cl((L - T_(.9)) / .35)), mS = eo(cl((L - tP - .35) / .4)), hx = tx0 + w * .32 + (1 - mE) * 160 + mS * 140, hy = by + h * .2 + (pr > -.08 && pr < .12 ? 8 : 0) + (1 - mE) * 90 + mS * 80;
+      if (mE > 0 && mS < 1) o += `<g transform="translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(-20) scale(${HOR ? 1.1 : .95})" opacity="${(1 - mS).toFixed(2)}"><path d="M0 0 v-34 a9 9 0 0 1 18 0 v26 a9 9 0 0 1 16 2 a9 9 0 0 1 16 4 a9 9 0 0 1 15 6 v22 c0 18 -12 30 -30 30 h-14 c-12 0 -20 -6 -26 -16 l-16 -26 a9 9 0 0 1 14 -10 z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></g>`;
+      // campana: aparece con el pulsado, suena y le sale un «+1»
+      const eb = back((L - tP - .1) / .3); if (eb > 0) { const bx = tx0 - w / 2 - (HOR ? 62 : 52), sw = 22 * Math.sin((L - tP) * 26) * Math.exp(-(L - tP) * 2.5), u = cl((L - tP - .3) / .9);
+        o += `<g transform="translate(${bx} ${by}) rotate(${sw.toFixed(1)} 0 -26) scale(${(eb * (HOR ? 1.1 : .95)).toFixed(3)})"><path d="M-22 14 c4 -6 4 -14 4 -24 a18 18 0 0 1 36 0 c0 10 0 18 4 24 z" fill="${ORO}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle cy="20" r="7" fill="${ORO}" stroke="${INK}" stroke-width="2.5"/><circle cy="-30" r="5" fill="${INK}"/>` +
+          `<circle cx="18" cy="-22" r="11" fill="${ROJ}" stroke="#fff" stroke-width="3"/><text x="18" y="-17" font-family="Inter" font-weight="900" font-size="13" text-anchor="middle" fill="#fff">1</text></g>` +
+          (u > 0 && u < 1 ? `<text x="${bx}" y="${(by - 50 - 60 * u).toFixed(1)}" font-family="Inter" font-weight="900" font-size="30" text-anchor="middle" fill="${ROJ}" stroke="#fff" stroke-width="5" paint-order="stroke" opacity="${(1 - u * u).toFixed(2)}">+1</text>` : ''); }
+      // fila de botones redondos: me gusta (corazón que se llena), comenta y comparte
+      if (!HOR) { const yR = by + h / 2 + 62, R = 30;
+        [['like', -130], ['coment', 0], ['comp', 130]].forEach(([q, dx], i) => { const t0 = tP + .25 + i * .18, e2 = back((L - t0) / .35); if (e2 <= 0) return;
+          const lleno = q === 'like' && L > t0 + .35, lat = q === 'like' && L > t0 + .35 ? 1 + .25 * Math.exp(-(L - t0 - .35) * 6) * Math.sin((L - t0 - .35) * 20) : 1;
+          o += `<g transform="translate(${tx0 + dx} ${yR}) scale(${(e2 * lat).toFixed(3)})"><circle cy="5" r="${R}" fill="${INK}" opacity=".18" filter="url(#somS)"/><circle r="${R}" fill="${BLA}" stroke="${INK}" stroke-width="3"/>` +
+            (q === 'like' ? `<path d="M0 13 C-15 3 -18 -4 -16 -9 C-14 -16 -5 -17 0 -9 C5 -17 14 -16 16 -9 C18 -4 15 3 0 13 Z" fill="${lleno ? '#ff3b30' : 'none'}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`
+              : q === 'coment' ? `<path d="M-15 -11 h30 a5 5 0 0 1 5 5 v14 a5 5 0 0 1 -5 5 h-16 l-9 8 v-8 h-5 a5 5 0 0 1 -5 -5 v-14 a5 5 0 0 1 5 -5 z" fill="#bfe3ff" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>` + [-7, 0, 7].map((x, j) => `<circle cx="${x}" cy="${(1 - 2 * Math.max(0, Math.sin(L * 7 - j))).toFixed(1)}" r="2.5" fill="${INK}"/>`).join('')
+              : `<path d="M-12 12 v-6 c0 -9 7 -14 16 -14 h2 v-8 l14 13 l-14 13 v-8 h-3 c-7 0 -12 3 -15 10 z" fill="#bfe8cf" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>`) + `</g>` +
+            tx(tx0 + dx, yR + R + 22, q === 'like' ? 'ME GUSTA' : q === 'coment' ? 'COMENTA' : 'COMPARTE', 15, INK, 'middle', 900, `opacity="${cl((L - t0 - .2) / .2).toFixed(2)}"`);
+          if (lleno) { const u = cl((L - t0 - .35) / .8); if (u < 1) o += [0, 1, 2].map(j => `<path transform="translate(${(tx0 + dx + (j - 1) * 16 + 6 * Math.sin(u * 8 + j)).toFixed(1)} ${(yR - 30 - 70 * u - j * 8).toFixed(1)}) scale(${(.5 + .2 * j) * (1 - u * .5)})" d="M0 13 C-15 3 -18 -4 -16 -9 C-14 -16 -5 -17 0 -9 C5 -17 14 -16 16 -9 C18 -4 15 3 0 13 Z" fill="#ff3b30" opacity="${(1 - u).toFixed(2)}"/>`).join(''); }
+        }); }
+      return o;
     },
     cierre(v, L, d) {
       const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, largo = !HOR && altoCin(v.texto || '¿Tú qué opinas?', 46, 20) > 120, fC = largo ? 36 : 46, mC = largo ? 26 : 20, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', fC, mC);   /* v96: texto largo → letra menor (no baja hasta los subtítulos) */
@@ -1054,8 +1076,9 @@
         cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : fC, L, { max: HOR ? 20 : mC, t0: .2 }) +
         (HOR ? peg(tx0, ZC.y + 130, 'sin humo TV', 34, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) :
           // v95: en vertical, «Comenta» con una flecha animada que señala el botón de comentarios de TikTok / Reels / Shorts (columna derecha)
-          (() => { const yP = Math.min(Z.y + 320 + hc + 40, Z.y + Z.h), q = eio(cl((L - 1) / .5)), b = 6 * Math.sin(L * 6) * cl((L - 1.5) / .3), x1 = tx0 + 92, y1 = yP - 6, x2 = W - 92 + b, y2 = yP + 70 + b;
-            return peg(tx0, yP, 'COMENTA', 30, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4) * (1 + .04 * Math.sin(L * 5))) +
+          (() => { const yP = Math.min(Z.y + 320 + hc + 40, Z.y + Z.h - 22), q = eio(cl((L - 1) / .5)), b = 6 * Math.sin(L * 6) * cl((L - 1.5) / .3), x1 = tx0 + 132, y1 = yP - 6, x2 = W - 92 + b, y2 = yP + 70 + b;
+            const eC = back((L - .7) / .4) * (1 + .04 * Math.sin(L * 5)), wC = 250, hC = 66;   /* v97: botón brillante con bocadillo */
+            return (eC > 0 ? `<g transform="translate(${tx0} ${yP}) rotate(-2) scale(${eC.toFixed(3)})">` + boton(-wC / 2, -hC / 2, wC, hC, 'COMENTA', '#ff9a3d', ORA, 28, 'coment', L) + `</g>` : '') +
               (q > 0 ? `<path d="M${x1} ${y1} Q${x2 - 10} ${y1 - 40} ${x2} ${y2}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` +
                 (q > .95 ? `<path d="M${x2 - 18} ${y2 - 12} L${x2} ${y2} L${x2 + 10} ${y2 - 20}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>` : '') : ''); })()) +
         // v61: bocadillo de comentario con «escribiendo…» (invita a comentar)
@@ -1156,6 +1179,19 @@
     const an = eo(x / .45); if (an < 1) o += [...Array(8).keys()].map(i => { const a_ = i * Math.PI / 4 + .3, r1 = r * (1.05 + .4 * an), r2 = r1 + 16 * (1 - an); return `<path d="M${(Math.cos(a_) * r1).toFixed(1)} ${(Math.sin(a_) * r1).toFixed(1)} L${(Math.cos(a_) * r2).toFixed(1)} ${(Math.sin(a_) * r2).toFixed(1)}" stroke="${i % 2 ? ORO : ORA}" stroke-width="5" stroke-linecap="round" opacity="${(1 - an).toFixed(2)}"/>`; }).join('');
     o += `<circle cx="0" cy="${r * .25}" r="${r}" fill="${INK}" opacity=".18" filter="url(#somS)"/><path d="M${r * .62} ${r * .55} L${r * 1.25} ${r * .95} L${r * .25} ${r * .9} Z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="3"/><path d="M${r * .45} ${r * .74} L${r * .3} ${r * .86}" stroke="${BLA}" stroke-width="6"/>`;
     return o + emojiVec(em, r * 1.55, x + 1.3) + `</g>`;
+  }
+  // v97: botón brillante y moderno (degradado, brillo arriba, reflejo que pasa, sombra suave) con icono
+  function boton(x, y, w, h, txt, c1, c2, fs, ico, L) {
+    const id = 'bt' + c1.slice(1), sh = frac(L / 2.2), r = h / 2, ix = x + r * 1.05, iy = y + h / 2;
+    const icon = ico === 'play' ? `<rect x="${ix - 17}" y="${iy - 12}" width="34" height="24" rx="7" fill="#fff"/><path d="M${ix - 5} ${iy - 7} L${ix + 8} ${iy} L${ix - 5} ${iy + 7} Z" fill="${c2}"/>`
+      : ico === 'check' ? `<path d="M${ix - 11} ${iy} l7 8 l14 -15" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>`
+      : ico === 'coment' ? `<path d="M${ix - 14} ${iy - 10} h28 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-14 l-8 7 v-7 h-6 a4 4 0 0 1 -4 -4 v-12 a4 4 0 0 1 4 -4 z" fill="#fff"/>` : '';
+    return `<defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient><clipPath id="${id}c"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}"/></clipPath></defs>` +
+      `<rect x="${x + 4}" y="${y + 10}" width="${w - 8}" height="${h}" rx="${r}" fill="${c2}" opacity=".35" filter="url(#somS)"/>` +
+      `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="url(#${id})" stroke="${INK}" stroke-width="3"/>` +
+      `<g clip-path="url(#${id}c)"><rect x="${x + 10}" y="${y + 5}" width="${w - 20}" height="${h * .38}" rx="${h * .19}" fill="#fff" opacity=".28"/>` +
+      `<path d="M${(x - 80 + (w + 160) * sh).toFixed(1)} ${y} l34 0 l-40 ${h} l-34 0 Z" fill="#fff" opacity=".3"/></g>` + icon +
+      `<text x="${x + w / 2 + (ico ? r * .45 : 0)}" y="${y + h / 2 + fs * .36}" font-family="Inter" font-weight="900" font-size="${fs}" text-anchor="middle" fill="#fff" letter-spacing=".5">${esc(txt)}</text>`;
   }
   function rotulo(k, L) {
     // v62: en la PRIMERA escena de los cortos, el titular de la noticia grande (mucha gente empieza a ver sin sonido)

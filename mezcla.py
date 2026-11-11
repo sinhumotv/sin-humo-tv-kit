@@ -306,8 +306,11 @@ if GSFX:
             if b + dt >= s_["ini"] - .02: pon(x, b + dt, gain * g)
         if e.get("emoji") and not GRAVE_ and tp not in ("mencion", "cierre"): at(pop, .27, .25)   # v79: el emoji de la cabecera salta
         if tp == "mencion" and not GRAVE_:
-            for q in np.arange(.9 + 1.6 * .45, d - .1, 1.6):
-                at(clic(900, .04), q, .6); at(suma(ding(1046), .7 * ding(1318)) * .8, q + .16, .5)
+            # v97: mismo guion que el motor: el botón aparece, la mano lo pulsa (clic), campana, y salen me gusta / comenta / comparte
+            f_ = min(1, max(.55, (d - .4) / 2.6)); tP = 1.35 * f_
+            at(pop, .55 * f_, .35); at(clic(900, .04), tP, .7); at(suma(ding(1046), .7 * ding(1318)) * .8, tP + .12, .55)
+            for i in range(3): at(pop, tP + .25 + i * .18, .3)
+            at(ding(1568) * .5, tP + .25 + .35, .35)
         elif tp == "cierre":
             at(pop, .9, .6)
         elif tp == "cifra" and any(c.isdigit() for c in str(v.get("valor") or "")):
