@@ -392,7 +392,7 @@
     mapa(v, L, d) {
       const can0 = (v.lugares || []).some(s => (CIUDADES[norm(s)] || [0])[0] < -12), alto = can0 ? 10.1 : 8.2;   // con Canarias, el mapa baja hasta su recuadro
       const lon0 = -9.6, lat0 = 43.95, k = HOR ? Math.min(44, 380 / alto) : Math.min(55, Z.w / 9.96, (Z.h - 90) / alto), kx = k * .766, mw = 13.4 * kx, mh = alto * k;
-      const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 10, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
+      const ox = HOR ? Z.x + 30 : ZC.x - mw / 2, oy = HOR ? ZC.y - mh / 2 : Z.y + 34, P_ = (lo, la) => [ox + (lo - lon0) * kx, oy + (lat0 - la) * k];
       const dPath = 'M' + ESP.map(([lo, la]) => P_(lo, la).map(n => n.toFixed(1)).join(' ')).join(' L') + ' Z';
       const p = eo(L / .7), f = eo((L - .4) / .4);
       let o = `<path d="${dPath}" transform="translate(${SOM} ${SOM})" fill="${INK}" opacity="${(f * .22).toFixed(3)}" filter="url(#somS)"/>` +
@@ -420,11 +420,12 @@
         o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(8 + 40 * rip).toFixed(1)}" fill="none" stroke="${ROJ}" stroke-width="4" opacity="${(1 - rip).toFixed(2)}"/>` +
           `<g transform="translate(${x.toFixed(1)} ${(y - cae).toFixed(1)}) scale(${(e * (HOR ? .5 : .55)).toFixed(3)})"><path d="M0 0 C-30 -40 -40 -55 -40 -75 A40 40 0 0 1 40 -75 C40 -55 30 -40 0 0 Z" fill="${ROJ}" stroke="${INK}" stroke-width="4.5"/><circle cy="-75" r="14" fill="${BLA}" stroke="${INK}" stroke-width="3"/></g>` +
           '';
-        etq += peg(x + (izq ? -28 : 28), y - (cerca ? (HOR ? 10 : 6) : (HOR ? 54 : 58)), String(nom).toUpperCase(), 20, INK, '#fff', izq ? 'end' : 'start', eo((L - t0 - .2) / .2), cerca ? 3 : -3);
+        const arriba = y - 58 < Z.y + 24;   // v77: si el lugar está muy arriba (Asturias, Galicia…), la etiqueta va al lado y no tapa el rótulo
+        etq += peg(x + (izq ? -28 : 28), y - (cerca || arriba ? (HOR ? 10 : 6) : (HOR ? 54 : 58)), String(nom).toUpperCase(), 20, INK, '#fff', izq ? 'end' : 'start', eo((L - t0 - .2) / .2), cerca || arriba ? 3 : -3);
       });
       o += etq;
       const size = HOR ? 46 : 36, max = HOR ? 20 : 26;
-      return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 46, size, L, { max, t0: .5 }) : '');
+      return o + (v.texto ? cinetico(v.texto, HOR ? ox + mw + (Z.x + Z.w - ox - mw) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : oy + mh + 42, size, L, { max, t0: .5 }) : '');
     },
     // recorte de periódico con el titular subrayado  {"tipo":"prensa","medio":"El País","texto":"titular tal cual"}
     prensa(v, L, d) {
