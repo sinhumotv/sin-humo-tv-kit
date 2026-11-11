@@ -723,7 +723,7 @@
     },
     // monedas que caen y se apilan + cantidad  {"tipo":"dinero","valor":"1.150 €","texto":"…"}
     dinero(v, L, d) {
-      const pilas = HOR ? 4 : 3, por = 6, cw = HOR ? 110 : 120, ch = 22, bx = HOR ? Z.x + 60 : ZC.x - (pilas * cw + (pilas - 1) * 16) / 2, by = HOR ? ZC.y + 150 : Z.y + 300;
+      const pilas = HOR ? 4 : 3, por = 6, cw = HOR ? 110 : 120, ch = 22, bx = HOR ? Z.x + 60 : ZC.x - (pilas * cw + (pilas - 1) * 16) / 2, by = HOR ? ZC.y + 150 : Z.y + 270;
       let o = '';
       for (let j = 0; j < pilas; j++) for (let i = 0; i < por - (j % 2); i++) {
         const t0 = .15 + (i * pilas + j) * .045, q = cl((L - t0) / .32); if (q <= 0) continue;
@@ -732,8 +732,9 @@
       }
       const brillo = frac(L / 1.6); o += `<path d="M${(bx - 40 + (pilas * cw + 80) * brillo).toFixed(1)} ${by - por * ch - 30} l40 0 l-60 ${por * ch + 40} l-40 0 Z" fill="#fff" opacity=".35"/>`;
       const size = HOR ? 46 : 36, max = HOR ? 20 : 24, xT = HOR ? Z.x + 620 + (Z.w - 620) / 2 : ZC.x, yN = HOR ? ZC.y - 10 : by + 120;
-      return o + `<g transform="translate(${xT} ${yN}) scale(${back((L - .5) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), eo((L - .4) / .9))), HOR ? 104 : 92, INK, 'middle', 900, 'letter-spacing="-3"')}</g>` +
-        (v.texto ? cinetico(v.texto, xT, yN + (HOR ? 72 : 66), size, L, { max, t0: .8 }) : '');
+      const fsV = Math.min(HOR ? 104 : 92, ((HOR ? Z.w - 640 : Z.w) - 20) / (Math.max(4, String(v.valor || '').length) * .6));
+      return o + `<g transform="translate(${xT} ${yN}) scale(${back((L - .5) / .4).toFixed(3)})">${tx(0, 0, esc(contar(String(v.valor || ''), eo((L - .4) / .9))), fsV, INK, 'middle', 900, 'letter-spacing="-3"')}</g>` +
+        (v.texto ? cinetico(v.texto, xT, yN + (HOR ? 72 : 66), size, L, { max, t0: .8 }) : '');   /* v96: la cifra se encoge si es larga (rangos «1.645 € - 2.061 €») */
     },
     // reloj con agujas que giran hasta la hora  {"tipo":"reloj","hora":"21:55","texto":"…"}
     reloj(v, L, d) {
@@ -1011,7 +1012,7 @@
         o += caja(x, y, wB, h, 12, pos === 0 ? ORA : BLA, 5) + tx(x + wB / 2, y + Math.min(h - 10, HOR ? 92 : 100), String(pos + 1), HOR ? 84 : 90, pos === 0 ? '#fff' : INK, 'middle', 900, `opacity="${cl(h / 120).toFixed(2)}"`);
         const ep = back((L - t0 - .45) / .35); if (ep <= 0) return;
         const fs = Math.min(HOR ? 32 : 26, (wB - 8) / (Math.max(5, String(q.etiqueta || '').length) * .56));
-        o += `<g transform="translate(${x + wB / 2} ${y - 18}) scale(${ep.toFixed(3)})"><circle cx="0" cy="${HOR ? -96 : -104}" r="28" fill="${med[pos]}" stroke="${INK}" stroke-width="3"/>${tx(0, HOR ? -86 : -94, String(pos + 1), 28, INK)}` +
+        o += `<g transform="translate(${x + wB / 2} ${y - 18}) scale(${ep.toFixed(3)})"><circle cx="0" cy="${HOR ? -100 : -112}" r="22" fill="${med[pos]}" stroke="${INK}" stroke-width="3"/>${tx(0, HOR ? -91 : -103, String(pos + 1), 24, INK)}` +
           tx(0, HOR ? -50 : -46, esc(q.etiqueta || ''), fs, INK, 'middle', 900) + peg(0, -6, String(q.valor || ''), HOR ? 26 : 22, INK, '#fff', 'middle', 1, 0) + `</g>`;
         if (pos === 0 && L > t0 + .6) for (let i = 0; i < 14; i++) { const a = i * 2.4, fr = frac((L - t0 - .6) * .7 + i / 14), cx_ = x + wB / 2 + Math.sin(a * 3.1) * 150 * fr, cy_ = y - 150 - 60 * Math.sin(a) + 260 * fr * fr; o += `<rect x="${cx_.toFixed(1)}" y="${cy_.toFixed(1)}" width="12" height="7" fill="${[ORA, AZU, VER, ORO, ROJ][i % 5]}" transform="rotate(${(a * 60 + L * 300).toFixed(0)} ${cx_.toFixed(1)} ${cy_.toFixed(1)})" opacity="${(1 - fr).toFixed(2)}"/>`; }
       });
@@ -1048,12 +1049,12 @@
           return campana + mano; })();
     },
     cierre(v, L, d) {
-      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', 46, 20);
+      const e = L < VIAJE ? 0 : 1 + .1 * Math.exp(-(L - VIAJE) * 9) * Math.sin((L - VIAJE) * 26), lx = HOR ? Z.x + 230 : ZC.x, ly = HOR ? ZC.y - 20 : Z.y + 120, tx0 = HOR ? Z.x + 470 + (Z.w - 470) / 2 : ZC.x, gr = v.grave || GRAVE, largo = !HOR && altoCin(v.texto || '¿Tú qué opinas?', 46, 20) > 120, fC = largo ? 36 : 46, mC = largo ? 26 : 20, hc = HOR ? 0 : altoCin(v.texto || '¿Tú qué opinas?', fC, mC);   /* v96: texto largo → letra menor (no baja hasta los subtítulos) */
       return `<g transform="translate(${lx} ${ly}) scale(${((HOR ? 1.45 : 1.05) * e).toFixed(3)}) translate(${-lx} ${-ly})">${lupiM({ x: lx, y: ly, s: 1, t: L, expr: gr ? 'seria' : (L > 1.2 ? 'guino' : 'feliz'), brazos: gr ? '' : 'saluda', mira: [0, 0] })}</g>` +
-        cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : 46, L, { max: HOR ? 20 : 20, t0: .2 }) +
+        cinetico(v.texto || '¿Tú qué opinas?', tx0, HOR ? ZC.y - 50 : Z.y + 320, HOR ? 62 : fC, L, { max: HOR ? 20 : mC, t0: .2 }) +
         (HOR ? peg(tx0, ZC.y + 130, 'sin humo TV', 34, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4)) :
           // v95: en vertical, «Comenta» con una flecha animada que señala el botón de comentarios de TikTok / Reels / Shorts (columna derecha)
-          (() => { const yP = Z.y + 320 + hc + 40, q = eio(cl((L - 1) / .5)), b = 6 * Math.sin(L * 6) * cl((L - 1.5) / .3), x1 = tx0 + 92, y1 = yP - 6, x2 = W - 92 + b, y2 = yP + 70 + b;
+          (() => { const yP = Math.min(Z.y + 320 + hc + 40, Z.y + Z.h), q = eio(cl((L - 1) / .5)), b = 6 * Math.sin(L * 6) * cl((L - 1.5) / .3), x1 = tx0 + 92, y1 = yP - 6, x2 = W - 92 + b, y2 = yP + 70 + b;
             return peg(tx0, yP, 'COMENTA', 30, ORA, '#fff', 'middle', eo((L - .7) / .2), -3, back((L - .7) / .4) * (1 + .04 * Math.sin(L * 5))) +
               (q > 0 ? `<path d="M${x1} ${y1} Q${x2 - 10} ${y1 - 40} ${x2} ${y2}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="${(1 - q).toFixed(3)}"/>` +
                 (q > .95 ? `<path d="M${x2 - 18} ${y2 - 12} L${x2} ${y2} L${x2 + 10} ${y2 - 20}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>` : '') : ''); })()) +
@@ -1145,17 +1146,16 @@
   // v88: emoji de REACCIÓN grande (😱 💸 👀 🔥…) que salta en la palabra clave de la escena, se balancea y se va (como las
   // pegatinas de los editores de TikTok). Lo elige el guion ("reaccion"), nunca en noticias graves ni en mención/cierre.
   function reaccion(k, t) {
-    const em = String(E[k].reaccion || '').trim().slice(0, 8), tp = (E[k].visual || {}).tipo; if (!em || !tieneEmoji(em) || GRAVE || ['mencion', 'cierre'].includes(tp)) return '';   // v91: solo emoticonos propios
+    const em = String(E[k].reaccion || '').trim().slice(0, 8), tp = (E[k].visual || {}).tipo; if (!em || !tieneEmoji(em) || GRAVE || ['mencion', 'cierre', 'lupa'].includes(tp)) return '';   // v91: solo emoticonos propios
     const S = T.escenas[k], c = claves(k), t0 = c.length ? c[0] : S.ini + Math.min(1.2, (S.fin - S.ini) * .3), x = t - t0, vida = 1.6;
     if (x < 0 || x > vida) return '';
-    // en vertical: abajo a la izquierda (la columna de botones de TikTok/Reels está a la derecha, de media pantalla para abajo);
-    // si en esa escena puede asomar Lupi por la izquierda, arriba a la derecha
-    const e = back(x / .28), sale = x > vida - .25 ? 1 - eo((x - vida + .25) / .25) : 1, der = ['titular', 'pregunta', 'icono', 'frase'].includes(tp), fs = HOR ? 120 : 100;
-    const cx = HOR ? W - 300 : (der ? Z.x + Z.w - 50 : Z.x + 40), cy = HOR ? 250 : (der ? Z.y + 70 : Z.y + Z.h - 60) - 14 * x, rot = (der ? 12 : -12) * Math.sin(x * 7) * (1 - x / vida);
+    // v96: la reacción sale en un bocadillo junto al Lupi de la esquina (es Lupi quien reacciona): no tapa nunca el gráfico ni el texto
+    const e = back(x / .28), sale = x > vida - .25 ? 1 - eo((x - vida + .25) / .25) : 1, r = HOR ? 50 : 40;
+    const lx = HOR ? W - 62 : W - SX - 66, ly = HOR ? H - 196 : 166, cx = HOR ? lx - 120 : lx - 84, cy = HOR ? ly - 92 : ly - 60, rot = 8 * Math.sin(x * 7) * (1 - x / vida);
     let o = `<g transform="translate(${cx.toFixed(1)} ${cy.toFixed(1)}) rotate(${rot.toFixed(1)}) scale(${(e * sale).toFixed(3)})">`;
-    const an = eo(x / .45); if (an < 1) o += `<circle r="${(fs * (.5 + .55 * an)).toFixed(1)}" fill="none" stroke="${ORA}" stroke-width="${(8 * (1 - an)).toFixed(1)}" opacity="${(1 - an).toFixed(2)}"/>` +
-      [...Array(8).keys()].map(i => { const a_ = i * Math.PI / 4 + .3, r1 = fs * (.55 + .35 * an), r2 = r1 + 22 * (1 - an); return `<path d="M${(Math.cos(a_) * r1).toFixed(1)} ${(Math.sin(a_) * r1).toFixed(1)} L${(Math.cos(a_) * r2).toFixed(1)} ${(Math.sin(a_) * r2).toFixed(1)}" stroke="${i % 2 ? ORO : ORA}" stroke-width="6" stroke-linecap="round" opacity="${(1 - an).toFixed(2)}"/>`; }).join('');
-    return o + `<ellipse cx="0" cy="${fs * .52}" rx="${fs * .32}" ry="${fs * .07}" fill="${INK}" opacity=".15"/>${emojiVec(em, fs * 1.05, x + 1.3)}</g>`;
+    const an = eo(x / .45); if (an < 1) o += [...Array(8).keys()].map(i => { const a_ = i * Math.PI / 4 + .3, r1 = r * (1.05 + .4 * an), r2 = r1 + 16 * (1 - an); return `<path d="M${(Math.cos(a_) * r1).toFixed(1)} ${(Math.sin(a_) * r1).toFixed(1)} L${(Math.cos(a_) * r2).toFixed(1)} ${(Math.sin(a_) * r2).toFixed(1)}" stroke="${i % 2 ? ORO : ORA}" stroke-width="5" stroke-linecap="round" opacity="${(1 - an).toFixed(2)}"/>`; }).join('');
+    o += `<circle cx="0" cy="${r * .25}" r="${r}" fill="${INK}" opacity=".18" filter="url(#somS)"/><path d="M${r * .62} ${r * .55} L${r * 1.25} ${r * .95} L${r * .25} ${r * .9} Z" fill="${BLA}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><circle r="${r}" fill="${BLA}" stroke="${INK}" stroke-width="3"/><path d="M${r * .45} ${r * .74} L${r * .3} ${r * .86}" stroke="${BLA}" stroke-width="6"/>`;
+    return o + emojiVec(em, r * 1.55, x + 1.3) + `</g>`;
   }
   function rotulo(k, L) {
     // v62: en la PRIMERA escena de los cortos, el titular de la noticia grande (mucha gente empieza a ver sin sonido)
@@ -1193,6 +1193,7 @@
       const em = EMO(k), porEmo = { surprised: 'sorprendida', excited: 'sorprendida', emphatic: 'sorprendida', indignant: 'enfadada', whispers: 'curiosa', conspiratorial: 'guino', curious: 'curiosa', serious: 'seria', tense: 'seria', sad: 'seria', amused: 'guino' }[em];
       let ex = GRAVE ? (porEmo === 'curiosa' ? 'curiosa' : 'seria') : porEmo || (tp === 'cifra' ? 'sorprendida' : tp === 'pregunta' ? 'curiosa' : 'feliz');
       if ((ex === 'feliz' || ex === 'seria' && !GRAVE) && hablando(k, t)) ex = 'habla';   // v52: Lupi «habla» con la voz
+      if (reaccion(k, t)) ex = 'sorprendida';   // v96: Lupi pone cara de sorpresa mientras sale su bocadillo de reacción
       const mira = SUSURRO(k) ? [HOR ? -1 : -1, 0] : [HOR ? -1 : -.6, HOR ? -.4 : .8];
       o += lupiM({ x: lx, y: ly + 3 * Math.sin(t * 2.4), s, t, expr: ex, mira, brazos: L < 1 ? 'senala' : '' });
     }
@@ -1203,7 +1204,7 @@
     const bl = bloquesKaraoke(k, HOR ? 34 : 24, HOR ? 34 : 14); if (!bl.length) return '';
     let i = bl.findIndex(b => t < b.b); if (i < 0) i = bl.length - 1;
     const B = bl[i], ent = back((t - B.a) / .16) || (i === 0 ? 1 : 0), maxc = Math.max(...B.ls.map(ln => ln.reduce((a, b) => a + b.w.length + 1, -1)));
-    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 60, Math.floor((HOR ? 1000 : W - 2 * SX - 40) / (Math.max(5, maxc) * .58)))), lh = fs * 1.12, yc = HOR ? 606 : 920, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
+    const su = SUSURRO(k), fs = Math.round((su ? .9 : 1) * Math.min(HOR ? 52 : 60, Math.floor((HOR ? 1000 : W - 2 * SX - 40) / (Math.max(5, maxc) * .58)))), lh = fs * 1.12, yc = HOR ? 606 : 942, y0 = yc - (B.ls.length - 1) * lh / 2 + fs * .35;
     const pe = HOR ? 0 : cl((t - B.a) / .3), giro = HOR ? 0 : (i % 2 ? 1 : -1) * 2.5 * (1 - eo(pe));
     return `<g transform="translate(${W / 2} ${yc}) rotate(${giro.toFixed(2)}) scale(${(HOR ? .88 + .12 * ent : (i === 0 && k === 0 ? 1 : .7 + .3 * ent)).toFixed(3)}) translate(${-W / 2} ${-yc})">` + B.ls.map((ln, j) => {
       const sp = ln.map(p => {
