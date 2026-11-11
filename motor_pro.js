@@ -763,7 +763,7 @@
     const ini = k === 0 ? Math.max(0, .3 - (t - S.ini)) / .3 : 0;   // v52: arranque con golpe de zoom (con el impacto de sonido del segundo 0)
     const z = 1 + .02 * cl(L / d) + .045 * golpe(k, t) + .045 * eo(ini), [sx, sy] = sacudida(k, t);
     return fondo(k, t) + (k === 0 && L < 2.2 ? rayos(ZC.x, ZC.y, t, .1 * (1 - cl((L - 1.4) / .8))) : '') +
-      `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy).toFixed(1)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) +
+      `<g transform="translate(${(ZC.x + sx).toFixed(1)} ${(ZC.y + sy + (tipo === 'foto' ? 0 : 5 * Math.sin(L * 1.6 + k))).toFixed(1)}) rotate(${(tipo === 'foto' ? 0 : .5 * Math.sin(L * .9 + k * 2)).toFixed(3)}) scale(${z.toFixed(4)}) translate(${-ZC.x} ${-ZC.y})">${g}</g>` + (window.LIMPIO ? '' : pegatinasVoz(k, t, tipo)) + (window.LIMPIO ? '' : rotulo(k, L)) +
       ambiente(k, t, L) + (k === 0 && t - S.ini > 0 && t - S.ini < .3 ? `<rect width="${W}" height="${H}" fill="#fff" opacity="${(.4 * Math.sin(Math.PI * (t - S.ini) / .3)).toFixed(3)}"/>` : '')   // destello (el fotograma 0 queda limpio para la miniatura);
   }
   // rótulo de la escena: banda negra inclinada con el título (entra con rebote en cada plano)
