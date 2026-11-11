@@ -158,7 +158,8 @@
           (w > wM * .5 ? tx(x0 + w - 22, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, c === ORA ? '#fff' : INK, 'end') : tx(x0 + w + 26, y + ah * .7, esc(contar(String(o.valor || ''), p)), ah * .58, INK, 'start')) + `</g>`;
       };
       let dif = '';   // v45: pastilla con la diferencia (+92 %, ×3…) cuando las dos cifras son comparables
-      if (na > 0 && nb > 0 && na !== nb && !/%/.test(String(a.valor) + String(b.valor))) {
+      const tiempo = /\b(1[89]|20)\d\d\b|antes|ahora|hoy|ayer|año|mes|semana|actual|anterior|nuev|viej|pasad/i.test(String(a.etiqueta || '') + ' ' + String(b.etiqueta || ''));   // v53: solo si es un antes/después
+      if (tiempo && na > 0 && nb > 0 && na !== nb && !/%/.test(String(a.valor) + String(b.valor))) {
         const r = nb / na, pc = Math.round((r - 1) * 100);
         const et = r >= 2.95 ? '×' + (Math.round(r * 10) / 10).toString().replace('.', ',') : (pc > 0 ? '+' : '') + pc + ' %';
         const t0 = 1.3, e2 = back((L - t0) / .4);
