@@ -756,6 +756,55 @@
       return o + `<clipPath id="ci"><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48"/></clipPath><rect x="${Z.x - 6}" y="${yC - 30}" width="${Z.w + 12}" height="48" fill="${INK}" opacity="${eo((L - .5) / .3).toFixed(2)}"/>` +
         `<g clip-path="url(#ci)" opacity="${eo((L - .5) / .3).toFixed(2)}">${[0, 1, 2].map(j => tx(Z.x - off + j * wc, yC + 2, esc(cinta), HOR ? 26 : 25, ORO, 'start', 900)).join('')}</g>`;
     },
+    // v73: balanza que se inclina (dos posturas, sin tomar partido: se inclina solo si lo dicen los datos)
+    // {"tipo":"balanza","izq":"≤ 18 caracteres","der":"≤ 18","inclina":"izq|der|igual","texto":"≤ 40, opcional"}
+    balanza(v, L, d) {
+      const cx = HOR ? Z.x + 330 : ZC.x, y0 = HOR ? Z.y + 70 : Z.y + 80, bw = HOR ? 520 : 430, cuelga = HOR ? 110 : 100, base = HOR ? Z.y + Z.h - 30 : Z.y + 330;
+      const sen = /izq/.test(String(v.inclina)) ? -1 : /der/.test(String(v.inclina)) ? 1 : 0, e = back(L / .45);
+      const ang = sen * 9 * eio(cl((L - .7) / .9)) + 6 * Math.sin(L * 5.5) * Math.exp(-L * 1.4) * (L > .3 ? 1 : 0), ra = ang * Math.PI / 180;
+      let o = `<g transform="translate(${cx} ${base}) scale(${e.toFixed(3)}) translate(${-cx} ${-base})">` +
+        `<ellipse cx="${cx}" cy="${base + 8}" rx="${HOR ? 120 : 80}" ry="12" fill="${INK}" opacity=".18" filter="url(#somS)"/>` +
+        `<path d="M${cx - (HOR ? 90 : 62)} ${base} L${cx + (HOR ? 90 : 62)} ${base} L${cx + 28} ${base - 26} L${cx - 28} ${base - 26} Z" fill="${INK}"/>` +
+        `<rect x="${cx - 6}" y="${y0}" width="12" height="${base - y0 - 22}" rx="6" fill="${INK}"/>` +
+        `<circle cx="${cx}" cy="${y0 - 6}" r="${HOR ? 18 : 13}" fill="${ORO}" stroke="${INK}" stroke-width="3"/>`;
+      const plato = (lado, txt, col) => {
+        const ex = cx + lado * bw / 2 * Math.cos(ra), ey = y0 + lado * bw / 2 * Math.sin(ra), py = ey + cuelga, pw = HOR ? 190 : 196;
+        const ls = partir(String(txt || '').replace(/\*/g, ''), HOR ? 14 : 12).slice(0, 2), fs = HOR ? 26 : 24, ch = (HOR ? 26 : 20) + ls.length * fs * 1.15;
+        return `<path d="M${ex} ${ey} L${ex - pw / 2 + 12} ${py} M${ex} ${ey} L${ex + pw / 2 - 12} ${py}" stroke="${INK}" stroke-width="3"/>` +
+          caja(ex - pw / 2 + 10, py - ch - 4, pw - 20, ch, 12, col, 2.5) +
+          ls.map((l, i) => tx(ex, py - ch - 4 + (HOR ? 13 : 10) + fs * .86 + i * fs * 1.15, esc(l), fs, '#fff', 'middle', 900)).join('') +
+          `<path d="M${ex - pw / 2} ${py} Q${ex} ${py + (HOR ? 70 : 46)} ${ex + pw / 2} ${py} Z" fill="${col}" stroke="${INK}" stroke-width="3"/>`;
+      };
+      o += `<path d="M${cx - bw / 2 * Math.cos(ra)} ${y0 - bw / 2 * Math.sin(ra)} L${cx + bw / 2 * Math.cos(ra)} ${y0 + bw / 2 * Math.sin(ra)}" stroke="${INK}" stroke-width="${HOR ? 14 : 9}" stroke-linecap="round"/>` +
+        plato(-1, v.izq, AZU) + plato(1, v.der, ORA) + `</g>`;
+      const size = HOR ? 44 : 30, max = HOR ? 20 : 26;
+      return o + (v.texto ? cinetico(v.texto, HOR ? Z.x + 700 + (Z.w - 700) / 2 : ZC.x, HOR ? ZC.y - altoCin(v.texto, size, max) / 2 + size * .8 : base + 62, size, L, { max, t0: 1.2 }) : '');
+    },
+    // v73: iceberg: lo que se ve arriba y lo que hay debajo (1-3 datos que aparecen al «bajar»)
+    // {"tipo":"iceberg","arriba":"≤ 22 caracteres","abajo":["≤ 26","≤ 26","≤ 26"]}
+    iceberg(v, L, d) {
+      const cx = ZC.x, yW = HOR ? Z.y + 120 : Z.y + 130, fondo = HOR ? Z.y + Z.h + 10 : Z.y + Z.h - 10, e = eo(L / .5), sube = (1 - e) * 80;
+      const ab = (Array.isArray(v.abajo) ? v.abajo : [v.abajo]).filter(Boolean).slice(0, 3), anchoB = HOR ? 760 : 560, pico = HOR ? 1 : .85;
+      const ola = x => yW + 5 * Math.sin(x / 38 + L * 3);
+      let olas = `M0 ${ola(0)}`; for (let x = 16; x <= W + 16; x += 16) olas += ` L${x} ${ola(x).toFixed(1)}`;
+      let o = `<g transform="translate(0 ${sube.toFixed(1)})" opacity="${e.toFixed(2)}">` +
+        // parte sumergida (grande) y punta (pequeña)
+        `<path d="M${cx - 110 * pico} ${yW} L${cx - anchoB / 2} ${yW + (fondo - yW) * .45} L${cx - anchoB / 2 + 90} ${fondo - 20} L${cx + 60} ${fondo} L${cx + anchoB / 2 - 40} ${fondo - 50} L${cx + anchoB / 2} ${yW + (fondo - yW) * .35} L${cx + 120 * pico} ${yW} Z" fill="#eef8fd" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>` +
+        `<path d="M${cx - 110 * pico} ${yW} L${cx - 30 * pico} ${yW - (HOR ? 100 : 96)} L${cx + 10 * pico} ${yW - (HOR ? 78 : 76)} L${cx + 50 * pico} ${yW - (HOR ? 112 : 108)} L${cx + 120 * pico} ${yW} Z" fill="#fff" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>` +
+        `</g>` +
+        `<linearGradient id="agua" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${AZU}" stop-opacity=".26"/><stop offset=".75" stop-color="${AZU}" stop-opacity=".16"/><stop offset="1" stop-color="${AZU}" stop-opacity="0"/></linearGradient>` +
+        `<rect x="0" y="${yW}" width="${W}" height="${fondo - yW + 40}" fill="url(#agua)"/>` +
+        `<path d="${olas}" fill="none" stroke="${AZU}" stroke-width="5" stroke-linecap="round" opacity=".85"/>`;
+      if (v.arriba) o += peg(cx + (HOR ? 150 : 110), yW - (HOR ? 70 : 66), String(v.arriba).replace(/\*/g, ''), HOR ? 26 : 23, INK, '#fff', 'start', eo((L - .4) / .3), -3);
+      const fs = HOR ? 28 : 25, paso = (fondo - yW - (HOR ? 40 : 50)) / Math.max(ab.length, 1);
+      ab.forEach((it, i) => {
+        const t0 = .9 + i * .55, q = eo((L - t0) / .35); if (q <= 0) return;
+        const y = yW + (HOR ? 40 : 30) + paso * (i + .5) + (1 - q) * 24;
+        o += `<g opacity="${q.toFixed(2)}"><circle cx="${cx - (HOR ? 260 : 206)}" cy="${y - fs * .32}" r="${HOR ? 9 : 8}" fill="${ORA}" stroke="${INK}" stroke-width="2.5"/>` +
+          tx(cx - (HOR ? 236 : 188), y, esc(String(it).replace(/\*/g, '').slice(0, 30)), fs, INK, 'start', 800) + `</g>`;
+      });
+      return o;
+    },
     // podio de los tres primeros  {"tipo":"podio","items":[{"etiqueta":"Madrid","valor":"1.650 €"},{"etiqueta":"Barcelona","valor":"1.480 €"},{"etiqueta":"Málaga","valor":"1.200 €"}]}
     podio(v, L, d) {
       const it = (v.items || []).slice(0, 3), orden = [1, 0, 2], alt = [HOR ? 250 : 280, HOR ? 180 : 210, HOR ? 130 : 150], med = [ORO, '#c9ccd3', '#d6894a'];
@@ -818,7 +867,7 @@
   // pegatinas que saltan cuando la voz dice una palabra clave del subtítulo (máx. 2 por escena)
   function pegatinasVoz(k, t, tipo) {
     if (!HOR) return '';   // v45: en los cortos ensuciaban y se metían encima de textos y fotos
-    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos', 'contador', 'pasos', 'termometro', 'bateria', 'lupa', 'encuesta', 'ultimahora', 'podio'].includes(tipo)) return '';
+    if (['lista', 'linea', 'grafico', 'comparar', 'mencion', 'cierre', 'titular', 'frase', 'porcentaje', 'proporcion', 'versus', 'mapa', 'prensa', 'dialogo', 'ranking', 'fecha', 'medidor', 'evolucion', 'reparto', 'tendencia', 'dinero', 'reloj', 'checklist', 'alerta', 'escanos', 'contador', 'pasos', 'termometro', 'bateria', 'lupa', 'encuesta', 'ultimahora', 'podio', 'balanza', 'iceberg'].includes(tipo)) return '';
     const bl = bloquesKaraoke(k, HOR ? 34 : 17, HOR ? 34 : 13), cl_ = [];
     bl.forEach(b => b.ls.forEach(ln => ln.forEach(p => { const w = p.w.replace(/[.,;:?!…»«"]/g, ''); if ((p.clave || /\d/.test(w)) && w.length >= 3 && w.length <= 14 && !cl_.some(o => o.w === w)) cl_.push({ w, a: p.a }); })));
     const pos = HOR ? [[Z.x + Z.w - 120, Z.y + 40, 5], [Z.x + Z.w - 150, Z.y + Z.h - 20, -5]] : [[Z.x + Z.w - 130, Z.y + 60, 6], [Z.x + 120, Z.y + Z.h + 8, -5]], cs = [[ORO, INK], [AZU, '#fff']];

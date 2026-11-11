@@ -324,6 +324,11 @@ if GSFX:
             for i in range(son): at(ding(1175 + 150 * i), .8 + i * .12, .4)
         elif tp == "mapa":
             for i, _ in enumerate((v.get("lugares") or [])[:3]): at(golpe_seco(), .8 + i * .35 + .28, .6)
+        elif tp == "balanza":   # v73: crujido al balancearse y golpe suave al asentarse
+            at(roce(.25), .35, .4); at(roce(.2), .9, .35); at(golpe_seco() * .5, 1.6, .5)
+        elif tp == "iceberg":   # v73: inmersión y un «ding» grave por cada dato de abajo
+            at(subida(.8, 700, 220) * .6, .1, .6)
+            for i, _ in enumerate((v.get("abajo") or [])[:3]): at(ding(880 - 110 * i), .9 + i * .55, .45)
         elif tp == "versus":
             at(roce(), .1, .5); at(roce(), .4, .5); at(impacto, .6, .5)
         elif tp == "fecha":
