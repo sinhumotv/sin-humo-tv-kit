@@ -28,7 +28,7 @@
   const E = P.escenas, N = E.length, DUR = T.duracion;
   const CAPS = (P.capitulos || []).filter(c => c && c.desde < N);
   const GRAVE = P.tono === 'grave';
-  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: 64, y: 250, w: 592, h: 520 };   // zona del gráfico
+  const Z = HOR ? { x: 80, y: 128, w: 1120, h: 392 } : { x: 60, y: 262, w: 600, h: 560 };   // zona del gráfico
   const ZC = { x: Z.x + Z.w / 2, y: Z.y + Z.h / 2 };
   const SOM = HOR ? 7 : 8;                // desplazamiento de la sombra dura
 
