@@ -1,0 +1,49 @@
+# (12-nov-2026) Publica YA un vídeo de Pongamos Que en Instagram (reel), TikTok y YouTube Shorts con la cuenta de Buffer
+# del canal (secreto PONGAMOSQUE_BUFFER_KEY). Lee pongamosque/publicar/pedido.json: {video, titulo, texto}.
+name: Publicar Pongamos Que
+on:
+  push:
+    branches: [claude/kind-brown-9clxsm]
+    paths: ['pongamosque/publicar/pedido.json']
+  workflow_dispatch:
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: pongamosque/publicar/pedido.json, sparse-checkout-cone-mode: false }
+      - env:
+          BUFFER_KEY: ${{ secrets.PONGAMOSQUE_BUFFER_KEY }}
+          RAMA: ${{ github.ref_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          p = json.load(open('pongamosque/publicar/pedido.json'))
+          url = f"https://raw.githubusercontent.com/{os.environ['GITHUB_REPOSITORY']}/{os.environ['RAMA']}/{p['video']}"
+          def buffer(q, v=None):
+              req = urllib.request.Request('https://api.buffer.com', json.dumps({'query': q, 'variables': v or {}}).encode(),
+                                          {'Authorization': 'Bearer ' + os.environ['BUFFER_KEY'].strip(), 'Content-Type': 'application/json'})
+              with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
+          org = buffer('{ account { organizations { id } } }')['data']['account']['organizations'][0]['id']
+          canales = buffer('{ channels(input: {organizationId: "%s"}) { id service name isDisconnected } }' % org)['data']['channels']
+          print('canales:', [(c['service'], c['name'], 'desconectado' if c.get('isDisconnected') else 'ok') for c in canales])
+          canales = {c['service']: c['id'] for c in canales if not c.get('isDisconnected')}
+          tit, txt = p['titulo'], p['texto']
+          posts = {
+              'instagram': {'text': txt[:2200], 'assets': [{'video': {'url': url, 'metadata': {'thumbnailOffset': 1500}}}],
+                            'metadata': {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'isAiGenerated': True}}},
+              'tiktok': {'text': (tit + '\n\n' + txt)[:2200], 'assets': [{'video': {'url': url, 'metadata': {'thumbnailOffset': 1500}}}],
+                         'metadata': {'tiktok': {'title': tit[:150], 'isAiGenerated': True}}},
+              'youtube': {'text': txt[:4900], 'assets': [{'video': {'url': url}}],
+                          'metadata': {'youtube': {'title': (tit + ' #shorts')[:100], 'categoryId': '28', 'privacy': 'public',
+                                                   'madeForKids': False, 'notifySubscribers': True, 'isAiGenerated': True}}},
+          }
+          Q = """mutation($input: CreatePostInput!) { createPost(input: $input) {
+            ... on PostActionSuccess { post { id status } }
+            ... on MutationError { message } } }"""
+          for red, post in posts.items():
+              if red not in canales: print(red, ': NO CONECTADO en Buffer'); continue
+              d = buffer(Q, {'input': {'channelId': canales[red], 'mode': 'shareNow', 'schedulingType': 'automatic', **post}})
+              cp = (d.get('data') or {}).get('createPost') or {}
+              print(red, ':', ('PUBLICADO ' + json.dumps(cp['post'])) if 'post' in cp else ('ERROR ' + (cp.get('message') or json.dumps(d.get('errors'))[:400])))
+          PY
