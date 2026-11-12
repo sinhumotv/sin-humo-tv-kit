@@ -1,0 +1,18 @@
+# (12-nov-2026) Comprueba que el token de Kaggle (secreto KAGGLE_API_TOKEN) funciona. No usa GPU.
+name: Prueba Kaggle
+on:
+  push:
+    branches: [claude/kind-brown-9clxsm]
+    paths: ['.github/workflows/prueba-kaggle.yml']
+  workflow_dispatch:
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -q "kaggle>=1.8"
+      - env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          if [ -z "$KAGGLE_API_TOKEN" ]; then echo "FALTA el secreto KAGGLE_API_TOKEN"; exit 1; fi
+          kaggle --version
+          kaggle kernels list --mine --page-size 5 && echo "KAGGLE OK"
