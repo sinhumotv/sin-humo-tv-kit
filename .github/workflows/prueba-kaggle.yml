@@ -16,6 +16,7 @@ jobs:
           ls explicalo/plataforma/v2 2>/dev/null | head -5 && echo "MOTOR PRIVADO - ACCESO OK" || echo "MOTOR PRIVADO - SIN ACCESO"
   clip:
     runs-on: ubuntu-latest
+    permissions: { contents: write }
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
@@ -26,3 +27,6 @@ jobs:
           python3 -c "import json;p='Dynamic cinematic motion: {}, the camera moves through the scene. {} Realistic natural movement, highly detailed.';json.dump([{'n':5,'jpg':'pongamosque/kaggle/prueba.jpg','semilla':1,'prompt':p.format('heavy rain pours down, giant waves crash against the cliff','A lighthouse on a cliff in a violent storm at sunset.')},{'n':6,'jpg':'pongamosque/kaggle/prueba.jpg','semilla':2,'prompt':p.format('lightning flashes, wind bends the grass','A lighthouse on a cliff in a violent storm.')}],open('ped.json','w'))" 
           python3 pongamosque/kaggle/lanzar.py salida ped.json
           ls -la salida
+          mkdir -p pongamosque/kaggle/prueba_salida && cp salida/*_ia.mp4 pongamosque/kaggle/prueba_salida/ || true
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add -f pongamosque/kaggle/prueba_salida && git commit -qm "Clips de prueba de Kaggle (temporal)" && git push || true
