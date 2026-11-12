@@ -42,5 +42,69 @@
         "descripcion": "A MALE educational YouTuber from Spain, about 30 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Friendly, clear and warm medium-low voice, close and natural like a good teacher who makes everything easy, upbeat pace, smiling while talking."
       }
     ]
+  },
+  "relatos2": {
+    "candidatas": 2,
+    "texto": "Hace miles de años, cuando los dioses aún caminaban entre los hombres, un joven llamado Perseo recibió una misión imposible. Escuchad bien, porque jamás nadie había vuelto con vida de aquel lugar, y el corazón de Zeus lo sabía.",
+    "voces": [
+      {
+        "id": "relatos_a",
+        "descripcion": "A MALE storyteller from Spain, about 45 years old. Deep, warm, rich and resonant low voice. Epic and captivating narrator of ancient Greek myths, like telling a legend by the fire: calm pace, dramatic pauses, controlled emotion, solemn. IMPORTANT ACCENT: he/she is 100% from Spain (peninsular Castilian Spanish, like a narrator on Spanish national TV RTVE), NOT Latin American, NOT Mexican, NOT neutral Spanish: uses the Spanish distinction between 's' and 'z/c' (zapato, cielo, corazón with the theta sound), strong guttural Spanish 'j' (jamás, joven), apical Castilian 's', natural Spanish rhythm and intonation from Madrid."
+      },
+      {
+        "id": "relatos_b",
+        "descripcion": "Hombre español de unos 45 años, narrador de mitos griegos: voz grave, cálida, profunda y resonante; tono épico y cautivador, como quien cuenta una leyenda junto al fuego, ritmo pausado, pausas dramáticas y emoción contenida. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
+      }
+    ]
+  },
+  "cajanegra2": {
+    "candidatas": 2,
+    "texto": "La noche del catorce de marzo, la policía de Zaragoza recibió una llamada que nadie olvidaría. En la casa no había signos de violencia. Pero en el sótano, junto a una caja cerrada, alguien había dejado un mensaje.",
+    "voces": [
+      {
+        "id": "cajanegra_a",
+        "descripcion": "A MALE true-crime documentary narrator from Spain, about 40 years old. Low, dark, serious and slightly husky voice. Tense, suspenseful and respectful tone, measured pace with ominous pauses, like a crime documentary on Spanish television. Never cheerful. IMPORTANT ACCENT: he/she is 100% from Spain (peninsular Castilian Spanish, like a narrator on Spanish national TV RTVE), NOT Latin American, NOT Mexican, NOT neutral Spanish: uses the Spanish distinction between 's' and 'z/c' (zapato, cielo, corazón with the theta sound), strong guttural Spanish 'j' (jamás, joven), apical Castilian 's', natural Spanish rhythm and intonation from Madrid."
+      },
+      {
+        "id": "cajanegra_b",
+        "descripcion": "Hombre español de unos 40 años, narrador de documentales de crímenes reales: voz grave, oscura, seria y algo ronca; tono tenso, de suspense y respetuoso, ritmo medido con pausas inquietantes, como un documental de sucesos de la televisión española. Nunca alegre. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
+      }
+    ]
+  },
+  "ano2100b": {
+    "candidatas": 2,
+    "texto": "Imaginad despertar en el año dos mil cien. Las ciudades flotan sobre el mar, los robots cuidan de los mayores y la inteligencia artificial ya diseña sus propios inventos. ¿Ciencia ficción? Jamás lo ha estado tan cerca.",
+    "voces": [
+      {
+        "id": "ano2100_a",
+        "descripcion": "A MALE science and technology YouTuber from Spain, about 30 years old. Clear, modern, medium-low voice, curious and full of wonder about the future, enthusiastic but credible, fluid and dynamic pace, like a popular science documentary. IMPORTANT ACCENT: he/she is 100% from Spain (peninsular Castilian Spanish, like a narrator on Spanish national TV RTVE), NOT Latin American, NOT Mexican, NOT neutral Spanish: uses the Spanish distinction between 's' and 'z/c' (zapato, cielo, corazón with the theta sound), strong guttural Spanish 'j' (jamás, joven), apical Castilian 's', natural Spanish rhythm and intonation from Madrid."
+      },
+      {
+        "id": "ano2100_b",
+        "descripcion": "Hombre español de unos 30 años, youtuber de ciencia y tecnología: voz clara, moderna, de tono medio-grave, curiosa y llena de asombro por el futuro, entusiasta pero creíble, ritmo fluido y dinámico, como un documental de divulgación. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
+      }
+    ]
+  },
+  "explicalo2": {
+    "candidatas": 2,
+    "texto": "¿Os habéis preguntado alguna vez por qué el cielo es azul? La respuesta es más sencilla de lo que parece, y en menos de un minuto os la explico, con un ejemplo que vais a entender a la primera.",
+    "voces": [
+      {
+        "id": "explicalo_mujer_a",
+        "descripcion": "A FEMALE educational YouTuber from Spain, about 30 years old. Friendly, bright and warm voice, clear diction, close and natural like a good teacher who makes everything easy, upbeat pace, smiling while talking. IMPORTANT ACCENT: he/she is 100% from Spain (peninsular Castilian Spanish, like a narrator on Spanish national TV RTVE), NOT Latin American, NOT Mexican, NOT neutral Spanish: uses the Spanish distinction between 's' and 'z/c' (zapato, cielo, corazón with the theta sound), strong guttural Spanish 'j' (jamás, joven), apical Castilian 's', natural Spanish rhythm and intonation from Madrid."
+      },
+      {
+        "id": "explicalo_mujer_b",
+        "descripcion": "Mujer española de unos 30 años, youtuber divulgativa: voz amable, luminosa y cálida, dicción clara, cercana y natural como una buena profesora que lo hace todo fácil, ritmo alegre, sonriendo al hablar. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
+      },
+      {
+        "id": "explicalo_hombre_a",
+        "descripcion": "A MALE educational YouTuber from Spain, about 30 years old. Friendly, clear and warm medium-low voice, close and natural like a good teacher who makes everything easy, upbeat pace, smiling while talking. IMPORTANT ACCENT: he/she is 100% from Spain (peninsular Castilian Spanish, like a narrator on Spanish national TV RTVE), NOT Latin American, NOT Mexican, NOT neutral Spanish: uses the Spanish distinction between 's' and 'z/c' (zapato, cielo, corazón with the theta sound), strong guttural Spanish 'j' (jamás, joven), apical Castilian 's', natural Spanish rhythm and intonation from Madrid."
+      },
+      {
+        "id": "explicalo_hombre_b",
+        "descripcion": "Hombre español de unos 30 años, youtuber divulgativo: voz amable, clara y cálida de tono medio-grave, cercano y natural como un buen profesor que lo hace todo fácil, ritmo alegre, sonriendo al hablar. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
+      }
+    ]
   }
 }
