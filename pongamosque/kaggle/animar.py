@@ -21,6 +21,7 @@ if n_gpu > 1:   # T4 x2: el codificador de texto en la segunda GPU, el resto en 
         k['device'] = torch.device('cuda:1'); r = _enc(*a, **k)
         return tuple(x.to('cuda:0') if torch.is_tensor(x) else x for x in r)
     pipe.encode_prompt = enc
+    type(pipe)._execution_device = property(lambda self: torch.device('cuda:0'))   # todo lo demás se calcula en la primera GPU
 else:
     pipe.enable_model_cpu_offload()
 pipe.vae.enable_tiling()
