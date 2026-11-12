@@ -1,0 +1,46 @@
+{
+  "relatos": {
+    "candidatas": 3,
+    "texto": "Hace miles de años, cuando los dioses aún caminaban entre los hombres, un joven llamado Perseo recibió una misión imposible: traer la cabeza de la Medusa. Y nadie, jamás, había regresado con vida.",
+    "voces": [
+      {
+        "id": "relatos",
+        "descripcion": "A MALE storyteller from Spain, about 45 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Deep, warm, rich and resonant low voice. Epic and captivating narrator of ancient Greek myths, like telling a legend by the fire: calm pace, dramatic pauses, controlled emotion, mysterious and solemn."
+      }
+    ]
+  },
+  "cajanegra": {
+    "candidatas": 3,
+    "texto": "La noche del catorce de marzo, la policía recibió una llamada que nadie olvidaría. En la casa no había signos de violencia. Pero en el sótano, alguien había dejado un mensaje.",
+    "voces": [
+      {
+        "id": "cajanegra",
+        "descripcion": "A MALE true-crime documentary narrator from Spain, about 40 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Low, dark, serious and slightly husky voice. Tense, suspenseful and respectful tone, measured pace with ominous pauses, like a crime documentary on television. Never cheerful."
+      }
+    ]
+  },
+  "ano2100": {
+    "candidatas": 3,
+    "texto": "Imagina despertar en el año dos mil cien. Las ciudades flotan sobre el mar, los robots cuidan de los mayores y la inteligencia artificial ya diseña sus propios inventos. ¿Ciencia ficción? No tanto.",
+    "voces": [
+      {
+        "id": "ano2100",
+        "descripcion": "A MALE science and technology YouTuber from Spain, about 30 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Clear, modern, medium-low voice, curious and full of wonder about the future, enthusiastic but credible, fluid and dynamic pace, like a popular science documentary."
+      }
+    ]
+  },
+  "explicalo": {
+    "candidatas": 2,
+    "texto": "¿Alguna vez te has preguntado por qué el cielo es azul? La respuesta es más sencilla de lo que parece, y en menos de un minuto te la explico.",
+    "voces": [
+      {
+        "id": "explicalo_mujer",
+        "descripcion": "A FEMALE educational YouTuber from Spain, about 30 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Friendly, bright and warm voice, clear diction, close and natural like a good teacher who makes everything easy, upbeat pace, smiling while talking."
+      },
+      {
+        "id": "explicalo_hombre",
+        "descripcion": "A MALE educational YouTuber from Spain, about 30 years old, native Castilian Spanish accent from Madrid (European Spanish, clear theta 'z' and rolled 'rr'). Friendly, clear and warm medium-low voice, close and natural like a good teacher who makes everything easy, upbeat pace, smiling while talking."
+      }
+    ]
+  }
+}
