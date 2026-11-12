@@ -22,7 +22,7 @@ import soundfile as sf
 AQUI = os.path.dirname(os.path.abspath(__file__))
 ETIQ = re.compile(r"\[[^\]]{1,20}\]\s*")
 PAUSA = 0.5          # silencio entre escenas (audio.py luego ajusta las pausas)
-INTENTOS = 4
+INTENTOS = 3
 
 
 def _letras(m):
@@ -89,7 +89,7 @@ def generar(escenas, voz="sinhumo", device="cpu", log=print):
     w_ref, sr_ref = sf.read(ref, dtype="float32")
     tono_ref = tono(w_ref if w_ref.ndim == 1 else w_ref.mean(1), sr_ref)
     oido = Oido()
-    log(f"Qwen listo en {time.time()-t0:.0f}s · {len(escenas)} escenas · tono de referencia {tono_ref:.0f} Hz")
+    log(f"Qwen listo en {time.time()-t0:.0f}s · {device}{' (GPU ' + torch.cuda.get_device_name(0) + ')' if device != 'cpu' and torch.cuda.is_available() else ''} · {len(escenas)} escenas · tono de referencia {tono_ref:.0f} Hz")
     partes, sr, repetidas = [], 24000, 0
     for i, esc in enumerate(escenas):
         mejor, nota_mejor = None, -1.0
@@ -103,7 +103,9 @@ def generar(escenas, voz="sinhumo", device="cpu", log=print):
             t = tono(w, sr)
             desvio = abs(t - tono_ref) / tono_ref if tono_ref and t else 1.0
             cps = len(esc) / max(dur, 0.1)
-            ok = parecido >= 0.85 and desvio <= 0.25 and 8 <= cps <= 24
+            # (12-nov-2026) más tolerante: el «oído» (whisper) confunde nombres propios y alguna palabra
+            # («Welga», «Teyado») y mandaba repetir frases que estaban bien (54-64 repeticiones por largo)
+            ok = parecido >= 0.72 and desvio <= 0.35 and 8 <= cps <= 26
             nota = parecido - desvio
             if nota > nota_mejor:
                 mejor, nota_mejor = w, nota
@@ -112,7 +114,7 @@ def generar(escenas, voz="sinhumo", device="cpu", log=print):
             repetidas += 1
             log(f"escena {i+1}: repito (parecido {parecido:.2f}, tono {t:.0f} Hz, {cps:.0f} car/s) → «{oido_txt[:70]}»")
         else:
-            if nota_mejor < 0.6:
+            if nota_mejor < 0.45:
                 raise RuntimeError(f"la escena {i+1} no sale bien tras {INTENTOS} intentos")
             log(f"escena {i+1}: me quedo con el mejor intento (nota {nota_mejor:.2f})")
         partes += [mejor, np.zeros(int(sr * PAUSA), np.float32)]
