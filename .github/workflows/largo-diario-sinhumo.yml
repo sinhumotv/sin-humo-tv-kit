@@ -65,3 +65,9 @@ jobs:
           for v in FORZAR AHORA NO_PUBLICAR; do [ -z "${!v}" ] && unset $v; done
           export GEMINI_CLAVES=$(echo "$GEMINI_CLAVES" | sed 's/^,*//; s/,,*/,/g; s/,$//')
           python3 sinhumo_largo/hacer.py
+      - name: Vídeo de prueba
+        if: ${{ inputs.no_publicar == '1' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: prueba-largo
+          path: prueba_largo/

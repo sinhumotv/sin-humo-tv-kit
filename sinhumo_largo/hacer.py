@@ -76,6 +76,11 @@ if not hecho:
 L = json.load(open(f'{hecho}/largo.json', encoding='utf-8'))
 print(f'LARGO: «{L["titulo"]}» · {L.get("duracion")} s', flush=True)
 if os.environ.get('NO_PUBLICAR'):
+    # (12-nov-2026) la prueba se guarda para poder verla (artefacto «prueba-largo» del workflow)
+    PR = os.path.join(os.environ.get('GITHUB_WORKSPACE', '.'), 'prueba_largo')
+    os.makedirs(PR, exist_ok=True)
+    for f in ('video_final.mp4', 'miniatura.jpg', 'voz.mp3'):
+        if os.path.exists(f'{hecho}/{f}'): shutil.copy(f'{hecho}/{f}', f'{PR}/{f}')
     sys.exit(0)
 
 # ---------- 3) Alojar y programar ----------

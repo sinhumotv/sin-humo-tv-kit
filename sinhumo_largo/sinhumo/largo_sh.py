@@ -334,7 +334,7 @@ if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
     VOZ_USADA = 'Gemini Puck (reserva)'
     if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
         sys.exit('FALLO voz: ' + (r.stdout + r.stderr)[-400:])
-print(r.stdout.strip().splitlines()[-1], '·', VOZ_USADA, flush=True)
+print('\n'.join(r.stdout.strip().splitlines()[-12:]), '·', VOZ_USADA, flush=True)
 
 # ---------- 5) MONTAJE con el kit: alineado, tiempos, render, mezcla, miniatura ----------
 print('· montaje', flush=True)
