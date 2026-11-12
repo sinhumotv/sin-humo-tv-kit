@@ -15,7 +15,7 @@ if not usuario:   # con los tokens nuevos (KGAT_) el usuario sale de la propia A
     except Exception: pass
 print('usuario Kaggle:', usuario or '¿?', flush=True)
 lote = [{'n': x['n'], 'jpg_b64': base64.b64encode(open(x['jpg'], 'rb').read()).decode(), 'prompt': x['prompt'],
-         'semilla': x.get('semilla', 0), 'fotogramas': x.get('fotogramas', 97)} for x in ped]
+         'semilla': x.get('semilla', 0), 'fotogramas': x.get('fotogramas', 65)} for x in ped]
 cod = open(os.path.join(AQUI, 'animar.py')).read().replace('__PEDIDO__', base64.b64encode(json.dumps(lote).encode()).decode()).replace('__MODELO__', modelo)
 d = tempfile.mkdtemp()
 open(f'{d}/animar.py', 'w').write(cod)

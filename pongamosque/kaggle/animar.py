@@ -25,6 +25,7 @@ if n_gpu > 1:   # T4 x2: el codificador de texto en la segunda GPU, el resto en 
 else:
     pipe.enable_model_cpu_offload()
 pipe.vae.enable_tiling()
+torch.backends.cuda.enable_flash_sdp(False); torch.backends.cuda.enable_mem_efficient_sdp(True)   # atención que cabe en la T4
 print(f'modelo {MODELO} cargado en {time.time() - t0:.0f} s · {dt}', flush=True)
 NEG = 'worst quality, inconsistent motion, blurry, jittery, distorted, static, frozen, morphing, deformed, text, watermark'
 res = []
@@ -32,11 +33,11 @@ for it in PEDIDO:
     t1 = time.time()
     try:
         im = Image.open(io.BytesIO(base64.b64decode(it['jpg_b64']))).convert('RGB')
-        W, H = (544, 960) if im.height >= im.width else (960, 544)
+        W, H = (448, 800) if im.height >= im.width else (800, 448)   # T4 (15 GB): más grande se queda sin memoria
         im = ImageOps.fit(im, (W, H), Image.LANCZOS)
         f0 = f'/tmp/c{it["n"]}.mp4'; export_to_video([im], f0, fps=24)
         kw = dict(conditions=[LTXVideoCondition(video=load_video(f0), frame_index=0)], prompt=it['prompt'], negative_prompt=NEG,
-                  width=W, height=H, num_frames=int(it.get('fotogramas', 97)), frame_rate=24, decode_timestep=0.05, decode_noise_scale=0.025,
+                  width=W, height=H, num_frames=int(it.get('fotogramas', 65)), frame_rate=24, decode_timestep=0.05, decode_noise_scale=0.025,
                   image_cond_noise_scale=0.0, generator=torch.Generator('cuda:0' if n_gpu else 'cpu').manual_seed(int(it.get('semilla', 0))))
         if 'distilled' in MODELO:
             fr = pipe(timesteps=[1000, 993, 987, 981, 975, 909, 725, 0.03], guidance_scale=1.0, **kw).frames[0]
