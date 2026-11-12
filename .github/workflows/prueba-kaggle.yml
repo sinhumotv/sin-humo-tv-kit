@@ -1,22 +1,27 @@
-# (12-nov-2026) Comprueba que el token de Kaggle (secreto KAGGLE_API_TOKEN) funciona. No usa GPU.
+# (12-nov-2026) Pongamos Que: prueba de un clip IA en la GPU gratis de Kaggle + acceso al motor privado de Explícalo.
 name: Prueba Kaggle
 on:
   push:
     branches: [claude/kind-brown-9clxsm]
-    paths: ['.github/workflows/prueba-kaggle.yml']
+    paths: ['.github/workflows/prueba-kaggle.yml', 'pongamosque/kaggle/**']
   workflow_dispatch:
 jobs:
-  prueba:
+  motor:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        continue-on-error: true
+        with: { repository: sinhumotv/Explicalo, token: '${{ secrets.GH_SECRETOS }}', path: explicalo, sparse-checkout: plataforma/v2 }
+      - run: ls explicalo/plataforma/v2 2>/dev/null | head -5 && echo "MOTOR PRIVADO: ACCESO OK" || echo "MOTOR PRIVADO: SIN ACCESO"
+  clip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
       - run: pip install -q "kaggle>=1.8"
-      - env:
-          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      - env: { KAGGLE_API_TOKEN: '${{ secrets.KAGGLE_API_TOKEN }}' }
         run: |
-          if [ -z "$KAGGLE_API_TOKEN" ]; then echo "FALTA el secreto KAGGLE_API_TOKEN"; exit 1; fi
-          kaggle --version
-          # diagnóstico sin enseñar la clave: cómo empieza, cuánto mide y si lleva espacios o saltos de línea
-          python3 -c "import os;t=os.environ['KAGGLE_API_TOKEN'];print('empieza por KGAT_:',t.startswith('KGAT_'),'· largo:',len(t),'· espacios/saltos:',any(c.isspace() for c in t))"
           export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
-          mkdir -p ~/.kaggle && printf %s "$KAGGLE_API_TOKEN" > ~/.kaggle/access_token && chmod 600 ~/.kaggle/access_token
-          kaggle kernels list --mine --page-size 5 && echo "KAGGLE OK"
+          echo '[{"n":5,"jpg":"pongamosque/kaggle/prueba.jpg","semilla":1,"prompt":"Dynamic cinematic motion: heavy rain pours down, giant waves crash against the cliff, the camera moves through the scene. A lighthouse on a cliff in a violent storm at sunset. Realistic natural movement, highly detailed."}]' > ped.json
+          python3 pongamosque/kaggle/lanzar.py salida ped.json
+          ls -la salida
