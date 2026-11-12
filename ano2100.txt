@@ -92,3 +92,4 @@
 2026-11-11|21:00|El polvo inteligente en 2100|nadie|YO 6af44002658ef0788e234ae4 IN 6af44002f41d6d2bbb633f1a TI 6af44003f41d6d2bbb633f4c|img=mixto|21:10
 2026-11-12|12:00|El fin del ahorro financiero|final|YO 6af59708e11ce7b6b8e372f8 IN 6af5970bdcbfadbe0a6ffa08 TI 6af59715f662733b84a9f167|img=mixto|11:38
 2026-11-12|15:00|Hologramas táctiles en 2100|consecuencia|YO 6af599aa49bcfed3aa784bdd IN 6af599abe11ce7b6b8e45ed0 TI 6af599ab100f73160cc85bc8|img=mixto|14:32
+2026-11-12|18:00|Hoteles lunares en 2100|sabias|YO 6af59c2649bcfed3aa7915f8 IN 6af59c27f662733b84ab86e5 TI 6af59c28dcbfadbe0a718ae6|img=mixto|17:51
