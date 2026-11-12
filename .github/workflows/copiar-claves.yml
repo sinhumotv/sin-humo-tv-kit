@@ -1,0 +1,28 @@
+# (12-nov-2026) Trae a este repositorio las claves de los canales que hoy guarda el servidor de Explícalo (Modal), SIN que
+# su valor se vea nunca: 1) este workflow publica la llave PÚBLICA de secretos del repositorio; 2) el servidor cifra cada clave
+# con ella (solo GitHub puede abrirlas) y el resultado se deja en claves/cifradas.json; 3) este workflow las guarda como secretos.
+name: Copiar claves de los canales
+on:
+  push:
+    branches: [claude/kind-brown-9clxsm]
+    paths: ['.github/workflows/copiar-claves.yml', 'claves/cifradas.json']
+  workflow_dispatch:
+jobs:
+  copiar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env: { GH_TOKEN: '${{ secrets.GH_SECRETOS }}' }
+        run: |
+          if [ ! -f claves/cifradas.json ]; then
+            echo "LLAVE_PUBLICA $(gh api repos/sinhumotv/sin-humo-tv-kit/actions/secrets/public-key --jq '.key_id + " " + .key')"
+            exit 0
+          fi
+          python3 - <<'PY'
+          import json, subprocess
+          d = json.load(open('claves/cifradas.json'))
+          for nombre, valor in d['secretos'].items():
+              r = subprocess.run(['gh', 'api', '-X', 'PUT', f'repos/sinhumotv/sin-humo-tv-kit/actions/secrets/{nombre}',
+                                  '-f', f'encrypted_value={valor}', '-f', f"key_id={d['key_id']}"], capture_output=True, text=True)
+              print('GUARDADO' if r.returncode == 0 else 'FALLO ' + r.stderr[-200:], nombre)
+          PY
