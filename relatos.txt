@@ -100,3 +100,4 @@
 2026-11-11|18:00|El mito de Adonis|sabias|YO 6af42169dad19848c695e69a IN 6af4216a3ccc64b07b82a417 TI 6af4216b33d9422c21b4ce2f|img=mixto|17:34
 2026-11-11|21:00|Los gigantes Alóadas|consecuencia|YO 6af4258c3ccc64b07b83fece IN 6af4258c7e9ab194b7fbf565 TI 6af4258d60e4cf0fafb2a258|img=ia|20:36
 2026-11-12|12:00|Talos el gigante de bronce|nadie|YO 6af59829100f73160cc7e93a IN 6af5982a041a9377d7e291e2 TI 6af5982af662733b84aa4f45|img=mixto|11:56
+2026-11-12|15:00|El sacrificio de Ifigenia|error|YO 6af59bb049bcfed3aa78f566 IN 6af59bb1f662733b84ab6772 TI 6af59bb1041a9377d7e3ab4f|img=mixto|14:59
