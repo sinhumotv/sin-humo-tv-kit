@@ -93,3 +93,4 @@
 2026-11-12|12:00|La risa mortal de Crisipo|consecuencia|YO 6af59b8ddcbfadbe0a71653f IN 6af59b90041a9377d7e3a037 TI 6af59b9b100f73160cc90063|img=mixto|11:40
 2026-11-12|15:00|El trágico final de Arquímedes|error|YO 6af59e48967b7c14517ee748 IN 6af59e495389053222253a21 TI 6af59e495389053222253a54|img=mixto|15:18
 2026-11-12|21:00|La subasta del Imperio Romano|pregunta|YO 6af5a2d7967b7c1451809918 IN 6af5a2d82a482cc6407b25c1 TI 6af5a2d80219d925487fdfe4|img=mixto|21:31
+2026-11-12|18:00|El hundimiento del Vasa|error|YO 6af5bc1437794f4dae3e2306 IN 6af5bc152982c70a077b371a TI 6af5bc152982c70a077b3773|img=mixto|18:09
