@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
         continue-on-error: true
         with: { repository: sinhumotv/Explicalo, token: '${{ secrets.GH_SECRETOS }}', path: explicalo, sparse-checkout: plataforma/v2 }
-      - run: ls explicalo/plataforma/v2 2>/dev/null | head -5 && echo "MOTOR PRIVADO: ACCESO OK" || echo "MOTOR PRIVADO: SIN ACCESO"
+      - run: |
+          ls explicalo/plataforma/v2 2>/dev/null | head -5 && echo "MOTOR PRIVADO - ACCESO OK" || echo "MOTOR PRIVADO - SIN ACCESO"
   clip:
     runs-on: ubuntu-latest
     timeout-minutes: 120
