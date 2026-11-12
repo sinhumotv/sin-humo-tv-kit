@@ -91,3 +91,4 @@
 2026-11-11|18:00|El hundimiento del Lusitania|cuenta|YO 6af43f63f41d6d2bbb630b39 IN 6af43f63658ef0788e232098 TI 6af43f64fdd6ae2d257efcd3|img=mixto|18:33
 2026-11-11|21:00|La venta de la Torre Eiffel|increible|YO 6af4410ffdd6ae2d257fa21b IN 6af4411027d84871c7ece3f1 TI 6af44111fdd6ae2d257fa280|img=mixto|21:30
 2026-11-12|12:00|La risa mortal de Crisipo|consecuencia|YO 6af59b8ddcbfadbe0a71653f IN 6af59b90041a9377d7e3a037 TI 6af59b9b100f73160cc90063|img=mixto|11:40
+2026-11-12|15:00|El trágico final de Arquímedes|error|YO 6af59e48967b7c14517ee748 IN 6af59e495389053222253a21 TI 6af59e495389053222253a54|img=mixto|15:18
