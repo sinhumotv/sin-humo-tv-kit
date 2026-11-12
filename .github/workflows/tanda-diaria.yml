@@ -45,10 +45,18 @@ jobs:
         canal: ${{ github.event_name == 'workflow_dispatch' && fromJSON(format('["{0}"]', inputs.canal)) || fromJSON('["relatos","ano2100","cajanegra"]') }}
     steps:
       - uses: actions/checkout@v4
+      - name: Caché del modelo de voz (Qwen)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-qwen3-tts-base-1.7b
       - name: Programas
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           pip install -q numpy pillow faster-whisper
+          # (12-nov-2026) voz propia de cada canal con Qwen3-TTS (gratis, sin cuotas); Gemini queda de reserva
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -q qwen-tts soundfile librosa num2words
       - name: Hacer y programar los vídeos
         env:
           GEMINI_KEY: ${{ secrets[format('{0}_GEMINI_KEY', matrix.canal)] || secrets.GEMINI_KEY }}

@@ -48,7 +48,17 @@ def voz():
         P["color"] = H["color"]
     json.dump(P, open(f"{D}/proyecto.json", "w"), ensure_ascii=False, indent=1)
     open(f"{D}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
-    print(sh(f'python3 "{AQUI}/voz_relato.py" "{D}" --tono relato --voz {VOZ}').strip().splitlines()[-1])
+    # (12-nov-2026) voz propia del canal con Qwen3-TTS (gratis, sin cuotas) si el canal ya tiene su voz en voces/<canal>.wav;
+    # si falla o aún no la tiene, Gemini como siempre
+    canal = os.path.splitext(os.path.basename(os.environ.get("CANAL_JSON", "")))[0]
+    r = None
+    if canal and os.path.exists(f"{KIT}/voces/{canal}.wav"):
+        r = subprocess.run(["python3", f"{KIT}/voz_qwen.py", D, "--voz", canal], capture_output=True, text=True)
+        print((r.stdout.strip().splitlines() or ["?"])[-1])
+    if r is None or r.returncode or not os.path.exists(f"{D}/voz.mp3"):
+        if r is not None:
+            print("voz Qwen falló, paso a Gemini:", (r.stdout + r.stderr)[-300:])
+        print(sh(f'python3 "{AQUI}/voz_relato.py" "{D}" --tono relato --voz {VOZ}').strip().splitlines()[-1])
     print(sh(f'python3 "{KIT}/audio.py" "{D}"').splitlines()[0])
 
 
