@@ -324,14 +324,17 @@ print('· voz', flush=True)
 KIT = os.path.dirname(PLAT)
 if os.path.exists(os.path.join(D, 'voz.mp3')):
     os.remove(os.path.join(D, 'voz.mp3'))
-r = subprocess.run(['python3', os.path.join(KIT, 'voz_qwen.py'), D, '--voz', 'sinhumo'],
-                   capture_output=True, text=True, timeout=3 * 3600)
-VOZ_USADA = 'Qwen (voz propia de sin humo TV)'
-if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
-    print('voz Qwen falló, paso a Gemini: ' + (r.stdout + r.stderr)[-300:], flush=True)
-    r = subprocess.run(['python3', os.path.join(PLAT, 'v2', 'voz.py'), D, '--voz', 'Puck', '--tono', 'noticias_grave' if GRAVE else 'noticias'],
-                       capture_output=True, text=True, env=dict(os.environ, VOZ_ESTRICTA='1', VOZ_REINICIA='1', VOZ_CPS='13.5'), timeout=2400)
-    VOZ_USADA = 'Gemini Puck (reserva)'
+# (12-nov-2026, 15 h) Pablo vuelve a la voz de GEMINI (Puck) de siempre; Qwen solo de RESERVA si Gemini no puede
+r = subprocess.run(['python3', os.path.join(PLAT, 'v2', 'voz.py'), D, '--voz', 'Puck', '--tono', 'noticias_grave' if GRAVE else 'noticias'],
+                   capture_output=True, text=True, env=dict(os.environ, VOZ_ESTRICTA='1', VOZ_REINICIA='1', VOZ_CPS='13.5'), timeout=2400)
+VOZ_USADA = 'Gemini Puck'
+if r.returncode or 'PLAN C' in r.stdout or not os.path.exists(os.path.join(D, 'voz.mp3')):
+    print('voz Gemini no disponible, paso a la voz de reserva Qwen: ' + (r.stdout + r.stderr)[-300:], flush=True)
+    if os.path.exists(os.path.join(D, 'voz.mp3')):
+        os.remove(os.path.join(D, 'voz.mp3'))
+    r = subprocess.run(['python3', os.path.join(KIT, 'voz_qwen.py'), D, '--voz', 'sinhumo'],
+                       capture_output=True, text=True, timeout=3 * 3600)
+    VOZ_USADA = 'Qwen (reserva)'
     if r.returncode or not os.path.exists(os.path.join(D, 'voz.mp3')):
         sys.exit('FALLO voz: ' + (r.stdout + r.stderr)[-400:])
 print('\n'.join(r.stdout.strip().splitlines()[-12:]), '·', VOZ_USADA, flush=True)

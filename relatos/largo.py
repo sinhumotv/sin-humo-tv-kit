@@ -194,21 +194,19 @@ if E["fase"] == "voz":
     open(f"{P}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
     # VOZ_ESTRICTA: un solo modelo para todo el vídeo, misma velocidad, mismo volumen y control de que todos los
     # trozos suenan igual (regla del usuario: la voz no puede cambiar a mitad del vídeo). Nunca el modelo «lite».
-    # (12-nov-2026) voz propia del canal con Qwen3-TTS (gratis, sin cuotas, siempre la misma voz) si ya la tiene en voces/;
-    # si no, o si falla, Gemini como hasta ahora
+    # (12-nov-2026, 15 h) Pablo vuelve a las voces de GEMINI de siempre; la voz propia con Qwen3-TTS (voces/<canal>.wav)
+    # queda solo de RESERVA, para cuando Gemini no pueda dar la voz (cuota agotada o fallo): entonces se hace entera con Qwen
     KIT_R = os.path.dirname(AQUI)
-    rc = 1
-    if os.path.exists(f"{KIT_R}/voces/{CANAL}.wav"):
-        if os.path.exists(f"{P}/voz.mp3"):
-            os.remove(f"{P}/voz.mp3")
-        rc, out = sh(f'python3 "{KIT_R}/voz_qwen.py" "{P}" --voz {CANAL}', ok=True)
-        if rc or not os.path.exists(f"{P}/voz.mp3"):
-            print("voz Qwen falló, paso a Gemini:", out.strip()[-300:])
-            rc = 1
     env = (f'VOZ_ESTRICTA=1 VOZ_REF="{DAT}/voz_ref_{CANAL}.txt" TTS_MAX=3000 '
            "TTS_MODELOS=gemini-3.1-flash-tts-preview,gemini-2.5-flash-preview-tts,gemini-3.8-flash-tts")
-    if rc:
-        rc, out = sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}', ok=True)
+    rc, out = sh(f'{env} python3 "{AQUI}/voz_relato.py" "{P}" --tono relato --voz {H.get("voz", "Algenib")}', ok=True)
+    if (rc or "PLAN C" in out or not os.path.exists(f"{P}/voz.mp3")) and os.path.exists(f"{KIT_R}/voces/{CANAL}.wav"):
+        print("voz Gemini no disponible (código", rc, "), paso a la voz de reserva Qwen:", out.strip()[-300:])
+        if os.path.exists(f"{P}/voz.mp3"):
+            os.remove(f"{P}/voz.mp3")
+        rc2, out2 = sh(f'python3 "{KIT_R}/voz_qwen.py" "{P}" --voz {CANAL}', ok=True)
+        if not rc2 and os.path.exists(f"{P}/voz.mp3"):
+            rc, out = 0, out2
     print(out.strip()[-1500:])
     if rc == 3:
         guardar_proyecto()

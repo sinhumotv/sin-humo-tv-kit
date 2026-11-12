@@ -48,17 +48,24 @@ def voz():
         P["color"] = H["color"]
     json.dump(P, open(f"{D}/proyecto.json", "w"), ensure_ascii=False, indent=1)
     open(f"{D}/voz.txt", "w").write("\n\n".join(e["hablado"] for e in ESC))
-    # (12-nov-2026) voz propia del canal con Qwen3-TTS (gratis, sin cuotas) si el canal ya tiene su voz en voces/<canal>.wav;
-    # si falla o aún no la tiene, Gemini como siempre
+    # (12-nov-2026, 15 h) voz de GEMINI como siempre; la voz propia con Qwen3-TTS (voces/<canal>.wav) solo de RESERVA
+    # cuando Gemini no puede dar la voz
     canal = os.path.splitext(os.path.basename(os.environ.get("CANAL_JSON", "")))[0]
-    r = None
-    if canal and os.path.exists(f"{KIT}/voces/{canal}.wav"):
+    g = subprocess.run(["python3", f"{AQUI}/voz_relato.py", D, "--tono", "relato", "--voz", VOZ], capture_output=True, text=True)
+    if g.returncode == 0 and "PLAN C" not in g.stdout and os.path.exists(f"{D}/voz.mp3"):   # PLAN C = voz Piper: peor que Qwen
+        print((g.stdout.strip().splitlines() or ["?"])[-1])
+    elif canal and os.path.exists(f"{KIT}/voces/{canal}.wav"):
+        print("voz Gemini no disponible, paso a la voz de reserva Qwen:", (g.stdout + g.stderr)[-300:])
+        if os.path.exists(f"{D}/voz.mp3"):
+            os.remove(f"{D}/voz.mp3")
         r = subprocess.run(["python3", f"{KIT}/voz_qwen.py", D, "--voz", canal], capture_output=True, text=True)
         print((r.stdout.strip().splitlines() or ["?"])[-1])
-    if r is None or r.returncode or not os.path.exists(f"{D}/voz.mp3"):
-        if r is not None:
-            print("voz Qwen falló, paso a Gemini:", (r.stdout + r.stderr)[-300:])
-        print(sh(f'python3 "{AQUI}/voz_relato.py" "{D}" --tono relato --voz {VOZ}').strip().splitlines()[-1])
+        if r.returncode or not os.path.exists(f"{D}/voz.mp3"):
+            raise SystemExit("fallo en la voz (Gemini y Qwen): " + (r.stdout + r.stderr)[-300:])
+    elif g.returncode == 0 and os.path.exists(f"{D}/voz.mp3"):
+        print((g.stdout.strip().splitlines() or ["?"])[-1])   # sin voz Qwen para este canal: se queda la de reserva de Gemini
+    else:
+        raise SystemExit("fallo en la voz de Gemini: " + (g.stdout + g.stderr)[-300:])
     print(sh(f'python3 "{KIT}/audio.py" "{D}"').splitlines()[0])
 
 
