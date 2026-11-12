@@ -4,7 +4,7 @@ Necesita KAGGLE_API_TOKEN. El cuaderno es privado y se reutiliza (una versión n
 import base64, json, os, subprocess, sys, tempfile, time
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sal, ped = sys.argv[1], json.load(open(sys.argv[2]))
-modelo = sys.argv[3] if len(sys.argv) > 3 else 'Lightricks/LTX-Video-0.9.5'   # 2B: cabe en una T4 de 16 GB (el 13B no)
+modelo = sys.argv[3] if len(sys.argv) > 3 else 'Lightricks/LTX-Video-0.9.8-2B-distilled,Lightricks/LTX-Video-0.9.7-2B-distilled,Lightricks/LTX-Video-0.9.5'   # 2B (cabe en una T4); el primero que exista
 os.makedirs(sal, exist_ok=True)
 def k(*a, **kw): return subprocess.run(['kaggle', *a], capture_output=True, text=True, **kw)
 from kaggle.api.kaggle_api_extended import KaggleApi

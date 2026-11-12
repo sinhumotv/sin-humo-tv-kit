@@ -23,6 +23,6 @@ jobs:
       - env: { KAGGLE_API_TOKEN: '${{ secrets.KAGGLE_API_TOKEN }}' }
         run: |
           export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
-          echo '[{"n":5,"jpg":"pongamosque/kaggle/prueba.jpg","semilla":1,"prompt":"Dynamic cinematic motion: heavy rain pours down, giant waves crash against the cliff, the camera moves through the scene. A lighthouse on a cliff in a violent storm at sunset. Realistic natural movement, highly detailed."}]' > ped.json
+          python3 -c "import json;p='Dynamic cinematic motion: {}, the camera moves through the scene. {} Realistic natural movement, highly detailed.';json.dump([{'n':5,'jpg':'pongamosque/kaggle/prueba.jpg','semilla':1,'prompt':p.format('heavy rain pours down, giant waves crash against the cliff','A lighthouse on a cliff in a violent storm at sunset.')},{'n':6,'jpg':'pongamosque/kaggle/prueba.jpg','semilla':2,'prompt':p.format('lightning flashes, wind bends the grass','A lighthouse on a cliff in a violent storm.')}],open('ped.json','w'))" 
           python3 pongamosque/kaggle/lanzar.py salida ped.json
           ls -la salida
