@@ -15,4 +15,8 @@ jobs:
         run: |
           if [ -z "$KAGGLE_API_TOKEN" ]; then echo "FALTA el secreto KAGGLE_API_TOKEN"; exit 1; fi
           kaggle --version
+          # diagnóstico sin enseñar la clave: cómo empieza, cuánto mide y si lleva espacios o saltos de línea
+          python3 -c "import os;t=os.environ['KAGGLE_API_TOKEN'];print('empieza por KGAT_:',t.startswith('KGAT_'),'· largo:',len(t),'· espacios/saltos:',any(c.isspace() for c in t))"
+          export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
+          mkdir -p ~/.kaggle && printf %s "$KAGGLE_API_TOKEN" > ~/.kaggle/access_token && chmod 600 ~/.kaggle/access_token
           kaggle kernels list --mine --page-size 5 && echo "KAGGLE OK"
