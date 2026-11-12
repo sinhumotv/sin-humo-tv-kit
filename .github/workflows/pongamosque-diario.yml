@@ -1,0 +1,57 @@
+# (13-nov-2026) PONGAMOS QUE · fabrica la tanda del día (4-5 Shorts) con TODAS las escenas animadas con IA (GPU gratis de Kaggle)
+# y el motor de Explícalo (repositorio privado; aquí no se copia). Deja los vídeos en la rama «pongamosque-videos» y la lista en
+# videos.json; «Publicar Pongamos Que (tanda)» los va subiendo a lo largo del día. Gratis: GitHub (público) + Kaggle.
+name: Pongamos Que · fabricar tanda
+on:
+  push:
+    branches: [claude/kind-brown-9clxsm]
+    paths: ['.github/workflows/pongamosque-diario.yml']
+  workflow_dispatch:
+    inputs:
+      cuantos: { description: 'cuántos vídeos', default: '5' }
+      motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
+permissions: { contents: write }
+concurrency: { group: pongamosque-tanda, cancel-in-progress: false }
+jobs:
+  fabricar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor || ''claude/kind-brown-9clxsm'' }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime "kaggle>=1.8"
+      - name: Fabricar
+        env:
+          NODE_PATH: /opt/npm-tools/node_modules
+          GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          GEMINI_TTS_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          CF_ACCOUNT: ${{ secrets.PONGAMOSQUE_CF_ACCOUNT }}
+          CF_TOKEN: ${{ secrets.PONGAMOSQUE_CF_TOKEN }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          CUANTOS: ${{ inputs.cuantos || (github.event_name == 'push' && '1') || '5' }}
+        run: |
+          export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
+          python3 pongamosque/temas.py "$CUANTOS" temas.json
+          python3 pongamosque/diario.py temas.json explicalo tanda
+      - name: Guardar vídeos y temas
+        if: always()
+        run: |
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && git pull -q --rebase && git push -q || true
+          [ -f tanda/videos.json ] || exit 0
+          mkdir /tmp/pub && cp tanda/videos.json tanda/v*.mp4 /tmp/pub/ 2>/dev/null; cd /tmp/pub && git init -q -b pongamosque-videos
+          git add -A && git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Tanda $(date -u +%F)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-videos
+          cat videos.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: registro-tanda, path: 'tanda/v*/resumen.json', if-no-files-found: ignore }
