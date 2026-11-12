@@ -91,3 +91,4 @@
 2026-11-11|18:00|Jueces de inteligencia artificial en 2100|error|YO 6af43ec9f41d6d2bbb62dade IN 6af43eca27d84871c7ec163d TI 6af43ecb658ef0788e22ecb6|img=mixto|17:24
 2026-11-11|21:00|El polvo inteligente en 2100|nadie|YO 6af44002658ef0788e234ae4 IN 6af44002f41d6d2bbb633f1a TI 6af44003f41d6d2bbb633f4c|img=mixto|21:10
 2026-11-12|12:00|El fin del ahorro financiero|final|YO 6af59708e11ce7b6b8e372f8 IN 6af5970bdcbfadbe0a6ffa08 TI 6af59715f662733b84a9f167|img=mixto|11:38
+2026-11-12|15:00|Hologramas táctiles en 2100|consecuencia|YO 6af599aa49bcfed3aa784bdd IN 6af599abe11ce7b6b8e45ed0 TI 6af599ab100f73160cc85bc8|img=mixto|14:32
