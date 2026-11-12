@@ -117,5 +117,20 @@
         "descripcion": "Hombre español de unos 40 años, narrador de documentales de crímenes reales: voz grave, oscura, seria y algo ronca; tono tenso, de suspense y respetuoso, ritmo medido con pausas inquietantes, como un documental de sucesos de la televisión española. Nunca alegre. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural. Que suene como un periodista de sucesos de Madrid de toda la vida, con la zeta muy clara."
       }
     ]
+  },
+  "cajanegra4": {
+    "candidatas": 4,
+    "semilla": 900,
+    "texto": "La noche del catorce de marzo, en un pueblo de Zaragoza, la policía recibió una llamada que nadie olvidaría. En la cocina no había signos de violencia. Pero junto al cenicero, alguien había dejado un mensaje: hacedme caso, esto no ha terminado.",
+    "voces": [
+      {
+        "id": "cajanegra_d",
+        "descripcion": "Hombre español de unos 40 años, de Madrid, con voz masculina grave, oscura y seria; narrador de documentales de crímenes reales en la televisión española. Tono tenso y respetuoso, ritmo medido con pausas inquietantes. ACENTO OBLIGATORIO: castellano de España con la zeta y la ce pronunciadas como zeta (cocina, cenicero, Zaragoza, catorce), jota fuerte, s apical; nada de seseo ni de acento latinoamericano."
+      },
+      {
+        "id": "cajanegra_e",
+        "descripcion": "Hombre español de unos 45 años, narrador de documentales de crímenes reales: voz grave, cálida, profunda y resonante; tono oscuro, tenso y de suspense, como un documental de sucesos, ritmo pausado, pausas dramáticas y emoción contenida. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural. Pronuncia la ce y la zeta como zeta (cocina, cenicero, Zaragoza), nada de seseo."
+      }
+    ]
   }
 }
