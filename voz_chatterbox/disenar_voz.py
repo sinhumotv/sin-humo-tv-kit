@@ -24,7 +24,7 @@ def main():
     for v in G["voces"]:
         texto = v.get("texto") or G["texto"]
         for k in range(n):
-            torch.manual_seed(100 + 31 * k)
+            torch.manual_seed(G.get("semilla", 100) + 31 * k)
             t = time.time()
             wavs, sr = m.generate_voice_design(text=texto, language="Spanish", instruct=v["descripcion"])
             w = np.asarray(wavs[0], dtype=np.float32)

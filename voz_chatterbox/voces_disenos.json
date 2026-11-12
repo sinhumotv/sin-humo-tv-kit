@@ -106,5 +106,16 @@
         "descripcion": "Hombre español de unos 30 años, youtuber divulgativo: voz amable, clara y cálida de tono medio-grave, cercano y natural como un buen profesor que lo hace todo fácil, ritmo alegre, sonriendo al hablar. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural."
       }
     ]
+  },
+  "cajanegra3": {
+    "candidatas": 5,
+    "semilla": 500,
+    "texto": "La noche del catorce de marzo, la policía de Zaragoza recibió una llamada que nadie olvidaría. En la casa no había signos de violencia. Pero en el sótano, junto a una caja cerrada, alguien había dejado un mensaje.",
+    "voces": [
+      {
+        "id": "cajanegra_c",
+        "descripcion": "Hombre español de unos 40 años, narrador de documentales de crímenes reales: voz grave, oscura, seria y algo ronca; tono tenso, de suspense y respetuoso, ritmo medido con pausas inquietantes, como un documental de sucesos de la televisión española. Nunca alegre. ACENTO OBLIGATORIO: español de España peninsular, castellano de Madrid, como un locutor de RTVE; nada de acento latinoamericano ni neutro; distingue la s de la z (cielo, zapato, corazón con zeta), jota fuerte (jamás, joven), s apical castellana y entonación española natural. Que suene como un periodista de sucesos de Madrid de toda la vida, con la zeta muy clara."
+      }
+    ]
   }
 }
