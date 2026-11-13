@@ -5,6 +5,8 @@ name: Pongamos Que · fabricar tanda
 on:
   schedule:
     - cron: '37 8 * * *'    # 9:37 en Madrid (invierno): el cupo gratis de Gemini se renueva a las 9:00 de Madrid
+    - cron: '7 9 * * *'     # 10:07 reserva (si GitHub se salta la anterior; si ya hay tanda de hoy, no hace nada)
+    - cron: '37 9 * * *'    # 10:37 reserva
   workflow_dispatch:
     inputs:
       cuantos: { description: 'cuántos vídeos', default: '5' }
