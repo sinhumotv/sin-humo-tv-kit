@@ -29,4 +29,4 @@ jobs:
           ls -la salida
           mkdir -p pongamosque/kaggle/prueba_salida && cp salida/*_ia.mp4 pongamosque/kaggle/prueba_salida/ || true
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
-          git add -f pongamosque/kaggle/prueba_salida && git commit -qm "Clips de prueba de Kaggle (temporal)" && git push || true
+          git add -f pongamosque/kaggle/prueba_salida && git commit -qm "Clips de prueba de Kaggle (temporal)" && git pull -q --rebase && git push || true
