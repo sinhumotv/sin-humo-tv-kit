@@ -103,3 +103,4 @@
 2026-11-12|15:00|El sacrificio de Ifigenia|error|YO 6af59bb049bcfed3aa78f566 IN 6af59bb1f662733b84ab6772 TI 6af59bb1041a9377d7e3ab4f|img=mixto|14:59
 2026-11-12|18:00|Heracles y Anteo|cuenta|YO 6af59f3788901ac957425814 IN 6af59f3888901ac957425860 TI 6af59f382a482cc64079c7b3|img=mixto|18:20
 2026-11-12|21:00|El mito de Clitia|final|YO 6af5a26a3167448767025423 IN 6af5a26b88901ac9574388f2 TI 6af5a26b0219d925487fcde1|img=mixto|20:54
+2026-11-13|08:00|Perseo y las tres Greas|increible|YO 6af6b7b1ba218f326384ef4e IN 6af6b7b2c1a0010a5b0553d8 TI 6af6b7b3fb90ccefdd257f80|img=mixto|08:22
