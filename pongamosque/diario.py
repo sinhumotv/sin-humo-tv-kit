@@ -33,6 +33,19 @@ lote = []
 for w in listos:
     for e in json.load(open(f'{w["d"]}/animar.json'))['escenas']:
         lote.append({'n': w['i'] * 100 + e['n'], 'jpg': e['img'], 'prompt': e['prompt'], 'semilla': e.get('semilla', 0)})
+# las imágenes se publican en la rama «pongamosque-imgs» del repositorio (público) y Kaggle las descarga de ahí
+if lote and os.environ.get('REPO_PUSH'):
+    dimg = os.path.join(SAL, '_imgs'); shutil.rmtree(dimg, ignore_errors=True); os.makedirs(dimg)
+    for x in lote: shutil.copy(x['jpg'], f'{dimg}/{x["n"]}.jpg')
+    g = lambda *a: subprocess.run(['git', *a], cwd=dimg, capture_output=True, text=True)
+    g('init', '-q', '-b', 'pongamosque-imgs'); g('add', '-A')
+    g('-c', 'user.name=github-actions', '-c', 'user.email=github-actions@users.noreply.github.com', 'commit', '-qm', 'Imágenes para Kaggle')
+    r = g('push', '-q', '-f', os.environ['REPO_PUSH'], 'pongamosque-imgs')
+    if r.returncode == 0:
+        base = f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY', 'sinhumotv/sin-humo-tv-kit')}/pongamosque-imgs"
+        for x in lote: x['url'] = f'{base}/{x["n"]}.jpg'
+    else:
+        print('no se pudieron publicar las imágenes:', r.stderr[-300:], flush=True)
 json.dump(lote, open(f'{SAL}/lote.json', 'w'))
 clips = os.path.join(SAL, 'clips'); motivo = ''
 if lote:
