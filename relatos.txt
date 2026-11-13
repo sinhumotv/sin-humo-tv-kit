@@ -104,3 +104,4 @@
 2026-11-12|18:00|Heracles y Anteo|cuenta|YO 6af59f3788901ac957425814 IN 6af59f3888901ac957425860 TI 6af59f382a482cc64079c7b3|img=mixto|18:20
 2026-11-12|21:00|El mito de Clitia|final|YO 6af5a26a3167448767025423 IN 6af5a26b88901ac9574388f2 TI 6af5a26b0219d925487fcde1|img=mixto|20:54
 2026-11-13|08:00|Perseo y las tres Greas|increible|YO 6af6b7b1ba218f326384ef4e IN 6af6b7b2c1a0010a5b0553d8 TI 6af6b7b3fb90ccefdd257f80|img=mixto|08:22
+2026-11-13|12:00|El secreto de Faón|pregunta|YO 6af6bbc7ba218f3263863261 IN 6af6bbc8fb90ccefdd26e254 TI 6af6bbc8ba218f32638632ae|img=mixto|11:51
