@@ -1,0 +1,40 @@
+# (13-nov-2026) Pongamos Que · un vídeo de muestra por estructura (mismo tema) para elegir con cuál se queda el canal.
+name: Pongamos Que · muestras de estructuras
+on:
+  push:
+    branches: [claude/kind-brown-9clxsm]
+    paths: ['.github/workflows/pongamosque-muestras.yml']
+  workflow_dispatch:
+    inputs:
+      estructuras: { default: 'linea,ranking,cine,versus,mapa,rejilla' }
+      tema: { default: '¿Qué pasaría si la Tierra dejara de girar de golpe?' }
+permissions: { contents: write }
+jobs:
+  muestras:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: claude/kind-brown-9clxsm, token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six
+      - env:
+          NODE_PATH: /opt/npm-tools/node_modules
+          GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          GEMINI_TTS_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          CF_ACCOUNT: ${{ secrets.PONGAMOSQUE_CF_ACCOUNT }}
+          CF_TOKEN: ${{ secrets.PONGAMOSQUE_CF_TOKEN }}
+        run: python3 pongamosque/muestras.py explicalo muestras "${{ inputs.tema || '¿Qué pasaría si la Tierra dejara de girar de golpe?' }}" "${{ inputs.estructuras || 'linea,ranking,cine,versus,mapa,rejilla' }}"
+      - if: always()
+        run: |
+          ls muestras/*.mp4 || exit 0
+          mkdir /tmp/m && cp muestras/*.mp4 /tmp/m/ && cd /tmp/m && git init -q -b pongamosque-muestras && git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Muestras de estructuras"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-muestras
