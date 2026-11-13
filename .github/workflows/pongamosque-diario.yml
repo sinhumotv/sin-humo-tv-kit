@@ -28,7 +28,7 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
           mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
-          pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime "kaggle>=1.8"
+          pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six "kaggle>=1.8"
       - name: Fabricar
         env:
           NODE_PATH: /opt/npm-tools/node_modules
