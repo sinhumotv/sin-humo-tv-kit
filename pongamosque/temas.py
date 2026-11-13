@@ -16,7 +16,10 @@ NO repitas ni parafrasees ninguno de estos ya hechos: {json.dumps(hechos[-150:],
 Responde SOLO con JSON: [{{"tema": "¿Qué pasaría si …?", "titulo": "título corto con gancho (máx. 60 caracteres, 1 emoji al final)",
 "gancho": "una frase para el pie del vídeo que enganche", "pregunta": "pregunta para que comenten", "hashtags": ["5-7 hashtags sin #"]}}]"""
 clave = os.environ['GEMINI_API_KEY'].strip()
-for m in ['gemini-3.5-flash', 'gemini-3.1-flash', 'gemini-3-flash', 'gemini-3.8-flash-lite', 'gemini-3.8-flash']:
+import time
+MODELOS = ['gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-3.5-flash', 'gemini-3.8-flash', 'gemini-3.5-flash']   # si hay cola (429/503) se espera y se repite
+for intento, m in enumerate(MODELOS):
+    if intento: time.sleep(30 * intento)
     try:
         req = urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={clave}',
                                      json.dumps({'contents': [{'parts': [{'text': P}]}], 'generationConfig': {'temperature': 1.0, 'responseMimeType': 'application/json'}}).encode(),
