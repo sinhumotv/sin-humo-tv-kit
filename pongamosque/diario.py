@@ -74,3 +74,8 @@ for w in trab:
     print(f'{v["id"]}: {"OK" if ok else "FALLO"} · {len(hechos)}/{total} escenas animadas · {"animado con IA" if animadas >= 0.8 else "con imágenes y efecto 3D"} · {v["tema"]}', flush=True)
     videos.append(v)
 json.dump(videos, open(f'{SAL}/videos.json', 'w'), ensure_ascii=False, indent=1)
+# (13-nov-2026) los temas que no salieron vuelven a estar disponibles para otro día
+fallidos = {v['tema'] for v in videos if not v.get('publicable')}
+HECHOS = os.path.join(AQUI, 'temas_hechos.json')
+if fallidos and os.path.exists(HECHOS):
+    json.dump([t for t in json.load(open(HECHOS)) if t not in fallidos], open(HECHOS, 'w'), ensure_ascii=False, indent=1)
