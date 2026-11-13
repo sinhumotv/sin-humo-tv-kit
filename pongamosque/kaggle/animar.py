@@ -43,7 +43,12 @@ def trabajar(g, lote):
     for it in lote:
         t1 = time.time()
         try:
-            im = Image.open(io.BytesIO(base64.b64decode(it['jpg_b64']))).convert('RGB')
+            if it.get('url'):
+                import urllib.request
+                datos = urllib.request.urlopen(urllib.request.Request(it['url'], headers={'User-Agent': 'pongamosque'}), timeout=60).read()
+            else:
+                datos = base64.b64decode(it['jpg_b64'])
+            im = Image.open(io.BytesIO(datos)).convert('RGB')
             W, H = (448, 800) if im.height >= im.width else (800, 448)
             im = ImageOps.fit(im, (W, H), Image.LANCZOS)
             f0 = f'/tmp/c{it["n"]}.mp4'; export_to_video([im], f0, fps=24)
