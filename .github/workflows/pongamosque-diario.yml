@@ -5,12 +5,10 @@ name: Pongamos Que · fabricar tanda
 on:
   schedule:
     - cron: '37 8 * * *'    # 9:37 en Madrid (invierno): el cupo gratis de Gemini se renueva a las 9:00 de Madrid
-  push:
-    branches: [claude/kind-brown-9clxsm]
-    paths: ['.github/workflows/pongamosque-diario.yml']
   workflow_dispatch:
     inputs:
       cuantos: { description: 'cuántos vídeos', default: '5' }
+      forzar: { description: 'fabricar aunque ya haya tanda de hoy (sí/no)', default: 'no' }
       motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
 permissions: { contents: write }
 concurrency: { group: pongamosque-tanda, cancel-in-progress: false }
@@ -20,18 +18,29 @@ jobs:
     timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/checkout@v4
+      - name: ¿Ya hay tanda de hoy?
+        run: |
+          if [ "${{ inputs.forzar }}" != "sí" ] && git fetch -q --depth=1 origin pongamosque-videos 2>/dev/null \
+             && [ "$(git show FETCH_HEAD:fecha.txt 2>/dev/null)" = "$(date -u +%F)" ]; then
+            echo "Ya hay tanda de hoy: no se fabrica otra"; echo YA=1 >> $GITHUB_ENV
+          fi
+      - if: env.YA != '1'
+        uses: actions/checkout@v4
         with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor || ''claude/kind-brown-9clxsm'' }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
       - uses: actions/setup-node@v4
+        if: env.YA != '1'
         with: { node-version: '22' }
       - uses: actions/setup-python@v5
+        if: env.YA != '1'
         with: { python-version: '3.12' }
       - name: Herramientas
+        if: env.YA != '1'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
           mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
           pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six "kaggle>=1.8"
       - name: Fabricar
+        if: env.YA != '1'
         env:
           NODE_PATH: /opt/npm-tools/node_modules
           GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
@@ -45,15 +54,15 @@ jobs:
           python3 pongamosque/temas.py "$CUANTOS" temas.json
           python3 pongamosque/diario.py temas.json explicalo tanda
       - name: Guardar vídeos y temas
-        if: always()
+        if: always() && env.YA != '1'
         run: |
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
           git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && git pull -q --rebase && git push -q || true
           [ -f tanda/videos.json ] || exit 0
-          mkdir /tmp/pub && cp tanda/videos.json tanda/v*.mp4 /tmp/pub/ 2>/dev/null; cd /tmp/pub && git init -q -b pongamosque-videos
+          mkdir /tmp/pub && cp tanda/videos.json tanda/v*.mp4 /tmp/pub/ 2>/dev/null; date -u +%F > /tmp/pub/fecha.txt; cd /tmp/pub && git init -q -b pongamosque-videos
           git add -A && git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Tanda $(date -u +%F)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-videos
           cat videos.json
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && env.YA != '1'
         with: { name: registro-tanda, path: 'tanda/v*/resumen.json', if-no-files-found: ignore }
