@@ -97,3 +97,4 @@
 2026-11-13|12:00|El error en Claude Code|error|YO 6af6e2d5b52ddd180247bea9 IN 6af6e2d5df68225fc1b21c9b TI 6af6e2d6b52ddd180247bfcb|img=ia|12:07
 2026-11-13|15:00|El truco de la propiedad en la IA|increible|YO 6af6e3f9a823708034401e9f IN 6af6e3fae272158370e43691 TI 6af6e3fa639ce45418cca7f7|img=mixto|15:26
 2026-11-13|18:00|Piel biológica para androides|nadie|YO 6af6e518639ce45418cd06b5 IN 6af6e51869e5ecee127cb212 TI 6af6e51967097dd24014a6f2|img=mixto|18:35
+2026-11-13|21:00|Reciclaje molecular doméstico|pregunta|YO 6af6e63bdc85a1c0d24de424 IN 6af6e63c67097dd24014fe9e TI 6af6e63ce272158370e4e491|img=mixto|20:59
