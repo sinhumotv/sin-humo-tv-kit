@@ -2,12 +2,17 @@
 # «pongamosque-videos», videos.json) con la cuenta de Buffer del canal. 5 franjas al día; si no queda vídeo, no hace nada.
 name: Pongamos Que · publicar
 on:
-  schedule:
-    - cron: '43 10 * * *'   # 11:43 Madrid (invierno)
+  schedule:   # hora de Madrid en invierno (UTC+1); cada franja con un disparo de reserva 25 min después
+    - cron: '43 10 * * *'   # 11:43
+    - cron: '8 11 * * *'    # 12:08 reserva
     - cron: '17 12 * * *'   # 13:17
+    - cron: '42 12 * * *'   # 13:42 reserva
     - cron: '47 14 * * *'   # 15:47
+    - cron: '12 15 * * *'   # 16:12 reserva
     - cron: '13 17 * * *'   # 18:13
+    - cron: '38 17 * * *'   # 18:38 reserva
     - cron: '41 19 * * *'   # 20:41
+    - cron: '6 20 * * *'    # 21:06 reserva
   workflow_dispatch:
 permissions: { contents: write }
 concurrency: { group: pongamosque-publicar, cancel-in-progress: false }
