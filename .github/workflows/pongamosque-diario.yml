@@ -60,7 +60,25 @@ jobs:
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
           git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && git pull -q --rebase && git push -q || true
           [ -f tanda/videos.json ] || exit 0
-          mkdir /tmp/pub && cp tanda/videos.json tanda/v*.mp4 /tmp/pub/ 2>/dev/null; date -u +%F > /tmp/pub/fecha.txt; cd /tmp/pub && git init -q -b pongamosque-videos
+          # (13-nov-2026) una segunda tanda el mismo día (forzar) SE AÑADE a la de hoy: no borra los vídeos que aún no han salido
+          python3 - <<'PY'
+          import json, os, shutil, subprocess
+          hoy = subprocess.run(['date', '-u', '+%F'], capture_output=True, text=True).stdout.strip()
+          os.makedirs('/tmp/pub'); viejos = []
+          if subprocess.run(['git', 'fetch', '-q', '--depth=1', 'origin', 'pongamosque-videos']).returncode == 0 and \
+             subprocess.run(['git', 'show', 'FETCH_HEAD:fecha.txt'], capture_output=True, text=True).stdout.strip() == hoy:
+              viejos = json.loads(subprocess.run(['git', 'show', 'FETCH_HEAD:videos.json'], capture_output=True, text=True).stdout)
+              for v in viejos:
+                  if v.get('archivo'): subprocess.run(['git', 'show', 'FETCH_HEAD:' + v['archivo']], stdout=open('/tmp/pub/' + v['archivo'], 'wb'))
+          r = os.environ.get('GITHUB_RUN_NUMBER', '0'); nuevos = json.load(open('tanda/videos.json'))
+          for v in nuevos:
+              v['id'] = f'r{r}-' + v['id']
+              if v.get('archivo'):
+                  shutil.copy('tanda/' + v['archivo'], f'/tmp/pub/r{r}-' + v['archivo']); v['archivo'] = f'r{r}-' + v['archivo']
+          json.dump(viejos + nuevos, open('/tmp/pub/videos.json', 'w'), ensure_ascii=False, indent=1)
+          open('/tmp/pub/fecha.txt', 'w').write(hoy + '\n')
+          PY
+          cd /tmp/pub && git init -q -b pongamosque-videos
           git add -A && git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Tanda $(date -u +%F)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-videos
           cat videos.json
