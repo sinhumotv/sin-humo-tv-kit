@@ -95,3 +95,4 @@
 2026-11-12|18:00|Hoteles lunares en 2100|sabias|YO 6af59c2649bcfed3aa7915f8 IN 6af59c27f662733b84ab86e5 TI 6af59c28dcbfadbe0a718ae6|img=mixto|17:51
 2026-11-12|21:00|Los chips bloqueados en Hong Kong|cuenta|YO 6af5bbb593c23893705795b1 IN 6af5bbb531339cd60d7ccc61 TI 6af5bbb62982c70a077b1c81|img=mixto|21:01
 2026-11-13|12:00|El error en Claude Code|error|YO 6af6e2d5b52ddd180247bea9 IN 6af6e2d5df68225fc1b21c9b TI 6af6e2d6b52ddd180247bfcb|img=ia|12:07
+2026-11-13|15:00|El truco de la propiedad en la IA|increible|YO 6af6e3f9a823708034401e9f IN 6af6e3fae272158370e43691 TI 6af6e3fa639ce45418cca7f7|img=mixto|15:26
