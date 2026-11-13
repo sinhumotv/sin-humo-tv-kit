@@ -1,0 +1,29 @@
+# (13-nov-2026) PONGAMOS QUE · publica en Instagram, TikTok y YouTube el siguiente vídeo de la tanda del día (rama
+# «pongamosque-videos», videos.json) con la cuenta de Buffer del canal. 5 franjas al día; si no queda vídeo, no hace nada.
+name: Pongamos Que · publicar
+on:
+  schedule:
+    - cron: '43 10 * * *'   # 11:43 Madrid (invierno)
+    - cron: '17 12 * * *'   # 13:17
+    - cron: '47 14 * * *'   # 15:47
+    - cron: '13 17 * * *'   # 18:13
+    - cron: '41 19 * * *'   # 20:41
+  workflow_dispatch:
+permissions: { contents: write }
+concurrency: { group: pongamosque-publicar, cancel-in-progress: false }
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vídeos de hoy
+        run: |
+          git fetch -q --depth=1 origin pongamosque-videos || { echo "todavía no hay tanda"; exit 0; }
+          git worktree add -q /tmp/pv FETCH_HEAD && echo HAY=1 >> $GITHUB_ENV
+      - name: Publicar el siguiente
+        if: env.HAY == '1'
+        env: { BUFFER_KEY: '${{ secrets.PONGAMOSQUE_BUFFER_KEY }}' }
+        run: |
+          python3 pongamosque/publicar.py /tmp/pv "https://raw.githubusercontent.com/${{ github.repository }}/pongamosque-videos"
+          cd /tmp/pv && git add videos.json && git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Publicado $(date -u +%H:%M)" \
+            && git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:pongamosque-videos || true
