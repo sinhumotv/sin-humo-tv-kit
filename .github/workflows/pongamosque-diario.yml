@@ -3,6 +3,8 @@
 # videos.json; «Publicar Pongamos Que (tanda)» los va subiendo a lo largo del día. Gratis: GitHub (público) + Kaggle.
 name: Pongamos Que · fabricar tanda
 on:
+  schedule:
+    - cron: '37 8 * * *'    # 9:37 en Madrid (invierno): el cupo gratis de Gemini se renueva a las 9:00 de Madrid
   push:
     branches: [claude/kind-brown-9clxsm]
     paths: ['.github/workflows/pongamosque-diario.yml']

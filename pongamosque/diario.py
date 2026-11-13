@@ -4,7 +4,7 @@ Uso: python3 diario.py <temas.json> <carpeta_explicalo> <salida>
 1) lanza a la vez un fabricar.py del motor de Explícalo por tema (guion, voz, imágenes, profundidad);
 2) cuando todos han pedido sus clips («@ANIMAR»), los anima TODOS en una sola sesión de Kaggle (lanzar.py);
 3) entrega los clips a cada vídeo de uno en uno (así los renders no se pisan) → <salida>/videos.json + NN.mp4
-Un vídeo con menos del 80 % de escenas animadas NO se publica (queda marcado)."""
+Si no se puede animar (Kaggle falla o no hay cupo), el vídeo sale igual con las imágenes de IA y el efecto 3D, y se publica."""
 import json, os, shutil, subprocess, sys, threading, time
 AQUI = os.path.dirname(os.path.abspath(__file__))
 temas, EXP, SAL = json.load(open(sys.argv[1])), os.path.abspath(sys.argv[2]), os.path.abspath(sys.argv[3])
@@ -55,9 +55,9 @@ for w in trab:
     animadas = len(hechos) / max(1, total)
     v = {'id': f'v{w["i"]}', 'tema': w['tema']['tema'], 'titulo': w['tema'].get('titulo') or w['tema']['tema'], 'gancho': w['tema'].get('gancho', ''),
          'pregunta': w['tema'].get('pregunta', ''), 'hashtags': w['tema'].get('hashtags', []), 'escenas': total, 'animadas': len(hechos),
-         'publicable': ok and animadas >= 0.8, 'publicado': {}}
+         'publicable': ok, 'publicado': {}}
     if ok: shutil.copy(f'{w["d"]}/video_final.mp4', f'{SAL}/{v["id"]}.mp4'); v['archivo'] = f'{v["id"]}.mp4'
     else: v['error'] = '\n'.join(w['log'][-12:])[-800:]
-    print(f'{v["id"]}: {"OK" if ok else "FALLO"} · {len(hechos)}/{total} escenas animadas · {"se publicará" if v["publicable"] else "NO se publica"} · {v["tema"]}', flush=True)
+    print(f'{v["id"]}: {"OK" if ok else "FALLO"} · {len(hechos)}/{total} escenas animadas · {"animado con IA" if animadas >= 0.8 else "con imágenes y efecto 3D"} · {v["tema"]}', flush=True)
     videos.append(v)
 json.dump(videos, open(f'{SAL}/videos.json', 'w'), ensure_ascii=False, indent=1)
