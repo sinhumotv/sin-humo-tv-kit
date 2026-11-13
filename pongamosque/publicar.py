@@ -4,6 +4,14 @@ Uso: python3 publicar.py <carpeta con videos.json> <url_base_de_los_mp4>   · cl
 import json, os, sys, urllib.request
 D, BASE = sys.argv[1], sys.argv[2].rstrip('/')
 videos = json.load(open(f'{D}/videos.json'))
+# (13-nov-2026) FRANJAS (hora de Madrid): una sola publicación por franja. Cada franja tiene su disparo y uno de reserva
+# 25 min después (GitHub a veces retrasa o se salta las tareas programadas); el de reserva no publica si ya salió.
+from datetime import datetime
+from zoneinfo import ZoneInfo
+ahora = datetime.now(ZoneInfo('Europe/Madrid')); hm = ahora.hour * 60 + ahora.minute
+franja = sum(hm >= h * 60 + m for h, m in [(11, 0), (13, 0), (15, 30), (18, 0), (20, 30)])
+if franja == 0: print('fuera de horario: no se publica'); sys.exit(0)
+if any(x.get('franja') == franja for x in videos): print(f'la franja {franja} ya está publicada'); sys.exit(0)
 v = next((x for x in videos if x.get('publicable') and not x.get('publicado')), None)
 if not v: print('no queda ningún vídeo por publicar hoy'); sys.exit(0)
 def buffer(q, var=None):
@@ -32,5 +40,6 @@ for red, post in posts.items():
     cp = (d.get('data') or {}).get('createPost') or {}
     v['publicado'][red] = cp['post']['id'] if 'post' in cp else 'ERROR ' + (cp.get('message') or json.dumps(d.get('errors'))[:300])
     print(red, ':', v['publicado'][red], flush=True)
+v['franja'] = franja
 json.dump(videos, open(f'{D}/videos.json', 'w'), ensure_ascii=False, indent=1)
 print('publicado:', v['id'], v['tema'])
