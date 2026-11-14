@@ -5,7 +5,7 @@
  * Tus claves NO están en este código: se guardan en
  * "Configuración del proyecto" → "Propiedades del script" (solo las ves tú):
  *   INSTAGRAM_TOKEN  → token de Instagram (opcional: sin él, solo YouTube)
- *   GEMINI_KEY       → clave gratuita de Google AI Studio (opcional: sin ella, respuestas tipo)
+ *   GEMINI_KEY       → clave gratuita de Google AI Studio (OBLIGATORIA: todas las respuestas las escribe la IA)
  *   PAUSADO          → pon 1 para parar las respuestas sin borrar nada
  *
  * Primer uso: ejecuta la función "configurar" una vez y acepta los permisos.
@@ -116,6 +116,7 @@ function revisarYouTube_(estado, cupo) {
     }
     const texto = s.textOriginal || s.textDisplay || '';
     const respuesta = crearRespuesta_(texto, titulos[vid] || '');
+    if (respuesta === undefined) continue;   // la IA no ha respondido: se reintenta en la siguiente ronda
     marcar_(estado, id);
     if (!respuesta) { registrar_('YouTube', s.authorDisplayName, texto, '(ignorado)'); continue; }
     YouTube.Comments.insert({ snippet: { parentId: c.id, textOriginal: respuesta } }, 'snippet');
@@ -178,6 +179,7 @@ function revisarInstagram_(estado, cupo) {
       if (edad < AJUSTES.esperaMinutos) continue;
       if (edad > AJUSTES.diasAtras * 1440) { marcar_(estado, id); continue; }
       const respuesta = crearRespuesta_(c.text || '', m.caption || '');
+      if (respuesta === undefined) continue;   // la IA no ha respondido: se reintenta en la siguiente ronda
       marcar_(estado, id);
       if (!respuesta) { registrar_('Instagram', c.username, c.text, '(ignorado)'); continue; }
       igPost_('/' + c.id + '/replies', { message: respuesta });
@@ -209,18 +211,20 @@ function crearRespuesta_(comentario, contexto) {
   if (/https?:\/\/|www\.|\.com\b|\.es\b|@\w{3,}.*@\w{3,}/.test(min)) return null;   // enlaces o spam de menciones
   const palabras = ' ' + min.split(/[^\p{L}\p{N}]+/u).join(' ') + ' ';   // compara palabras completas ("imputado" no es un insulto)
   if (PALABRAS_IGNORAR.some(p => palabras.indexOf(' ' + p + ' ') >= 0)) return null;
-  const sinLetras = t.replace(/[\s\p{Emoji_Presentation}\p{Extended_Pictographic}‍️!?¡¿.,]/gu, '');
-  if (!sinLetras) return elegir_(RESPUESTAS_TIPO.emoji);
-
+  // (14-nov-2026) petición del usuario: TODAS las respuestas las escribe la IA, adaptadas a lo que pone cada persona
+  // (también las de solo emojis). Si Gemini no responde, NO se contesta con una frase tipo: se devuelve undefined y el
+  // comentario se vuelve a intentar en la siguiente ronda (cada 5 min, mientras tenga menos de AJUSTES.diasAtras días).
   const clave = PropertiesService.getScriptProperties().getProperty('GEMINI_KEY');
-  if (clave) {
+  if (!clave) { console.error('Falta GEMINI_KEY en las propiedades del script: no se responde nada'); return undefined; }
+  for (let intento = 0; intento < 2; intento++) {
     try {
       const ia = preguntarGemini_(clave, t, contexto);
       if (ia === 'NO_RESPONDER') return null;
       if (ia) return ia;
-    } catch (e) { console.error('Gemini: ' + e); }   // si falla, usa una respuesta tipo
+    } catch (e) { console.error('Gemini: ' + e); }
+    if (intento === 0) Utilities.sleep(3000);
   }
-  return respuestaTipo_(min);
+  return undefined;
 }
 
 function preguntarGemini_(clave, comentario, contexto) {
@@ -234,7 +238,7 @@ function preguntarGemini_(clave, comentario, contexto) {
   if (r.getResponseCode() >= 300) throw new Error('Gemini ' + r.getResponseCode() + ': ' + r.getContentText().slice(0, 200));
   const j = JSON.parse(r.getContentText());
   const partes = j.candidates && j.candidates[0] && j.candidates[0].content && j.candidates[0].content.parts;
-  if (!partes) return null;                       // bloqueado por seguridad → respuesta tipo
+  if (!partes) return 'NO_RESPONDER';             // bloqueado por seguridad → no se responde
   let txt = partes.map(p => p.text || '').join('').trim().replace(/^["“«]|["”»]$/g, '');
   if (txt.indexOf('NO_RESPONDER') >= 0) return 'NO_RESPONDER';
   if (!txt) return null;
