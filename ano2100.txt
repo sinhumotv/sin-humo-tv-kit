@@ -99,3 +99,4 @@
 2026-11-13|18:00|Piel biológica para androides|nadie|YO 6af6e518639ce45418cd06b5 IN 6af6e51869e5ecee127cb212 TI 6af6e51967097dd24014a6f2|img=mixto|18:35
 2026-11-13|21:00|Reciclaje molecular doméstico|pregunta|YO 6af6e63bdc85a1c0d24de424 IN 6af6e63c67097dd24014fe9e TI 6af6e63ce272158370e4e491|img=mixto|20:59
 2026-11-14|12:00|Cifrado verificado por IA|sabias|YO 6af82dd64b28296eb14abe91 IN 6af82dd6d8bd2962e41e670f TI 6af82dd7d8bd2962e41e6775|img=mixto|12:12
+2026-11-14|15:00|IA adaptando GTA VI a PC|final|YO 6af82f574b28296eb14b2a50 IN 6af82f57d16af15d4d077c39 TI 6af82f5881e1228421f98be2|img=mixto|15:25
