@@ -15,22 +15,31 @@ P = json.load(open(sys.argv[1], encoding="utf-8"))
 D = os.path.abspath(sys.argv[2])
 os.makedirs(f"{D}/imgs", exist_ok=True)
 mp4 = f"{D}/video.mp4"
-with urllib.request.urlopen(urllib.request.Request(P["video"], headers={"User-Agent": "Explicalo"}), timeout=600) as r, \
-        open(mp4, "wb") as f:
-    f.write(r.read())
-dur = float(subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{mp4}"', shell=True,
-                           capture_output=True, text=True).stdout.strip() or 0)
-# 12 fotogramas repartidos (sin el gancho inicial ni el cierre promocional); se recorta la franja de abajo (subtítulos)
-fot = []
-for k in range(12):
-    t = 8 + (dur - 35) * k / 11
-    r = subprocess.run(f'ffmpeg -v error -ss {t:.1f} -i "{mp4}" -frames:v 1 -f image2pipe -vcodec mjpeg -', shell=True,
-                       capture_output=True)
-    if not r.stdout:
-        continue
-    im = Image.open(io.BytesIO(r.stdout)).convert("RGB")
-    im = im.crop((0, 0, im.width, int(im.height * 0.76)))
-    fot.append(im)
+# (14-nov-2026) si el largo deja sus imágenes limpias (sin rótulos, línea de etapas ni subtítulos), se usan esas: los
+# fotogramas del vídeo de Pongamos Que salían con «HORA UNO» y la escalera encima de la miniatura
+LIMPIAS = sorted(os.path.join(P["fotos"], x) for x in os.listdir(P["fotos"])
+                 if len(x) == 6 and x[:2].isdigit() and x.endswith(".jpg")) if P.get("fotos") and os.path.isdir(P["fotos"]) else []
+if LIMPIAS:
+    paso = max(1, len(LIMPIAS) // 12)
+    fot = [Image.open(x).convert("RGB") for x in LIMPIAS[1::paso][:12]] or [Image.open(LIMPIAS[0]).convert("RGB")]
+    open(mp4, "wb").close()
+else:
+    with urllib.request.urlopen(urllib.request.Request(P["video"], headers={"User-Agent": "Explicalo"}), timeout=600) as r, \
+            open(mp4, "wb") as f:
+        f.write(r.read())
+    dur = float(subprocess.run(f'ffprobe -v error -show_entries format=duration -of csv=p=0 "{mp4}"', shell=True,
+                               capture_output=True, text=True).stdout.strip() or 0)
+    # 12 fotogramas repartidos (sin el gancho inicial ni el cierre promocional); se recorta la franja de abajo (subtítulos)
+    fot = []
+    for k in range(12):
+        t = 8 + (dur - 35) * k / 11
+        r = subprocess.run(f'ffmpeg -v error -ss {t:.1f} -i "{mp4}" -frames:v 1 -f image2pipe -vcodec mjpeg -', shell=True,
+                           capture_output=True)
+        if not r.stdout:
+            continue
+        im = Image.open(io.BytesIO(r.stdout)).convert("RGB")
+        im = im.crop((0, 0, im.width, int(im.height * 0.76)))
+        fot.append(im)
 if not fot:
     sys.exit("no se han podido sacar fotogramas del vídeo")
 eleg, texto, clave = [0, min(len(fot) - 1, len(fot) // 2)], " ".join(P["titulo"].split()[:3]), ""

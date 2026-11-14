@@ -24,5 +24,6 @@ desc = (f"{t.get('gancho') or t['tema']}\n\nDel segundo 0 al año 100: qué pasa
         f"(es ciencia especulativa).\n\n{t.get('pregunta') or '¿Tú qué harías?'} Te leo en comentarios 👇\n\n"
         + ' '.join('#' + x for x in (['pongamosque'] + tags)[:6]))
 json.dump({'titulo': t.get('titulo') or t['tema'], 'tema': t['tema'], 'descripcion': desc[:4900], 'etiquetas': (['pongamos que', 'que pasaria si'] + tags)[:15],
-           'categoria': 'SCIENCE_TECHNOLOGY', 'fecha': os.environ.get('PQ_FECHA', 'ahora')}, open(f'{SAL}/publicacion.json', 'w'), ensure_ascii=False, indent=1)
+           'categoria': 'SCIENCE_TECHNOLOGY', 'fotos': f'{d}/imgs',   # imágenes limpias para la miniatura
+            'fecha': os.environ.get('PQ_FECHA', 'ahora')}, open(f'{SAL}/publicacion.json', 'w'), ensure_ascii=False, indent=1)
 print('largo listo:', t['tema'])
