@@ -4,12 +4,13 @@ Uso: python3 temas.py N salida.json   (lee y amplía pongamosque/temas_hechos.js
 import json, os, random, re, sys, urllib.request
 AQUI = os.path.dirname(os.path.abspath(__file__))
 N, SAL = int(sys.argv[1]), sys.argv[2]
-HECHOS = os.path.join(AQUI, 'temas_hechos.json')
+HECHOS = os.path.join(AQUI, os.environ.get('TEMAS_HECHOS', 'temas_hechos.json'))   # (14-nov-2026) los largos llevan su propia lista
 hechos = json.load(open(HECHOS)) if os.path.exists(HECHOS) else []
 CAMPOS = ['el planeta Tierra', 'el espacio y el Sol', 'el cuerpo humano', 'los animales', 'la tecnología y la energía', 'la historia',
           'la física imposible', 'el clima', 'los océanos', 'la sociedad y el dinero', 'la Luna', 'el tiempo y la gravedad']
 random.shuffle(CAMPOS)
-P = f"""Eres el guionista del canal de vídeos cortos «Pongamos Que…» (escenarios hipotéticos espectaculares contados del SEGUNDO 0 al AÑO 100).
+FORMATO = os.environ.get('TEMAS_FORMATO', 'vídeos cortos')
+P = f"""Eres el guionista del canal de {FORMATO} «Pongamos Que…» (escenarios hipotéticos espectaculares contados del SEGUNDO 0 al AÑO 100).
 Propón {N} temas NUEVOS, muy virales y visuales, en español de España, de campos variados (por ejemplo: {', '.join(CAMPOS[:N + 2])}).
 Cada tema es un «¿Qué pasaría si…?» concreto y sorprendente que dé ganas de verlo hasta el final (nada de política, religión ni personas reales).
 NO repitas ni parafrasees ninguno de estos ya hechos: {json.dumps(hechos[-150:], ensure_ascii=False)}

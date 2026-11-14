@@ -46,6 +46,7 @@ while time.time() < FIN:
             agenda = json.load(open(os.path.join(AQUI, 'agenda.json')))['eventos']
             pendientes = []
             for ev in agenda:
+                if 'dias' in ev and ahora.weekday() not in ev['dias']: continue   # 0 = lunes
                 for h in ev['horas']:
                     hh, mm = map(int, h.split(':'))
                     t = ahora.replace(hour=hh, minute=mm, second=0, microsecond=0)

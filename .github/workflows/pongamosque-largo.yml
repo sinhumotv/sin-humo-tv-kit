@@ -1,0 +1,67 @@
+# (14-nov-2026) PONGAMOS QUE · LARGO DE YOUTUBE: lunes, miércoles y viernes de madrugada (lo lanza el «Reloj de los canales»),
+# ~5 min en horizontal con el efecto 3D, miniatura pensada para el clic y programado en YouTube con Metricool a las 17:07.
+name: Pongamos Que · largo
+on:
+  workflow_dispatch:
+    inputs:
+      no_publicar: { description: '1 = solo fabricar (prueba)', default: '' }
+permissions: { contents: write }
+concurrency: { group: pongamosque-largo, cancel-in-progress: false }
+jobs:
+  largo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: claude/kind-brown-9clxsm, token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six
+      - name: Fabricar
+        env:
+          NODE_PATH: /opt/npm-tools/node_modules
+          GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          GEMINI_TTS_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          CF_ACCOUNT: ${{ secrets.PONGAMOSQUE_CF_ACCOUNT }}
+          CF_TOKEN: ${{ secrets.PONGAMOSQUE_CF_TOKEN }}
+        run: |
+          export PQ_FECHA="$(TZ=Europe/Madrid date +%Y-%m-%d)T17:07"
+          python3 pongamosque/largo.py explicalo largo
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add pongamosque/temas_largos.json && git commit -qm "Pongamos Que: tema del largo" && git pull -q --rebase && git push -q || true
+      - name: Alojar el vídeo
+        run: |
+          rama="pq-largo-$(date -u +%Y%m%d)"; mkdir /tmp/al && cp largo/video.mp4 /tmp/al/ && cd /tmp/al && git init -q -b "$rama" && git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "$rama"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "$rama"
+          u="https://raw.githubusercontent.com/${{ github.repository }}/$rama/video.mp4"
+          for i in $(seq 1 30); do [ "$(curl -s -o /dev/null -I -w '%{http_code}' "$u")" = 200 ] && break; sleep 10; done
+          cd - >/dev/null; python3 -c "import json,sys;p=json.load(open('largo/publicacion.json'));p['video']=sys.argv[1];json.dump(p,open('largo/publicacion.json','w'),ensure_ascii=False)" "$u"
+      - name: Miniatura
+        continue-on-error: true
+        env:
+          GEMINI_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 metricool/miniatura_explicalo.py largo/publicacion.json /tmp/mini
+          tag="pq-largo-$(TZ=Europe/Madrid date +%Y%m%d-%H%M)"
+          gh release create "$tag" /tmp/mini/miniatura_A.jpg -R ${{ github.repository }} -t "$tag" -n "Miniatura largo Pongamos Que"
+          python3 -c "import json,sys;p=json.load(open('largo/publicacion.json'));p['miniatura']=sys.argv[1];json.dump(p,open('largo/publicacion.json','w'),ensure_ascii=False)" "https://github.com/${{ github.repository }}/releases/download/$tag/miniatura_A.jpg"
+      - name: Programar en YouTube (Metricool)
+        if: inputs.no_publicar != '1'
+        env:
+          REFRESH: ${{ secrets.METRICOOL_PONGAMOSQUE_REFRESH }}
+          GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
+        run: |
+          if [ -z "$REFRESH" ]; then echo "Falta conectar Metricool de Pongamos Que (METRICOOL_PONGAMOSQUE_REFRESH): el largo queda hecho pero sin programar"; exit 1; fi
+          python3 metricool/publicar_largo.py pongamosque largo/publicacion.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: largo-pongamosque, path: 'largo/publicacion.json', if-no-files-found: ignore }
