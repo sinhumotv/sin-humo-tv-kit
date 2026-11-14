@@ -254,9 +254,24 @@ if E["fase"] == "montaje":
             _t.sleep(10 * (intento + 1))
         return False
 
+    def rescate(n, segundos):
+        """Último recurso (14-nov-2026): imagen de IA de la escena con movimiento de cámara (relatos/rescate_ia.py)."""
+        for f in [f"{P}/clips/{n:02d}{x}.mp4" for x in ("", "_1", "_2", "_3", "_full")]:
+            if os.path.exists(f):
+                os.remove(f)
+        rc_, out_ = sh(f'python3 "{AQUI}/rescate_ia.py" "{P}" {n} {segundos:.2f}', ok=True)
+        print(out_.strip()[-300:])
+        if rc_ == 0:
+            ESC[n - 1]["imagen"] = json.load(open(f"{P}/historia.json", encoding="utf-8"))["escenas"][n - 1]["imagen"]
+        return rc_ == 0
+
     sin_clip = []
     for k, e in enumerate(ESC):
         im, n = e["imagen"], k + 1
+        if im.get("clip") == "ia":   # escena rescatada con imagen de IA: el clip se rehace (clips/ no se guarda)
+            if not os.path.exists(f"{P}/clips/{n:02d}_full.mp4") and not rescate(n, im.get("rescate_seg", 6.0)):
+                sin_clip.append(n)
+            continue
         piezas = [(im.get("clip"), im.get("clip_ini"), f"{P}/clips/{n:02d}.mp4")]
         piezas += [(x.get("clip"), x.get("clip_ini"), f"{P}/clips/{n:02d}_{j + 1}.mp4")
                    for j, x in enumerate(im.get("extra", []))]
@@ -413,9 +428,16 @@ if E["fase"] == "montaje":
     if cortas:
         print(f"escenas sin material suficiente {[n for n, _ in cortas]}: se buscan más clips (nunca se repite uno)")
         if int(os.environ.get("REPETIR_LARGO", "0")) >= 3:
-            print("NO SE PUBLICA: no hay clips suficientes sin repetir")
+            # (14-nov-2026) antes aquí se tiraba el largo entero: ahora esas escenas van con imagen de IA en movimiento
+            fallan = [n for n, need in cortas if not rescate(n, need)]
+            if fallan:
+                print(f"NO SE PUBLICA: no hay clips suficientes sin repetir y no se pudo rescatar con IA {fallan}")
+                guardar_proyecto()
+                sys.exit(1)
+            json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             guardar_proyecto()
-            sys.exit(1)
+            cortas = []
+    if cortas:
         for n, need in cortas:
             ESC[n - 1]["imagen"]["necesita"] = round(need + 1, 1)
         json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -430,10 +452,21 @@ if E["fase"] == "montaje":
     print(out_q.strip()[-600:])
     if rc_q == 4:
         quietas = json.loads(out_q.strip().splitlines()[-1].split(" ", 1)[1] or "[]")
-        if int(os.environ.get("REPETIR_LARGO", "0")) >= 2 or not quietas:
+        if not quietas or int(os.environ.get("RESCATE_IA", "0")) >= 1:
             print("NO SE PUBLICA: sigue habiendo tramos quietos tras rehacer las escenas")
             guardar_proyecto()
             sys.exit(1)
+        if int(os.environ.get("REPETIR_LARGO", "0")) >= 2:
+            # (14-nov-2026) último recurso: las escenas quietas o repetidas pasan a imagen de IA en movimiento y se remonta
+            fallan = [n for n in quietas if not rescate(n, TE[n - 1]["fin"] - TE[n - 1]["ini"] + 1.6)]
+            if fallan:
+                print(f"NO SE PUBLICA: tramos quietos y sin imagen de IA para {fallan}")
+                guardar_proyecto()
+                sys.exit(1)
+            json.dump(H, open(f"{P}/historia.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            guardar_proyecto()
+            os.environ["RESCATE_IA"] = "1"
+            sys.stdout.flush(); os.execv(sys.executable, [sys.executable] + sys.argv)
         veto = set(H.get("vetados", []))
         for n in quietas:
             im = ESC[n - 1]["imagen"]
@@ -456,7 +489,7 @@ if E["fase"] == "montaje":
     cred = json.load(open(f"{P}/creditos.json", encoding="utf-8")) if os.path.exists(f"{P}/creditos.json") else {}
     tags = " ".join("#" + t.replace(" ", "").lower() for t in (C.get("hashtags_base") or [])[:3])
     desc = f"{H['descripcion'].strip()}\n\nCAPÍTULOS\n{caps}\n\n"
-    n_ia = sum(1 for e in ESC if e["imagen"]["tipo"] == "ia")
+    n_ia = sum(1 for e in ESC if e["imagen"]["tipo"] == "ia" or e["imagen"].get("rescate_ia"))
     desc += "Narración generada con inteligencia artificial. Imágenes: material real de archivo (Pixabay y Wikimedia Commons)"
     desc += (" y algunas escenas generadas con IA." if n_ia else ".")
     desc += f"\n\nSuscríbete a {C['nombre']} para no perderte el próximo.\n\n{tags}"
