@@ -126,14 +126,10 @@
    "workflow": "pongamosque-largo.yml",
    "inputs": {},
    "horas": [
-    "01:30"
+    "01:30",
+    "11:30"
    ],
-   "margen": 300,
-   "dias": [
-    0,
-    2,
-    4
-   ]
+   "margen": 120
   }
  ]
 }

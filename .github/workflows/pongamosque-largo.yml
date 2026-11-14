@@ -1,5 +1,6 @@
-# (14-nov-2026) PONGAMOS QUE · LARGO DE YOUTUBE: lunes, miércoles y viernes de madrugada (lo lanza el «Reloj de los canales»),
-# ~5 min en horizontal con el efecto 3D, miniatura pensada para el clic y programado en YouTube con Metricool a las 17:07.
+# (14-nov-2026) PONGAMOS QUE · LARGO DE YOUTUBE: 20 al mes, como los demás canales (lo lanza el «Reloj de los canales» cada
+# día de madrugada y, si falla, otra vez a media mañana; el paso «Toca hoy» los reparte por el mes y recupera los que fallen),
+# ~5 min en horizontal SIN efecto 3D, miniatura pensada para el clic y programado en YouTube con Metricool a las 17:07.
 name: Pongamos Que · largo
 on:
   workflow_dispatch:
@@ -13,18 +14,38 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+      - name: Toca hoy
+        id: toca
+        run: |
+          # 20 al mes repartidos: hoy toca si los programados este mes van por detrás de 20·(día/días del mes) y hoy aún no hay ninguno
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, math, os, calendar, datetime, zoneinfo
+          hoy = datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Madrid')).date()
+          f = 'pongamosque/largos_hechos.json'
+          h = json.load(open(f)) if os.path.exists(f) else []
+          mes = [x for x in h if x.startswith(hoy.strftime('%Y-%m'))]
+          meta = math.ceil(20 * hoy.day / calendar.monthrange(hoy.year, hoy.month)[1])
+          toca = '${{ inputs.no_publicar }}' == '1' or (hoy.isoformat() not in h and len(mes) < min(20, meta))
+          print('si=' + ('1' if toca else '0'))
+          import sys; print(f'largos este mes: {len(mes)} · objetivo a día {hoy.day}: {min(20, meta)} · toca: {toca}', file=sys.stderr)
+          PY
       - uses: actions/checkout@v4
+        if: steps.toca.outputs.si == '1'
         with: { repository: sinhumotv/Explicalo, ref: claude/kind-brown-9clxsm, token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
       - uses: actions/setup-node@v4
+        if: steps.toca.outputs.si == '1'
         with: { node-version: '22' }
       - uses: actions/setup-python@v5
+        if: steps.toca.outputs.si == '1'
         with: { python-version: '3.12' }
       - name: Programas
+        if: steps.toca.outputs.si == '1'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
           mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
           pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six
       - name: Fabricar
+        if: steps.toca.outputs.si == '1'
         env:
           NODE_PATH: /opt/npm-tools/node_modules
           GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
@@ -37,6 +58,7 @@ jobs:
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
           git add pongamosque/temas_largos.json && git commit -qm "Pongamos Que: tema del largo" && git pull -q --rebase && git push -q || true
       - name: Alojar el vídeo
+        if: steps.toca.outputs.si == '1'
         run: |
           # GitHub no admite archivos de más de 100 MB en una rama: si pasa de 90 MB se recodifica con la tasa justa (misma imagen)
           mb=$(( $(stat -c %s largo/video.mp4) / 1000000 ))
@@ -53,6 +75,7 @@ jobs:
           for i in $(seq 1 30); do [ "$(curl -s -o /dev/null -I -w '%{http_code}' "$u")" = 200 ] && break; sleep 10; done
           cd - >/dev/null; python3 -c "import json,sys;p=json.load(open('largo/publicacion.json'));p['video']=sys.argv[1];json.dump(p,open('largo/publicacion.json','w'),ensure_ascii=False)" "$u"
       - name: Miniatura
+        if: steps.toca.outputs.si == '1'
         continue-on-error: true
         env:
           GEMINI_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
@@ -63,13 +86,17 @@ jobs:
           gh release create "$tag" /tmp/mini/miniatura_A.jpg -R ${{ github.repository }} -t "$tag" -n "Miniatura largo Pongamos Que"
           python3 -c "import json,sys;p=json.load(open('largo/publicacion.json'));p['miniatura']=sys.argv[1];json.dump(p,open('largo/publicacion.json','w'),ensure_ascii=False)" "https://github.com/${{ github.repository }}/releases/download/$tag/miniatura_A.jpg"
       - name: Programar en YouTube (Metricool)
-        if: inputs.no_publicar != '1'
+        if: steps.toca.outputs.si == '1' && (inputs.no_publicar != '1')
         env:
           REFRESH: ${{ secrets.METRICOOL_PONGAMOSQUE_REFRESH }}
           GH_SECRETOS: ${{ secrets.GH_SECRETOS }}
         run: |
           if [ -z "$REFRESH" ]; then echo "Falta conectar Metricool de Pongamos Que (METRICOOL_PONGAMOSQUE_REFRESH): el largo queda hecho pero sin programar"; exit 1; fi
           python3 metricool/publicar_largo.py pongamosque largo/publicacion.json
+          # se apunta para la cuenta de 20 al mes
+          python3 -c "import json,os,datetime,zoneinfo;f='pongamosque/largos_hechos.json';h=json.load(open(f)) if os.path.exists(f) else [];h.append(datetime.datetime.now(zoneinfo.ZoneInfo('Europe/Madrid')).date().isoformat());json.dump(h,open(f,'w'),indent=1)"
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add pongamosque/largos_hechos.json && git commit -qm "Pongamos Que: largo programado" && (git pull -q --rebase && git push -q || (sleep 20; git pull -q --rebase && git push -q))
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: largo-pongamosque, path: 'largo/publicacion.json', if-no-files-found: ignore }
