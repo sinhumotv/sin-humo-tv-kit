@@ -144,10 +144,10 @@ function igBase_() {
 
 function igCuenta_() {
   const p = PropertiesService.getScriptProperties();
-  let id = (p.getProperty('INSTAGRAM_ID') || '').trim();
+  let id = (p.getProperty('INSTAGRAM_ID') || p.getProperty('INSTAGRAM_ID ') || '').replace(/\D/g, '');   // solo los números
   if (id) return id;
   const token = (p.getProperty('INSTAGRAM_TOKEN') || '').trim();
-  const r = UrlFetchApp.fetch('https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account{id,username}&access_token=' + encodeURIComponent(token), { muteHttpExceptions: true });
+  const r = UrlFetchApp.fetch('https://graph.facebook.com/v21.0/me/accounts?fields=' + encodeURIComponent('name,instagram_business_account{id,username}') + '&access_token=' + encodeURIComponent(token), { muteHttpExceptions: true });
   const j = JSON.parse(r.getContentText() || '{}');
   const pag = (j.data || []).filter(x => x.instagram_business_account);
   if (!pag.length) throw new Error('Con un token EAA hace falta la propiedad INSTAGRAM_ID (el número de la cuenta de Instagram): ' + (j.error ? j.error.message : 'no hay ninguna página con Instagram enlazado').slice(0, 150));
