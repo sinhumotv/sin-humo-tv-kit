@@ -18,7 +18,7 @@ const AJUSTES = {
   maxPorDia: 150,            // tope diario (evita que las redes lo vean como spam)
   igPublicaciones: 12,       // últimas publicaciones de Instagram que revisa
   ytHilos: 40,               // últimos comentarios de YouTube que revisa
-  modeloGemini: 'gemini-2.5-flash',
+  modeloGemini: 'gemini-3.5-flash',   // (14-nov-2026) gemini-2.5-flash ya no existe
   canal: 'sin humo TV',
 };
 
