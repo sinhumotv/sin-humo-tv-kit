@@ -18,7 +18,7 @@ Responde SOLO con JSON: [{{"tema": "¿Qué pasaría si …?", "titulo": "título
 "gancho": "una frase para el pie del vídeo que enganche", "pregunta": "pregunta para que comenten", "hashtags": ["5-7 hashtags sin #"]}}]"""
 clave = os.environ['GEMINI_API_KEY'].strip()
 import time
-MODELOS = ['gemini-3.5-flash', 'gemini-3.8-flash'] * 4   # si hay cola (429/503) o no responde se espera y se repite (~25 min en total)   # si hay cola (429/503) se espera y se repite
+MODELOS = ['gemini-3.5-flash', 'gemini-3.8-flash'] * 4   # si hay cola (429/503) o no responde se espera y se repite (~25 min en total)
 for intento, m in enumerate(MODELOS):
     if intento: time.sleep(min(240, 30 * intento))
     try:
