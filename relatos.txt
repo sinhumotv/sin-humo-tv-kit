@@ -111,3 +111,4 @@
 2026-11-14|12:00|El castigo de Pirítoo|increible|YO 6af82d8fbb36d00909ff8b1f IN 6af82d90d16af15d4d070881 TI 6af82d914b28296eb14aa604|img=ia|12:09
 2026-11-14|15:00|Odiseo y el odre de Eolo|error|YO 6af82fd1bb36d009090019dd IN 6af82fd14b28296eb14b4bcc TI 6af82fd2d16af15d4d0793f6|img=mixto|14:23
 2026-11-14|18:00|Jasón y las Simplégadas|cuenta|YO 6af83129bb36d00909008583 IN 6af8312d78196a0a9755ae58 TI 6af8312ed8bd2962e41f76b4|img=mixto|17:31
+2026-11-14|21:00|El mechón de Nisos|final|YO 6af8329378196a0a97568c82 IN 6af83294d16af15d4d08f038 TI 6af8329578196a0a97568e59|img=mixto|20:36
