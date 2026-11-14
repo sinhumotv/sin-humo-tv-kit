@@ -100,3 +100,4 @@
 2026-11-13|21:00|Reciclaje molecular doméstico|pregunta|YO 6af6e63bdc85a1c0d24de424 IN 6af6e63c67097dd24014fe9e TI 6af6e63ce272158370e4e491|img=mixto|20:59
 2026-11-14|12:00|Cifrado verificado por IA|sabias|YO 6af82dd64b28296eb14abe91 IN 6af82dd6d8bd2962e41e670f TI 6af82dd7d8bd2962e41e6775|img=mixto|12:12
 2026-11-14|15:00|IA adaptando GTA VI a PC|final|YO 6af82f574b28296eb14b2a50 IN 6af82f57d16af15d4d077c39 TI 6af82f5881e1228421f98be2|img=mixto|15:25
+2026-11-14|18:00|Fábricas orbitales en 2100|consecuencia|YO 6af830f4d16af15d4d07eef9 IN 6af830f54b28296eb14b97a6 TI 6af830f5d8bd2962e41f3b3a|img=mixto|18:25
