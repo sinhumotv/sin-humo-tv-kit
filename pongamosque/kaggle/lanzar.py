@@ -22,7 +22,7 @@ d = tempfile.mkdtemp()
 open(f'{d}/animar.py', 'w').write(cod)
 ref = f'{usuario}/pongamosque-clips'
 json.dump({'id': ref, 'title': 'pongamosque-clips', 'code_file': 'animar.py', 'language': 'python', 'kernel_type': 'script',
-           'is_private': True, 'enable_gpu': True, 'enable_internet': True, 'machine_shape': 'NvidiaTeslaT4',
+           'is_private': True, 'enable_gpu': True, 'enable_internet': True, 'machine_shape': os.environ.get('KAGGLE_MAQUINA', 'NvidiaTeslaT4'),
            'dataset_sources': [], 'kernel_sources': [], 'competition_sources': []}, open(f'{d}/kernel-metadata.json', 'w'))
 r = k('kernels', 'push', '-p', d); print(r.stdout[-500:], r.stderr[-500:], flush=True)
 if r.returncode: sys.exit('no se pudo subir el cuaderno a Kaggle')

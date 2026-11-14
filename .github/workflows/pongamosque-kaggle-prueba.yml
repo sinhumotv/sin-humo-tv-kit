@@ -1,0 +1,35 @@
+# (14-nov-2026) PRUEBA de la animación con IA en Kaggle: 2 clips con imágenes de la rama pongamosque-imgs, en la tarjeta
+# que se elija, para ver si Kaggle da la GPU y qué calidad sale. No publica nada: los clips quedan en la rama pq-kaggle-prueba.
+name: Pongamos Que · prueba Kaggle
+on:
+  workflow_dispatch:
+    inputs:
+      maquina: { description: 'NvidiaTeslaP100 o NvidiaTeslaT4', default: 'NvidiaTeslaP100' }
+      espera: { description: 'segundos de espera como mucho', default: '3000' }
+permissions: { contents: write }
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q "kaggle>=1.8"
+      - name: Kaggle
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_MAQUINA: ${{ inputs.maquina }}
+          KAGGLE_ESPERA: ${{ inputs.espera }}
+        run: |
+          export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
+          b="https://raw.githubusercontent.com/${{ github.repository }}/pongamosque-imgs"
+          python3 -c "import json;json.dump([{'n':1,'url':'$b/302.jpg','prompt':'Slow cinematic camera push in through a sunlit forest path full of marching ants, subtle natural motion','semilla':1},{'n':2,'url':'$b/304.jpg','prompt':'Slow cinematic camera move over a ruined city at night with fires and smoke drifting, subtle natural motion','semilla':2}],open('lote.json','w'))"
+          python3 pongamosque/kaggle/lanzar.py clips lote.json || true
+          ls -la clips || true
+      - name: Clips a la rama pq-kaggle-prueba
+        run: |
+          ls clips/*.mp4 >/dev/null 2>&1 || exit 0
+          mkdir /tmp/kc && cp clips/*.mp4 clips/*.json /tmp/kc/ 2>/dev/null; cd /tmp/kc && git init -q -b pq-kaggle-prueba && git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Clips de prueba"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pq-kaggle-prueba
