@@ -1,0 +1,570 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "El lado oscuro de Apolo: El dios más temido",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/01.mp4",
+  "1": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/02.mp4",
+  "2": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/03.mp4",
+  "3": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/04.mp4",
+  "4": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/05.mp4",
+  "5": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/06.mp4",
+  "6": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/07.mp4",
+  "7": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/08.mp4",
+  "8": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/09.mp4",
+  "9": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/10.mp4",
+  "10": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/11.mp4",
+  "11": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/12.mp4",
+  "12": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/13.mp4",
+  "13": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/14.mp4",
+  "14": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/15.mp4",
+  "15": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/16.mp4",
+  "16": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/17.mp4",
+  "17": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/18.mp4",
+  "18": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/19.mp4",
+  "19": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/20.mp4",
+  "20": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/21.mp4",
+  "21": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/22.mp4",
+  "22": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/23.mp4",
+  "23": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/24.mp4",
+  "24": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/25.mp4",
+  "25": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/26.mp4",
+  "26": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/27.mp4",
+  "27": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/28.mp4",
+  "28": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/29.mp4",
+  "29": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/30.mp4",
+  "30": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/31.mp4",
+  "31": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/32.mp4",
+  "32": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/33.mp4",
+  "33": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/34.mp4",
+  "34": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/35.mp4",
+  "35": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/36.mp4",
+  "36": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/37.mp4",
+  "37": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/38.mp4",
+  "38": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/39.mp4",
+  "39": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/40.mp4",
+  "40": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/41.mp4",
+  "41": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/42.mp4",
+  "42": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/43.mp4",
+  "43": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/44.mp4",
+  "44": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/45.mp4",
+  "45": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/46.mp4",
+  "46": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/47.mp4",
+  "47": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/48.mp4",
+  "48": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/49.mp4",
+  "49": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/50.mp4",
+  "50": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/51.mp4",
+  "51": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/52.mp4",
+  "52": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/53.mp4",
+  "53": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/54.mp4",
+  "54": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/55.mp4",
+  "55": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/56.mp4",
+  "56": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/57.mp4",
+  "57": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/58.mp4",
+  "58": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/59.mp4",
+  "59": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/60.mp4",
+  "60": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/61.mp4",
+  "61": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/62.mp4",
+  "62": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/63.mp4",
+  "63": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/64.mp4",
+  "64": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/65.mp4",
+  "65": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/66.mp4",
+  "66": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/67.mp4",
+  "67": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/68.mp4",
+  "68": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/69.mp4",
+  "69": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/70.mp4",
+  "70": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/71.mp4",
+  "71": "/tmp/largo-relatos-6kst3z9h/proyecto/clips/72.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "La sombra bajo la luz"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "El nacimiento de la venganza"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "La matanza de Delfos"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "La masacre de los retoños de Níobe"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "El suplicio del sátiro Marsias"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "La maldición de las palabras vacías"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "Flechas de peste sobre la armada griega"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "Amores convertidos en pesadilla"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "La verdadera naturaleza de la luz"
+  }
+ ],
+ "color": null,
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "Las playas de Troya arden bajo el humo de mil piras funerarias. Cientos de guerreros caen sin tocar una sola espada enemiga. Una fuerza invisible pulveriza sus pulmones desde el cielo.",
+   "subtitulo": "Las playas de Troya arden bajo el humo de mil piras funerarias. Cientos de guerreros caen sin tocar una sola espada enemiga. Una fuerza invisible pulveriza sus pulmones desde el cielo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desde el Monte Olimpo, el dios más hermoso ha disparado sus flechas de plata. No busca sanar, sino exterminar. Su nombre es Apolo y su verdadera naturaleza es aterradora.",
+   "subtitulo": "Desde el Monte Olimpo, el dios más hermoso ha disparado sus flechas de plata. No busca sanar, sino exterminar. Su nombre es Apolo y su verdadera naturaleza es aterradora."
+  },
+  {
+   "titulo": "",
+   "hablado": "Lo recordamos como el señor de la luz, el arte y la medicina. Sin embargo, para los antiguos griegos, pronunciar su nombre causaba un pavor absoluto y un castigo despiadado.",
+   "subtitulo": "Lo recordamos como el señor de la luz, el arte y la medicina. Sin embargo, para los antiguos griegos, pronunciar su nombre causaba un pavor absoluto y un castigo despiadado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hoy descubrirás por qué la deidad más admirada del Olimpo aterrorizaba a reyes y héroes, y la terrible razón por la que su resplandor redujo prósperas ciudades a cenizas.",
+   "subtitulo": "Hoy descubrirás por qué la deidad más admirada del Olimpo aterrorizaba a reyes y héroes, y la terrible razón por la que su resplandor redujo prósperas ciudades a cenizas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los mismos rayos solares que bendecían las cosechas al amanecer eran considerados por los mortales como dagas incandescentes. Desafiar al impuro o cometer el más mínimo desdén hacia su figura equivalía a condenar a todo un pueblo.",
+   "subtitulo": "Los mismos rayos solares que bendecían las cosechas al amanecer eran considerados por los mortales como dagas incandescentes. Desafiar al impuro o cometer el más mínimo desdén hacia su figura equivalía a condenar a todo un pueblo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Nadie escapaba a su cólera, pues para Apolo no existía la compasión ante la soberbia humana. Cualquier intento de rivalizar con su divino talento o vulnerar sus sagrados recintos era castigado con tormentos eternos y sangrientos.",
+   "subtitulo": "Nadie escapaba a su cólera, pues para Apolo no existía la compasión ante la soberbia humana. Cualquier intento de rivalizar con su divino talento o vulnerar sus sagrados recintos era castigado con tormentos eternos y sangrientos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero este rigor imperturbable no surgió del azar. Nació en medio del dolor, las persecuciones y los celos divinos que marcaron a su madre antes de que él pisara la tierra por primera vez.",
+   "subtitulo": "Pero este rigor imperturbable no surgió del azar. Nació en medio del dolor, las persecuciones y los celos divinos que marcaron a su madre antes de que él pisara la tierra por primera vez."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para comprender la despiadada crueldad de este ser impecable, debemos viajar al momento exacto de su gestación, cuando una maldición estremecedora acorraló a su estirpe... pero lo peor aún estaba por llegar.",
+   "subtitulo": "Para comprender la despiadada crueldad de este ser impecable, debemos viajar al momento exacto de su gestación, cuando una maldición estremecedora acorraló a su estirpe... pero lo peor aún estaba por llegar."
+  },
+  {
+   "titulo": "",
+   "hablado": "La reina Hera descubrió que la titánide Leto esperaba descendientes del supremo Zeus. Cegada por una furia implacable dictó que ninguna tierra firme bendecida por los rayos del sol podría acoger jamás la agonía del parto.",
+   "subtitulo": "La reina Hera descubrió que la titánide Leto esperaba descendientes del supremo Zeus. Cegada por una furia implacable dictó que ninguna tierra firme bendecida por los rayos del sol podría acoger jamás la agonía del parto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para asegurar aquel castigo inclemente Hera envió a la monstruosa serpiente Pitón nacida del barro primordial. La fiera acorraló a la desdichada madre impidiéndole hallar refugio mientras el veneno del miedo recorría sus entrañas.",
+   "subtitulo": "Para asegurar aquel castigo inclemente Hera envió a la monstruosa serpiente Pitón nacida del barro primordial. La fiera acorraló a la desdichada madre impidiéndole hallar refugio mientras el veneno del miedo recorría sus entrañas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Vagando sin rumbo Leto encontró auxilio en Delos una isla flotante e inestable que no estaba amarrada al fondo marino. Al no ser considerada tierra firme las leyes de Hera quedaron invalidadas en aquel peñasco a la deriva.",
+   "subtitulo": "Vagando sin rumbo Leto encontró auxilio en Delos una isla flotante e inestable que no estaba amarrada al fondo marino. Al no ser considerada tierra firme las leyes de Hera quedaron invalidadas en aquel peñasco a la deriva."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante nueve días y nueve noches la madre sufrió tormentos inhumanos retenida por la furia olímpica. Finalmente sobre las faldas del monte Cinto alumbró a la cazadora Ártemis quien de inmediato ayudó en el parto de Apolo.",
+   "subtitulo": "Durante nueve días y nueve noches la madre sufrió tormentos inhumanos retenida por la furia olímpica. Finalmente sobre las faldas del monte Cinto alumbró a la cazadora Ártemis quien de inmediato ayudó en el parto de Apolo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El neonato dios rechazó el pecho materno y probó la ambrosía divina entregada por la diosa Temis. En cuestión de instantes la sustancia sagrada transformó su fragilidad infantil en la figura majestuosa de un inmortal adulto.",
+   "subtitulo": "El neonato dios rechazó el pecho materno y probó la ambrosía divina entregada por la diosa Temis. En cuestión de instantes la sustancia sagrada transformó su fragilidad infantil en la figura majestuosa de un inmortal adulto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los Cíclopes forjaron para el nuevo señor un arco de plata imperecedero y flechas impregnadas de fuego solar. Sosteniendo aquel arma celestial el dios recién nacido proclamó su destino absoluto ante la mirada atónita del cosmos.",
+   "subtitulo": "Los Cíclopes forjaron para el nuevo señor un arco de plata imperecedero y flechas impregnadas de fuego solar. Sosteniendo aquel arma celestial el dios recién nacido proclamó su destino absoluto ante la mirada atónita del cosmos."
+  },
+  {
+   "titulo": "",
+   "hablado": "La primera resolución de Apolo fue vengar el tormento que la voraz serpiente infligió a su progenitora. Guiado por un orgullo cegador prometió perseguir al engendro hasta el confín del mundo sin mostrar clemencia alguna.",
+   "subtitulo": "La primera resolución de Apolo fue vengar el tormento que la voraz serpiente infligió a su progenitora. Guiado por un orgullo cegador prometió perseguir al engendro hasta el confín del mundo sin mostrar clemencia alguna."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella sed inicial de justicia filial pronto germinaría en una doctrina inflexible donde el error humano se pagaba con la muerte. El joven protector estaba a punto de reclamar su santuario sagrado pero la matanza apenas comenzaba.",
+   "subtitulo": "Aquella sed inicial de justicia filial pronto germinaría en una doctrina inflexible donde el error humano se pagaba con la muerte. El joven protector estaba a punto de reclamar su santuario sagrado pero la matanza apenas comenzaba."
+  },
+  {
+   "titulo": "",
+   "hablado": "Guiado por el deseo de castigar a la bestia que torturó a su madre, el joven dios ascendió hasta las laderas oscuras del Monte Parnaso. En las grietas profundas habitaba la temible serpiente Pitón, guardiana del antiguo oráculo de Gea.",
+   "subtitulo": "Guiado por el deseo de castigar a la bestia que torturó a su madre, el joven dios ascendió hasta las laderas oscuras del Monte Parnaso. En las grietas profundas habitaba la temible serpiente Pitón, guardiana del antiguo oráculo de Gea."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin temblar ni un segundo, Apolo tensó su arco de plata y descargó una lluvia implacable de flechas doradas sobre las escamas del monstruo. El veneno y los rugidos de la criatura retumbaron en las rocas antes de desplomarse inerte.",
+   "subtitulo": "Sin temblar ni un segundo, Apolo tensó su arco de plata y descargó una lluvia implacable de flechas doradas sobre las escamas del monstruo. El veneno y los rugidos de la criatura retumbaron en las rocas antes de desplomarse inerte."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al derramar sangre divina, Apolo debía purificar su falta para no atraer la mancha del crimen. Reclamó el santuario para sí y fundó los Juegos Píticos, celebraciones sagradas destinadas a honrar su victoria y limpiar la profanación del suelo sagrado.",
+   "subtitulo": "Al derramar sangre divina, Apolo debía purificar su falta para no atraer la mancha del crimen. Reclamó el santuario para sí y fundó los Juegos Píticos, celebraciones sagradas destinadas a honrar su victoria y limpiar la profanación del suelo sagrado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desde las entrañas de la cueva, la sacerdotisa Pitonisa comenzó a transmitir la voz ineludible del dios entre vapores místicos. Los mortales comprendieron rápidamente que Apolo no ofrecía simples consejos ni consuelo, sino mandatos absolutos de un destino inalterable.",
+   "subtitulo": "Desde las entrañas de la cueva, la sacerdotisa Pitonisa comenzó a transmitir la voz ineludible del dios entre vapores místicos. Los mortales comprendieron rápidamente que Apolo no ofrecía simples consejos ni consuelo, sino mandatos absolutos de un destino inalterable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cualquiera que intentara desafiar o engañar a las profecías dictadas en Delfos quedaba atrapado en una red trágica. El dios utilizaba el propio miedo del rey o del héroe para guiarlo exactamente al fatídico final que pretendía evitar.",
+   "subtitulo": "Cualquiera que intentara desafiar o engañar a las profecías dictadas en Delfos quedaba atrapado en una red trágica. El dios utilizaba el propio miedo del rey o del héroe para guiarlo exactamente al fatídico final que pretendía evitar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las palabras de Apolo en el oráculo no permitían discusiones ni arrepentimientos. Reyes y ejércitos enteros viajaban desde los confines del Mediterráneo solo para escuchar dictámenes helados que sentenciaban el ascenso o la caída inevitable de sus reinos.",
+   "subtitulo": "Las palabras de Apolo en el oráculo no permitían discusiones ni arrepentimientos. Reyes y ejércitos enteros viajaban desde los confines del Mediterráneo solo para escuchar dictámenes helados que sentenciaban el ascenso o la caída inevitable de sus reinos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Dominar el conocimiento del futuro transformó a Apolo en una deidad implacable. Su ego divino creció al saberse dueño absoluto de la verdad, convencido de que la imperfección humana debía ser castigada sin piedad al menor rasgo de soberbia.",
+   "subtitulo": "Dominar el conocimiento del futuro transformó a Apolo en una deidad implacable. Su ego divino creció al saberse dueño absoluto de la verdad, convencido de que la imperfección humana debía ser castigada sin piedad al menor rasgo de soberbia."
+  },
+  {
+   "titulo": "",
+   "hablado": "El victorioso dios del Sol había establecido su trono divino sobre los cimientos de la muerte de la sierpe. Pero pronto, una reina humana cometería la imprudencia de desafiar a su linaje, desatando una venganza aún más sangrienta.",
+   "subtitulo": "El victorioso dios del Sol había establecido su trono divino sobre los cimientos de la muerte de la sierpe. Pero pronto, una reina humana cometería la imprudencia de desafiar a su linaje, desatando una venganza aún más sangrienta."
+  },
+  {
+   "titulo": "",
+   "hablado": "Níobe, la soberbia reina de Tebas, se sentía invencible. Madre de catorce hermosos hijos, siete varones y siete mujeres, cometió el error imperdonable de proclamarse superior a la diosa Leto por poseer mayor descendencia.",
+   "subtitulo": "Níobe, la soberbia reina de Tebas, se sentía invencible. Madre de catorce hermosos hijos, siete varones y siete mujeres, cometió el error imperdonable de proclamarse superior a la diosa Leto por poseer mayor descendencia."
+  },
+  {
+   "titulo": "",
+   "hablado": "La reina interrumpió los cultos sagrados y prohibió a sus súbditos ofrecer sacrificios a la madre del dios del Sol. Afirmaba que su linaje divino y su riqueza la hacían mucho más merecedora de veneración eterna.",
+   "subtitulo": "La reina interrumpió los cultos sagrados y prohibió a sus súbditos ofrecer sacrificios a la madre del dios del Sol. Afirmaba que su linaje divino y su riqueza la hacían mucho más merecedora de veneración eterna."
+  },
+  {
+   "titulo": "",
+   "hablado": "Profundamente humillada, Leto convocó a sus gemelos divinos en las cumbres celestiales. Les exigió vengar de inmediato la afrenta a su honor, recordándoles que ningún mortal debía quedar impune ante semejante insolencia hacia los dioses.",
+   "subtitulo": "Profundamente humillada, Leto convocó a sus gemelos divinos en las cumbres celestiales. Les exigió vengar de inmediato la afrenta a su honor, recordándoles que ningún mortal debía quedar impune ante semejante insolencia hacia los dioses."
+  },
+  {
+   "titulo": "",
+   "hablado": "Envueltos en una densa niebla sombría, Apolo y Ártemis descendieron sobre la próspera ciudad de Tebas. Armados con sus arcos dorados e invisibles al ojo humano, los hermanos celestiales prepararon una matanza metódica e implacable.",
+   "subtitulo": "Envueltos en una densa niebla sombría, Apolo y Ártemis descendieron sobre la próspera ciudad de Tebas. Armados con sus arcos dorados e invisibles al ojo humano, los hermanos celestiales prepararon una matanza metódica e implacable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apolo actuó primero en los campos de entrenamiento. Con una precisión aterradora y silenciosa, sus flechas invisibles atravesaron uno a uno a los siete príncipes tebanos, matándolos al instante sin darles opción a defenderse.",
+   "subtitulo": "Apolo actuó primero en los campos de entrenamiento. Con una precisión aterradora y silenciosa, sus flechas invisibles atravesaron uno a uno a los siete príncipes tebanos, matándolos al instante sin darles opción a defenderse."
+  },
+  {
+   "titulo": "",
+   "hablado": "Segundos después, Ártemis irrumpió en el interior del palacio real. Las siete hijas cayeron abatidas sin piedad ante el certero arco de la diosa de la caza, ignorando los ruegos desesperados de las jóvenes princesas.",
+   "subtitulo": "Segundos después, Ártemis irrumpió en el interior del palacio real. Las siete hijas cayeron abatidas sin piedad ante el certero arco de la diosa de la caza, ignorando los ruegos desesperados de las jóvenes princesas."
+  },
+  {
+   "titulo": "",
+   "hablado": "La reina Níobe abrazó enloquecida al último de sus descendientes, suplicando clemencia al cielo. Pero los dioses no mostraron compasión y la última flecha atravesó a la pequeña, dejando catorce cadáveres al pie del trono.",
+   "subtitulo": "La reina Níobe abrazó enloquecida al último de sus descendientes, suplicando clemencia al cielo. Pero los dioses no mostraron compasión y la última flecha atravesó a la pequeña, dejando catorce cadáveres al pie del trono."
+  },
+  {
+   "titulo": "",
+   "hablado": "Consumida por un dolor incalculable, la desdichada reina quedó paralizada entre el llanto y se transformó en una estatua de piedra en el monte Sípilo, un castigo que preludiaba una barbarie aún mayor contra otro confiado mortal.",
+   "subtitulo": "Consumida por un dolor incalculable, la desdichada reina quedó paralizada entre el llanto y se transformó en una estatua de piedra en el monte Sípilo, un castigo que preludiaba una barbarie aún mayor contra otro confiado mortal."
+  },
+  {
+   "titulo": "",
+   "hablado": "En los frondosos bosques de Frigia, un silvano llamado Marsias encontró una flauta de doble tubo descartada por la diosa Atenea. Al soplarla, el instrumento emitió melodías tan fascinantes que los campesinos creyeron que superaba al mismísimo dios del Sol.",
+   "subtitulo": "En los frondosos bosques de Frigia, un silvano llamado Marsias encontró una flauta de doble tubo descartada por la diosa Atenea. Al soplarla, el instrumento emitió melodías tan fascinantes que los campesinos creyeron que superaba al mismísimo dios del Sol."
+  },
+  {
+   "titulo": "",
+   "hablado": "Embriagado por los elogios de las ninfas y los pastores, el confiado sátiro cometió la imprudencia suprema. Lanzó un desafío público a Apolo para determinar cuál de los dos era el músico más hábil de toda la Creación.",
+   "subtitulo": "Embriagado por los elogios de las ninfas y los pastores, el confiado sátiro cometió la imprudencia suprema. Lanzó un desafío público a Apolo para determinar cuál de los dos era el músico más hábil de toda la Creación."
+  },
+  {
+   "titulo": "",
+   "hablado": "El dios de las artes aceptó el reto con una sonrisa helada, imponiendo una condición despiadada. El vencedor podría hacer con el vencido lo que quisiera. Las Musas asistieron como jurado sobre la hierba para presenciar el duelo sonoro.",
+   "subtitulo": "El dios de las artes aceptó el reto con una sonrisa helada, imponiendo una condición despiadada. El vencedor podría hacer con el vencido lo que quisiera. Las Musas asistieron como jurado sobre la hierba para presenciar el duelo sonoro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Marsias hizo cantar a su flauta con una pasión desgarradora que maravilló a los presentes. Sin embargo, Apolo dio la vuelta a su lira de oro y comenzó a cantar simultáneamente, una proeza imposible para quien usa la boca para soplar.",
+   "subtitulo": "Marsias hizo cantar a su flauta con una pasión desgarradora que maravilló a los presentes. Sin embargo, Apolo dio la vuelta a su lira de oro y comenzó a cantar simultáneamente, una proeza imposible para quien usa la boca para soplar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Incapaz de cantar mientras tocaba su instrumento de viento, el desdichado sátiro se vio derrotado. Las Musas declararon triunfador al olímpico, desencadenando la rabia encubierta que el dios había estado acumulando durante toda la contienda.",
+   "subtitulo": "Incapaz de cantar mientras tocaba su instrumento de viento, el desdichado sátiro se vio derrotado. Las Musas declararon triunfador al olímpico, desencadenando la rabia encubierta que el dios había estado acumulando durante toda la contienda."
+  },
+  {
+   "titulo": "",
+   "hablado": "Lejos de mostrar la piedad propia de una deidad refinada, Apolo arrastró al desafortunado competidor hasta las entrañas de un pino sagrado. Allí ató sus extremidades con cuerdas de cuero para ejecutar una venganza sin precedentes en la mitología.",
+   "subtitulo": "Lejos de mostrar la piedad propia de una deidad refinada, Apolo arrastró al desafortunado competidor hasta las entrañas de un pino sagrado. Allí ató sus extremidades con cuerdas de cuero para ejecutar una venganza sin precedentes en la mitología."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante la mirada aterrorizada de los espíritus del bosque, el dios arrancó la piel de Marsias viva, contemplando con frialdad implacable el sufrimiento del sátiro hasta que las lágrimas de los tristes faunos formaron un río cristalino.",
+   "subtitulo": "Ante la mirada aterrorizada de los espíritus del bosque, el dios arrancó la piel de Marsias viva, contemplando con frialdad implacable el sufrimiento del sátiro hasta que las lágrimas de los tristes faunos formaron un río cristalino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta atrocidad demostró que desafiar la excelencia de Apolo conllevaba un tormento insoportable. Pero su crueldad no solo castigaba la soberbia de los hombres, pues pronto aplicaría un castigo eterno y silencioso a la mente de una princesa troyana.",
+   "subtitulo": "Esta atrocidad demostró que desafiar la excelencia de Apolo conllevaba un tormento insoportable. Pero su crueldad no solo castigaba la soberbia de los hombres, pues pronto aplicaría un castigo eterno y silencioso a la mente de una princesa troyana."
+  },
+  {
+   "titulo": "",
+   "hablado": "Fascinado por la extraordinaria belleza de la princesa troyana Casandra, Apolo buscó conquistarla. Para obtener su afecto, el dios le prometió otorgarle el sagrado don de la adivinación y la visión del futuro.",
+   "subtitulo": "Fascinado por la extraordinaria belleza de la princesa troyana Casandra, Apolo buscó conquistarla. Para obtener su afecto, el dios le prometió otorgarle el sagrado don de la adivinación y la visión del futuro."
+  },
+  {
+   "titulo": "",
+   "hablado": "La joven deslumbrada aceptó la bendición, y al instante los velos del tiempo se abrieron ante sus ojos. Sin embargo, tras recibir el conocimiento divino, Casandra rechazó entregarse a los brazos del impetuoso dios.",
+   "subtitulo": "La joven deslumbrada aceptó la bendición, y al instante los velos del tiempo se abrieron ante sus ojos. Sin embargo, tras recibir el conocimiento divino, Casandra rechazó entregarse a los brazos del impetuoso dios."
+  },
+  {
+   "titulo": "",
+   "hablado": "La ira de Apolo fue inmediata y despiadada. Un don otorgado por un inmortal jamás podía retirarse, por lo que el dios ideó una tortura psicológica sin precedentes para la orgullosa doncella.",
+   "subtitulo": "La ira de Apolo fue inmediata y despiadada. Un don otorgado por un inmortal jamás podía retirarse, por lo que el dios ideó una tortura psicológica sin precedentes para la orgullosa doncella."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pidiendo un último beso como despedida, Apolo escupió en la boca de la princesa. Con ese gesto infame, selló una maldición implacable sobre ella: diría siempre la verdad absoluta, pero nadie creería jamás sus palabras.",
+   "subtitulo": "Pidiendo un último beso como despedida, Apolo escupió en la boca de la princesa. Con ese gesto infame, selló una maldición implacable sobre ella: diría siempre la verdad absoluta, pero nadie creería jamás sus palabras."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desde aquel instante, la vida de la princesa se convirtió en una pesadilla insoportable. Veía con escalofriante nitidez los desastres inminentes, mientras su propia familia y pueblo la tachaban de demente e histérica.",
+   "subtitulo": "Desde aquel instante, la vida de la princesa se convirtió en una pesadilla insoportable. Veía con escalofriante nitidez los desastres inminentes, mientras su propia familia y pueblo la tachaban de demente e histérica."
+  },
+  {
+   "titulo": "",
+   "hablado": "Gritó e imploró desesperadamente advirtiendo que el gigantesco caballo de madera traería la ruina a Troya, pero sus ciudadanos ignoraron sus llantos. Todos la contemplaban con lástima y burlas mientras el destino se cumplía irremediablemente.",
+   "subtitulo": "Gritó e imploró desesperadamente advirtiendo que el gigantesco caballo de madera traería la ruina a Troya, pero sus ciudadanos ignoraron sus llantos. Todos la contemplaban con lástima y burlas mientras el destino se cumplía irremediablemente."
+  },
+  {
+   "titulo": "",
+   "hablado": "Encerrada en su dolor mental, asistió impasible y devastada al saqueo de su ciudad y a la masacre de todo su linaje, sufriendo en soledad la condena del conocimiento sin poder.",
+   "subtitulo": "Encerrada en su dolor mental, asistió impasible y devastada al saqueo de su ciudad y a la masacre de todo su linaje, sufriendo en soledad la condena del conocimiento sin poder."
+  },
+  {
+   "titulo": "",
+   "hablado": "El castigo de Casandra convirtió su propio don divino en una cárcel de angustia eterna. Pero las flechas del dios del Sol no solo infligían tormentos del alma, pues la peste física estaba a punto de arrasar a un ejército entero.",
+   "subtitulo": "El castigo de Casandra convirtió su propio don divino en una cárcel de angustia eterna. Pero las flechas del dios del Sol no solo infligían tormentos del alma, pues la peste física estaba a punto de arrasar a un ejército entero."
+  },
+  {
+   "titulo": "",
+   "hablado": "En mitad de la implacable Guerra de Troya, el rey Agamenón cometió la imprudencia fatal de secuestrar a la joven Criseida y humillar públicamente a su anciano padre, un venerable sacerdote devoto del propio Apolo.",
+   "subtitulo": "En mitad de la implacable Guerra de Troya, el rey Agamenón cometió la imprudencia fatal de secuestrar a la joven Criseida y humillar públicamente a su anciano padre, un venerable sacerdote devoto del propio Apolo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desesperado y despojado de toda dignidad, el sacerdote caminó en soledad hacia la orilla del embravecido mar Egeo. Allí suplicó entre lágrimas que el dios del arco de plata vengara su doloroso ultraje sin piedad.",
+   "subtitulo": "Desesperado y despojado de toda dignidad, el sacerdote caminó en soledad hacia la orilla del embravecido mar Egeo. Allí suplicó entre lágrimas que el dios del arco de plata vengara su doloroso ultraje sin piedad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apolo escuchó el clamor desde las alturas del Olimpo y una cólera abrasadora se apoderó de su ser. Descendió de las cumbres envuelto en una niebla sombría, con su carcaj resonando como un trueno amenazante.",
+   "subtitulo": "Apolo escuchó el clamor desde las alturas del Olimpo y una cólera abrasadora se apoderó de su ser. Descendió de las cumbres envuelto en una niebla sombría, con su carcaj resonando como un trueno amenazante."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apostado sobre las colinas que dominaban el campamento griego, el dios comenzó a disparar sus flechas invisibles. Durante los primeros días, el veneno divino abatió sin remedio a las mulas y a los perros de los soldados.",
+   "subtitulo": "Apostado sobre las colinas que dominaban el campamento griego, el dios comenzó a disparar sus flechas invisibles. Durante los primeros días, el veneno divino abatió sin remedio a las mulas y a los perros de los soldados."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero la venganza no se detuvo allí. Durante nueve jornadas consecutivas, las flechas infectadas cayeron sobre los guerreros aqueos, propagando una peste devastadora que llenó la costa con el humo inacabable de cientos de piras funerarias.",
+   "subtitulo": "Pero la venganza no se detuvo allí. Durante nueve jornadas consecutivas, las flechas infectadas cayeron sobre los guerreros aqueos, propagando una peste devastadora que llenó la costa con el humo inacabable de cientos de piras funerarias."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los aqueos comprendieron aterrados que sus espadas de bronce y sus escudos de madera resultaban inútiles contra el castigo invisible de una deidad. La peste no distinguía entre valientes héroes y humildes sirvientes en aquella sangrienta masacre.",
+   "subtitulo": "Los aqueos comprendieron aterrados que sus espadas de bronce y sus escudos de madera resultaban inútiles contra el castigo invisible de una deidad. La peste no distinguía entre valientes héroes y humildes sirvientes en aquella sangrienta masacre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Solo tras devolver a Criseida y ofrecer generosos sacrificios de hecatombes logró el ejército calmar la ira del dios exterminador. Sin embargo, esta mortífera plaga demostró que el portador de la luz poseía la sombra más cruenta.",
+   "subtitulo": "Solo tras devolver a Criseida y ofrecer generosos sacrificios de hecatombes logró el ejército calmar la ira del dios exterminador. Sin embargo, esta mortífera plaga demostró que el portador de la luz poseía la sombra más cruenta."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ni los grandes reyes ni los imperios estaban a salvo del temible Apolo cuando herían su orgullo o el de sus devotos. Pero la verdadera tragedia del dios no siempre nacía de la guerra, sino de sus propios amores infaustos.",
+   "subtitulo": "Ni los grandes reyes ni los imperios estaban a salvo del temible Apolo cuando herían su orgullo o el de sus devotos. Pero la verdadera tragedia del dios no siempre nacía de la guerra, sino de sus propios amores infaustos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Se decía que la deslumbrante belleza de Apolo resultaba irresistible, pero para quienes despertaban su afecto se convertía en una sentencia. Su pasión divina no traía consuelo, sino una vorágine de obsesión y dolor ineludible.",
+   "subtitulo": "Se decía que la deslumbrante belleza de Apolo resultaba irresistible, pero para quienes despertaban su afecto se convertía en una sentencia. Su pasión divina no traía consuelo, sino una vorágine de obsesión y dolor ineludible."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras burlarse de la destreza del joven Eros, el dios del amor tomó venganza. Atravesó a Apolo con una flecha de oro provocando un deseo insaciable, y a la ninfa Dafne con una de plomo que engendró un rechazo absoluto.",
+   "subtitulo": "Tras burlarse de la destreza del joven Eros, el dios del amor tomó venganza. Atravesó a Apolo con una flecha de oro provocando un deseo insaciable, y a la ninfa Dafne con una de plomo que engendró un rechazo absoluto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apolo la persiguió sin descanso entre la vegetación. Desesperada al sentir el aliento del dios sobre su cuello, Dafne suplicó a su padre, el dios río Peneo, que borrara la belleza que había desencadenado semejante cacería.",
+   "subtitulo": "Apolo la persiguió sin descanso entre la vegetación. Desesperada al sentir el aliento del dios sobre su cuello, Dafne suplicó a su padre, el dios río Peneo, que borrara la belleza que había desencadenado semejante cacería."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sus pies se clavaron en la tierra transformándose en raíces y una corteza suave cubrió su cuerpo. Apolo abrazó el tronco sintiendo aún el corazón latir en la madera, convirtiendo el laurel en su símbolo sagrado.",
+   "subtitulo": "Sus pies se clavaron en la tierra transformándose en raíces y una corteza suave cubrió su cuerpo. Apolo abrazó el tronco sintiendo aún el corazón latir en la madera, convirtiendo el laurel en su símbolo sagrado."
+  },
+  {
+   "titulo": "",
+   "hablado": "El afecto del dios volvió a tornarse aciago con Jacinto, un hermoso príncipe espartano. Apolo abandonó sus deberes celestiales para acompañar al joven en las colinas, disfrutando de la caza y los juegos atléticos en completa devoción.",
+   "subtitulo": "El afecto del dios volvió a tornarse aciago con Jacinto, un hermoso príncipe espartano. Apolo abandonó sus deberes celestiales para acompañar al joven en las colinas, disfrutando de la caza y los juegos atléticos en completa devoción."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante una competición de disco, Apolo lanzó la pesada pieza de bronce hacia lo alto. Guiado por los celos del viento del oeste o por la fatalidad, el disco se desvió e impactó brutalmente contra la frente de Jacinto.",
+   "subtitulo": "Durante una competición de disco, Apolo lanzó la pesada pieza de bronce hacia lo alto. Guiado por los celos del viento del oeste o por la fatalidad, el disco se desvió e impactó brutalmente contra la frente de Jacinto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apolo corrió a sostener al joven agonizante entre sus brazos. El dios de la medicina intentó en vano sanar la herida mortal; de la sangre derramada en la hierba hizo brotar una flor que llevaría su nombre para siempre.",
+   "subtitulo": "Apolo corrió a sostener al joven agonizante entre sus brazos. El dios de la medicina intentó en vano sanar la herida mortal; de la sangre derramada en la hierba hizo brotar una flor que llevaría su nombre para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba esa deslumbrante resplandor.",
+   "subtitulo": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba esa deslumbrante resplandor."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba ese deslumbrante resplandor.",
+   "subtitulo": "Para los mortales, el amor de Apolo era tan letal como sus flechas. Amar al dios del Sol significaba consumirse bajo una luz implacable. Pero para comprender del todo su naturaleza, debías entender qué ocultaba ese deslumbrante resplandor."
+  },
+  {
+   "titulo": "",
+   "hablado": "La civilización griega no veía en Apolo a un tirano cruel, sino a la encarnación perfecta de la medida exacta. Su luz daba la vida a los campos de trigo, pero también desataba la sequía más implacable sobre los insensatos.",
+   "subtitulo": "La civilización griega no veía en Apolo a un tirano cruel, sino a la encarnación perfecta de la medida exacta. Su luz daba la vida a los campos de trigo, pero también desataba la sequía más implacable sobre los insensatos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cada castigo, desde el trágico final de Jacinto hasta la desesperación de Níobe, respondía a una norma inquebrantable. El orden divino del Olimpo no toleraba jamás la arrogancia de los mortales que olvidaban su verdadera condición.",
+   "subtitulo": "Cada castigo, desde el trágico final de Jacinto hasta la desesperación de Níobe, respondía a una norma inquebrantable. El orden divino del Olimpo no toleraba jamás la arrogancia de los mortales que olvidaban su verdadera condición."
+  },
+  {
+   "titulo": "",
+   "hablado": "Apolo exigía reverencia absoluta porque era la voz de la verdad y la profecía en el santuario de Delfos. Cruzar esa línea invisible entre el respeto y la soberbia significaba invocar la furia instantánea de las flechas doradas.",
+   "subtitulo": "Apolo exigía reverencia absoluta porque era la voz de la verdad y la profecía en el santuario de Delfos. Cruzar esa línea invisible entre el respeto y la soberbia significaba invocar la furia instantánea de las flechas doradas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su historia nos enseña que aquello que nos ilumina y nos guía puede volverse destructivo si nos acercamos demasiado. Los mitos griegos utilizaban al dios del Sol para recordar la distancia insalvable que separa a los hombres de los inmortales.",
+   "subtitulo": "Su historia nos enseña que aquello que nos ilumina y nos guía puede volverse destructivo si nos acercamos demasiado. Los mitos griegos utilizaban al dios del Sol para recordar la distancia insalvable que separa a los hombres de los inmortales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Así concluye el relato sobre el lado más oscuro y temido del dios más venerado del panteón helénico. Una deidad cuya belleza deslumbrante ocultaba un poder capaz de doblegar imperios enteros sin derramar apenas una sola gota de sangre.",
+   "subtitulo": "Así concluye el relato sobre el lado más oscuro y temido del dios más venerado del panteón helénico. Una deidad cuya belleza deslumbrante ocultaba un poder capaz de doblegar imperios enteros sin derramar apenas una sola gota de sangre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ahora que conoces toda la verdad sobre sus actos más terribles y su férrea justicia, queda una última duda por resolver. ¿Crees realmente que sus castigos fueron justos o se debieron únicamente a un ego divino descontrolado?",
+   "subtitulo": "Ahora que conoces toda la verdad sobre sus actos más terribles y su férrea justicia, queda una última duda por resolver. ¿Crees realmente que sus castigos fueron justos o se debieron únicamente a un ego divino descontrolado?"
+  },
+  {
+   "titulo": "",
+   "hablado": "Déjame tu sincera opinión aquí abajo en los comentarios y suscríbete para no perderte el próximo viaje a los misterios de la mitología clásica. Hasta la próxima leyenda.",
+   "subtitulo": "Déjame tu sincera opinión aquí abajo en los comentarios y suscríbete para no perderte el próximo viaje a los misterios de la mitología clásica. Hasta la próxima leyenda."
+  }
+ ]
+}
