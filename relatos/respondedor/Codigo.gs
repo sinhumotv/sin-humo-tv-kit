@@ -4,7 +4,8 @@
  *
  * Tus claves NO están en este código: se guardan en
  * "Configuración del proyecto" → "Propiedades del script" (solo las ves tú):
- *   INSTAGRAM_TOKEN  → token de Instagram (opcional: sin él, solo YouTube)
+ *   INSTAGRAM_TOKEN  → token de Instagram, «IG…» o «EAA…» (opcional: sin él, solo YouTube)
+ *   INSTAGRAM_ID     → número de la cuenta de Instagram (solo con un token «EAA…»; si falta, se busca solo)
  *   GEMINI_KEY       → clave gratuita de Google AI Studio (OBLIGATORIA: todas las respuestas las escribe la IA)
  *   PAUSADO          → pon 1 para parar las respuestas sin borrar nada
  *
@@ -129,12 +130,42 @@ function revisarYouTube_(estado, cupo) {
 
 /* ================== INSTAGRAM ================== */
 
-const IG = 'https://graph.instagram.com/v21.0';
+// (14-nov-2026) Vale con los DOS tipos de token:
+//  · «IG…» (inicio de sesión de Instagram) → graph.instagram.com y /me
+//  · «EAA…» (de Facebook, con la página enlazada a la cuenta de Instagram) → graph.facebook.com y el ID de la cuenta de
+//    Instagram (propiedad INSTAGRAM_ID; si no está, se busca solo en las páginas de Facebook del token)
+function esFacebook_() {
+  return /^EAA/.test((PropertiesService.getScriptProperties().getProperty('INSTAGRAM_TOKEN') || '').trim());
+}
+
+function igBase_() {
+  return esFacebook_() ? 'https://graph.facebook.com/v21.0' : 'https://graph.instagram.com/v21.0';
+}
+
+function igCuenta_() {
+  const p = PropertiesService.getScriptProperties();
+  let id = (p.getProperty('INSTAGRAM_ID') || '').trim();
+  if (id) return id;
+  const token = (p.getProperty('INSTAGRAM_TOKEN') || '').trim();
+  const r = UrlFetchApp.fetch('https://graph.facebook.com/v21.0/me/accounts?fields=name,instagram_business_account{id,username}&access_token=' + encodeURIComponent(token), { muteHttpExceptions: true });
+  const j = JSON.parse(r.getContentText() || '{}');
+  const pag = (j.data || []).filter(x => x.instagram_business_account);
+  if (!pag.length) throw new Error('Con un token EAA hace falta la propiedad INSTAGRAM_ID (el número de la cuenta de Instagram): ' + (j.error ? j.error.message : 'no hay ninguna página con Instagram enlazado').slice(0, 150));
+  id = pag[0].instagram_business_account.id;
+  p.setProperty('INSTAGRAM_ID', id);
+  return id;
+}
+
+function igRuta_(ruta) {
+  if (!esFacebook_()) return ruta;
+  return ruta.replace(/^\/me(?=\/|$)/, '/' + igCuenta_());
+}
 
 function igGet_(ruta, params) {
-  const token = PropertiesService.getScriptProperties().getProperty('INSTAGRAM_TOKEN');
+  const token = (PropertiesService.getScriptProperties().getProperty('INSTAGRAM_TOKEN') || '').trim();
+  if (esFacebook_() && ruta === '/me') params = { fields: 'id,username' };
   const q = Object.keys(params || {}).map(k => k + '=' + encodeURIComponent(params[k])).join('&');
-  const url = IG + ruta + '?' + (q ? q + '&' : '') + 'access_token=' + encodeURIComponent(token);
+  const url = igBase_() + igRuta_(ruta) + '?' + (q ? q + '&' : '') + 'access_token=' + encodeURIComponent(token);
   const r = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
   const j = JSON.parse(r.getContentText() || '{}');
   if (r.getResponseCode() >= 300 || j.error) throw new Error('Instagram ' + r.getResponseCode() + ': ' + (j.error ? j.error.message : r.getContentText()).slice(0, 200));
@@ -142,8 +173,8 @@ function igGet_(ruta, params) {
 }
 
 function igPost_(ruta, params) {
-  const token = PropertiesService.getScriptProperties().getProperty('INSTAGRAM_TOKEN');
-  const r = UrlFetchApp.fetch(IG + ruta, {
+  const token = (PropertiesService.getScriptProperties().getProperty('INSTAGRAM_TOKEN') || '').trim();
+  const r = UrlFetchApp.fetch(igBase_() + igRuta_(ruta), {
     method: 'post', muteHttpExceptions: true,
     payload: Object.assign({}, params, { access_token: token }),
   });
@@ -194,8 +225,8 @@ function revisarInstagram_(estado, cupo) {
 /** Renueva el token de Instagram (caduca a los 60 días). Se ejecuta sola cada semana. */
 function renovarTokenInstagram() {
   const props = PropertiesService.getScriptProperties();
-  const token = props.getProperty('INSTAGRAM_TOKEN');
-  if (!token) return;
+  const token = (props.getProperty('INSTAGRAM_TOKEN') || '').trim();
+  if (!token || esFacebook_()) return;   // los EAA de página no caducan: no se renuevan así
   const r = UrlFetchApp.fetch('https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=' + encodeURIComponent(token), { muteHttpExceptions: true });
   const j = JSON.parse(r.getContentText() || '{}');
   if (j.access_token) props.setProperty('INSTAGRAM_TOKEN', j.access_token);
