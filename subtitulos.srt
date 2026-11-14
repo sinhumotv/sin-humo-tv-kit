@@ -1,0 +1,1659 @@
+1
+00:00:00,000 --> 00:00:02,688
+imagina despertar mañana y descubrir que
+
+2
+00:00:02,688 --> 00:00:05,376
+las paredes de tu dormitorio conocen tus
+
+3
+00:00:05,376 --> 00:00:07,997
+hábitos de sueño antes de que abras los
+
+4
+00:00:07,997 --> 00:00:10,685
+ojos. no es ciencia ficción, es el punto
+
+5
+00:00:10,685 --> 00:00:13,306
+de inflexión invisible hacia el que nos
+
+6
+00:00:13,306 --> 00:00:14,784
+dirigimos ahora mismo.
+
+7
+00:00:15,034 --> 00:00:16,956
+durante las próximas décadas, la
+
+8
+00:00:16,956 --> 00:00:19,059
+tecnología dejará de ser una simple
+
+9
+00:00:19,059 --> 00:00:21,522
+herramienta que guardamos en el bolsillo.
+
+10
+00:00:21,522 --> 00:00:24,045
+se convertirá poco a poco en la estructura
+
+11
+00:00:24,045 --> 00:00:26,088
+misma de la realidad cotidiana que
+
+12
+00:00:26,088 --> 00:00:27,590
+habitamos todos los días.
+
+13
+00:00:27,840 --> 00:00:30,215
+en este viaje vamos a descubrir paso a
+
+14
+00:00:30,215 --> 00:00:32,465
+paso, década a década, cómo cambiará
+
+15
+00:00:32,465 --> 00:00:35,028
+radicalmente la experiencia de estar vivo
+
+16
+00:00:35,028 --> 00:00:37,153
+desde este momento hasta llegar al
+
+17
+00:00:37,153 --> 00:00:39,340
+fascinante y lejano final del siglo
+
+18
+00:00:39,340 --> 00:00:39,965
+veintiuno.
+
+19
+00:00:40,215 --> 00:00:42,017
+los sistemas predictivos ya están
+
+20
+00:00:42,017 --> 00:00:43,983
+aprendiendo a anticiparse a nuestras
+
+21
+00:00:43,983 --> 00:00:46,004
+necesidades básicas, desde la gestión
+
+22
+00:00:46,004 --> 00:00:47,861
+energética de los hogares hasta la
+
+23
+00:00:47,861 --> 00:00:49,991
+optimización del tráfico en las grandes
+
+24
+00:00:49,991 --> 00:00:51,247
+metrópolis del planeta.
+
+25
+00:00:51,497 --> 00:00:53,612
+pero lo que veremos ir mas alla de la
+
+26
+00:00:53,612 --> 00:00:55,155
+automatizacion tradicional.
+
+27
+00:00:55,155 --> 00:00:57,156
+veremos como los objetos inanimados
+
+28
+00:00:57,156 --> 00:00:59,499
+empiezan a responder de manera organica a
+
+29
+00:00:59,499 --> 00:01:01,843
+nuestra presencia y a nuestras decisiones
+
+30
+00:01:01,843 --> 00:01:02,300
+diarias.
+
+31
+00:01:02,550 --> 00:01:04,605
+cada avance actual en inteligencia
+
+32
+00:01:04,605 --> 00:01:07,082
+artificial y computacion avanzada es solo
+
+33
+00:01:07,082 --> 00:01:09,499
+el primer cimiento de una transformacion
+
+34
+00:01:09,499 --> 00:01:11,735
+profunda que alterara la forma en que
+
+35
+00:01:11,735 --> 00:01:14,273
+trabajamos, aprendemos y nos relacionamos.
+
+36
+00:01:14,523 --> 00:01:17,036
+quedate hasta el final porque desvelaremos
+
+37
+00:01:17,036 --> 00:01:18,412
+el mayor giro de todos:
+
+38
+00:01:18,412 --> 00:01:20,865
+el cambio mas profundo no ocurrira en las
+
+39
+00:01:20,865 --> 00:01:23,259
+maquinas, sino en la definicion misma de
+
+40
+00:01:23,259 --> 00:01:24,934
+lo que significa ser humano.
+
+41
+00:01:25,184 --> 00:01:27,195
+Al llegar al año dos mil treinta el
+
+42
+00:01:27,195 --> 00:01:29,493
+dispositivo que llevas ahora mismo en la
+
+43
+00:01:29,493 --> 00:01:31,331
+mano habrá comenzado su retirada
+
+44
+00:01:31,331 --> 00:01:33,514
+definitiva. Los rectángulos de cristal
+
+45
+00:01:33,514 --> 00:01:35,927
+negro que dominaron nuestras vidas cederán
+
+46
+00:01:35,927 --> 00:01:37,823
+su puesto a interfaces totalmente
+
+47
+00:01:37,823 --> 00:01:38,455
+invisibles.
+
+48
+00:01:38,705 --> 00:01:40,623
+La computación espacial integrada
+
+49
+00:01:40,623 --> 00:01:42,540
+permitirá proyectar datos ligeros
+
+50
+00:01:42,540 --> 00:01:44,632
+directamente en nuestro campo visual
+
+51
+00:01:44,632 --> 00:01:46,027
+mediante gafas livianas.
+
+52
+00:01:46,027 --> 00:01:48,177
+Escucharemos información contextual a
+
+53
+00:01:48,177 --> 00:01:50,443
+través de audio inmersivo sin aislarnos
+
+54
+00:01:50,443 --> 00:01:52,593
+del entorno ni tocar ninguna pantalla
+
+55
+00:01:52,593 --> 00:01:53,000
+física.
+
+56
+00:01:53,250 --> 00:01:55,580
+Los asistentes de lenguaje en tiempo real
+
+57
+00:01:55,580 --> 00:01:57,967
+ya no esperarán nuestras órdenes expresas.
+
+58
+00:01:57,967 --> 00:02:00,353
+Analizarán hacia dónde miramos o con quién
+
+59
+00:02:00,353 --> 00:02:02,342
+hablamos para ofrecernos respuestas
+
+60
+00:02:02,342 --> 00:02:04,218
+instantáneas antes incluso de que
+
+61
+00:02:04,218 --> 00:02:06,434
+formulemos la pregunta de forma verbal.
+
+62
+00:02:06,684 --> 00:02:09,122
+Imagina caminar por una ciudad desconocida
+
+63
+00:02:09,122 --> 00:02:11,503
+y ver flechas de guía trazadas suavemente
+
+64
+00:02:11,503 --> 00:02:13,883
+sobre el asfalto. Al mirar un restaurante
+
+65
+00:02:13,883 --> 00:02:15,973
+o un monumento datos útiles sobre su
+
+66
+00:02:15,973 --> 00:02:18,353
+historia o menú flotarán ante tus ojos de
+
+67
+00:02:18,353 --> 00:02:19,166
+forma natural.
+
+68
+00:02:19,416 --> 00:02:21,437
+La comunicación interpersonal cruzará
+
+69
+00:02:21,437 --> 00:02:23,349
+barreras lingüísticas sin esfuerzo.
+
+70
+00:02:23,349 --> 00:02:25,315
+Si hablas con alguien en otro idioma
+
+71
+00:02:25,315 --> 00:02:27,336
+escucharás la traducción traducida al
+
+72
+00:02:27,336 --> 00:02:29,193
+instante con su propio tono de voz
+
+73
+00:02:29,193 --> 00:02:31,488
+mientras subtítulos sutiles aparecen junto
+
+74
+00:02:31,488 --> 00:02:32,143
+a su rostro.
+
+75
+00:02:32,393 --> 00:02:34,184
+Capas de información superpuesta
+
+76
+00:02:34,184 --> 00:02:36,142
+recordarán los nombres de conocidos
+
+77
+00:02:36,142 --> 00:02:38,212
+lejanos o notas de reuniones pasadas.
+
+78
+00:02:38,212 --> 00:02:40,227
+La memoria de trabajo humana se verá
+
+79
+00:02:40,227 --> 00:02:42,465
+expandida por algoritmos silenciosos que
+
+80
+00:02:42,465 --> 00:02:44,815
+funcionan en segundo plano durante todo el
+
+81
+00:02:44,815 --> 00:02:45,039
+día.
+
+82
+00:02:45,289 --> 00:02:48,331
+Esta integración invisible cambiará cómo
+
+83
+00:02:48,331 --> 00:02:51,525
+nos relacionamos en la calle y el trabajo.
+
+84
+00:02:51,525 --> 00:02:54,719
+Pero cuando esta tecnología entre de lleno
+
+85
+00:02:54,719 --> 00:02:57,837
+en la infancia y el aprendizaje el cambio
+
+86
+00:02:57,837 --> 00:03:00,879
+será radical aunque lo peor aún no había
+
+87
+00:03:00,879 --> 00:03:01,487
+llegado.
+
+88
+00:03:01,737 --> 00:03:04,418
+Para el año dos mil cuarenta las aulas
+
+89
+00:03:04,418 --> 00:03:06,746
+tradicionales habrán cambiado por
+
+90
+00:03:06,746 --> 00:03:09,285
+completo. La inteligencia artificial
+
+91
+00:03:09,285 --> 00:03:12,178
+analizará el ritmo metabólico y los picos
+
+92
+00:03:12,178 --> 00:03:14,999
+de atención de cada estudiante adaptando
+
+93
+00:03:14,999 --> 00:03:17,327
+las lecciones en tiempo real para
+
+94
+00:03:17,327 --> 00:03:19,867
+maximizar su aprendizaje individual.
+
+95
+00:03:20,117 --> 00:03:23,011
+La memorización pasiva de datos dejará de
+
+96
+00:03:23,011 --> 00:03:25,340
+ser el eje del sistema educativo.
+
+97
+00:03:25,340 --> 00:03:28,234
+En su lugar los alumnos interactuarán con
+
+98
+00:03:28,234 --> 00:03:30,916
+simulaciones virtuales complejas donde
+
+99
+00:03:30,916 --> 00:03:33,598
+podrán resolver problemas prácticos de
+
+100
+00:03:33,598 --> 00:03:36,351
+física medicina o arquitectura de forma
+
+101
+00:03:36,351 --> 00:03:37,833
+totalmente inmersiva.
+
+102
+00:03:38,083 --> 00:03:41,076
+Sensores no invasivos medirán el nivel de
+
+103
+00:03:41,076 --> 00:03:43,851
+frustración o aburrimiento mediante el
+
+104
+00:03:43,851 --> 00:03:46,333
+seguimiento ocular y la frecuencia
+
+105
+00:03:46,333 --> 00:03:49,400
+cardíaca. Si un concepto resulta demasiado
+
+106
+00:03:49,400 --> 00:03:52,320
+difícil el tutor algorítmico cambiará la
+
+107
+00:03:52,320 --> 00:03:55,241
+explicación al instante utilizando otros
+
+108
+00:03:55,241 --> 00:03:56,555
+ejemplos visuales.
+
+109
+00:03:56,805 --> 00:03:59,524
+Este modelo permitirá que cualquier niño
+
+110
+00:03:59,524 --> 00:04:01,971
+reciba la misma calidad de enseñanza
+
+111
+00:04:01,971 --> 00:04:04,350
+personalizada que antes solo podían
+
+112
+00:04:04,350 --> 00:04:07,001
+permitirse las familias más adineradas.
+
+113
+00:04:07,001 --> 00:04:09,584
+El conocimiento dejará de depender del
+
+114
+00:04:09,584 --> 00:04:12,302
+código postal o del presupuesto familiar
+
+115
+00:04:12,302 --> 00:04:13,322
+de cada alumno.
+
+116
+00:04:13,572 --> 00:04:16,171
+Los profesores humanos no desaparecerán
+
+117
+00:04:16,171 --> 00:04:18,503
+pero su función se transformará por
+
+118
+00:04:18,503 --> 00:04:20,769
+completo. Ya no dictarán lecciones
+
+119
+00:04:20,769 --> 00:04:23,368
+magistrales sino que se enfocarán en el
+
+120
+00:04:23,368 --> 00:04:25,700
+desarrollo emocional el pensamiento
+
+121
+00:04:25,700 --> 00:04:28,165
+crítico y la resolución de conflictos
+
+122
+00:04:28,165 --> 00:04:30,631
+éticos entre los jóvenes estudiantes.
+
+123
+00:04:30,881 --> 00:04:33,256
+El aprendizaje ya no terminará en la
+
+124
+00:04:33,256 --> 00:04:36,026
+juventud sino que acompañará al ser humano
+
+125
+00:04:36,026 --> 00:04:37,873
+durante toda su vida adulta.
+
+126
+00:04:37,873 --> 00:04:40,577
+El sistema reestructurará las habilidades
+
+127
+00:04:40,577 --> 00:04:43,150
+de los trabajadores en tiempo real para
+
+128
+00:04:43,150 --> 00:04:45,393
+adaptarse a los constantes cambios
+
+129
+00:04:45,393 --> 00:04:46,250
+tecnológicos.
+
+130
+00:04:46,500 --> 00:04:49,391
+Sin embargo la transformación más profunda
+
+131
+00:04:49,391 --> 00:04:52,213
+de esta década no ocurrió entre los muros
+
+132
+00:04:52,213 --> 00:04:54,760
+del colegio ni en la universidad sino
+
+133
+00:04:54,760 --> 00:04:57,583
+dentro de la propia cocina del hogar pero
+
+134
+00:04:57,583 --> 00:05:00,405
+la sorpresa gastronómica apenas comenzaba
+
+135
+00:05:00,405 --> 00:05:01,162
+a gestarse.
+
+136
+00:05:01,412 --> 00:05:03,944
+Los fogones tradicionales y las sartenes
+
+137
+00:05:03,944 --> 00:05:06,477
+de hierro empiezan a ser piezas de museo
+
+138
+00:05:06,477 --> 00:05:08,692
+en los hogares de dos mil cincuenta
+
+139
+00:05:08,692 --> 00:05:10,781
+mientras la agricultura extensiva
+
+140
+00:05:10,781 --> 00:05:13,314
+tradicional cede su espacio físico a los
+
+141
+00:05:13,314 --> 00:05:15,023
+centros de cultivo vertical
+
+142
+00:05:15,273 --> 00:05:18,168
+En los laboratorios actuales ya se cultiva
+
+143
+00:05:18,168 --> 00:05:20,580
+carne a partir de pocas células sin
+
+144
+00:05:20,580 --> 00:05:23,268
+necesidad de sacrificar animales y este
+
+145
+00:05:23,268 --> 00:05:26,094
+proceso optimiza la producción reduciendo
+
+146
+00:05:26,094 --> 00:05:28,644
+drásticamente el consumo de agua y de
+
+147
+00:05:28,644 --> 00:05:29,885
+terreno cultivable
+
+148
+00:05:30,135 --> 00:05:32,507
+Para mediados de siglo los pequeños
+
+149
+00:05:32,507 --> 00:05:35,151
+bioreactores domésticos conectados a la
+
+150
+00:05:35,151 --> 00:05:37,523
+red optimizan la nutrición familiar
+
+151
+00:05:37,523 --> 00:05:40,302
+sintetizando proteínas puras y compuestos
+
+152
+00:05:40,302 --> 00:05:43,081
+vitamínicos a la carta según los análisis
+
+153
+00:05:43,081 --> 00:05:44,098
+médicos diarios
+
+154
+00:05:44,348 --> 00:05:46,985
+La cultura culinaria cambia radicalmente
+
+155
+00:05:46,985 --> 00:05:49,227
+porque el sabor y la textura ya no
+
+156
+00:05:49,227 --> 00:05:51,600
+dependen de la suerte de una cosecha
+
+157
+00:05:51,600 --> 00:05:54,172
+estacional sino de fórmulas moleculares
+
+158
+00:05:54,172 --> 00:05:56,545
+precisas diseñadas por algoritmos de
+
+159
+00:05:56,545 --> 00:05:57,732
+nutrición avanzada
+
+160
+00:05:57,982 --> 00:06:00,023
+La salud digestiva de la población mejora
+
+161
+00:06:00,023 --> 00:06:01,914
+de forma notable al eliminar toxinas y
+
+162
+00:06:01,914 --> 00:06:03,557
+patógenos comunes de la cadena de
+
+163
+00:06:03,557 --> 00:06:05,299
+suministro tradicional gracias a la
+
+164
+00:06:05,299 --> 00:06:07,191
+esterilidad controlada de estos nuevos
+
+165
+00:06:07,191 --> 00:06:08,286
+sistemas de producción
+
+166
+00:06:08,536 --> 00:06:10,707
+Los restaurantes tradicionales se
+
+167
+00:06:10,707 --> 00:06:13,207
+transforman en espacios de experiencia
+
+168
+00:06:13,207 --> 00:06:15,772
+artesanal exclusiva mientras el consumo
+
+169
+00:06:15,772 --> 00:06:18,469
+diario se traslada hacia estas soluciones
+
+170
+00:06:18,469 --> 00:06:21,166
+moleculares eficientes y sostenibles para
+
+171
+00:06:21,166 --> 00:06:22,153
+todo el planeta
+
+172
+00:06:22,403 --> 00:06:25,318
+Pero la verdadera revolución nutricional
+
+173
+00:06:25,318 --> 00:06:28,305
+no se detuvo en el plato sino que comenzó
+
+174
+00:06:28,305 --> 00:06:30,856
+a alterar profundamente la relación
+
+175
+00:06:30,856 --> 00:06:33,698
+biológica del ser humano con el entorno
+
+176
+00:06:33,698 --> 00:06:36,102
+pero el misterio biológico apenas
+
+177
+00:06:36,102 --> 00:06:36,758
+comenzaba
+
+178
+00:06:37,008 --> 00:06:39,661
+Pero el verdadero misterio biológico
+
+179
+00:06:39,661 --> 00:06:42,682
+apenas comenzaba a desdibujarse cuando el
+
+180
+00:06:42,682 --> 00:06:45,335
+año dos mil sesenta trajo consigo la
+
+181
+00:06:45,335 --> 00:06:48,356
+fusión definitiva entre el espacio físico
+
+182
+00:06:48,356 --> 00:06:51,451
+y las proyecciones sensoriales sintéticas.
+
+183
+00:06:51,451 --> 00:06:53,662
+La materia comenzó a perder su
+
+184
+00:06:53,662 --> 00:06:54,620
+exclusividad.
+
+185
+00:06:54,870 --> 00:06:57,212
+Los sistemas de respuesta háptica y los
+
+186
+00:06:57,212 --> 00:06:59,733
+campos ópticos avanzados permitieron a los
+
+187
+00:06:59,733 --> 00:07:01,594
+usuarios experimentar texturas,
+
+188
+00:07:01,594 --> 00:07:04,056
+temperaturas y presiones sin necesidad de
+
+189
+00:07:04,056 --> 00:07:06,397
+tocar un objeto real, transformando por
+
+190
+00:07:06,397 --> 00:07:08,739
+completo la interacción con el entorno.
+
+191
+00:07:08,989 --> 00:07:11,576
+Las oficinas vacías se llenaron de
+
+192
+00:07:11,576 --> 00:07:14,620
+compañeros proyectados con una fidelidad
+
+193
+00:07:14,620 --> 00:07:17,663
+tan absoluta que los sentidos humanos no
+
+194
+00:07:17,663 --> 00:07:20,403
+lograban distinguir el reflejo de la
+
+195
+00:07:20,403 --> 00:07:23,142
+carne, generando un debate ético sin
+
+196
+00:07:23,142 --> 00:07:25,729
+precedentes sobre la autenticidad.
+
+197
+00:07:25,979 --> 00:07:28,993
+Los tribunales tuvieron que legislar sobre
+
+198
+00:07:28,993 --> 00:07:32,006
+la falsificación sensorial y los contratos
+
+199
+00:07:32,006 --> 00:07:34,877
+firmados en realidades mixtas, donde una
+
+200
+00:07:34,877 --> 00:07:37,603
+caricia o una presencia virtual podían
+
+201
+00:07:37,603 --> 00:07:39,971
+tener el mismo valor legal que un
+
+202
+00:07:39,971 --> 00:07:41,191
+encuentro físico.
+
+203
+00:07:41,441 --> 00:07:43,916
+La arquitectura urbana también cambió,
+
+204
+00:07:43,916 --> 00:07:46,521
+permitiendo que las paredes de las casas
+
+205
+00:07:46,521 --> 00:07:48,670
+adoptaran paisajes cambiantes que
+
+206
+00:07:48,670 --> 00:07:50,884
+respondían al estado emocional del
+
+207
+00:07:50,884 --> 00:07:53,554
+habitante mediante sensores neuronales de
+
+208
+00:07:53,554 --> 00:07:55,703
+baja intensidad y alta precisión.
+
+209
+00:07:55,953 --> 00:07:58,919
+Sin embargo, esta hiperrealidad sintética
+
+210
+00:07:58,919 --> 00:08:01,595
+provocó que un sector de la población
+
+211
+00:08:01,595 --> 00:08:04,633
+empezara a dudar de si el suelo que pisaba
+
+212
+00:08:04,633 --> 00:08:07,454
+era realmente materia o simplemente una
+
+213
+00:08:07,454 --> 00:08:09,841
+simulación dictada por algoritmos
+
+214
+00:08:09,841 --> 00:08:10,564
+complejos.
+
+215
+00:08:10,814 --> 00:08:13,783
+La incertidumbre sobre la naturaleza de lo
+
+216
+00:08:13,783 --> 00:08:16,186
+real se instaló en el centro de la
+
+217
+00:08:16,186 --> 00:08:18,942
+experiencia humana, abriendo paso a una
+
+218
+00:08:18,942 --> 00:08:21,840
+pregunta aún más inquietante sobre lo que
+
+219
+00:08:21,840 --> 00:08:24,314
+quedaba de nuestra propia identidad
+
+220
+00:08:24,314 --> 00:08:25,021
+biológica.
+
+221
+00:08:25,271 --> 00:08:28,119
+La incertidumbre sobre la naturaleza de lo
+
+222
+00:08:28,119 --> 00:08:30,425
+real se instaló en el centro de la
+
+223
+00:08:30,425 --> 00:08:33,069
+experiencia humana, abriendo paso a una
+
+224
+00:08:33,069 --> 00:08:35,850
+pregunta aún más inquietante sobre lo que
+
+225
+00:08:35,850 --> 00:08:38,223
+quedaba de nuestra propia identidad
+
+226
+00:08:38,223 --> 00:08:40,936
+biológica. Hacia el año dos mil setenta,
+
+227
+00:08:40,936 --> 00:08:43,174
+las paredes de las casas ya no se
+
+228
+00:08:43,174 --> 00:08:45,818
+construían con cemento inerte, sino con
+
+229
+00:08:45,818 --> 00:08:48,599
+colonias de micelio y bacterias diseñadas
+
+230
+00:08:48,599 --> 00:08:50,633
+para crecer y repararse solas.
+
+231
+00:08:50,883 --> 00:08:53,300
+Los interruptores y cables eléctricos
+
+232
+00:08:53,300 --> 00:08:55,522
+desaparecieron por completo de los
+
+233
+00:08:55,522 --> 00:08:58,004
+hogares. En su lugar, redes de tejidos
+
+234
+00:08:58,004 --> 00:09:00,160
+vivos integrados en el mobiliario
+
+235
+00:09:00,160 --> 00:09:02,316
+conducían energía química de baja
+
+236
+00:09:02,316 --> 00:09:04,733
+intensidad, aprovechando los residuos
+
+237
+00:09:04,733 --> 00:09:07,151
+orgánicos para alimentar los sensores
+
+238
+00:09:07,151 --> 00:09:09,176
+ambientales de cada habitación.
+
+239
+00:09:09,426 --> 00:09:12,111
+La ropa dejó de ser un simple adorno
+
+240
+00:09:12,111 --> 00:09:14,871
+textil para convertirse en un sistema
+
+241
+00:09:14,871 --> 00:09:18,003
+activo de filtración y regulación térmica.
+
+242
+00:09:18,003 --> 00:09:20,838
+Los tejidos sintéticos con componentes
+
+243
+00:09:20,838 --> 00:09:23,970
+biológicos ajustaban su porosidad según la
+
+244
+00:09:23,970 --> 00:09:26,805
+temperatura corporal y la presencia de
+
+245
+00:09:26,805 --> 00:09:28,371
+patógenos en el aire.
+
+246
+00:09:28,621 --> 00:09:31,433
+Las superficies de las cocinas y los baños
+
+247
+00:09:31,433 --> 00:09:33,643
+albergaban bacterias beneficiosas
+
+248
+00:09:33,643 --> 00:09:36,321
+programadas para descomponer la suciedad
+
+249
+00:09:36,321 --> 00:09:37,728
+de forma instantánea.
+
+250
+00:09:37,728 --> 00:09:40,540
+El mantenimiento del hogar se convirtió en
+
+251
+00:09:40,540 --> 00:09:43,218
+un proceso biológico automatizado, donde
+
+252
+00:09:43,218 --> 00:09:45,763
+los materiales se regeneraban mediante
+
+253
+00:09:45,763 --> 00:09:47,102
+nutrientes líquidos.
+
+254
+00:09:47,352 --> 00:09:50,299
+Incluso las ventanas adoptaron propiedades
+
+255
+00:09:50,299 --> 00:09:52,684
+vegetales, alterando su opacidad y
+
+256
+00:09:52,684 --> 00:09:55,140
+transmitiendo luz filtrada mediante
+
+257
+00:09:55,140 --> 00:09:57,525
+procesos fotosintéticos simulados.
+
+258
+00:09:57,525 --> 00:10:00,402
+La línea entre un artefacto tecnológico y
+
+259
+00:10:00,402 --> 00:10:03,278
+un organismo vivo se había difuminado por
+
+260
+00:10:03,278 --> 00:10:05,383
+completo en la vida cotidiana.
+
+261
+00:10:05,633 --> 00:10:08,100
+Esta transición hacia la biología
+
+262
+00:10:08,100 --> 00:10:11,090
+sintética redujo drásticamente la huella
+
+263
+00:10:11,090 --> 00:10:13,781
+de residuos inorgánicos, pero generó
+
+264
+00:10:13,781 --> 00:10:16,473
+nuevos retos sanitarios inesperados.
+
+265
+00:10:16,473 --> 00:10:19,014
+Las infecciones cruzadas entre los
+
+266
+00:10:19,014 --> 00:10:22,004
+sistemas vivos del hogar y el microbioma
+
+267
+00:10:22,004 --> 00:10:24,621
+humano exigieron protocolos médicos
+
+268
+00:10:24,621 --> 00:10:25,518
+permanentes.
+
+269
+00:10:25,768 --> 00:10:28,901
+Pero lo peor aún no había llegado, pues la
+
+270
+00:10:28,901 --> 00:10:31,661
+integración profunda entre biología y
+
+271
+00:10:31,661 --> 00:10:34,794
+tecnología doméstica empezó a modificar la
+
+272
+00:10:34,794 --> 00:10:36,957
+percepción del propio cuerpo.
+
+273
+00:10:36,957 --> 00:10:40,016
+¿Hasta qué punto seguíamos siendo humanos
+
+274
+00:10:40,016 --> 00:10:42,000
+cuando nuestro entorno vital respiraba y
+
+275
+00:10:42,000 --> 00:10:44,939
+sanaba con vida sintética?
+
+276
+00:10:45,189 --> 00:10:47,197
+Para el año dos mil ochenta, la
+
+277
+00:10:47,197 --> 00:10:49,852
+arquitectura urbana dejó de ser estática.
+
+278
+00:10:49,852 --> 00:10:52,572
+Las fachadas de los edificios comenzaron a
+
+279
+00:10:52,572 --> 00:10:55,292
+comportarse como pieles sintéticas capaces
+
+280
+00:10:55,292 --> 00:10:57,624
+de adaptarse de forma autónoma a las
+
+281
+00:10:57,624 --> 00:11:00,020
+variaciones térmicas y meteorológicas
+
+282
+00:11:00,020 --> 00:11:00,603
+extremas.
+
+283
+00:11:00,853 --> 00:11:03,446
+Los materiales inteligentes integrados en
+
+284
+00:11:03,446 --> 00:11:05,976
+las paredes modifican su transparencia y
+
+285
+00:11:05,976 --> 00:11:08,569
+su capacidad de aislamiento térmico según
+
+286
+00:11:08,569 --> 00:11:10,529
+la radiación solar. Esto reduce
+
+287
+00:11:10,529 --> 00:11:12,996
+drásticamente el consumo energético sin
+
+288
+00:11:12,996 --> 00:11:15,399
+necesidad de sistemas de climatización
+
+289
+00:11:15,399 --> 00:11:16,727
+artificial complejos.
+
+290
+00:11:16,977 --> 00:11:19,408
+La geometría de las viviendas también
+
+291
+00:11:19,408 --> 00:11:22,167
+puede alterarse ligeramente para minimizar
+
+292
+00:11:22,167 --> 00:11:24,532
+el impacto del viento o maximizar la
+
+293
+00:11:24,532 --> 00:11:27,028
+captación de luz durante los meses más
+
+294
+00:11:27,028 --> 00:11:29,590
+fríos. El entorno construido evoluciona
+
+295
+00:11:29,590 --> 00:11:31,824
+así hacia un diseño verdaderamente
+
+296
+00:11:31,824 --> 00:11:32,415
+dinámico.
+
+297
+00:11:32,665 --> 00:11:39,250
+La gestión del agua y de la energía dentro
+
+298
+00:11:39,250 --> 00:11:45,522
+de estas estructuras se realiza mediante
+
+299
+00:11:45,522 --> 00:11:51,167
+redes distribuidas que optimizan los
+
+300
+00:11:51,167 --> 00:11:56,028
+recursos de manera instantánea.
+
+301
+00:11:56,028 --> 00:12:02,143
+Cada barrio funciona como un ecosistema
+
+302
+00:12:02,143 --> 00:12:08,571
+cerrado que recicla y reutiliza cada gota
+
+303
+00:12:08,571 --> 00:12:10,296
+disponible.
+
+304
+00:12:10,546 --> 00:12:12,541
+Los sensores distribuidos por toda la
+
+305
+00:12:12,541 --> 00:12:14,751
+ciudad monitorizan la tensión estructural
+
+306
+00:12:14,751 --> 00:12:16,907
+y reparan microfisuras de forma autónoma
+
+307
+00:12:16,907 --> 00:12:18,633
+gracias a compuestos bacterianos
+
+308
+00:12:18,633 --> 00:12:20,412
+incrustados en el propio cemento.
+
+309
+00:12:20,412 --> 00:12:22,460
+Las reparaciones humanas en las calles
+
+310
+00:12:22,460 --> 00:12:23,862
+pasan a ser excepcionales.
+
+311
+00:12:24,112 --> 00:12:26,009
+De este modo, el entorno urbano deja de
+
+312
+00:12:26,009 --> 00:12:27,907
+ser un conjunto de bloques inertes para
+
+313
+00:12:27,907 --> 00:12:29,902
+adoptar el comportamiento de un organismo
+
+314
+00:12:29,902 --> 00:12:31,605
+vivo a gran escala. La ciudad misma
+
+315
+00:12:31,605 --> 00:12:33,648
+anticipa las necesidades de sus habitantes
+
+316
+00:12:33,648 --> 00:12:35,205
+antes de que estos las perciban.
+
+317
+00:12:35,455 --> 00:12:37,724
+Pero el verdadero desafío no era solo
+
+318
+00:12:37,724 --> 00:12:40,116
+lograr que las ciudades respiraran y se
+
+319
+00:12:40,116 --> 00:12:42,201
+adaptaran, sino coordinar miles de
+
+320
+00:12:42,201 --> 00:12:44,531
+millones de decisiones simultáneas sin
+
+321
+00:12:44,531 --> 00:12:46,678
+colapsar. Pero lo peor aún no había
+
+322
+00:12:46,678 --> 00:12:49,131
+llegado, pues la gestión algorítmica del
+
+323
+00:12:49,131 --> 00:12:51,400
+espacio público comenzó a decidir qué
+
+324
+00:12:51,400 --> 00:12:53,976
+zonas merecían mantenimiento prioritario y
+
+325
+00:12:53,976 --> 00:12:56,061
+cuáles debían quedar en el olvido.
+
+326
+00:12:56,061 --> 00:12:58,268
+¿Quién elegía qué parte de la ciudad
+
+327
+00:12:58,268 --> 00:12:58,943
+sobrevivía?
+
+328
+00:12:59,193 --> 00:13:01,314
+Para el año dos mil noventa, los sistemas
+
+329
+00:13:01,314 --> 00:13:03,487
+de procesamiento de datos personales ya no
+
+330
+00:13:03,487 --> 00:13:05,556
+solo registran nuestra actividad diaria,
+
+331
+00:13:05,556 --> 00:13:07,626
+sino que indexan cada conversación, cada
+
+332
+00:13:07,626 --> 00:13:09,540
+aprendizaje y cada reacción emocional
+
+333
+00:13:09,540 --> 00:13:11,661
+mediante registros continuos autorizados.
+
+334
+00:13:11,911 --> 00:13:14,523
+La neurotecnología actual utiliza modelos
+
+335
+00:13:14,523 --> 00:13:17,008
+predictivos avanzados para ayudar en la
+
+336
+00:13:17,008 --> 00:13:19,493
+recuperación de recuerdos fragmentados,
+
+337
+00:13:19,493 --> 00:13:22,105
+permitiendo a los pacientes con deterioro
+
+338
+00:13:22,105 --> 00:13:24,462
+cognitivo acceder de nuevo a momentos
+
+339
+00:13:24,462 --> 00:13:25,800
+clave de su infancia.
+
+340
+00:13:26,050 --> 00:13:28,609
+Sin embargo, contar con una biblioteca
+
+341
+00:13:28,609 --> 00:13:31,236
+externa de experiencias y conocimientos
+
+342
+00:13:31,236 --> 00:13:33,997
+plantea un dilema ético profundo sobre la
+
+343
+00:13:33,997 --> 00:13:36,825
+autenticidad de la propia identidad cuando
+
+344
+00:13:36,825 --> 00:13:39,385
+cualquier recuerdo puede ser revisado,
+
+345
+00:13:39,385 --> 00:13:41,405
+editado o filtrado a voluntad.
+
+346
+00:13:41,655 --> 00:13:43,739
+Los algoritmos de optimización del
+
+347
+00:13:43,739 --> 00:13:45,885
+aprendizaje acelerado consiguen que
+
+348
+00:13:45,885 --> 00:13:48,398
+adquirir un nuevo idioma o una disciplina
+
+349
+00:13:48,398 --> 00:13:50,973
+técnica compleja requiera una fracción del
+
+350
+00:13:50,973 --> 00:13:52,873
+tiempo tradicional gracias a la
+
+351
+00:13:52,873 --> 00:13:54,957
+estimulación dirigida del cerebro.
+
+352
+00:13:55,207 --> 00:13:57,575
+A pesar de las ventajas evidentes en la
+
+353
+00:13:57,575 --> 00:14:00,125
+productividad y la salud mental, el acceso
+
+354
+00:14:00,125 --> 00:14:02,614
+a estas herramientas cognitivas avanzadas
+
+355
+00:14:02,614 --> 00:14:04,800
+generó una nueva brecha social entre
+
+356
+00:14:04,800 --> 00:14:06,986
+quienes pueden permitirse mejorar su
+
+357
+00:14:06,986 --> 00:14:08,261
+memoria y quienes no.
+
+358
+00:14:08,511 --> 00:14:10,679
+Pero el verdadero peligro no era la
+
+359
+00:14:10,679 --> 00:14:13,219
+pérdida de capacidad intelectual, sino la
+
+360
+00:14:13,219 --> 00:14:15,573
+dependencia absoluta de los servidores
+
+361
+00:14:15,573 --> 00:14:17,555
+externos para validar qué hechos
+
+362
+00:14:17,555 --> 00:14:19,785
+ocurrieron realmente y cuáles fueron
+
+363
+00:14:19,785 --> 00:14:21,643
+alterados por la conveniencia.
+
+364
+00:14:21,893 --> 00:14:24,580
+Pero lo peor aún no había llegado, pues
+
+365
+00:14:24,580 --> 00:14:26,922
+los archivos de memoria compartida
+
+366
+00:14:26,922 --> 00:14:29,058
+comenzaron a ser utilizados por
+
+367
+00:14:29,058 --> 00:14:31,676
+corporaciones para predecir decisiones
+
+368
+00:14:31,676 --> 00:14:34,087
+personales antes de que los propios
+
+369
+00:14:34,087 --> 00:14:36,774
+individuos fueran conscientes de ellas.
+
+370
+00:14:36,774 --> 00:14:39,461
+¿Quién controlaba entonces la voluntad?
+
+371
+00:14:39,711 --> 00:14:41,967
+Y así, al abrir los ojos en la primera
+
+372
+00:14:41,967 --> 00:14:44,402
+mañana del año dos mil cien, la luz de la
+
+373
+00:14:44,402 --> 00:14:46,895
+estancia se ajusta de manera imperceptible
+
+374
+00:14:46,895 --> 00:14:49,330
+a nuestros ritmos biológicos mientras las
+
+375
+00:14:49,330 --> 00:14:51,764
+paredes del hogar liberan una tenue brisa
+
+376
+00:14:51,764 --> 00:14:53,783
+purificada por cultivos celulares.
+
+377
+00:14:54,033 --> 00:14:55,983
+La jornada comienza sin prisas ni
+
+378
+00:14:55,983 --> 00:14:58,228
+pantallas físicas, pues los asistentes
+
+379
+00:14:58,228 --> 00:15:00,474
+invisibles ya han coordinado la agenda
+
+380
+00:15:00,474 --> 00:15:02,719
+nutricional y médica en función de los
+
+381
+00:15:02,719 --> 00:15:04,846
+datos recogidos durante el sueño por
+
+382
+00:15:04,846 --> 00:15:06,914
+nuestros sistemas de monitorización
+
+383
+00:15:06,914 --> 00:15:07,387
+interna.
+
+384
+00:15:07,637 --> 00:15:09,823
+Al salir a la calle, el entorno urbano
+
+385
+00:15:09,823 --> 00:15:12,181
+responde con fluidez a nuestra presencia,
+
+386
+00:15:12,181 --> 00:15:13,964
+modificando la temperatura y el
+
+387
+00:15:13,964 --> 00:15:16,092
+aislamiento de los edificios mediante
+
+388
+00:15:16,092 --> 00:15:18,220
+materiales inteligentes que imitan la
+
+389
+00:15:18,220 --> 00:15:20,520
+eficiencia de los organismos vivos de la
+
+390
+00:15:20,520 --> 00:15:21,153
+naturaleza.
+
+391
+00:15:21,403 --> 00:15:23,826
+El trabajo y el aprendizaje ya no ocurren
+
+392
+00:15:23,826 --> 00:15:25,539
+en oficinas cerradas ni aulas
+
+393
+00:15:25,539 --> 00:15:27,903
+tradicionales, sino en espacios híbridos
+
+394
+00:15:27,903 --> 00:15:30,266
+donde la cognición humana se potencia de
+
+395
+00:15:30,266 --> 00:15:32,039
+forma directa con herramientas
+
+396
+00:15:32,039 --> 00:15:34,284
+algorítmicas de análisis instantáneo y
+
+397
+00:15:34,284 --> 00:15:34,934
+simulación.
+
+398
+00:15:35,184 --> 00:15:37,625
+Pero al contemplar este paisaje de
+
+399
+00:15:37,625 --> 00:15:39,779
+aparente perfección cotidiana,
+
+400
+00:15:39,779 --> 00:15:41,861
+comprendemos que la verdadera
+
+401
+00:15:41,861 --> 00:15:44,805
+transformación no ocurrió en las máquinas
+
+402
+00:15:44,805 --> 00:15:47,246
+ni en las megaciudades, sino en la
+
+403
+00:15:47,246 --> 00:15:49,688
+redefinición absoluta de la propia
+
+404
+00:15:49,688 --> 00:15:50,980
+naturaleza humana.
+
+405
+00:15:51,230 --> 00:15:54,110
+Nos hemos convertido en una especie capaz
+
+406
+00:15:54,110 --> 00:15:57,061
+de rediseñar su propio entorno biológico y
+
+407
+00:15:57,061 --> 00:15:59,519
+mental, demostrando una resiliencia
+
+408
+00:15:59,519 --> 00:16:01,838
+extraordinaria ante los retos más
+
+409
+00:16:01,838 --> 00:16:03,945
+complejos de nuestra historia.
+
+410
+00:16:04,195 --> 00:16:06,851
+Y ahora os lanzamos una pregunta para
+
+411
+00:16:06,851 --> 00:16:08,788
+debatir en los comentarios.
+
+412
+00:16:08,788 --> 00:16:11,372
+Después de recorrer este camino, qué
+
+413
+00:16:11,372 --> 00:16:13,741
+avance de todos los analizados os
+
+414
+00:16:13,741 --> 00:16:16,684
+resultaría hoy más difícil de asimilar en
+
+415
+00:16:16,684 --> 00:16:18,119
+vuestra vida diaria.

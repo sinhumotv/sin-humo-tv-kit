@@ -1,0 +1,1942 @@
+{
+ "titulo": "Evolución de la vida cotidiana 2030-2100",
+ "titulos": [
+  "Así cambiará tu VIDA de 2030 a 2100",
+  "¿Cómo será un día normal en el año 2100?",
+  "Tu vida década a década: el CAMBIO hasta 2100",
+  "De 2030 a 2100: la transformación de tu rutina",
+  "Así VIVIRÁS en el futuro según la ciencia",
+  "El futuro de tu día a día: de 2030 a 2100",
+  "¿Qué se siente al VIVIR en el año 2100?",
+  "La evolución de la vida humana de 2030 a 2100",
+  "2100: la verdad sobre el FUTURO de tu rutina",
+  "De las pantallas a la realidad viva: 2030-2100"
+ ],
+ "miniatura": {
+  "texto": "TU RUTINA CADA DÉCADA",
+  "clave": "VIDA",
+  "prompt": "A solitary person standing inside a sleek futuristic home looking through a massive glass wall at a glowing biophilic metropolis at sunset. High visual contrast, rich dark ambient tones on the left third, hyper-detailed golden and warm blue illuminated architectural structures on the right side, cinematic sci-fi atmosphere, photorealistic lighting."
+ },
+ "descripcion": "Descubre cómo evolucionará la vida cotidiana humana década a década desde el año 2030 hasta el 2100. Analizamos las proyecciones tecnológicas y científicas más avanzadas sobre el futuro de nuestros hogares, la educación, la alimentación sintética y la integración de la inteligencia artificial en la rutina diaria.\n\nAcompañanos en un viaje cronológico sin sensacionalismos donde exploramos el impacto real que la tecnología tendrá en cómo nos despertamos, aprendemos, comemos y nos relacionamos a lo largo del siglo XXI.",
+ "etiquetas": [
+  "ano 2100",
+  "futuro de la humanidad",
+  "vida en 2100",
+  "inteligencia artificial futuro",
+  "tecnologia futuro",
+  "rutina en el futuro",
+  "educacion del futuro",
+  "hogar del futuro",
+  "vida cotidiana 2100",
+  "futurismo",
+  "ciencia y futuro",
+  "tecnologia 2050"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El punto de inflexión invisible"
+  },
+  {
+   "escena": 7,
+   "titulo": "2030: El fin de las pantallas"
+  },
+  {
+   "escena": 14,
+   "titulo": "2040: La educación hiperpersonalizada"
+  },
+  {
+   "escena": 21,
+   "titulo": "2050: Gastronomía de bioreactor"
+  },
+  {
+   "escena": 28,
+   "titulo": "2060: La realidad híbrida inmersiva"
+  },
+  {
+   "escena": 35,
+   "titulo": "2070: Biología sintética en el hogar"
+  },
+  {
+   "escena": 42,
+   "titulo": "2080: Espacios urbanos autorregulados"
+  },
+  {
+   "escena": 49,
+   "titulo": "2090: La gestión integrada de la memoria"
+  },
+  {
+   "escena": 56,
+   "titulo": "2100: Un día en la vida del futuro"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "imagina despertar mañana y descubrir que las paredes de tu dormitorio conocen tus hábitos de sueño antes de que abras los ojos. no es ciencia ficción, es el punto de inflexión invisible hacia el que nos dirigimos ahora mismo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person waking up morning",
+    "otras": [
+     "bedroom morning light",
+     "alarm clock room"
+    ],
+    "descripcion": "Una persona despertando en una habitacion iluminada por la luz de la mañana.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/06/61299-498228517_small.mp4",
+    "clip_id": 61299,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/01/19044-298313350_large.mp4",
+      "clip_id": 19044
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/24/164360-830461265_small.mp4",
+      "clip_id": 164360
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/19/189813-887078786_small.mp4",
+      "clip_id": 189813
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "imagina despertar mañana y descubrir que las paredes de tu dormitorio conocen tus hábitos de sueño antes de que abras los ojos. no es ciencia ficción, es el punto de inflexión invisible hacia el que nos dirigimos ahora mismo."
+  },
+  {
+   "hablado": "durante las próximas décadas, la tecnología dejará de ser una simple herramienta que guardamos en el bolsillo. se convertirá poco a poco en la estructura misma de la realidad cotidiana que habitamos todos los días.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street",
+    "otras": [
+     "busy modern street",
+     "pedestrians city"
+    ],
+    "descripcion": "Gente caminando por una calle urbana moderna con movimiento natural.",
+    "clip": "https://cdn.pixabay.com/video/2023/02/06/149611-797189096_large.mp4",
+    "clip_id": 149611,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129410-744385403_large.mp4",
+      "clip_id": 129410
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/03/90716-626984898_small.mp4",
+      "clip_id": 90716
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/11/04/313951_small.mp4",
+      "clip_id": 313951
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "durante las próximas décadas, la tecnología dejará de ser una simple herramienta que guardamos en el bolsillo. se convertirá poco a poco en la estructura misma de la realidad cotidiana que habitamos todos los días."
+  },
+  {
+   "hablado": "en este viaje vamos a descubrir paso a paso, década a década, cómo cambiará radicalmente la experiencia de estar vivo desde este momento hasta llegar al fascinante y lejano final del siglo veintiuno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern city skyline",
+    "otras": [
+     "cityscape timelapse",
+     "aerial urban view"
+    ],
+    "descripcion": "Panorámica de una gran ciudad moderna con edificios y movimiento.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34666-402634352_large.mp4",
+    "clip_id": 34666,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/974-142612051_large.mp4",
+      "clip_id": 974
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/03/337951_small.mp4",
+      "clip_id": 337951
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/26/267742_small.mp4",
+      "clip_id": 267742
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "en este viaje vamos a descubrir paso a paso, década a década, cómo cambiará radicalmente la experiencia de estar vivo desde este momento hasta llegar al fascinante y lejano final del siglo veintiuno."
+  },
+  {
+   "hablado": "los sistemas predictivos ya están aprendiendo a anticiparse a nuestras necesidades básicas, desde la gestión energética de los hogares hasta la optimización del tráfico en las grandes metrópolis del planeta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "smart traffic control",
+    "otras": [
+     "modern control room",
+     "city surveillance screens"
+    ],
+    "descripcion": "Pantallas de control y monitoreo de tráfico en una ciudad actual.",
+    "clip": "https://cdn.pixabay.com/video/2019/04/02/22544-328624736_small.mp4",
+    "clip_id": 22544,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/24/254449_small.mp4",
+      "clip_id": 254449
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/13/84970-587646749_small.mp4",
+      "clip_id": 84970
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/22/140078-774032962_small.mp4",
+      "clip_id": 140078
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "los sistemas predictivos ya están aprendiendo a anticiparse a nuestras necesidades básicas, desde la gestión energética de los hogares hasta la optimización del tráfico en las grandes metrópolis del planeta."
+  },
+  {
+   "hablado": "pero lo que veremos ir mas alla de la automatizacion tradicional. veremos como los objetos inanimados empiezan a responder de manera organica a nuestra presencia y a nuestras decisiones diarias.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer working workshop",
+    "otras": [
+     "laboratory technology",
+     "tech development lab"
+    ],
+    "descripcion": "Ingenieros trabajando en un laboratorio tecnológico avanzado.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/02/43629-436237628_large.mp4",
+    "clip_id": 43629,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/01/106359-673007933_large.mp4",
+      "clip_id": 106359
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/05/4953-181545195_large.mp4",
+      "clip_id": 4953
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/22/22983-332257703_small.mp4",
+      "clip_id": 22983
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "pero lo que veremos ir mas alla de la automatizacion tradicional. veremos como los objetos inanimados empiezan a responder de manera organica a nuestra presencia y a nuestras decisiones diarias."
+  },
+  {
+   "hablado": "cada avance actual en inteligencia artificial y computacion avanzada es solo el primer cimiento de una transformacion profunda que alterara la forma en que trabajamos, aprendemos y nos relacionamos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room data center",
+    "otras": [
+     "supercomputer servers",
+     "technological infrastructure"
+    ],
+    "descripcion": "Pasillos de un centro de datos con servidores iluminados.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/18/197211-904265133_small.mp4",
+    "clip_id": 197211,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/10/200029-911902149_small.mp4",
+      "clip_id": 200029
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/25/274489_medium.mp4",
+      "clip_id": 274489
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/06/230113_small.mp4",
+      "clip_id": 230113
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "cada avance actual en inteligencia artificial y computacion avanzada es solo el primer cimiento de una transformacion profunda que alterara la forma en que trabajamos, aprendemos y nos relacionamos."
+  },
+  {
+   "hablado": "quedate hasta el final porque desvelaremos el mayor giro de todos: el cambio mas profundo no ocurrira en las maquinas, sino en la definicion misma de lo que significa ser humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking window",
+    "otras": [
+     "thoughtful person indoors",
+     "portrait looking away"
+    ],
+    "descripcion": "Una persona mirando pensativa a traves de una ventana.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/21/36721-412873588_large.mp4",
+    "clip_id": 36721,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/17/117293-711039354_small.mp4",
+      "clip_id": 117293
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/29/144680-785139954_large.mp4",
+      "clip_id": 144680
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "quedate hasta el final porque desvelaremos el mayor giro de todos: el cambio mas profundo no ocurrira en las maquinas, sino en la definicion misma de lo que significa ser humano."
+  },
+  {
+   "hablado": "Al llegar al año dos mil treinta el dispositivo que llevas ahora mismo en la mano habrá comenzado su retirada definitiva. Los rectángulos de cristal negro que dominaron nuestras vidas cederán su puesto a interfaces totalmente invisibles.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person using smartphone street",
+    "otras": [
+     "holding mobile phone",
+     "checking smartphone"
+    ],
+    "descripcion": "Una persona caminando por la ciudad mirando la pantalla de su teléfono móvil.",
+    "clip": "https://cdn.pixabay.com/video/2023/10/11/184539-873554744_small.mp4",
+    "clip_id": 184539,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/27/173479-854054105_small.mp4",
+      "clip_id": 173479
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/27/173480-854054107_small.mp4",
+      "clip_id": 173480
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/29/115465-704747941_large.mp4",
+      "clip_id": 115465
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Al llegar al año dos mil treinta el dispositivo que llevas ahora mismo en la mano habrá comenzado su retirada definitiva. Los rectángulos de cristal negro que dominaron nuestras vidas cederán su puesto a interfaces totalmente invisibles."
+  },
+  {
+   "hablado": "La computación espacial integrada permitirá proyectar datos ligeros directamente en nuestro campo visual mediante gafas livianas. Escucharemos información contextual a través de audio inmersivo sin aislarnos del entorno ni tocar ninguna pantalla física.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "smart glasses testing",
+    "otras": [
+     "person wearing smart glasses",
+     "augmented reality headset"
+    ],
+    "descripcion": "Un usuario probando unas gafas ligeras de realidad mixta en una oficina.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/17/131635-750742441_large.mp4",
+    "clip_id": 131635,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/03/1260-144566593_medium.mp4",
+      "clip_id": 1260
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/05/4938-181472367_large.mp4",
+      "clip_id": 4938
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/27/129292-743827396_large.mp4",
+      "clip_id": 129292
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La computación espacial integrada permitirá proyectar datos ligeros directamente en nuestro campo visual mediante gafas livianas. Escucharemos información contextual a través de audio inmersivo sin aislarnos del entorno ni tocar ninguna pantalla física."
+  },
+  {
+   "hablado": "Los asistentes de lenguaje en tiempo real ya no esperarán nuestras órdenes expresas. Analizarán hacia dónde miramos o con quién hablamos para ofrecernos respuestas instantáneas antes incluso de que formulemos la pregunta de forma verbal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer working laptop",
+    "otras": [
+     "data processing room",
+     "programmer typing code"
+    ],
+    "descripcion": "Un ingeniero supervisando algoritmos de inteligencia artificial en una pantalla de ordenador.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/16/110923-689949643_medium.mp4",
+    "clip_id": 110923,
+    "extra": [
+     {
+      "clip": "https://images-assets.nasa.gov/video/ksc_120205_sssr/ksc_120205_sssr~orig.mp4",
+      "clip_id": "nasa:ksc_120205_sssr",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://www.openbeelden.nl/files/01/41/141016.141005.WEEKNUMMER522-HRE0000D776.mp4",
+      "clip_id": "eu:/2051906/data_euscreenXL_https___www_openbeelden_nl_media_141006",
+      "clip_ini": 3
+     },
+     {
+      "clip": "https://www.openbeelden.nl/files/74/74320.74175.BG_11712.mp4",
+      "clip_id": "eu:/2051906/data_euscreenXL_https___www_openbeelden_nl_media_74176",
+      "clip_ini": 3
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los asistentes de lenguaje en tiempo real ya no esperarán nuestras órdenes expresas. Analizarán hacia dónde miramos o con quién hablamos para ofrecernos respuestas instantáneas antes incluso de que formulemos la pregunta de forma verbal."
+  },
+  {
+   "hablado": "Imagina caminar por una ciudad desconocida y ver flechas de guía trazadas suavemente sobre el asfalto. Al mirar un restaurante o un monumento datos útiles sobre su historia o menú flotarán ante tus ojos de forma natural.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking city street",
+    "otras": [
+     "city pedestrians daytime",
+     "urban sidewalk walking"
+    ],
+    "descripcion": "Transeúntes caminando por la acera de una ciudad moderna durante el día.",
+    "clip": "https://cdn.pixabay.com/video/2022/11/01/137359-766532337_small.mp4",
+    "clip_id": 137359,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/01/137358-766532330_small.mp4",
+      "clip_id": 137358
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/07/153718-806178001_large.mp4",
+      "clip_id": 153718
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/07/153717-806177998_large.mp4",
+      "clip_id": 153717
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Imagina caminar por una ciudad desconocida y ver flechas de guía trazadas suavemente sobre el asfalto. Al mirar un restaurante o un monumento datos útiles sobre su historia o menú flotarán ante tus ojos de forma natural."
+  },
+  {
+   "hablado": "La comunicación interpersonal cruzará barreras lingüísticas sin esfuerzo. Si hablas con alguien en otro idioma escucharás la traducción traducida al instante con su propio tono de voz mientras subtítulos sutiles aparecen junto a su rostro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people talking coffee shop",
+    "otras": [
+     "two people conversation",
+     "business discussion meeting"
+    ],
+    "descripcion": "Dos personas manteniendo una conversación animada en una cafetería.",
+    "clip": "https://cdn.pixabay.com/video/2025/10/13/309668_small.mp4",
+    "clip_id": 309668,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/23/45358-443057031_large.mp4",
+      "clip_id": 45358
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/05/126805-737028146_small.mp4",
+      "clip_id": 126805
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/05/126804-737028143_small.mp4",
+      "clip_id": 126804
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La comunicación interpersonal cruzará barreras lingüísticas sin esfuerzo. Si hablas con alguien en otro idioma escucharás la traducción traducida al instante con su propio tono de voz mientras subtítulos sutiles aparecen junto a su rostro."
+  },
+  {
+   "hablado": "Capas de información superpuesta recordarán los nombres de conocidos lejanos o notas de reuniones pasadas. La memoria de trabajo humana se verá expandida por algoritmos silenciosos que funcionan en segundo plano durante todo el día.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "office workers meeting room",
+    "otras": [
+     "colleagues chatting office",
+     "business people discussion"
+    ],
+    "descripcion": "Un grupo de profesionales conversando en una sala de reuniones bien iluminada.",
+    "clip": "https://cdn.pixabay.com/video/2021/11/08/95122-645704287_small.mp4",
+    "clip_id": 95122,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/08/95121-645704283_small.mp4",
+      "clip_id": 95121
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/08/95119-645704279_small.mp4",
+      "clip_id": 95119
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/12/3157-166336070_large.mp4",
+      "clip_id": 3157
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Capas de información superpuesta recordarán los nombres de conocidos lejanos o notas de reuniones pasadas. La memoria de trabajo humana se verá expandida por algoritmos silenciosos que funcionan en segundo plano durante todo el día."
+  },
+  {
+   "hablado": "Esta integración invisible cambiará cómo nos relacionamos en la calle y el trabajo. Pero cuando esta tecnología entre de lleno en la infancia y el aprendizaje el cambio será radical aunque lo peor aún no había llegado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "child using tablet classroom",
+    "otras": [
+     "students classroom learning",
+     "young student working"
+    ],
+    "descripcion": "Un estudiante joven concentrado en una tarea dentro de un aula escolar moderna.",
+    "clip": "https://assets.mixkit.co/videos/48169/48169-720.mp4",
+    "clip_id": "mixkit:48169",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/05/170134-842720330_small.mp4",
+      "clip_id": 170134
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/24/86242-591841114_large.mp4",
+      "clip_id": 86242
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/11/46881-449588602_large.mp4",
+      "clip_id": 46881
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Esta integración invisible cambiará cómo nos relacionamos en la calle y el trabajo. Pero cuando esta tecnología entre de lleno en la infancia y el aprendizaje el cambio será radical aunque lo peor aún no había llegado."
+  },
+  {
+   "hablado": "Para el año dos mil cuarenta las aulas tradicionales habrán cambiado por completo. La inteligencia artificial analizará el ritmo metabólico y los picos de atención de cada estudiante adaptando las lecciones en tiempo real para maximizar su aprendizaje individual.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "student using tablet classroom",
+    "otras": [
+     "school classroom technology",
+     "students learning computers"
+    ],
+    "descripcion": "Estudiantes en un aula moderna trabajando con ordenadores y dispositivos táctiles.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/03/206779_small.mp4",
+    "clip_id": 206779,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/15/110879-689510470_large.mp4",
+      "clip_id": 110879
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/24/57242-485061076_small.mp4",
+      "clip_id": 57242
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/08/49395-459436810_large.mp4",
+      "clip_id": 49395
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para el año dos mil cuarenta las aulas tradicionales habrán cambiado por completo. La inteligencia artificial analizará el ritmo metabólico y los picos de atención de cada estudiante adaptando las lecciones en tiempo real para maximizar su aprendizaje individual."
+  },
+  {
+   "hablado": "La memorización pasiva de datos dejará de ser el eje del sistema educativo. En su lugar los alumnos interactuarán con simulaciones virtuales complejas donde podrán resolver problemas prácticos de física medicina o arquitectura de forma totalmente inmersiva.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "students science laboratory test",
+    "otras": [
+     "science laboratory experiment",
+     "students learning lab"
+    ],
+    "descripcion": "Estudiantes en un laboratorio realizando experimentos científicos con instrumentos reales.",
+    "clip": "https://cdn.pixabay.com/video/2022/10/07/133895-758336556_large.mp4",
+    "clip_id": 133895,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/27/122234-724743714_small.mp4",
+      "clip_id": 122234
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/NG-21_Science/NG-21_Science~large.mp4",
+      "clip_id": "nasa:NG-21_Science",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/JPL-20230929-PSYCHEf-0001-DSOC/JPL-20230929-PSYCHEf-0001-DSOC~large.mp4",
+      "clip_id": "nasa:JPL-20230929-PSYCHEf-0001-DSOC",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La memorización pasiva de datos dejará de ser el eje del sistema educativo. En su lugar los alumnos interactuarán con simulaciones virtuales complejas donde podrán resolver problemas prácticos de física medicina o arquitectura de forma totalmente inmersiva."
+  },
+  {
+   "hablado": "Sensores no invasivos medirán el nivel de frustración o aburrimiento mediante el seguimiento ocular y la frecuencia cardíaca. Si un concepto resulta demasiado difícil el tutor algorítmico cambiará la explicación al instante utilizando otros ejemplos visuales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "eye tracking research laboratory",
+    "otras": [
+     "scientist looking computer screen",
+     "person face eye study"
+    ],
+    "descripcion": "Investigador observando análisis de datos biométricos en la pantalla de un laboratorio.",
+    "clip": "https://cdn.pixabay.com/video/2022/05/23/117810-713330737_medium.mp4",
+    "clip_id": 117810,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/24/39990-424360898_large.mp4",
+      "clip_id": 39990
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/07/80615-572853662_large.mp4",
+      "clip_id": 80615
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/10/73721-549547435_small.mp4",
+      "clip_id": 73721
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sensores no invasivos medirán el nivel de frustración o aburrimiento mediante el seguimiento ocular y la frecuencia cardíaca. Si un concepto resulta demasiado difícil el tutor algorítmico cambiará la explicación al instante utilizando otros ejemplos visuales."
+  },
+  {
+   "hablado": "Este modelo permitirá que cualquier niño reciba la misma calidad de enseñanza personalizada que antes solo podían permitirse las familias más adineradas. El conocimiento dejará de depender del código postal o del presupuesto familiar de cada alumno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "children learning computers library",
+    "otras": [
+     "kids using technology school",
+     "children reading tablet"
+    ],
+    "descripcion": "Niños de diversas procedencias estudiando juntos con dispositivos tecnológicos en una biblioteca.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/27/129288-743827388_large.mp4",
+    "clip_id": 129288,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/31/69624-531621061_large.mp4",
+      "clip_id": 69624
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/12/38916-418897615_small.mp4",
+      "clip_id": 38916
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/23/147704-792078376_small.mp4",
+      "clip_id": 147704
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Este modelo permitirá que cualquier niño reciba la misma calidad de enseñanza personalizada que antes solo podían permitirse las familias más adineradas. El conocimiento dejará de depender del código postal o del presupuesto familiar de cada alumno."
+  },
+  {
+   "hablado": "Los profesores humanos no desaparecerán pero su función se transformará por completo. Ya no dictarán lecciones magistrales sino que se enfocarán en el desarrollo emocional el pensamiento crítico y la resolución de conflictos éticos entre los jóvenes estudiantes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "teacher talking students classroom",
+    "otras": [
+     "teacher helping student",
+     "classroom discussion group"
+    ],
+    "descripcion": "Una profesora conversando y guiando a un grupo de alumnos en un aula de estudio.",
+    "clip": "https://cdn.pixabay.com/video/2017/09/13/11969-233836084_large.mp4",
+    "clip_id": 11969,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/08/1287-145131537_medium.mp4",
+      "clip_id": 1287
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/28/122295-725067598_small.mp4",
+      "clip_id": 122295
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/35954/35954-720.mp4",
+      "clip_id": "mixkit:35954",
+      "clip_ini": 0
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los profesores humanos no desaparecerán pero su función se transformará por completo. Ya no dictarán lecciones magistrales sino que se enfocarán en el desarrollo emocional el pensamiento crítico y la resolución de conflictos éticos entre los jóvenes estudiantes."
+  },
+  {
+   "hablado": "El aprendizaje ya no terminará en la juventud sino que acompañará al ser humano durante toda su vida adulta. El sistema reestructurará las habilidades de los trabajadores en tiempo real para adaptarse a los constantes cambios tecnológicos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "adults training workshop computer",
+    "otras": [
+     "people working computer office",
+     "adult learning classroom"
+    ],
+    "descripcion": "Adultos asistiendo a un curso de formación técnica en un espacio de trabajo moderno.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/04/130211-748134196_large.mp4",
+    "clip_id": 130211,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/27/1194-143842667_large.mp4",
+      "clip_id": 1194
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1059-142621447_large.mp4",
+      "clip_id": 1059
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/22/205193-926528071_small.mp4",
+      "clip_id": 205193
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El aprendizaje ya no terminará en la juventud sino que acompañará al ser humano durante toda su vida adulta. El sistema reestructurará las habilidades de los trabajadores en tiempo real para adaptarse a los constantes cambios tecnológicos."
+  },
+  {
+   "hablado": "Sin embargo la transformación más profunda de esta década no ocurrió entre los muros del colegio ni en la universidad sino dentro de la propia cocina del hogar pero la sorpresa gastronómica apenas comenzaba a gestarse.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "family kitchen home evening",
+    "otras": [
+     "modern home kitchen interior",
+     "person preparing food kitchen"
+    ],
+    "descripcion": "Una familia reunida en la cocina de su hogar moderno al final del día.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/10/267-135875613_large.mp4",
+    "clip_id": 267,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/09/153976-817104245_small.mp4",
+      "clip_id": 153976
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/30/148594-794221537_small.mp4",
+      "clip_id": 148594
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/12/18/6815-196282555_large.mp4",
+      "clip_id": 6815
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo la transformación más profunda de esta década no ocurrió entre los muros del colegio ni en la universidad sino dentro de la propia cocina del hogar pero la sorpresa gastronómica apenas comenzaba a gestarse."
+  },
+  {
+   "hablado": "Los fogones tradicionales y las sartenes de hierro empiezan a ser piezas de museo en los hogares de dos mil cincuenta mientras la agricultura extensiva tradicional cede su espacio físico a los centros de cultivo vertical",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern kitchen interior",
+    "otras": [
+     "cooking food preparation",
+     "chef preparing meal"
+    ],
+    "descripcion": "Una cocina moderna y limpia donde se preparan alimentos de forma automatizada.",
+    "clip": "https://cdn.pixabay.com/video/2015/12/03/1498-147827932_medium.mp4",
+    "clip_id": 1498,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/07/149665-796691048_large.mp4",
+      "clip_id": 149665
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/17/128186-740906939_large.mp4",
+      "clip_id": 128186
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/05/17/23757-337232389_large.mp4",
+      "clip_id": 23757
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los fogones tradicionales y las sartenes de hierro empiezan a ser piezas de museo en los hogares de dos mil cincuenta mientras la agricultura extensiva tradicional cede su espacio físico a los centros de cultivo vertical"
+  },
+  {
+   "hablado": "En los laboratorios actuales ya se cultiva carne a partir de pocas células sin necesidad de sacrificar animales y este proceso optimiza la producción reduciendo drásticamente el consumo de agua y de terreno cultivable",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientific laboratory equipment",
+    "otras": [
+     "microscope science lab",
+     "biology research laboratory"
+    ],
+    "descripcion": "Científicos trabajando en un laboratorio biológico con matraces y equipos de cultivo celular.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/20/197484-905015017_small.mp4",
+    "clip_id": 197484,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/19/1096-143052463_medium.mp4",
+      "clip_id": 1096
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/JPL-20231013-PSYCHEf-0002-Psyche%20Launch%20Wrap%20Video/JPL-20231013-PSYCHEf-0002-Psyche%20Launch%20Wrap%20Video~large.mp4",
+      "clip_id": "nasa:JPL-20231013-PSYCHEf-0002-Psyche Launch Wrap Video",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://www.openbeelden.nl/files/01/41/141185.141171.WEEKNUMMER524-HRE0001001A.mp4",
+      "clip_id": "eu:/2051906/data_euscreenXL_https___www_openbeelden_nl_media_141172",
+      "clip_ini": 3
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En los laboratorios actuales ya se cultiva carne a partir de pocas células sin necesidad de sacrificar animales y este proceso optimiza la producción reduciendo drásticamente el consumo de agua y de terreno cultivable"
+  },
+  {
+   "hablado": "Para mediados de siglo los pequeños bioreactores domésticos conectados a la red optimizan la nutrición familiar sintetizando proteínas puras y compuestos vitamínicos a la carta según los análisis médicos diarios",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "automatic machine working",
+    "otras": [
+     "industrial robotic arm",
+     "factory production line"
+    ],
+    "descripcion": "Una máquina compacta y automatizada funcionando en un entorno doméstico o técnico.",
+    "clip": "https://cdn.pixabay.com/video/2015/12/11/1631-148614389_large.mp4",
+    "clip_id": 1631,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/19/1098-143052476_medium.mp4",
+      "clip_id": 1098
+     },
+     {
+      "clip": "https://www.filmportal.de/sites/default/files/video/BArch_K_87621_3R_Der_Infanterie_Nahkampf.mp4",
+      "clip_id": "eu:/08626/1037479000000137003",
+      "clip_ini": 3
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/47755/47755-720.mp4",
+      "clip_id": "mixkit:47755",
+      "clip_ini": 0
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para mediados de siglo los pequeños bioreactores domésticos conectados a la red optimizan la nutrición familiar sintetizando proteínas puras y compuestos vitamínicos a la carta según los análisis médicos diarios"
+  },
+  {
+   "hablado": "La cultura culinaria cambia radicalmente porque el sabor y la textura ya no dependen de la suerte de una cosecha estacional sino de fórmulas moleculares precisas diseñadas por algoritmos de nutrición avanzada",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fresh vegetables market",
+    "otras": [
+     "organic food market",
+     "fresh produce display"
+    ],
+    "descripcion": "Alimentos frescos y naturales expuestos en un mercado o centro de distribución urbano.",
+    "clip": "https://cdn.pixabay.com/video/2018/02/21/14421-257068813_large.mp4",
+    "clip_id": 14421,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/28/261582_medium.mp4",
+      "clip_id": 261582
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/11/61682-500316045_small.mp4",
+      "clip_id": 61682
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/24/82602-580137800_small.mp4",
+      "clip_id": 82602
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La cultura culinaria cambia radicalmente porque el sabor y la textura ya no dependen de la suerte de una cosecha estacional sino de fórmulas moleculares precisas diseñadas por algoritmos de nutrición avanzada"
+  },
+  {
+   "hablado": "La salud digestiva de la población mejora de forma notable al eliminar toxinas y patógenos comunes de la cadena de suministro tradicional gracias a la esterilidad controlada de estos nuevos sistemas de producción",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "medical laboratory research",
+    "otras": [
+     "doctor analyzing data",
+     "healthcare technology screen"
+    ],
+    "descripcion": "Personal médico analizando datos de salud en una pantalla digital avanzada.",
+    "clip": "https://images-assets.nasa.gov/video/International_Space_Station_Science/International_Space_Station_Science~large.mp4",
+    "clip_id": "nasa:International_Space_Station_Science",
+    "clip_ini": 6,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/12/21/248105_small.mp4",
+      "clip_id": 248105
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/01/58010-486853030_small.mp4",
+      "clip_id": 58010
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/Splashdown%20Recap%20-%20Bob%20&%20Doug%20Come%20Home/Splashdown%20Recap%20-%20Bob%20&%20Doug%20Come%20Home~large.mp4",
+      "clip_id": "nasa:Splashdown Recap - Bob & Doug Come Home",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La salud digestiva de la población mejora de forma notable al eliminar toxinas y patógenos comunes de la cadena de suministro tradicional gracias a la esterilidad controlada de estos nuevos sistemas de producción"
+  },
+  {
+   "hablado": "Los restaurantes tradicionales se transforman en espacios de experiencia artesanal exclusiva mientras el consumo diario se traslada hacia estas soluciones moleculares eficientes y sostenibles para todo el planeta",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people dining restaurant",
+    "otras": [
+     "modern cafe interior",
+     "crowd eating together"
+    ],
+    "descripcion": "Personas disfrutando de una comida en un restaurante elegante y moderno.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/12/246385_small.mp4",
+    "clip_id": 246385,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/17/163383-827845482_small.mp4",
+      "clip_id": 163383
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/27/1190-143842655_large.mp4",
+      "clip_id": 1190
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/05/33256-396487978_large.mp4",
+      "clip_id": 33256
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los restaurantes tradicionales se transforman en espacios de experiencia artesanal exclusiva mientras el consumo diario se traslada hacia estas soluciones moleculares eficientes y sostenibles para todo el planeta"
+  },
+  {
+   "hablado": "Pero la verdadera revolución nutricional no se detuvo en el plato sino que comenzó a alterar profundamente la relación biológica del ser humano con el entorno pero el misterio biológico apenas comenzaba",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline sunset",
+    "otras": [
+     "urban street view",
+     "modern city architecture"
+    ],
+    "descripcion": "Una ciudad moderna al atardecer con edificios altos y movimiento de personas.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/31/129716-745174979_medium.mp4",
+    "clip_id": 129716,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/137035-765458132_large.mp4",
+      "clip_id": 137035
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/06/126911-737187417_medium.mp4",
+      "clip_id": 126911
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272514_small.mp4",
+      "clip_id": 272514
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero la verdadera revolución nutricional no se detuvo en el plato sino que comenzó a alterar profundamente la relación biológica del ser humano con el entorno pero el misterio biológico apenas comenzaba"
+  },
+  {
+   "hablado": "Pero el verdadero misterio biológico apenas comenzaba a desdibujarse cuando el año dos mil sesenta trajo consigo la fusión definitiva entre el espacio físico y las proyecciones sensoriales sintéticas. La materia comenzó a perder su exclusividad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street",
+    "otras": [
+     "crowd moving city",
+     "pedestrians walking"
+    ],
+    "descripcion": "Personas caminando por una calle urbana con movimiento natural y fluido.",
+    "clip": "https://cdn.pixabay.com/video/2023/02/06/149612-797189100_large.mp4",
+    "clip_id": 149612,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/14/110731-688648661_medium.mp4",
+      "clip_id": 110731
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/07/142032-779071806_small.mp4",
+      "clip_id": 142032
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/07/142030-779071797_small.mp4",
+      "clip_id": 142030
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero el verdadero misterio biológico apenas comenzaba a desdibujarse cuando el año dos mil sesenta trajo consigo la fusión definitiva entre el espacio físico y las proyecciones sensoriales sintéticas. La materia comenzó a perder su exclusividad."
+  },
+  {
+   "hablado": "Los sistemas de respuesta háptica y los campos ópticos avanzados permitieron a los usuarios experimentar texturas, temperaturas y presiones sin necesidad de tocar un objeto real, transformando por completo la interacción con el entorno.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer working workshop",
+    "otras": [
+     "hands typing laptop",
+     "laboratory worker"
+    ],
+    "descripcion": "Manos trabajando en un entorno tecnológico con precisión milimétrica.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/01/40814-426920963_small.mp4",
+    "clip_id": 40814,
+    "extra": [
+     {
+      "clip": "https://assets.mixkit.co/videos/49192/49192-720.mp4",
+      "clip_id": "mixkit:49192",
+      "clip_ini": 0
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/ksc_120105_diller/ksc_120105_diller~orig.mp4",
+      "clip_id": "nasa:ksc_120105_diller",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los sistemas de respuesta háptica y los campos ópticos avanzados permitieron a los usuarios experimentar texturas, temperaturas y presiones sin necesidad de tocar un objeto real, transformando por completo la interacción con el entorno."
+  },
+  {
+   "hablado": "Las oficinas vacías se llenaron de compañeros proyectados con una fidelidad tan absoluta que los sentidos humanos no lograban distinguir el reflejo de la carne, generando un debate ético sin precedentes sobre la autenticidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern office workers",
+    "otras": [
+     "business meeting room",
+     "people working computers"
+    ],
+    "descripcion": "Trabajadores en una oficina moderna colaborando frente a pantallas.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/18/204585-925146051_small.mp4",
+    "clip_id": 204585,
+    "extra": [
+     {
+      "clip": "https://images-assets.nasa.gov/video/NASA%20names%20headquarters%20after%20Engineer%20%20Mary%20W.%20Jackson/NASA%20names%20headquarters%20after%20Engineer%20%20Mary%20W.%20Jackson~large.mp4",
+      "clip_id": "nasa:NASA names headquarters after Engineer  Mary W. Jackson",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las oficinas vacías se llenaron de compañeros proyectados con una fidelidad tan absoluta que los sentidos humanos no lograban distinguir el reflejo de la carne, generando un debate ético sin precedentes sobre la autenticidad."
+  },
+  {
+   "hablado": "Los tribunales tuvieron que legislar sobre la falsificación sensorial y los contratos firmados en realidades mixtas, donde una caricia o una presencia virtual podían tener el mismo valor legal que un encuentro físico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "courtroom judge gavel",
+    "otras": [
+     "legal meeting office",
+     "business handshake"
+    ],
+    "descripcion": "Escena institucional que representa acuerdos y normativas legales.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/02/198889-909564518_small.mp4",
+    "clip_id": 198889,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198887-909564506_small.mp4",
+      "clip_id": 198887
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198886-909564502_small.mp4",
+      "clip_id": 198886
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198893-909564533_small.mp4",
+      "clip_id": 198893
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los tribunales tuvieron que legislar sobre la falsificación sensorial y los contratos firmados en realidades mixtas, donde una caricia o una presencia virtual podían tener el mismo valor legal que un encuentro físico."
+  },
+  {
+   "hablado": "La arquitectura urbana también cambió, permitiendo que las paredes de las casas adoptaran paisajes cambiantes que respondían al estado emocional del habitante mediante sensores neuronales de baja intensidad y alta precisión.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern architecture building",
+    "otras": [
+     "interior design room",
+     "living room light"
+    ],
+    "descripcion": "Interior de un edificio moderno con diseño arquitectónico limpio.",
+    "clip": "https://cdn.pixabay.com/video/2019/03/23/22259-326722759_medium.mp4",
+    "clip_id": 22259,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/17/85427-588675539_large.mp4",
+      "clip_id": 85427
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/17/85432-588675535_large.mp4",
+      "clip_id": 85432
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/15/180708-864967789_small.mp4",
+      "clip_id": 180708
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La arquitectura urbana también cambió, permitiendo que las paredes de las casas adoptaran paisajes cambiantes que respondían al estado emocional del habitante mediante sensores neuronales de baja intensidad y alta precisión."
+  },
+  {
+   "hablado": "Sin embargo, esta hiperrealidad sintética provocó que un sector de la población empezara a dudar de si el suelo que pisaba era realmente materia o simplemente una simulación dictada por algoritmos complejos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night city rain",
+    "otras": [
+     "city lights reflection",
+     "urban street night"
+    ],
+    "descripcion": "Ciudad iluminada de noche con reflejos y atmósfera nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2016/09/14/5277-182817495_large.mp4",
+    "clip_id": 5277,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/01/11067-228113761_large.mp4",
+      "clip_id": 11067
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/17/286295_small.mp4",
+      "clip_id": 286295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/09/19/377423_large.mp4",
+      "clip_id": 377423
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, esta hiperrealidad sintética provocó que un sector de la población empezara a dudar de si el suelo que pisaba era realmente materia o simplemente una simulación dictada por algoritmos complejos."
+  },
+  {
+   "hablado": "La incertidumbre sobre la naturaleza de lo real se instaló en el centro de la experiencia humana, abriendo paso a una pregunta aún más inquietante sobre lo que quedaba de nuestra propia identidad biológica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking window",
+    "otras": [
+     "thoughtful person face",
+     "close up eyes"
+    ],
+    "descripcion": "Persona mirando pensativa a través de una ventana urbana.",
+    "clip": "https://cdn.pixabay.com/video/2021/09/16/88813-608445796_large.mp4",
+    "clip_id": 88813,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/13/61893-501113779_large.mp4",
+      "clip_id": 61893
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/24/78731-567321503_small.mp4",
+      "clip_id": 78731
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/14/44645-439940290_small.mp4",
+      "clip_id": 44645
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La incertidumbre sobre la naturaleza de lo real se instaló en el centro de la experiencia humana, abriendo paso a una pregunta aún más inquietante sobre lo que quedaba de nuestra propia identidad biológica."
+  },
+  {
+   "hablado": "La incertidumbre sobre la naturaleza de lo real se instaló en el centro de la experiencia humana, abriendo paso a una pregunta aún más inquietante sobre lo que quedaba de nuestra propia identidad biológica. Hacia el año dos mil setenta, las paredes de las casas ya no se construían con cemento inerte, sino con colonias de micelio y bacterias diseñadas para crecer y repararse solas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "bioplastic laboratory research",
+    "otras": [
+     "science laboratory",
+     "microscope laboratory"
+    ],
+    "descripcion": "Científicos trabajando en un laboratorio con muestras biológicas y materiales orgánicos avanzados.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/23/205292-926737083_small.mp4",
+    "clip_id": 205292,
+    "extra": [
+     {
+      "clip": "https://images-assets.nasa.gov/video/jsc2018m001053_International_Space_Station_Preparing_For_A_New_Era-MP4/jsc2018m001053_International_Space_Station_Preparing_For_A_New_Era-MP4~large.mp4",
+      "clip_id": "nasa:jsc2018m001053_International_Space_Station_Preparing_For_A_New_Era-MP4",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/777%20prepares%20to%20leave/777%20prepares%20to%20leave~orig.mp4",
+      "clip_id": "nasa:777 prepares to leave",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/AFRC-2023-14030-01_DC8_EcoDemonstrator_Upload/AFRC-2023-14030-01_DC8_EcoDemonstrator_Upload~large.mp4",
+      "clip_id": "nasa:AFRC-2023-14030-01_DC8_EcoDemonstrator_Upload",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La incertidumbre sobre la naturaleza de lo real se instaló en el centro de la experiencia humana, abriendo paso a una pregunta aún más inquietante sobre lo que quedaba de nuestra propia identidad biológica. Hacia el año dos mil setenta, las paredes de las casas ya no se construían con cemento inerte, sino con colonias de micelio y bacterias diseñadas para crecer y repararse solas."
+  },
+  {
+   "hablado": "Los interruptores y cables eléctricos desaparecieron por completo de los hogares. En su lugar, redes de tejidos vivos integrados en el mobiliario conducían energía química de baja intensidad, aprovechando los residuos orgánicos para alimentar los sensores ambientales de cada habitación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern interior architecture",
+    "otras": [
+     "minimalist living room",
+     "empty modern room"
+    ],
+    "descripcion": "Interior de una vivienda moderna y minimalista con superficies limpias y luz natural.",
+    "clip": "https://cdn.pixabay.com/video/2023/02/23/151816-801681446_small.mp4",
+    "clip_id": 151816,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/08/909-141888217_medium.mp4",
+      "clip_id": 909
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/11/303-135916314_medium.mp4",
+      "clip_id": 303
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/23/22260-326722764_medium.mp4",
+      "clip_id": 22260
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los interruptores y cables eléctricos desaparecieron por completo de los hogares. En su lugar, redes de tejidos vivos integrados en el mobiliario conducían energía química de baja intensidad, aprovechando los residuos orgánicos para alimentar los sensores ambientales de cada habitación."
+  },
+  {
+   "hablado": "La ropa dejó de ser un simple adorno textil para convertirse en un sistema activo de filtración y regulación térmica. Los tejidos sintéticos con componentes biológicos ajustaban su porosidad según la temperatura corporal y la presencia de patógenos en el aire.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "textile factory weaving",
+    "otras": [
+     "fabric production",
+     "modern manufacturing"
+    ],
+    "descripcion": "Fábrica moderna con maquinaria textil avanzada procesando hilos y tejidos técnicos.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/15/36042-409042544_large.mp4",
+    "clip_id": 36042,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/13/12935-242663207_large.mp4",
+      "clip_id": 12935
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/03/05/14799-258992018_large.mp4",
+      "clip_id": 14799
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/13/15559-264716024_small.mp4",
+      "clip_id": 15559
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La ropa dejó de ser un simple adorno textil para convertirse en un sistema activo de filtración y regulación térmica. Los tejidos sintéticos con componentes biológicos ajustaban su porosidad según la temperatura corporal y la presencia de patógenos en el aire."
+  },
+  {
+   "hablado": "Las superficies de las cocinas y los baños albergaban bacterias beneficiosas programadas para descomponer la suciedad de forma instantánea. El mantenimiento del hogar se convirtió en un proceso biológico automatizado, donde los materiales se regeneraban mediante nutrientes líquidos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "clean modern kitchen",
+    "otras": [
+     "interior kitchen design",
+     "modern apartment"
+    ],
+    "descripcion": "Cocina moderna y limpia con electrodomésticos integrados y superficies impecables.",
+    "clip": "https://cdn.pixabay.com/video/2024/09/16/231639_small.mp4",
+    "clip_id": 231639,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/22/5629-183849481_large.mp4",
+      "clip_id": 5629
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/12/3142-166335943_large.mp4",
+      "clip_id": 3142
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/03/344380_small.mp4",
+      "clip_id": 344380
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las superficies de las cocinas y los baños albergaban bacterias beneficiosas programadas para descomponer la suciedad de forma instantánea. El mantenimiento del hogar se convirtió en un proceso biológico automatizado, donde los materiales se regeneraban mediante nutrientes líquidos."
+  },
+  {
+   "hablado": "Incluso las ventanas adoptaron propiedades vegetales, alterando su opacidad y transmitiendo luz filtrada mediante procesos fotosintéticos simulados. La línea entre un artefacto tecnológico y un organismo vivo se había difuminado por completo en la vida cotidiana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "large glass windows building",
+    "otras": [
+     "modern office building",
+     "architecture glass facade"
+    ],
+    "descripcion": "Edificio moderno con grandes ventanales de cristal reflejando la luz del día.",
+    "clip": "https://cdn.pixabay.com/video/2021/08/19/85687-591865503_small.mp4",
+    "clip_id": 85687,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/12/26/20263-308335545_large.mp4",
+      "clip_id": 20263
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/13/84910-587646685_small.mp4",
+      "clip_id": 84910
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/12/26/20273-308335588_large.mp4",
+      "clip_id": 20273
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Incluso las ventanas adoptaron propiedades vegetales, alterando su opacidad y transmitiendo luz filtrada mediante procesos fotosintéticos simulados. La línea entre un artefacto tecnológico y un organismo vivo se había difuminado por completo en la vida cotidiana."
+  },
+  {
+   "hablado": "Esta transición hacia la biología sintética redujo drásticamente la huella de residuos inorgánicos, pero generó nuevos retos sanitarios inesperados. Las infecciones cruzadas entre los sistemas vivos del hogar y el microbioma humano exigieron protocolos médicos permanentes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "medical research laboratory",
+    "otras": [
+     "scientist working microscope",
+     "health laboratory"
+    ],
+    "descripcion": "Investigador analizando muestras en un laboratorio médico con tecnología avanzada.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/26/37300-413536577_large.mp4",
+    "clip_id": 37300,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/11/03/54162-476539778_small.mp4",
+      "clip_id": 54162
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/07/03/3697-173530293_large.mp4",
+      "clip_id": 3697
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/SpX-22_WOB_Recap/SpX-22_WOB_Recap~large.mp4",
+      "clip_id": "nasa:SpX-22_WOB_Recap",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta transición hacia la biología sintética redujo drásticamente la huella de residuos inorgánicos, pero generó nuevos retos sanitarios inesperados. Las infecciones cruzadas entre los sistemas vivos del hogar y el microbioma humano exigieron protocolos médicos permanentes."
+  },
+  {
+   "hablado": "Pero lo peor aún no había llegado, pues la integración profunda entre biología y tecnología doméstica empezó a modificar la percepción del propio cuerpo. ¿Hasta qué punto seguíamos siendo humanos cuando nuestro entorno vital respiraba y sanaba con vida sintética?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking out window",
+    "otras": [
+     "thoughtful person indoors",
+     "modern home interior"
+    ],
+    "descripcion": "Persona mirando pensativa a través de un ventanal en una vivienda moderna.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/15/131390-757025488_small.mp4",
+    "clip_id": 131390,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/15/6385-191687856_large.mp4",
+      "clip_id": 6385
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/04/35009-405620783_large.mp4",
+      "clip_id": 35009
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero lo peor aún no había llegado, pues la integración profunda entre biología y tecnología doméstica empezó a modificar la percepción del propio cuerpo. ¿Hasta qué punto seguíamos siendo humanos cuando nuestro entorno vital respiraba y sanaba con vida sintética?"
+  },
+  {
+   "hablado": "Para el año dos mil ochenta, la arquitectura urbana dejó de ser estática. Las fachadas de los edificios comenzaron a comportarse como pieles sintéticas capaces de adaptarse de forma autónoma a las variaciones térmicas y meteorológicas extremas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "modern architecture glass building",
+    "otras": [
+     "skyscraper facade reflection",
+     "city buildings exterior"
+    ],
+    "descripcion": "Edificio moderno con fachada de cristal y estructuras metálicas",
+    "clip": "https://cdn.pixabay.com/video/2021/08/17/85429-588675545_large.mp4",
+    "clip_id": 85429,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/02/206636_small.mp4",
+      "clip_id": 206636
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/04/31947-389704048_small.mp4",
+      "clip_id": 31947
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272517_small.mp4",
+      "clip_id": 272517
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para el año dos mil ochenta, la arquitectura urbana dejó de ser estática. Las fachadas de los edificios comenzaron a comportarse como pieles sintéticas capaces de adaptarse de forma autónoma a las variaciones térmicas y meteorológicas extremas."
+  },
+  {
+   "hablado": "Los materiales inteligentes integrados en las paredes modifican su transparencia y su capacidad de aislamiento térmico según la radiación solar. Esto reduce drásticamente el consumo energético sin necesidad de sistemas de climatización artificial complejos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer working architecture model",
+    "otras": [
+     "modern interior design office",
+     "construction material testing"
+    ],
+    "descripcion": "Ingenieros trabajando en maquetas de arquitectura y materiales",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31140-384523216_large.mp4",
+    "clip_id": 31140,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/06/230060_large.mp4",
+      "clip_id": 230060
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/28/178044-858827903_small.mp4",
+      "clip_id": 178044
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/10/225740_small.mp4",
+      "clip_id": 225740
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los materiales inteligentes integrados en las paredes modifican su transparencia y su capacidad de aislamiento térmico según la radiación solar. Esto reduce drásticamente el consumo energético sin necesidad de sistemas de climatización artificial complejos."
+  },
+  {
+   "hablado": "La geometría de las viviendas también puede alterarse ligeramente para minimizar el impacto del viento o maximizar la captación de luz durante los meses más fríos. El entorno construido evoluciona así hacia un diseño verdaderamente dinámico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "futuristic modern house exterior",
+    "otras": [
+     "innovative architecture structure",
+     "modern building design"
+    ],
+    "descripcion": "Estructura arquitectónica innovadora y moderna",
+    "clip": "https://cdn.pixabay.com/video/2021/08/17/85433-588675531_large.mp4",
+    "clip_id": 85433,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/20/85764-590014866_small.mp4",
+      "clip_id": 85764
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/20/85765-590014869_small.mp4",
+      "clip_id": 85765
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/20/85757-590014845_small.mp4",
+      "clip_id": 85757
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La geometría de las viviendas también puede alterarse ligeramente para minimizar el impacto del viento o maximizar la captación de luz durante los meses más fríos. El entorno construido evoluciona así hacia un diseño verdaderamente dinámico."
+  },
+  {
+   "hablado": "La gestión del agua y de la energía dentro de estas estructuras se realiza mediante redes distribuidas que optimizan los recursos de manera instantánea. Cada barrio funciona como un ecosistema cerrado que recicla y reutiliza cada gota disponible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "water management system plant",
+    "otras": [
+     "modern industrial facility",
+     "engineering pipes valves"
+    ],
+    "descripcion": "Instalación industrial de gestión de agua y tuberías",
+    "clip": "https://cdn.pixabay.com/video/2026/01/28/330898_small.mp4",
+    "clip_id": 330898,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/09/29/379714_large.mp4",
+      "clip_id": 379714
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/10/11286-229221016_large.mp4",
+      "clip_id": 11286
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La gestión del agua y de la energía dentro de estas estructuras se realiza mediante redes distribuidas que optimizan los recursos de manera instantánea. Cada barrio funciona como un ecosistema cerrado que recicla y reutiliza cada gota disponible."
+  },
+  {
+   "hablado": "Los sensores distribuidos por toda la ciudad monitorizan la tensión estructural y reparan microfisuras de forma autónoma gracias a compuestos bacterianos incrustados en el propio cemento. Las reparaciones humanas en las calles pasan a ser excepcionales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "construction workers repairing street",
+    "otras": [
+     "road maintenance workers",
+     "urban infrastructure work"
+    ],
+    "descripcion": "Trabajadores realizando mantenimiento en infraestructura urbana",
+    "clip": "https://cdn.pixabay.com/video/2024/03/31/206315_small.mp4",
+    "clip_id": 206315,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/22/4729-179738647_large.mp4",
+      "clip_id": 4729
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/12/70856-536317045_small.mp4",
+      "clip_id": 70856
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/02/187612-880737125_medium.mp4",
+      "clip_id": 187612
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los sensores distribuidos por toda la ciudad monitorizan la tensión estructural y reparan microfisuras de forma autónoma gracias a compuestos bacterianos incrustados en el propio cemento. Las reparaciones humanas en las calles pasan a ser excepcionales."
+  },
+  {
+   "hablado": "De este modo, el entorno urbano deja de ser un conjunto de bloques inertes para adoptar el comportamiento de un organismo vivo a gran escala. La ciudad misma anticipa las necesidades de sus habitantes antes de que estos las perciban.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "busy city street aerial view",
+    "otras": [
+     "people walking downtown",
+     "urban traffic flow"
+    ],
+    "descripcion": "Vista aérea de una calle urbana con movimiento de personas",
+    "clip": "https://cdn.pixabay.com/video/2016/05/12/3175-166339863_large.mp4",
+    "clip_id": 3175,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/23/287389_small.mp4",
+      "clip_id": 287389
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/14/211998_medium.mp4",
+      "clip_id": 211998
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/09/11/303404_small.mp4",
+      "clip_id": 303404
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "De este modo, el entorno urbano deja de ser un conjunto de bloques inertes para adoptar el comportamiento de un organismo vivo a gran escala. La ciudad misma anticipa las necesidades de sus habitantes antes de que estos las perciban."
+  },
+  {
+   "hablado": "Pero el verdadero desafío no era solo lograr que las ciudades respiraran y se adaptaran, sino coordinar miles de millones de decisiones simultáneas sin colapsar. Pero lo peor aún no había llegado, pues la gestión algorítmica del espacio público comenzó a decidir qué zonas merecían mantenimiento prioritario y cuáles debían quedar en el olvido. ¿Quién elegía qué parte de la ciudad sobrevivía?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room data center racks",
+    "otras": [
+     "control room monitors",
+     "technology servers blinking"
+    ],
+    "descripcion": "Sala de servidores y centros de datos tecnológicos",
+    "clip": "https://cdn.pixabay.com/video/2020/05/11/38805-418875307_large.mp4",
+    "clip_id": 38805,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/31/214734_large.mp4",
+      "clip_id": 214734
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/jsc2022m000275_Artemis_I_Distant_Retrograde_Insertion_Coverage_221125/jsc2022m000275_Artemis_I_Distant_Retrograde_Insertion_Coverage_221125~large.mp4",
+      "clip_id": "nasa:jsc2022m000275_Artemis_I_Distant_Retrograde_Insertion_Coverage_221125",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/jsc2026m000095_Artemis-II_Moon_Watch-Duane_Chin/jsc2026m000095_Artemis-II_Moon_Watch-Duane_Chin~large.mp4",
+      "clip_id": "nasa:jsc2026m000095_Artemis-II_Moon_Watch-Duane_Chin",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero el verdadero desafío no era solo lograr que las ciudades respiraran y se adaptaran, sino coordinar miles de millones de decisiones simultáneas sin colapsar. Pero lo peor aún no había llegado, pues la gestión algorítmica del espacio público comenzó a decidir qué zonas merecían mantenimiento prioritario y cuáles debían quedar en el olvido. ¿Quién elegía qué parte de la ciudad sobrevivía?"
+  },
+  {
+   "hablado": "Para el año dos mil noventa, los sistemas de procesamiento de datos personales ya no solo registran nuestra actividad diaria, sino que indexan cada conversación, cada aprendizaje y cada reacción emocional mediante registros continuos autorizados.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person typing computer office",
+    "otras": [
+     "hands typing laptop",
+     "data analysis screen"
+    ],
+    "descripcion": "Primer plano de manos escribiendo en un ordenador mientras se muestran gráficos de datos abstractos.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/27/45711-446485467_small.mp4",
+    "clip_id": 45711,
+    "extra": [],
+    "necesita": 15.3
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para el año dos mil noventa, los sistemas de procesamiento de datos personales ya no solo registran nuestra actividad diaria, sino que indexan cada conversación, cada aprendizaje y cada reacción emocional mediante registros continuos autorizados."
+  },
+  {
+   "hablado": "La neurotecnología actual utiliza modelos predictivos avanzados para ayudar en la recuperación de recuerdos fragmentados, permitiendo a los pacientes con deterioro cognitivo acceder de nuevo a momentos clave de su infancia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "medical laboratory researcher",
+    "otras": [
+     "scientist working laboratory",
+     "microscope laboratory"
+    ],
+    "descripcion": "Científico trabajando en un laboratorio médico con pantallas de análisis.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/28/37420-414024510_large.mp4",
+    "clip_id": 37420,
+    "extra": [
+     {
+      "clip": "https://images-assets.nasa.gov/video/GSFC_20180314_Aurora_m12865_Steve/GSFC_20180314_Aurora_m12865_Steve~large.mp4",
+      "clip_id": "nasa:GSFC_20180314_Aurora_m12865_Steve",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/GSFC_20181102_Comet_m12900_Tails/GSFC_20181102_Comet_m12900_Tails~large.mp4",
+      "clip_id": "nasa:GSFC_20181102_Comet_m12900_Tails",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/GSFC_20171005_ATom_m12731_BTS_1/GSFC_20171005_ATom_m12731_BTS_1~large.mp4",
+      "clip_id": "nasa:GSFC_20171005_ATom_m12731_BTS_1",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La neurotecnología actual utiliza modelos predictivos avanzados para ayudar en la recuperación de recuerdos fragmentados, permitiendo a los pacientes con deterioro cognitivo acceder de nuevo a momentos clave de su infancia."
+  },
+  {
+   "hablado": "Sin embargo, contar con una biblioteca externa de experiencias y conocimientos plantea un dilema ético profundo sobre la autenticidad de la propia identidad cuando cualquier recuerdo puede ser revisado, editado o filtrado a voluntad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street",
+    "otras": [
+     "crowd walking city",
+     "person thinking modern room"
+    ],
+    "descripcion": "Persona pensativa en una habitación moderna mirando por la ventana.",
+    "clip": "https://cdn.pixabay.com/video/2023/08/01/174150-850771242_large.mp4",
+    "clip_id": 174150,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/31/165336-832460251_small.mp4",
+      "clip_id": 165336
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/06/256873_small.mp4",
+      "clip_id": 256873
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/11/184538-873554743_small.mp4",
+      "clip_id": 184538
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, contar con una biblioteca externa de experiencias y conocimientos plantea un dilema ético profundo sobre la autenticidad de la propia identidad cuando cualquier recuerdo puede ser revisado, editado o filtrado a voluntad."
+  },
+  {
+   "hablado": "Los algoritmos de optimización del aprendizaje acelerado consiguen que adquirir un nuevo idioma o una disciplina técnica compleja requiera una fracción del tiempo tradicional gracias a la estimulación dirigida del cerebro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "student studying library",
+    "otras": [
+     "modern classroom students",
+     "person reading book"
+    ],
+    "descripcion": "Estudiante concentrado en una biblioteca moderna rodeado de libros y pantallas.",
+    "clip": "https://cdn.pixabay.com/video/2017/08/09/11254-229053639_large.mp4",
+    "clip_id": 11254,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/04/179136-861099211_large.mp4",
+      "clip_id": 179136
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/27/243610_small.mp4",
+      "clip_id": 243610
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/12/127680-739144734_small.mp4",
+      "clip_id": 127680
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los algoritmos de optimización del aprendizaje acelerado consiguen que adquirir un nuevo idioma o una disciplina técnica compleja requiera una fracción del tiempo tradicional gracias a la estimulación dirigida del cerebro."
+  },
+  {
+   "hablado": "A pesar de las ventajas evidentes en la productividad y la salud mental, el acceso a estas herramientas cognitivas avanzadas generó una nueva brecha social entre quienes pueden permitirse mejorar su memoria y quienes no.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city traffic night",
+    "otras": [
+     "busy street lights",
+     "modern city aerial"
+    ],
+    "descripcion": "Vista urbana nocturna con tráfico fluido y edificios iluminados.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/24/190485-888122631_small.mp4",
+    "clip_id": 190485,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/10/220451_small.mp4",
+      "clip_id": 220451
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/02/28635-371005964_small.mp4",
+      "clip_id": 28635
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/24/190484-888122636_small.mp4",
+      "clip_id": 190484
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "A pesar de las ventajas evidentes en la productividad y la salud mental, el acceso a estas herramientas cognitivas avanzadas generó una nueva brecha social entre quienes pueden permitirse mejorar su memoria y quienes no."
+  },
+  {
+   "hablado": "Pero el verdadero peligro no era la pérdida de capacidad intelectual, sino la dependencia absoluta de los servidores externos para validar qué hechos ocurrieron realmente y cuáles fueron alterados por la conveniencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "server room cables",
+    "otras": [
+     "data center servers",
+     "computer technology room"
+    ],
+    "descripcion": "Pasillo de un centro de datos con servidores y luces parpadeantes.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/29/129477-744385493_large.mp4",
+    "clip_id": 129477,
+    "extra": []
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero el verdadero peligro no era la pérdida de capacidad intelectual, sino la dependencia absoluta de los servidores externos para validar qué hechos ocurrieron realmente y cuáles fueron alterados por la conveniencia."
+  },
+  {
+   "hablado": "Pero lo peor aún no había llegado, pues los archivos de memoria compartida comenzaron a ser utilizados por corporaciones para predecir decisiones personales antes de que los propios individuos fueran conscientes de ellas. ¿Quién controlaba entonces la voluntad?",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person looking screen dark room",
+    "otras": [
+     "face illuminated screen",
+     "serious person computer"
+    ],
+    "descripcion": "Persona mirando fijamente una pantalla iluminada en una habitación oscura con expresión seria.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/06/109816-685705722_large.mp4",
+    "clip_id": 109816,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/30/45972-447087653_large.mp4",
+      "clip_id": 45972
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/30/45973-447087650_large.mp4",
+      "clip_id": 45973
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/09/15493-264715953_large.mp4",
+      "clip_id": 15493
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero lo peor aún no había llegado, pues los archivos de memoria compartida comenzaron a ser utilizados por corporaciones para predecir decisiones personales antes de que los propios individuos fueran conscientes de ellas. ¿Quién controlaba entonces la voluntad?"
+  },
+  {
+   "hablado": "Y así, al abrir los ojos en la primera mañana del año dos mil cien, la luz de la estancia se ajusta de manera imperceptible a nuestros ritmos biológicos mientras las paredes del hogar liberan una tenue brisa purificada por cultivos celulares.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "morning sun room",
+    "otras": [
+     "sunlight bedroom",
+     "modern interior"
+    ],
+    "descripcion": "Una habitación moderna bañada por la luz suave de la mañana.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/23/260397_small.mp4",
+    "clip_id": 260397,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/31/313145_small.mp4",
+      "clip_id": 313145
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/15/146626-789534267_small.mp4",
+      "clip_id": 146626
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/29/12671-241236748_large.mp4",
+      "clip_id": 12671
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Y así, al abrir los ojos en la primera mañana del año dos mil cien, la luz de la estancia se ajusta de manera imperceptible a nuestros ritmos biológicos mientras las paredes del hogar liberan una tenue brisa purificada por cultivos celulares."
+  },
+  {
+   "hablado": "La jornada comienza sin prisas ni pantallas físicas, pues los asistentes invisibles ya han coordinado la agenda nutricional y médica en función de los datos recogidos durante el sueño por nuestros sistemas de monitorización interna.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "person waking up",
+    "otras": [
+     "morning routine",
+     "waking up in bed"
+    ],
+    "descripcion": "Una persona despertándose tranquilamente en su cama.",
+    "clip": "https://cdn.pixabay.com/video/2016/01/02/1807-150669665_medium.mp4",
+    "clip_id": 1807,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/02/34829-403777575_small.mp4",
+      "clip_id": 34829
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/19/253545_large.mp4",
+      "clip_id": 253545
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/18/143436-782373975_medium.mp4",
+      "clip_id": 143436
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La jornada comienza sin prisas ni pantallas físicas, pues los asistentes invisibles ya han coordinado la agenda nutricional y médica en función de los datos recogidos durante el sueño por nuestros sistemas de monitorización interna."
+  },
+  {
+   "hablado": "Al salir a la calle, el entorno urbano responde con fluidez a nuestra presencia, modificando la temperatura y el aislamiento de los edificios mediante materiales inteligentes que imitan la eficiencia de los organismos vivos de la naturaleza.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people walking street",
+    "otras": [
+     "city pedestrians",
+     "modern urban street"
+    ],
+    "descripcion": "Gente caminando por una calle urbana moderna y luminosa.",
+    "clip": "https://cdn.pixabay.com/video/2016/02/29/2302-157183630_large.mp4",
+    "clip_id": 2302,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/12/3165-166338930_large.mp4",
+      "clip_id": 3165
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/10/294-135882925_large.mp4",
+      "clip_id": 294
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/06/30949-383991398_large.mp4",
+      "clip_id": 30949
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al salir a la calle, el entorno urbano responde con fluidez a nuestra presencia, modificando la temperatura y el aislamiento de los edificios mediante materiales inteligentes que imitan la eficiencia de los organismos vivos de la naturaleza."
+  },
+  {
+   "hablado": "El trabajo y el aprendizaje ya no ocurren en oficinas cerradas ni aulas tradicionales, sino en espacios híbridos donde la cognición humana se potencia de forma directa con herramientas algorítmicas de análisis instantáneo y simulación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "engineer working workshop",
+    "otras": [
+     "office workers laptop",
+     "modern workspace"
+    ],
+    "descripcion": "Profesionales trabajando en un espacio moderno con ordenadores.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/17/247143_small.mp4",
+    "clip_id": 247143,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/26/254761_small.mp4",
+      "clip_id": 254761
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/18/28043-367222504_large.mp4",
+      "clip_id": 28043
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El trabajo y el aprendizaje ya no ocurren en oficinas cerradas ni aulas tradicionales, sino en espacios híbridos donde la cognición humana se potencia de forma directa con herramientas algorítmicas de análisis instantáneo y simulación."
+  },
+  {
+   "hablado": "Pero al contemplar este paisaje de aparente perfección cotidiana, comprendemos que la verdadera transformación no ocurrió en las máquinas ni en las megaciudades, sino en la redefinición absoluta de la propia naturaleza humana.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "city skyline timelapse",
+    "otras": [
+     "urban traffic night",
+     "modern city aerial"
+    ],
+    "descripcion": "Vista general de una gran ciudad moderna en movimiento.",
+    "clip": "https://cdn.pixabay.com/video/2026/04/03/344181_small.mp4",
+    "clip_id": 344181,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/06/338628_small.mp4",
+      "clip_id": 338628
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/01/72763-544315311_small.mp4",
+      "clip_id": 72763
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/15/15614-265015219_small.mp4",
+      "clip_id": 15614
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero al contemplar este paisaje de aparente perfección cotidiana, comprendemos que la verdadera transformación no ocurrió en las máquinas ni en las megaciudades, sino en la redefinición absoluta de la propia naturaleza humana."
+  },
+  {
+   "hablado": "Nos hemos convertido en una especie capaz de rediseñar su propio entorno biológico y mental, demostrando una resiliencia extraordinaria ante los retos más complejos de nuestra historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientists in laboratory",
+    "otras": [
+     "research laboratory",
+     "modern science lab"
+    ],
+    "descripcion": "Científicos trabajando en un laboratorio tecnológico.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/07/41306-429396341_large.mp4",
+    "clip_id": 41306,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/23/281135_large.mp4",
+      "clip_id": 281135
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/JPL-20231122-MARSODf-0001-Mars%20Report%20Odyssey%20November%202023/JPL-20231122-MARSODf-0001-Mars%20Report%20Odyssey%20November%202023~large.mp4",
+      "clip_id": "nasa:JPL-20231122-MARSODf-0001-Mars Report Odyssey November 2023",
+      "clip_ini": 6
+     },
+     {
+      "clip": "https://images-assets.nasa.gov/video/JPL-20230919-PSYCHEf-0002-Behind%20the%20Spacecraft%20Luis%20Dominguez%20Psyche%20Spanish/JPL-20230919-PSYCHEf-0002-Behind%20the%20Spacecraft%20Luis%20Dominguez%20Psyche%20Spanish~large.mp4",
+      "clip_id": "nasa:JPL-20230919-PSYCHEf-0002-Behind the Spacecraft Luis Dominguez Psyche Spanish",
+      "clip_ini": 6
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Nos hemos convertido en una especie capaz de rediseñar su propio entorno biológico y mental, demostrando una resiliencia extraordinaria ante los retos más complejos de nuestra historia."
+  },
+  {
+   "hablado": "Y ahora os lanzamos una pregunta para debatir en los comentarios. Después de recorrer este camino, qué avance de todos los analizados os resultaría hoy más difícil de asimilar en vuestra vida diaria.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "people talking smiling",
+    "otras": [
+     "group discussion",
+     "people conversing"
+    ],
+    "descripcion": "Un grupo de personas conversando tranquilamente.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/12/370-136082628_medium.mp4",
+    "clip_id": 370,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/08/76886-560684388_large.mp4",
+      "clip_id": 76886
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/08/76889-560684399_large.mp4",
+      "clip_id": 76889
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/09/119787-718927503_small.mp4",
+      "clip_id": 119787
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Y ahora os lanzamos una pregunta para debatir en los comentarios. Después de recorrer este camino, qué avance de todos los analizados os resultaría hoy más difícil de asimilar en vuestra vida diaria."
+  }
+ ],
+ "titulo_youtube": "Así cambiará tu VIDA de 2030 a 2100",
+ "voz": "Algenib",
+ "estilo_imagen": "Ultra realistic photograph, real-world photojournalism look of a believable near future: futuristic technology integrated into everyday places, natural daylight or soft practical lighting, true-to-life skin and materials, subtle sci-fi details (holographic displays, sleek robots, advanced vehicles), sharp focus, shallow depth of field, shot on a full-frame camera, 35mm lens. "
+}
