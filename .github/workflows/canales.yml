@@ -1,0 +1,46 @@
+# (14-nov-2026) CANALES QUE ANTES HACÍA MODAL, ahora aquí (gratis): cortos de sin humo TV, vídeos de redes de Explícalo y largo
+# de YouTube de Explícalo. Ejecuta el MISMO código de siempre (repositorio privado Explicalo: plataforma/servidor/en_github.py).
+# Lo lanza el «Reloj de los canales» a su hora (no se usan las tareas programadas de GitHub: llegan con horas de retraso).
+name: Canales (sin humo TV y Explícalo)
+on:
+  workflow_dispatch:
+    inputs:
+      trabajo: { description: 'sinhumo, redes, largo, prueba-sinhumo o prueba-redes', required: true }
+permissions: { contents: write }
+concurrency: { group: 'canal-${{ inputs.trabajo }}', cancel-in-progress: false }
+jobs:
+  canal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: main, token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Caché del modelo de voz (Qwen, reserva)
+        uses: actions/cache@v4
+        with: { path: ~/.cache/huggingface, key: hf-qwen3-tts-base-1.7b }
+      - name: Programas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji fonts-dejavu-core espeak-ng >/dev/null
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q modal==1.6.2 numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          pip install -q qwen-tts librosa
+      - name: Hacer y publicar
+        env:
+          NODE_PATH: /opt/npm-tools/node_modules
+          REPO: ${{ github.repository }}
+          REPO_PUSH: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
+          GEMINI_TTS_KEY: ${{ secrets.EXPLICALO_GEMINI_TTS_KEY }}
+          GEMINI_SINHUMO: ${{ secrets.SINHUMO_GEMINI_KEY }}
+          GEMINI_API_KEY: ${{ secrets.EXPLICALO_GEMINI_KEY }}
+          BUFFER_SINHUMO: ${{ secrets.SINHUMO_BUFFER_KEY }}
+          BUFFER_EXPLICALO: ${{ secrets.EXPLICALO_BUFFER_KEY }}
+          CF_ACCOUNT_IA: ${{ secrets.EXPLICALO_CF_ACCOUNT }}
+          CF_TOKEN_IA: ${{ secrets.EXPLICALO_CF_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.EXPLICALO_CF_ACCOUNT }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.EXPLICALO_CF_TOKEN }}
+        run: cd explicalo && python3 plataforma/servidor/en_github.py "${{ inputs.trabajo }}"

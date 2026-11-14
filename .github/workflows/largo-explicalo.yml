@@ -1,4 +1,4 @@
-# (10-nov-2026) Largos del YouTube de Explícalo. Los fabrica el servidor de Explícalo (Modal) de madrugada, 20 al mes, y deja
+# (10-nov-2026) Largos del YouTube de Explícalo. Los fabrica (desde el 14-nov-2026) «Canales» en GitHub de madrugada, 20 al mes, y deja
 # una nota en /redes/expl-largo-hoy. Este workflow la recoge por la mañana y la publica YA con la cuenta de Metricool de
 # Explícalo (Buffer solo sube Shorts a YouTube y rechazaba los largos). Si hoy no hay largo, no hace nada.
 name: Largo de Explícalo
@@ -38,7 +38,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mini=""
-          curl -sf -o /tmp/pub.json https://sinhumotv--explicalo-api.modal.run/redes/expl-largo-hoy || true
+          curl -sf -o /tmp/pub.json https://raw.githubusercontent.com/${{ github.repository }}/explicalo-largo/expl-largo-hoy.json || true
           if [ "${{ inputs.miniatura }}" = 1 ]; then
             sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; pip install -q pillow numpy
             python3 metricool/miniatura_explicalo.py /tmp/pub.json /tmp/mini
@@ -52,9 +52,12 @@ jobs:
         if: inputs.mover == ''
         id: leer
         run: |
-          code=$(curl -s -o /tmp/publicacion.json -w '%{http_code}' https://sinhumotv--explicalo-api.modal.run/redes/expl-largo-hoy)
+          code=$(curl -s -o /tmp/publicacion.json -w '%{http_code}' https://raw.githubusercontent.com/${{ github.repository }}/explicalo-largo/expl-largo-hoy.json)
           if [ "$code" != 200 ]; then echo "Hoy no hay largo de Explícalo ($code)"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
           hoy=$(TZ=Europe/Madrid date +%Y-%m-%d)
+          # (14-nov-2026) la nota la deja ahora GitHub (canales.yml) en la rama explicalo-largo: solo vale si es de hoy
+          d=$(python3 -c "import json;print(json.load(open('/tmp/publicacion.json')).get('dia',''))")
+          if [ "$d" != "$hoy" ]; then echo "La nota del largo no es de hoy ($d)"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
           if git fetch -q --depth 1 origin datos && git show origin/datos:largos_explicalo.txt 2>/dev/null | grep -q "^$hoy"; then
             echo "El largo de hoy ya está publicado"; echo "hay=no" >> $GITHUB_OUTPUT; exit 0; fi
           u=$(python3 -c "import json;print(json.load(open('/tmp/publicacion.json'))['video'])")

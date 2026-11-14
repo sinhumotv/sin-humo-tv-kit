@@ -1,0 +1,14 @@
+{
+  "_nota": "(14-nov-2026) Agenda de los canales en hora de Madrid. «margen»: minutos de retraso con los que aún se lanza si el reloj estuvo parado. Cada trabajo comprueba además por su cuenta si ya está hecho (nunca se duplica).",
+  "eventos": [
+    {"id": "sinhumo",        "workflow": "canales.yml",              "inputs": {"trabajo": "sinhumo"}, "horas": ["06:33", "09:33", "12:33", "16:33", "19:33"], "margen": 45},
+    {"id": "explicalo-redes","workflow": "canales.yml",              "inputs": {"trabajo": "redes"},   "horas": ["09:03", "13:25", "20:25"], "margen": 40},
+    {"id": "explicalo-largo","workflow": "canales.yml",              "inputs": {"trabajo": "largo"},   "horas": ["01:12"], "margen": 240},
+    {"id": "explicalo-largo-publicar", "workflow": "largo-explicalo.yml", "inputs": {}, "horas": ["07:17", "09:47", "12:17"], "margen": 90},
+    {"id": "tanda-relatos",  "workflow": "tanda-diaria.yml",         "inputs": {"canal": "relatos"},   "horas": ["03:47", "05:17", "06:47", "10:17", "13:17"], "margen": 60},
+    {"id": "tanda-ano2100",  "workflow": "tanda-diaria.yml",         "inputs": {"canal": "ano2100"},   "horas": ["03:47", "05:17", "06:47", "10:17", "13:17"], "margen": 60},
+    {"id": "tanda-cajanegra","workflow": "tanda-diaria.yml",         "inputs": {"canal": "cajanegra"}, "horas": ["03:47", "05:17", "06:47", "10:17", "13:17"], "margen": 60},
+    {"id": "largo-sinhumo",  "workflow": "largo-diario-sinhumo.yml", "inputs": {},                     "horas": ["06:17", "08:37", "10:17", "12:47", "15:17"], "margen": 60},
+    {"id": "largos",         "workflow": "largos.yml",               "inputs": {"canal": "todos"},     "horas": ["09:47", "20:47"], "margen": 90}
+  ]
+}

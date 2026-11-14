@@ -1,0 +1,17 @@
+# (14-nov-2026) RELOJ DE LOS CANALES: lanza cada trabajo de reloj/agenda.json a su hora de Madrid (GitHub retrasa sus tareas
+# programadas hasta 7-8 horas). Dura ~5 h 40 min y se relanza solo; la alarma cada 20 min lo rearranca si la cadena se corta.
+name: Reloj de los canales
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+permissions: { contents: write, actions: write }
+concurrency: { group: reloj-canales, cancel-in-progress: false }
+jobs:
+  reloj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - env: { GH_TOKEN: '${{ github.token }}' }
+        run: python3 reloj/reloj.py
