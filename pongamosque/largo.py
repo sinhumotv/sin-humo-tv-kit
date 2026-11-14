@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""(14-nov-2026) PONGAMOS QUE · LARGO DE YOUTUBE (horizontal, ~5 min, con el efecto 3D; sin animación IA).
+"""(14-nov-2026) PONGAMOS QUE · LARGO DE YOUTUBE (horizontal, ~5 min, imágenes con movimiento de cámara, SIN efecto 3D ni animación IA: el usuario no quiere que cueste mucho).
 Uso: python3 largo.py <carpeta_explicalo> <salida>
 Tema nuevo con Gemini (lista propia: temas_largos.json) → motor de Explícalo (estructura «pongamosque», horizontal) →
 <salida>/video.mp4 + publicacion.json (para metricool/publicar_largo.py; la miniatura la hace metricool/miniatura_explicalo.py)."""
@@ -16,7 +16,7 @@ os.makedirs(d, exist_ok=True)
 json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 300, 'formato': 'horizontal', 'tema_visual': 'pongamosque', 'voz': 'Puck',
            'estructura_fija': True}, open(f'{d}/pedido_in.json', 'w'), ensure_ascii=False)
 r = subprocess.run([sys.executable, os.path.join(EXP, 'plataforma/v2/fabricar.py'), f'{d}/pedido_in.json', d], cwd=EXP,
-                   env=dict(os.environ, PQ_IMG_NORMAL='1', WHISPER_MODELO='small'))
+                   env=dict(os.environ, PQ_IMG_NORMAL='1', PQ_SIN3D='1', WHISPER_MODELO='small'))   # (14-nov-2026) Pablo: los largos sin 3D
 if r.returncode or not os.path.exists(f'{d}/video_final.mp4'): sys.exit('el largo no ha salido')
 os.replace(f'{d}/video_final.mp4', f'{SAL}/video.mp4')
 tags = [str(h).lstrip('#') for h in (t.get('hashtags') or [])]
