@@ -1,0 +1,2134 @@
+{
+ "titulo": "Jack el Destripador",
+ "titulos": [
+  "Jack el Destripador: la prueba de ADN que lo CAMBIA todo",
+  "¿Quién fue Jack el Destripador? La sospecha FINAL",
+  "El ERROR de la policía de Londres en 1888",
+  "La VERDAD sobre el asesino de Whitechapel",
+  "Jack el Destripador: el misterio RESUELTO 130 años después",
+  "¿Por qué NUNCA atraparon a Jack el Destripador?",
+  "La carta que la policía OCULTÓ en 1888",
+  "5 víctimas y un solo SOSPECHOSO principal",
+  "El secreto del CHAL que reveló la identidad del asesino",
+  "Jack el Destripador: las 74 horas que aterrorizaron Londres"
+ ],
+ "miniatura": {
+  "texto": "MISTERIO RESUELTO",
+  "clave": "ADN",
+  "prompt": "A cinematic high-contrast close-up shot of a shadowy 19th-century detective in a dark coat and top hat standing under a single glowing Victorian gas lamp on a foggy London cobbled street at night. The right side shows his mysterious silhouette looking at an old stained letter in hand. Deep dark blue and yellow gaslight tones, dramatic atmosphere, cinematic, clean dark left area for text, no blood, no face details."
+ },
+ "descripcion": "En el otoño de 1888, las sombrías calles del distrito de Whitechapel en Londres se convirtieron en el escenario del enigma criminal más famoso de la historia. Durante décadas, la verdadera identidad de Jack el Destripador permaneció sepultada bajo teorías contradictorias y fallos policiales desgarradores. Sin embargo, un hallazgo forense reciente en una prenda conservada desde la noche de uno de los crímenes ha vuelto a abrir el expediente, señalando a un sospechoso concreto.\n\nEn este documental examinamos los hechos reales, las fallas en la investigación de Scotland Yard y las pruebas científicas que han intentado descifrar el caso criminal sin resolver más mediático del mundo. Analizamos las pruebas de ADN, las cartas enviadas a la prensa y los movimientos de los principales sospechosos en el ambiente victoriano de la época.",
+ "etiquetas": [
+  "jack el destripador",
+  "misterios sin resolver",
+  "crimen real",
+  "casos policiales",
+  "whitechapel 1888",
+  "forense adn",
+  "documental true crime",
+  "scotland yard",
+  "historia de londres",
+  "asesinos en serie",
+  "enigmas historicos",
+  "caja negra"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El terror de Whitechapel"
+  },
+  {
+   "escena": 8,
+   "titulo": "Un barrio en sombras"
+  },
+  {
+   "escena": 16,
+   "titulo": "El doble evento"
+  },
+  {
+   "escena": 24,
+   "titulo": "Las cartas del infierno"
+  },
+  {
+   "escena": 32,
+   "titulo": "El sospechoso de la barbería"
+  },
+  {
+   "escena": 40,
+   "titulo": "Otras sombras bajo sospecha"
+  },
+  {
+   "escena": 48,
+   "titulo": "La subasta del chal guardado"
+  },
+  {
+   "escena": 56,
+   "titulo": "El mapa del ADN mitocondrial"
+  },
+  {
+   "escena": 64,
+   "titulo": "La sombra que nunca se borra"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "En el otoño de mil ochocientos ochenta y ocho una sombra implacable recorrió los callejones oscuros de Londres sembrando el pánico absoluto. Scotland Yard desplegó un operativo sin precedentes pero el ejecutor desaparecía entre la niebla.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark street fog",
+    "otras": [
+     "night city street",
+     "foggy alley"
+    ],
+    "descripcion": "Callejón nocturno envuelto en una densa niebla con farolas de luz tenue.",
+    "clip": "https://assets.mixkit.co/videos/30605/30605-720.mp4",
+    "clip_id": "mixkit:30605",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/21/111508-691222995_large.mp4",
+      "clip_id": 111508
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/25/260895_small.mp4",
+      "clip_id": 260895
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/03/41028-427854651_large.mp4",
+      "clip_id": 41028
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "En el otoño de mil ochocientos ochenta y ocho una sombra implacable recorrió los callejones oscuros de Londres sembrando el pánico absoluto. Scotland Yard desplegó un operativo sin precedentes pero el ejecutor desaparecía entre la niebla."
+  },
+  {
+   "hablado": "La prensa bautizó a ese misterioso criminal tras recibir una siniestra carta escrita con tinta roja y firmada con un seudónimo temible. Nació así la leyenda oscura de Jack el Destripador que paralizó a toda una nación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Dear Boss letter Jack the Ripper",
+    "otras": [
+     "Jack the Ripper letter",
+     "Dear Boss letter"
+    ],
+    "descripcion": "Fotografía histórica del manuscrito original de la famosa carta Dear Boss enviada a la prensa.",
+    "prompt": "Fotografía histórica del manuscrito original de la famosa carta Dear Boss enviada a la prensa.",
+    "clip": "https://cdn.pixabay.com/video/2016/07/07/3740-174173800_large.mp4",
+    "clip_id": 3740,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110226-688187391_large.mp4",
+      "clip_id": 110226
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/29/2289-157183570_large.mp4",
+      "clip_id": 2289
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110228-688187404_large.mp4",
+      "clip_id": 110228
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La prensa bautizó a ese misterioso criminal tras recibir una siniestra carta escrita con tinta roja y firmada con un seudónimo temible. Nació así la leyenda oscura de Jack el Destripador que paralizó a toda una nación."
+  },
+  {
+   "hablado": "Sin embargo un objeto guardado en absoluto secreto durante más de un siglo ocultaba la clave genética definitiva. Quien se quede hasta el final descubrirá cómo la ciencia moderna logró identificar al sospechoso que la policía victoriana dejó marchar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dna analysis laboratory",
+    "otras": [
+     "forensic scientist microscope",
+     "laboratory research"
+    ],
+    "descripcion": "Investigador forense trabajando en un laboratorio analizando muestras en un microscopio.",
+    "clip": "https://assets.mixkit.co/videos/46748/46748-720.mp4",
+    "clip_id": "mixkit:46748",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/07/133903-758336572_small.mp4",
+      "clip_id": 133903
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/20/197487-905015026_small.mp4",
+      "clip_id": 197487
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/05/106867-674260860_large.mp4",
+      "clip_id": 106867
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo un objeto guardado en absoluto secreto durante más de un siglo ocultaba la clave genética definitiva. Quien se quede hasta el final descubrirá cómo la ciencia moderna logró identificar al sospechoso que la policía victoriana dejó marchar."
+  },
+  {
+   "hablado": "Para entender la magnitud del terror debemos viajar al corazón del East End de Londres. El distrito de Whitechapel era en aquella época un laberinto sofocante de pasadizos oscuros hacinamiento extremo y pobreza desgarradora que albergaba a miles.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old city alley",
+    "otras": [
+     "cobblestone street night",
+     "ancient europe street"
+    ],
+    "descripcion": "Plano panorámico de un callejón antiguo de adoquines iluminado por una débil luz.",
+    "clip": "https://cdn.pixabay.com/video/2019/10/25/28302-369325285_large.mp4",
+    "clip_id": 28302,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/25/28303-369325307_large.mp4",
+      "clip_id": 28303
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/15/167295-836766278_large.mp4",
+      "clip_id": 167295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/23/28208-368763900_large.mp4",
+      "clip_id": 28208
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para entender la magnitud del terror debemos viajar al corazón del East End de Londres. El distrito de Whitechapel era en aquella época un laberinto sofocante de pasadizos oscuros hacinamiento extremo y pobreza desgarradora que albergaba a miles."
+  },
+  {
+   "hablado": "Las fábricas del carbón y las industrias locales arrojaban un humo denso que se combinaba con la neblina del río Támesis. Esta mezcla tóxica creaba una atmósfera pesada donde la visibilidad era casi nula a pocos metros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "heavy fog river",
+    "otras": [
+     "smog city night",
+     "smoke river fog"
+    ],
+    "descripcion": "Vista de un río al anochecer cubierto por una densa capa de humo industrial y neblina.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/23/536-137078182_large.mp4",
+    "clip_id": 536,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/24/50746-461696803_large.mp4",
+      "clip_id": 50746
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/14/175977-854481148_large.mp4",
+      "clip_id": 175977
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/11/26760-359604137_large.mp4",
+      "clip_id": 26760
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las fábricas del carbón y las industrias locales arrojaban un humo denso que se combinaba con la neblina del río Támesis. Esta mezcla tóxica creaba una atmósfera pesada donde la visibilidad era casi nula a pocos metros."
+  },
+  {
+   "hablado": "La falta casi total de alumbrado público convertía cada esquina en una trampa perfecta para cualquier transeúnte solitario. En esas calles estrechas el peligro acechaba en las sombras sin que nadie pudiera escuchar las peticiones de auxilio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lamp light dark street",
+    "otras": [
+     "street lantern night",
+     "dark sidewalk"
+    ],
+    "descripcion": "Luz de una farola antigua proyectando sombras en una pared de ladrillo vacía.",
+    "clip": "https://cdn.pixabay.com/video/2016/04/29/2920-164833275_medium.mp4",
+    "clip_id": 2920,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1042-142621369_large.mp4",
+      "clip_id": 1042
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/25/254617_small.mp4",
+      "clip_id": 254617
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/21/132059-752303208_large.mp4",
+      "clip_id": 132059
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La falta casi total de alumbrado público convertía cada esquina en una trampa perfecta para cualquier transeúnte solitario. En esas calles estrechas el peligro acechaba en las sombras sin que nadie pudiera escuchar las peticiones de auxilio."
+  },
+  {
+   "hablado": "Las patrullas policiales de la época eran escasas e ineficientes frente a un criminal metódico. Los agentes caminaban a paso lento con faroles de aceite insuficientes incapaces de cubrir el denso entramado urbano de callejones sin salida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police walking night street",
+    "otras": [
+     "patrol night street",
+     "silhouettes walking night"
+    ],
+    "descripcion": "Silueta de una patrulla o figura caminando lentamente por una calle oscura.",
+    "clip": "https://cdn.pixabay.com/video/2019/04/30/23162-333321348_large.mp4",
+    "clip_id": 23162,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/14/47135-452600663_large.mp4",
+      "clip_id": 47135
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/19/27023-361798579_large.mp4",
+      "clip_id": 27023
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/31/31822-389009323_large.mp4",
+      "clip_id": 31822
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las patrullas policiales de la época eran escasas e ineficientes frente a un criminal metódico. Los agentes caminaban a paso lento con faroles de aceite insuficientes incapaces de cubrir el denso entramado urbano de callejones sin salida."
+  },
+  {
+   "hablado": "Fue precisamente bajo ese manto de oscuridad e impunidad total donde comenzó la serie de ataques más perturbadora de la historia británica. Pero lo que la policía victoriana nunca imaginó fue el nivel de audacia del asesino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old police archives",
+    "otras": [
+     "case files office",
+     "vintage crime investigation"
+    ],
+    "descripcion": "Documentos antiguos de investigaciones criminales sobre una mesa de madera.",
+    "clip": "https://cdn.pixabay.com/video/2016/06/27/3586-172490363_large.mp4",
+    "clip_id": 3586,
+    "extra": []
+   },
+   "efecto": "polvo",
+   "subtitulo": "Fue precisamente bajo ese manto de oscuridad e impunidad total donde comenzó la serie de ataques más perturbadora de la historia británica. Pero lo que la policía victoriana nunca imaginó fue el nivel de audacia del asesino."
+  },
+  {
+   "hablado": "En el otoño de mil ochocientos ochenta y ocho, el distrito londinense de Whitechapel era un laberinto asfixiante de miseria absoluta, donde casi ochenta mil personas malvivían hacinadas entre pensiones miserables, humo de carbón y callejones sin salida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy alley night",
+    "otras": [
+     "dark street cobblestone",
+     "old street night"
+    ],
+    "descripcion": "Callejón antiguo y estrecho con adoquines húmedos envuelto en densa niebla nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2022/04/25/115099-703068026_small.mp4",
+    "clip_id": 115099,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/06/153482-805374153_small.mp4",
+      "clip_id": 153482
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/04/130215-746395293_large.mp4",
+      "clip_id": 130215
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/22/39837-424360872_small.mp4",
+      "clip_id": 39837
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "En el otoño de mil ochocientos ochenta y ocho, el distrito londinense de Whitechapel era un laberinto asfixiante de miseria absoluta, donde casi ochenta mil personas malvivían hacinadas entre pensiones miserables, humo de carbón y callejones sin salida."
+  },
+  {
+   "hablado": "El alumbrado público a gas apenas iluminaba las esquinas más concurridas, dejando enormes sectores en una penumbra impenetrable, agravada por una densa niebla tóxica que amortiguaba los pasos y ocultaba cualquier movimiento a escasos metros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage gas lamp",
+    "otras": [
+     "street lamp fog",
+     "night lantern street"
+    ],
+    "descripcion": "Farola antigua de gas encendida en mitad de una calle solitaria cubierta de bruma.",
+    "clip": "https://cdn.pixabay.com/video/2021/09/15/88738-608445717_large.mp4",
+    "clip_id": 88738,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/04/16/2817-163160493_large.mp4",
+      "clip_id": 2817
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/14/2154-155327585_large.mp4",
+      "clip_id": 2154
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/10/09/51919-467145000_large.mp4",
+      "clip_id": 51919
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El alumbrado público a gas apenas iluminaba las esquinas más concurridas, dejando enormes sectores en una penumbra impenetrable, agravada por una densa niebla tóxica que amortiguaba los pasos y ocultaba cualquier movimiento a escasos metros."
+  },
+  {
+   "hablado": "Hacia las cuatro menos cuarto de la madrugada del treinta y uno de agosto, un carretero que se dirigía a su trabajo divisó una figura inmóvil en el empedrado de Bucks Row, junto a una cancela oscura.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Bucks Row London 1888",
+    "otras": [
+     "Bucks Row Whitechapel",
+     "Durward Street London"
+    ],
+    "descripcion": "Fotografía histórica de época de la calle Bucks Row en Whitechapel, donde se halló a la primera víctima.",
+    "prompt": "Fotografía histórica de época de la calle Bucks Row en Whitechapel, donde se halló a la primera víctima.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/15/200626-913478571_small.mp4",
+    "clip_id": 200626,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/14/81467-575185262_small.mp4",
+      "clip_id": 81467
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/17/29162-374013443_large.mp4",
+      "clip_id": 29162
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/17/81762-577427910_small.mp4",
+      "clip_id": 81762
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hacia las cuatro menos cuarto de la madrugada del treinta y uno de agosto, un carretero que se dirigía a su trabajo divisó una figura inmóvil en el empedrado de Bucks Row, junto a una cancela oscura."
+  },
+  {
+   "hablado": "La víctima era Mary Ann Nichols, una mujer de cuarenta y tres años cuya existencia rota reflejaba la crudeza de la época, obligada a deambular de noche para conseguir unas monedas con las que pagar una cama.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage street rain",
+    "otras": [
+     "dark city night",
+     "old town alley"
+    ],
+    "descripcion": "Silueta solitaria caminando de espaldas por una acera adoquinada bajo la lluvia.",
+    "clip": "https://cdn.pixabay.com/video/2020/11/29/57770-486809739_large.mp4",
+    "clip_id": 57770,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/28/86625-594416691_small.mp4",
+      "clip_id": 86625
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/06/215563_large.mp4",
+      "clip_id": 215563
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/08/29/26369-357512454_small.mp4",
+      "clip_id": 26369
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La víctima era Mary Ann Nichols, una mujer de cuarenta y tres años cuya existencia rota reflejaba la crudeza de la época, obligada a deambular de noche para conseguir unas monedas con las que pagar una cama."
+  },
+  {
+   "hablado": "Los primeros policías llegaron con simples faroles de aceite, enfrentándose a un escenario devastador sin contar con las herramientas modernas: no existían registros de huellas dactilares, ni fotografías de la escena, ni análisis químico de rastros biológicos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police lantern night",
+    "otras": [
+     "vintage detective lantern",
+     "old police investigation"
+    ],
+    "descripcion": "Mano sosteniendo un farol de época iluminando un suelo de adoquines en plena oscuridad.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/20/131958-751934722_small.mp4",
+    "clip_id": 131958,
+    "extra": [],
+    "necesita": 21.1
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los primeros policías llegaron con simples faroles de aceite, enfrentándose a un escenario devastador sin contar con las herramientas modernas: no existían registros de huellas dactilares, ni fotografías de la escena, ni análisis químico de rastros biológicos."
+  },
+  {
+   "hablado": "Scotland Yard asignó de inmediato la investigación al inspector Frederick Abberline, un veterano de la división local que conocía al detalle los bajos fondos, pero que chocó contra el muro de silencio y temor de los vecinos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Frederick Abberline portrait",
+    "otras": [
+     "Inspector Frederick Abberline",
+     "Frederick Abberline"
+    ],
+    "descripcion": "Fotografía de archivo en blanco y negro del inspector Frederick Abberline de Scotland Yard.",
+    "prompt": "Fotografía de archivo en blanco y negro del inspector Frederick Abberline de Scotland Yard.",
+    "clip": "https://cdn.pixabay.com/video/2017/11/05/12769-241706598_small.mp4",
+    "clip_id": 12769,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/03/83808-586073561_large.mp4",
+      "clip_id": 83808
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/02/269446_large.mp4",
+      "clip_id": 269446
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/14/44686-439940368_small.mp4",
+      "clip_id": 44686
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Scotland Yard asignó de inmediato la investigación al inspector Frederick Abberline, un veterano de la división local que conocía al detalle los bajos fondos, pero que chocó contra el muro de silencio y temor de los vecinos."
+  },
+  {
+   "hablado": "Las autopsias iniciales confirmaron una agresividad metódica inaudita, ejecutada en cuestión de minutos y en silencio absoluto a escasos metros de viviendas habitadas, lo que desató una histeria colectiva amplificada por los periódicos vespertinos de la capital.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage newspaper printing",
+    "otras": [
+     "old newspaper press",
+     "newspaper archives vintage"
+    ],
+    "descripcion": "Prensa rotativa antigua imprimiendo periódicos de época en blanco y negro a gran velocidad.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/10/245-135869050_large.mp4",
+    "clip_id": 245,
+    "extra": [
+     {
+      "clip": "https://upload.wikimedia.org/wikipedia/commons/4/40/Kin_Wikipedia_25_Anthem_15%22_16x9_Caption.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "clip_id": "wc:File:Kin Wikipedia 25 Anthem 15\" 16x9 Caption.webm",
+      "clip_ini": 1
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/34175/34175-720.mp4",
+      "clip_id": "mixkit:34175",
+      "clip_ini": 0
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las autopsias iniciales confirmaron una agresividad metódica inaudita, ejecutada en cuestión de minutos y en silencio absoluto a escasos metros de viviendas habitadas, lo que desató una histeria colectiva amplificada por los periódicos vespertinos de la capital."
+  },
+  {
+   "hablado": "Scotland Yard reforzó las rondas nocturnas creyendo que la presencia policial disuadiría al agresor de volver a actuar. Sin embargo, el cazador de sombras estaba a punto de redoblar su desafío en una misma y trágica noche.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "bobby night street",
+    "otras": [
+     "police officer night alley",
+     "patrol vintage night"
+    ],
+    "descripcion": "Agente patrullando de noche a contraluz por una esquina adoquinada y neblinosa.",
+    "clip": "https://cdn.pixabay.com/video/2024/09/30/233983_small.mp4",
+    "clip_id": 233983,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/12/26788-361092006_large.mp4",
+      "clip_id": 26788
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/03/26523-358778918_large.mp4",
+      "clip_id": 26523
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Scotland Yard reforzó las rondas nocturnas creyendo que la presencia policial disuadiría al agresor de volver a actuar. Sin embargo, el cazador de sombras estaba a punto de redoblar su desafío en una misma y trágica noche."
+  },
+  {
+   "hablado": "La madrugada del treinta de septiembre de mil ochocientos ochenta y ocho comenzó con un sobresalto. Un comerciante descubrió el cuerpo sin vida de Elizabeth Stride en Dutfield Yard, sorprendiendo al atacante justo antes de poder completar su siniestro ritual.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark alley night street",
+    "otras": [
+     "cobblestone street night",
+     "foggy night city"
+    ],
+    "descripcion": "Una callejuela oscura y adoquines mojados iluminados por farolas antiguas en la noche.",
+    "clip": "https://cdn.pixabay.com/video/2025/01/06/251085_small.mp4",
+    "clip_id": 251085,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/06/251091_small.mp4",
+      "clip_id": 251091
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/06/251088_small.mp4",
+      "clip_id": 251088
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/06/251089_small.mp4",
+      "clip_id": 251089
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La madrugada del treinta de septiembre de mil ochocientos ochenta y ocho comenzó con un sobresalto. Un comerciante descubrió el cuerpo sin vida de Elizabeth Stride en Dutfield Yard, sorprendiendo al atacante justo antes de poder completar su siniestro ritual."
+  },
+  {
+   "hablado": "Lejos de amedrentarse por el riesgo de ser capturado, el criminal se desplazó rápidamente hacia el corazón financiero de la ciudad. Su sed de violencia lo impulsó a buscar una segunda víctima a menos de una hora de distancia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking night shadow",
+    "otras": [
+     "person walking dark street",
+     "night walking feet"
+    ],
+    "descripcion": "La silueta de un hombre caminando a paso rápido por una calle oscura victoriana.",
+    "clip": "https://cdn.pixabay.com/video/2015/12/18/1694-149530466_large.mp4",
+    "clip_id": 1694,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/06/149612-797189100_large.mp4",
+      "clip_id": 149612
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/13/426-136184280_large.mp4",
+      "clip_id": 426
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/04/130211-748134196_large.mp4",
+      "clip_id": 130211
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Lejos de amedrentarse por el riesgo de ser capturado, el criminal se desplazó rápidamente hacia el corazón financiero de la ciudad. Su sed de violencia lo impulsó a buscar una segunda víctima a menos de una hora de distancia."
+  },
+  {
+   "hablado": "En la penumbra de Mitre Square, Catherine Eddowes se cruzó en el camino del asesino. En apenas unos minutos transcurridos entre dos patrullas policiales, la mujer perdió la vida en el ataque más feroz registrado hasta ese momento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old street clock night",
+    "otras": [
+     "vintage clock dark",
+     "city square night"
+    ],
+    "descripcion": "Un reloj antiguo de pared marcando el paso acelerado del tiempo en la oscuridad.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/23/201675-916080492_large.mp4",
+    "clip_id": 201675,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/09/44263-438612336_small.mp4",
+      "clip_id": 44263
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/26/267751_small.mp4",
+      "clip_id": 267751
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/04/276774_small.mp4",
+      "clip_id": 276774
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En la penumbra de Mitre Square, Catherine Eddowes se cruzó en el camino del asesino. En apenas unos minutos transcurridos entre dos patrullas policiales, la mujer perdió la vida en el ataque más feroz registrado hasta ese momento."
+  },
+  {
+   "hablado": "A pocas manzanas del lugar del crimen, los agentes encontraron la única pista material dejada por el ejecutor. Se trataba de un trozo del delantal de la víctima, manchado y abandonado a la entrada de un edificio de viviendas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police lantern dark street",
+    "otras": [
+     "detective searching night",
+     "flashlight dark wall"
+    ],
+    "descripcion": "La luz de una linterna examinando una pared de ladrillo vieja en un pasaje nocturno.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/12/131132-749689640_small.mp4",
+    "clip_id": 131132,
+    "extra": [],
+    "necesita": 16.1
+   },
+   "efecto": "polvo",
+   "subtitulo": "A pocas manzanas del lugar del crimen, los agentes encontraron la única pista material dejada por el ejecutor. Se trataba de un trozo del delantal de la víctima, manchado y abandonado a la entrada de un edificio de viviendas."
+  },
+  {
+   "hablado": "Justo encima del trozo de tela, una inscripción en tiza blanca sobre el ladrillo llamó la atención de los investigadores. El texto señalaba directamente a la comunidad judía del barrio como responsable de los males que aquejaban al East End.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mitre square map 1888",
+    "otras": [
+     "whitechapel map 1888",
+     "metropolitan police london 1888"
+    ],
+    "descripcion": "Mapa histórico policial del distrito de Whitechapel en mil ochocientos ochenta y ocho.",
+    "prompt": "Mapa histórico policial del distrito de Whitechapel en mil ochocientos ochenta y ocho.",
+    "clip": "https://cdn.pixabay.com/video/2018/09/23/18386-291585298_large.mp4",
+    "clip_id": 18386,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/10/27/53570-474597380_large.mp4",
+      "clip_id": 53570
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/12/271568_large.mp4",
+      "clip_id": 271568
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/01/214759_small.mp4",
+      "clip_id": 214759
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Justo encima del trozo de tela, una inscripción en tiza blanca sobre el ladrillo llamó la atención de los investigadores. El texto señalaba directamente a la comunidad judía del barrio como responsable de los males que aquejaban al East End."
+  },
+  {
+   "hablado": "Ante el temor de que la pintada desatara disturbios xenófobos en una zona al límite de la tensión social, el comisario Charles Warren tomó una decisión polémica. Ordenó borrar el mensaje antes de que pudiera ser fotografiado oficialmente.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "charles warren police commissioner",
+    "otras": [
+     "sir charles warren portrait",
+     "london police station 1888"
+    ],
+    "descripcion": "Retrato de época del comisario jefe Sir Charles Warren.",
+    "prompt": "Retrato de época del comisario jefe Sir Charles Warren.",
+    "clip": "https://cdn.pixabay.com/video/2021/06/29/79552-570031179_small.mp4",
+    "clip_id": 79552,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/10/158259-816359546_small.mp4",
+      "clip_id": 158259
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/09/1294-145131540_large.mp4",
+      "clip_id": 1294
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/20/45132-441301006_small.mp4",
+      "clip_id": 45132
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Ante el temor de que la pintada desatara disturbios xenófobos en una zona al límite de la tensión social, el comisario Charles Warren tomó una decisión polémica. Ordenó borrar el mensaje antes de que pudiera ser fotografiado oficialmente."
+  },
+  {
+   "hablado": "La destrucción de aquella prueba crucial generó intensos debates entre los mandos policiales. Mientras tanto, el pánico se apoderó de los vecinos de Londres, alimentando la desconfianza hacia los inmigrantes y sumiendo al barrio en una paranoia constante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage newspaper printing press",
+    "otras": [
+     "old paper archives",
+     "vintage crowd street"
+    ],
+    "descripcion": "Prensa antigua e impresos de periódicos victorianos archivados.",
+    "clip": "https://cdn.pixabay.com/video/2025/02/16/258707_medium.mp4",
+    "clip_id": 258707,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/12/127690-739144743_small.mp4",
+      "clip_id": 127690
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/13/47085-450120521_large.mp4",
+      "clip_id": 47085
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1023-142621257_large.mp4",
+      "clip_id": 1023
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La destrucción de aquella prueba crucial generó intensos debates entre los mandos policiales. Mientras tanto, el pánico se apoderó de los vecinos de Londres, alimentando la desconfianza hacia los inmigrantes y sumiendo al barrio en una paranoia constante."
+  },
+  {
+   "hablado": "El doble crimen demostró que el agresor actuaba con una audacia pasmosa y desafiaba abiertamente a las autoridades. La ciudad contenía la respiración sin saber que el asesino estaba a punto de enviar su mensaje más escalofriante a la prensa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "writing letter vintage desk",
+    "otras": [
+     "ink pen letter night",
+     "old letter vintage"
+    ],
+    "descripcion": "Una mano escribiendo con pluma de tinta roja sobre un papel antiguo a la luz de una vela.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/05/41146-428253129_large.mp4",
+    "clip_id": 41146,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/15/42154-431423229_large.mp4",
+      "clip_id": 42154
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/12/278421_large.mp4",
+      "clip_id": 278421
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/16139/16139-720.mp4",
+      "clip_id": "mixkit:16139",
+      "clip_ini": 0
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El doble crimen demostró que el agresor actuaba con una audacia pasmosa y desafiaba abiertamente a las autoridades. La ciudad contenía la respiración sin saber que el asesino estaba a punto de enviar su mensaje más escalofriante a la prensa."
+  },
+  {
+   "hablado": "El veintisiete de septiembre de mil ochocientos ochenta y ocho, la Agencia Central de Noticias de Londres recibió un sobre misterioso. En su interior figuraba una carta escrita con tinta roja y dirigida al mismísimo jefe de redacción.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Dear Boss letter Jack the Ripper",
+    "otras": [
+     "Dear Boss letter",
+     "Jack the Ripper letter"
+    ],
+    "descripcion": "Manuscrito original de la carta Dear Boss conservado en los archivos británicos.",
+    "prompt": "Manuscrito original de la carta Dear Boss conservado en los archivos británicos.",
+    "clip": "https://cdn.pixabay.com/video/2019/11/04/28699-371200545_large.mp4",
+    "clip_id": 28699,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110225-688187385_large.mp4",
+      "clip_id": 110225
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110227-688187398_large.mp4",
+      "clip_id": 110227
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110224-688187380_large.mp4",
+      "clip_id": 110224
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El veintisiete de septiembre de mil ochocientos ochenta y ocho, la Agencia Central de Noticias de Londres recibió un sobre misterioso. En su interior figuraba una carta escrita con tinta roja y dirigida al mismísimo jefe de redacción."
+  },
+  {
+   "hablado": "El remitente se atribuía los crímenes anteriores y prometía no detenerse hasta que lo atraparan. La misiva incluía una firma inquietante que pronto se convertiría en un mito universal de terror: Jack el Destripador.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "newspaper old printing press",
+    "otras": [
+     "vintage press",
+     "old newspaper print"
+    ],
+    "descripcion": "Prensa victoriana imprimiendo periódicos a gran velocidad en la época.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/04/109654-685086182_large.mp4",
+    "clip_id": 109654,
+    "extra": []
+   },
+   "efecto": "nada",
+   "subtitulo": "El remitente se atribuía los crímenes anteriores y prometía no detenerse hasta que lo atraparan. La misiva incluía una firma inquietante que pronto se convertiría en un mito universal de terror: Jack el Destripador."
+  },
+  {
+   "hablado": "Días más tarde llegó una postal adicional firmada por la misma entidad. En ella el autor prometía mutilar las orejas de su siguiente víctima, una amenaza directa que encajó aterradoramente con los hallazgos en la escena de Mitre Square.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark Victorian street night",
+    "otras": [
+     "london fog night",
+     "old street lantern"
+    ],
+    "descripcion": "Un pasaje victoriano estrecho sumido en la niebla y la penumbra nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/09/110257-688187486_small.mp4",
+    "clip_id": 110257,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/12/35839-408600481_large.mp4",
+      "clip_id": 35839
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/29/148500-794344004_small.mp4",
+      "clip_id": 148500
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/21/159908-820010934_small.mp4",
+      "clip_id": 159908
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Días más tarde llegó una postal adicional firmada por la misma entidad. En ella el autor prometía mutilar las orejas de su siguiente víctima, una amenaza directa que encajó aterradoramente con los hallazgos en la escena de Mitre Square."
+  },
+  {
+   "hablado": "Sin embargo, la correspondencia más escalofriante se envió en octubre al líder del comité de vigilancia local, George Lusk. El paquete venía acompañado de una pequeña caja de madera que contenía un fragmento congelado de un riñón humano.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "From Hell letter Jack the Ripper",
+    "otras": [
+     "From Hell letter",
+     "Lusk letter Ripper"
+    ],
+    "descripcion": "Fotografía histórica de la carta enviada desde el infierno recibida por George Lusk.",
+    "prompt": "Fotografía histórica de la carta enviada desde el infierno recibida por George Lusk.",
+    "clip": "https://cdn.pixabay.com/video/2022/04/02/112642-695204682_small.mp4",
+    "clip_id": 112642,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/30/40671-426220296_large.mp4",
+      "clip_id": 40671
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/11/9796-221163273_small.mp4",
+      "clip_id": 9796
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110229-688187410_large.mp4",
+      "clip_id": 110229
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, la correspondencia más escalofriante se envió en octubre al líder del comité de vigilancia local, George Lusk. El paquete venía acompañado de una pequeña caja de madera que contenía un fragmento congelado de un riñón humano."
+  },
+  {
+   "hablado": "La carta adjunta comenzaba con las palabras Desde el infierno y explicaba con fría crudeza cómo el remitente había extraído el órgano. Los médicos examinaron la muestra y confirmaron que padecía una patología idéntica a la de Catherine Eddowes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "magnifying glass document forensic",
+    "otras": [
+     "investigator retro desk",
+     "vintage paper examination"
+    ],
+    "descripcion": "Un investigador de época analizando documentos antiguos con una lupa de mano.",
+    "clip": "https://cdn.pixabay.com/video/2021/02/23/66121-516532113_large.mp4",
+    "clip_id": 66121,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/26/125503-733826762_small.mp4",
+      "clip_id": 125503
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La carta adjunta comenzaba con las palabras Desde el infierno y explicaba con fría crudeza cómo el remitente había extraído el órgano. Los médicos examinaron la muestra y confirmaron que padecía una patología idéntica a la de Catherine Eddowes."
+  },
+  {
+   "hablado": "En Scotland Yard cundió la discrepancia. Varios mandos policiales sostenían que se trataba de una broma macabra orquestada por periodistas sensacionalistas para disparar la venta de periódicos, una práctica habitual en la imprenta británica de finales de siglo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "detectives historical office discussion",
+    "otras": [
+     "vintage police station",
+     "old office men"
+    ],
+    "descripcion": "Oficiales y detectives británicos en una comisaría victoriana examinando los expedientes del caso.",
+    "clip": "https://cdn.pixabay.com/video/2021/09/27/89831-616463628_small.mp4",
+    "clip_id": 89831,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/09/180-135788610_large.mp4",
+      "clip_id": 180
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/31/137258-766326202_small.mp4",
+      "clip_id": 137258
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/31/137254-766326184_small.mp4",
+      "clip_id": 137254
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "En Scotland Yard cundió la discrepancia. Varios mandos policiales sostenían que se trataba de una broma macabra orquestada por periodistas sensacionalistas para disparar la venta de periódicos, una práctica habitual en la imprenta británica de finales de siglo."
+  },
+  {
+   "hablado": "No obstante, los análisis detallados sugerían que el responsable conocía de memoria los horarios de paso de las rondas nocturnas. El autor se movía por los pasajes oscuros como un espectro que dominaba los callejones de Whitechapel al milímetro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police lantern dark street night",
+    "otras": [
+     "night patrol vintage",
+     "old police street night"
+    ],
+    "descripcion": "Un patrullero decimonónico caminando con farol por un callejón iluminado levemente.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/20/131935-751934665_small.mp4",
+    "clip_id": 131935,
+    "extra": [],
+    "necesita": 17.3
+   },
+   "efecto": "niebla",
+   "subtitulo": "No obstante, los análisis detallados sugerían que el responsable conocía de memoria los horarios de paso de las rondas nocturnas. El autor se movía por los pasajes oscuros como un espectro que dominaba los callejones de Whitechapel al milímetro."
+  },
+  {
+   "hablado": "Con la prensa alimentando la histeria colectiva y las cartas inundando las comisarías, el misterioso redactor continuaba esquivando el cerco. Pero mientras Londres buscaba a un monstruo entre la multitud, la investigación policial se centraba silenciosamente en un barbero local.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage map pin investigator",
+    "otras": [
+     "old map pins detective",
+     "vintage street map"
+    ],
+    "descripcion": "Un plano histórico de Londres con marcas sobre las rutas de investigación.",
+    "clip": "https://cdn.pixabay.com/video/2022/05/12/116797-709204735_small.mp4",
+    "clip_id": 116797,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/07/38459-416330807_small.mp4",
+      "clip_id": 38459
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/11/30091-379047792_large.mp4",
+      "clip_id": 30091
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/12/370140_small.mp4",
+      "clip_id": 370140
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Con la prensa alimentando la histeria colectiva y las cartas inundando las comisarías, el misterioso redactor continuaba esquivando el cerco. Pero mientras Londres buscaba a un monstruo entre la multitud, la investigación policial se centraba silenciosamente en un barbero local."
+  },
+  {
+   "hablado": "Tras examinar cientos de pistas falsas y detener a sospechosos sin pruebas, los agentes de Scotland Yard comenzaron a vigilar de cerca a un joven inmigrante polaco llamado Aaron Kosminski, afincado en Whitechapel.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy night street",
+    "otras": [
+     "old alleyway night",
+     "vintage city street"
+    ],
+    "descripcion": "Una callejuela de época iluminada por farolas entre la niebla nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/03/187690-881035356_small.mp4",
+    "clip_id": 187690,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/10/35688-407595694_large.mp4",
+      "clip_id": 35688
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/25/136468-764399901_large.mp4",
+      "clip_id": 136468
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/02/122863-726391967_small.mp4",
+      "clip_id": 122863
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Tras examinar cientos de pistas falsas y detener a sospechosos sin pruebas, los agentes de Scotland Yard comenzaron a vigilar de cerca a un joven inmigrante polaco llamado Aaron Kosminski, afincado en Whitechapel."
+  },
+  {
+   "hablado": "Kosminski trabajaba como barbero en el corazón del distrito afectado. Su profesión le otorgaba un manejo hábil de instrumentos cortantes y un conocimiento minucioso de cada uno de los angostos pasajes del barrio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage barber shop",
+    "otras": [
+     "old barber chair",
+     "antique barber tools"
+    ],
+    "descripcion": "Herramientas de navaja y tijeras antiguas sobre una mesa de madera.",
+    "clip": "https://cdn.pixabay.com/video/2020/09/03/48968-459186304_large.mp4",
+    "clip_id": 48968,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/21/39767-423345461_large.mp4",
+      "clip_id": 39767
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/21/39763-423345444_large.mp4",
+      "clip_id": 39763
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/03/48969-459186305_large.mp4",
+      "clip_id": 48969
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Kosminski trabajaba como barbero en el corazón del distrito afectado. Su profesión le otorgaba un manejo hábil de instrumentos cortantes y un conocimiento minucioso de cada uno de los angostos pasajes del barrio."
+  },
+  {
+   "hablado": "Los informes de la época señalaban que el joven padecía graves trastornos mentales, alucinaciones auditivas y arrebatos violentos. Su comportamiento errático y su fijación por vagar de noche levantaron de inmediato las sospechas policiales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man walking night shadow",
+    "otras": [
+     "dark alley shadow",
+     "person walking fog"
+    ],
+    "descripcion": "La silueta de un hombre caminando de noche por un pasaje oscuro.",
+    "clip": "https://cdn.pixabay.com/video/2020/04/10/35585-407701414_large.mp4",
+    "clip_id": 35585,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/13/47086-450120544_small.mp4",
+      "clip_id": 47086
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/08/142-135737192_large.mp4",
+      "clip_id": 142
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/29/136915-765457789_large.mp4",
+      "clip_id": 136915
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los informes de la época señalaban que el joven padecía graves trastornos mentales, alucinaciones auditivas y arrebatos violentos. Su comportamiento errático y su fijación por vagar de noche levantaron de inmediato las sospechas policiales."
+  },
+  {
+   "hablado": "El jefe del Departamento de Investigación Criminal, Sir Robert Anderson, escribió años más tarde en sus memorias que la policía victoriana tenía la total certeza de haber descubierto la identidad real del peligroso atacante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Sir Robert Anderson",
+    "otras": [
+     "Robert Anderson Scotland Yard",
+     "Scotland Yard 1888"
+    ],
+    "descripcion": "Fotografía histórica de época de Sir Robert Anderson, jefe del Departamento de Investigación Criminal.",
+    "prompt": "Fotografía histórica de época de Sir Robert Anderson, jefe del Departamento de Investigación Criminal.",
+    "clip": "https://cdn.pixabay.com/video/2021/09/09/87884-602894619_small.mp4",
+    "clip_id": 87884,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/03/05/14815-258992063_large.mp4",
+      "clip_id": 14815
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/21/65903-515617562_small.mp4",
+      "clip_id": 65903
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/10/216134_small.mp4",
+      "clip_id": 216134
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El jefe del Departamento de Investigación Criminal, Sir Robert Anderson, escribió años más tarde en sus memorias que la policía victoriana tenía la total certeza de haber descubierto la identidad real del peligroso atacante."
+  },
+  {
+   "hablado": "Según los documentos oficiales de la jefatura, un testigo presencial identificó sin dudar a Kosminski en un careo policial. Sin embargo, el testigo se negó rotundamente a declarar ante un juez en un juicio formal.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "interrogation room shadows",
+    "otras": [
+     "courtroom gavel judge",
+     "police station desk"
+    ],
+    "descripcion": "Una mesa de madera iluminada en una tenue sala de comisaría de época.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/09/44283-438661755_large.mp4",
+    "clip_id": 44283,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/21/384171_small.mp4",
+      "clip_id": 384171
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Según los documentos oficiales de la jefatura, un testigo presencial identificó sin dudar a Kosminski en un careo policial. Sin embargo, el testigo se negó rotundamente a declarar ante un juez en un juicio formal."
+  },
+  {
+   "hablado": "Sin la declaración jurada de aquel testigo clave, las autoridades no podían procesar legalmente al barbero. Ante la falta de pruebas físicas concluyentes, se vieron obligados a mantener una estrecha vigilancia sobre sus movimientos diarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "detective writing desk vintage",
+    "otras": [
+     "police filing cabinet",
+     "old paper documents"
+    ],
+    "descripcion": "Manos de un investigador hojeando carpetas de expedientes policiales antiguos.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/03/141525-777930401_small.mp4",
+    "clip_id": 141525,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/07/145639-787248031_large.mp4",
+      "clip_id": 145639
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin la declaración jurada de aquel testigo clave, las autoridades no podían procesar legalmente al barbero. Ante la falta de pruebas físicas concluyentes, se vieron obligados a mantener una estrecha vigilancia sobre sus movimientos diarios."
+  },
+  {
+   "hablado": "Pocos meses después, la familia de Kosminski lo ingresó en el psiquiátrico de Colney Hatch debido a su grave deterioro mental. Allí permaneció encerrado el resto de su vida, coincidiendo con el cese definitivo de los ataques.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Colney Hatch Asylum",
+    "otras": [
+     "Colney Hatch Lunatic Asylum",
+     "vintage asylum building"
+    ],
+    "descripcion": "Fotografía de archivo del edificio victoriano del hospital psiquiátrico de Colney Hatch.",
+    "prompt": "Fotografía de archivo del edificio victoriano del hospital psiquiátrico de Colney Hatch.",
+    "clip": "https://cdn.pixabay.com/video/2022/09/17/131645-750753097_large.mp4",
+    "clip_id": 131645,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/24/2243-156683815_medium.mp4",
+      "clip_id": 2243
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/08/12/25993-353764180_large.mp4",
+      "clip_id": 25993
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/01/76034-557904725_small.mp4",
+      "clip_id": 76034
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Pocos meses después, la familia de Kosminski lo ingresó en el psiquiátrico de Colney Hatch debido a su grave deterioro mental. Allí permaneció encerrado el resto de su vida, coincidiendo con el cese definitivo de los ataques."
+  },
+  {
+   "hablado": "Con Kosminski recluido tras los muros del asilo, muchos mandos policiales dieron por cerrado el caso en secreto. Sin embargo, en las calles de Londres comenzaban a emerger otros nombres con motivos igual de oscuros.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy street night lantern",
+    "otras": [
+     "vintage map pin case",
+     "old city night rain"
+    ],
+    "descripcion": "Una calle victoriana envuelta en bruma mientras parpadea una tenue farola.",
+    "clip": "https://cdn.pixabay.com/video/2023/01/31/148811-794599499_small.mp4",
+    "clip_id": 148811,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/04/29808-377520751_large.mp4",
+      "clip_id": 29808
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/24/164339-830461201_small.mp4",
+      "clip_id": 164339
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/04/215246_large.mp4",
+      "clip_id": 215246
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Con Kosminski recluido tras los muros del asilo, muchos mandos policiales dieron por cerrado el caso en secreto. Sin embargo, en las calles de Londres comenzaban a emerger otros nombres con motivos igual de oscuros."
+  },
+  {
+   "hablado": "Scotland Yard no lograba frenar la histeria colectiva mientras los forenses insistían en una inquietante hipótesis. La rapidez y destreza de los cortes sugerían que el autor poseía conocimientos avanzados de anatomía humana o experiencia como matarife profesional.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage medical tools",
+    "otras": [
+     "antique surgery instruments",
+     "old forensic lab"
+    ],
+    "descripcion": "Primer plano de instrumental médico antiguo sobre una mesa de madera oscura iluminada tenuemente.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/18/143434-782373973_large.mp4",
+    "clip_id": 143434,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/13/49808-458438856_large.mp4",
+      "clip_id": 49808
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/31/34684-403408155_large.mp4",
+      "clip_id": 34684
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/01/37797-415200683_large.mp4",
+      "clip_id": 37797
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Scotland Yard no lograba frenar la histeria colectiva mientras los forenses insistían en una inquietante hipótesis. La rapidez y destreza de los cortes sugerían que el autor poseía conocimientos avanzados de anatomía humana o experiencia como matarife profesional."
+  },
+  {
+   "hablado": "Aquella teoría quirúrgica alimentó de inmediato rumores que apuntaban hacia las élites victorianas. Entre las especulaciones más sonadas surgió la figura de sir William Gull, médico personal de la reina Victoria, acusado por tabloides de encubrir un escándalo de la nobleza.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Sir William Gull",
+    "otras": [
+     "William Withey Gull portrait",
+     "Sir William Gull photograph"
+    ],
+    "descripcion": "Retrato fotográfico histórico de época de sir William Gull en tonos sepia.",
+    "prompt": "Retrato fotográfico histórico de época de sir William Gull en tonos sepia.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/28/191159-889246512_small.mp4",
+    "clip_id": 191159,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/04/174537-851792497_small.mp4",
+      "clip_id": 174537
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/10/107293-676158749_small.mp4",
+      "clip_id": 107293
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/09/95231-644716952_large.mp4",
+      "clip_id": 95231
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Aquella teoría quirúrgica alimentó de inmediato rumores que apuntaban hacia las élites victorianas. Entre las especulaciones más sonadas surgió la figura de sir William Gull, médico personal de la reina Victoria, acusado por tabloides de encubrir un escándalo de la nobleza."
+  },
+  {
+   "hablado": "Sin embargo, las pesquisas policiales descartaron rápidamente al médico de palacio. Gull tenía más de setenta años y había sufrido recientemente un severo derrame cerebral que le impedía moverse con soltura por los angostos y peligrosos callejones de la ciudad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night street fog",
+    "otras": [
+     "vintage street lantern",
+     "dark alley night"
+    ],
+    "descripcion": "Un farol antiguo iluminando débilmente una calle adoquinada solitaria envuelta en densa niebla nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2019/10/16/27999-366978301_large.mp4",
+    "clip_id": 27999,
+    "extra": [],
+    "necesita": 18.0
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, las pesquisas policiales descartaron rápidamente al médico de palacio. Gull tenía más de setenta años y había sufrido recientemente un severo derrame cerebral que le impedía moverse con soltura por los angostos y peligrosos callejones de la ciudad."
+  },
+  {
+   "hablado": "El verdadero interés de Scotland Yard viró hacia un excéntrico visitante extranjero llamado Francis Tumblety. Este curandero estadounidense acumulaba arrestos previos por prácticas médicas dudosas y mostraba un odio visceral documentado hacia las mujeres más vulnerables de la sociedad londinense.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Francis Tumblety",
+    "otras": [
+     "Francis Tumblety portrait",
+     "Francis Tumblety arrest photo"
+    ],
+    "descripcion": "Fotografía histórica de archivo policial del doctor y sospechoso Francis Tumblety.",
+    "prompt": "Fotografía histórica de archivo policial del doctor y sospechoso Francis Tumblety.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/04/41101-427876217_medium.mp4",
+    "clip_id": 41101,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/14/285871_small.mp4",
+      "clip_id": 285871
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/13/47098-452600642_large.mp4",
+      "clip_id": 47098
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/27/275172_small.mp4",
+      "clip_id": 275172
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El verdadero interés de Scotland Yard viró hacia un excéntrico visitante extranjero llamado Francis Tumblety. Este curandero estadounidense acumulaba arrestos previos por prácticas médicas dudosas y mostraba un odio visceral documentado hacia las mujeres más vulnerables de la sociedad londinense."
+  },
+  {
+   "hablado": "Detenido como sospechoso en noviembre de mil ochocientos ochenta y ocho, Tumblety logró pagar una elevada fianza antes de ser formalmente acusado. Aprovechó su libertad provisional para escapar hacia Francia con pasaporte falso y abordar un barco de regreso a Nueva York.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "port ship night",
+    "otras": [
+     "vintage ship ocean",
+     "foggy harbor night"
+    ],
+    "descripcion": "Un gran navío de vapor de época atracado en un muelle nocturno rodeado de bruma marina.",
+    "clip": "https://cdn.pixabay.com/video/2024/03/01/202560-918431383_small.mp4",
+    "clip_id": 202560,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/13/264433_small.mp4",
+      "clip_id": 264433
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/02/06/333041_small.mp4",
+      "clip_id": 333041
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/12/4386-178708063_large.mp4",
+      "clip_id": 4386
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Detenido como sospechoso en noviembre de mil ochocientos ochenta y ocho, Tumblety logró pagar una elevada fianza antes de ser formalmente acusado. Aprovechó su libertad provisional para escapar hacia Francia con pasaporte falso y abordar un barco de regreso a Nueva York."
+  },
+  {
+   "hablado": "La policía de Nueva York vigiló sus pasos de cerca a petición británica, pero jamás hallaron pruebas directas que lo vincularan con los crímenes de Whitechapel. Las pistas internacionales se enfriaban mientras las teorías conspirativas continuaban multiplicándose en la prensa popular.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old newspaper archive",
+    "otras": [
+     "vintage detective desk",
+     "old documents turning"
+    ],
+    "descripcion": "Manos hojeando páginas amarillentas de periódicos antiguos y expedientes en un escritorio de madera.",
+    "clip": "https://cdn.pixabay.com/video/2026/09/22/378093_large.mp4",
+    "clip_id": 378093,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/08/133-135736917_large.mp4",
+      "clip_id": 133
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/04/22/8821-215617442_large.mp4",
+      "clip_id": 8821
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La policía de Nueva York vigiló sus pasos de cerca a petición británica, pero jamás hallaron pruebas directas que lo vincularan con los crímenes de Whitechapel. Las pistas internacionales se enfriaban mientras las teorías conspirativas continuaban multiplicándose en la prensa popular."
+  },
+  {
+   "hablado": "El año mil ochocientos ochenta y ocho llegaba a su fin entre dimisiones en la cúpula policial y una indignación vecinal creciente. Cientos de sospechosos habían sido interrogados sin éxito y las pesquisas oficiales entraron en un frustrante callejón sin salida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cobblestone street",
+    "otras": [
+     "vintage alley shadow",
+     "empty historic street"
+    ],
+    "descripcion": "Plano estático de un callejón estrecho de adoquines húmedos en penumbra con siluetas difusas al fondo.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/26/218358_small.mp4",
+    "clip_id": 218358,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/31/48686-454879693_large.mp4",
+      "clip_id": 48686
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/23/28205-368763914_large.mp4",
+      "clip_id": 28205
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/29/51130-463106372_large.mp4",
+      "clip_id": 51130
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El año mil ochocientos ochenta y ocho llegaba a su fin entre dimisiones en la cúpula policial y una indignación vecinal creciente. Cientos de sospechosos habían sido interrogados sin éxito y las pesquisas oficiales entraron en un frustrante callejón sin salida."
+  },
+  {
+   "hablado": "La leyenda del asesino parecía condenada al olvido de los archivos cerrados. Pero un inspector guardó discretamente una prenda manchada recogida en el pavimento de Mitre Square, ignorando que más de un siglo después guardaría la clave definitiva.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage police evidence",
+    "otras": [
+     "antique wooden box",
+     "old paper case file"
+    ],
+    "descripcion": "Una caja de madera envejecida abriéndose lentamente para mostrar paquetes y telas antiguas en su interior.",
+    "clip": "https://cdn.pixabay.com/video/2021/11/05/94690-643084377_large.mp4",
+    "clip_id": 94690,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/22/143884-784164219_small.mp4",
+      "clip_id": 143884
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/19/65672-515351571_large.mp4",
+      "clip_id": 65672
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/04/13/8686-213189350_large.mp4",
+      "clip_id": 8686
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La leyenda del asesino parecía condenada al olvido de los archivos cerrados. Pero un inspector guardó discretamente una prenda manchada recogida en el pavimento de Mitre Square, ignorando que más de un siglo después guardaría la clave definitiva."
+  },
+  {
+   "hablado": "Aquella prenda de seda con motivos florales perteneció al sargento Amos Simpson, quien la recogió aquella madrugada en Mitre Square. La reliquia textil permaneció guardada en una caja oscura durante más de un siglo, pasando de generación en generación familiar intacta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage wooden chest",
+    "otras": [
+     "old wooden box",
+     "vintage wardrobe"
+    ],
+    "descripcion": "Un arcón antiguo de madera cerrado en una habitación tenue y solitaria.",
+    "clip": "https://cdn.pixabay.com/video/2023/08/24/177474-857714980_large.mp4",
+    "clip_id": 177474,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/30/3323-168690009_large.mp4",
+      "clip_id": 3323
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/09/153914-806526851_large.mp4",
+      "clip_id": 153914
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/01/14/20681-311357919_small.mp4",
+      "clip_id": 20681
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquella prenda de seda con motivos florales perteneció al sargento Amos Simpson, quien la recogió aquella madrugada en Mitre Square. La reliquia textil permaneció guardada en una caja oscura durante más de un siglo, pasando de generación en generación familiar intacta."
+  },
+  {
+   "hablado": "En el año dos mil siete, el chal salió a subasta pública en una conocida casa británica. El empresario e investigador Russell Edwards decidió pujar sin dudarlo, convencido de que aquel tejido gastado custodiaba la única evidencia biológica directa jamás recuperada del asesino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "auction gavel wooden hammer",
+    "otras": [
+     "auctioneer room",
+     "antique auction"
+    ],
+    "descripcion": "Un mazo de subastas de madera reposando en una mesa noble de remates.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/22/34108-400233503_large.mp4",
+    "clip_id": 34108,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/05/31983-389724750_large.mp4",
+      "clip_id": 31983
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/30/2004-153661847_large.mp4",
+      "clip_id": 2004
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/09/119775-718927454_small.mp4",
+      "clip_id": 119775
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En el año dos mil siete, el chal salió a subasta pública en una conocida casa británica. El empresario e investigador Russell Edwards decidió pujar sin dudarlo, convencido de que aquel tejido gastado custodiaba la única evidencia biológica directa jamás recuperada del asesino."
+  },
+  {
+   "hablado": "La tela presentaba un estado frágil y descolorido por el paso de las décadas, pero los descendientes del policía aseguraron que jamás se había lavado. Ese detalle crucial convertía a la pieza en un archivo forense involuntario preservado desde finales del siglo diecinueve.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old fabric textile vintage",
+    "otras": [
+     "antique textile close up",
+     "sewing vintage cloth"
+    ],
+    "descripcion": "Primer plano de una tela antigua con texturas gastadas y fibras desgastadas.",
+    "clip": "https://cdn.pixabay.com/video/2017/05/29/9397-219552666_large.mp4",
+    "clip_id": 9397,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/15/36042-409042544_large.mp4",
+      "clip_id": 36042
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/04/262484_small.mp4",
+      "clip_id": 262484
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/04/262468_small.mp4",
+      "clip_id": 262468
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La tela presentaba un estado frágil y descolorido por el paso de las décadas, pero los descendientes del policía aseguraron que jamás se había lavado. Ese detalle crucial convertía a la pieza en un archivo forense involuntario preservado desde finales del siglo diecinueve."
+  },
+  {
+   "hablado": "Edwards decidió buscar el respaldo de la ciencia moderna y acudió a la Universidad de Liverpool. Allí contactó con el doctor Jari Louhelainen, un reputado especialista en análisis genético forense habituado a trabajar con restos biológicos sumamente antiguos y degradados en crímenes históricos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist laboratory microscope",
+    "otras": [
+     "forensic lab scientist",
+     "laboratory research working"
+    ],
+    "descripcion": "Un científico en laboratorio observando muestras a través de un microscopio óptico.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/11/216232_small.mp4",
+    "clip_id": 216232,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/11/216233_small.mp4",
+      "clip_id": 216233
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/07/12/81240-576082907_small.mp4",
+      "clip_id": 81240
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/16/74255-551669388_large.mp4",
+      "clip_id": 74255
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Edwards decidió buscar el respaldo de la ciencia moderna y acudió a la Universidad de Liverpool. Allí contactó con el doctor Jari Louhelainen, un reputado especialista en análisis genético forense habituado a trabajar con restos biológicos sumamente antiguos y degradados en crímenes históricos."
+  },
+  {
+   "hablado": "El genetista examinó minuciosamente el chal en un entorno completamente estéril para evitar cualquier tipo de contaminación cruzada. A simple vista, el paño solo mostraba zonas oscurecidas por la humedad y el desgaste propio de más de ciento veinte años de encierro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "forensic scientist glove examining",
+    "otras": [
+     "gloved hands laboratory",
+     "microbiology scientist work"
+    ],
+    "descripcion": "Manos con guantes quirúrgicos manipulando con pinzas una muestra sobre una bandeja estéril.",
+    "clip": "https://cdn.pixabay.com/video/2024/06/11/216230_small.mp4",
+    "clip_id": 216230,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/11/29/6594-193729503_large.mp4",
+      "clip_id": 6594
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/27/1408-147169812_medium.mp4",
+      "clip_id": 1408
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/31/28541-370317179_large.mp4",
+      "clip_id": 28541
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El genetista examinó minuciosamente el chal en un entorno completamente estéril para evitar cualquier tipo de contaminación cruzada. A simple vista, el paño solo mostraba zonas oscurecidas por la humedad y el desgaste propio de más de ciento veinte años de encierro."
+  },
+  {
+   "hablado": "Para revelar lo invisible, el equipo universitario empleó una cámara de alta sensibilidad y luces ultravioleta especiales. Bajo la radiación forense, el tejido reveló un mapa inesperado de manchas residuales que habían quedado fijadas en las fibras de seda sin alterarse durante décadas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ultraviolet light forensic lab",
+    "otras": [
+     "uv light inspection",
+     "dark laboratory blue light"
+    ],
+    "descripcion": "Luz ultravioleta iluminando superficies en una habitación oscura de laboratorio forense.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/20/227567_large.mp4",
+    "clip_id": 227567,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/27/228447_small.mp4",
+      "clip_id": 228447
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/17/370958_small.mp4",
+      "clip_id": 370958
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/22/4753-179739298_large.mp4",
+      "clip_id": 4753
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para revelar lo invisible, el equipo universitario empleó una cámara de alta sensibilidad y luces ultravioleta especiales. Bajo la radiación forense, el tejido reveló un mapa inesperado de manchas residuales que habían quedado fijadas en las fibras de seda sin alterarse durante décadas."
+  },
+  {
+   "hablado": "El análisis óptico diferenció claramente dos tipos de fluidos biológicos incrustados en extremos opuestos del chal victoriano. Una de las marcas coincidía morfológicamente con salpicaduras arteriales, mientras que la otra correspondía a secreciones corporales de naturaleza muy distinta y evidente origen masculino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "forensic investigation magnifier",
+    "otras": [
+     "laboratory test tubes",
+     "dna research scientist"
+    ],
+    "descripcion": "Investigador forense iluminando indicios sobre una superficie de trabajo científica.",
+    "clip": "https://cdn.pixabay.com/video/2021/06/03/76396-559159185_small.mp4",
+    "clip_id": 76396,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/31/63680-507811716_large.mp4",
+      "clip_id": 63680
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/05/02/161382-823146855_medium.mp4",
+      "clip_id": 161382
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/01/02/1807-150669665_medium.mp4",
+      "clip_id": 1807
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El análisis óptico diferenció claramente dos tipos de fluidos biológicos incrustados en extremos opuestos del chal victoriano. Una de las marcas coincidía morfológicamente con salpicaduras arteriales, mientras que la otra correspondía a secreciones corporales de naturaleza muy distinta y evidente origen masculino."
+  },
+  {
+   "hablado": "Aquel hallazgo microscópico confirmaba que la prenda contenía material suficiente para emprender una extracción genética revolucionaria. La ciencia estaba a punto de comparar aquellos rastros con las familias de las víctimas y de los principales sospechosos, pero el veredicto final desataría una intensa controversia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist writing laboratory notes",
+    "otras": [
+     "scientist examining tubes",
+     "forensic report archive"
+    ],
+    "descripcion": "Un especialista completando un informe técnico en un cuaderno junto a tubos de ensayo.",
+    "clip": "https://cdn.pixabay.com/video/2018/12/18/20122-307163959_large.mp4",
+    "clip_id": 20122,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/25/213617_small.mp4",
+      "clip_id": 213617
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/12/73977-549736324_small.mp4",
+      "clip_id": 73977
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/23/31511-387662243_large.mp4",
+      "clip_id": 31511
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Aquel hallazgo microscópico confirmaba que la prenda contenía material suficiente para emprender una extracción genética revolucionaria. La ciencia estaba a punto de comparar aquellos rastros con las familias de las víctimas y de los principales sospechosos, pero el veredicto final desataría una intensa controversia."
+  },
+  {
+   "hablado": "El equipo del doctor Louhelainen comenzó aislando el material genético de las manchas de sangre de la prenda. Esta información biológica se transmite únicamente por vía materna, permitiendo rastrear linajes familiares sin sufrir la degradación habitual de los núcleos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "scientist using microscope",
+    "otras": [
+     "laboratory research science",
+     "forensic lab worker"
+    ],
+    "descripcion": "Un científico en laboratorio observando muestras a través de un microscopio de alta precisión.",
+    "clip": "https://cdn.pixabay.com/video/2019/10/31/28542-370317168_large.mp4",
+    "clip_id": 28542,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/27/129288-743827388_large.mp4",
+      "clip_id": 129288
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/12/38920-418897662_large.mp4",
+      "clip_id": 38920
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/01/202559-918431373_small.mp4",
+      "clip_id": 202559
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El equipo del doctor Louhelainen comenzó aislando el material genético de las manchas de sangre de la prenda. Esta información biológica se transmite únicamente por vía materna, permitiendo rastrear linajes familiares sin sufrir la degradación habitual de los núcleos."
+  },
+  {
+   "hablado": "Para confirmar la autenticidad del tejido, los científicos contactaron con una descendiente directa por línea materna de Catherine Eddowes. La comparación de los códigos biológicos fue absoluta y demostró que la prenda perteneció a la víctima asesinada en septiembre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dna strand analysis",
+    "otras": [
+     "science laboratory data",
+     "medical research lab"
+    ],
+    "descripcion": "Gráficos de cadenas de código genético y análisis de datos en la pantalla de una computadora de laboratorio.",
+    "clip": "https://cdn.pixabay.com/video/2020/07/13/44580-439940185_small.mp4",
+    "clip_id": 44580,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/15/135034-760686192_large.mp4",
+      "clip_id": 135034
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/25/168754-839542573_small.mp4",
+      "clip_id": 168754
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/26/349089_small.mp4",
+      "clip_id": 349089
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para confirmar la autenticidad del tejido, los científicos contactaron con una descendiente directa por línea materna de Catherine Eddowes. La comparación de los códigos biológicos fue absoluta y demostró que la prenda perteneció a la víctima asesinada en septiembre."
+  },
+  {
+   "hablado": "El verdadero hito de la investigación llegó al examinar otra zona del chal donde descubrieron restos biológicos masculinos. Tras extraer el perfil genético con técnicas forenses avanzadas, el laboratorio buscaba una coincidencia clave entre los antiguos sospechosos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "forensic evidence lab",
+    "otras": [
+     "investigator checking evidence",
+     "police lab work"
+    ],
+    "descripcion": "Manos con guantes manipulando muestras biológicas cuidadosamente en una mesa de laboratorio forense.",
+    "clip": "https://cdn.pixabay.com/video/2016/08/11/4372-178617297_large.mp4",
+    "clip_id": 4372,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/20/266082_large.mp4",
+      "clip_id": 266082
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/03/2976-165189401_large.mp4",
+      "clip_id": 2976
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/30/69527-531102357_large.mp4",
+      "clip_id": 69527
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El verdadero hito de la investigación llegó al examinar otra zona del chal donde descubrieron restos biológicos masculinos. Tras extraer el perfil genético con técnicas forenses avanzadas, el laboratorio buscaba una coincidencia clave entre los antiguos sospechosos."
+  },
+  {
+   "hablado": "El genetista localizó a una pariente viva de la hermana de Aaron Kosminski, el barbero polaco señalado por la policía británica. Tras obtener voluntariamente una muestra biológica, el equipo científico procedió a secuenciar la línea materna del sospechoso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Aaron Kosminski",
+    "otras": [
+     "Whitechapel suspects police records",
+     "Scotland Yard archives 1888"
+    ],
+    "descripcion": "Fotografía o documento de archivo histórico relacionado con los sospechosos e investigaciones de Whitechapel.",
+    "prompt": "Fotografía o documento de archivo histórico relacionado con los sospechosos e investigaciones de Whitechapel.",
+    "clip": "https://cdn.pixabay.com/video/2019/11/06/28766-372045645_large.mp4",
+    "clip_id": 28766,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/02/16/65387-514139032_small.mp4",
+      "clip_id": 65387
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/26/140595-775389299_small.mp4",
+      "clip_id": 140595
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/03/08/8255-207598607_large.mp4",
+      "clip_id": 8255
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "El genetista localizó a una pariente viva de la hermana de Aaron Kosminski, el barbero polaco señalado por la policía británica. Tras obtener voluntariamente una muestra biológica, el equipo científico procedió a secuenciar la línea materna del sospechoso."
+  },
+  {
+   "hablado": "El resultado del análisis en el año dos mil catorce causó conmoción en la comunidad investigadora. Las secuencias del rastro biológico hallado en la prenda coincidían perfectamente con el perfil de la descendiente directa del barbero polaco residente en Whitechapel.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old documents archives",
+    "otras": [
+     "historical criminal records",
+     "detective board research"
+    ],
+    "descripcion": "Manos examinando antiguos expedientes policiales e informes sobre una mesa cubierta de carpetas.",
+    "clip": "https://cdn.pixabay.com/video/2023/04/15/159030-818026301_large.mp4",
+    "clip_id": 159030,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/10/138511-769988047_small.mp4",
+      "clip_id": 138511
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/05/35124-404782768_large.mp4",
+      "clip_id": 35124
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/21/19459-303877310_large.mp4",
+      "clip_id": 19459
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El resultado del análisis en el año dos mil catorce causó conmoción en la comunidad investigadora. Las secuencias del rastro biológico hallado en la prenda coincidían perfectamente con el perfil de la descendiente directa del barbero polaco residente en Whitechapel."
+  },
+  {
+   "hablado": "Una prestigiosa revista de ciencias forenses publicó los resultados completos cinco años después. La evidencia de laboratorio parecía cerrar el misterio más famoso de la historia, situando formalmente al sospechoso en la escena exacta de aquel trágico crimen.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "typing on typewriter",
+    "otras": [
+     "writing report desk",
+     "newspaper printing press"
+    ],
+    "descripcion": "Primer plano de una persona redactando un informe técnico detallado sobre papel en una mesa de trabajo.",
+    "clip": "https://upload.wikimedia.org/wikipedia/commons/2/23/Collections_in_Motion-_Valentine_Typewriter.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "clip_id": "wc:File:Collections in Motion- Valentine Typewriter.webm",
+    "clip_ini": 1,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/06/137902-767780878_large.mp4",
+      "clip_id": 137902
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/13/38959-420224579_large.mp4",
+      "clip_id": 38959
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/01/04/13695-250154042_large.mp4",
+      "clip_id": 13695
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Una prestigiosa revista de ciencias forenses publicó los resultados completos cinco años después. La evidencia de laboratorio parecía cerrar el misterio más famoso de la historia, situando formalmente al sospechoso en la escena exacta de aquel trágico crimen."
+  },
+  {
+   "hablado": "Los gráficos del estudio demostraban que la probabilidad matemática de una coincidencia fortuita era extremadamente baja. Para muchos criminólogos e historiadores, la prueba aportaba la certeza definitiva que las autoridades victorianas jamás pudieron conseguir en el pasado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "data charts research",
+    "otras": [
+     "screen showing graphs",
+     "laboratory analytics"
+    ],
+    "descripcion": "Gráficos de barras y comparativas estadísticas mostrados digitalmente en una pantalla de investigación.",
+    "clip": "https://cdn.pixabay.com/video/2018/05/16/16261-270577517_large.mp4",
+    "clip_id": 16261,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/26/349091_small.mp4",
+      "clip_id": 349091
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/09/22704-329952760_small.mp4",
+      "clip_id": 22704
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/20/22134-325481668_large.mp4",
+      "clip_id": 22134
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los gráficos del estudio demostraban que la probabilidad matemática de una coincidencia fortuita era extremadamente baja. Para muchos criminólogos e historiadores, la prueba aportaba la certeza definitiva que las autoridades victorianas jamás pudieron conseguir en el pasado."
+  },
+  {
+   "hablado": "Parecía que la ciencia del siglo veintiuno había resuelto por fin el mayor enigma histórico. Sin embargo, cuando las conclusiones alcanzaron al ámbito académico internacional, surgieron serias dudas sobre la metodología empleada y la posible contaminación de la tela.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old fabric microscope",
+    "otras": [
+     "textile inspection lab",
+     "old cloth close up"
+    ],
+    "descripcion": "Plano detalle de la textura desgastada de un tejido antiguo bajo la luz tenue de inspección.",
+    "clip": "https://cdn.pixabay.com/video/2017/05/29/9398-219552669_large.mp4",
+    "clip_id": 9398,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/19/212557_small.mp4",
+      "clip_id": 212557
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129409-744385400_small.mp4",
+      "clip_id": 129409
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129403-744385395_small.mp4",
+      "clip_id": 129403
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Parecía que la ciencia del siglo veintiuno había resuelto por fin el mayor enigma histórico. Sin embargo, cuando las conclusiones alcanzaron al ámbito académico internacional, surgieron serias dudas sobre la metodología empleada y la posible contaminación de la tela."
+  },
+  {
+   "hablado": "Los expertos genetistas apuntaban a una contaminación cruzada debido a los más de cien años que el tejido pasó de mano en mano sin un protocolo forense estricto. La prenda había sido exhibida y tocada antes del análisis.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "historic library archive books",
+    "otras": [
+     "old books museum",
+     "vintage archive room"
+    ],
+    "descripcion": "Estanterías de una biblioteca antigua con archivos históricos polvorientos.",
+    "clip": "https://cdn.pixabay.com/video/2022/10/20/135736-764361732_large.mp4",
+    "clip_id": 135736,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/26/140591-775389284_small.mp4",
+      "clip_id": 140591
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/27/122231-724743698_small.mp4",
+      "clip_id": 122231
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/27/122230-724743694_small.mp4",
+      "clip_id": 122230
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los expertos genetistas apuntaban a una contaminación cruzada debido a los más de cien años que el tejido pasó de mano en mano sin un protocolo forense estricto. La prenda había sido exhibida y tocada antes del análisis."
+  },
+  {
+   "hablado": "A pesar de las críticas académicas, los defensores de la prueba recuerdan que la coincidencia genética con la línea materna del barbero polaco no es una casualidad que pueda descartarse fácilmente en una investigación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "science laboratory microscope research",
+    "otras": [
+     "scientific research lab",
+     "DNA analysis modern"
+    ],
+    "descripcion": "Laboratorio científico moderno con equipos de análisis de ADN y pantallas.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/10/127428-738466669_small.mp4",
+    "clip_id": 127428,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/14/47140-450995612_small.mp4",
+      "clip_id": 47140
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/02/01/106340-672600365_large.mp4",
+      "clip_id": 106340
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/16/21471-318172523_large.mp4",
+      "clip_id": 21471
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "A pesar de las críticas académicas, los defensores de la prueba recuerdan que la coincidencia genética con la línea materna del barbero polaco no es una casualidad que pueda descartarse fácilmente en una investigación."
+  },
+  {
+   "hablado": "Aaron Kosminski siempre cumplió con el perfil geográfico y psicológico trazado por los investigadores victorianos que patrullaban las oscuras y peligrosas calles del distrito londinense en aquel otoño sangriento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "london street night fog",
+    "otras": [
+     "victorian london alley",
+     "dark rainy street"
+    ],
+    "descripcion": "Calle oscura y brumosa de una ciudad antigua iluminada por farolas.",
+    "clip": "https://cdn.pixabay.com/video/2019/09/19/27025-361798595_large.mp4",
+    "clip_id": 27025,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/04/28693-371200532_large.mp4",
+      "clip_id": 28693
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/06/23/287386_small.mp4",
+      "clip_id": 287386
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272514_small.mp4",
+      "clip_id": 272514
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Aaron Kosminski siempre cumplió con el perfil geográfico y psicológico trazado por los investigadores victorianos que patrullaban las oscuras y peligrosas calles del distrito londinense en aquel otoño sangriento."
+  },
+  {
+   "hablado": "La figura del asesino anónimo se convirtió con el paso de las décadas en el símbolo definitivo de las limitaciones tecnológicas y policiales de una época que no disponía de las herramientas actuales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage typewriter writing",
+    "otras": [
+     "old documents paperwork",
+     "historic newspaper archive"
+    ],
+    "descripcion": "Una máquina de escribir antigua sobre un escritorio de madera con documentos.",
+    "clip": "https://cdn.pixabay.com/video/2022/02/26/108946-683077028_large.mp4",
+    "clip_id": 108946,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/12/211662_small.mp4",
+      "clip_id": 211662
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/08/230332_small.mp4",
+      "clip_id": 230332
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/08/134065-758552308_large.mp4",
+      "clip_id": 134065
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La figura del asesino anónimo se convirtió con el paso de las décadas en el símbolo definitivo de las limitaciones tecnológicas y policiales de una época que no disponía de las herramientas actuales."
+  },
+  {
+   "hablado": "Los errores cometidos en las primeras horas de cada inspección ocular condenaron al departamento a buscar durante generaciones a una sombra que quizás tuvieron demasiado cerca y no pudieron detener a tiempo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police investigation office dark",
+    "otras": [
+     "detective office file",
+     "vintage police station"
+    ],
+    "descripcion": "Despacho policial antiguo con expedientes y carpetas sobre la mesa.",
+    "clip": "https://cdn.pixabay.com/video/2024/09/06/230083_large.mp4",
+    "clip_id": 230083,
+    "extra": [],
+    "necesita": 12.7
+   },
+   "efecto": "nada",
+   "subtitulo": "Los errores cometidos en las primeras horas de cada inspección ocular condenaron al departamento a buscar durante generaciones a una sombra que quizás tuvieron demasiado cerca y no pudieron detener a tiempo."
+  },
+  {
+   "hablado": "Hoy en día, el enigma de Whitechapel nos recuerda que incluso los misterios más analizados de la historia criminal pueden rozar la verdad absoluta sin llegar a cerrarse por completo en los tribunales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old clock ticking time",
+    "otras": [
+     "vintage pocket watch",
+     "historic clock tower"
+    ],
+    "descripcion": "Un reloj antiguo marcando el paso del tiempo en una habitación oscura.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/22/201528-915698783_small.mp4",
+    "clip_id": 201528,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/23/39863-425400884_small.mp4",
+      "clip_id": 39863
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/19/85658-591840696_small.mp4",
+      "clip_id": 85658
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/12/158531-816999767_small.mp4",
+      "clip_id": 158531
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hoy en día, el enigma de Whitechapel nos recuerda que incluso los misterios más analizados de la historia criminal pueden rozar la verdad absoluta sin llegar a cerrarse por completo en los tribunales."
+  },
+  {
+   "hablado": "La leyenda del hombre del cuchillo sigue viva en la memoria colectiva, demostrando que el miedo que sembró en las calles victorianas trasciende los siglos y continúa fascinando a investigadores de todo el mundo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "london old bridge fog",
+    "otras": [
+     "historic city at night",
+     "dark river water bridge"
+    ],
+    "descripcion": "Puente antiguo sobre un río bajo la niebla nocturna.",
+    "clip": "https://cdn.pixabay.com/video/2018/02/09/14205-255658030_large.mp4",
+    "clip_id": 14205,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/12/7260-199191197_large.mp4",
+      "clip_id": 7260
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/19/328725_small.mp4",
+      "clip_id": 328725
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/17/272517_small.mp4",
+      "clip_id": 272517
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La leyenda del hombre del cuchillo sigue viva en la memoria colectiva, demostrando que el miedo que sembró en las calles victorianas trasciende los siglos y continúa fascinando a investigadores de todo el mundo."
+  },
+  {
+   "hablado": "Consideras que la prueba del ADN sobre el chal es suficiente para dar el caso por resuelto o crees que el verdadero criminal nunca llegó a figurar en los archivos oficiales de la policía británica",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty dark room window",
+    "otras": [
+     "shadows on wall room",
+     "mysterious empty corridor"
+    ],
+    "descripcion": "Habitación vacía y oscura con sombras proyectadas por una ventana.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/16/143223-781982785_large.mp4",
+    "clip_id": 143223,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/16/117190-710602950_large.mp4",
+      "clip_id": 117190
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/02/269445_large.mp4",
+      "clip_id": 269445
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/28/118497-715426654_small.mp4",
+      "clip_id": 118497
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Consideras que la prueba del ADN sobre el chal es suficiente para dar el caso por resuelto o crees que el verdadero criminal nunca llegó a figurar en los archivos oficiales de la policía británica"
+  }
+ ],
+ "titulo_youtube": "Jack el Destripador: la prueba de ADN que lo cambia todo",
+ "voz": "Algenib",
+ "estilo_imagen": "Analog film photograph, shot on 35mm Kodak Tri-X or Portra, visible film grain, muted desaturated colors, soft vignette, slight light leaks, documentary realism, period-accurate clothing and places, moody low-key lighting, vintage archival newspaper-era atmosphere. "
+}

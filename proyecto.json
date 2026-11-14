@@ -1,0 +1,574 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "Jack el Destripador",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/01.mp4",
+  "1": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/02.mp4",
+  "2": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/03.mp4",
+  "3": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/04.mp4",
+  "4": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/05.mp4",
+  "5": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/06.mp4",
+  "6": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/07.mp4",
+  "7": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/08.mp4",
+  "8": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/09.mp4",
+  "9": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/10.mp4",
+  "10": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/11.mp4",
+  "11": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/12.mp4",
+  "12": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/13.mp4",
+  "13": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/14.mp4",
+  "14": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/15.mp4",
+  "15": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/16.mp4",
+  "16": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/17.mp4",
+  "17": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/18.mp4",
+  "18": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/19.mp4",
+  "19": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/20.mp4",
+  "20": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/21.mp4",
+  "21": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/22.mp4",
+  "22": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/23.mp4",
+  "23": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/24.mp4",
+  "24": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/25.mp4",
+  "25": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/26.mp4",
+  "26": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/27.mp4",
+  "27": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/28.mp4",
+  "28": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/29.mp4",
+  "29": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/30.mp4",
+  "30": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/31.mp4",
+  "31": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/32.mp4",
+  "32": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/33.mp4",
+  "33": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/34.mp4",
+  "34": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/35.mp4",
+  "35": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/36.mp4",
+  "36": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/37.mp4",
+  "37": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/38.mp4",
+  "38": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/39.mp4",
+  "39": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/40.mp4",
+  "40": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/41.mp4",
+  "41": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/42.mp4",
+  "42": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/43.mp4",
+  "43": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/44.mp4",
+  "44": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/45.mp4",
+  "45": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/46.mp4",
+  "46": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/47.mp4",
+  "47": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/48.mp4",
+  "48": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/49.mp4",
+  "49": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/50.mp4",
+  "50": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/51.mp4",
+  "51": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/52.mp4",
+  "52": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/53.mp4",
+  "53": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/54.mp4",
+  "54": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/55.mp4",
+  "55": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/56.mp4",
+  "56": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/57.mp4",
+  "57": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/58.mp4",
+  "58": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/59.mp4",
+  "59": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/60.mp4",
+  "60": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/61.mp4",
+  "61": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/62.mp4",
+  "62": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/63.mp4",
+  "63": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/64.mp4",
+  "64": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/65.mp4",
+  "65": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/66.mp4",
+  "66": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/67.mp4",
+  "67": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/68.mp4",
+  "68": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/69.mp4",
+  "69": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/70.mp4",
+  "70": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/71.mp4",
+  "71": "/tmp/largo-cajanegra-zaaaxjjk/proyecto/clips/72.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "El terror de Whitechapel"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "Un barrio en sombras"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "El doble evento"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "Las cartas del infierno"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "El sospechoso de la barbería"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "Otras sombras bajo sospecha"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "La subasta del chal guardado"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "El mapa del ADN mitocondrial"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "La sombra que nunca se borra"
+  }
+ ],
+ "color": [
+  230,
+  38,
+  38
+ ],
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "En el otoño de mil ochocientos ochenta y ocho una sombra implacable recorrió los callejones oscuros de Londres sembrando el pánico absoluto. Scotland Yard desplegó un operativo sin precedentes pero el ejecutor desaparecía entre la niebla.",
+   "subtitulo": "En el otoño de mil ochocientos ochenta y ocho una sombra implacable recorrió los callejones oscuros de Londres sembrando el pánico absoluto. Scotland Yard desplegó un operativo sin precedentes pero el ejecutor desaparecía entre la niebla."
+  },
+  {
+   "titulo": "",
+   "hablado": "La prensa bautizó a ese misterioso criminal tras recibir una siniestra carta escrita con tinta roja y firmada con un seudónimo temible. Nació así la leyenda oscura de Jack el Destripador que paralizó a toda una nación.",
+   "subtitulo": "La prensa bautizó a ese misterioso criminal tras recibir una siniestra carta escrita con tinta roja y firmada con un seudónimo temible. Nació así la leyenda oscura de Jack el Destripador que paralizó a toda una nación."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo un objeto guardado en absoluto secreto durante más de un siglo ocultaba la clave genética definitiva. Quien se quede hasta el final descubrirá cómo la ciencia moderna logró identificar al sospechoso que la policía victoriana dejó marchar.",
+   "subtitulo": "Sin embargo un objeto guardado en absoluto secreto durante más de un siglo ocultaba la clave genética definitiva. Quien se quede hasta el final descubrirá cómo la ciencia moderna logró identificar al sospechoso que la policía victoriana dejó marchar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para entender la magnitud del terror debemos viajar al corazón del East End de Londres. El distrito de Whitechapel era en aquella época un laberinto sofocante de pasadizos oscuros hacinamiento extremo y pobreza desgarradora que albergaba a miles.",
+   "subtitulo": "Para entender la magnitud del terror debemos viajar al corazón del East End de Londres. El distrito de Whitechapel era en aquella época un laberinto sofocante de pasadizos oscuros hacinamiento extremo y pobreza desgarradora que albergaba a miles."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las fábricas del carbón y las industrias locales arrojaban un humo denso que se combinaba con la neblina del río Támesis. Esta mezcla tóxica creaba una atmósfera pesada donde la visibilidad era casi nula a pocos metros.",
+   "subtitulo": "Las fábricas del carbón y las industrias locales arrojaban un humo denso que se combinaba con la neblina del río Támesis. Esta mezcla tóxica creaba una atmósfera pesada donde la visibilidad era casi nula a pocos metros."
+  },
+  {
+   "titulo": "",
+   "hablado": "La falta casi total de alumbrado público convertía cada esquina en una trampa perfecta para cualquier transeúnte solitario. En esas calles estrechas el peligro acechaba en las sombras sin que nadie pudiera escuchar las peticiones de auxilio.",
+   "subtitulo": "La falta casi total de alumbrado público convertía cada esquina en una trampa perfecta para cualquier transeúnte solitario. En esas calles estrechas el peligro acechaba en las sombras sin que nadie pudiera escuchar las peticiones de auxilio."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las patrullas policiales de la época eran escasas e ineficientes frente a un criminal metódico. Los agentes caminaban a paso lento con faroles de aceite insuficientes incapaces de cubrir el denso entramado urbano de callejones sin salida.",
+   "subtitulo": "Las patrullas policiales de la época eran escasas e ineficientes frente a un criminal metódico. Los agentes caminaban a paso lento con faroles de aceite insuficientes incapaces de cubrir el denso entramado urbano de callejones sin salida."
+  },
+  {
+   "titulo": "",
+   "hablado": "Fue precisamente bajo ese manto de oscuridad e impunidad total donde comenzó la serie de ataques más perturbadora de la historia británica. Pero lo que la policía victoriana nunca imaginó fue el nivel de audacia del asesino.",
+   "subtitulo": "Fue precisamente bajo ese manto de oscuridad e impunidad total donde comenzó la serie de ataques más perturbadora de la historia británica. Pero lo que la policía victoriana nunca imaginó fue el nivel de audacia del asesino."
+  },
+  {
+   "titulo": "",
+   "hablado": "En el otoño de mil ochocientos ochenta y ocho, el distrito londinense de Whitechapel era un laberinto asfixiante de miseria absoluta, donde casi ochenta mil personas malvivían hacinadas entre pensiones miserables, humo de carbón y callejones sin salida.",
+   "subtitulo": "En el otoño de mil ochocientos ochenta y ocho, el distrito londinense de Whitechapel era un laberinto asfixiante de miseria absoluta, donde casi ochenta mil personas malvivían hacinadas entre pensiones miserables, humo de carbón y callejones sin salida."
+  },
+  {
+   "titulo": "",
+   "hablado": "El alumbrado público a gas apenas iluminaba las esquinas más concurridas, dejando enormes sectores en una penumbra impenetrable, agravada por una densa niebla tóxica que amortiguaba los pasos y ocultaba cualquier movimiento a escasos metros.",
+   "subtitulo": "El alumbrado público a gas apenas iluminaba las esquinas más concurridas, dejando enormes sectores en una penumbra impenetrable, agravada por una densa niebla tóxica que amortiguaba los pasos y ocultaba cualquier movimiento a escasos metros."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hacia las cuatro menos cuarto de la madrugada del treinta y uno de agosto, un carretero que se dirigía a su trabajo divisó una figura inmóvil en el empedrado de Bucks Row, junto a una cancela oscura.",
+   "subtitulo": "Hacia las cuatro menos cuarto de la madrugada del treinta y uno de agosto, un carretero que se dirigía a su trabajo divisó una figura inmóvil en el empedrado de Bucks Row, junto a una cancela oscura."
+  },
+  {
+   "titulo": "",
+   "hablado": "La víctima era Mary Ann Nichols, una mujer de cuarenta y tres años cuya existencia rota reflejaba la crudeza de la época, obligada a deambular de noche para conseguir unas monedas con las que pagar una cama.",
+   "subtitulo": "La víctima era Mary Ann Nichols, una mujer de cuarenta y tres años cuya existencia rota reflejaba la crudeza de la época, obligada a deambular de noche para conseguir unas monedas con las que pagar una cama."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los primeros policías llegaron con simples faroles de aceite, enfrentándose a un escenario devastador sin contar con las herramientas modernas: no existían registros de huellas dactilares, ni fotografías de la escena, ni análisis químico de rastros biológicos.",
+   "subtitulo": "Los primeros policías llegaron con simples faroles de aceite, enfrentándose a un escenario devastador sin contar con las herramientas modernas: no existían registros de huellas dactilares, ni fotografías de la escena, ni análisis químico de rastros biológicos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Scotland Yard asignó de inmediato la investigación al inspector Frederick Abberline, un veterano de la división local que conocía al detalle los bajos fondos, pero que chocó contra el muro de silencio y temor de los vecinos.",
+   "subtitulo": "Scotland Yard asignó de inmediato la investigación al inspector Frederick Abberline, un veterano de la división local que conocía al detalle los bajos fondos, pero que chocó contra el muro de silencio y temor de los vecinos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las autopsias iniciales confirmaron una agresividad metódica inaudita, ejecutada en cuestión de minutos y en silencio absoluto a escasos metros de viviendas habitadas, lo que desató una histeria colectiva amplificada por los periódicos vespertinos de la capital.",
+   "subtitulo": "Las autopsias iniciales confirmaron una agresividad metódica inaudita, ejecutada en cuestión de minutos y en silencio absoluto a escasos metros de viviendas habitadas, lo que desató una histeria colectiva amplificada por los periódicos vespertinos de la capital."
+  },
+  {
+   "titulo": "",
+   "hablado": "Scotland Yard reforzó las rondas nocturnas creyendo que la presencia policial disuadiría al agresor de volver a actuar. Sin embargo, el cazador de sombras estaba a punto de redoblar su desafío en una misma y trágica noche.",
+   "subtitulo": "Scotland Yard reforzó las rondas nocturnas creyendo que la presencia policial disuadiría al agresor de volver a actuar. Sin embargo, el cazador de sombras estaba a punto de redoblar su desafío en una misma y trágica noche."
+  },
+  {
+   "titulo": "",
+   "hablado": "La madrugada del treinta de septiembre de mil ochocientos ochenta y ocho comenzó con un sobresalto. Un comerciante descubrió el cuerpo sin vida de Elizabeth Stride en Dutfield Yard, sorprendiendo al atacante justo antes de poder completar su siniestro ritual.",
+   "subtitulo": "La madrugada del treinta de septiembre de mil ochocientos ochenta y ocho comenzó con un sobresalto. Un comerciante descubrió el cuerpo sin vida de Elizabeth Stride en Dutfield Yard, sorprendiendo al atacante justo antes de poder completar su siniestro ritual."
+  },
+  {
+   "titulo": "",
+   "hablado": "Lejos de amedrentarse por el riesgo de ser capturado, el criminal se desplazó rápidamente hacia el corazón financiero de la ciudad. Su sed de violencia lo impulsó a buscar una segunda víctima a menos de una hora de distancia.",
+   "subtitulo": "Lejos de amedrentarse por el riesgo de ser capturado, el criminal se desplazó rápidamente hacia el corazón financiero de la ciudad. Su sed de violencia lo impulsó a buscar una segunda víctima a menos de una hora de distancia."
+  },
+  {
+   "titulo": "",
+   "hablado": "En la penumbra de Mitre Square, Catherine Eddowes se cruzó en el camino del asesino. En apenas unos minutos transcurridos entre dos patrullas policiales, la mujer perdió la vida en el ataque más feroz registrado hasta ese momento.",
+   "subtitulo": "En la penumbra de Mitre Square, Catherine Eddowes se cruzó en el camino del asesino. En apenas unos minutos transcurridos entre dos patrullas policiales, la mujer perdió la vida en el ataque más feroz registrado hasta ese momento."
+  },
+  {
+   "titulo": "",
+   "hablado": "A pocas manzanas del lugar del crimen, los agentes encontraron la única pista material dejada por el ejecutor. Se trataba de un trozo del delantal de la víctima, manchado y abandonado a la entrada de un edificio de viviendas.",
+   "subtitulo": "A pocas manzanas del lugar del crimen, los agentes encontraron la única pista material dejada por el ejecutor. Se trataba de un trozo del delantal de la víctima, manchado y abandonado a la entrada de un edificio de viviendas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Justo encima del trozo de tela, una inscripción en tiza blanca sobre el ladrillo llamó la atención de los investigadores. El texto señalaba directamente a la comunidad judía del barrio como responsable de los males que aquejaban al East End.",
+   "subtitulo": "Justo encima del trozo de tela, una inscripción en tiza blanca sobre el ladrillo llamó la atención de los investigadores. El texto señalaba directamente a la comunidad judía del barrio como responsable de los males que aquejaban al East End."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante el temor de que la pintada desatara disturbios xenófobos en una zona al límite de la tensión social, el comisario Charles Warren tomó una decisión polémica. Ordenó borrar el mensaje antes de que pudiera ser fotografiado oficialmente.",
+   "subtitulo": "Ante el temor de que la pintada desatara disturbios xenófobos en una zona al límite de la tensión social, el comisario Charles Warren tomó una decisión polémica. Ordenó borrar el mensaje antes de que pudiera ser fotografiado oficialmente."
+  },
+  {
+   "titulo": "",
+   "hablado": "La destrucción de aquella prueba crucial generó intensos debates entre los mandos policiales. Mientras tanto, el pánico se apoderó de los vecinos de Londres, alimentando la desconfianza hacia los inmigrantes y sumiendo al barrio en una paranoia constante.",
+   "subtitulo": "La destrucción de aquella prueba crucial generó intensos debates entre los mandos policiales. Mientras tanto, el pánico se apoderó de los vecinos de Londres, alimentando la desconfianza hacia los inmigrantes y sumiendo al barrio en una paranoia constante."
+  },
+  {
+   "titulo": "",
+   "hablado": "El doble crimen demostró que el agresor actuaba con una audacia pasmosa y desafiaba abiertamente a las autoridades. La ciudad contenía la respiración sin saber que el asesino estaba a punto de enviar su mensaje más escalofriante a la prensa.",
+   "subtitulo": "El doble crimen demostró que el agresor actuaba con una audacia pasmosa y desafiaba abiertamente a las autoridades. La ciudad contenía la respiración sin saber que el asesino estaba a punto de enviar su mensaje más escalofriante a la prensa."
+  },
+  {
+   "titulo": "",
+   "hablado": "El veintisiete de septiembre de mil ochocientos ochenta y ocho, la Agencia Central de Noticias de Londres recibió un sobre misterioso. En su interior figuraba una carta escrita con tinta roja y dirigida al mismísimo jefe de redacción.",
+   "subtitulo": "El veintisiete de septiembre de mil ochocientos ochenta y ocho, la Agencia Central de Noticias de Londres recibió un sobre misterioso. En su interior figuraba una carta escrita con tinta roja y dirigida al mismísimo jefe de redacción."
+  },
+  {
+   "titulo": "",
+   "hablado": "El remitente se atribuía los crímenes anteriores y prometía no detenerse hasta que lo atraparan. La misiva incluía una firma inquietante que pronto se convertiría en un mito universal de terror: Jack el Destripador.",
+   "subtitulo": "El remitente se atribuía los crímenes anteriores y prometía no detenerse hasta que lo atraparan. La misiva incluía una firma inquietante que pronto se convertiría en un mito universal de terror: Jack el Destripador."
+  },
+  {
+   "titulo": "",
+   "hablado": "Días más tarde llegó una postal adicional firmada por la misma entidad. En ella el autor prometía mutilar las orejas de su siguiente víctima, una amenaza directa que encajó aterradoramente con los hallazgos en la escena de Mitre Square.",
+   "subtitulo": "Días más tarde llegó una postal adicional firmada por la misma entidad. En ella el autor prometía mutilar las orejas de su siguiente víctima, una amenaza directa que encajó aterradoramente con los hallazgos en la escena de Mitre Square."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la correspondencia más escalofriante se envió en octubre al líder del comité de vigilancia local, George Lusk. El paquete venía acompañado de una pequeña caja de madera que contenía un fragmento congelado de un riñón humano.",
+   "subtitulo": "Sin embargo, la correspondencia más escalofriante se envió en octubre al líder del comité de vigilancia local, George Lusk. El paquete venía acompañado de una pequeña caja de madera que contenía un fragmento congelado de un riñón humano."
+  },
+  {
+   "titulo": "",
+   "hablado": "La carta adjunta comenzaba con las palabras Desde el infierno y explicaba con fría crudeza cómo el remitente había extraído el órgano. Los médicos examinaron la muestra y confirmaron que padecía una patología idéntica a la de Catherine Eddowes.",
+   "subtitulo": "La carta adjunta comenzaba con las palabras Desde el infierno y explicaba con fría crudeza cómo el remitente había extraído el órgano. Los médicos examinaron la muestra y confirmaron que padecía una patología idéntica a la de Catherine Eddowes."
+  },
+  {
+   "titulo": "",
+   "hablado": "En Scotland Yard cundió la discrepancia. Varios mandos policiales sostenían que se trataba de una broma macabra orquestada por periodistas sensacionalistas para disparar la venta de periódicos, una práctica habitual en la imprenta británica de finales de siglo.",
+   "subtitulo": "En Scotland Yard cundió la discrepancia. Varios mandos policiales sostenían que se trataba de una broma macabra orquestada por periodistas sensacionalistas para disparar la venta de periódicos, una práctica habitual en la imprenta británica de finales de siglo."
+  },
+  {
+   "titulo": "",
+   "hablado": "No obstante, los análisis detallados sugerían que el responsable conocía de memoria los horarios de paso de las rondas nocturnas. El autor se movía por los pasajes oscuros como un espectro que dominaba los callejones de Whitechapel al milímetro.",
+   "subtitulo": "No obstante, los análisis detallados sugerían que el responsable conocía de memoria los horarios de paso de las rondas nocturnas. El autor se movía por los pasajes oscuros como un espectro que dominaba los callejones de Whitechapel al milímetro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con la prensa alimentando la histeria colectiva y las cartas inundando las comisarías, el misterioso redactor continuaba esquivando el cerco. Pero mientras Londres buscaba a un monstruo entre la multitud, la investigación policial se centraba silenciosamente en un barbero local.",
+   "subtitulo": "Con la prensa alimentando la histeria colectiva y las cartas inundando las comisarías, el misterioso redactor continuaba esquivando el cerco. Pero mientras Londres buscaba a un monstruo entre la multitud, la investigación policial se centraba silenciosamente en un barbero local."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras examinar cientos de pistas falsas y detener a sospechosos sin pruebas, los agentes de Scotland Yard comenzaron a vigilar de cerca a un joven inmigrante polaco llamado Aaron Kosminski, afincado en Whitechapel.",
+   "subtitulo": "Tras examinar cientos de pistas falsas y detener a sospechosos sin pruebas, los agentes de Scotland Yard comenzaron a vigilar de cerca a un joven inmigrante polaco llamado Aaron Kosminski, afincado en Whitechapel."
+  },
+  {
+   "titulo": "",
+   "hablado": "Kosminski trabajaba como barbero en el corazón del distrito afectado. Su profesión le otorgaba un manejo hábil de instrumentos cortantes y un conocimiento minucioso de cada uno de los angostos pasajes del barrio.",
+   "subtitulo": "Kosminski trabajaba como barbero en el corazón del distrito afectado. Su profesión le otorgaba un manejo hábil de instrumentos cortantes y un conocimiento minucioso de cada uno de los angostos pasajes del barrio."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los informes de la época señalaban que el joven padecía graves trastornos mentales, alucinaciones auditivas y arrebatos violentos. Su comportamiento errático y su fijación por vagar de noche levantaron de inmediato las sospechas policiales.",
+   "subtitulo": "Los informes de la época señalaban que el joven padecía graves trastornos mentales, alucinaciones auditivas y arrebatos violentos. Su comportamiento errático y su fijación por vagar de noche levantaron de inmediato las sospechas policiales."
+  },
+  {
+   "titulo": "",
+   "hablado": "El jefe del Departamento de Investigación Criminal, Sir Robert Anderson, escribió años más tarde en sus memorias que la policía victoriana tenía la total certeza de haber descubierto la identidad real del peligroso atacante.",
+   "subtitulo": "El jefe del Departamento de Investigación Criminal, Sir Robert Anderson, escribió años más tarde en sus memorias que la policía victoriana tenía la total certeza de haber descubierto la identidad real del peligroso atacante."
+  },
+  {
+   "titulo": "",
+   "hablado": "Según los documentos oficiales de la jefatura, un testigo presencial identificó sin dudar a Kosminski en un careo policial. Sin embargo, el testigo se negó rotundamente a declarar ante un juez en un juicio formal.",
+   "subtitulo": "Según los documentos oficiales de la jefatura, un testigo presencial identificó sin dudar a Kosminski en un careo policial. Sin embargo, el testigo se negó rotundamente a declarar ante un juez en un juicio formal."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin la declaración jurada de aquel testigo clave, las autoridades no podían procesar legalmente al barbero. Ante la falta de pruebas físicas concluyentes, se vieron obligados a mantener una estrecha vigilancia sobre sus movimientos diarios.",
+   "subtitulo": "Sin la declaración jurada de aquel testigo clave, las autoridades no podían procesar legalmente al barbero. Ante la falta de pruebas físicas concluyentes, se vieron obligados a mantener una estrecha vigilancia sobre sus movimientos diarios."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pocos meses después, la familia de Kosminski lo ingresó en el psiquiátrico de Colney Hatch debido a su grave deterioro mental. Allí permaneció encerrado el resto de su vida, coincidiendo con el cese definitivo de los ataques.",
+   "subtitulo": "Pocos meses después, la familia de Kosminski lo ingresó en el psiquiátrico de Colney Hatch debido a su grave deterioro mental. Allí permaneció encerrado el resto de su vida, coincidiendo con el cese definitivo de los ataques."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con Kosminski recluido tras los muros del asilo, muchos mandos policiales dieron por cerrado el caso en secreto. Sin embargo, en las calles de Londres comenzaban a emerger otros nombres con motivos igual de oscuros.",
+   "subtitulo": "Con Kosminski recluido tras los muros del asilo, muchos mandos policiales dieron por cerrado el caso en secreto. Sin embargo, en las calles de Londres comenzaban a emerger otros nombres con motivos igual de oscuros."
+  },
+  {
+   "titulo": "",
+   "hablado": "Scotland Yard no lograba frenar la histeria colectiva mientras los forenses insistían en una inquietante hipótesis. La rapidez y destreza de los cortes sugerían que el autor poseía conocimientos avanzados de anatomía humana o experiencia como matarife profesional.",
+   "subtitulo": "Scotland Yard no lograba frenar la histeria colectiva mientras los forenses insistían en una inquietante hipótesis. La rapidez y destreza de los cortes sugerían que el autor poseía conocimientos avanzados de anatomía humana o experiencia como matarife profesional."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella teoría quirúrgica alimentó de inmediato rumores que apuntaban hacia las élites victorianas. Entre las especulaciones más sonadas surgió la figura de sir William Gull, médico personal de la reina Victoria, acusado por tabloides de encubrir un escándalo de la nobleza.",
+   "subtitulo": "Aquella teoría quirúrgica alimentó de inmediato rumores que apuntaban hacia las élites victorianas. Entre las especulaciones más sonadas surgió la figura de sir William Gull, médico personal de la reina Victoria, acusado por tabloides de encubrir un escándalo de la nobleza."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, las pesquisas policiales descartaron rápidamente al médico de palacio. Gull tenía más de setenta años y había sufrido recientemente un severo derrame cerebral que le impedía moverse con soltura por los angostos y peligrosos callejones de la ciudad.",
+   "subtitulo": "Sin embargo, las pesquisas policiales descartaron rápidamente al médico de palacio. Gull tenía más de setenta años y había sufrido recientemente un severo derrame cerebral que le impedía moverse con soltura por los angostos y peligrosos callejones de la ciudad."
+  },
+  {
+   "titulo": "",
+   "hablado": "El verdadero interés de Scotland Yard viró hacia un excéntrico visitante extranjero llamado Francis Tumblety. Este curandero estadounidense acumulaba arrestos previos por prácticas médicas dudosas y mostraba un odio visceral documentado hacia las mujeres más vulnerables de la sociedad londinense.",
+   "subtitulo": "El verdadero interés de Scotland Yard viró hacia un excéntrico visitante extranjero llamado Francis Tumblety. Este curandero estadounidense acumulaba arrestos previos por prácticas médicas dudosas y mostraba un odio visceral documentado hacia las mujeres más vulnerables de la sociedad londinense."
+  },
+  {
+   "titulo": "",
+   "hablado": "Detenido como sospechoso en noviembre de mil ochocientos ochenta y ocho, Tumblety logró pagar una elevada fianza antes de ser formalmente acusado. Aprovechó su libertad provisional para escapar hacia Francia con pasaporte falso y abordar un barco de regreso a Nueva York.",
+   "subtitulo": "Detenido como sospechoso en noviembre de mil ochocientos ochenta y ocho, Tumblety logró pagar una elevada fianza antes de ser formalmente acusado. Aprovechó su libertad provisional para escapar hacia Francia con pasaporte falso y abordar un barco de regreso a Nueva York."
+  },
+  {
+   "titulo": "",
+   "hablado": "La policía de Nueva York vigiló sus pasos de cerca a petición británica, pero jamás hallaron pruebas directas que lo vincularan con los crímenes de Whitechapel. Las pistas internacionales se enfriaban mientras las teorías conspirativas continuaban multiplicándose en la prensa popular.",
+   "subtitulo": "La policía de Nueva York vigiló sus pasos de cerca a petición británica, pero jamás hallaron pruebas directas que lo vincularan con los crímenes de Whitechapel. Las pistas internacionales se enfriaban mientras las teorías conspirativas continuaban multiplicándose en la prensa popular."
+  },
+  {
+   "titulo": "",
+   "hablado": "El año mil ochocientos ochenta y ocho llegaba a su fin entre dimisiones en la cúpula policial y una indignación vecinal creciente. Cientos de sospechosos habían sido interrogados sin éxito y las pesquisas oficiales entraron en un frustrante callejón sin salida.",
+   "subtitulo": "El año mil ochocientos ochenta y ocho llegaba a su fin entre dimisiones en la cúpula policial y una indignación vecinal creciente. Cientos de sospechosos habían sido interrogados sin éxito y las pesquisas oficiales entraron en un frustrante callejón sin salida."
+  },
+  {
+   "titulo": "",
+   "hablado": "La leyenda del asesino parecía condenada al olvido de los archivos cerrados. Pero un inspector guardó discretamente una prenda manchada recogida en el pavimento de Mitre Square, ignorando que más de un siglo después guardaría la clave definitiva.",
+   "subtitulo": "La leyenda del asesino parecía condenada al olvido de los archivos cerrados. Pero un inspector guardó discretamente una prenda manchada recogida en el pavimento de Mitre Square, ignorando que más de un siglo después guardaría la clave definitiva."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella prenda de seda con motivos florales perteneció al sargento Amos Simpson, quien la recogió aquella madrugada en Mitre Square. La reliquia textil permaneció guardada en una caja oscura durante más de un siglo, pasando de generación en generación familiar intacta.",
+   "subtitulo": "Aquella prenda de seda con motivos florales perteneció al sargento Amos Simpson, quien la recogió aquella madrugada en Mitre Square. La reliquia textil permaneció guardada en una caja oscura durante más de un siglo, pasando de generación en generación familiar intacta."
+  },
+  {
+   "titulo": "",
+   "hablado": "En el año dos mil siete, el chal salió a subasta pública en una conocida casa británica. El empresario e investigador Russell Edwards decidió pujar sin dudarlo, convencido de que aquel tejido gastado custodiaba la única evidencia biológica directa jamás recuperada del asesino.",
+   "subtitulo": "En el año dos mil siete, el chal salió a subasta pública en una conocida casa británica. El empresario e investigador Russell Edwards decidió pujar sin dudarlo, convencido de que aquel tejido gastado custodiaba la única evidencia biológica directa jamás recuperada del asesino."
+  },
+  {
+   "titulo": "",
+   "hablado": "La tela presentaba un estado frágil y descolorido por el paso de las décadas, pero los descendientes del policía aseguraron que jamás se había lavado. Ese detalle crucial convertía a la pieza en un archivo forense involuntario preservado desde finales del siglo diecinueve.",
+   "subtitulo": "La tela presentaba un estado frágil y descolorido por el paso de las décadas, pero los descendientes del policía aseguraron que jamás se había lavado. Ese detalle crucial convertía a la pieza en un archivo forense involuntario preservado desde finales del siglo diecinueve."
+  },
+  {
+   "titulo": "",
+   "hablado": "Edwards decidió buscar el respaldo de la ciencia moderna y acudió a la Universidad de Liverpool. Allí contactó con el doctor Jari Louhelainen, un reputado especialista en análisis genético forense habituado a trabajar con restos biológicos sumamente antiguos y degradados en crímenes históricos.",
+   "subtitulo": "Edwards decidió buscar el respaldo de la ciencia moderna y acudió a la Universidad de Liverpool. Allí contactó con el doctor Jari Louhelainen, un reputado especialista en análisis genético forense habituado a trabajar con restos biológicos sumamente antiguos y degradados en crímenes históricos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El genetista examinó minuciosamente el chal en un entorno completamente estéril para evitar cualquier tipo de contaminación cruzada. A simple vista, el paño solo mostraba zonas oscurecidas por la humedad y el desgaste propio de más de ciento veinte años de encierro.",
+   "subtitulo": "El genetista examinó minuciosamente el chal en un entorno completamente estéril para evitar cualquier tipo de contaminación cruzada. A simple vista, el paño solo mostraba zonas oscurecidas por la humedad y el desgaste propio de más de ciento veinte años de encierro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para revelar lo invisible, el equipo universitario empleó una cámara de alta sensibilidad y luces ultravioleta especiales. Bajo la radiación forense, el tejido reveló un mapa inesperado de manchas residuales que habían quedado fijadas en las fibras de seda sin alterarse durante décadas.",
+   "subtitulo": "Para revelar lo invisible, el equipo universitario empleó una cámara de alta sensibilidad y luces ultravioleta especiales. Bajo la radiación forense, el tejido reveló un mapa inesperado de manchas residuales que habían quedado fijadas en las fibras de seda sin alterarse durante décadas."
+  },
+  {
+   "titulo": "",
+   "hablado": "El análisis óptico diferenció claramente dos tipos de fluidos biológicos incrustados en extremos opuestos del chal victoriano. Una de las marcas coincidía morfológicamente con salpicaduras arteriales, mientras que la otra correspondía a secreciones corporales de naturaleza muy distinta y evidente origen masculino.",
+   "subtitulo": "El análisis óptico diferenció claramente dos tipos de fluidos biológicos incrustados en extremos opuestos del chal victoriano. Una de las marcas coincidía morfológicamente con salpicaduras arteriales, mientras que la otra correspondía a secreciones corporales de naturaleza muy distinta y evidente origen masculino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel hallazgo microscópico confirmaba que la prenda contenía material suficiente para emprender una extracción genética revolucionaria. La ciencia estaba a punto de comparar aquellos rastros con las familias de las víctimas y de los principales sospechosos, pero el veredicto final desataría una intensa controversia.",
+   "subtitulo": "Aquel hallazgo microscópico confirmaba que la prenda contenía material suficiente para emprender una extracción genética revolucionaria. La ciencia estaba a punto de comparar aquellos rastros con las familias de las víctimas y de los principales sospechosos, pero el veredicto final desataría una intensa controversia."
+  },
+  {
+   "titulo": "",
+   "hablado": "El equipo del doctor Louhelainen comenzó aislando el material genético de las manchas de sangre de la prenda. Esta información biológica se transmite únicamente por vía materna, permitiendo rastrear linajes familiares sin sufrir la degradación habitual de los núcleos.",
+   "subtitulo": "El equipo del doctor Louhelainen comenzó aislando el material genético de las manchas de sangre de la prenda. Esta información biológica se transmite únicamente por vía materna, permitiendo rastrear linajes familiares sin sufrir la degradación habitual de los núcleos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para confirmar la autenticidad del tejido, los científicos contactaron con una descendiente directa por línea materna de Catherine Eddowes. La comparación de los códigos biológicos fue absoluta y demostró que la prenda perteneció a la víctima asesinada en septiembre.",
+   "subtitulo": "Para confirmar la autenticidad del tejido, los científicos contactaron con una descendiente directa por línea materna de Catherine Eddowes. La comparación de los códigos biológicos fue absoluta y demostró que la prenda perteneció a la víctima asesinada en septiembre."
+  },
+  {
+   "titulo": "",
+   "hablado": "El verdadero hito de la investigación llegó al examinar otra zona del chal donde descubrieron restos biológicos masculinos. Tras extraer el perfil genético con técnicas forenses avanzadas, el laboratorio buscaba una coincidencia clave entre los antiguos sospechosos.",
+   "subtitulo": "El verdadero hito de la investigación llegó al examinar otra zona del chal donde descubrieron restos biológicos masculinos. Tras extraer el perfil genético con técnicas forenses avanzadas, el laboratorio buscaba una coincidencia clave entre los antiguos sospechosos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El genetista localizó a una pariente viva de la hermana de Aaron Kosminski, el barbero polaco señalado por la policía británica. Tras obtener voluntariamente una muestra biológica, el equipo científico procedió a secuenciar la línea materna del sospechoso.",
+   "subtitulo": "El genetista localizó a una pariente viva de la hermana de Aaron Kosminski, el barbero polaco señalado por la policía británica. Tras obtener voluntariamente una muestra biológica, el equipo científico procedió a secuenciar la línea materna del sospechoso."
+  },
+  {
+   "titulo": "",
+   "hablado": "El resultado del análisis en el año dos mil catorce causó conmoción en la comunidad investigadora. Las secuencias del rastro biológico hallado en la prenda coincidían perfectamente con el perfil de la descendiente directa del barbero polaco residente en Whitechapel.",
+   "subtitulo": "El resultado del análisis en el año dos mil catorce causó conmoción en la comunidad investigadora. Las secuencias del rastro biológico hallado en la prenda coincidían perfectamente con el perfil de la descendiente directa del barbero polaco residente en Whitechapel."
+  },
+  {
+   "titulo": "",
+   "hablado": "Una prestigiosa revista de ciencias forenses publicó los resultados completos cinco años después. La evidencia de laboratorio parecía cerrar el misterio más famoso de la historia, situando formalmente al sospechoso en la escena exacta de aquel trágico crimen.",
+   "subtitulo": "Una prestigiosa revista de ciencias forenses publicó los resultados completos cinco años después. La evidencia de laboratorio parecía cerrar el misterio más famoso de la historia, situando formalmente al sospechoso en la escena exacta de aquel trágico crimen."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los gráficos del estudio demostraban que la probabilidad matemática de una coincidencia fortuita era extremadamente baja. Para muchos criminólogos e historiadores, la prueba aportaba la certeza definitiva que las autoridades victorianas jamás pudieron conseguir en el pasado.",
+   "subtitulo": "Los gráficos del estudio demostraban que la probabilidad matemática de una coincidencia fortuita era extremadamente baja. Para muchos criminólogos e historiadores, la prueba aportaba la certeza definitiva que las autoridades victorianas jamás pudieron conseguir en el pasado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Parecía que la ciencia del siglo veintiuno había resuelto por fin el mayor enigma histórico. Sin embargo, cuando las conclusiones alcanzaron al ámbito académico internacional, surgieron serias dudas sobre la metodología empleada y la posible contaminación de la tela.",
+   "subtitulo": "Parecía que la ciencia del siglo veintiuno había resuelto por fin el mayor enigma histórico. Sin embargo, cuando las conclusiones alcanzaron al ámbito académico internacional, surgieron serias dudas sobre la metodología empleada y la posible contaminación de la tela."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los expertos genetistas apuntaban a una contaminación cruzada debido a los más de cien años que el tejido pasó de mano en mano sin un protocolo forense estricto. La prenda había sido exhibida y tocada antes del análisis.",
+   "subtitulo": "Los expertos genetistas apuntaban a una contaminación cruzada debido a los más de cien años que el tejido pasó de mano en mano sin un protocolo forense estricto. La prenda había sido exhibida y tocada antes del análisis."
+  },
+  {
+   "titulo": "",
+   "hablado": "A pesar de las críticas académicas, los defensores de la prueba recuerdan que la coincidencia genética con la línea materna del barbero polaco no es una casualidad que pueda descartarse fácilmente en una investigación.",
+   "subtitulo": "A pesar de las críticas académicas, los defensores de la prueba recuerdan que la coincidencia genética con la línea materna del barbero polaco no es una casualidad que pueda descartarse fácilmente en una investigación."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aaron Kosminski siempre cumplió con el perfil geográfico y psicológico trazado por los investigadores victorianos que patrullaban las oscuras y peligrosas calles del distrito londinense en aquel otoño sangriento.",
+   "subtitulo": "Aaron Kosminski siempre cumplió con el perfil geográfico y psicológico trazado por los investigadores victorianos que patrullaban las oscuras y peligrosas calles del distrito londinense en aquel otoño sangriento."
+  },
+  {
+   "titulo": "",
+   "hablado": "La figura del asesino anónimo se convirtió con el paso de las décadas en el símbolo definitivo de las limitaciones tecnológicas y policiales de una época que no disponía de las herramientas actuales.",
+   "subtitulo": "La figura del asesino anónimo se convirtió con el paso de las décadas en el símbolo definitivo de las limitaciones tecnológicas y policiales de una época que no disponía de las herramientas actuales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los errores cometidos en las primeras horas de cada inspección ocular condenaron al departamento a buscar durante generaciones a una sombra que quizás tuvieron demasiado cerca y no pudieron detener a tiempo.",
+   "subtitulo": "Los errores cometidos en las primeras horas de cada inspección ocular condenaron al departamento a buscar durante generaciones a una sombra que quizás tuvieron demasiado cerca y no pudieron detener a tiempo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hoy en día, el enigma de Whitechapel nos recuerda que incluso los misterios más analizados de la historia criminal pueden rozar la verdad absoluta sin llegar a cerrarse por completo en los tribunales.",
+   "subtitulo": "Hoy en día, el enigma de Whitechapel nos recuerda que incluso los misterios más analizados de la historia criminal pueden rozar la verdad absoluta sin llegar a cerrarse por completo en los tribunales."
+  },
+  {
+   "titulo": "",
+   "hablado": "La leyenda del hombre del cuchillo sigue viva en la memoria colectiva, demostrando que el miedo que sembró en las calles victorianas trasciende los siglos y continúa fascinando a investigadores de todo el mundo.",
+   "subtitulo": "La leyenda del hombre del cuchillo sigue viva en la memoria colectiva, demostrando que el miedo que sembró en las calles victorianas trasciende los siglos y continúa fascinando a investigadores de todo el mundo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Consideras que la prueba del ADN sobre el chal es suficiente para dar el caso por resuelto o crees que el verdadero criminal nunca llegó a figurar en los archivos oficiales de la policía británica",
+   "subtitulo": "Consideras que la prueba del ADN sobre el chal es suficiente para dar el caso por resuelto o crees que el verdadero criminal nunca llegó a figurar en los archivos oficiales de la policía británica"
+  }
+ ]
+}
