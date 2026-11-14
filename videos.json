@@ -42,8 +42,14 @@
   "escenas": 11,
   "animadas": 0,
   "publicable": true,
-  "publicado": {},
-  "archivo": "r9-v2.mp4"
+  "publicado": {
+   "instagram": "6af8b974c5b364e06211db52",
+   "tiktok": "6af8b97f918fe79d2e9e3f8b",
+   "youtube": "6af8b98976c23bf1c7383e36"
+  },
+  "archivo": "r9-v2.mp4",
+  "franja": 5,
+  "dia": "2026-11-14"
  },
  {
   "id": "r9-v3",
