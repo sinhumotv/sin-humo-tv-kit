@@ -10,7 +10,11 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 temas, EXP, SAL = json.load(open(sys.argv[1])), os.path.abspath(sys.argv[2]), os.path.abspath(sys.argv[3])
 os.makedirs(SAL, exist_ok=True)
 FAB = os.path.join(EXP, 'plataforma/v2/fabricar.py')
-env = dict(os.environ, ANIMAR_IA='1', ANIMAR_ESPERA='10800', WHISPER_MODELO='small')
+# (14-nov-2026) La animación con IA de Kaggle lleva días sin responder: cada tanda esperaba 3 h para nada y, al contar con
+# ella, las imágenes se pedían pequeñas (576x1024, ampliadas casi ×2: borrosas). Ahora va APAGADA por defecto: imágenes
+# grandes (1024x1792) con nitidez y efecto 3D suave. PQ_ANIMAR=1 la vuelve a encender.
+env = dict(os.environ, WHISPER_MODELO='small', **({'ANIMAR_IA': '1', 'ANIMAR_ESPERA': '10800'} if os.environ.get('PQ_ANIMAR') == '1' else {}))
+if os.environ.get('PQ_ANIMAR') != '1': env.pop('ANIMAR_IA', None)
 trab = []
 for i, t in enumerate(temas, 1):
     d = os.path.join(SAL, f'v{i}'); os.makedirs(d, exist_ok=True)
