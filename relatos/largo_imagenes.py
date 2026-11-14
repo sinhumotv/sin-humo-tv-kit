@@ -10,7 +10,7 @@ import base64, io, json, os, re, subprocess, sys, time, urllib.error, urllib.par
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gem import pedir
 import stock
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageStat
 
 D = os.path.abspath(sys.argv[1])
 C = json.load(open(sys.argv[2], encoding="utf-8"))
@@ -675,10 +675,13 @@ extras()
 #    curradas para el máximo CTR. Se crean 3 ilustraciones de IA hechas a propósito para la miniatura (un protagonista
 #    grande con emoción intensa, mucho contraste, hueco oscuro para el texto) y compiten con los 2 mejores fotogramas
 #    reales; Gemini elige la que más clics daría. Si no queda cuota de Cloudflare, se usa el mejor fotograma real.
-CTR = (" YouTube thumbnail composition, ONE huge main subject filling the right half, close-up, face or eyes showing an intense"
-       " emotion (shock, fear, fury or awe) looking at the viewer, dramatic rim light, strong complementary colors (teal and orange"
-       " or red and black), very high contrast and saturation, razor sharp focus, simple dark uncluttered background on the left"
-       " half for text, cinematic, epic, ultra detailed. No text, no letters, no logos, no watermark.")
+CTR = (" YouTube thumbnail, epic and BRIGHT: the whole frame is filled with a vivid, well-lit, colorful scene (golden"
+       " hour sunlight, glowing sky, fire or neon light), ONE huge main subject in the upper and right part, close, face"
+       " showing an intense emotion (shock, fury, fear or awe), dramatic rim light, saturated complementary colors (teal and"
+       " orange, gold and red), very high contrast, razor sharp, the lower third simpler so big text can go there."
+       " Never dark, never murky, never black empty areas. No text, no letters, no logos, no watermark.")
+# (14-nov-2026) antes se pedía «fondo oscuro a la izquierda para el texto»: salían miniaturas medio negras. Las de más
+# visitas de mitología, misterio y futuro son luminosas a toda pantalla con el texto abajo (ver largo_miniatura.py).
 if not os.path.exists(f"{D}/miniatura_base.jpg") and H.get("miniatura", {}).get("prompt") and os.environ.get("CF_ACCOUNT"):
     opciones = []
     for k in range(3):
@@ -692,6 +695,13 @@ if not os.path.exists(f"{D}/miniatura_base.jpg") and H.get("miniatura", {}).get(
             opciones.append(out)
     reales = [i for i in range(1, len(ESC) + 1) if os.path.exists(f"{D}/imgs/{i:02d}.jpg")]
     opciones += [f"{D}/imgs/{i:02d}.jpg" for i in reales[::max(1, len(reales) // 8)][:8]]
+    def _clara(f):   # fuera las candidatas oscuras o casi negras (14-nov-2026: miniatura negra con solo letras)
+        try:
+            st = ImageStat.Stat(Image.open(f).convert("L").resize((160, 90)))
+            return st.mean[0] > 60 and st.stddev[0] > 25
+        except Exception:
+            return False
+    opciones = [o for o in opciones if _clara(o)] or opciones
     if len(opciones) > 1:
         minis = []
         for f in opciones:
@@ -700,10 +710,10 @@ if not os.path.exists(f"{D}/miniatura_base.jpg") and H.get("miniatura", {}).get(
         elegido = 0
         try:
             j, _ = pedir(f"""Eres experto en miniaturas de YouTube con mucho CTR (canales faceless de historias y misterios).
-Vídeo: "{H['titulo_youtube']}". Texto que irá en la miniatura: "{H['miniatura'].get('texto', '')}" (a la izquierda).
+Vídeo: "{H['titulo_youtube']}". Texto que irá en la miniatura: "{H['miniatura'].get('texto', '')}" (grande, abajo).
 Te paso {len(opciones)} imágenes candidatas para el fondo (desde 0). Elige la que haría que MÁS gente hiciera clic al verla
 pequeña en el móvil: un protagonista claro y grande, emoción intensa, contraste fuerte, que se entienda de qué va, sin
-texto ni deformidades (manos, caras raras) y con hueco a la izquierda para el texto. Devuelve SOLO JSON: {{"mejor": <número>}}""",
+texto ni deformidades (manos, caras raras), LUMINOSA (nunca oscura ni casi negra) y con sitio abajo para el texto. Devuelve SOLO JSON: {{"mejor": <número>}}""",
                          temp=0.2, imagenes=minis, max_tokens=300)
             k = j.get("mejor") if isinstance(j, dict) else None
             if isinstance(k, int) and 0 <= k < len(opciones):

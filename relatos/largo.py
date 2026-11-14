@@ -449,7 +449,7 @@ if E["fase"] == "montaje":
         print(f"Escenas con imagen quieta {quietas}: se buscan otros clips y se vuelve a montar")
         os.environ["REPETIR_LARGO"] = str(int(os.environ.get("REPETIR_LARGO", "0")) + 1)
         sys.stdout.flush(); os.execv(sys.executable, [sys.executable] + sys.argv)
-    print(sh(f'python3 "{AQUI}/largo_miniatura.py" "{P}"')[1].strip()[-200:])
+    print(sh(f'CANAL={CANAL} python3 "{AQUI}/largo_miniatura.py" "{P}"')[1].strip()[-200:])
     T = json.load(open(f"{P}/tiempos.json"))
     # descripción: gancho + capítulos + créditos
     caps = open(f"{P}/capitulos.txt", encoding="utf-8").read().strip() if os.path.exists(f"{P}/capitulos.txt") else ""

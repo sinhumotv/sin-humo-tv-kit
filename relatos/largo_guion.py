@@ -117,10 +117,10 @@ TÍTULO Y MINIATURA (lo MÁS importante: de ellos depende que hagan clic):
   + promesa concreta y CIERTA. Variados: pregunta, dato increíble, "la verdad sobre…", consecuencia, número… Sin
   mayúsculas enteras salvo una palabra, sin emojis, sin mentir.
 - "miniatura": {{"texto": "<2 a 4 palabras en MAYÚSCULAS que complementen al título, sin repetirlo>",
-  "clave": "<la palabra del texto que irá en amarillo>",
+  "clave": "<UNA palabra que esté en el texto: irá más grande y en color>",
   "prompt": "<EN INGLÉS, 50-90 palabras: imagen horizontal muy llamativa para la miniatura: UN solo protagonista o objeto
-  grande en la mitad derecha, emoción intensa o tensión, alto contraste, colores saturados, fondo simple y oscuro en la
-  mitad izquierda para el texto; sin texto, sin sangre>"}}
+  grande y cercano, emoción intensa o tensión, escena ÉPICA y LUMINOSA a toda pantalla (luz dorada, cielo
+  encendido, fuego o neón), colores saturados y alto contraste, nunca oscura; sin texto, sin sangre>"}}
 - "descripcion": 2 párrafos para YouTube (el primero repite el gancho con otras palabras e incluye las palabras clave de
   búsqueda; el segundo resume de qué trata sin destripar el final). "etiquetas": 12 etiquetas de búsqueda.
 - "titulo": nombre corto del tema (para el registro).
