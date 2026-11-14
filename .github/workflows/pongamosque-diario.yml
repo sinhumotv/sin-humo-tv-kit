@@ -85,9 +85,13 @@ jobs:
           git add -A && git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Tanda $(date -u +%F)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-videos
           cat videos.json
-      - uses: actions/upload-artifact@v4
+      - name: Vídeo de prueba (rama pq-prueba)
         if: always() && inputs.prueba == 'sí'
-        with: { name: video-prueba, path: 'tanda/v*.mp4', if-no-files-found: ignore, compression-level: 0 }
+        run: |
+          ls tanda/v*.mp4 >/dev/null 2>&1 || exit 0
+          mkdir /tmp/pp && cp tanda/v*.mp4 /tmp/pp/ && cd /tmp/pp && git init -q -b pq-prueba && git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Vídeo de prueba"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pq-prueba
       - uses: actions/upload-artifact@v4
         if: always() && env.YA != '1'
         with: { name: registro-tanda, path: 'tanda/v*/resumen.json', if-no-files-found: ignore }
