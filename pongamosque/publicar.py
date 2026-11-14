@@ -9,7 +9,8 @@ videos = json.load(open(f'{D}/videos.json'))
 from datetime import datetime
 from zoneinfo import ZoneInfo
 ahora = datetime.now(ZoneInfo('Europe/Madrid')); hm = ahora.hour * 60 + ahora.minute
-franja = sum(hm >= h * 60 + m for h, m in [(11, 0), (13, 0), (15, 30), (18, 0), (20, 30)])
+FRANJAS = [(11, 43), (13, 17), (15, 47), (18, 13), (20, 41)]   # (14-nov-2026) horas exactas: el «reloj» llama cada pocos minutos
+franja = sum(hm >= h * 60 + m for h, m in FRANJAS)
 if franja == 0: print('fuera de horario: no se publica'); sys.exit(0)
 if any(x.get('franja') == franja for x in videos): print(f'la franja {franja} ya está publicada'); sys.exit(0)
 v = next((x for x in videos if x.get('publicable') and not x.get('publicado')), None)

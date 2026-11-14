@@ -1,0 +1,20 @@
+# (14-nov-2026) PONGAMOS QUE · RELOJ: GitHub retrasa las tareas programadas hasta 7-8 horas, así que la hora la lleva este
+# proceso (pongamosque/reloj.py): lanza la tanda a las 9:37 y publica a las 11:43, 13:17, 15:47, 18:13 y 20:41 (Madrid).
+# Dura ~5 h 40 min y se relanza solo; la alarma cada 20 min solo sirve para rearrancarlo si la cadena se corta.
+name: Pongamos Que · reloj
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+permissions: { contents: write, actions: write }
+concurrency: { group: pongamosque-reloj, cancel-in-progress: false }
+jobs:
+  reloj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          BUFFER_KEY: ${{ secrets.PONGAMOSQUE_BUFFER_KEY }}
+        run: python3 pongamosque/reloj.py
