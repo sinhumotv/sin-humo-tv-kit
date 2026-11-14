@@ -100,3 +100,4 @@
 2026-11-13|21:00|El Hombre de Piltdown|nadie|YO 6af6e71b639ce45418cdc152 IN 6af6e71b67097dd240156ea7 TI 6af6e71ce272158370e54c4f|img=mixto|21:07
 2026-11-14|12:00|El misterio del hombre de Tollund|increible|YO 6af82ea2bb36d00909ffd42f IN 6af82ea3d8bd2962e41e99af TI 6af82ea3d16af15d4d07547b|img=mixto|12:14
 2026-11-14|15:00|La tragedia de Halifax|consecuencia|YO 6af82fd781e1228421f9a6d1 IN 6af82fd8d16af15d4d079502 TI 6af82fd881e1228421f9a6fe|img=mixto|15:35
+2026-11-14|18:00|El naufragio del Batavia|pregunta|YO 6af830ecd8bd2962e41f3933 IN 6af830ec81e1228421f9fbe8 TI 6af830ed4b28296eb14b9573|img=mixto|18:37
