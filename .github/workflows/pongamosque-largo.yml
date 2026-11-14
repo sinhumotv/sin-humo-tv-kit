@@ -38,6 +38,14 @@ jobs:
           git add pongamosque/temas_largos.json && git commit -qm "Pongamos Que: tema del largo" && git pull -q --rebase && git push -q || true
       - name: Alojar el vídeo
         run: |
+          # GitHub no admite archivos de más de 100 MB en una rama: si pasa de 90 MB se recodifica con la tasa justa (misma imagen)
+          mb=$(( $(stat -c %s largo/video.mp4) / 1000000 ))
+          if [ "$mb" -gt 90 ]; then
+            d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 largo/video.mp4)
+            k=$(python3 -c "print(int(88*8000/float('$d'))-200)")
+            ffmpeg -y -v error -i largo/video.mp4 -c:v libx264 -preset medium -b:v ${k}k -maxrate $((k*3/2))k -bufsize $((k*2))k -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart /tmp/v.mp4
+            mv /tmp/v.mp4 largo/video.mp4; echo "vídeo comprimido: $mb MB -> $(( $(stat -c %s largo/video.mp4) / 1000000 )) MB"
+          fi
           rama="pq-largo-$(date -u +%Y%m%d)"; mkdir /tmp/al && cp largo/video.mp4 /tmp/al/ && cd /tmp/al && git init -q -b "$rama" && git add -A
           git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "$rama"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "$rama"
