@@ -73,7 +73,17 @@ for w in trab:
     v = {'id': f'v{w["i"]}', 'tema': w['tema']['tema'], 'titulo': w['tema'].get('titulo') or w['tema']['tema'], 'gancho': w['tema'].get('gancho', ''),
          'pregunta': w['tema'].get('pregunta', ''), 'hashtags': w['tema'].get('hashtags', []), 'escenas': total, 'animadas': len(hechos),
          'publicable': ok, 'publicado': {}}
-    if ok: shutil.copy(f'{w["d"]}/video_final.mp4', f'{SAL}/{v["id"]}.mp4'); v['archivo'] = f'{v["id"]}.mp4'
+    if ok:
+        # (14-nov-2026) se sube en 1440x2560: YouTube, TikTok e Instagram comprimen mejor (más nitidez en el móvil) los vídeos
+        # de más resolución. Si falla o pasa de 90 MB (límite de GitHub), se sube el original de 1080x1920.
+        dst = f'{SAL}/{v["id"]}.mp4'
+        r = subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', f'{w["d"]}/video_final.mp4', '-vf', 'scale=1440:2560:flags=lanczos',
+                            '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-maxrate', '16M', '-bufsize', '32M', '-pix_fmt', 'yuv420p',
+                            '-c:a', 'copy', '-movflags', '+faststart', dst], capture_output=True, text=True)
+        if r.returncode or not os.path.exists(dst) or os.path.getsize(dst) > 90e6:
+            print(f'{v["id"]}: se queda en 1080p ({(r.stderr or "")[-120:] or "pesa demasiado"})', flush=True)
+            shutil.copy(f'{w["d"]}/video_final.mp4', dst)
+        v['archivo'] = f'{v["id"]}.mp4'
     else: v['error'] = '\n'.join(w['log'][-12:])[-800:]
     print(f'{v["id"]}: {"OK" if ok else "FALLO"} · {len(hechos)}/{total} escenas animadas · {"animado con IA" if animadas >= 0.8 else "con imágenes y efecto 3D"} · {v["tema"]}', flush=True)
     videos.append(v)
