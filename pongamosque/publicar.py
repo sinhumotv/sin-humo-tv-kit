@@ -12,7 +12,8 @@ ahora = datetime.now(ZoneInfo('Europe/Madrid')); hm = ahora.hour * 60 + ahora.mi
 FRANJAS = [(11, 43), (13, 17), (15, 47), (18, 13), (20, 41)]   # (14-nov-2026) horas exactas: el «reloj» llama cada pocos minutos
 franja = sum(hm >= h * 60 + m for h, m in FRANJAS)
 if franja == 0: print('fuera de horario: no se publica'); sys.exit(0)
-if any(x.get('franja') == franja for x in videos): print(f'la franja {franja} ya está publicada'); sys.exit(0)
+dia = ahora.date().isoformat()   # (14-nov-2026) la franja cuenta solo dentro del mismo día
+if any(x.get('franja') == franja and x.get('dia', dia) == dia and x.get('dia') for x in videos): print(f'la franja {franja} ya está publicada hoy'); sys.exit(0)
 v = next((x for x in videos if x.get('publicable') and not x.get('publicado')), None)
 if not v: print('no queda ningún vídeo por publicar hoy'); sys.exit(0)
 def buffer(q, var=None):
@@ -41,6 +42,6 @@ for red, post in posts.items():
     cp = (d.get('data') or {}).get('createPost') or {}
     v['publicado'][red] = cp['post']['id'] if 'post' in cp else 'ERROR ' + (cp.get('message') or json.dumps(d.get('errors'))[:300])
     print(red, ':', v['publicado'][red], flush=True)
-v['franja'] = franja
+v['franja'] = franja; v['dia'] = dia
 json.dump(videos, open(f'{D}/videos.json', 'w'), ensure_ascii=False, indent=1)
 print('publicado:', v['id'], v['tema'])
