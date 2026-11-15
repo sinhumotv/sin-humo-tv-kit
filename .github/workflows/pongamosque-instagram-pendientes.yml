@@ -1,0 +1,38 @@
+# (15-nov-2026) Una vez: los 3 primeros vídeos del 15-nov salieron sin Instagram (estaba desconectado en Buffer). Se guardan en
+# una «release» (para que no se borren con la tanda siguiente) y se programan en Instagram el 16-nov, fuera de las franjas.
+name: Pongamos Que · Instagram pendientes
+on: { workflow_dispatch: {} }
+permissions: { contents: write }
+jobs:
+  programar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guardar los vídeos en una release
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          git fetch -q --depth=1 origin pongamosque-videos && git show FETCH_HEAD:videos.json > /tmp/v.json
+          for f in r22-v1.mp4 r22-v2.mp4 r22-v3.mp4; do git show FETCH_HEAD:$f > /tmp/$f; done
+          gh release view pq-instagram-20261115 >/dev/null 2>&1 || gh release create pq-instagram-20261115 /tmp/r22-v1.mp4 /tmp/r22-v2.mp4 /tmp/r22-v3.mp4 -t "Pongamos Que · Instagram pendientes" -n "Vídeos del 15-nov para Instagram"
+      - name: Programar en Instagram
+        env: { BUFFER_KEY: '${{ secrets.PONGAMOSQUE_BUFFER_KEY }}' }
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          def q(s, var=None):
+              req = urllib.request.Request('https://api.buffer.com', json.dumps({'query': s, 'variables': var or {}}).encode(), {'Authorization': 'Bearer ' + os.environ['BUFFER_KEY'].strip(), 'Content-Type': 'application/json'})
+              with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
+          org = q('{ account { organizations { id } } }')['data']['account']['organizations'][0]['id']
+          ig = [c['id'] for c in q('{ channels(input: {organizationId: "%s"}) { id service isDisconnected } }' % org)['data']['channels'] if c['service'] == 'instagram' and not c['isDisconnected']][0]
+          base = 'https://github.com/sinhumotv/sin-humo-tv-kit/releases/download/pq-instagram-20261115/'
+          horas = {'r22-v1': '2026-11-16T11:30:00Z', 'r22-v2': '2026-11-16T16:00:00Z', 'r22-v3': '2026-11-16T18:30:00Z'}   # 12:30, 17:00 y 19:30 en Madrid
+          M = 'mutation($input: CreatePostInput!) { createPost(input: $input) { ... on PostActionSuccess { post { id status dueAt } } ... on MutationError { message } } }'
+          for v in json.load(open('/tmp/v.json')):
+              if v['id'] not in horas: continue
+              tags = ' '.join('#' + str(h).lstrip('#').replace(' ', '') for h in (['pongamosque'] + list(v.get('hashtags') or []))[:8])
+              txt = f"{v.get('gancho') or v['tema']}\n\n{v.get('pregunta') or '¿Tú qué harías? Te leo en comentarios'} 👇\n\n{tags}"
+              d = q(M, {'input': {'channelId': ig, 'mode': 'customScheduled', 'dueAt': horas[v['id']], 'schedulingType': 'automatic', 'text': txt[:2200],
+                                  'assets': [{'video': {'url': base + v['id'] + '.mp4', 'metadata': {'thumbnailOffset': 1500}}}],
+                                  'metadata': {'instagram': {'type': 'reel', 'shouldShareToFeed': True, 'isAiGenerated': True}}}})
+              print(v['id'], horas[v['id']], json.dumps(d, ensure_ascii=False)[:400])
+          PY
