@@ -1,0 +1,25 @@
+# (15-nov-2026) Diagnóstico: estado en Buffer de lo publicado hoy por Pongamos Que (si salió, si dio error y por qué).
+name: Pongamos Que · estado en Buffer
+on: { workflow_dispatch: {} }
+permissions: { contents: read }
+jobs:
+  estado:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env: { BUFFER_KEY: '${{ secrets.PONGAMOSQUE_BUFFER_KEY }}' }
+        run: |
+          git fetch -q --depth=1 origin pongamosque-videos && git show FETCH_HEAD:videos.json > /tmp/v.json
+          python3 - <<'PY'
+          import json, os, urllib.request
+          def q(s):
+              req = urllib.request.Request('https://api.buffer.com', json.dumps({'query': s}).encode(), {'Authorization': 'Bearer ' + os.environ['BUFFER_KEY'].strip(), 'Content-Type': 'application/json'})
+              try:
+                  with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
+              except urllib.error.HTTPError as e: return {'http': e.code, 'body': e.read().decode()[:500]}
+          for v in json.load(open('/tmp/v.json')):
+              for red, pid in (v.get('publicado') or {}).items():
+                  if len(str(pid)) != 24: print(v['id'], red, pid); continue
+                  d = q('{ post(input: {id: "%s"}) { id status dueAt sentAt error { message } } }' % pid)
+                  print(v['id'], red, json.dumps(d, ensure_ascii=False)[:600])
+          PY
