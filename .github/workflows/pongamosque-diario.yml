@@ -1,6 +1,9 @@
-# (13-nov-2026) PONGAMOS QUE · fabrica la tanda del día (4-5 Shorts) con TODAS las escenas animadas con IA (GPU gratis de Kaggle)
-# y el motor de Explícalo (repositorio privado; aquí no se copia). Deja los vídeos en la rama «pongamosque-videos» y la lista en
-# videos.json; «Publicar Pongamos Que (tanda)» los va subiendo a lo largo del día. Gratis: GitHub (público) + Kaggle.
+# (13-nov-2026) PONGAMOS QUE · fabrica la tanda del día (4-5 Shorts) con el motor de Explícalo (repositorio privado; aquí no se
+# copia). Deja los vídeos en la rama «pongamosque-videos» y la lista en videos.json; «Publicar Pongamos Que (tanda)» los va
+# subiendo a lo largo del día. Gratis: GitHub (público).
+# (15-nov-2026) CADA VÍDEO EN SU PROPIA MÁQUINA (en paralelo): el motor 3D tarda ~30-40 min por vídeo; con 5 en la misma máquina
+# la tanda pasaría de 3 horas. Así tarda lo que tarda uno. 1) «preparar» elige los temas; 2) «video» (uno por tema, a la vez);
+# 3) «guardar» junta los que han salido y los deja en la rama (o en «pq-prueba» si es una prueba).
 name: Pongamos Que · fabricar tanda
 on:
   schedule:
@@ -13,13 +16,15 @@ on:
       forzar: { description: 'fabricar aunque ya haya tanda de hoy (sí/no)', default: 'no' }
       motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
       estilo: { description: 'estilo visual: (vacío) actual · ilustrado · 3d', default: '' }
-      prueba: { description: 'sí = vídeo de prueba: no se guarda en la tanda ni se publica (queda como artefacto)', default: 'no' }
+      prueba: { description: 'sí = vídeo de prueba: no se guarda en la tanda ni se publica (queda en la rama pq-prueba)', default: 'no' }
 permissions: { contents: write }
 concurrency: { group: pongamosque-tanda, cancel-in-progress: false }
 jobs:
-  fabricar:
+  preparar:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 40
+    outputs:
+      lista: ${{ steps.temas.outputs.lista }}
     steps:
       - uses: actions/checkout@v4
       - name: ¿Ya hay tanda de hoy?
@@ -28,23 +33,51 @@ jobs:
              && [ "$(git show FETCH_HEAD:fecha.txt 2>/dev/null)" = "$(date -u +%F)" ]; then
             echo "Ya hay tanda de hoy: no se fabrica otra"; echo YA=1 >> $GITHUB_ENV
           fi
-      - if: env.YA != '1'
-        uses: actions/checkout@v4
-        with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor || ''claude/kind-brown-9clxsm'' }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
-      - uses: actions/setup-node@v4
-        if: env.YA != '1'
-        with: { node-version: '22' }
       - uses: actions/setup-python@v5
         if: env.YA != '1'
         with: { python-version: '3.12' }
-      - name: Herramientas
+      - name: Temas
+        id: temas
         if: env.YA != '1'
+        env:
+          GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
+          CUANTOS: ${{ inputs.cuantos || '5' }}
+        run: |
+          python3 pongamosque/temas.py "$CUANTOS" temas.json
+          echo "lista=$(python3 -c "import json;print(json.dumps(list(range(1, len(json.load(open('temas.json'))) + 1))))")" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.prueba }}" != "sí" ]; then
+            git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+            git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && (git pull -q --rebase && git push -q || true) || true
+          fi
+      - uses: actions/upload-artifact@v4
+        if: env.YA != '1'
+        with: { name: temas, path: temas.json }
+
+  video:
+    needs: preparar
+    if: needs.preparar.outputs.lista != '' && needs.preparar.outputs.lista != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        n: ${{ fromJson(needs.preparar.outputs.lista) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor || ''claude/kind-brown-9clxsm'' }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - uses: actions/download-artifact@v4
+        with: { name: temas }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Herramientas
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji espeak-ng >/dev/null
           mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
           pip install -q numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six "kaggle>=1.8"
-      - name: Fabricar
-        if: env.YA != '1'
+      - name: Fabricar el vídeo ${{ matrix.n }}
         env:
           NODE_PATH: /opt/npm-tools/node_modules
           GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
@@ -54,16 +87,54 @@ jobs:
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
           REPO_PUSH: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
           PQ_ESTILO: ${{ inputs.estilo || vars.PQ_ESTILO || '' }}
-          CUANTOS: ${{ inputs.cuantos || (github.event_name == 'push' && '1') || '5' }}
+          N: ${{ matrix.n }}
         run: |
           export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
-          python3 pongamosque/temas.py "$CUANTOS" temas.json
-          python3 pongamosque/diario.py temas.json explicalo tanda
+          python3 -c "import json,os;t=json.load(open('temas.json'));json.dump([t[int(os.environ['N'])-1]],open('tema1.json','w'),ensure_ascii=False)"
+          python3 pongamosque/diario.py tema1.json explicalo tanda
+          # el vídeo de esta máquina pasa a llamarse v<N>
+          python3 - <<'PY'
+          import json, os, shutil
+          n = os.environ['N']; vs = json.load(open('tanda/videos.json')) if os.path.exists('tanda/videos.json') else []
+          os.makedirs('parte', exist_ok=True)
+          for v in vs:
+              v['id'] = f'v{n}'
+              if v.get('archivo'): shutil.move('tanda/' + v['archivo'], f'parte/v{n}.mp4'); v['archivo'] = f'v{n}.mp4'
+          json.dump(vs, open(f'parte/parte{n}.json', 'w'), ensure_ascii=False, indent=1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: 'video-${{ matrix.n }}', path: 'parte/*', if-no-files-found: ignore, compression-level: 0 }
+
+  guardar:
+    needs: [preparar, video]
+    if: always() && needs.preparar.outputs.lista != '' && needs.preparar.outputs.lista != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: 'video-*', path: tanda, merge-multiple: true }
+      - name: Juntar los vídeos
+        run: |
+          python3 - <<'PY'
+          import glob, json, os
+          vs = []
+          for f in sorted(glob.glob('tanda/parte*.json'), key=lambda x: int(x.split('parte')[-1].split('.')[0])): vs += json.load(open(f))
+          json.dump(vs, open('tanda/videos.json', 'w'), ensure_ascii=False, indent=1)
+          print(json.dumps([(v['id'], v.get('publicable'), v.get('tema')) for v in vs], ensure_ascii=False, indent=1))
+          # los temas que no salieron vuelven a estar disponibles otro día
+          fallidos = {v['tema'] for v in vs if not v.get('publicable')}
+          H = 'pongamosque/temas_hechos.json'
+          if fallidos and os.path.exists(H) and os.environ.get('PRUEBA') != 'sí':
+              json.dump([t for t in json.load(open(H)) if t not in fallidos], open(H, 'w'), ensure_ascii=False, indent=1)
+          PY
+        env: { PRUEBA: '${{ inputs.prueba }}' }
       - name: Guardar vídeos y temas
-        if: always() && env.YA != '1' && inputs.prueba != 'sí'
+        if: inputs.prueba != 'sí'
         run: |
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
-          git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && git pull -q --rebase && git push -q || true
+          git pull -q --rebase || true
+          git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas que no salieron, otra vez disponibles" && git push -q || true
           [ -f tanda/videos.json ] || exit 0
           # (13-nov-2026) una segunda tanda el mismo día (forzar) SE AÑADE a la de hoy: no borra los vídeos que aún no han salido
           python3 - <<'PY'
@@ -88,12 +159,9 @@ jobs:
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pongamosque-videos
           cat videos.json
       - name: Vídeo de prueba (rama pq-prueba)
-        if: always() && inputs.prueba == 'sí'
+        if: inputs.prueba == 'sí'
         run: |
           ls tanda/v*.mp4 >/dev/null 2>&1 || exit 0
           mkdir /tmp/pp && cp tanda/v*.mp4 /tmp/pp/ && cd /tmp/pp && git init -q -b pq-prueba && git add -A
           git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "Vídeo de prueba"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" pq-prueba
-      - uses: actions/upload-artifact@v4
-        if: always() && env.YA != '1'
-        with: { name: registro-tanda, path: 'tanda/v*/resumen.json', if-no-files-found: ignore }
