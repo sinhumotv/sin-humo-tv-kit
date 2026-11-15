@@ -12,7 +12,7 @@ on:
       cuantos: { description: 'cuántos vídeos', default: '5' }
       forzar: { description: 'fabricar aunque ya haya tanda de hoy (sí/no)', default: 'no' }
       motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
-      estilo: { description: 'estilo visual: (vacío) actual · ilustrado', default: '' }
+      estilo: { description: 'estilo visual: (vacío) actual · ilustrado · 3d', default: '' }
       prueba: { description: 'sí = vídeo de prueba: no se guarda en la tanda ni se publica (queda como artefacto)', default: 'no' }
 permissions: { contents: write }
 concurrency: { group: pongamosque-tanda, cancel-in-progress: false }

@@ -18,7 +18,8 @@ if os.environ.get('PQ_ANIMAR') != '1': env.pop('ANIMAR_IA', None)
 trab = []
 for i, t in enumerate(temas, 1):
     d = os.path.join(SAL, f'v{i}'); os.makedirs(d, exist_ok=True)
-    json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 38, 'formato': 'vertical', 'tema_visual': 'pongamosque', 'voz': 'Puck',
+    json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 38, 'formato': 'vertical', 'tema_visual': 'pq3d' if os.environ.get('PQ_ESTILO') == '3d' else 'pongamosque',   # (15-nov-2026) 3d = vídeo hecho con código
+               'voz': 'Puck',
                'estructura_fija': True}, open(f'{d}/pedido_in.json', 'w'), ensure_ascii=False)
     pr = subprocess.Popen([sys.executable, FAB, f'{d}/pedido_in.json', d], cwd=EXP, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     trab.append({'i': i, 'd': d, 'tema': t, 'pr': pr, 'pide': False, 'log': []})
