@@ -13,10 +13,22 @@ if r.returncode: sys.exit('no hay tema')
 t = json.load(open(f'{SAL}/tema.json'))[0]
 d = os.path.join(SAL, 'v')
 os.makedirs(d, exist_ok=True)
-json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 300, 'formato': 'horizontal', 'tema_visual': 'pongamosque', 'voz': 'Puck',
-           'estructura_fija': True}, open(f'{d}/pedido_in.json', 'w'), ensure_ascii=False)
-r = subprocess.run([sys.executable, os.path.join(EXP, 'plataforma/v2/fabricar.py'), f'{d}/pedido_in.json', d], cwd=EXP,
-                   env=dict(os.environ, PQ_IMG_NORMAL='1', PQ_SIN3D='1', WHISPER_MODELO='small'))   # (14-nov-2026) Pablo: los largos sin 3D
+def fabricar(visual, env_extra):
+    json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 300, 'formato': 'horizontal', 'tema_visual': visual, 'voz': 'Puck',
+               'estructura_fija': True}, open(f'{d}/pedido_in.json', 'w'), ensure_ascii=False)
+    return subprocess.run([sys.executable, os.path.join(EXP, 'plataforma/v2/fabricar.py'), f'{d}/pedido_in.json', d], cwd=EXP,
+                          env=dict(os.environ, WHISPER_MODELO='small', **env_extra))
+
+
+# (14-nov-2026) Pablo: los largos con imágenes y movimiento, sin el efecto 3D (que cueste poco).
+r = fabricar('pongamosque', {'PQ_IMG_NORMAL': '1', 'PQ_SIN3D': '1'})
+if r.returncode or not os.path.exists(f'{d}/video_final.mp4'):
+    # (15-nov-2026) si no ha salido (p. ej. sin cuota de imágenes de Cloudflare), plan B: el motor 3D hecho con código, que no
+    # necesita imágenes; así el largo de hoy sale igual (tarda más en grabarse, unas 2-3 horas)
+    print('el largo con imágenes no ha salido: se hace con el motor 3D', flush=True)
+    import shutil
+    shutil.rmtree(d, ignore_errors=True); os.makedirs(d, exist_ok=True)
+    r = fabricar('pq3d', {})
 if r.returncode or not os.path.exists(f'{d}/video_final.mp4'): sys.exit('el largo no ha salido')
 os.replace(f'{d}/video_final.mp4', f'{SAL}/video.mp4')
 tags = [str(h).lstrip('#') for h in (t.get('hashtags') or [])]
