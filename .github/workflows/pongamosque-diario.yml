@@ -86,7 +86,7 @@ jobs:
           CF_TOKEN: ${{ secrets.PONGAMOSQUE_CF_TOKEN }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
           REPO_PUSH: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
-          PQ_ESTILO: ${{ inputs.estilo || vars.PQ_ESTILO || '' }}
+          PQ_ESTILO: ${{ inputs.estilo || vars.PQ_ESTILO || '3d' }}   # (15-nov-2026) por defecto el motor 3D (no gasta cuota de imágenes); vars.PQ_ESTILO='foto' vuelve al de imágenes
           N: ${{ matrix.n }}
         run: |
           export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
