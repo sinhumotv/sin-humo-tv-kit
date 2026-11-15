@@ -104,3 +104,4 @@
 2026-11-14|21:00|La fuga de Varennes|error|YO 6af8332ed16af15d4d092784 IN 6af8332f81e1228421fb24a7 TI 6af8332f4b28296eb14cdcb1|img=mixto|20:48
 2026-11-15|08:00|El hacha de Nueva Orleans|cuenta|YO 6af92200918fe79d2ebb2128 IN 6af92201918fe79d2ebb2167 TI 6af92201e86a5789a6e78e5e|img=mixto|07:44
 2026-11-15|12:00|El robo de las Joyas de Irlanda|final|YO 6af922f6e5a113497ac24aa0 IN 6af922f676c23bf1c755e8e3 TI 6af922f7c5b364e0622f7542|img=mixto|12:03
+2026-11-15|15:00|La muerte de Martín el Humano|sabias|YO 6af923dcb9a106584c8495bb IN 6af923ddb9a106584c8495fe TI 6af923de918fe79d2ebb948c|img=mixto|15:38
