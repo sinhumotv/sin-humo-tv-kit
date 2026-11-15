@@ -113,3 +113,4 @@
 2026-11-14|18:00|Jasón y las Simplégadas|cuenta|YO 6af83129bb36d00909008583 IN 6af8312d78196a0a9755ae58 TI 6af8312ed8bd2962e41f76b4|img=mixto|17:31
 2026-11-14|21:00|El mechón de Nisos|final|YO 6af8329378196a0a97568c82 IN 6af83294d16af15d4d08f038 TI 6af8329578196a0a97568e59|img=mixto|20:36
 2026-11-15|08:00|Pélope y Enómao|consecuencia|YO 6af921c9b9a106584c83f0b9 IN 6af921ca76c23bf1c7558884 TI 6af921cbe86a5789a6e75bc5|img=mixto|07:21
+2026-11-15|12:00|La armadura de Patroclo|sabias|YO 6af9233be86a5789a6e7dec7 IN 6af9233ce5a113497ac25787 TI 6af9233cc5b364e0622f81fd|img=ia|12:06
