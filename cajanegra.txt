@@ -102,3 +102,4 @@
 2026-11-14|15:00|La tragedia de Halifax|consecuencia|YO 6af82fd781e1228421f9a6d1 IN 6af82fd8d16af15d4d079502 TI 6af82fd881e1228421f9a6fe|img=mixto|15:35
 2026-11-14|18:00|El naufragio del Batavia|pregunta|YO 6af830ecd8bd2962e41f3933 IN 6af830ec81e1228421f9fbe8 TI 6af830ed4b28296eb14b9573|img=mixto|18:37
 2026-11-14|21:00|La fuga de Varennes|error|YO 6af8332ed16af15d4d092784 IN 6af8332f81e1228421fb24a7 TI 6af8332f4b28296eb14cdcb1|img=mixto|20:48
+2026-11-15|08:00|El hacha de Nueva Orleans|cuenta|YO 6af92200918fe79d2ebb2128 IN 6af92201918fe79d2ebb2167 TI 6af92201e86a5789a6e78e5e|img=mixto|07:44
