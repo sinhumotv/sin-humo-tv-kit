@@ -27,7 +27,7 @@ def leer(w):
     for l in w['pr'].stdout:
         w['log'].append(l.rstrip())
         if l.startswith('@ANIMAR'): w['pide'] = True
-        if l.startswith(('·', '⏱', '@', 'animación', 'FALLO', 'render', 'juez', 'imagen', 'nitidez', 'revisión')): print(f'[v{w["i"]}]', l.rstrip(), flush=True)
+        if l.startswith(('·', '⏱', '@', 'animación', 'FALLO', 'render', 'juez', 'imagen', 'nitidez', 'revisión', 'escenas 3D')): print(f'[v{w["i"]}]', l.rstrip(), flush=True)
 for w in trab: w['hilo'] = threading.Thread(target=leer, args=(w,), daemon=True); w['hilo'].start()
 t0 = time.time()
 while time.time() - t0 < 3600 and not all(w['pide'] or w['pr'].poll() is not None for w in trab): time.sleep(5)
