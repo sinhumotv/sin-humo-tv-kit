@@ -17,6 +17,9 @@ jobs:
               try:
                   with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
               except urllib.error.HTTPError as e: return {'http': e.code, 'body': e.read().decode()[:500]}
+          org = q('{ account { organizations { id name } } }'); print('ORG', json.dumps(org, ensure_ascii=False)[:400])
+          for o in org['data']['account']['organizations']:
+              print('CANALES', json.dumps(q('{ channels(input: {organizationId: "%s"}) { id service name isDisconnected } }' % o['id']), ensure_ascii=False)[:1500])
           for v in json.load(open('/tmp/v.json')):
               for red, pid in (v.get('publicado') or {}).items():
                   if len(str(pid)) != 24: print(v['id'], red, pid); continue
