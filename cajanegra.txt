@@ -105,3 +105,4 @@
 2026-11-15|08:00|El hacha de Nueva Orleans|cuenta|YO 6af92200918fe79d2ebb2128 IN 6af92201918fe79d2ebb2167 TI 6af92201e86a5789a6e78e5e|img=mixto|07:44
 2026-11-15|12:00|El robo de las Joyas de Irlanda|final|YO 6af922f6e5a113497ac24aa0 IN 6af922f676c23bf1c755e8e3 TI 6af922f7c5b364e0622f7542|img=mixto|12:03
 2026-11-15|15:00|La muerte de Martín el Humano|sabias|YO 6af923dcb9a106584c8495bb IN 6af923ddb9a106584c8495fe TI 6af923de918fe79d2ebb948c|img=mixto|15:38
+2026-11-15|18:00|El enigma de la Cámara de Ámbar|consecuencia|YO 6af924e0b9a106584c84c2f9 IN 6af924e1e5a113497ac29e67 TI 6af924e1e5a113497ac29ebb|img=mixto|17:42
