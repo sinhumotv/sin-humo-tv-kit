@@ -102,6 +102,14 @@ jobs:
               if v.get('archivo'): shutil.move('tanda/' + v['archivo'], f'parte/v{n}.mp4'); v['archivo'] = f'v{n}.mp4'
           json.dump(vs, open(f'parte/parte{n}.json', 'w'), ensure_ascii=False, indent=1)
           PY
+      - name: Guardar las piezas 3D nuevas en la biblioteca
+        if: always()
+        run: |
+          cd explicalo
+          ls plataforma/v2/estructuras/piezas_ia/*.json >/dev/null 2>&1 || exit 0
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          git add plataforma/v2/estructuras/piezas_ia && git commit -qm "Piezas 3D nuevas (Pongamos Que, vídeo ${{ matrix.n }})" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase origin "${{ inputs.motor || 'claude/kind-brown-9clxsm' }}" && git push -q origin "HEAD:${{ inputs.motor || 'claude/kind-brown-9clxsm' }}" && break; sleep $((i * 7)); done || true
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: 'video-${{ matrix.n }}', path: 'parte/*', if-no-files-found: ignore, compression-level: 0 }
