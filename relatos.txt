@@ -115,3 +115,4 @@
 2026-11-15|08:00|Pélope y Enómao|consecuencia|YO 6af921c9b9a106584c83f0b9 IN 6af921ca76c23bf1c7558884 TI 6af921cbe86a5789a6e75bc5|img=mixto|07:21
 2026-11-15|12:00|La armadura de Patroclo|sabias|YO 6af9233be86a5789a6e7dec7 IN 6af9233ce5a113497ac25787 TI 6af9233cc5b364e0622f81fd|img=ia|12:06
 2026-11-15|15:00|El nacimiento de Atenea|pregunta|YO 6af924bdb9a106584c84bd96 IN 6af924bee86a5789a6e82dfe TI 6af924bec5b364e0622fd250|img=mixto|15:13
+2026-11-15|18:00|Medea y las hijas de Pelias|nadie|YO 6af9264276c23bf1c756ba71 IN 6af92643b9a106584c85217b TI 6af92643e5a113497ac2f712|img=ia|17:38
