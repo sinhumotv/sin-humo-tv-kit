@@ -1,8 +1,7 @@
-Actualizado 2026-11-08
-AVISO: sigue sin haber datos propios. vidIQ solo tiene autorizado "Sin Humo TV" y este canal no está en su índice: no hay retención, minuto de abandono ni duración media vista. Para tenerlos hay que autorizar este canal en vidIQ.
-- 12 largos publicados (robots, implantes, transporte, longevidad, superinteligencia, energía, guerra, trabajo, científicos, dinero, historia de la IA, ciudades). Sin datos de visitas no se puede decir cuál va mejor.
-- Mantener títulos con pregunta, cifra o una palabra en MAYÚSCULAS: es lo que usan los outliers del nicho.
-- Los outliers del nicho prometen la "historia completa" o un ángulo inesperado (víctima, villano, lo que nadie cuenta): decirlo en los primeros 20 segundos.
-- Abrir con el momento más fuerte de la historia y luego volver al principio; no empezar con contexto.
-- Cerrar cada capítulo con una pregunta abierta para que no se vayan a mitad.
-- Los recopilatorios largos (varios casos/mitos en un vídeo) están arrasando en español: probar uno cuando haya material publicado.
+Actualizado 2026-11-15
+AVISO: siguen sin haber datos propios. vidIQ solo tiene autorizado "Sin Humo TV" (no este canal), así que no hay retención, minuto de abandono ni duración media vista de nuestros largos. Para tenerlos hay que conectar este canal en vidIQ. Lo de abajo sale de los outliers del nicho, no de nuestros datos.
+- 16 largos publicados; sin datos de visitas no se puede decir cuál va mejor.
+- Los outliers del nicho van de IA en la vida íntima y emocional (pareja, terapia), no solo de tecnología.
+- Explicaciones "sin tecnicismos" tienen enganche enorme: hablar a alguien que no sabe nada.
+- Actualidad (burbuja, chips, electricidad) da picos rápidos: un tema actual + proyección a 2100.
+- Títulos en pregunta con "TU" (tu trabajo, tu ciudad) siguen siendo la apuesta segura.

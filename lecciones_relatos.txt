@@ -1,9 +1,7 @@
-Actualizado 2026-11-08
-AVISO: sigue sin haber datos propios. vidIQ solo tiene autorizado "Sin Humo TV" y este canal no está en su índice: no hay retención, minuto de abandono ni duración media vista. Para tenerlos hay que autorizar este canal en vidIQ.
-- 9 largos publicados (Narciso, Sísifo, Prometeo, Teseo, Perseo, Titanomaquia, Orfeo, Ío, Tifón). Sin datos de visitas no se puede decir cuál va mejor.
-- Mantener títulos con pregunta, cifra o una palabra en MAYÚSCULAS: es lo que usan los outliers del nicho.
-- Los outliers del nicho prometen la "historia completa" o un ángulo inesperado (víctima, villano, lo que nadie cuenta): decirlo en los primeros 20 segundos.
-- Abrir con el momento más fuerte de la historia y luego volver al principio; no empezar con contexto.
-- Cerrar cada capítulo con una pregunta abierta para que no se vayan a mitad.
-- Los recopilatorios largos (varios casos/mitos en un vídeo) están arrasando en español: probar uno cuando haya material publicado.
-- Los outliers de esta semana duran 13-45 min (o 2-3 h los 'para dormir'): un largo de unos 20 min con varios mitos enlazados encaja mejor que uno corto.
+Actualizado 2026-11-15
+AVISO: siguen sin haber datos propios. vidIQ solo tiene autorizado "Sin Humo TV" (no este canal), así que no hay retención, minuto de abandono ni duración media vista de nuestros largos. Para tenerlos hay que conectar este canal en vidIQ. Lo de abajo sale de los outliers del nicho, no de nuestros datos.
+- 10 largos publicados; sin datos de visitas no se puede decir cuál va mejor.
+- Los vídeos que más crecen prometen "historia completa" o "en orden": dar sensación de visión total.
+- Héroes en serie (Hércules por trabajos) funcionan muy bien: plantear sagas y cerrar cada vídeo anunciando el siguiente.
+- Títulos con "que nadie pudo...", "el error..." o una palabra en MAYÚSCULAS: es el patrón dominante.
+- Gancho en los primeros 30 s: abrir con el momento más dramático del mito y luego volver al origen.
