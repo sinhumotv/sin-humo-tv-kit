@@ -12,6 +12,7 @@ on:
       cuantos: { description: 'cuántos vídeos', default: '5' }
       forzar: { description: 'fabricar aunque ya haya tanda de hoy (sí/no)', default: 'no' }
       motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
+      estilo: { description: 'estilo visual: (vacío) actual · ilustrado', default: '' }
       prueba: { description: 'sí = vídeo de prueba: no se guarda en la tanda ni se publica (queda como artefacto)', default: 'no' }
 permissions: { contents: write }
 concurrency: { group: pongamosque-tanda, cancel-in-progress: false }
@@ -52,6 +53,7 @@ jobs:
           CF_TOKEN: ${{ secrets.PONGAMOSQUE_CF_TOKEN }}
           KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
           REPO_PUSH: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}
+          PQ_ESTILO: ${{ inputs.estilo || vars.PQ_ESTILO || '' }}
           CUANTOS: ${{ inputs.cuantos || (github.event_name == 'push' && '1') || '5' }}
         run: |
           export KAGGLE_API_TOKEN="$(printf %s "$KAGGLE_API_TOKEN" | tr -d '[:space:]')"
