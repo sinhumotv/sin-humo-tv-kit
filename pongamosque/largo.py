@@ -29,6 +29,24 @@ if r.returncode or not os.path.exists(f'{d}/video_final.mp4'):
     import shutil
     shutil.rmtree(d, ignore_errors=True); os.makedirs(d, exist_ok=True)
     r = fabricar('pq3d', {})
+    # (15-nov-2026) con el motor 3D no hay imágenes sueltas: se graban fotogramas LIMPIOS (sin subtítulos ni marcadores) a mitad
+    # de varias escenas para que la miniatura no salga con textos encima
+    if not r.returncode and os.path.exists(f'{d}/tiempos.json'):
+        try:
+            esc = json.load(open(f'{d}/tiempos.json'))['escenas']; pj = json.load(open(f'{d}/proyecto.json'))
+            elegidas = [e for k, e in enumerate(esc) if k % max(1, len(esc) // 10) == 0][:10]
+            ts = ','.join(f"{e['ini'] + 0.6 * (e['fin'] - e['ini']):.2f}" for e in elegidas)
+            json.dump(dict(pj, limpio=True), open(f'{d}/proyecto.json', 'w'))
+            subprocess.run(['node', os.path.join(EXP, 'plataforma/v2/render2.js'), d, 'pruebas', ts], cwd=EXP, timeout=1800)
+            json.dump(pj, open(f'{d}/proyecto.json', 'w'))
+            from PIL import Image
+            os.makedirs(f'{d}/imgs', exist_ok=True)
+            for k in range(len(elegidas)):
+                png = f'{d}/pruebas/p{k:02d}.png'
+                if os.path.exists(png): Image.open(png).convert('RGB').save(f'{d}/imgs/{k + 1:02d}.jpg', quality=93)
+            print('miniatura: fotogramas limpios del motor 3D:', len(os.listdir(f'{d}/imgs')), flush=True)
+        except Exception as e:
+            print('miniatura: no se pudieron sacar fotogramas limpios:', str(e)[:160], flush=True)
 if r.returncode or not os.path.exists(f'{d}/video_final.mp4'): sys.exit('el largo no ha salido')
 os.replace(f'{d}/video_final.mp4', f'{SAL}/video.mp4')
 tags = [str(h).lstrip('#') for h in (t.get('hashtags') or [])]
