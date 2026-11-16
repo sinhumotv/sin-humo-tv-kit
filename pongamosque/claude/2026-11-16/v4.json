@@ -1,0 +1,276 @@
+{
+ "titulo": "¿Y si un asteroide cayera en el Mediterráneo? ☄️",
+ "meta": {
+  "tema": "¿Qué pasaría si un asteroide de un kilómetro cayera en el mar Mediterráneo?",
+  "titulo": "¿Y si un asteroide cayera en el Mediterráneo? ☄️",
+  "gancho": "Un kilómetro de roca a 60.000 km/h contra nuestro mar.",
+  "pregunta": "¿Crees que sabríamos desviarlo a tiempo?",
+  "hashtags": [
+   "asteroide",
+   "mediterraneo",
+   "espacio",
+   "quepasariasi",
+   "ciencia"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que un asteroide de un kilómetro se dirige al Mediterráneo.",
+   "subtitulo": "Pongamos que un asteroide de un kilómetro se dirige al Mediterráneo.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Rumbo a la Tierra"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst geo = new THREE.IcosahedronGeometry(3, 4), pos = geo.attributes.position;\nfor (let i = 0; i < pos.count; i++) { const v = new THREE.Vector3().fromBufferAttribute(pos, i); const n = 1 + 0.18 * Math.sin(v.x * 1.7 + v.y) * Math.cos(v.z * 1.3) + 0.08 * Math.sin(v.y * 4.1 + v.x * 2.3); v.multiplyScalar(n); pos.setXYZ(i, v.x, v.y, v.z); }\ngeo.computeVertexNormals(); const roca = h.malla(geo, h.M('#4a4248', { roughness: 0.95, flatShading: true })); g.add(roca);\nfor (let k = 0; k < 14; k++) { const a = r() * 6.28, b = r() * 3.14; const cr = h.malla(new THREE.SphereGeometry(0.3 + r() * 0.5, 12, 8), h.M('#2e282c', { roughness: 1 }), Math.sin(b) * Math.cos(a) * 3.05, Math.cos(b) * 3.05, Math.sin(b) * Math.sin(a) * 3.05); cr.scale.y = 0.3; cr.lookAt(0, 0, 0); g.add(cr); }\n// cara incandescente por la entrada en la atmósfera y estela de fuego\nconst fuego = new THREE.MeshStandardMaterial({ color: '#ff7a1a', emissive: '#ff4a0a', emissiveIntensity: 2.2, transparent: true, opacity: 0.75, depthWrite: false });\nconst cap = h.malla(new THREE.SphereGeometry(3.25, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2.4), fuego, 0, 0, 0); cap.rotation.x = -0.9; g.add(cap);\nfor (let k = 0; k < 9; k++) { const s = h.brillo(k % 2 ? '#ffb347' : '#ff5a1a', 4 + k * 1.6, 0.75 - k * 0.06); s.position.set(-k * 1.1, k * 1.5, -k * 0.6); g.add(s); }\nroca.userData.giraEje = 0.4;\nreturn g;\n",
+      "tam": 9,
+      "reserva": "meteorito"
+     },
+     {
+      "tipo": "tierra",
+      "x": 9
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Entra en la atmósfera a más de sesenta mil kilómetros por hora.",
+   "subtitulo": "Entra en la atmósfera a más de sesenta mil kilómetros por hora.",
+   "visual": {
+    "tipo": "cifra",
+    "valor": "60.000 km/h",
+    "etiqueta": "velocidad de entrada"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst geo = new THREE.IcosahedronGeometry(3, 4), pos = geo.attributes.position;\nfor (let i = 0; i < pos.count; i++) { const v = new THREE.Vector3().fromBufferAttribute(pos, i); const n = 1 + 0.18 * Math.sin(v.x * 1.7 + v.y) * Math.cos(v.z * 1.3) + 0.08 * Math.sin(v.y * 4.1 + v.x * 2.3); v.multiplyScalar(n); pos.setXYZ(i, v.x, v.y, v.z); }\ngeo.computeVertexNormals(); const roca = h.malla(geo, h.M('#4a4248', { roughness: 0.95, flatShading: true })); g.add(roca);\nfor (let k = 0; k < 14; k++) { const a = r() * 6.28, b = r() * 3.14; const cr = h.malla(new THREE.SphereGeometry(0.3 + r() * 0.5, 12, 8), h.M('#2e282c', { roughness: 1 }), Math.sin(b) * Math.cos(a) * 3.05, Math.cos(b) * 3.05, Math.sin(b) * Math.sin(a) * 3.05); cr.scale.y = 0.3; cr.lookAt(0, 0, 0); g.add(cr); }\n// cara incandescente por la entrada en la atmósfera y estela de fuego\nconst fuego = new THREE.MeshStandardMaterial({ color: '#ff7a1a', emissive: '#ff4a0a', emissiveIntensity: 2.2, transparent: true, opacity: 0.75, depthWrite: false });\nconst cap = h.malla(new THREE.SphereGeometry(3.25, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2.4), fuego, 0, 0, 0); cap.rotation.x = -0.9; g.add(cap);\nfor (let k = 0; k < 9; k++) { const s = h.brillo(k % 2 ? '#ffb347' : '#ff5a1a', 4 + k * 1.6, 0.75 - k * 0.06); s.position.set(-k * 1.1, k * 1.5, -k * 0.6); g.add(s); }\nroca.userData.giraEje = 0.4;\nreturn g;\n",
+      "tam": 9,
+      "reserva": "meteorito"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "El impacto levanta una columna de agua y vapor de varios kilómetros.",
+   "subtitulo": "El impacto levanta una columna de agua y vapor de varios kilómetros.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MINUTO 1",
+    "detalle": "El impacto"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "agua",
+    "plano": "fachada",
+    "efecto": "ceniza",
+    "camara": "subir",
+    "objetos": [
+     {
+      "tipo": "ola",
+      "escala": 1.6
+     },
+     {
+      "tipo": "humo"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "En menos de una hora, olas gigantes alcanzan Baleares y la costa de Valencia.",
+   "subtitulo": "En menos de una hora, olas gigantes alcanzan Baleares y la costa de Valencia.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Olas gigantes"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "hierba",
+    "plano": "mapa",
+    "objetos": [
+     {
+      "tipo": "marcador",
+      "nombre": "Palma"
+     },
+     {
+      "tipo": "marcador",
+      "nombre": "Valencia"
+     },
+     {
+      "tipo": "marcador",
+      "nombre": "Barcelona"
+     },
+     {
+      "tipo": "ruta",
+      "desde": "Palma",
+      "hasta": "Valencia"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "El agua entra en las ciudades de la costa.",
+   "subtitulo": "El agua entra en las ciudades de la costa.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Olas gigantes"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "agua",
+    "plano": "fachada",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "ola"
+     },
+     {
+      "tipo": "edificios",
+      "cantidad": 5
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Puertos y paseos marítimos quedan destrozados.",
+   "subtitulo": "Puertos y paseos marítimos quedan destrozados.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Costa destrozada"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "agua",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "barco",
+      "cantidad": 2,
+      "anim": "hundirse"
+     },
+     {
+      "tipo": "muelle"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "El vapor lanzado al cielo enfría el clima durante meses.",
+   "subtitulo": "El vapor lanzado al cielo enfría el clima durante meses.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Cielo gris"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "nieve",
+    "plano": "aerea",
+    "efecto": "nieve",
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "casa",
+      "cantidad": 5
+     },
+     {
+      "tipo": "pino_nieve",
+      "cantidad": 8
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y las cosechas se resienten en media Europa.",
+   "subtitulo": "Y las cosechas se resienten en media Europa.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MES 1",
+    "detalle": "Cosechas perdidas"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "arena",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// tierra cuarteada en placas y árboles secos\nconst losa = h.M('#c8a46e', { roughness: 0.95 });\nfor (let x = -6; x <= 6; x++) for (let z = -4; z <= 4; z++) { const p = h.malla(new THREE.CylinderGeometry(0.62 + r() * 0.1, 0.65, 0.18, 5 + Math.floor(r() * 3)), losa, x * 1.25 + (r() - 0.5) * 0.3, 0.09, z * 1.25 + (r() - 0.5) * 0.3); p.rotation.y = r() * 3; g.add(p); }\nconst tronco = h.M('#5a4232', { roughness: 0.9 });\nfor (let t = 0; t < 3; t++) { const a = new THREE.Group(); const al = 3 + r() * 2;\n  a.add(h.malla(new THREE.CylinderGeometry(0.12, 0.25, al, 7), tronco, 0, al / 2, 0));\n  for (let k = 0; k < 6; k++) { const ps = [new THREE.Vector3(0, al * (0.55 + r() * 0.4), 0)]; const dir = r() * 6.28; ps.push(new THREE.Vector3(Math.cos(dir) * 0.8, ps[0].y + 0.6, Math.sin(dir) * 0.8)); ps.push(new THREE.Vector3(Math.cos(dir) * 1.5, ps[0].y + 1.0 + r(), Math.sin(dir) * 1.5));\n    a.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 8, 0.06, 5), tronco)); }\n  a.position.set((t - 1) * 4.5, 0, -1.5 + r() * 1.5); g.add(a); }\n// espigas secas\nfor (let k = 0; k < 50; k++) { const e = h.malla(new THREE.CylinderGeometry(0.015, 0.02, 0.6 + r() * 0.4, 4), h.M('#b8994e'), (r() - 0.5) * 14, 0.3, (r() - 0.5) * 9); e.rotation.z = (r() - 0.5) * 0.6; g.add(e); }\nreturn h.sombra(g);\n",
+      "tam": 14,
+      "reserva": "cactus"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "La buena noticia: la NASA vigila los asteroides grandes y ya ha probado a desviar uno.",
+   "subtitulo": "La buena noticia: la NASA vigila los asteroides grandes y ya ha probado a desviar uno.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Defensa planetaria"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "satelite",
+      "x": -5
+     },
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst geo = new THREE.IcosahedronGeometry(3, 4), pos = geo.attributes.position;\nfor (let i = 0; i < pos.count; i++) { const v = new THREE.Vector3().fromBufferAttribute(pos, i); const n = 1 + 0.18 * Math.sin(v.x * 1.7 + v.y) * Math.cos(v.z * 1.3) + 0.08 * Math.sin(v.y * 4.1 + v.x * 2.3); v.multiplyScalar(n); pos.setXYZ(i, v.x, v.y, v.z); }\ngeo.computeVertexNormals(); const roca = h.malla(geo, h.M('#4a4248', { roughness: 0.95, flatShading: true })); g.add(roca);\nfor (let k = 0; k < 14; k++) { const a = r() * 6.28, b = r() * 3.14; const cr = h.malla(new THREE.SphereGeometry(0.3 + r() * 0.5, 12, 8), h.M('#2e282c', { roughness: 1 }), Math.sin(b) * Math.cos(a) * 3.05, Math.cos(b) * 3.05, Math.sin(b) * Math.sin(a) * 3.05); cr.scale.y = 0.3; cr.lookAt(0, 0, 0); g.add(cr); }\n// cara incandescente por la entrada en la atmósfera y estela de fuego\nconst fuego = new THREE.MeshStandardMaterial({ color: '#ff7a1a', emissive: '#ff4a0a', emissiveIntensity: 2.2, transparent: true, opacity: 0.75, depthWrite: false });\nconst cap = h.malla(new THREE.SphereGeometry(3.25, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2.4), fuego, 0, 0, 0); cap.rotation.x = -0.9; g.add(cap);\nfor (let k = 0; k < 9; k++) { const s = h.brillo(k % 2 ? '#ffb347' : '#ff5a1a', 4 + k * 1.6, 0.75 - k * 0.06); s.position.set(-k * 1.1, k * 1.5, -k * 0.6); g.add(s); }\nroca.userData.giraEje = 0.4;\nreturn g;\n",
+      "tam": 7,
+      "reserva": "meteorito"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "¿Crees que sabríamos desviarlo a tiempo?",
+   "subtitulo": "¿Crees que sabríamos desviarlo a tiempo?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "¿A salvo?"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "tierra",
+      "anim": "girar"
+     }
+    ]
+   }
+  }
+ ]
+}

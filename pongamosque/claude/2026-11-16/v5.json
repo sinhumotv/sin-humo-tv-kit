@@ -1,0 +1,236 @@
+{
+ "titulo": "¿Y si la Luna desapareciera esta noche? 🌙",
+ "meta": {
+  "tema": "¿Qué pasaría si la Luna desapareciera de repente esta noche?",
+  "titulo": "¿Y si la Luna desapareciera esta noche? 🌙",
+  "gancho": "Las noches serían más oscuras… pero lo más grave pasaría en el mar.",
+  "pregunta": "¿Echarías de menos la Luna?",
+  "hashtags": [
+   "luna",
+   "espacio",
+   "mareas",
+   "quepasariasi",
+   "ciencia"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que esta noche la Luna desaparece del cielo.",
+   "subtitulo": "Pongamos que esta noche la Luna desaparece del cielo.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Sin Luna"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ciudad",
+    "plano": "fachada",
+    "camara": "subir",
+    "objetos": [
+     {
+      "tipo": "luna"
+     },
+     {
+      "tipo": "edificios",
+      "cantidad": 4
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Las noches se vuelven mucho más oscuras.",
+   "subtitulo": "Las noches se vuelven mucho más oscuras.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MINUTO 1",
+    "detalle": "Noches negras"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "casa",
+      "cantidad": 4
+     },
+     {
+      "tipo": "arboles",
+      "cantidad": 10
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Pero lo que más cambia está en el mar: las mareas se quedan en un tercio.",
+   "subtitulo": "Pero lo que más cambia está en el mar: las mareas se quedan en un tercio.",
+   "visual": {
+    "tipo": "cifra",
+    "valor": "1/3",
+    "etiqueta": "de la marea de hoy"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "agua",
+    "plano": "fachada",
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "barco"
+     },
+     {
+      "tipo": "muelle"
+     },
+     {
+      "tipo": "boyas"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Playas y charcas que vivían con la marea cambian para siempre.",
+   "subtitulo": "Playas y charcas que vivían con la marea cambian para siempre.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Mareas mínimas"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "arena",
+    "plano": "fachada",
+    "foco": 0,
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// playa con la marea muy baja: barcas varadas sobre la arena mojada, algas y charcas\ng.add(h.malla(new THREE.BoxGeometry(22, 0.3, 14), h.M('#cbb28a', { roughness: 0.9 }), 0, -0.15, 0));\nfor (let k = 0; k < 9; k++) { const ch = h.malla(new THREE.CylinderGeometry(0.6 + r() * 1.2, 0.6 + r() * 1.2, 0.04, 20), h.M('#6a9aa8', { roughness: 0.05, metalness: 0.3 }), (r() - 0.5) * 18, 0.02, (r() - 0.5) * 10); ch.scale.z = 0.5; g.add(ch); }\nfor (let b = 0; b < 3; b++) { const bc = new THREE.Group(), col = ['#d8323a', '#2f6fd8', '#f2c94c'][b];\n  const sh = new THREE.Shape(); sh.moveTo(-1.6, 0.6); sh.lineTo(1.8, 0.6); sh.quadraticCurveTo(1.6, 0, 1.0, -0.2); sh.lineTo(-1.3, -0.2); sh.lineTo(-1.6, 0.6);\n  const cg = new THREE.ExtrudeGeometry(sh, { depth: 1.2, bevelEnabled: true, bevelSize: 0.06, bevelThickness: 0.06 }); cg.translate(0, 0, -0.6);\n  bc.add(h.malla(cg, h.M(col, { roughness: 0.5 }))); bc.add(h.malla(new THREE.BoxGeometry(3.2, 0.06, 1.1), h.M('#8a6a48'), 0.1, 0.6, 0));\n  bc.position.set(-6 + b * 6, 0.25, (r() - 0.5) * 4); bc.rotation.set(0, r() * 2, b % 2 ? 0.35 : -0.3); g.add(bc); }\nfor (let k = 0; k < 30; k++) { const a = h.malla(new THREE.SphereGeometry(0.12, 6, 4), h.M('#3a5a2a'), (r() - 0.5) * 18, 0.04, (r() - 0.5) * 10); a.scale.set(3, 0.2, 1); g.add(a); }\n// marca del agua donde debería estar\nconst mar = h.malla(new THREE.BoxGeometry(22, 0.05, 3), h.M('#2f8fc0', { roughness: 0.1, metalness: 0.2 }), 0, 0, -8.5); g.add(mar);\nreturn h.sombra(g);\n",
+      "tam": 22,
+      "reserva": "barco"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Corales y peces que se reproducen siguiendo a la Luna se desorientan.",
+   "subtitulo": "Corales y peces que se reproducen siguiendo a la Luna se desorientan.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Mar desorientado"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\ng.add(h.malla(new THREE.CylinderGeometry(9, 10, 0.6, 40), h.M('#d8c79a', { roughness: 0.95 }), 0, -0.3, 0));\nconst cols = ['#ff7a8a', '#ffb347', '#c86bd8', '#4fd1c5', '#f2c94c', '#ff5a5a'];\nfor (let k = 0; k < 16; k++) { const c0 = cols[k % cols.length], m = h.M(c0, { roughness: 0.5, emissive: c0, emissiveIntensity: 0.25 }), x0 = (r() - 0.5) * 14, z0 = (r() - 0.5) * 8, tipo = k % 3;\n  if (tipo === 0) { for (let b = 0; b < 7; b++) { const ps = [new THREE.Vector3(x0, 0, z0)]; let p = ps[0].clone(); for (let j = 0; j < 3; j++) { p = p.clone().add(new THREE.Vector3((r() - 0.5) * 0.8, 0.6 + r() * 0.5, (r() - 0.5) * 0.8)); ps.push(p); } g.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 10, 0.12, 6), m)); } }\n  else if (tipo === 1) { const s = h.malla(new THREE.SphereGeometry(0.9 + r() * 0.6, 20, 14), m, x0, 0.4, z0); s.scale.y = 0.7; g.add(s); for (let j = 0; j < 12; j++) { const a = j / 12 * 6.28; g.add(h.malla(new THREE.TorusGeometry(0.5, 0.04, 4, 12), h.M('#ffffff', { transparent: true, opacity: 0.5 }), x0 + Math.cos(a) * 0.3, 0.9, z0 + Math.sin(a) * 0.3)); } }\n  else { for (let j = 0; j < 5; j++) { const f = h.malla(new THREE.CylinderGeometry(0.5 - j * 0.08, 0.15, 1.6 + j * 0.3, 10, 1, true), new THREE.MeshStandardMaterial({ color: c0, roughness: 0.6, side: THREE.DoubleSide }), x0 + (r() - 0.5) * 0.9, 0.8, z0 + (r() - 0.5) * 0.9); g.add(f); } } }\n// peces de colores (algunos dando vueltas desorientados)\nfor (let k = 0; k < 18; k++) { const p = new THREE.Group(), col = ['#ff8a1a', '#2f9ad8', '#f2c94c', '#ffffff'][k % 4];\n  const cu = h.malla(new THREE.SphereGeometry(0.35, 14, 10), h.M(col, { roughness: 0.4 })); cu.scale.set(1.6, 0.9, 0.5); p.add(cu);\n  const co = h.malla(new THREE.ConeGeometry(0.3, 0.5, 3), h.M(col), -0.65, 0, 0); co.rotation.z = Math.PI / 2; p.add(co);\n  if (col === '#ff8a1a') [-0.15, 0.2].forEach(x => { const f = h.malla(new THREE.TorusGeometry(0.3, 0.05, 4, 12), h.M('#ffffff'), x, 0, 0); f.rotation.y = Math.PI / 2; f.scale.set(1, 1, 0.8); p.add(f); });\n  p.add(h.malla(new THREE.SphereGeometry(0.06, 8, 6), h.M('#111'), 0.38, 0.1, 0.16));\n  p.position.set((r() - 0.5) * 12, 2 + r() * 4, (r() - 0.5) * 6); p.rotation.y = r() * 6; p.userData.flotaE = r() * 6; g.add(p); }\nfor (let k = 0; k < 40; k++) g.add(h.en(h.brillo('#cfe8ff', 0.25, 0.6), (r() - 0.5) * 14, r() * 8, (r() - 0.5) * 8));\nreturn h.sombra(g);\n",
+      "tam": 16,
+      "reserva": "peces"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Muchos animales nocturnos que cazan con su luz lo tienen más difícil.",
+   "subtitulo": "Muchos animales nocturnos que cazan con su luz lo tienen más difícil.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MES 1",
+    "detalle": "Cazar a oscuras"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "hierba",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst pluma = h.M('#7a5a3a', { roughness: 0.9 }), claro = h.M('#c9a77a', { roughness: 0.9 }), rama = h.M('#4a3424', { roughness: 0.9 });\nconst rm = h.malla(new THREE.CylinderGeometry(0.35, 0.45, 12, 10), rama, 0, 0.3, 0); rm.rotation.z = Math.PI / 2; g.add(rm);\nfor (let k = 0; k < 4; k++) { const hj = h.malla(new THREE.SphereGeometry(0.5, 8, 6), h.M('#2f5a2a'), -5 + k * 3, 0.9, 0.2); hj.scale.set(1.6, 0.6, 1); g.add(hj); }\nconst cu = h.malla(new THREE.SphereGeometry(1.6, 28, 20), pluma, 0, 2.4, 0); cu.scale.set(1, 1.3, 0.95); g.add(cu);\nconst pecho = h.malla(new THREE.SphereGeometry(1.25, 24, 16), claro, 0, 2.2, 0.6); pecho.scale.set(0.95, 1.2, 0.6); g.add(pecho);\nfor (let k = 0; k < 18; k++) { const m = h.malla(new THREE.SphereGeometry(0.1, 6, 4), pluma, (r() - 0.5) * 1.6, 1.5 + r() * 1.6, 1.32); m.scale.set(1.4, 0.5, 0.3); g.add(m); }\nconst cab = h.malla(new THREE.SphereGeometry(1.3, 28, 20), pluma, 0, 4.6, 0); cab.scale.set(1.15, 0.95, 1); g.add(cab);\n[-1, 1].forEach(s => { const disco = h.malla(new THREE.CircleGeometry(0.62, 24), claro, s * 0.6, 4.6, 1.2); g.add(disco);\n  const ojo = h.malla(new THREE.SphereGeometry(0.42, 20, 14), new THREE.MeshStandardMaterial({ color: '#ffb000', emissive: '#ff9a00', emissiveIntensity: 0.9, roughness: 0.2 }), s * 0.6, 4.65, 1.18); g.add(ojo);\n  g.add(h.malla(new THREE.SphereGeometry(0.22, 14, 10), h.M('#050505', { roughness: 0.1 }), s * 0.6, 4.65, 1.5));\n  const or = h.malla(new THREE.ConeGeometry(0.28, 0.9, 6), pluma, s * 0.85, 5.6, 0.2); or.rotation.z = -s * 0.3; g.add(or);\n  const ala = h.malla(new THREE.SphereGeometry(0.9, 16, 12), h.M('#5a4028', { roughness: 0.9 }), s * 1.35, 2.3, -0.1); ala.scale.set(0.45, 1.3, 0.9); g.add(ala); });\nconst pico = h.malla(new THREE.ConeGeometry(0.16, 0.45, 8), h.M('#d9a33a'), 0, 4.25, 1.35); pico.rotation.x = Math.PI; g.add(pico);\n[-0.4, 0.4].forEach(x => { for (let k = 0; k < 3; k++) g.add(h.malla(new THREE.CylinderGeometry(0.05, 0.03, 0.4, 6), h.M('#d9a33a'), x + (k - 1) * 0.12, 0.7, 0.3)); });\ng.add(h.en(h.brillo('#ffb000', 1.4, 0.6), -0.6, 4.65, 1.6)); g.add(h.en(h.brillo('#ffb000', 1.4, 0.6), 0.6, 4.65, 1.6));\nreturn h.sombra(g);\n",
+      "tam": 7,
+      "reserva": "pajaros"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los días siguen durando 24 horas: la Tierra no frena de golpe.",
+   "subtitulo": "Los días siguen durando 24 horas: la Tierra no frena de golpe.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Días normales"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "tierra",
+      "anim": "girar"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Pero, con los siglos, el eje de la Tierra se tambalearía y el clima sería más extremo.",
+   "subtitulo": "Pero, con los siglos, el eje de la Tierra se tambalearía y el clima sería más extremo.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Clima extremo"
+   },
+   "escena3d": {
+    "cielo": "espacio",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "tierra",
+      "anim": "temblar"
+     },
+     {
+      "tipo": "sol",
+      "x": -10
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "¿Echarías de menos la Luna?",
+   "subtitulo": "¿Echarías de menos la Luna?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Clima extremo"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "luna"
+     },
+     {
+      "tipo": "casa",
+      "cantidad": 3
+     }
+    ]
+   }
+  }
+ ]
+}

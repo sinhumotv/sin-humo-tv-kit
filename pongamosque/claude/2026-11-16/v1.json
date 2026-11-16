@@ -1,0 +1,285 @@
+{
+ "titulo": "¿Y si desaparecieran todas las abejas? 🐝",
+ "meta": {
+  "tema": "¿Qué pasaría si desaparecieran todas las abejas del planeta?",
+  "titulo": "¿Y si desaparecieran todas las abejas? 🐝",
+  "gancho": "Sin abejas no se acaba el mundo… pero tu nevera cambiaría muchísimo.",
+  "pregunta": "¿Qué fruta echarías más de menos?",
+  "hashtags": [
+   "abejas",
+   "naturaleza",
+   "ciencia",
+   "quepasariasi",
+   "curiosidades"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que mañana desaparecen todas las abejas del planeta.",
+   "subtitulo": "Pongamos que mañana desaparecen todas las abejas del planeta.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Adiós abejas"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "hierba",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst negro = h.M('#1b1712', { roughness: 0.6 }), amar = h.M('#f2b51e', { roughness: 0.55 }), pelo = h.M('#e8a33a', { roughness: 0.9 });\n// abdomen a rayas\nconst ab = new THREE.Group();\nfor (let k = 0; k < 6; k++) { const rr = 1.0 - Math.abs(k - 2.3) * 0.16; const s = h.malla(new THREE.CylinderGeometry(rr, rr * 0.96, 0.42, 28), k % 2 ? negro : amar, 0, 0, 0); s.rotation.z = Math.PI / 2; s.position.x = -0.9 - k * 0.4; ab.add(s); }\nab.add(h.malla(new THREE.SphereGeometry(0.62, 24, 16), amar, -0.75, 0, 0)); ab.add(h.malla(new THREE.ConeGeometry(0.42, 0.7, 20), negro, -3.35, 0, 0)).children;\nab.children[ab.children.length - 1].rotation.z = Math.PI / 2; ab.rotation.z = 0.18; g.add(ab);\n// tórax peludo\nconst tor = h.malla(new THREE.SphereGeometry(0.95, 32, 24), pelo, 0.25, 0.15, 0); g.add(tor);\nfor (let k = 0; k < 90; k++) { const a = r() * 6.28, b = r() * 3.14; const p = h.malla(new THREE.ConeGeometry(0.05, 0.22, 4), pelo, 0.25 + Math.sin(b) * Math.cos(a) * 0.95, 0.15 + Math.cos(b) * 0.95, Math.sin(b) * Math.sin(a) * 0.95); p.lookAt(0.25 + Math.sin(b) * Math.cos(a) * 3, 0.15 + Math.cos(b) * 3, Math.sin(b) * Math.sin(a) * 3); p.rotateX(Math.PI / 2); g.add(p); }\n// cabeza con ojos compuestos y antenas\nconst cab = h.malla(new THREE.SphereGeometry(0.72, 28, 20), negro, 1.45, 0.25, 0); cab.scale.set(0.9, 1, 1.05); g.add(cab);\n[-1, 1].forEach(s => { const o = h.malla(new THREE.SphereGeometry(0.4, 24, 16), h.M('#2a2018', { roughness: 0.15, metalness: 0.4 }), 1.65, 0.42, s * 0.48); o.scale.set(0.7, 1.15, 0.6); g.add(o);\n  const ant = new THREE.CatmullRomCurve3([new THREE.Vector3(1.9, 0.75, s * 0.2), new THREE.Vector3(2.3, 1.5, s * 0.35), new THREE.Vector3(2.75, 1.7, s * 0.55)]);\n  g.add(h.malla(new THREE.TubeGeometry(ant, 16, 0.045, 6), negro)); g.add(h.malla(new THREE.SphereGeometry(0.08, 10, 8), negro, 2.75, 1.7, s * 0.55)); });\n// alas transparentes con nervios\nconst ala = h.M('#dff1ff', { transparent: true, opacity: 0.38, roughness: 0.05, metalness: 0.3, side: THREE.DoubleSide, depthWrite: false });\n[-1, 1].forEach(s => { [0, 1].forEach(j => { const w = new THREE.Shape(); w.moveTo(0, 0); w.quadraticCurveTo(-0.6 - j * 0.2, 2.2 - j * 0.6, -1.9 + j * 0.5, 2.0 - j * 0.6); w.quadraticCurveTo(-1.2, 0.6, 0, 0);\n  const m = new THREE.Mesh(new THREE.ShapeGeometry(w, 16), ala); m.position.set(0.1 - j * 0.35, 0.9, s * 0.25); m.rotation.x = s * (1.25 + j * 0.15); m.userData.alaS = s; g.add(m); }); });\n// patas\nfor (let k = 0; k < 3; k++) [-1, 1].forEach(s => { const p = new THREE.CatmullRomCurve3([new THREE.Vector3(0.6 - k * 0.45, -0.5, s * 0.4), new THREE.Vector3(0.7 - k * 0.6, -1.1, s * 0.9), new THREE.Vector3(0.5 - k * 0.7, -1.7, s * 1.0)]); g.add(h.malla(new THREE.TubeGeometry(p, 12, 0.06, 6), negro)); });\ng.userData.flotaE = 0.3;\nreturn h.sombra(g);\n",
+      "tam": 5,
+      "reserva": "emoji",
+      "anim": "flotar",
+      "emoji": "🐝"
+     },
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), n = o.cantidad || 40, mustia = !!o.mustias, ext = 2.2 * Math.sqrt(n);\nconst cols = mustia ? ['#8a6a4a', '#7a5a3a', '#9a7a5a'] : ['#e2443a', '#f2c94c', '#ffffff', '#c86bd8', '#f39c12', '#ff7aa8'];\nfor (let k = 0; k < n; k++) { const f = new THREE.Group(), al = 0.8 + r() * 0.8, tallo = h.M(mustia ? '#7a7040' : '#4f9a44');\n  const curva = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0, 0), new THREE.Vector3((r() - 0.5) * 0.2, al * 0.5, 0), new THREE.Vector3(mustia ? 0.4 : 0, al * (mustia ? 0.75 : 1), mustia ? 0.1 : 0)]);\n  f.add(h.malla(new THREE.TubeGeometry(curva, 8, 0.035, 5), tallo));\n  const top = curva.getPoint(1), pc = h.M(cols[k % cols.length], { roughness: 0.6, side: THREE.DoubleSide });\n  for (let p = 0; p < 6; p++) { const pt = h.malla(new THREE.SphereGeometry(0.15, 10, 8), pc, top.x + Math.cos(p) * 0.16, top.y - (mustia ? 0.16 : 0), top.z + Math.sin(p) * 0.16); pt.scale.set(1.3, mustia ? 0.2 : 0.35, 0.8); pt.rotation.y = -p; if (mustia) pt.rotation.z = 0.9; f.add(pt); }\n  f.add(h.malla(new THREE.SphereGeometry(0.1, 10, 8), h.M(mustia ? '#4a3a22' : '#f2b51e'), top.x, top.y + 0.04, top.z));\n  [-1, 1].forEach(s => { const hj = h.malla(new THREE.SphereGeometry(0.11, 8, 6), tallo, s * 0.09, al * 0.35, 0); hj.scale.set(1.8, 0.3, 0.7); f.add(hj); });\n  if (mustia) for (let p = 0; p < 2; p++) { const caida = h.malla(new THREE.SphereGeometry(0.12, 8, 6), pc, (r() - 0.5) * 0.8, 0.02, (r() - 0.5) * 0.8); caida.scale.set(1.3, 0.15, 0.8); f.add(caida); }\n  f.position.set((r() - 0.5) * ext, 0, (r() - 0.5) * ext * 0.6); f.rotation.y = r() * 6; g.add(f); }\nreturn h.sombra(g);\n",
+      "tam": 9,
+      "reserva": "arbusto"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Las colmenas se quedan en silencio: millones de panales, vacíos.",
+   "subtitulo": "Las colmenas se quedan en silencio: millones de panales, vacíos.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MINUTO 1",
+    "detalle": "Colmenas vacías"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "hierba",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst marco = h.M('#9a6a3c', { roughness: 0.7 }), cera = h.M('#e2ac3e', { roughness: 0.55 }), fondo = h.M('#7a4a12', { roughness: 0.8 });\nconst miel = new THREE.MeshStandardMaterial({ color: '#f2a114', roughness: 0.12, metalness: 0.1, emissive: '#b85a00', emissiveIntensity: 0.35 });\nconst R = 0.42, filas = 12, cols = 10, W = cols * R * 1.75, H = filas * R * 1.52;\nh.caja(g, W + 0.4, H + 0.4, 0.2, fondo, 0, H / 2 + 0.6, -0.15);\n// cada celda: anillo hexagonal (pared de cera) + fondo oscuro; las llenas, con su opérculo de miel brillante\nconst pared = new THREE.TorusGeometry(R * 0.82, 0.07, 4, 6);\nfor (let f = 0; f < filas; f++) for (let k = 0; k < cols; k++) {\n  const x = -W / 2 + R + k * R * 1.75 + (f % 2) * R * 0.87, y = 0.6 + R + f * R * 1.52;\n  const a = h.malla(pared, cera, x, y, 0.05); a.rotation.z = Math.PI / 6; a.scale.z = 3; g.add(a);\n  const llena = o.vacio ? r() < 0.06 : r() < 0.75;\n  if (llena) { const t = h.malla(new THREE.CircleGeometry(R * 0.78, 6), miel, x, y, 0.12); t.rotation.z = Math.PI / 6; g.add(t); }\n}\nh.caja(g, W + 1.0, 0.35, 0.7, marco, 0, 0.3, 0); h.caja(g, W + 1.0, 0.35, 0.7, marco, 0, H + 1.1, 0); h.caja(g, 0.35, H + 1.1, 0.7, marco, -W / 2 - 0.45, H / 2 + 0.7, 0); h.caja(g, 0.35, H + 1.1, 0.7, marco, W / 2 + 0.45, H / 2 + 0.7, 0);\nif (!o.vacio) for (let k = 0; k < 6; k++) { const gota = h.malla(new THREE.SphereGeometry(0.13, 12, 10), miel, -W / 2 + r() * W, 0.35, 0.3); gota.scale.y = 1.7; g.add(gota); }\nreturn h.sombra(g);\n",
+      "tam": 7,
+      "reserva": "bloque",
+      "vacio": true
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "En el campo, nadie lleva el polen de flor en flor.",
+   "subtitulo": "En el campo, nadie lleva el polen de flor en flor.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Sin polinizar"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), n = o.cantidad || 40, mustia = !!o.mustias, ext = 2.2 * Math.sqrt(n);\nconst cols = mustia ? ['#8a6a4a', '#7a5a3a', '#9a7a5a'] : ['#e2443a', '#f2c94c', '#ffffff', '#c86bd8', '#f39c12', '#ff7aa8'];\nfor (let k = 0; k < n; k++) { const f = new THREE.Group(), al = 0.8 + r() * 0.8, tallo = h.M(mustia ? '#7a7040' : '#4f9a44');\n  const curva = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0, 0), new THREE.Vector3((r() - 0.5) * 0.2, al * 0.5, 0), new THREE.Vector3(mustia ? 0.4 : 0, al * (mustia ? 0.75 : 1), mustia ? 0.1 : 0)]);\n  f.add(h.malla(new THREE.TubeGeometry(curva, 8, 0.035, 5), tallo));\n  const top = curva.getPoint(1), pc = h.M(cols[k % cols.length], { roughness: 0.6, side: THREE.DoubleSide });\n  for (let p = 0; p < 6; p++) { const pt = h.malla(new THREE.SphereGeometry(0.15, 10, 8), pc, top.x + Math.cos(p) * 0.16, top.y - (mustia ? 0.16 : 0), top.z + Math.sin(p) * 0.16); pt.scale.set(1.3, mustia ? 0.2 : 0.35, 0.8); pt.rotation.y = -p; if (mustia) pt.rotation.z = 0.9; f.add(pt); }\n  f.add(h.malla(new THREE.SphereGeometry(0.1, 10, 8), h.M(mustia ? '#4a3a22' : '#f2b51e'), top.x, top.y + 0.04, top.z));\n  [-1, 1].forEach(s => { const hj = h.malla(new THREE.SphereGeometry(0.11, 8, 6), tallo, s * 0.09, al * 0.35, 0); hj.scale.set(1.8, 0.3, 0.7); f.add(hj); });\n  if (mustia) for (let p = 0; p < 2; p++) { const caida = h.malla(new THREE.SphereGeometry(0.12, 8, 6), pc, (r() - 0.5) * 0.8, 0.02, (r() - 0.5) * 0.8); caida.scale.set(1.3, 0.15, 0.8); f.add(caida); }\n  f.position.set((r() - 0.5) * ext, 0, (r() - 0.5) * ext * 0.6); f.rotation.y = r() * 6; g.add(f); }\nreturn h.sombra(g);\n",
+      "tam": 14,
+      "reserva": "arbusto",
+      "cantidad": 70
+     },
+     {
+      "tipo": "arboles",
+      "cantidad": 8,
+      "z": -8
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y muchas flores se marchitan sin dar fruto.",
+   "subtitulo": "Y muchas flores se marchitan sin dar fruto.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Flores sin fruto"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "hierba",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), n = o.cantidad || 12;\n// flores grandes vistas de cerca, con los pétalos secos cayendo y el tallo doblado\nfor (let k = 0; k < n; k++) { const f = new THREE.Group(), al = 1.6 + r() * 1.0, tallo = h.M('#8a8a3a', { roughness: 0.8 });\n  const dob = 0.5 + r() * 0.5; const curva = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 0, 0), new THREE.Vector3(0.05, al * 0.6, 0), new THREE.Vector3(dob * 0.6, al * 0.95, 0), new THREE.Vector3(dob, al * 0.7, 0)]);\n  f.add(h.malla(new THREE.TubeGeometry(curva, 16, 0.06, 6), tallo));\n  const top = curva.getPoint(1), colP = ['#c96a3a', '#b8864a', '#d08a6a', '#a8603a'][k % 4];\n  f.add(h.malla(new THREE.SphereGeometry(0.2, 12, 10), h.M('#5a3a1a'), top.x, top.y, top.z));\n  for (let p = 0; p < 4; p++) { const pt = h.malla(new THREE.SphereGeometry(0.26, 10, 8), h.M(colP, { roughness: 0.9 }), top.x + Math.cos(p * 1.6) * 0.2, top.y - 0.25, top.z + Math.sin(p * 1.6) * 0.2); pt.scale.set(0.6, 1.4, 0.25); pt.rotation.z = Math.cos(p) * 0.6; f.add(pt); }\n  for (let p = 0; p < 4; p++) { const caida = h.malla(new THREE.SphereGeometry(0.24, 8, 6), h.M(colP, { roughness: 0.9 }), (r() - 0.5) * 1.6, 0.04, (r() - 0.5) * 1.6); caida.scale.set(1.3, 0.12, 0.7); caida.rotation.y = r() * 3; f.add(caida); }\n  [-1, 1].forEach(s => { const hj = h.malla(new THREE.SphereGeometry(0.22, 8, 6), h.M('#9a8a3a'), s * 0.18, al * 0.3, 0); hj.scale.set(1.8, 0.25, 0.7); hj.rotation.z = s * -0.7; f.add(hj); });\n  f.position.set((r() - 0.5) * 7, 0, (r() - 0.5) * 3.5); f.rotation.y = r() * 6; g.add(f); }\nreturn h.sombra(g);\n",
+      "tam": 7,
+      "reserva": "arbusto",
+      "cantidad": 9
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Tres de cada cuatro cultivos dependen en parte de los polinizadores.",
+   "subtitulo": "Tres de cada cuatro cultivos dependen en parte de los polinizadores.",
+   "visual": {
+    "tipo": "cifra",
+    "valor": "3 de 4",
+    "etiqueta": "cultivos los necesitan"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "arboles",
+      "cantidad": 14
+     },
+     {
+      "tipo": "casa",
+      "cantidad": 2,
+      "x": 8,
+      "z": -5
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "En el súper, fresas, manzanas y almendras empiezan a escasear.",
+   "subtitulo": "En el súper, fresas, manzanas y almendras empiezan a escasear.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Fruta agotada"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), metal = h.M('#8a929c', { metalness: 0.6, roughness: 0.4 }), vacia = !!o.vacia;\nconst W = 8, baldas = 4;\nh.caja(g, 0.25, 5.4, 1.7, metal, -W / 2, 2.7, 0); h.caja(g, 0.25, 5.4, 1.7, metal, W / 2, 2.7, 0); h.caja(g, W, 5.4, 0.12, h.M('#2e6a8a', { roughness: 0.7 }), 0, 2.7, -0.8);\nconst cv0 = document.createElement('canvas'); cv0.width = 512; cv0.height = 96; const x0 = cv0.getContext('2d'); x0.fillStyle = '#2fa84a'; x0.fillRect(0, 0, 512, 96); x0.fillStyle = '#fff'; x0.font = '900 60px Mont, Inter, sans-serif'; x0.textAlign = 'center'; x0.textBaseline = 'middle'; x0.fillText('FRUTERÍA', 256, 50);\nconst t0 = new THREE.CanvasTexture(cv0); t0.colorSpace = THREE.SRGBColorSpace; h.caja(g, W, 0.9, 0.15, new THREE.MeshStandardMaterial({ map: t0, emissive: '#ffffff', emissiveMap: t0, emissiveIntensity: 0.3 }), 0, 5.7, 0.2);\nconst frutas = [['#d8283c', 0.3], ['#f2a81e', 0.32], ['#7ac74f', 0.28], ['#f2d84c', 0.3]];\nfor (let b = 0; b < baldas; b++) { const y = 0.5 + b * 1.3; h.caja(g, W, 0.12, 1.6, metal, 0, y, 0);\n  const cv = document.createElement('canvas'); cv.width = 256; cv.height = 48; const x = cv.getContext('2d'); x.fillStyle = vacia ? '#d8323a' : '#ffffff'; x.fillRect(0, 0, 256, 48); x.fillStyle = vacia ? '#ffffff' : '#2b2b30'; x.font = '900 30px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';\n  x.fillText(vacia ? 'AGOTADO' : ['FRESAS', 'NARANJAS', 'PERAS', 'LIMONES'][b] + ' 1,99 €', 128, 26); const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\n  h.caja(g, 1.8, 0.34, 0.05, new THREE.MeshStandardMaterial({ map: tx }), -W / 2 + 1.4 + (b % 2) * 4, y - 0.12, 0.83);\n  const [col, rad] = frutas[b % frutas.length], nf = vacia ? (b === 1 ? 2 : 0) : 26;\n  for (let k = 0; k < nf; k++) g.add(h.malla(new THREE.SphereGeometry(rad, 14, 10), h.M(col, { roughness: 0.4 }), -W / 2 + 0.6 + (k % 13) * 0.55 + r() * 0.1 + (vacia ? 3 : 0), y + rad + 0.06 + Math.floor(k / 13) * rad * 1.5, -0.3 + Math.floor(k / 13) * 0.45));\n  if (vacia) for (let k = 0; k < 2; k++) h.caja(g, 0.9, 0.5, 0.6, h.M('#c9a26a', { roughness: 0.9 }), -2.5 + k * 3.2 + r(), y + 0.31, 0);\n}\nreturn h.sombra(g);\n",
+      "tam": 9,
+      "reserva": "monedas",
+      "vacia": true
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y lo poco que queda, sube de precio.",
+   "subtitulo": "Y lo poco que queda, sube de precio.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MES 1",
+    "detalle": "Precios por las nubes"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "subir",
+    "objetos": [
+     {
+      "tipo": "billetes",
+      "cantidad": 6,
+      "anim": "crecer"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Habría que polinizar a mano, flor a flor, como ya pasa en zonas de China.",
+   "subtitulo": "Habría que polinizar a mano, flor a flor, como ya pasa en zonas de China.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Polinizar a mano"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "hierba",
+    "plano": "fachada",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// árbol frutal en flor con una persona en una escalera polinizando a mano con un plumero\nconst tronco = h.M('#6a4a32', { roughness: 0.9 });\ng.add(h.malla(new THREE.CylinderGeometry(0.35, 0.5, 4, 10), tronco, 0, 2, 0));\nfor (let k = 0; k < 6; k++) { const a = k / 6 * 6.28, ps = [new THREE.Vector3(0, 3.2, 0), new THREE.Vector3(Math.cos(a) * 1.4, 4.2, Math.sin(a) * 1.4), new THREE.Vector3(Math.cos(a) * 2.6, 5.0 + r() * 0.6, Math.sin(a) * 2.6)]; g.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 10, 0.13, 6), tronco)); }\nconst copa = h.M('#f4c6d4', { roughness: 0.7 }), blanco = h.M('#ffffff', { roughness: 0.6 });\nfor (let k = 0; k < 26; k++) { const a = r() * 6.28, d = r() * 2.8; const b = h.malla(new THREE.SphereGeometry(0.6 + r() * 0.4, 12, 10), k % 3 ? copa : blanco, Math.cos(a) * d, 4.6 + r() * 1.6, Math.sin(a) * d); g.add(b); }\nfor (let k = 0; k < 40; k++) g.add(h.malla(new THREE.SphereGeometry(0.1, 6, 4), h.M('#f2c94c', { emissive: '#f2c94c', emissiveIntensity: 0.3 }), (r() - 0.5) * 5.4, 4.4 + r() * 2, (r() - 0.5) * 5.4 + 0.6));\n// escalera\nconst esc = new THREE.Group(), madera = h.M('#c9a26a', { roughness: 0.8 });\n[-0.4, 0.4].forEach(x => { const l = h.malla(new THREE.BoxGeometry(0.1, 4.2, 0.1), madera, x, 2.1, 0); esc.add(l); }); for (let k = 0; k < 8; k++) esc.add(h.malla(new THREE.BoxGeometry(0.8, 0.07, 0.08), madera, 0, 0.3 + k * 0.5, 0));\nesc.position.set(2.0, 0, 1.6); esc.rotation.x = -0.25; g.add(esc);\n// persona arriba con gorro y plumero\nconst p = new THREE.Group(), ropa = h.M('#2f6fd8'), piel = h.M('#e8b896');\np.add(h.malla(new THREE.CapsuleGeometry(0.3, 0.7, 4, 10), ropa, 0, 1.0, 0)); p.add(h.malla(new THREE.SphereGeometry(0.26, 14, 10), piel, 0, 1.75, 0));\np.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.06, 16), h.M('#f2c94c'), 0, 1.95, 0)); p.add(h.malla(new THREE.CylinderGeometry(0.2, 0.24, 0.24, 14), h.M('#f2c94c'), 0, 2.07, 0));\n[-0.15, 0.15].forEach(x => p.add(h.malla(new THREE.CapsuleGeometry(0.11, 0.6, 3, 6), h.M('#3a3a40'), x, 0.35, 0)));\nconst brazo = h.malla(new THREE.CapsuleGeometry(0.09, 0.7, 3, 6), ropa, -0.35, 1.45, 0.1); brazo.rotation.z = 2.3; p.add(brazo);\nconst palo = h.malla(new THREE.CylinderGeometry(0.03, 0.03, 1.2, 6), madera, -0.95, 2.0, 0.1); palo.rotation.z = 0.8; p.add(palo);\nconst plumero = h.malla(new THREE.SphereGeometry(0.18, 10, 8), h.M('#f2e6c8', { roughness: 1 }), -1.4, 2.45, 0.1); plumero.scale.set(1, 1.6, 1); p.add(plumero);\np.position.set(2.0, 2.4, 1.0); p.rotation.y = -0.9; g.add(p);\n// cesta con flores recogidas\ng.add(h.malla(new THREE.CylinderGeometry(0.5, 0.4, 0.5, 14), h.M('#a87a4a'), 3.6, 0.25, 2.6));\nreturn h.sombra(g);\n",
+      "tam": 8,
+      "reserva": "arboles"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "El trigo y el arroz no necesitan abejas: no pasaríamos hambre…",
+   "subtitulo": "El trigo y el arroz no necesitan abejas: no pasaríamos hambre…",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Un mundo distinto"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "casa",
+      "cantidad": 4
+     },
+     {
+      "tipo": "arboles",
+      "cantidad": 10
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "…pero comeríamos mucho peor. ¿Qué fruta echarías más de menos?",
+   "subtitulo": "…pero comeríamos mucho peor. ¿Qué fruta echarías más de menos?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Un mundo distinto"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "hierba",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst marco = h.M('#9a6a3c', { roughness: 0.7 }), cera = h.M('#e2ac3e', { roughness: 0.55 }), fondo = h.M('#7a4a12', { roughness: 0.8 });\nconst miel = new THREE.MeshStandardMaterial({ color: '#f2a114', roughness: 0.12, metalness: 0.1, emissive: '#b85a00', emissiveIntensity: 0.35 });\nconst R = 0.42, filas = 12, cols = 10, W = cols * R * 1.75, H = filas * R * 1.52;\nh.caja(g, W + 0.4, H + 0.4, 0.2, fondo, 0, H / 2 + 0.6, -0.15);\n// cada celda: anillo hexagonal (pared de cera) + fondo oscuro; las llenas, con su opérculo de miel brillante\nconst pared = new THREE.TorusGeometry(R * 0.82, 0.07, 4, 6);\nfor (let f = 0; f < filas; f++) for (let k = 0; k < cols; k++) {\n  const x = -W / 2 + R + k * R * 1.75 + (f % 2) * R * 0.87, y = 0.6 + R + f * R * 1.52;\n  const a = h.malla(pared, cera, x, y, 0.05); a.rotation.z = Math.PI / 6; a.scale.z = 3; g.add(a);\n  const llena = o.vacio ? r() < 0.06 : r() < 0.75;\n  if (llena) { const t = h.malla(new THREE.CircleGeometry(R * 0.78, 6), miel, x, y, 0.12); t.rotation.z = Math.PI / 6; g.add(t); }\n}\nh.caja(g, W + 1.0, 0.35, 0.7, marco, 0, 0.3, 0); h.caja(g, W + 1.0, 0.35, 0.7, marco, 0, H + 1.1, 0); h.caja(g, 0.35, H + 1.1, 0.7, marco, -W / 2 - 0.45, H / 2 + 0.7, 0); h.caja(g, 0.35, H + 1.1, 0.7, marco, W / 2 + 0.45, H / 2 + 0.7, 0);\nif (!o.vacio) for (let k = 0; k < 6; k++) { const gota = h.malla(new THREE.SphereGeometry(0.13, 12, 10), miel, -W / 2 + r() * W, 0.35, 0.3); gota.scale.y = 1.7; g.add(gota); }\nreturn h.sombra(g);\n",
+      "tam": 7,
+      "reserva": "bloque"
+     },
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst negro = h.M('#1b1712', { roughness: 0.6 }), amar = h.M('#f2b51e', { roughness: 0.55 }), pelo = h.M('#e8a33a', { roughness: 0.9 });\n// abdomen a rayas\nconst ab = new THREE.Group();\nfor (let k = 0; k < 6; k++) { const rr = 1.0 - Math.abs(k - 2.3) * 0.16; const s = h.malla(new THREE.CylinderGeometry(rr, rr * 0.96, 0.42, 28), k % 2 ? negro : amar, 0, 0, 0); s.rotation.z = Math.PI / 2; s.position.x = -0.9 - k * 0.4; ab.add(s); }\nab.add(h.malla(new THREE.SphereGeometry(0.62, 24, 16), amar, -0.75, 0, 0)); ab.add(h.malla(new THREE.ConeGeometry(0.42, 0.7, 20), negro, -3.35, 0, 0)).children;\nab.children[ab.children.length - 1].rotation.z = Math.PI / 2; ab.rotation.z = 0.18; g.add(ab);\n// tórax peludo\nconst tor = h.malla(new THREE.SphereGeometry(0.95, 32, 24), pelo, 0.25, 0.15, 0); g.add(tor);\nfor (let k = 0; k < 90; k++) { const a = r() * 6.28, b = r() * 3.14; const p = h.malla(new THREE.ConeGeometry(0.05, 0.22, 4), pelo, 0.25 + Math.sin(b) * Math.cos(a) * 0.95, 0.15 + Math.cos(b) * 0.95, Math.sin(b) * Math.sin(a) * 0.95); p.lookAt(0.25 + Math.sin(b) * Math.cos(a) * 3, 0.15 + Math.cos(b) * 3, Math.sin(b) * Math.sin(a) * 3); p.rotateX(Math.PI / 2); g.add(p); }\n// cabeza con ojos compuestos y antenas\nconst cab = h.malla(new THREE.SphereGeometry(0.72, 28, 20), negro, 1.45, 0.25, 0); cab.scale.set(0.9, 1, 1.05); g.add(cab);\n[-1, 1].forEach(s => { const o = h.malla(new THREE.SphereGeometry(0.4, 24, 16), h.M('#2a2018', { roughness: 0.15, metalness: 0.4 }), 1.65, 0.42, s * 0.48); o.scale.set(0.7, 1.15, 0.6); g.add(o);\n  const ant = new THREE.CatmullRomCurve3([new THREE.Vector3(1.9, 0.75, s * 0.2), new THREE.Vector3(2.3, 1.5, s * 0.35), new THREE.Vector3(2.75, 1.7, s * 0.55)]);\n  g.add(h.malla(new THREE.TubeGeometry(ant, 16, 0.045, 6), negro)); g.add(h.malla(new THREE.SphereGeometry(0.08, 10, 8), negro, 2.75, 1.7, s * 0.55)); });\n// alas transparentes con nervios\nconst ala = h.M('#dff1ff', { transparent: true, opacity: 0.38, roughness: 0.05, metalness: 0.3, side: THREE.DoubleSide, depthWrite: false });\n[-1, 1].forEach(s => { [0, 1].forEach(j => { const w = new THREE.Shape(); w.moveTo(0, 0); w.quadraticCurveTo(-0.6 - j * 0.2, 2.2 - j * 0.6, -1.9 + j * 0.5, 2.0 - j * 0.6); w.quadraticCurveTo(-1.2, 0.6, 0, 0);\n  const m = new THREE.Mesh(new THREE.ShapeGeometry(w, 16), ala); m.position.set(0.1 - j * 0.35, 0.9, s * 0.25); m.rotation.x = s * (1.25 + j * 0.15); m.userData.alaS = s; g.add(m); }); });\n// patas\nfor (let k = 0; k < 3; k++) [-1, 1].forEach(s => { const p = new THREE.CatmullRomCurve3([new THREE.Vector3(0.6 - k * 0.45, -0.5, s * 0.4), new THREE.Vector3(0.7 - k * 0.6, -1.1, s * 0.9), new THREE.Vector3(0.5 - k * 0.7, -1.7, s * 1.0)]); g.add(h.malla(new THREE.TubeGeometry(p, 12, 0.06, 6), negro)); });\ng.userData.flotaE = 0.3;\nreturn h.sombra(g);\n",
+      "tam": 3,
+      "reserva": "emoji",
+      "anim": "flotar",
+      "emoji": "🐝"
+     }
+    ]
+   }
+  }
+ ]
+}

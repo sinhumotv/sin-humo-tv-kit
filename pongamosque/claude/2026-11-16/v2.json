@@ -1,0 +1,264 @@
+{
+ "titulo": "¿Y si se apagara internet en todo el mundo? 📵",
+ "meta": {
+  "tema": "¿Qué pasaría si internet se apagara en todo el mundo a la vez?",
+  "titulo": "¿Y si se apagara internet en todo el mundo? 📵",
+  "gancho": "No es solo quedarte sin redes: es quedarte sin pagar, sin volar y sin mapas.",
+  "pregunta": "¿Aguantarías una semana sin internet?",
+  "hashtags": [
+   "internet",
+   "tecnologia",
+   "apagon",
+   "quepasariasi",
+   "curiosidades"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que ahora mismo se apaga internet en todo el mundo.",
+   "subtitulo": "Pongamos que ahora mismo se apaga internet en todo el mundo.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Apagón digital"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst cuerpo = h.malla(new THREE.BoxGeometry(3.2, 6.4, 0.35), h.M('#1c1c22', { metalness: 0.5, roughness: 0.25 }), 0, 3.4, 0); g.add(cuerpo);\nconst cv = document.createElement('canvas'); cv.width = 320; cv.height = 640; const x = cv.getContext('2d'); const gr = x.createLinearGradient(0, 0, 0, 640); gr.addColorStop(0, '#1f2a44'); gr.addColorStop(1, '#0a0f1c'); x.fillStyle = gr; x.fillRect(0, 0, 320, 640);\nx.fillStyle = '#ffffff'; x.font = '600 26px Mont, Inter, sans-serif'; x.fillText('09:41', 24, 40); x.textAlign = 'right'; x.fillText('Sin servicio', 300, 40); x.textAlign = 'center';\nx.strokeStyle = '#8fa3c8'; x.lineWidth = 14; [50, 85, 120].forEach(rr => { x.beginPath(); x.arc(160, 330, rr, Math.PI * 1.22, Math.PI * 1.78); x.stroke(); });\nx.beginPath(); x.arc(160, 330, 12, 0, 6.3); x.fillStyle = '#8fa3c8'; x.fill(); x.strokeStyle = '#ff4a4a'; x.lineWidth = 14; x.beginPath(); x.moveTo(70, 200); x.lineTo(250, 380); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 34px Mont, Inter, sans-serif'; x.fillText(o.texto || 'Sin conexión', 160, 460); x.font = '500 22px Mont, Inter, sans-serif'; x.fillStyle = '#b8c4dc'; x.fillText('Comprueba tu red', 160, 500);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\ng.add(h.malla(new THREE.PlaneGeometry(2.95, 6.1), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.85 }), 0, 3.4, 0.18));\ng.add(h.malla(new THREE.CylinderGeometry(0.12, 0.12, 0.05, 16), h.M('#000'), 0, 6.3, 0.18)).children; g.children[g.children.length - 1].rotation.x = Math.PI / 2;\ng.add(h.en(h.brillo('#6a8aff', 5, 0.35), 0, 3.4, 0.6));\nreturn h.sombra(g);\n",
+      "tam": 6,
+      "reserva": "movil"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "En millones de casas, la misma pantalla: sin conexión.",
+   "subtitulo": "En millones de casas, la misma pantalla: sin conexión.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MINUTO 1",
+    "detalle": "Sin conexión"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "hierba",
+    "plano": "interior",
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "personas",
+      "cantidad": 2
+     },
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst cuerpo = h.malla(new THREE.BoxGeometry(3.2, 6.4, 0.35), h.M('#1c1c22', { metalness: 0.5, roughness: 0.25 }), 0, 3.4, 0); g.add(cuerpo);\nconst cv = document.createElement('canvas'); cv.width = 320; cv.height = 640; const x = cv.getContext('2d'); const gr = x.createLinearGradient(0, 0, 0, 640); gr.addColorStop(0, '#1f2a44'); gr.addColorStop(1, '#0a0f1c'); x.fillStyle = gr; x.fillRect(0, 0, 320, 640);\nx.fillStyle = '#ffffff'; x.font = '600 26px Mont, Inter, sans-serif'; x.fillText('09:41', 24, 40); x.textAlign = 'right'; x.fillText('Sin servicio', 300, 40); x.textAlign = 'center';\nx.strokeStyle = '#8fa3c8'; x.lineWidth = 14; [50, 85, 120].forEach(rr => { x.beginPath(); x.arc(160, 330, rr, Math.PI * 1.22, Math.PI * 1.78); x.stroke(); });\nx.beginPath(); x.arc(160, 330, 12, 0, 6.3); x.fillStyle = '#8fa3c8'; x.fill(); x.strokeStyle = '#ff4a4a'; x.lineWidth = 14; x.beginPath(); x.moveTo(70, 200); x.lineTo(250, 380); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 34px Mont, Inter, sans-serif'; x.fillText(o.texto || 'Sin conexión', 160, 460); x.font = '500 22px Mont, Inter, sans-serif'; x.fillStyle = '#b8c4dc'; x.fillText('Comprueba tu red', 160, 500);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\ng.add(h.malla(new THREE.PlaneGeometry(2.95, 6.1), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.85 }), 0, 3.4, 0.18));\ng.add(h.malla(new THREE.CylinderGeometry(0.12, 0.12, 0.05, 16), h.M('#000'), 0, 6.3, 0.18)).children; g.children[g.children.length - 1].rotation.x = Math.PI / 2;\ng.add(h.en(h.brillo('#6a8aff', 5, 0.35), 0, 3.4, 0.6));\nreturn h.sombra(g);\n",
+      "tam": 1.2,
+      "reserva": "movil"
+     },
+     {
+      "tipo": "ordenador",
+      "texto": "SIN RED"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los pagos con tarjeta dejan de funcionar.",
+   "subtitulo": "Los pagos con tarjeta dejan de funcionar.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Tarjetas inútiles"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), cuerpo = h.M('#3a4a5a', { metalness: 0.4, roughness: 0.4 }), gris = h.M('#c9ccd2', { metalness: 0.6, roughness: 0.3 });\nh.caja(g, 3.2, 5.0, 1.6, cuerpo, 0, 2.5, 0); h.caja(g, 3.4, 0.5, 1.8, h.M('#d8323a'), 0, 5.2, 0);\nconst cv = document.createElement('canvas'); cv.width = 512; cv.height = 384; const x = cv.getContext('2d'); x.fillStyle = '#0a2a5a'; x.fillRect(0, 0, 512, 384);\nx.strokeStyle = '#ffffff'; x.lineWidth = 10; [60, 100, 140].forEach((rr, j) => { x.beginPath(); x.arc(256, 210, rr, Math.PI * 1.2, Math.PI * 1.8); x.stroke(); }); x.beginPath(); x.arc(256, 210, 12, 0, 6.3); x.fillStyle = '#ffffff'; x.fill();\nx.strokeStyle = '#ff3b3b'; x.lineWidth = 16; x.beginPath(); x.moveTo(150, 80); x.lineTo(362, 280); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 40px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.fillText(o.texto || 'SIN CONEXIÓN', 256, 345);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\nconst pan = h.malla(new THREE.PlaneGeometry(2.2, 1.65), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.8 }), 0, 3.6, 0.81); g.add(pan);\nh.caja(g, 2.4, 0.15, 0.5, gris, 0, 2.55, 1.0); for (let k = 0; k < 12; k++) h.caja(g, 0.35, 0.08, 0.3, h.M('#2b2b30'), -0.6 + (k % 3) * 0.6, 2.66, 0.8 + Math.floor(k / 3) * -0.0 + (Math.floor(k / 3) - 1.5) * 0.12);\nh.caja(g, 1.2, 0.1, 0.1, h.M('#111'), 0, 1.6, 0.81); h.caja(g, 0.8, 0.08, 0.1, h.M('#2fe08a', { emissive: '#2fe08a', emissiveIntensity: 0.4 }), 0, 1.25, 0.81);\ng.add(h.en(h.brillo('#5aa0ff', 3.5, 0.5), 0, 3.6, 1.0));\nreturn h.sombra(g);\n",
+      "tam": 6,
+      "reserva": "cartel",
+      "texto": "SIN CONEXIÓN"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y en los cajeros, colas que no avanzan.",
+   "subtitulo": "Y en los cajeros, colas que no avanzan.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Tarjetas inútiles"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ciudad",
+    "plano": "fachada",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), cuerpo = h.M('#3a4a5a', { metalness: 0.4, roughness: 0.4 }), gris = h.M('#c9ccd2', { metalness: 0.6, roughness: 0.3 });\nh.caja(g, 3.2, 5.0, 1.6, cuerpo, 0, 2.5, 0); h.caja(g, 3.4, 0.5, 1.8, h.M('#d8323a'), 0, 5.2, 0);\nconst cv = document.createElement('canvas'); cv.width = 512; cv.height = 384; const x = cv.getContext('2d'); x.fillStyle = '#0a2a5a'; x.fillRect(0, 0, 512, 384);\nx.strokeStyle = '#ffffff'; x.lineWidth = 10; [60, 100, 140].forEach((rr, j) => { x.beginPath(); x.arc(256, 210, rr, Math.PI * 1.2, Math.PI * 1.8); x.stroke(); }); x.beginPath(); x.arc(256, 210, 12, 0, 6.3); x.fillStyle = '#ffffff'; x.fill();\nx.strokeStyle = '#ff3b3b'; x.lineWidth = 16; x.beginPath(); x.moveTo(150, 80); x.lineTo(362, 280); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 40px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.fillText(o.texto || 'SIN CONEXIÓN', 256, 345);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\nconst pan = h.malla(new THREE.PlaneGeometry(2.2, 1.65), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.8 }), 0, 3.6, 0.81); g.add(pan);\nh.caja(g, 2.4, 0.15, 0.5, gris, 0, 2.55, 1.0); for (let k = 0; k < 12; k++) h.caja(g, 0.35, 0.08, 0.3, h.M('#2b2b30'), -0.6 + (k % 3) * 0.6, 2.66, 0.8 + Math.floor(k / 3) * -0.0 + (Math.floor(k / 3) - 1.5) * 0.12);\nh.caja(g, 1.2, 0.1, 0.1, h.M('#111'), 0, 1.6, 0.81); h.caja(g, 0.8, 0.08, 0.1, h.M('#2fe08a', { emissive: '#2fe08a', emissiveIntensity: 0.4 }), 0, 1.25, 0.81);\ng.add(h.en(h.brillo('#5aa0ff', 3.5, 0.5), 0, 3.6, 1.0));\nreturn h.sombra(g);\n",
+      "tam": 5,
+      "reserva": "cartel",
+      "texto": "FUERA DE SERVICIO"
+     },
+     {
+      "tipo": "personas",
+      "cantidad": 7,
+      "x": 0,
+      "z": 1
+     },
+     {
+      "tipo": "edificios",
+      "cantidad": 3,
+      "z": -6
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los aviones se quedan en tierra: sin datos no se puede gestionar un vuelo.",
+   "subtitulo": "Los aviones se quedan en tierra: sin datos no se puede gestionar un vuelo.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Aviones parados"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ciudad",
+    "plano": "aerea",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// pista con marcas y tres aviones parados en fila, con escaleras y la terminal detrás\ng.add(h.malla(new THREE.BoxGeometry(34, 0.1, 10), h.M('#3a3d44', { roughness: 0.9 }), 0, 0.05, 0));\nfor (let k = -7; k <= 7; k++) g.add(h.malla(new THREE.BoxGeometry(1.4, 0.02, 0.25), h.M('#f2f2f2'), k * 2.2, 0.11, 0));\n[-4.6, 4.6].forEach(z => g.add(h.malla(new THREE.BoxGeometry(34, 0.02, 0.18), h.M('#f2c14e'), 0, 0.11, z)));\nfor (let k = 0; k < 3; k++) { const a = h.P.avion({ color: ['#f4f6fa', '#e8ecf2', '#f4f6fa'][k], color2: ['#1f4fb8', '#d8323a', '#2fb38a'][k] }, r, c); a.position.set(-10 + k * 10, 1.9, (k - 1) * 1.2); a.rotation.y = 0.3; g.add(a);\n  [-1, 1].forEach(s => g.add(h.malla(new THREE.CylinderGeometry(0.25, 0.25, 0.3, 12), h.M('#1c1c20'), -10 + k * 10 + s * 1.2, 0.3, (k - 1) * 1.2 + s * 0.9)));\n  const esc = h.malla(new THREE.BoxGeometry(2.2, 0.15, 0.9), h.M('#d9dde3', { metalness: 0.5 }), -10 + k * 10 + 3, 1.0, (k - 1) * 1.2 + 1.6); esc.rotation.z = 0.5; g.add(esc); }\nconst ter = h.caja(g, 34, 5, 4, h.M('#8fb6d6', { roughness: 0.1, metalness: 0.5 }), 0, 2.5, -9); h.caja(g, 34.4, 0.5, 4.4, h.M('#e8ecf0'), 0, 5.2, -9);\nconst cv = document.createElement('canvas'); cv.width = 512; cv.height = 96; const x = cv.getContext('2d'); x.fillStyle = '#d8323a'; x.fillRect(0, 0, 512, 96); x.fillStyle = '#fff'; x.font = '900 56px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(o.texto || 'CANCELADO', 256, 50);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace; h.caja(g, 8, 1.5, 0.1, new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.6 }), 0, 6.4, -6.8);\nreturn h.sombra(g);\n",
+      "tam": 34,
+      "reserva": "avion",
+      "texto": "CANCELADO"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Las tiendas solo aceptan efectivo, y el dinero en mano se acaba.",
+   "subtitulo": "Las tiendas solo aceptan efectivo, y el dinero en mano se acaba.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Solo efectivo"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "subir",
+    "objetos": [
+     {
+      "tipo": "billetes",
+      "cantidad": 4
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los centros de datos siguen en pie, esperando a que vuelva la red.",
+   "subtitulo": "Los centros de datos siguen en pie, esperando a que vuelva la red.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MES 1",
+    "detalle": "Servidores en espera"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "servidores"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Volveríamos a las cartas, al teléfono fijo y a los mapas de papel.",
+   "subtitulo": "Volveríamos a las cartas, al teléfono fijo y a los mapas de papel.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Vuelta al papel"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "hierba",
+    "plano": "mapa",
+    "objetos": [
+     {
+      "tipo": "marcador",
+      "nombre": "Madrid"
+     },
+     {
+      "tipo": "marcador",
+      "nombre": "Barcelona"
+     },
+     {
+      "tipo": "marcador",
+      "nombre": "Sevilla"
+     },
+     {
+      "tipo": "ruta",
+      "desde": "Madrid",
+      "hasta": "Barcelona"
+     },
+     {
+      "tipo": "ruta",
+      "desde": "Madrid",
+      "hasta": "Sevilla"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y tú, ¿aguantarías una semana sin internet?",
+   "subtitulo": "Y tú, ¿aguantarías una semana sin internet?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Desconectados"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\nconst cuerpo = h.malla(new THREE.BoxGeometry(3.2, 6.4, 0.35), h.M('#1c1c22', { metalness: 0.5, roughness: 0.25 }), 0, 3.4, 0); g.add(cuerpo);\nconst cv = document.createElement('canvas'); cv.width = 320; cv.height = 640; const x = cv.getContext('2d'); const gr = x.createLinearGradient(0, 0, 0, 640); gr.addColorStop(0, '#1f2a44'); gr.addColorStop(1, '#0a0f1c'); x.fillStyle = gr; x.fillRect(0, 0, 320, 640);\nx.fillStyle = '#ffffff'; x.font = '600 26px Mont, Inter, sans-serif'; x.fillText('09:41', 24, 40); x.textAlign = 'right'; x.fillText('Sin servicio', 300, 40); x.textAlign = 'center';\nx.strokeStyle = '#8fa3c8'; x.lineWidth = 14; [50, 85, 120].forEach(rr => { x.beginPath(); x.arc(160, 330, rr, Math.PI * 1.22, Math.PI * 1.78); x.stroke(); });\nx.beginPath(); x.arc(160, 330, 12, 0, 6.3); x.fillStyle = '#8fa3c8'; x.fill(); x.strokeStyle = '#ff4a4a'; x.lineWidth = 14; x.beginPath(); x.moveTo(70, 200); x.lineTo(250, 380); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 34px Mont, Inter, sans-serif'; x.fillText(o.texto || 'Sin conexión', 160, 460); x.font = '500 22px Mont, Inter, sans-serif'; x.fillStyle = '#b8c4dc'; x.fillText('Comprueba tu red', 160, 500);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\ng.add(h.malla(new THREE.PlaneGeometry(2.95, 6.1), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.85 }), 0, 3.4, 0.18));\ng.add(h.malla(new THREE.CylinderGeometry(0.12, 0.12, 0.05, 16), h.M('#000'), 0, 6.3, 0.18)).children; g.children[g.children.length - 1].rotation.x = Math.PI / 2;\ng.add(h.en(h.brillo('#6a8aff', 5, 0.35), 0, 3.4, 0.6));\nreturn h.sombra(g);\n",
+      "tam": 6,
+      "reserva": "movil",
+      "texto": "¿Y ahora qué?"
+     }
+    ]
+   }
+  }
+ ]
+}

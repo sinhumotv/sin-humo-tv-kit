@@ -1,0 +1,269 @@
+{
+ "titulo": "¿Y si no lloviera en España en un año? ☀️",
+ "meta": {
+  "tema": "¿Qué pasaría si en España no lloviera ni una gota durante un año entero?",
+  "titulo": "¿Y si no lloviera en España en un año? ☀️",
+  "gancho": "Los pueblos que se tragaron los embalses volverían a salir a la luz.",
+  "pregunta": "¿Cómo ahorras tú agua en casa?",
+  "hashtags": [
+   "sequia",
+   "agua",
+   "españa",
+   "quepasariasi",
+   "embalses"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que en España no cae ni una gota de lluvia durante un año.",
+   "subtitulo": "Pongamos que en España no cae ni una gota de lluvia durante un año.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Cielo sin nubes"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "arena",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// tierra cuarteada en placas y árboles secos\nconst losa = h.M('#c8a46e', { roughness: 0.95 });\nfor (let x = -6; x <= 6; x++) for (let z = -4; z <= 4; z++) { const p = h.malla(new THREE.CylinderGeometry(0.62 + r() * 0.1, 0.65, 0.18, 5 + Math.floor(r() * 3)), losa, x * 1.25 + (r() - 0.5) * 0.3, 0.09, z * 1.25 + (r() - 0.5) * 0.3); p.rotation.y = r() * 3; g.add(p); }\nconst tronco = h.M('#5a4232', { roughness: 0.9 });\nfor (let t = 0; t < 3; t++) { const a = new THREE.Group(); const al = 3 + r() * 2;\n  a.add(h.malla(new THREE.CylinderGeometry(0.12, 0.25, al, 7), tronco, 0, al / 2, 0));\n  for (let k = 0; k < 6; k++) { const ps = [new THREE.Vector3(0, al * (0.55 + r() * 0.4), 0)]; const dir = r() * 6.28; ps.push(new THREE.Vector3(Math.cos(dir) * 0.8, ps[0].y + 0.6, Math.sin(dir) * 0.8)); ps.push(new THREE.Vector3(Math.cos(dir) * 1.5, ps[0].y + 1.0 + r(), Math.sin(dir) * 1.5));\n    a.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 8, 0.06, 5), tronco)); }\n  a.position.set((t - 1) * 4.5, 0, -1.5 + r() * 1.5); g.add(a); }\n// espigas secas\nfor (let k = 0; k < 50; k++) { const e = h.malla(new THREE.CylinderGeometry(0.015, 0.02, 0.6 + r() * 0.4, 4), h.M('#b8994e'), (r() - 0.5) * 14, 0.3, (r() - 0.5) * 9); e.rotation.z = (r() - 0.5) * 0.6; g.add(e); }\nreturn h.sombra(g);\n",
+      "tam": 14,
+      "reserva": "cactus"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Al principio nadie lo nota: los grifos siguen echando agua.",
+   "subtitulo": "Al principio nadie lo nota: los grifos siguen echando agua.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MINUTO 1",
+    "detalle": "Todo normal"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "hierba",
+    "plano": "interior",
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "personas",
+      "cantidad": 2
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Pero los campos de secano empiezan a cuartearse.",
+   "subtitulo": "Pero los campos de secano empiezan a cuartearse.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Tierra cuarteada"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "arena",
+    "plano": "aerea",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group();\n// tierra cuarteada en placas y árboles secos\nconst losa = h.M('#c8a46e', { roughness: 0.95 });\nfor (let x = -6; x <= 6; x++) for (let z = -4; z <= 4; z++) { const p = h.malla(new THREE.CylinderGeometry(0.62 + r() * 0.1, 0.65, 0.18, 5 + Math.floor(r() * 3)), losa, x * 1.25 + (r() - 0.5) * 0.3, 0.09, z * 1.25 + (r() - 0.5) * 0.3); p.rotation.y = r() * 3; g.add(p); }\nconst tronco = h.M('#5a4232', { roughness: 0.9 });\nfor (let t = 0; t < 3; t++) { const a = new THREE.Group(); const al = 3 + r() * 2;\n  a.add(h.malla(new THREE.CylinderGeometry(0.12, 0.25, al, 7), tronco, 0, al / 2, 0));\n  for (let k = 0; k < 6; k++) { const ps = [new THREE.Vector3(0, al * (0.55 + r() * 0.4), 0)]; const dir = r() * 6.28; ps.push(new THREE.Vector3(Math.cos(dir) * 0.8, ps[0].y + 0.6, Math.sin(dir) * 0.8)); ps.push(new THREE.Vector3(Math.cos(dir) * 1.5, ps[0].y + 1.0 + r(), Math.sin(dir) * 1.5));\n    a.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 8, 0.06, 5), tronco)); }\n  a.position.set((t - 1) * 4.5, 0, -1.5 + r() * 1.5); g.add(a); }\n// espigas secas\nfor (let k = 0; k < 50; k++) { const e = h.malla(new THREE.CylinderGeometry(0.015, 0.02, 0.6 + r() * 0.4, 4), h.M('#b8994e'), (r() - 0.5) * 14, 0.3, (r() - 0.5) * 9); e.rotation.z = (r() - 0.5) * 0.6; g.add(e); }\nreturn h.sombra(g);\n",
+      "tam": 18,
+      "reserva": "cactus"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los embalses bajan cada semana un poco más.",
+   "subtitulo": "Los embalses bajan cada semana un poco más.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Embalses bajo mínimos"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "arena",
+    "plano": "aerea",
+    "foco": 0,
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), nivel = o.lleno ? 0.9 : (o.vacio ? 0.08 : 0.35);\n// VALLE ENTRE MONTAÑAS cerrado por una presa de hormigón: detrás de la presa, el agua (o lo que queda) y las bandas claras de los niveles antiguos\nconst L = 30, A = 16;\nconst ladera = (s) => { const m = new THREE.Group(); for (let k = 0; k < 7; k++) { const h0 = 10 - k * 0.6; const b = h.malla(new THREE.BoxGeometry(5.5 + k * 0.4, h0, 4.2), h.M(['#8a7458', '#93805f', '#7e6a50'][k % 3], { roughness: 0.95, flatShading: true }), 0, h0 / 2 - 2, -k * 4.2 + 2); b.rotation.y = s * 0.05; m.add(b); } m.position.x = s * (A / 2 + 2.2); return m; };\ng.add(ladera(-1)); g.add(ladera(1));\nconst fondo = h.malla(new THREE.BoxGeometry(A, 0.4, L), h.M('#7a5a3a', { roughness: 1 }), 0, -2.2, -L / 2 + 2); g.add(fondo);\n// bandas de nivel en las laderas (tierra lavada, más clara)\nfor (let k = 0; k < 6; k++) { const y = -2 + k * 1.2; if (y < -2 + nivel * 7.5) continue; [-1, 1].forEach(s => g.add(h.malla(new THREE.BoxGeometry(0.15, 0.9, L), h.M('#d8c7a4', { roughness: 0.95 }), s * (A / 2 - 0.1), y, -L / 2 + 2))); }\n// grietas y barro en el fondo al descubierto\nfor (let k = 0; k < 90; k++) { const gr = h.malla(new THREE.BoxGeometry(0.5 + r() * 1.4, 0.03, 0.07), h.M('#4a3624'), (r() - 0.5) * (A - 1), -1.98, -r() * (L - 4)); gr.rotation.y = r() * 3; g.add(gr); }\nconst agua = new THREE.MeshStandardMaterial({ color: '#2f7fa8', roughness: 0.06, metalness: 0.25, transparent: true, opacity: 0.9 });\nconst ya = -2 + nivel * 7.5, la = 2.5 + nivel * (L - 6); g.add(h.malla(new THREE.BoxGeometry(A - 0.2, 0.15, la), agua, 0, ya, 1.6 - la / 2));\n// presa\nconst presa = new THREE.Group(), hor = h.M('#d6d2c8', { roughness: 0.7 });\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 10, 2.4), hor, 0, 3, 0)); presa.add(h.malla(new THREE.BoxGeometry(A + 4.6, 0.6, 3.2), h.M('#bdb8ac'), 0, 8.3, 0));\nfor (let k = 0; k < 9; k++) presa.add(h.malla(new THREE.BoxGeometry(0.12, 9.6, 0.1), h.M('#bdb8ac'), -A / 2 - 1.5 + k * (A + 3) / 8, 3, 1.25));\nfor (let k = 0; k < 10; k++) presa.add(h.malla(new THREE.BoxGeometry(0.15, 0.5, 0.15), h.M('#8a929c', { metalness: 0.5 }), -A / 2 + k * A / 9, 8.85, 1.4));\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 0.25, 0.1), h.M('#8a8270'), 0, ya + 0.6, -1.25));\npresa.position.z = 3; g.add(presa);\ng.rotation.y = Math.PI;\n// pueblo sumergido que asoma: campanario y muros de piedra\nconst pueblo = new THREE.Group(), pi = h.piedra('#cdbb9c', 1, 3);\npueblo.add(h.malla(new THREE.BoxGeometry(1.8, 8, 1.8), pi, 0, 2, 0)); const tj = h.malla(new THREE.ConeGeometry(1.4, 2.6, 4), h.M('#8a5a3a'), 0, 7.3, 0); tj.rotation.y = Math.PI / 4; pueblo.add(tj);\n[[0.92], [-0.92]].forEach(([z]) => pueblo.add(h.malla(new THREE.BoxGeometry(0.55, 1.1, 0.1), h.M('#1c1714'), 0, 4.6, z)));\nfor (let k = 0; k < 7; k++) { const w = h.malla(new THREE.BoxGeometry(2 + r() * 1.6, 1.2 + r() * 2, 0.4), h.piedra('#c4b294', 1, 1), -4 + (k % 4) * 2.6, -1.0, -3 - Math.floor(k / 4) * 3); w.rotation.y = r() * 1.5; pueblo.add(w); }\npueblo.position.set(1, 0, -12); g.add(pueblo);\nreturn h.sombra(g);\n",
+      "tam": 30,
+      "reserva": "crater"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Hasta que asoman los pueblos que quedaron bajo el agua.",
+   "subtitulo": "Hasta que asoman los pueblos que quedaron bajo el agua.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Pueblos fantasma"
+   },
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "arena",
+    "plano": "aerea",
+    "foco": 0,
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), nivel = o.lleno ? 0.9 : (o.vacio ? 0.08 : 0.35);\n// VALLE ENTRE MONTAÑAS cerrado por una presa de hormigón: detrás de la presa, el agua (o lo que queda) y las bandas claras de los niveles antiguos\nconst L = 30, A = 16;\nconst ladera = (s) => { const m = new THREE.Group(); for (let k = 0; k < 7; k++) { const h0 = 10 - k * 0.6; const b = h.malla(new THREE.BoxGeometry(5.5 + k * 0.4, h0, 4.2), h.M(['#8a7458', '#93805f', '#7e6a50'][k % 3], { roughness: 0.95, flatShading: true }), 0, h0 / 2 - 2, -k * 4.2 + 2); b.rotation.y = s * 0.05; m.add(b); } m.position.x = s * (A / 2 + 2.2); return m; };\ng.add(ladera(-1)); g.add(ladera(1));\nconst fondo = h.malla(new THREE.BoxGeometry(A, 0.4, L), h.M('#7a5a3a', { roughness: 1 }), 0, -2.2, -L / 2 + 2); g.add(fondo);\n// bandas de nivel en las laderas (tierra lavada, más clara)\nfor (let k = 0; k < 6; k++) { const y = -2 + k * 1.2; if (y < -2 + nivel * 7.5) continue; [-1, 1].forEach(s => g.add(h.malla(new THREE.BoxGeometry(0.15, 0.9, L), h.M('#d8c7a4', { roughness: 0.95 }), s * (A / 2 - 0.1), y, -L / 2 + 2))); }\n// grietas y barro en el fondo al descubierto\nfor (let k = 0; k < 90; k++) { const gr = h.malla(new THREE.BoxGeometry(0.5 + r() * 1.4, 0.03, 0.07), h.M('#4a3624'), (r() - 0.5) * (A - 1), -1.98, -r() * (L - 4)); gr.rotation.y = r() * 3; g.add(gr); }\nconst agua = new THREE.MeshStandardMaterial({ color: '#2f7fa8', roughness: 0.06, metalness: 0.25, transparent: true, opacity: 0.9 });\nconst ya = -2 + nivel * 7.5, la = 2.5 + nivel * (L - 6); g.add(h.malla(new THREE.BoxGeometry(A - 0.2, 0.15, la), agua, 0, ya, 1.6 - la / 2));\n// presa\nconst presa = new THREE.Group(), hor = h.M('#d6d2c8', { roughness: 0.7 });\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 10, 2.4), hor, 0, 3, 0)); presa.add(h.malla(new THREE.BoxGeometry(A + 4.6, 0.6, 3.2), h.M('#bdb8ac'), 0, 8.3, 0));\nfor (let k = 0; k < 9; k++) presa.add(h.malla(new THREE.BoxGeometry(0.12, 9.6, 0.1), h.M('#bdb8ac'), -A / 2 - 1.5 + k * (A + 3) / 8, 3, 1.25));\nfor (let k = 0; k < 10; k++) presa.add(h.malla(new THREE.BoxGeometry(0.15, 0.5, 0.15), h.M('#8a929c', { metalness: 0.5 }), -A / 2 + k * A / 9, 8.85, 1.4));\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 0.25, 0.1), h.M('#8a8270'), 0, ya + 0.6, -1.25));\npresa.position.z = 3; g.add(presa);\ng.rotation.y = Math.PI;\n// pueblo sumergido que asoma: campanario y muros de piedra\nconst pueblo = new THREE.Group(), pi = h.piedra('#cdbb9c', 1, 3);\npueblo.add(h.malla(new THREE.BoxGeometry(1.8, 8, 1.8), pi, 0, 2, 0)); const tj = h.malla(new THREE.ConeGeometry(1.4, 2.6, 4), h.M('#8a5a3a'), 0, 7.3, 0); tj.rotation.y = Math.PI / 4; pueblo.add(tj);\n[[0.92], [-0.92]].forEach(([z]) => pueblo.add(h.malla(new THREE.BoxGeometry(0.55, 1.1, 0.1), h.M('#1c1714'), 0, 4.6, z)));\nfor (let k = 0; k < 7; k++) { const w = h.malla(new THREE.BoxGeometry(2 + r() * 1.6, 1.2 + r() * 2, 0.4), h.piedra('#c4b294', 1, 1), -4 + (k % 4) * 2.6, -1.0, -3 - Math.floor(k / 4) * 3); w.rotation.y = r() * 1.5; pueblo.add(w); }\npueblo.position.set(1, 0, -12); g.add(pueblo);\nreturn h.sombra(g);\n",
+      "tam": 30,
+      "reserva": "crater",
+      "vacio": true
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "En muchos pueblos, el agua llega en camiones cisterna.",
+   "subtitulo": "En muchos pueblos, el agua llega en camiones cisterna.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "MES 1",
+    "detalle": "Agua en camiones"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ciudad",
+    "plano": "fachada",
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), blanco = h.M('#f4f4f2', { roughness: 0.4 }), azul = h.M('#1f5fb8', { roughness: 0.4 }), neg = h.M('#1c1c20');\nh.caja(g, 2.4, 2.2, 2.4, azul, 3.6, 1.6, 0); h.caja(g, 2.3, 0.8, 2.42, h.M('#9ec7e8', { roughness: 0.05, metalness: 0.4 }), 3.75, 2.2, 0);\nconst tq = h.malla(new THREE.CylinderGeometry(1.25, 1.25, 6, 32), h.M('#d9dde3', { metalness: 0.7, roughness: 0.25 }), -0.6, 1.95, 0); tq.rotation.z = Math.PI / 2; g.add(tq);\nconst cv = document.createElement('canvas'); cv.width = 512; cv.height = 96; const x = cv.getContext('2d'); x.fillStyle = '#1f5fb8'; x.fillRect(0, 0, 512, 96); x.fillStyle = '#fff'; x.font = '900 60px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(o.texto || 'AGUA POTABLE', 256, 50);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace; const et = h.malla(new THREE.PlaneGeometry(4.6, 0.85), new THREE.MeshStandardMaterial({ map: tx }), -0.6, 1.95, 1.27); g.add(et);\nh.caja(g, 7.6, 0.3, 2.0, neg, 0.3, 0.6, 0);\n[[-2.6, 1], [-2.6, -1], [-1.2, 1], [-1.2, -1], [3.6, 1], [3.6, -1]].forEach(([px, pz]) => { const w = h.malla(new THREE.CylinderGeometry(0.48, 0.48, 0.35, 18), neg, px, 0.48, pz * 1.05); w.rotation.x = Math.PI / 2; g.add(w); });\ng.add(h.en(h.brillo('#ffb347', 1.2, 0.8), 4.82, 1.2, 0.8)); g.add(h.en(h.brillo('#ffb347', 1.2, 0.8), 4.82, 1.2, -0.8));\nreturn h.sombra(g);\n",
+      "tam": 8,
+      "reserva": "autobus"
+     },
+     {
+      "tipo": "personas",
+      "cantidad": 6,
+      "z": 3
+     },
+     {
+      "tipo": "casa",
+      "cantidad": 3,
+      "z": -6
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Los incendios se multiplican en los montes secos.",
+   "subtitulo": "Los incendios se multiplican en los montes secos.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Montes en llamas"
+   },
+   "escena3d": {
+    "cielo": "rojo",
+    "suelo": "roca",
+    "plano": "aerea",
+    "efecto": "ceniza",
+    "camara": "orbita",
+    "objetos": [
+     {
+      "tipo": "fuego"
+     },
+     {
+      "tipo": "arboles",
+      "cantidad": 14
+     },
+     {
+      "tipo": "helicoptero"
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "Y el aceite y la fruta se disparan de precio.",
+   "subtitulo": "Y el aceite y la fruta se disparan de precio.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 1",
+    "detalle": "Montes en llamas"
+   },
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ciudad",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "travelin",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), metal = h.M('#8a929c', { metalness: 0.6, roughness: 0.4 }), vacia = !!o.vacia;\nconst W = 8, baldas = 4;\nh.caja(g, 0.25, 5.4, 1.7, metal, -W / 2, 2.7, 0); h.caja(g, 0.25, 5.4, 1.7, metal, W / 2, 2.7, 0); h.caja(g, W, 5.4, 0.12, h.M('#2e6a8a', { roughness: 0.7 }), 0, 2.7, -0.8);\nconst cv0 = document.createElement('canvas'); cv0.width = 512; cv0.height = 96; const x0 = cv0.getContext('2d'); x0.fillStyle = '#2fa84a'; x0.fillRect(0, 0, 512, 96); x0.fillStyle = '#fff'; x0.font = '900 60px Mont, Inter, sans-serif'; x0.textAlign = 'center'; x0.textBaseline = 'middle'; x0.fillText('FRUTERÍA', 256, 50);\nconst t0 = new THREE.CanvasTexture(cv0); t0.colorSpace = THREE.SRGBColorSpace; h.caja(g, W, 0.9, 0.15, new THREE.MeshStandardMaterial({ map: t0, emissive: '#ffffff', emissiveMap: t0, emissiveIntensity: 0.3 }), 0, 5.7, 0.2);\nconst frutas = [['#d8283c', 0.3], ['#f2a81e', 0.32], ['#7ac74f', 0.28], ['#f2d84c', 0.3]];\nfor (let b = 0; b < baldas; b++) { const y = 0.5 + b * 1.3; h.caja(g, W, 0.12, 1.6, metal, 0, y, 0);\n  const cv = document.createElement('canvas'); cv.width = 256; cv.height = 48; const x = cv.getContext('2d'); x.fillStyle = vacia ? '#d8323a' : '#ffffff'; x.fillRect(0, 0, 256, 48); x.fillStyle = vacia ? '#ffffff' : '#2b2b30'; x.font = '900 30px Mont, Inter, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';\n  x.fillText(vacia ? 'AGOTADO' : ['FRESAS', 'NARANJAS', 'PERAS', 'LIMONES'][b] + ' 1,99 €', 128, 26); const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\n  h.caja(g, 1.8, 0.34, 0.05, new THREE.MeshStandardMaterial({ map: tx }), -W / 2 + 1.4 + (b % 2) * 4, y - 0.12, 0.83);\n  const [col, rad] = frutas[b % frutas.length], nf = vacia ? (b === 1 ? 2 : 0) : 26;\n  for (let k = 0; k < nf; k++) g.add(h.malla(new THREE.SphereGeometry(rad, 14, 10), h.M(col, { roughness: 0.4 }), -W / 2 + 0.6 + (k % 13) * 0.55 + r() * 0.1 + (vacia ? 3 : 0), y + rad + 0.06 + Math.floor(k / 13) * rad * 1.5, -0.3 + Math.floor(k / 13) * 0.45));\n  if (vacia) for (let k = 0; k < 2; k++) h.caja(g, 0.9, 0.5, 0.6, h.M('#c9a26a', { roughness: 0.9 }), -2.5 + k * 3.2 + r(), y + 0.31, 0);\n}\nreturn h.sombra(g);\n",
+      "tam": 9,
+      "reserva": "monedas",
+      "vacia": true
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "España ya ha vivido sequías largas, y siempre volvió a llover.",
+   "subtitulo": "España ya ha vivido sequías largas, y siempre volvió a llover.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Vuelve la lluvia"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "hierba",
+    "plano": "aerea",
+    "foco": 0,
+    "efecto": "lluvia",
+    "camara": "alejar",
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), nivel = o.lleno ? 0.9 : (o.vacio ? 0.08 : 0.35);\n// VALLE ENTRE MONTAÑAS cerrado por una presa de hormigón: detrás de la presa, el agua (o lo que queda) y las bandas claras de los niveles antiguos\nconst L = 30, A = 16;\nconst ladera = (s) => { const m = new THREE.Group(); for (let k = 0; k < 7; k++) { const h0 = 10 - k * 0.6; const b = h.malla(new THREE.BoxGeometry(5.5 + k * 0.4, h0, 4.2), h.M(['#8a7458', '#93805f', '#7e6a50'][k % 3], { roughness: 0.95, flatShading: true }), 0, h0 / 2 - 2, -k * 4.2 + 2); b.rotation.y = s * 0.05; m.add(b); } m.position.x = s * (A / 2 + 2.2); return m; };\ng.add(ladera(-1)); g.add(ladera(1));\nconst fondo = h.malla(new THREE.BoxGeometry(A, 0.4, L), h.M('#7a5a3a', { roughness: 1 }), 0, -2.2, -L / 2 + 2); g.add(fondo);\n// bandas de nivel en las laderas (tierra lavada, más clara)\nfor (let k = 0; k < 6; k++) { const y = -2 + k * 1.2; if (y < -2 + nivel * 7.5) continue; [-1, 1].forEach(s => g.add(h.malla(new THREE.BoxGeometry(0.15, 0.9, L), h.M('#d8c7a4', { roughness: 0.95 }), s * (A / 2 - 0.1), y, -L / 2 + 2))); }\n// grietas y barro en el fondo al descubierto\nfor (let k = 0; k < 90; k++) { const gr = h.malla(new THREE.BoxGeometry(0.5 + r() * 1.4, 0.03, 0.07), h.M('#4a3624'), (r() - 0.5) * (A - 1), -1.98, -r() * (L - 4)); gr.rotation.y = r() * 3; g.add(gr); }\nconst agua = new THREE.MeshStandardMaterial({ color: '#2f7fa8', roughness: 0.06, metalness: 0.25, transparent: true, opacity: 0.9 });\nconst ya = -2 + nivel * 7.5, la = 2.5 + nivel * (L - 6); g.add(h.malla(new THREE.BoxGeometry(A - 0.2, 0.15, la), agua, 0, ya, 1.6 - la / 2));\n// presa\nconst presa = new THREE.Group(), hor = h.M('#d6d2c8', { roughness: 0.7 });\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 10, 2.4), hor, 0, 3, 0)); presa.add(h.malla(new THREE.BoxGeometry(A + 4.6, 0.6, 3.2), h.M('#bdb8ac'), 0, 8.3, 0));\nfor (let k = 0; k < 9; k++) presa.add(h.malla(new THREE.BoxGeometry(0.12, 9.6, 0.1), h.M('#bdb8ac'), -A / 2 - 1.5 + k * (A + 3) / 8, 3, 1.25));\nfor (let k = 0; k < 10; k++) presa.add(h.malla(new THREE.BoxGeometry(0.15, 0.5, 0.15), h.M('#8a929c', { metalness: 0.5 }), -A / 2 + k * A / 9, 8.85, 1.4));\npresa.add(h.malla(new THREE.BoxGeometry(A + 4, 0.25, 0.1), h.M('#8a8270'), 0, ya + 0.6, -1.25));\npresa.position.z = 3; g.add(presa);\ng.rotation.y = Math.PI;\n// pueblo sumergido que asoma: campanario y muros de piedra\nconst pueblo = new THREE.Group(), pi = h.piedra('#cdbb9c', 1, 3);\npueblo.add(h.malla(new THREE.BoxGeometry(1.8, 8, 1.8), pi, 0, 2, 0)); const tj = h.malla(new THREE.ConeGeometry(1.4, 2.6, 4), h.M('#8a5a3a'), 0, 7.3, 0); tj.rotation.y = Math.PI / 4; pueblo.add(tj);\n[[0.92], [-0.92]].forEach(([z]) => pueblo.add(h.malla(new THREE.BoxGeometry(0.55, 1.1, 0.1), h.M('#1c1714'), 0, 4.6, z)));\nfor (let k = 0; k < 7; k++) { const w = h.malla(new THREE.BoxGeometry(2 + r() * 1.6, 1.2 + r() * 2, 0.4), h.piedra('#c4b294', 1, 1), -4 + (k % 4) * 2.6, -1.0, -3 - Math.floor(k / 4) * 3); w.rotation.y = r() * 1.5; pueblo.add(w); }\npueblo.position.set(1, 0, -12); g.add(pueblo);\nreturn h.sombra(g);\n",
+      "tam": 30,
+      "reserva": "crater",
+      "lleno": true
+     }
+    ]
+   }
+  },
+  {
+   "hablado": "¿Y tú, cómo ahorras agua en casa?",
+   "subtitulo": "¿Y tú, cómo ahorras agua en casa?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "AÑO 100",
+    "detalle": "Vuelve la lluvia"
+   },
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "hierba",
+    "plano": "interior",
+    "efecto": "lluvia",
+    "camara": "acercar",
+    "objetos": [
+     {
+      "tipo": "personas",
+      "cantidad": 2
+     }
+    ]
+   }
+  }
+ ]
+}
