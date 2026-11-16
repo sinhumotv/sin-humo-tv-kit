@@ -28,7 +28,7 @@
     "plano": "detalle",
     "foco": 0,
     "camara": "subir",
-    "zoom": 1.35,
+    "zoom": 0.85,
     "objetos": [
      {
       "tipo": "nueva",
@@ -38,7 +38,11 @@
       "vista": "todo"
      }
     ],
-    "efecto": "lluvia"
+    "efecto": "lluvia",
+    "mira": [
+     0.5,
+     0.2
+    ]
    }
   },
   {
@@ -55,7 +59,7 @@
     "plano": "detalle",
     "foco": 0,
     "camara": "acercar",
-    "zoom": 1.5,
+    "zoom": 1.1,
     "objetos": [
      {
       "tipo": "nueva",
@@ -68,7 +72,7 @@
     "efecto": "lluvia",
     "mira": [
      0.5,
-     0.35
+     0.2
     ]
    }
   },
@@ -278,7 +282,7 @@
     "plano": "detalle",
     "foco": 0,
     "camara": "alejar",
-    "zoom": 1.35,
+    "zoom": 0.85,
     "objetos": [
      {
       "tipo": "nueva",
@@ -288,7 +292,11 @@
       "vista": "todo"
      }
     ],
-    "efecto": "lluvia"
+    "efecto": "lluvia",
+    "mira": [
+     0.5,
+     0.2
+    ]
    }
   }
  ]

@@ -28,7 +28,7 @@
     "plano": "detalle",
     "foco": 0,
     "camara": "travelin",
-    "zoom": 1.35,
+    "zoom": 0.9,
     "objetos": [
      {
       "tipo": "nueva",
@@ -247,7 +247,7 @@
     "plano": "detalle",
     "foco": 0,
     "camara": "alejar",
-    "zoom": 1.35,
+    "zoom": 0.9,
     "objetos": [
      {
       "tipo": "nueva",
