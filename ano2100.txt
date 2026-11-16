@@ -110,3 +110,4 @@
 2026-11-16|08:00|Modelos de decisión en inteligencia artificial|final|YO 6afa738260a910801c650263 IN 6afa738260a910801c6502a1 TI 6afa7383ff465c57dacc0cfe|img=ia|08:15
 2026-11-16|12:00|Gafas inteligentes de Google y Samsung|pregunta|YO 6afa74fc06e1675856c21e0c IN 6afa74fc60a910801c656dc4 TI 6afa74fd8e87c256a3aba357|img=mixto|11:52
 2026-11-16|15:00|Hibernación humana para el espacio|increible|YO 6afa768c06e1675856c28cd4 IN 6afa768cff465c57dacd06c6 TI 6afa768dff465c57dacd06fe|img=mixto|15:05
+2026-11-16|18:00|Energía solar espacial en 2100|sabias|YO 6afa77fb60a910801c664629 IN 6afa77fcff465c57dacd734c TI 6afa77fd60a910801c664671|img=mixto|17:36
