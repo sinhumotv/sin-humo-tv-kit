@@ -109,3 +109,4 @@
 2026-11-15|21:00|La muerte de Félix Faure|nadie|YO 6af925e9e86a5789a6e87237 IN 6af925e9b9a106584c850b4b TI 6af925ea918fe79d2ebbf4eb|img=mixto|20:58
 2026-11-16|08:00|El trágico despiste de William Huskisson|error|YO 6afa7205ff465c57dacba744 IN 6afa7206ff465c57dacba788 TI 6afa72078e87c256a3aaa10d|img=mixto|08:29
 2026-11-16|12:00|El pozo de la Isla del Roble|pregunta|YO 6afa7369d7e5fee63898bc42 IN 6afa7369a869c35e5bb33d93 TI 6afa736a06e1675856c19e64|img=mixto|11:28
+2026-11-16|15:00|Roy Sullivan y los siete rayos|increible|YO 6afa7479a869c35e5bb3a3b1 IN 6afa747a60a910801c655604 TI 6afa747ba869c35e5bb3a3f0|img=mixto|15:14
