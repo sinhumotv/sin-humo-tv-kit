@@ -21,6 +21,12 @@ for i, t in enumerate(temas, 1):
     json.dump({'tipo': 'explica', 'tema': t['tema'], 'duracion': 38, 'formato': 'vertical', 'tema_visual': 'pq3d' if os.environ.get('PQ_ESTILO') == '3d' else 'pongamosque',   # (15-nov-2026) 3d = vídeo hecho con código
                'voz': 'Puck',
                'estructura_fija': True}, open(f'{d}/pedido_in.json', 'w'), ensure_ascii=False)
+    if t.get('claude'):   # (16-nov-2026) guion y escenas hechos por Claude: la fábrica se salta el guion de Gemini
+        sys.path.insert(0, os.path.join(EXP, 'plataforma', 'v2')); import estructuras as ESTR
+        hc = json.load(open(os.path.join(AQUI, '..', t['claude']) if not os.path.isabs(t['claude']) else t['claude']))
+        hc['escenas'] = ESTR.ajustar('pq3d', hc['escenas']); hc.pop('meta', None); hc['modelo'] = 'claude'
+        json.dump(hc, open(f'{d}/historia.json', 'w'), ensure_ascii=False, indent=1)
+        print(f'[v{i}] guion y escenas hechos por Claude ({len(hc["escenas"])} escenas)', flush=True)
     pr = subprocess.Popen([sys.executable, FAB, f'{d}/pedido_in.json', d], cwd=EXP, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     trab.append({'i': i, 'd': d, 'tema': t, 'pr': pr, 'pide': False, 'log': []})
 def leer(w):
