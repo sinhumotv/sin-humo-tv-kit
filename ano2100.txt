@@ -107,3 +107,4 @@
 2026-11-15|21:00|Trajes hápticos en 2100|consecuencia|YO 6af9258be86a5789a6e855e3 IN 6af9258b76c23bf1c7568616 TI 6af9258cc5b364e0622ffd02|img=mixto|20:59
 2026-11-15|12:00|El teléfono controlado por IA|sabias|YO 6af93553b9a106584c89001d IN 6af93553b9a106584c89005b TI 6af93554e86a5789a6ec2f75|img=mixto|11:44
 2026-11-15|18:00|Velas fotónicas en 2100|cuenta|YO 6af9365bc5b364e062341dda IN 6af9365c918fe79d2ec04f2b TI 6af9365cb9a106584c894947|img=mixto|18:04
+2026-11-16|08:00|Modelos de decisión en inteligencia artificial|final|YO 6afa738260a910801c650263 IN 6afa738260a910801c6502a1 TI 6afa7383ff465c57dacc0cfe|img=ia|08:15
