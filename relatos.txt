@@ -118,3 +118,4 @@
 2026-11-15|18:00|Medea y las hijas de Pelias|nadie|YO 6af9264276c23bf1c756ba71 IN 6af92643b9a106584c85217b TI 6af92643e5a113497ac2f712|img=ia|17:38
 2026-11-15|21:00|Glauco y la hierba mágica|final|YO 6af92794c5b364e062308892 IN 6af92794c5b364e0623088c9 TI 6af92795918fe79d2ebc5666|img=mixto|20:52
 2026-11-16|12:00|Hilas y las ninfas|error|YO 6afa73f5a869c35e5bb37183 IN 6afa73f606e1675856c1d177 TI 6afa73f78e87c256a3ab4c0a|img=mixto|11:24
+2026-11-16|15:00|Las tres armas de los Cíclopes|cuenta|YO 6afa755ba869c35e5bb3e8dd IN 6afa755cff465c57dacca896 TI 6afa755cff465c57dacca8c0|img=ia|15:29
