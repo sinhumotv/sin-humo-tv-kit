@@ -121,3 +121,4 @@
 2026-11-16|15:00|Las tres armas de los Cíclopes|cuenta|YO 6afa755ba869c35e5bb3e8dd IN 6afa755cff465c57dacca896 TI 6afa755cff465c57dacca8c0|img=ia|15:29
 2026-11-16|18:00|Nacimiento de la Vía Láctea|sabias|YO 6afa76a8a869c35e5bb4429a IN 6afa76a9ff465c57dacd0d30 TI 6afa76aad7e5fee63899bd90|img=mixto|18:07
 2026-11-16|21:00|La muerte de Jasón|consecuencia|YO 6afa7813d7e5fee6389a283b IN 6afa781406e1675856c2ffd5 TI 6afa7814ff465c57dacd7a00|img=mixto|20:28
+2026-11-16|08:00|La paradoja de Lélape|sabias|YO 6afa7aa08e87c256a3ad3f90 IN 6afa7aa106e1675856c3a2c3 TI 6afa7aa2a869c35e5bb55b96|img=mixto|07:28
