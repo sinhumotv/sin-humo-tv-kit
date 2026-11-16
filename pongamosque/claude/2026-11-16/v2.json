@@ -48,23 +48,14 @@
    },
    "escena3d": {
     "cielo": "noche",
-    "suelo": "hierba",
-    "plano": "interior",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
     "camara": "acercar",
     "objetos": [
      {
-      "tipo": "personas",
-      "cantidad": 2
-     },
-     {
-      "tipo": "nueva",
-      "codigo": "\nconst g = new THREE.Group();\nconst cuerpo = h.malla(new THREE.BoxGeometry(3.2, 6.4, 0.35), h.M('#1c1c22', { metalness: 0.5, roughness: 0.25 }), 0, 3.4, 0); g.add(cuerpo);\nconst cv = document.createElement('canvas'); cv.width = 320; cv.height = 640; const x = cv.getContext('2d'); const gr = x.createLinearGradient(0, 0, 0, 640); gr.addColorStop(0, '#1f2a44'); gr.addColorStop(1, '#0a0f1c'); x.fillStyle = gr; x.fillRect(0, 0, 320, 640);\nx.fillStyle = '#ffffff'; x.font = '600 26px Mont, Inter, sans-serif'; x.fillText('09:41', 24, 40); x.textAlign = 'right'; x.fillText('Sin servicio', 300, 40); x.textAlign = 'center';\nx.strokeStyle = '#8fa3c8'; x.lineWidth = 14; [50, 85, 120].forEach(rr => { x.beginPath(); x.arc(160, 330, rr, Math.PI * 1.22, Math.PI * 1.78); x.stroke(); });\nx.beginPath(); x.arc(160, 330, 12, 0, 6.3); x.fillStyle = '#8fa3c8'; x.fill(); x.strokeStyle = '#ff4a4a'; x.lineWidth = 14; x.beginPath(); x.moveTo(70, 200); x.lineTo(250, 380); x.stroke();\nx.fillStyle = '#ffffff'; x.font = '900 34px Mont, Inter, sans-serif'; x.fillText(o.texto || 'Sin conexión', 160, 460); x.font = '500 22px Mont, Inter, sans-serif'; x.fillStyle = '#b8c4dc'; x.fillText('Comprueba tu red', 160, 500);\nconst tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;\ng.add(h.malla(new THREE.PlaneGeometry(2.95, 6.1), new THREE.MeshStandardMaterial({ map: tx, emissive: '#ffffff', emissiveMap: tx, emissiveIntensity: 0.85 }), 0, 3.4, 0.18));\ng.add(h.malla(new THREE.CylinderGeometry(0.12, 0.12, 0.05, 16), h.M('#000'), 0, 6.3, 0.18)).children; g.children[g.children.length - 1].rotation.x = Math.PI / 2;\ng.add(h.en(h.brillo('#6a8aff', 5, 0.35), 0, 3.4, 0.6));\nreturn h.sombra(g);\n",
-      "tam": 1.2,
-      "reserva": "movil"
-     },
-     {
       "tipo": "ordenador",
-      "texto": "SIN RED"
+      "texto": "SIN CONEXIÓN"
      }
     ]
    }

@@ -379,3 +379,28 @@ p.position.set(2.0, 2.4, 1.0); p.rotation.y = -0.9; g.add(p);
 g.add(h.malla(new THREE.CylinderGeometry(0.5, 0.4, 0.5, 14), h.M('#a87a4a'), 3.6, 0.25, 2.6));
 return h.sombra(g);
 """
+
+GRIFO = r"""
+const g = new THREE.Group(), cromo = h.M('#dfe4ea', { metalness: 0.35, roughness: 0.18 }), cerrado = !!o.cerrado;
+// encimera de mármol con fregadero de acero y grifo cromado; el chorro de agua cae (o una sola gota si está cerrado)
+const marmol = h.lienzoTex('marmol', 256, 256, (x, w) => { x.fillStyle = '#f2efe9'; x.fillRect(0, 0, w, w); const r2 = h.azar(5); for (let k = 0; k < 14; k++) { x.strokeStyle = 'rgba(120,115,110,' + (0.08 + r2() * 0.12) + ')'; x.lineWidth = 1 + r2() * 2; x.beginPath(); x.moveTo(r2() * w, 0); for (let j = 0; j < 6; j++) x.lineTo(r2() * w, j * w / 5); x.stroke(); } }, true);
+h.caja(g, 5.2, 0.35, 4.0, h.M('#ffffff', { map: marmol, roughness: 0.25 }), 0, 3.0, 0);
+h.caja(g, 5.2, 3, 3.8, h.M('#3a4a5a', { roughness: 0.6 }), 0, 1.4, 0);
+for (let k = 0; k < 2; k++) { h.caja(g, 2.4, 2.6, 0.06, h.M('#46586a', { roughness: 0.5 }), -1.25 + k * 2.5, 1.45, 1.92); h.caja(g, 0.8, 0.08, 0.1, cromo, -1.25 + k * 2.5, 2.4, 2.0); }
+const pila = h.M('#c9ced6', { metalness: 0.8, roughness: 0.25 }); h.caja(g, 4.2, 0.08, 2.6, pila, 0, 2.6, 0.2);
+[[0, 2.85, -1.1, 4.2, 0.6, 0.08], [0, 2.85, 1.5, 4.2, 0.6, 0.08], [-2.1, 2.85, 0.2, 0.08, 0.6, 2.6], [2.1, 2.85, 0.2, 0.08, 0.6, 2.6]].forEach(([x, y, z, a, b, c2]) => h.caja(g, a, b, c2, pila, x, y, z));
+g.add(h.malla(new THREE.CylinderGeometry(0.18, 0.18, 0.05, 16), h.M('#555'), 0, 2.66, 0.2));
+// grifo
+g.add(h.malla(new THREE.CylinderGeometry(0.28, 0.34, 0.25, 24), cromo, 0, 3.3, -1.5)); g.add(h.malla(new THREE.CylinderGeometry(0.14, 0.16, 1.8, 20), cromo, 0, 4.2, -1.5));
+const caño = new THREE.CatmullRomCurve3([new THREE.Vector3(0, 5.05, -1.5), new THREE.Vector3(0, 5.6, -1.2), new THREE.Vector3(0, 5.55, -0.5), new THREE.Vector3(0, 5.1, -0.1)]);
+g.add(h.malla(new THREE.TubeGeometry(caño, 30, 0.13, 16), cromo)); g.add(h.malla(new THREE.CylinderGeometry(0.16, 0.13, 0.12, 16), cromo, 0, 5.03, -0.1));
+const palanca = h.malla(new THREE.BoxGeometry(0.12, 0.08, 0.9), cromo, 0, 4.6, -1.15); palanca.rotation.x = cerrado ? 0 : -0.5; g.add(palanca);
+const agua = new THREE.MeshStandardMaterial({ color: '#bfe6ff', roughness: 0.05, metalness: 0.2, transparent: true, opacity: 0.85, emissive: '#9fd8ff', emissiveIntensity: 0.6 });
+if (!cerrado) { const ch = h.malla(new THREE.CylinderGeometry(0.11, 0.15, 2.3, 14), agua, 0, 3.85, -0.1); g.add(ch); for (let k = 0; k < 10; k++) { const s = h.malla(new THREE.SphereGeometry(0.05, 6, 4), agua, (r() - 0.5) * 0.7, 2.75 + r() * 0.3, -0.1 + (r() - 0.5) * 0.7); g.add(s); } g.add(h.en(h.brillo('#bfe6ff', 1.2, 0.5), 0, 2.8, -0.1)); }
+else { const gota = h.malla(new THREE.SphereGeometry(0.11, 14, 10), agua, 0, 4.7, -0.1); gota.scale.y = 1.5; gota.userData.flotaE = 0; g.add(gota); }
+// azulejos detrás y un vaso
+const az = h.lienzoTex('azulejoMetro', 128, 128, (x, w) => { x.fillStyle = '#e8eef2'; x.fillRect(0, 0, w, w); x.fillStyle = '#cdd6dc'; for (let f = 0; f < 8; f++) { x.fillRect(0, f * 16, w, 2); for (let k = 0; k < 4; k++) x.fillRect(k * 32 + (f % 2) * 16, f * 16, 2, 16); } }, true);
+h.caja(g, 5.2, 4, 0.2, h.M('#ffffff', { map: az, roughness: 0.3 }), 0, 5.6, -2.3);
+g.add(h.malla(new THREE.CylinderGeometry(0.3, 0.26, 0.8, 20), new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.35, roughness: 0.05 }), 1.9, 3.6, 0.9));
+return h.sombra(g);
+"""

@@ -47,7 +47,7 @@ V.append({'titulo': '¿Y si se apagara internet en todo el mundo? 📵', 'meta':
     E('Pongamos que ahora mismo se apaga internet en todo el mundo.', D('SEGUNDO 0', 'Apagón digital'),
       {'cielo': 'noche', 'suelo': 'ciudad', 'plano': 'detalle', 'foco': 0, 'camara': 'acercar', 'objetos': [N(MOVIL_SIN, 6, 'movil')]}),
     E('En millones de casas, la misma pantalla: sin conexión.', D('MINUTO 1', 'Sin conexión'),
-      {'cielo': 'noche', 'suelo': 'hierba', 'plano': 'interior', 'camara': 'acercar', 'objetos': [{'tipo': 'personas', 'cantidad': 2}, N(MOVIL_SIN, 1.2, 'movil'), {'tipo': 'ordenador', 'texto': 'SIN RED'}]}),
+      {'cielo': 'noche', 'suelo': 'ninguno', 'plano': 'detalle', 'foco': 0, 'camara': 'acercar', 'objetos': [{'tipo': 'ordenador', 'texto': 'SIN CONEXIÓN'}]}),
     E('Los pagos con tarjeta dejan de funcionar.', D('HORA 1', 'Tarjetas inútiles'),
       {'cielo': 'atardecer', 'suelo': 'ciudad', 'plano': 'detalle', 'foco': 0, 'camara': 'orbita', 'objetos': [N(CAJERO, 6, 'cartel', texto='SIN CONEXIÓN')]}),
     E('Y en los cajeros, colas que no avanzan.', D('HORA 1', 'Tarjetas inútiles'),
@@ -72,7 +72,7 @@ V.append({'titulo': '¿Y si no lloviera en España en un año? ☀️', 'meta': 
     E('Pongamos que en España no cae ni una gota de lluvia durante un año.', D('SEGUNDO 0', 'Cielo sin nubes'),
       {'cielo': 'atardecer', 'suelo': 'arena', 'plano': 'detalle', 'foco': 0, 'camara': 'orbita', 'objetos': [N(CAMPO_SECO, 14, 'cactus')]}),
     E('Al principio nadie lo nota: los grifos siguen echando agua.', D('MINUTO 1', 'Todo normal'),
-      {'cielo': 'dia', 'suelo': 'hierba', 'plano': 'interior', 'camara': 'acercar', 'objetos': [{'tipo': 'personas', 'cantidad': 2}]}),
+      {'cielo': 'dia', 'suelo': 'ninguno', 'plano': 'detalle', 'foco': 0, 'camara': 'acercar', 'objetos': [N(GRIFO, 8, 'cilindro')]}),
     E('Pero los campos de secano empiezan a cuartearse.', D('HORA 1', 'Tierra cuarteada'),
       {'cielo': 'atardecer', 'suelo': 'arena', 'plano': 'aerea', 'camara': 'travelin', 'objetos': [N(CAMPO_SECO, 18, 'cactus')]}),
     E('Los embalses bajan cada semana un poco más.', D('DÍA 1', 'Embalses bajo mínimos'),
@@ -88,7 +88,7 @@ V.append({'titulo': '¿Y si no lloviera en España en un año? ☀️', 'meta': 
     E('España ya ha vivido sequías largas, y siempre volvió a llover.', D('AÑO 100', 'Vuelve la lluvia'),
       {'cielo': 'tormenta', 'suelo': 'hierba', 'plano': 'aerea', 'foco': 0, 'efecto': 'lluvia', 'camara': 'alejar', 'objetos': [N(EMBALSE, 30, 'crater', lleno=True)]}),
     E('¿Y tú, cómo ahorras agua en casa?', D('AÑO 100', 'Vuelve la lluvia'),
-      {'cielo': 'tormenta', 'suelo': 'hierba', 'plano': 'interior', 'efecto': 'lluvia', 'camara': 'acercar', 'objetos': [{'tipo': 'personas', 'cantidad': 2}]}),
+      {'cielo': 'noche', 'suelo': 'ninguno', 'plano': 'detalle', 'foco': 0, 'camara': 'acercar', 'objetos': [N(GRIFO, 8, 'cilindro', cerrado=True)]}),
 ]})
 
 # 4 · ASTEROIDE
