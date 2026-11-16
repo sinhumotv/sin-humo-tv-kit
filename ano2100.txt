@@ -109,3 +109,4 @@
 2026-11-15|18:00|Velas fotónicas en 2100|cuenta|YO 6af9365bc5b364e062341dda IN 6af9365c918fe79d2ec04f2b TI 6af9365cb9a106584c894947|img=mixto|18:04
 2026-11-16|08:00|Modelos de decisión en inteligencia artificial|final|YO 6afa738260a910801c650263 IN 6afa738260a910801c6502a1 TI 6afa7383ff465c57dacc0cfe|img=ia|08:15
 2026-11-16|12:00|Gafas inteligentes de Google y Samsung|pregunta|YO 6afa74fc06e1675856c21e0c IN 6afa74fc60a910801c656dc4 TI 6afa74fd8e87c256a3aba357|img=mixto|11:52
+2026-11-16|15:00|Hibernación humana para el espacio|increible|YO 6afa768c06e1675856c28cd4 IN 6afa768cff465c57dacd06c6 TI 6afa768dff465c57dacd06fe|img=mixto|15:05
