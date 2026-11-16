@@ -119,3 +119,4 @@
 2026-11-15|21:00|Glauco y la hierba mágica|final|YO 6af92794c5b364e062308892 IN 6af92794c5b364e0623088c9 TI 6af92795918fe79d2ebc5666|img=mixto|20:52
 2026-11-16|12:00|Hilas y las ninfas|error|YO 6afa73f5a869c35e5bb37183 IN 6afa73f606e1675856c1d177 TI 6afa73f78e87c256a3ab4c0a|img=mixto|11:24
 2026-11-16|15:00|Las tres armas de los Cíclopes|cuenta|YO 6afa755ba869c35e5bb3e8dd IN 6afa755cff465c57dacca896 TI 6afa755cff465c57dacca8c0|img=ia|15:29
+2026-11-16|18:00|Nacimiento de la Vía Láctea|sabias|YO 6afa76a8a869c35e5bb4429a IN 6afa76a9ff465c57dacd0d30 TI 6afa76aad7e5fee63899bd90|img=mixto|18:07
