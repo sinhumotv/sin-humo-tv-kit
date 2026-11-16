@@ -93,6 +93,7 @@ return h.sombra(g);
 """
 
 FRIGO = r"""
+const marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };
 const g = new THREE.Group(), v = o.vista || 'todo', roto = !!o.roto, dias = o.dias || 0;
 const blanco = h.M('#eef1f4', { roughness: 0.35 }), plast = new THREE.MeshStandardMaterial({ color: '#dff1ff', roughness: 0.05, transparent: true, opacity: 0.35 }), interior = h.M('#f7f9fb', { roughness: 0.4 });
 const W = 3.4, H = 7, F = 2.6;
@@ -144,10 +145,12 @@ else if (v === 'comida') { g.add((() => { const l = new THREE.PointLight(roto ? 
 else if (v === 'congelador') { const q = comida(); q.position.y = -(H - 2.5); g.add(q); h.caja(g, W, 0.12, F, blanco, 0, -0.05, 0); h.caja(g, W, 2.0, 0.1, interior, 0, 0.9, -F / 2); }
 else if (v === 'compresor') { g.add(compresor()); g.add((() => { const l = new THREE.PointLight('#ffb070', 8, 10, 1.5); l.position.set(1, 2, 3); return l; })()); }
 else if (v === 'termometro') { const t = termo(); t.position.y = 1; g.add(t); h.caja(g, 2.0, 1.2, 0.1, blanco, 0, 1, -0.1); }
+[['nevera', 0, 3.5, 0], ['leche', -1.0, 1.55, 0], ['huevos', 0.5, 2.3, 0], ['fruta', 0, 3.45, 0], ['carne', -0.6, 4.6, 0], ['queso', 0.8, 4.6, 0], ['congelador', 0, 5.3, 0], ['termo', 0, 6.0, -1.15], ['charco', 0.3, 0.3, 1.6], ['compresor', 0.6, 1.2, 0.6], ['serpentin', 0, 4.2, 0.2]].forEach(([n2, x, y, z]) => marca(n2, g, x, y, z));
 return h.sombra(g);
 """
 
 AVION_CORTE = r"""
+const marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };
 const g = new THREE.Group(), v = o.vista || 'todo', abierta = !!o.abierta, mascaras = !!o.mascaras;
 const piel = h.M('#eef1f5', { roughness: 0.35, metalness: 0.2 }), azul = h.M('#1f3a6a', { roughness: 0.5 }), gris = h.M('#8a929c', { metalness: 0.5, roughness: 0.35 });
 const L = v === 'cabina' ? 9.5 : 22, R = 2.6;
@@ -194,10 +197,14 @@ if (v === 'todo') { g.add(fus()); g.add(extremos()); g.add(nubes()); const a = a
 else if (v === 'cabina') { const f = fus(); g.add(f); }
 else if (v === 'puerta') { g.add(puerta()); h.caja(g, 8, 6, 0.2, piel, 0, 0, -0.3); for (let k = 0; k < 3; k++) g.add(h.malla(new THREE.CapsuleGeometry(0.2, 0.25, 4, 10), new THREE.MeshStandardMaterial({ color: '#9fd3ff', emissive: '#bfe6ff', emissiveIntensity: 0.5 }), -3 + k * 0.9, 0.9, -0.15)); g.add((() => { const l = new THREE.PointLight('#ffe2b8', 10, 10, 1.5); l.position.set(0, 2, 3); return l; })()); }
 else if (v === 'ala') { g.add(ala()); const nb = nubes(); nb.position.y = 4; g.add(nb); }
+if (v === 'puerta') { marca('palanca', g, 0.1, -0.3, 0.45); marca('manometro', g, 1.3, 1.6, 0.2); marca('puerta', g, 0, 0, 0.3); }
+else if (v === 'ala') { marca('motor', g, -1.2, -0.9, 3.0); marca('ala', g, -2, 0, 4.5); }
+else { marca('cabina', g, 0, 0, 0); marca('asientos', g, 0, -0.6, -1.2); marca('mascaras', g, 0, 0.1, -1.2); marca('ventanillas', g, 0, 0.5, -2.5); }
 return h.sombra(g);
 """
 
 COCHE_RAYO = r"""
+const marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };
 const g = new THREE.Group(), v = o.vista || 'todo', rayo = o.rayo !== false;
 const coche = h.P.coche({ cantidad: 1, color: o.color || '#d8323a' }, r, c); coche.children.forEach(a => { a.position.set(0, 0, 0); a.rotation.y = 0; a.userData.fase = undefined; a.userData.carril = undefined; }); coche.userData.coches = false;
 const cuerpo = new THREE.Group(); cuerpo.add(coche); cuerpo.scale.setScalar(1.6);
@@ -228,10 +235,14 @@ else if (v === 'rueda') { const rr2 = new THREE.Group(); const ne = h.malla(new 
   for (let k = 0; k < 5; k++) { const ra = h.malla(new THREE.BoxGeometry(0.15, 0.6, 0.1), h.M('#9aa0a8', { metalness: 0.8 }), Math.cos(k * 1.26) * 0.35, Math.sin(k * 1.26) * 0.35, 0.27); ra.rotation.z = k * 1.26; rr2.add(ra); }
   for (let k = 0; k < 6; k++) { const q = h.malla(new THREE.SphereGeometry(0.15 + r() * 0.1, 8, 6), h.M('#1a1410', { roughness: 1 }), Math.cos(k) * 1.2, Math.sin(k) * 1.2, 0.35); q.scale.z = 0.2; rr2.add(q); }
   rr2.position.y = 1.45; g.add(rr2); g.add(zig(new THREE.Vector3(0.9, 1.8, 0.4), new THREE.Vector3(1.2, 0, 1.2), 5, 0.05)); g.add(h.en(h.brillo('#cfe8ff', 2, 0.7), 1.1, 0.3, 1.0)); }
+if (v === 'todo' || v === 'jaula') { marca('coche', g, 0, 1.4, 0); marca('techo', g, 0.3, 3.4, 0); marca('bajos', g, -2.0, 0.3, 1.8); marca('cielo', g, 1.0, 14, -1); }
+else if (v === 'dentro') { marca('pasajeros', g, -0.1, 1.6, 0); marca('arco', g, 0.5, 2.8, -1.6); }
+else if (v === 'rueda') { marca('rueda', g, 0, 1.45, 0); marca('quemado', g, 1.0, 0.6, 1.0); }
 return h.sombra(g);
 """
 
 DIGESTIVO = r"""
+const marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };
 const g = new THREE.Group(), v = o.vista || 'todo', dia = o.dia || 0;
 const carne = h.M('#e88a8a', { roughness: 0.55 }), rosa = h.M('#f2a6a0', { roughness: 0.5 }), acido = new THREE.MeshStandardMaterial({ color: '#d8e84a', emissive: '#a8c81a', emissiveIntensity: 0.5, transparent: true, opacity: 0.8, roughness: 0.1 });
 const chicle = new THREE.MeshStandardMaterial({ color: '#ff6ac1', roughness: 0.35, emissive: '#ff2a9a', emissiveIntensity: 0.25 });
@@ -271,5 +282,9 @@ if (v === 'todo') g.add(torso());
 else if (v === 'estomago') g.add(estomago());
 else if (v === 'intestino') g.add(intestino());
 else if (v === 'chicle') { const ch = h.malla(new THREE.SphereGeometry(1.2, 30, 20), chicle, 0, 1.3, 0); ch.scale.set(1.3, 0.8, 1); g.add(ch); for (let k = 0; k < 30; k++) { const m = h.malla(new THREE.SphereGeometry(0.05, 6, 4), h.M('#ffd0ec'), (r() - 0.5) * 2.6, 1.3 + (r() - 0.5) * 1.5, (r() - 0.5) * 2); g.add(m); } const ai = new THREE.Group(); [['GOMA BASE', '#ffffff']].forEach(() => {}); g.add(ai); }
+if (v === 'todo') { marca('estomago', g, 0.3, 5.0, 0); marca('intestino', g, 0, 2.2, 0); marca('esofago', g, 0, 7.4, 0); marca('cuerpo', g, 0, 4.8, 0); }
+else if (v === 'estomago') { marca('acido', g, 0.1, -0.5, -0.1); marca('estomago', g, 0, 0.3, 0); marca('esofago', g, -1.3, 2.5, -0.3); }
+else if (v === 'intestino') { marca('intestino', g, 0, 0, 0); }
+else { marca('chicle', g, 0, 1.3, 0); }
 return h.sombra(g);
 """
