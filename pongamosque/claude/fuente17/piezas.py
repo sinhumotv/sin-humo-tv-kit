@@ -1,6 +1,7 @@
 # Piezas del 17-nov: UN objeto por vídeo, con «vistas» (o.vista) para acercarse a cada parte
 
 ASCENSOR = r"""
+const marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };
 const g = new THREE.Group(), v = o.vista || 'todo', sin = !!o.sinCables, frena = !!o.frena;
 const hormigon = h.M('#6b6f78', { roughness: 0.9 }), acero = h.M('#aeb5bf', { metalness: 0.7, roughness: 0.3 }), oscuro = h.M('#2a2d33', { roughness: 0.6 });
 const naranja = new THREE.MeshStandardMaterial({ color: '#ff8a1a', emissive: '#ff6a00', emissiveIntensity: 0.6 });
@@ -27,6 +28,7 @@ const hueco = () => { const q = new THREE.Group();
     else if (mueble === 1) { h.caja(q, 1.4, 0.08, 0.9, h.M('#8a5a3a'), x0, y + 1.0, -0.6); [-0.6, 0.6].forEach(dx => h.caja(q, 0.08, 0.8, 0.08, h.M('#6a4a2a'), x0 + dx, y + 0.6, -0.6)); }
     else { h.caja(q, 1.0, 2.0, 0.5, h.M('#c9a26a'), x0 + s * 1.5, y + 1.2, -1.5); }
     if (r() < 0.5) { const pr = new THREE.Group(); pr.add(h.malla(new THREE.CapsuleGeometry(0.18, 0.5, 4, 8), h.M(['#2fb38a', '#f2c94c', '#8a5ad8'][p % 3]), 0, 0.85, 0)); pr.add(h.malla(new THREE.SphereGeometry(0.16, 12, 8), h.M('#e8b896'), 0, 1.4, 0)); pr.position.set(x0 + s * 0.8, y + 0.2, 0.3); q.add(pr); } });
+  marca('hueco', q, 0, alto / 2, 0);
   const lz = new THREE.PointLight('#ffd9a0', 30, 30, 1.6); lz.position.set(0, alto * 0.6, 6); q.add(lz);
   return q; };
 const cabina = () => { const c2 = new THREE.Group(), madera = h.M('#9a6a44', { roughness: 0.6 }), espejo = h.M('#cfe0ee', { metalness: 0.6, roughness: 0.05 });
@@ -36,22 +38,52 @@ const cabina = () => { const c2 = new THREE.Group(), madera = h.M('#9a6a44', { r
   // panel de botones
   const pan = new THREE.Group(); h.caja(pan, 0.4, 1.2, 0.05, acero, 0, 0, 0); for (let k = 0; k < 7; k++) pan.add(h.malla(new THREE.CylinderGeometry(0.06, 0.06, 0.04, 12), k === 3 ? naranja : h.M('#e8e8ea'), 0, -0.45 + k * 0.15, 0.04)).children; pan.children.forEach(m => { if (m.geometry.type === 'CylinderGeometry') m.rotation.x = Math.PI / 2; });
   pan.position.set(W / 2 - 0.1, 1.4, 0.4); pan.rotation.y = -Math.PI / 2; c2.add(pan);
-  // dos personas dentro
-  [-0.6, 0.6].forEach((x, k) => { const p = new THREE.Group(), ropa = h.M(['#2f6fd8', '#d8323a'][k]); p.add(h.malla(new THREE.CapsuleGeometry(0.22, 0.6, 4, 10), ropa, 0, 1.0, 0)); p.add(h.malla(new THREE.SphereGeometry(0.2, 14, 10), h.M(['#e8b896', '#c98a5a'][k]), 0, 1.65, 0)); [-0.12, 0.12].forEach(px => p.add(h.malla(new THREE.CapsuleGeometry(0.08, 0.55, 3, 6), h.M('#3a3a40'), px, 0.35, 0))); p.position.set(x, 0.1, 0.1); c2.add(p); });
+  // dos personas dentro (figuras con ropa, brazos, manos, pelo y cara)
+  const persona = (ropa, piel, pelo, pant, x, giro) => { const p = new THREE.Group(), mR = h.M(ropa, { roughness: 0.7 }), mP = h.M(piel, { roughness: 0.6 });
+    const tor = h.malla(new THREE.CylinderGeometry(0.2, 0.25, 0.75, 16), mR, 0, 1.25, 0); p.add(tor); p.add(h.malla(new THREE.SphereGeometry(0.2, 16, 10, 0, 6.3, 0, 1.6), mR, 0, 1.6, 0));
+    [-0.11, 0.11].forEach(px => { p.add(h.malla(new THREE.CylinderGeometry(0.09, 0.08, 0.85, 10), h.M(pant), px, 0.45, 0)); const z = h.malla(new THREE.BoxGeometry(0.14, 0.08, 0.26), h.M('#2b2b30'), px, 0.04, 0.05); p.add(z); });
+    [-1, 1].forEach(sd => { const br = h.malla(new THREE.CylinderGeometry(0.065, 0.055, 0.7, 10), mR, sd * 0.28, 1.2, 0); br.rotation.z = sd * 0.12; p.add(br); p.add(h.malla(new THREE.SphereGeometry(0.06, 10, 8), mP, sd * 0.32, 0.83, 0.02)); });
+    p.add(h.malla(new THREE.CylinderGeometry(0.07, 0.07, 0.12, 10), mP, 0, 1.73, 0));
+    const cab = h.malla(new THREE.SphereGeometry(0.18, 20, 14), mP, 0, 1.92, 0); cab.scale.set(0.95, 1.1, 1); p.add(cab);
+    const pe = h.malla(new THREE.SphereGeometry(0.19, 20, 14, 0, 6.3, 0, 1.3), h.M(pelo, { roughness: 0.8 }), 0, 1.97, -0.02); pe.scale.set(1, 1.05, 1.05); p.add(pe);
+    [-0.06, 0.06].forEach(ex => p.add(h.malla(new THREE.SphereGeometry(0.022, 8, 6), h.M('#1a1410'), ex, 1.94, 0.165)));
+    p.add(h.malla(new THREE.BoxGeometry(0.07, 0.015, 0.01), h.M('#8a4a3a'), 0, 1.84, 0.172));
+    p.position.set(x, 0.1, 0.1); p.rotation.y = giro; return p; };
+  c2.add(persona('#2f6fd8', '#e8b896', '#3a2a1a', '#2b3a5a', -0.6, 0.25)); c2.add(persona('#d8323a', '#c98a5a', '#141414', '#3a3a40', 0.6, -0.25));
   // bastidor y paracaídas (freno de emergencia) en los laterales, abrazando las guías
   [-1, 1].forEach(s => { h.caja(c2, 0.2, 3.4, 0.3, h.M('#c9a226', { metalness: 0.5, roughness: 0.35 }), s * (W / 2 + 0.05), 1.3, 0);
-    const pc = new THREE.Group(); h.caja(pc, 0.5, 0.6, 0.5, h.M('#d8323a', { metalness: 0.4 }), 0, 0, 0); [-1, 1].forEach(t => { const cu = h.malla(new THREE.BoxGeometry(0.12, 0.45, 0.3), h.M('#e8e8ea', { metalness: 0.8, roughness: 0.2 }), t * 0.12, 0, 0); pc.add(cu); });
-    if (frena) for (let k = 0; k < 10; k++) pc.add(h.en(h.brillo(k % 2 ? '#ffd27a' : '#ff8a1a', 0.5 + k * 0.06, 0.9), (r() - 0.5) * 0.4, -0.3 - r() * 1.4, (r() - 0.5) * 0.5));
+    const pc = new THREE.Group(), rojo = h.M('#c8282c', { metalness: 0.35, roughness: 0.4 }), cromo = h.M('#e8ecf0', { metalness: 0.9, roughness: 0.15 }), torn = h.M('#9aa0a8', { metalness: 0.8, roughness: 0.3 });
+    [-1, 1].forEach(t => { h.caja(pc, 0.12, 0.7, 0.5, rojo, t * 0.18, 0, 0); for (let b = 0; b < 3; b++) h.caja(pc, 0.03, 0.62, 0.04, h.M('#a81e22'), t * 0.25, 0, -0.18 + b * 0.18);
+      for (let b = 0; b < 4; b++) { const tt = h.malla(new THREE.CylinderGeometry(0.035, 0.035, 0.04, 6), torn, t * 0.25, -0.25 + (b % 2) * 0.5, -0.15 + Math.floor(b / 2) * 0.3); tt.rotation.z = Math.PI / 2; pc.add(tt); } });
+    h.caja(pc, 0.48, 0.12, 0.5, rojo, 0, 0.38, 0); h.caja(pc, 0.48, 0.1, 0.5, rojo, 0, -0.38, 0);
+    [-1, 1].forEach(t => { const cu = new THREE.Group(); h.caja(cu, 0.06, 0.42, 0.34, cromo, 0, 0, 0); for (let d = 0; d < 7; d++) h.caja(cu, 0.03, 0.03, 0.34, h.M('#5a5f68'), -t * 0.04, -0.18 + d * 0.06, 0);
+      cu.position.set(t * (frena ? 0.065 : 0.1), frena ? 0.08 : 0, 0); cu.rotation.z = t * (frena ? 0.0 : 0.08); pc.add(cu); });
+    pc.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 0.8, 8), torn, 0, 0.8, 0.2)); for (let k = 0; k < 8; k++) { const mu = h.malla(new THREE.TorusGeometry(0.06, 0.012, 6, 14), cromo, 0, 0.5 + k * 0.05, 0.2); mu.rotation.x = Math.PI / 2; pc.add(mu); }
+    const cvf = document.createElement('canvas'); cvf.width = 128; cvf.height = 48; const xf = cvf.getContext('2d'); xf.fillStyle = '#f2c94c'; xf.fillRect(0, 0, 128, 48); xf.fillStyle = '#111'; xf.font = '900 20px Mont, Inter, sans-serif'; xf.textAlign = 'center'; xf.textBaseline = 'middle'; xf.fillText('PARACAÍDAS', 64, 25);
+    const txf = new THREE.CanvasTexture(cvf); txf.colorSpace = THREE.SRGBColorSpace; h.caja(pc, 0.3, 0.11, 0.01, new THREE.MeshStandardMaterial({ map: txf }), 0.18 * s, 0.1, 0.26);
+    if (frena) { for (let k = 0; k < 16; k++) { const ch = h.malla(new THREE.BoxGeometry(0.012, 0.08 + r() * 0.12, 0.012), new THREE.MeshStandardMaterial({ color: '#ffd27a', emissive: '#ffa020', emissiveIntensity: 3 }), (r() - 0.5) * 0.25, -0.45 - r() * 0.6, (r() - 0.5) * 0.4); ch.rotation.z = (r() - 0.5) * 1.2; pc.add(ch); }
+      pc.add(h.en(h.brillo('#ffb347', 1.0, 0.9), 0, -0.4, 0)); pc.add(h.en(h.brillo('#ff7a1a', 1.8, 0.5), 0, -0.6, 0)); }
     pc.position.set(s * (W / 2 + 0.25), -0.2, 0); c2.add(pc); });
+  marca('cabina', c2, 0, 1.3, 0); marca('freno', c2, W / 2 + 0.25, -0.2, 0); marca('frenoI', c2, -(W / 2 + 0.25), -0.2, 0);
   return c2; };
 const cables = (largo) => { const q = new THREE.Group(); for (let k = 0; k < 6; k++) { if (sin) { const ps = []; for (let j = 0; j <= 8; j++) ps.push(new THREE.Vector3(-0.5 + k * 0.2 + Math.sin(j * 1.3 + k) * 0.5, largo * 0.4 - j * 0.35, Math.cos(j + k) * 0.2)); q.add(h.malla(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps), 30, 0.045, 6), h.M('#3a3a3a', { metalness: 0.6, roughness: 0.4 }))); }
-  else q.add(h.malla(new THREE.CylinderGeometry(0.045, 0.045, largo, 8), h.M('#4a4a4a', { metalness: 0.7, roughness: 0.35 }), -0.5 + k * 0.2, largo / 2, 0)); } return q; };
-const maquina = () => { const q = new THREE.Group(); h.caja(q, W + 2.6, 0.4, 4, hormigon, 0, 0, 0);
-  const pol = h.malla(new THREE.CylinderGeometry(1.0, 1.0, 1.4, 40), acero, 0, 1.4, 0); pol.rotation.x = Math.PI / 2; pol.userData.giraEje = 0; q.add(pol);
-  for (let k = 0; k < 6; k++) { const ra = h.malla(new THREE.TorusGeometry(1.0, 0.05, 6, 40), h.M('#3a3a3a'), 0, 1.4, -0.5 + k * 0.2); q.add(ra); }
-  const mot = h.malla(new THREE.CylinderGeometry(0.7, 0.7, 1.6, 28), h.M('#2f6fd8', { metalness: 0.4, roughness: 0.4 }), 1.6, 1.4, 0); mot.rotation.z = Math.PI / 2; q.add(mot);
-  for (let k = 0; k < 8; k++) { const al = h.malla(new THREE.BoxGeometry(1.6, 0.05, 0.12), h.M('#1f4fb8'), 1.6, 1.4 + Math.cos(k / 8 * 6.28) * 0.72, Math.sin(k / 8 * 6.28) * 0.72); al.rotation.x = k / 8 * 6.28; q.add(al); }
-  h.caja(q, 0.8, 1.2, 1.0, h.M('#d8323a', { metalness: 0.3 }), -1.6, 0.8, 0); return q; };
+  else q.add(h.malla(new THREE.CylinderGeometry(0.045, 0.045, largo, 8), h.M('#4a4a4a', { metalness: 0.7, roughness: 0.35 }), -0.5 + k * 0.2, largo / 2, 0)); } marca('cables', q, 0, sin ? 0 : largo / 2, 0); return q; };
+const maquina = () => { const q = new THREE.Group(), azulM = h.M('#2a5fb8', { metalness: 0.45, roughness: 0.35 }), cromo = h.M('#dfe4ea', { metalness: 0.85, roughness: 0.2 }), negroM = h.M('#22252b', { metalness: 0.5, roughness: 0.4 });
+  h.caja(q, W + 2.6, 0.4, 4, hormigon, 0, 0, 0); h.caja(q, 4.2, 0.3, 2.2, h.M('#e2c23a', { metalness: 0.3 }), 0.4, 0.35, 0);
+  const pol = new THREE.Group(); const disco = h.malla(new THREE.CylinderGeometry(1.0, 1.0, 1.4, 48), cromo); disco.rotation.x = Math.PI / 2; pol.add(disco);
+  for (let k = 0; k < 6; k++) pol.add(h.malla(new THREE.TorusGeometry(0.98, 0.07, 8, 48), h.M('#3a3a3a', { metalness: 0.6, roughness: 0.35 }), 0, 0, -0.55 + k * 0.22));
+  [-1, 1].forEach(t => { const tapa = h.malla(new THREE.CylinderGeometry(1.08, 1.08, 0.08, 48), negroM, 0, 0, t * 0.74); tapa.rotation.x = Math.PI / 2; pol.add(tapa); for (let k = 0; k < 8; k++) { const b = h.malla(new THREE.CylinderGeometry(0.05, 0.05, 0.06, 8), cromo, Math.cos(k * 0.785) * 0.7, Math.sin(k * 0.785) * 0.7, t * 0.8); b.rotation.x = Math.PI / 2; pol.add(b); } });
+  pol.position.set(0, 1.5, 0); q.add(pol);
+  const mot = new THREE.Group(); const cu = h.malla(new THREE.CylinderGeometry(0.75, 0.75, 1.8, 32), azulM); cu.rotation.z = Math.PI / 2; mot.add(cu);
+  for (let k = 0; k < 16; k++) { const al = h.malla(new THREE.BoxGeometry(1.6, 0.06, 0.16), h.M('#1f4fb8', { metalness: 0.45 }), 0, Math.cos(k / 16 * 6.28) * 0.78, Math.sin(k / 16 * 6.28) * 0.78); al.rotation.x = k / 16 * 6.28; mot.add(al); }
+  const tam2 = h.malla(new THREE.CylinderGeometry(0.6, 0.6, 0.4, 32), cromo, -1.15, 0, 0); tam2.rotation.z = Math.PI / 2; mot.add(tam2);
+  [-1, 1].forEach(t => mot.add(h.malla(new THREE.BoxGeometry(0.3, 0.2, 0.9), h.M('#c8282c'), -1.15, t * 0.68, 0)));
+  const cvm = document.createElement('canvas'); cvm.width = 128; cvm.height = 64; const xm = cvm.getContext('2d'); xm.fillStyle = '#d9dde3'; xm.fillRect(0, 0, 128, 64); xm.fillStyle = '#111'; xm.font = '700 13px Inter, sans-serif'; ['MOTOR TRACCIÓN', '11 kW · 400 V', 'Nº 2026-PQ'].forEach((l, k) => xm.fillText(l, 8, 18 + k * 18));
+  const txm = new THREE.CanvasTexture(cvm); txm.colorSpace = THREE.SRGBColorSpace; h.caja(mot, 0.5, 0.25, 0.01, new THREE.MeshStandardMaterial({ map: txm }), 0.3, 0.2, 0.79);
+  mot.position.set(1.9, 1.5, 0); q.add(mot);
+  h.caja(q, 1.0, 1.8, 0.8, h.M('#5a5f68', { metalness: 0.3 }), -2.0, 1.1, -0.6); for (let k = 0; k < 4; k++) q.add(h.malla(new THREE.SphereGeometry(0.05, 8, 6), new THREE.MeshStandardMaterial({ color: ['#2fe08a', '#ffb347', '#2fe08a', '#ff3a2a'][k], emissive: ['#2fe08a', '#ffb347', '#2fe08a', '#ff3a2a'][k], emissiveIntensity: 2 }), -2.3 + k * 0.2, 1.7, -0.19));
+  q.add(h.en(h.brillo('#fff2c4', 3, 0.4), 0, 3.2, 0.5));
+  marca('motor', q, 0, 1.4, 0); return q; };
 if (v === 'todo' || v === 'caida') { g.add(hueco()); const cb = cabina(); cb.position.y = cabY; g.add(cb);
   const cb2 = cables(sin ? 3 : alto - cabY + 0.8); cb2.position.y = sin ? cabY + 3 : cabY + 2.7; g.add(cb2); const mq = maquina(); mq.position.y = alto + 1.2; mq.scale.setScalar(0.8); g.add(mq); }
 else if (v === 'cables') { const mq = maquina(); g.add(mq); h.caja(g, W + 3, 0.2, 5, hormigon, 0, 4.5, 0); h.caja(g, W + 3, 5, 0.3, hormigon, 0, 2.2, -2.2); g.add(h.en(h.brillo('#fff2c4', 3, 0.5), 0, 4.2, 0)); const cb2 = cables(sin ? 3 : 6); cb2.position.set(0, sin ? -2.5 : -6, 0.8); g.add(cb2); }
