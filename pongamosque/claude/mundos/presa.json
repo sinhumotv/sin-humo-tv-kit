@@ -1,0 +1,428 @@
+{
+ "id": "presa",
+ "nombre": "Presa de montaña con su embalse, central y pueblo",
+ "descripcion": "Valle de montaña con una gran presa de arco de hormigón: arriba las compuertas y el paseo con farolas, detrás el embalse (con un pueblo sumergido con su campanario que asoma cuando baja el agua), al pie la central eléctrica con tres turbinas, y río abajo un pueblo con su puente.",
+ "reserva": "bloque",
+ "opciones": {
+  "vista": {
+   "todo": "el mundo entero (la cámara va a cada parte con la toma)"
+  },
+  "nivel": "número 0-1: lo lleno que está el embalse (0 = vacío, se ve el pueblo sumergido; 0.85 normal)",
+  "abiertas": "true = compuertas abiertas soltando agua",
+  "grieta": "true = grieta en el muro con agua filtrándose",
+  "roto": "true = la presa se rompe y el agua sale hacia el pueblo"
+ },
+ "tam": {
+  "todo": 40
+ },
+ "anclas": [
+  "muro",
+  "corona",
+  "compuertas",
+  "turbina",
+  "central",
+  "embalse",
+  "orilla",
+  "campanario",
+  "pueblo_sumergido",
+  "pueblo",
+  "puente",
+  "rio",
+  "grieta"
+ ],
+ "ideas": [
+  "Pongamos que una presa enorme se rompiera de golpe",
+  "Pongamos que no lloviera en dos años y el embalse se quedara vacío",
+  "Pongamos que abrieran todas las compuertas a la vez",
+  "Pongamos que tu pueblo quedara bajo el agua de un embalse",
+  "Pongamos que apagáramos todas las centrales hidroeléctricas de España"
+ ],
+ "creado": "2026-11-17",
+ "autor": "claude",
+ "usos": [],
+ "tomas": [
+  {
+   "id": "t1",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "muro",
+   "se_ve": "el valle entero: el pueblo río abajo y la presa al fondo",
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo"
+     }
+    ],
+    "ruta": {
+     "de": [
+      "pueblo",
+      [
+       0.0,
+       0.22,
+       0.2
+      ]
+     ],
+     "a": [
+      "pueblo",
+      [
+       0.0,
+       0.15,
+       0.12
+      ]
+     ],
+     "mira": "pueblo",
+     "mira2": "muro"
+    }
+   }
+  },
+  {
+   "id": "t2",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "muro",
+   "se_ve": "las compuertas de arriba de la presa soltando agua",
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo",
+      "abiertas": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "compuertas",
+      [
+       0.2,
+       0.05,
+       0.45
+      ]
+     ],
+     "a": [
+      "compuertas",
+      [
+       0.08,
+       0.02,
+       0.3
+      ]
+     ],
+     "mira": "compuertas",
+     "mira2": "muro"
+    }
+   }
+  },
+  {
+   "id": "t3",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "turbina",
+   "se_ve": "la central eléctrica al pie de la presa con sus turbinas",
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo"
+     }
+    ],
+    "ruta": {
+     "de": [
+      "turbina",
+      [
+       0.0,
+       0.05,
+       0.24
+      ]
+     ],
+     "a": [
+      "turbina",
+      [
+       0.0,
+       0.035,
+       0.17
+      ]
+     ],
+     "mira": "turbina",
+     "mira2": "turbina"
+    }
+   }
+  },
+  {
+   "id": "t4",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "embalse",
+   "se_ve": "el embalse lleno visto desde lo alto de la presa",
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo"
+     }
+    ],
+    "ruta": {
+     "de": [
+      "corona",
+      [
+       0.05,
+       0.06,
+       0.12
+      ]
+     ],
+     "a": [
+      "corona",
+      [
+       0.0,
+       0.05,
+       0.04
+      ]
+     ],
+     "mira": "embalse",
+     "mira2": "embalse"
+    }
+   }
+  },
+  {
+   "id": "t5",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "compuertas",
+   "se_ve": "el paseo de la coronación de la presa con farolas",
+   "escena3d": {
+    "cielo": "noche",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo"
+     }
+    ],
+    "ruta": {
+     "de": [
+      "corona",
+      [
+       0.12,
+       0.03,
+       0.12
+      ]
+     ],
+     "a": [
+      "corona",
+      [
+       0.05,
+       0.02,
+       0.06
+      ]
+     ],
+     "mira": "corona",
+     "mira2": "compuertas"
+    }
+   }
+  },
+  {
+   "id": "t6",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "campanario",
+   "se_ve": "el embalse vacío: asoman las ruinas y el campanario del pueblo sumergido",
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo",
+      "nivel": 0.0
+     }
+    ],
+    "ruta": {
+     "de": [
+      "pueblo_sumergido",
+      [
+       -0.3,
+       0.1,
+       -0.15
+      ]
+     ],
+     "a": [
+      "pueblo_sumergido",
+      [
+       -0.2,
+       0.06,
+       -0.08
+      ]
+     ],
+     "mira": "pueblo_sumergido",
+     "mira2": "campanario"
+    }
+   }
+  },
+  {
+   "id": "t7",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "grieta",
+   "se_ve": "una grieta en el muro de la presa con agua filtrándose",
+   "escena3d": {
+    "cielo": "atardecer",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo",
+      "grieta": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "grieta",
+      [
+       0.06,
+       0.0,
+       0.18
+      ]
+     ],
+     "a": [
+      "grieta",
+      [
+       0.02,
+       0.0,
+       0.12
+      ]
+     ],
+     "mira": "grieta",
+     "mira2": "grieta"
+    }
+   }
+  },
+  {
+   "id": "t8",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "muro",
+   "se_ve": "la presa rota: el agua sale en tromba hacia el pueblo",
+   "escena3d": {
+    "cielo": "tormenta",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo",
+      "roto": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "pueblo",
+      [
+       0.05,
+       0.2,
+       0.2
+      ]
+     ],
+     "a": [
+      "pueblo",
+      [
+       0.02,
+       0.13,
+       0.12
+      ]
+     ],
+     "mira": "pueblo",
+     "mira2": "muro"
+    }
+   }
+  },
+  {
+   "id": "t9",
+   "aleja": false,
+   "vista": "todo",
+   "ancla": "pueblo",
+   "se_ve": "el río y el puente del pueblo, con la central detrás",
+   "escena3d": {
+    "cielo": "dia",
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "zoom": 1.0,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "tam": 40,
+      "vista": "todo"
+     }
+    ],
+    "ruta": {
+     "de": [
+      "puente",
+      [
+       0.0,
+       0.05,
+       0.16
+      ]
+     ],
+     "a": [
+      "puente",
+      [
+       0.0,
+       0.035,
+       0.11
+      ]
+     ],
+     "mira": "puente",
+     "mira2": "pueblo"
+    }
+   }
+  }
+ ],
+ "codigo": "\nconst marca = (nom, obj, x, y, z) => { const m = new THREE.Object3D(); m.name = 'p_' + nom; m.position.set(x, y, z); obj.add(m); };\nconst g = new THREE.Group(), nivel = o.nivel === undefined ? 0.85 : Math.max(0, Math.min(1, o.nivel)), abiertas = !!o.abiertas, grieta = !!o.grieta, roto = !!o.roto, noche = !!(c && c.noche);\nconst R = (k) => { const s = Math.sin(k * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };\nconst ruido = (x, z) => Math.sin(x * 0.21 + z * 0.13) * 0.9 + Math.sin(x * 0.07 - z * 0.19) * 1.4 + Math.sin(x * 0.53 + z * 0.41) * 0.35;\nconst lecho = z => z < 0 ? -10 : -6;\nconst suelo0 = (x, z) => { const b = z < -3 ? -10 : (z < 3 ? -10 + (z + 3) / 6 * 4 : -6); const w = z < 0 ? 26 : 16; const borde = Math.max(0, Math.max(Math.abs(x), Math.abs(z)) - 50); return b + 26 * (1 - Math.exp(-(x / w) * (x / w))) + ruido(x, z) * (Math.abs(x) > 5 ? 1 : 0.2) + borde * borde * 0.08 + (borde > 0 ? ruido(z * 2, x * 2) * 2 : 0); };\nconst suelo = (x, z) => { const y = suelo0(x, z); const fx = Math.max(0, Math.abs(x) - 9.5), fz = Math.max(0, 3 - z, z - 15); const d = Math.sqrt(fx * fx + fz * fz); return d === 0 ? Math.min(y, -6.6) : (d < 4 ? y + (Math.min(y, -6.6) - y) * (1 - d / 4) : y); };\nconst TOP = 14, NIV = -10 + nivel * 23.5;\nconst geo = new THREE.PlaneGeometry(150, 150, 150, 150); geo.rotateX(-Math.PI / 2);\nconst pos = geo.attributes.position, col = [], cc = new THREE.Color();\nfor (let i = 0; i < pos.count; i++) { const x = pos.getX(i), z = pos.getZ(i); const y = suelo(x, z); pos.setY(i, y);\n  const seco = z < 0 && y < NIV + 0.6 ? 0 : 1; const t = Math.min(1, Math.max(0, (y + 6) / 22));\n  if (z < 0 && y < -10 + 23.5 && !seco) cc.set('#5b4a3a'); else if (z < 0 && y < -10 + 23.5) cc.set('#b59a72').lerp(new THREE.Color('#d8c49a'), R(i) * 0.5);\n  else cc.set('#4f8a3a').lerp(new THREE.Color('#9a8a5a'), t * 0.6).lerp(new THREE.Color('#8a8580'), Math.max(0, t - 0.7) * 2);\n  cc.offsetHSL(0, 0, (R(i * 3.1) - 0.5) * 0.06); col.push(cc.r, cc.g, cc.b); }\ngeo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); geo.computeVertexNormals();\ng.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95, flatShading: true })));\nfor (let k = 0; k < 260; k++) { const x = (R(k) - 0.5) * 120, z = (R(k + 50) - 0.5) * 120, y = suelo(x, z); if (y < (z < 0 ? -10 + 23.5 + 0.5 : -5) || y > 24 || Math.abs(x) < 4 || (Math.abs(x) < 16 && z > -3 && z < 30)) continue;\n  const s = 0.7 + R(k + 9) * 0.9, a = new THREE.Group(); a.add(h.malla(new THREE.CylinderGeometry(0.12 * s, 0.18 * s, 1.2 * s, 6), h.M('#5a3d26'), 0, 0.6 * s, 0)); a.add(h.malla(new THREE.ConeGeometry(0.9 * s, 2.4 * s, 7), h.M(['#2f6b34', '#3d7a3a', '#2a5a30'][k % 3], { roughness: 0.9, flatShading: true }), 0, 2.2 * s, 0)); a.position.set(x, y - 0.1, z); g.add(a); }\nconst hormigon = h.M('#c9c4ba', { roughness: 0.85 }), hormOsc = h.M('#a8a298', { roughness: 0.9 }), acero = h.M('#5e6a76', { metalness: 0.6, roughness: 0.4 }), amarillo = h.M('#f2b632', { roughness: 0.5 });\nconst arco = x => -(1 - (x / 27) * (x / 27)) * 5;\nconst presa = new THREE.Group(); g.add(presa);\nconst HUECO = roto ? 7 : -1;\nfor (let x = -27; x < 27; x += 1.5) { if (Math.abs(x + 0.75) < HUECO) continue; const xm = x + 0.75, gy = suelo(xm, arco(xm)) - 1, hh = TOP - gy; if (hh < 0.5) continue;\n  const ang = Math.atan2(-(2 * xm / (27 * 27)) * 5 * -1, 1);\n  const s1 = h.malla(new THREE.BoxGeometry(1.55, hh, 2.2), hormigon, xm, gy + hh / 2, arco(xm)); s1.rotation.y = -ang; presa.add(s1);\n  const hb = Math.min(hh, TOP - 2 - gy); if (hb > 0) { const s2 = h.malla(new THREE.BoxGeometry(1.55, hb, 5), hormOsc, xm, gy + hb / 2, arco(xm) + 2.6); s2.rotation.y = -ang; s2.rotation.x = 0; presa.add(s2); }\n  if (Math.round(x / 1.5) % 4 === 0) h.caja(presa, 0.08, hh * 0.9, 0.05, h.M('#9a948a'), xm, gy + hh * 0.45, arco(xm) + 1.12); }\nconst corona = new THREE.Group(); presa.add(corona);\nfor (let x = -27; x < 27; x += 3) { if (Math.abs(x + 1.5) < HUECO + 1) continue; const xm = x + 1.5; h.caja(corona, 3.05, 0.5, 3, h.M('#d8d3c8'), xm, TOP + 0.25, arco(xm));\n  h.caja(corona, 0.1, 0.9, 0.1, acero, xm - 1.4, TOP + 0.9, arco(xm) + 1.4); h.caja(corona, 3, 0.08, 0.08, acero, xm, TOP + 1.3, arco(xm) + 1.4);\n  if (Math.round(x / 3) % 3 === 0) { h.caja(corona, 0.12, 2.2, 0.12, h.M('#444'), xm, TOP + 1.6, arco(xm) - 1.3); const fa = h.malla(new THREE.SphereGeometry(0.22, 10, 8), new THREE.MeshStandardMaterial({ color: '#fff4d0', emissive: '#ffd27a', emissiveIntensity: noche ? 2.2 : 0.3 }), xm, TOP + 2.75, arco(xm) - 1.3); corona.add(fa); if (noche) corona.add(h.en(h.brillo('#ffd27a', 2.2, 0.5), xm, TOP + 2.75, arco(xm) - 1.3)); } }\nmarca('muro', g, 0, TOP - 7, 3); marca('corona', g, 0, TOP + 1, 0);\nconst comp = new THREE.Group(); g.add(comp);\n[-6, -2, 2, 6].forEach((x, j) => { const z = arco(x) + 1.3; h.caja(comp, 3.0, 2.6, 0.3, acero, x, TOP - 2.2, z + 0.2); [-1, 1].forEach(s => h.caja(comp, 0.4, 3.6, 0.8, hormigon, x + s * 1.75, TOP - 1.8, z));\n  h.caja(comp, 1.0, 1.0, 1.0, amarillo, x, TOP + 1.0, z - 0.4); h.caja(comp, 0.12, 0.12, 0.6, h.M('#333'), x, TOP - 0.7, z + 0.5);\n  if (abiertas && !roto) { const agua = new THREE.MeshStandardMaterial({ color: '#f2fbff', emissive: '#bfe8ff', emissiveIntensity: 0.25, roughness: 0.6, transparent: true, opacity: 0.55, depthWrite: false });\n    for (let q = 0; q < 5; q++) { const dx = (q - 2) * 0.45, ex = 1 + q * 0.15; const cur = new THREE.CatmullRomCurve3([new THREE.Vector3(x + dx, TOP - 3.2, z + 0.4), new THREE.Vector3(x + dx * ex, TOP - 4.2, z + 2.6 + q * 0.2), new THREE.Vector3(x + dx * 1.6, -0.5, z + 8.5), new THREE.Vector3(x + dx * 2.2, -5.6, z + 12)]);\n      comp.add(new THREE.Mesh(new THREE.TubeGeometry(cur, 40, 0.28 + R(q + j) * 0.2, 8), agua)); }\n    for (let k = 0; k < 26; k++) { const t = k / 26, y = TOP - 3.5 - t * 15, zz = z + 2 + t * 10; comp.add(h.malla(new THREE.SphereGeometry(0.35 + t * 1.3, 8, 6), new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.18 + t * 0.25, roughness: 1, depthWrite: false }), x + (R(k * 7 + j) - 0.5) * 2.5 * (0.4 + t), y, zz)); }\n    for (let k = 0; k < 14; k++) comp.add(h.malla(new THREE.SphereGeometry(0.6 + R(k + j * 20) * 1.2, 10, 8), new THREE.MeshStandardMaterial({ color: '#ffffff', transparent: true, opacity: 0.55, roughness: 1 }), x + (R(k * 7 + j) - 0.5) * 4, -5.4 + R(k * 3) * 1.5, z + 12 + (R(k * 5 + j) - 0.5) * 5)); } });\nmarca('compuertas', g, 0, TOP - 2, arco(0) + 1.5);\nconst cen = new THREE.Group(); g.add(cen); const CZ = 10, CY = -6;\nh.caja(cen, 16, 0.4, 7, hormOsc, 0, CY + 0.2, CZ); h.caja(cen, 16, 5.5, 0.3, h.M('#e8e2d6'), 0, CY + 2.95, CZ - 3.4); [-1, 1].forEach(s => h.caja(cen, 0.3, 5.5, 7, h.M('#e8e2d6'), s * 8, CY + 2.95, CZ));\nh.caja(cen, 16.4, 0.4, 7.4, h.M('#9a3a2a'), 0, CY + 5.9, CZ); h.caja(cen, 16, 0.8, 0.2, h.M('#e8e2d6'), 0, CY + 5.3, CZ + 3.4);\n[-5, 0, 5].forEach((x, j) => { cen.add(h.malla(new THREE.CylinderGeometry(1.5, 1.7, 1.6, 24), h.M('#e9b02a', { metalness: 0.3, roughness: 0.45 }), x, CY + 1.2, CZ));\n  cen.add(h.malla(new THREE.CylinderGeometry(1.0, 1.4, 1.4, 20), h.M('#3f6f9a', { metalness: 0.5, roughness: 0.35 }), x, CY + 2.7, CZ));\n  cen.add(h.malla(new THREE.CylinderGeometry(0.5, 0.5, 0.6, 16), acero, x, CY + 3.7, CZ));\n  const tubo = h.malla(new THREE.CylinderGeometry(0.7, 0.7, 12, 14), h.M('#4a5560', { metalness: 0.5, roughness: 0.5 }), x, CY + 6, CZ - 7); tubo.rotation.x = -0.75; cen.add(tubo);\n  const lu = new THREE.MeshStandardMaterial({ color: '#ffffff', emissive: '#c8f0ff', emissiveIntensity: 0.9 }); h.caja(cen, 1.6, 0.12, 0.6, lu, x, CY + 5.5, CZ);\n  });\ncen.add((() => { const l = new THREE.PointLight('#e8f6ff', 7, 14, 1.6); l.position.set(0, CY + 4.5, CZ + 1); return l; })());\nmarca('turbina', g, 0, CY + 2.2, CZ); marca('central', g, 0, CY + 3, CZ + 2);\nconst rioM = new THREE.MeshStandardMaterial({ color: '#2f7fa0', roughness: 0.4, metalness: 0.15, transparent: true, opacity: 0.92 });\nconst rio = h.malla(new THREE.PlaneGeometry(9, 70, 1, 1), rioM, 0, roto ? -3.2 : -5.75, 48); rio.rotation.x = -Math.PI / 2; g.add(rio);\nconst emb = h.malla(new THREE.PlaneGeometry(150, 75, 1, 1), new THREE.MeshStandardMaterial({ color: '#2a6f8e', roughness: 0.08, metalness: 0.3, transparent: true, opacity: 0.93 }), 0, NIV, -40); emb.rotation.x = -Math.PI / 2; g.add(emb);\nfor (let k = 0; k < 40; k++) { const l = h.malla(new THREE.PlaneGeometry(2 + R(k) * 5, 0.08), new THREE.MeshBasicMaterial({ color: '#cfeaf5', transparent: true, opacity: 0.35 }), (R(k + 3) - 0.5) * 50, NIV + 0.03, -6 - R(k + 8) * 50); l.rotation.x = -Math.PI / 2; g.add(l); }\nmarca('embalse', g, 0, NIV + 1, -22); marca('orilla', g, -14, NIV + 1, -18);\nconst sum = new THREE.Group(); g.add(sum); const SZ = -26, SX = 6;\nconst igl = new THREE.Group(); h.caja(igl, 4, 4, 8, h.M('#a89a84', { roughness: 0.95 }), 0, -8, 0); h.caja(igl, 2.4, 9, 2.4, h.M('#b2a48c', { roughness: 0.95 }), 0, -5.5, -4.5);\nigl.add(h.malla(new THREE.ConeGeometry(1.9, 2.4, 4), h.M('#8a6a52'), 0, 0.2, -4.5)); for (let k = 0; k < 4; k++) h.caja(igl, 0.5, 0.9, 0.1, h.M('#2a2522'), (k % 2 ? 1 : -1) * 0.5, -2.2, -4.5 + (k < 2 ? 1.21 : -1.21));\nigl.position.set(SX, 0, SZ); igl.rotation.y = 0.4; sum.add(igl);\nfor (let k = 0; k < 9; k++) { const x = SX - 10 + R(k + 70) * 16, z = SZ + (R(k + 90) - 0.5) * 14, hh = 1 + R(k + 33) * 2.2; h.caja(sum, 2.5 + R(k) * 2, hh, 0.4, h.M('#9c8f7a', { roughness: 1 }), x, -9.5 + hh / 2, z); h.caja(sum, 0.4, hh * 0.8, 2.5, h.M('#948670', { roughness: 1 }), x + 1.2, -9.5 + hh * 0.4, z + 1); }\nmarca('campanario', g, SX, -3, SZ - 4.5); marca('pueblo_sumergido', g, SX - 2, -7, SZ);\nconst pue = new THREE.Group(); g.add(pue); const PZ = 38;\nconst casa = (x, z, k) => { const q = new THREE.Group(), A = 2.2 + R(k) * 1.4, F = 2 + R(k + 1) * 1.2, H = 1.8 + R(k + 2) * 1.2;\n  h.caja(q, A, H, F, h.M(['#f1e4cc', '#efd9bd', '#f4ece0', '#e9d2b4'][k % 4], { roughness: 0.9 }), 0, H / 2, 0);\n  const t = h.malla(new THREE.CylinderGeometry(0.01, A * 0.78, 1.1, 4, 1), h.M(['#b5522f', '#a8482a', '#c0633a'][k % 3], { roughness: 0.8, flatShading: true }), 0, H + 0.55, 0); t.rotation.y = Math.PI / 4; t.scale.z = F / A; q.add(t);\n  const vm = new THREE.MeshStandardMaterial({ color: '#3a4250', emissive: '#ffcf7a', emissiveIntensity: noche ? 1.3 : 0 }); [-0.5, 0.5].forEach(dx => h.caja(q, 0.45, 0.55, 0.05, vm, dx * A * 0.5, H * 0.6, F / 2 + 0.01));\n  q.position.set(x, suelo(x, z) - 0.05, z); q.rotation.y = (R(k + 5) - 0.5) * 0.6; pue.add(q); };\nlet k = 0; for (let z = PZ - 6; z < PZ + 8; z += 3.4) for (const s of [-1, 1]) for (let j = 0; j < 2; j++) { const x = s * (7 + j * 3.2 + R(k) * 1.2); casa(x, z + R(k + 40), k++); }\nconst torre = new THREE.Group(); h.caja(torre, 2, 6, 2, h.M('#e9dcc2'), 0, 3, 0); torre.add(h.malla(new THREE.ConeGeometry(1.6, 2, 4), h.M('#a8482a'), 0, 7, 0)); torre.position.set(-9, suelo(-9, PZ + 9), PZ + 9); pue.add(torre);\nconst puente = new THREE.Group(); h.caja(puente, 12, 0.5, 2.2, h.M('#b8ad9a'), 0, 0, 0); [-3, 0, 3].forEach(x => h.caja(puente, 0.8, 2, 1.6, h.M('#a89e8a'), x, -1, 0)); puente.position.set(0, -4.2, PZ); pue.add(puente);\nmarca('pueblo', g, 0, -3, PZ); marca('puente', g, 0, -4, PZ); marca('rio', g, 0, -5.5, 22);\nif (grieta || roto) { const pts = []; let x = 1.5, y = TOP - 1; for (let i = 0; i < 12; i++) { pts.push(new THREE.Vector3(x, y, arco(x) + 5.3 - (TOP - y) * 0.0)); x += (R(i + 11) - 0.5) * 1.6; y -= 1.4; }\n  const cur = new THREE.CatmullRomCurve3(pts); g.add(new THREE.Mesh(new THREE.TubeGeometry(cur, 60, 0.13, 6), h.M('#2a2622', { roughness: 1 })));\n  for (let i = 3; i < 10; i += 2) { const p = pts[i]; g.add(h.malla(new THREE.CylinderGeometry(0.06, 0.12, 2.5, 6), new THREE.MeshStandardMaterial({ color: '#bfe6ff', emissive: '#7fc8f0', emissiveIntensity: 0.4, transparent: true, opacity: 0.8 }), p.x, p.y - 1.3, p.z + 0.15)); }\n  marca('grieta', g, 1.5, TOP - 8, arco(0) + 5.5); }\nif (roto) { const cur = new THREE.CatmullRomCurve3([new THREE.Vector3(0, NIV - 0.5, -2), new THREE.Vector3(0, NIV - 3, 3), new THREE.Vector3(0, -3, 12), new THREE.Vector3(0, -3.5, 30)]);\n  const tor = new THREE.Mesh(new THREE.TubeGeometry(cur, 50, 4.2, 14), new THREE.MeshStandardMaterial({ color: '#5f7f78', roughness: 0.35, transparent: true, opacity: 0.75, depthWrite: false })); tor.scale.set(1, 0.6, 1); tor.position.y = -1.5; g.add(tor);\n  for (let k = 0; k < 60; k++) { const t = k / 60, p = cur.getPoint(t); g.add(h.malla(new THREE.SphereGeometry(0.9 + R(k + 77) * 1.8, 9, 7), new THREE.MeshStandardMaterial({ color: k % 3 ? '#eef4f0' : '#9fb3a8', transparent: true, opacity: 0.7, roughness: 1, depthWrite: false }), p.x + (R(k + 5) - 0.5) * 8, p.y * 0.6 - 1 + R(k + 9) * 2.5, p.z + (R(k + 3) - 0.5) * 3)); }\n  for (let k = 0; k < 40; k++) g.add(h.malla(new THREE.SphereGeometry(0.8 + R(k) * 1.6, 10, 8), new THREE.MeshStandardMaterial({ color: '#f4f8f6', transparent: true, opacity: 0.6, roughness: 1 }), (R(k + 4) - 0.5) * 14, -2.5 + R(k + 6) * 3, 8 + R(k + 2) * 28));\n  const ola = h.malla(new THREE.PlaneGeometry(40, 30), new THREE.MeshStandardMaterial({ color: '#6a7f72', roughness: 0.4, transparent: true, opacity: 0.9 }), 0, -2.6, PZ); ola.rotation.x = -Math.PI / 2; g.add(ola);\n  for (let k = 0; k < 18; k++) { const c2 = h.malla(new THREE.BoxGeometry(1.4 + R(k) * 2, 1.2, 1.4 + R(k + 1) * 2), h.M('#b8b0a2'), (R(k + 30) - 0.5) * 14, -5 + R(k + 3) * 2, 4 + R(k + 8) * 6); c2.rotation.set(R(k) * 2, R(k + 1) * 2, R(k + 2) * 2); g.add(c2); } }\nif (noche) g.add((() => { const l = new THREE.PointLight('#ffd9a0', 30, 40, 1.4); l.position.set(0, TOP + 6, 6); return l; })());\nreturn g;\n"
+}
