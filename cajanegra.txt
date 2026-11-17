@@ -114,3 +114,4 @@
 2026-11-16|21:00|El misterio de Bella en el olmo|consecuencia|YO 6afa76d4ff465c57dacd1573 IN 6afa76d560a910801c65eaa3 TI 6afa76d6d7e5fee63899c6f5|img=mixto|21:39
 2026-11-17|08:00|La muerte de Allan Pinkerton|final|YO 6afbc35d797935b975d947b6 IN 6afbc35edf36f4d825640f7c TI 6afbc35e3e42cd001e497eab|img=mixto|08:37
 2026-11-17|12:00|El caso de Michael Malloy|cuenta|YO 6afbc472797935b975d9b602 IN 6afbc473f83aaca8f3a57a0e TI 6afbc4733e42cd001e49d7a2|img=mixto|11:20
+2026-11-17|15:00|La autopsia de Julio César|nadie|YO 6afbc59e85dca6b14a191f0b IN 6afbc59e3e42cd001e4a4924 TI 6afbc59f797935b975da1e14|img=mixto|14:54
