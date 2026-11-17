@@ -19,3 +19,4 @@
 2026-11-16 20:20|La escuela del año 2100 y la IA en la educación|¿Qué estudiarás cuando la IA lo sepa TODO?|430519849|largo-ano2100-20261116-1124
 2026-11-17 06:00|Agentes de IA y el Mundo Autónomo de 2100|¿Y si la IA no solo habla, sino que EJECUTA?|430995718|largo-ano2100-20261117-0434
 2026-11-17 15:24|IA y Religión en 2100|¿Adorarás a una máquina? La religión en el 2100|431498166|largo-ano2100-20261117-1336
+2026-11-18 20:40|La IA y los Ordenadores Cuánticos|El fin del silicio: La IA Cuántica|432080789|largo-ano2100-20261117-1857
