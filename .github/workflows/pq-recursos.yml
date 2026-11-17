@@ -1,0 +1,25 @@
+# (17-nov-2026) PONGAMOS QUE · baja recursos libres (CC0) para el motor 3D (Poly Haven, Kenney) a la rama «pq-recursos».
+name: Pongamos Que · recursos 3D libres
+on:
+  workflow_dispatch:
+    inputs:
+      pedido: { description: 'catalogo · m:<id> · h:<id> · t:<id> · k:<pack>', default: 'catalogo' }
+permissions: { contents: write }
+concurrency: { group: pq-recursos, cancel-in-progress: false }
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { path: kit }
+      - name: Rama de recursos
+        run: |
+          git config --global user.name github-actions && git config --global user.email github-actions@users.noreply.github.com
+          if git -C kit fetch -q --depth=1 origin pq-recursos 2>/dev/null; then git clone -q --depth=1 -b pq-recursos "file://$PWD/kit" rec 2>/dev/null || (mkdir rec && cd rec && git init -q && git fetch -q ../kit FETCH_HEAD && git checkout -q -b pq-recursos FETCH_HEAD); else mkdir rec && cd rec && git init -q -b pq-recursos; fi
+      - name: Bajar
+        run: python3 kit/pongamosque/recursos.py rec "${{ inputs.pedido }}"
+      - name: Guardar
+        run: |
+          cd rec && du -sh . && git add -A && git commit -qm "Recursos: ${{ inputs.pedido }}" || exit 0
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:pq-recursos
