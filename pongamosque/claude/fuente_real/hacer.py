@@ -4,7 +4,7 @@ from piezas import ILU
 # (17-nov-2026) UN SOLO RECORRIDO DE CÁMARA CONTINUO por la cocina (como las referencias): cada frase sigue el movimiento donde lo dejó la anterior
 W = [(['cocina', [-0.14, 0.0, 0.85]], ['cocina', [-0.2, -0.03, 0]]),
      (['interior', [0.06, 0.02, 0.32]], 'interior'),
-     (['compresor', [0.0, 0.42, -0.1]], 'compresor'),
+     (['compresor', [0.13, 0.42, -0.03]], 'compresor'),
      (['cocina', [-0.2, 0.06, 0.62]], ['cocina', [-0.22, 0.06, 0]]),
      (['termo', [0.07, 0.0, 0.24]], 'termo'),
      (['carne', [0.03, 0.04, 0.17]], 'carne'),
@@ -17,11 +17,16 @@ def N(**k): return dict({'tipo': 'nueva', 'codigo': ILU, 'tam': 12, 'reserva': '
 def D(t, d): return {'tipo': 'dia', 'texto': t, 'detalle': d}
 def C(v, e): return {'tipo': 'cifra', 'valor': v, 'etiqueta': e}
 ESC = []
-VIA = {1: ['nevera', [0.02, 0.32, 0.3]]}
+VIA = {1: ['nevera', [0.02, 0.44, 0.3]]}
+# curva global: puntos de cámara (y de mira) de todo el vídeo, con el punto intermedio de la subida al compresor
+CAM, MIR, IDX = [], [], []
+for i, (c, m) in enumerate(W):
+    if i - 1 in VIA: CAM.append(VIA[i - 1]); MIR.append(['nevera', [0.0, 0.12, 0.0]])
+    IDX.append(len(CAM)); CAM.append(c); MIR.append(m)
 def E(texto, visual, estado, sonidos=(), sacudidas=None):
     i = len(ESC); (c0, m0), (c1, m1) = W[i], W[i + 1]
     d = {'cielo': 'noche', 'luz': 'nocturna', 'contorno': False, 'suelo': 'ninguno', 'plano': 'detalle', 'foco': 0, 'camara': 'acercar', 'continua': True,
-         'objetos': [N(**estado)], 'ruta': dict({'de': c0, 'a': c1, 'mira': m0, 'mira2': m1, 'continua': True}, **({'via': VIA[i]} if i in VIA else {})), 'sonidos': [list(x) for x in sonidos]}
+         'objetos': [N(**estado)], 'ruta': {'de': c0, 'a': c1, 'mira': m0, 'mira2': m1, 'continua': True, 'camino': CAM, 'miras': MIR, 't0': IDX[i], 't1': IDX[i + 1], **({'pot': 0.7} if i in VIA else {})}, 'sonidos': [list(x) for x in sonidos]}
     if sacudidas: d['sacudidas'] = sacudidas
     ESC.append({'hablado': texto, 'subtitulo': texto, 'visual': visual, 'escena3d': d})
 E('Pongamos que esta noche tu nevera deja de enfriar.', D('SEGUNDO 0', 'Se apaga'), {'puerta': 1, 'apaga': 0.62, 'reloj': [23.0, 23.1], 'persona': True}, [(0.0, 'zumbido'), (0.66, 'chispa')])
