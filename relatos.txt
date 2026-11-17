@@ -123,3 +123,4 @@
 2026-11-16|21:00|La muerte de Jasón|consecuencia|YO 6afa7813d7e5fee6389a283b IN 6afa781406e1675856c2ffd5 TI 6afa7814ff465c57dacd7a00|img=mixto|20:28
 2026-11-16|08:00|La paradoja de Lélape|sabias|YO 6afa7aa08e87c256a3ad3f90 IN 6afa7aa106e1675856c3a2c3 TI 6afa7aa2a869c35e5bb55b96|img=mixto|07:28
 2026-11-17|08:00|Bóreas y Oritía|pregunta|YO 6afbc59785dca6b14a191477 IN 6afbc598df36f4d82564ee59 TI 6afbc5983e42cd001e4a472a|img=mixto|07:48
+2026-11-17|12:00|La venganza de Hécuba|final|YO 6afbc7064b26315855b99a61 IN 6afbc7073e42cd001e4acb3c TI 6afbc7074b26315855b99afe|img=mixto|12:39
