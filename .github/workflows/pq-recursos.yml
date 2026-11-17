@@ -16,7 +16,7 @@ jobs:
       - name: Rama de recursos
         run: |
           git config --global user.name github-actions && git config --global user.email github-actions@users.noreply.github.com
-          if git -C kit fetch -q --depth=1 origin pq-recursos 2>/dev/null; then git clone -q --depth=1 -b pq-recursos "file://$PWD/kit" rec 2>/dev/null || (mkdir rec && cd rec && git init -q && git fetch -q ../kit FETCH_HEAD && git checkout -q -b pq-recursos FETCH_HEAD); else mkdir rec && cd rec && git init -q -b pq-recursos; fi
+          git clone -q --depth=1 -b pq-recursos "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" rec 2>/dev/null || (mkdir -p rec && cd rec && git init -q -b pq-recursos)
       - name: Bajar
         run: python3 kit/pongamosque/recursos.py rec "${{ inputs.pedido }}"
       - name: Guardar
