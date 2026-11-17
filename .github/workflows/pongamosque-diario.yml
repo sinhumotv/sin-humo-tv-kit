@@ -17,7 +17,7 @@ on:
       motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
       estilo: { description: 'estilo visual: (vacío) actual · ilustrado · 3d', default: '' }
       prueba: { description: 'sí = vídeo de prueba: no se guarda en la tanda ni se publica (queda en la rama pq-prueba)', default: 'no' }
-      claude_fecha: { description: 'usar los vídeos hechos por Claude de esta fecha (AAAA-MM-DD); vacío = los de hoy si existen', default: '' }
+      claude_fecha: { description: 'usar los vídeos hechos por Claude de esta fecha (AAAA-MM-DD); vacío = los de hoy si existen; ninguna = no usar los de Claude', default: '' }
 permissions: { contents: write }
 concurrency: { group: pongamosque-tanda, cancel-in-progress: false }
 jobs:
@@ -44,33 +44,43 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.PONGAMOSQUE_GEMINI_KEY }}
           CUANTOS: ${{ inputs.cuantos || '5' }}
         run: |
-          # (16-nov-2026) si Claude ha dejado hechos los vídeos de hoy (guion + escenas 3D a medida), se usan esos; si no, Gemini
+          # (16-nov-2026) si Claude ha dejado hechos los vídeos de hoy (guion + escenas 3D a medida), se usan esos.
+          # (17-nov-2026) y el resto hasta CUANTOS los escribe Gemini sobre los MUNDOS 3D de la biblioteca de Claude
+          # (pongamosque/claude/mundos: Gemini solo escribe el guion y elige tomas ya revisadas); si no quedan mundos
+          # libres, lo que falte sale con el sistema de siempre (temas.py). claude_fecha=ninguna → no usa los de Claude.
           CL="pongamosque/claude/$(date -u +%F)"
           if [ -n "${{ inputs.claude_fecha }}" ]; then CL="pongamosque/claude/${{ inputs.claude_fecha }}"; fi
-          if ls "$CL"/v*.json >/dev/null 2>&1; then
-            python3 - "$CL" <<'PY'
+          C=$(ls "$CL"/v*.json 2>/dev/null | wc -l); FALTAN=$((CUANTOS - C)); [ $FALTAN -lt 0 ] && FALTAN=0
+          mkdir -p pq_gem
+          if [ $FALTAN -gt 0 ]; then
+            PQ_MUNDO_DIAS=$([ "${{ inputs.prueba }}" = "sí" ] && echo 0 || echo 7) python3 pongamosque/mundos_gemini.py $FALTAN pq_gem || true
+          fi
+          G=$(ls pq_gem/g*.json 2>/dev/null | wc -l); RESTO=$((FALTAN - G))
+          echo '[]' > temas_resto.json
+          if [ $RESTO -gt 0 ]; then python3 pongamosque/temas.py "$RESTO" temas_resto.json; fi
+          python3 - "$CL" "$CUANTOS" <<'PY'
           import glob, json, os, sys
-          d = sys.argv[1]; out = []
-          for f in sorted(glob.glob(d + '/v*.json'), key=lambda x: int(''.join(c for c in os.path.basename(x) if c.isdigit()) or 0)):
+          d, n = sys.argv[1], int(sys.argv[2]); num = lambda x: int(''.join(c for c in os.path.basename(x) if c.isdigit()) or 0)
+          def de(f):
               h = json.load(open(f)); m = h.get('meta') or {}
-              out.append({'tema': m.get('tema') or h.get('titulo'), 'titulo': m.get('titulo') or h.get('titulo'), 'gancho': m.get('gancho', ''),
-                          'pregunta': m.get('pregunta', ''), 'hashtags': m.get('hashtags', []), 'claude': f})
+              return {'tema': m.get('tema') or h.get('titulo'), 'titulo': m.get('titulo') or h.get('titulo'), 'gancho': m.get('gancho', ''),
+                      'pregunta': m.get('pregunta', ''), 'hashtags': m.get('hashtags', []), 'claude': f}
+          cl = [de(f) for f in sorted(glob.glob(d + '/v*.json'), key=num)][:n]
+          ge = [de(f) for f in sorted(glob.glob('pq_gem/g*.json'), key=num)]
+          out = cl + ge + json.load(open('temas_resto.json'))
           json.dump(out, open('temas.json', 'w'), ensure_ascii=False, indent=1)
           H = 'pongamosque/temas_hechos.json'; hechos = json.load(open(H)) if os.path.exists(H) else []
-          json.dump(hechos + [x['tema'] for x in out if x['tema'] not in hechos], open(H, 'w'), ensure_ascii=False, indent=1)
-          print('vídeos hechos por Claude:', [x['titulo'] for x in out])
+          json.dump(hechos + [x['tema'] for x in cl + ge if x['tema'] not in hechos], open(H, 'w'), ensure_ascii=False, indent=1)
+          print('Claude:', [x['titulo'] for x in cl]); print('Gemini sobre mundos:', [x['titulo'] for x in ge]); print('sistema de siempre:', len(out) - len(cl) - len(ge))
           PY
-          else
-            python3 pongamosque/temas.py "$CUANTOS" temas.json
-          fi
           echo "lista=$(python3 -c "import json;print(json.dumps(list(range(1, len(json.load(open('temas.json'))) + 1))))")" >> "$GITHUB_OUTPUT"
           if [ "${{ inputs.prueba }}" != "sí" ]; then
             git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
-            git add pongamosque/temas_hechos.json && git commit -qm "Pongamos Que: temas de hoy" && (git pull -q --rebase && git push -q || true) || true
+            git add pongamosque/temas_hechos.json pongamosque/claude/mundos && git commit -qm "Pongamos Que: temas de hoy" && (git pull -q --rebase && git push -q || true) || true
           fi
       - uses: actions/upload-artifact@v4
         if: env.YA != '1'
-        with: { name: temas, path: temas.json }
+        with: { name: temas, path: "temas.json\npq_gem/" }
 
   video:
     needs: preparar
