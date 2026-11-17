@@ -1,0 +1,41 @@
+{
+"modelos": [
+"carrot_cake",
+"croissant",
+"electric_stove",
+"food_apple_01",
+"food_avocado_01",
+"food_kiwi_01",
+"food_lime_01",
+"food_pomegranate_01",
+"hamburger_buns",
+"jug_01",
+"lemon",
+"long_life_food",
+"painted_wooden_chair_01",
+"pot_enamel_01",
+"potted_plant_01",
+"russian_food_cans_01",
+"sweet_potato",
+"vintage_electric_kettle",
+"vintage_microwave",
+"wall_clock",
+"wine_bottles_01",
+"wooden_bowl_01",
+"wooden_cutting_board",
+"yellow_onion"
+],
+"texturas": [
+"grey_plaster",
+"herringbone_parquet",
+"long_white_tiles",
+"marble_01",
+"metal_plate",
+"painted_plaster_wall"
+],
+"hdri": [
+"blinds",
+"brown_photostudio_04",
+"christmas_photo_studio_07"
+]
+}
