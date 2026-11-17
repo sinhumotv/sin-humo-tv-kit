@@ -112,3 +112,4 @@
 2026-11-16|15:00|Hibernación humana para el espacio|increible|YO 6afa768c06e1675856c28cd4 IN 6afa768cff465c57dacd06c6 TI 6afa768dff465c57dacd06fe|img=mixto|15:05
 2026-11-16|18:00|Energía solar espacial en 2100|sabias|YO 6afa77fb60a910801c664629 IN 6afa77fcff465c57dacd734c TI 6afa77fd60a910801c664671|img=mixto|17:36
 2026-11-16|21:00|Eliminación biológica del sueño|consecuencia|YO 6afa79558e87c256a3aceca9 IN 6afa7956a869c35e5bb51090 TI 6afa7957d7e5fee6389a7bbe|img=mixto|20:44
+2026-11-17|08:00|Guerra híbrida en Europa|cuenta|YO 6afbc374f83aaca8f3a5256a IN 6afbc37585dca6b14a185647 TI 6afbc3763e42cd001e4985f4|img=mixto|07:55
