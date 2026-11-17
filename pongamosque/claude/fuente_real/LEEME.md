@@ -12,3 +12,4 @@ Modelo a seguir para TODOS los vídeos nuevos: `piezas.py` (el mundo) + `hacer.p
 - **Sonido**: `escena3d.sonidos = [[x, nombre]]` (efectos de sfx.py) y `sacudidas` en impactos.
 - **Rótulos en español**; números de pantallas con segmentos (no texto en canvas: en GitHub a veces sale en negro).
 - Revisar con el workflow «Pongamos Que · fotogramas de prueba» antes de dejarlo.
+- **Zona segura de TikTok/Instagram** (17-nov): lo importante (objetos protagonistas y textos) en el centro; nada importante en el 11 % de arriba, el 22 % de abajo ni en el borde derecho (botones). El motor ya coloca así subtítulos, etapa y cifras; el encuadre de la cámara también debe dejar el protagonista centrado.
