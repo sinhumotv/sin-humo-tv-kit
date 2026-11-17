@@ -95,10 +95,15 @@ const lin = new THREE.PointLight('#eef7ff', 2.5, 6, 1.3); lin.position.set(0, 1.
 const encendida = !roto || apaga;
 const A0 = typeof o.apaga === 'number' ? o.apaga : 0.4; const fl = x => apaga ? (x < A0 ? 1 : x < A0 + 0.12 ? ((Math.sin(x * 160) > 0.2) ? 1 : 0.1) : 0) : (roto ? 0 : 1);
 tick(lin, x => { const v = fl(x); lin.intensity = 5.5 * v; lmat.emissiveIntensity = 2.2 * v; }); lin.userData.tick(0);
-const termoCv = document.createElement('canvas'); termoCv.width = 256; termoCv.height = 128; const termoTx = new THREE.CanvasTexture(termoCv); termoTx.colorSpace = THREE.SRGBColorSpace;
-const TT = o.temp === undefined ? (roto ? 5 + Dm * 2.5 : 4) : o.temp; let tPrev = null;
-const pintaT = v => { const r2 = Math.round(v); tPrev = r2; const c2 = termoCv.getContext('2d'); c2.fillStyle = '#0d1418'; c2.fillRect(0, 0, 256, 128); c2.font = '900 92px Archivo Black, Inter, sans-serif'; c2.textAlign = 'center'; c2.fillStyle = r2 > 7 ? '#ff5a3c' : r2 > 4 ? '#ffb53c' : '#5fe0ff'; c2.fillText(r2 + '°', 128, 100); termoTx.needsUpdate = true; };
-const pantalla = new THREE.Mesh(new THREE.PlaneGeometry(0.16, 0.08), new THREE.MeshStandardMaterial({ map: termoTx, emissive: '#ffffff', emissiveMap: termoTx, emissiveIntensity: 1.1, roughness: 0.2 }));
+const TT = o.temp === undefined ? (roto ? 5 + Dm * 2.5 : 4) : o.temp;
+const pantalla = new THREE.Group(); pantalla.add(h.malla(new THREE.PlaneGeometry(0.16, 0.08), new THREE.MeshBasicMaterial({ color: '#0b1014' }), 0, 0, 0));
+const SEG = { a: [0, 1, 0.5, 0.06], b: [0.5, 0.75, 0.06, 0.5], c: [0.5, 0.25, 0.06, 0.5], d: [0, 0, 0.5, 0.06], e: [-0.5, 0.25, 0.06, 0.5], f: [-0.5, 0.75, 0.06, 0.5], g: [0, 0.5, 0.5, 0.06] };
+const DIG = ['abcdef', 'bc', 'abged', 'abgcd', 'fgbc', 'afgcd', 'afgedc', 'abc', 'abcdefg', 'abcdfg'];
+const segM = new THREE.MeshBasicMaterial({ color: '#5fe0ff' }), segN = new THREE.MeshBasicMaterial({ color: '#ffb53c' }), segR = new THREE.MeshBasicMaterial({ color: '#ff4a2c' }); const digs = [];
+[-0.045, -0.005].forEach(dx => { const q = {}; Object.entries(SEG).forEach(([k, [x, y, w, hh]]) => { const m = h.malla(new THREE.PlaneGeometry(0.03 * w + 0.004, 0.05 * hh + 0.004), segM, dx + x * 0.03, -0.025 + y * 0.05, 0.001); pantalla.add(m); q[k] = m; }); digs.push(q); });
+const grado = h.malla(new THREE.RingGeometry(0.005, 0.009, 16), segM, 0.035, 0.02, 0.001); pantalla.add(grado);
+const pintaT = v => { const r2 = Math.max(0, Math.min(99, Math.round(v))); const mc = r2 > 7 ? segR : r2 > 4 ? segN : segM; grado.material = mc; const ds = r2 >= 10 ? [Math.floor(r2 / 10), r2 % 10] : [null, r2];
+  ds.forEach((d, k) => Object.entries(digs[k]).forEach(([s2, m]) => { m.visible = d !== null && DIG[d].includes(s2); m.material = mc; })); };
 tick(pantalla, x => pintaT(L2(TT, sm(x)))); pantalla.userData.tick(0);
 const AB = o.puerta === undefined ? 1 : o.puerta;
 const puerta = new THREE.Group(); puerta.position.set(-NW / 2, 0, ND / 2); nev.add(puerta);
@@ -176,7 +181,7 @@ const gotas = []; for (let k = 0; k < 5; k++) { const gd = h.malla(new THREE.Sph
 tick(gotas[0], (x, u, L, t) => { const d = L2(dias, sm(x)); const on = roto && d > 0.8 && d < 6; gotas.forEach((gd, k) => { gd.visible = on; const ph = (((t || 0) * 1.3 + R(k)) % 1); gd.position.y = 0.12 - ph * 0.12; }); }); gotas[0].userData.tick(0);
 const olor = new THREE.Group(); g.add(olor); const cintas = [];
 for (let k = 0; k < 5; k++) { const pts = []; for (let j = 0; j < 12; j++) pts.push(new THREE.Vector3(Math.sin(j * 0.9 + k) * 0.06, j * 0.07, 0)); const cu = new THREE.CatmullRomCurve3(pts);
-  const cm = new THREE.MeshBasicMaterial({ color: '#a8c45a', transparent: true, opacity: 0.0, depthWrite: false }); const ci = new THREE.Mesh(new THREE.TubeGeometry(cu, 40, 0.012, 6), cm); ci.position.set(NX - 0.25 + k * 0.12, 0.9 + R(k) * 0.3, NZ + ND / 2 + 0.25); olor.add(ci); cintas.push(ci); }
+  const cm = new THREE.MeshBasicMaterial({ color: '#a8c45a', transparent: true, opacity: 0.0, depthWrite: false }); const ci = new THREE.Mesh(new THREE.TubeGeometry(cu, 40, 0.012, 6), cm); ci.position.set(NX + (k % 2 ? -1 : 1) * (0.42 + R(k) * 0.12), 0.9 + R(k) * 0.3, NZ + ND / 2 + 0.05); olor.add(ci); cintas.push(ci); }
 tick(olor, (x, u, L, t) => { t = t || 0; const d = L2(dias, sm(x)); const v = roto && o.olor ? cl((d - 4.5) / 2) : 0; cintas.forEach((ci, k) => { const ph = (t * 0.3 + k * 0.2) % 1; ci.position.y = 0.85 + ph * 0.6; ci.material.opacity = v * 0.6 * Math.sin(ph * Math.PI); ci.visible = ci.material.opacity > 0.01; ci.rotation.y = t * 0.7 + k; }); }); olor.userData.tick(0);
 marca('olor', g, NX, 1.2, NZ + ND / 2 + 0.3);
 const moscas = new THREE.Group(); g.add(moscas); const ms2 = [];
