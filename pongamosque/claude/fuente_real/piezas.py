@@ -97,7 +97,7 @@ const A0 = typeof o.apaga === 'number' ? o.apaga : 0.4; const fl = x => apaga ? 
 tick(lin, x => { const v = fl(x); lin.intensity = 5.5 * v; lmat.emissiveIntensity = 2.2 * v; }); lin.userData.tick(0);
 const termoCv = document.createElement('canvas'); termoCv.width = 256; termoCv.height = 128; const termoTx = new THREE.CanvasTexture(termoCv); termoTx.colorSpace = THREE.SRGBColorSpace;
 const TT = o.temp === undefined ? (roto ? 5 + Dm * 2.5 : 4) : o.temp; let tPrev = null;
-const pintaT = v => { const r2 = Math.round(v); if (r2 === tPrev) return; tPrev = r2; const c2 = termoCv.getContext('2d'); c2.fillStyle = '#0d1418'; c2.fillRect(0, 0, 256, 128); c2.font = '900 92px Archivo Black, Inter, sans-serif'; c2.textAlign = 'center'; c2.fillStyle = r2 > 7 ? '#ff5a3c' : r2 > 4 ? '#ffb53c' : '#5fe0ff'; c2.fillText(r2 + '°', 128, 100); termoTx.needsUpdate = true; };
+const pintaT = v => { const r2 = Math.round(v); tPrev = r2; const c2 = termoCv.getContext('2d'); c2.fillStyle = '#0d1418'; c2.fillRect(0, 0, 256, 128); c2.font = '900 92px Archivo Black, Inter, sans-serif'; c2.textAlign = 'center'; c2.fillStyle = r2 > 7 ? '#ff5a3c' : r2 > 4 ? '#ffb53c' : '#5fe0ff'; c2.fillText(r2 + '°', 128, 100); termoTx.needsUpdate = true; };
 const pantalla = new THREE.Mesh(new THREE.PlaneGeometry(0.16, 0.08), new THREE.MeshStandardMaterial({ map: termoTx, emissive: '#ffffff', emissiveMap: termoTx, emissiveIntensity: 1.1, roughness: 0.2 }));
 tick(pantalla, x => pintaT(L2(TT, sm(x)))); pantalla.userData.tick(0);
 const AB = o.puerta === undefined ? 1 : o.puerta;
@@ -130,8 +130,8 @@ const y1 = pisos[0] + 0.007, y2 = pisos[1] + 0.007, y3 = pisos[2] + 0.007, zf = 
 const plato = (x, y, z, r2) => { const p = h.malla(new THREE.CylinderGeometry(r2, r2 * 0.85, 0.015, 32), lisa('#ffffff', { roughness: 0.2 }), x, y + 0.008, z); nev.add(p); };
 plato(0.12, y3, zf, 0.13); pudre(pon('carrot_cake', { alto: 0.11 }, 0.12, y3 + 0.015, zf, 0.4, nev), '#5a5a30', 0.6); moho(nev, 0.12, y3 + 0.118, zf, 0.06, 11);
 marca('tarta', nev, 0.12, y3 + 0.07, zf);
-const queso = new THREE.Group(); { const qg = new THREE.CylinderGeometry(0.09, 0.09, 0.07, 24, 1, false, 0, Math.PI * 0.55); const qm = lisa('#ffcc3a', { roughness: 0.45, emissive: '#3a2a00', emissiveIntensity: 0.3 }); queso.add(h.malla(qg, qm, 0, 0.035, 0)); for (let k = 0; k < 6; k++) { const a = R(k + 500) * Math.PI * 0.5, rr = 0.03 + R(k + 501) * 0.05; const ag2 = h.malla(new THREE.CircleGeometry(0.008 + R(k + 502) * 0.008, 12), lisa('#c99a1e'), Math.sin(a) * rr, 0.0715, Math.cos(a) * rr); ag2.rotation.x = -Math.PI / 2; queso.add(ag2); } queso.position.set(-0.2, y3, zf + 0.02); queso.rotation.y = 0.8; nev.add(queso); pudre(queso, '#8a8a4a', 0.6); }
-moho(nev, -0.2 + 0.03, y3 + 0.072, zf + 0.04, 0.04, 31); marca('queso', nev, -0.2, y3 + 0.05, zf + 0.02);
+const queso = new THREE.Group(); { const qg = new THREE.CylinderGeometry(0.085, 0.085, 0.07, 32, 1, false, 0.5, Math.PI * 1.65); const qm = lisa('#ffcc3a', { roughness: 0.45, emissive: '#3a2a00', emissiveIntensity: 0.3 }); queso.add(h.malla(qg, qm, 0, 0.035, 0)); for (let k = 0; k < 6; k++) { const a = R(k + 500) * Math.PI * 0.5, rr = 0.03 + R(k + 501) * 0.05; const ag2 = h.malla(new THREE.CircleGeometry(0.008 + R(k + 502) * 0.008, 12), lisa('#c99a1e'), Math.sin(a) * rr, 0.0715, Math.cos(a) * rr); ag2.rotation.x = -Math.PI / 2; queso.add(ag2); } queso.position.set(-0.14, y3, zf + 0.02); queso.rotation.y = 0.9; [0, 1].forEach(k2 => { const cara = h.malla(new THREE.PlaneGeometry(0.085, 0.07), lisa('#ffd85a', { side: THREE.DoubleSide, roughness: 0.5 }), 0, 0.035, 0); cara.position.set(Math.sin(0.5 + k2 * Math.PI * 1.65) * 0.0425, 0.035, Math.cos(0.5 + k2 * Math.PI * 1.65) * 0.0425); cara.rotation.y = 0.5 + k2 * Math.PI * 1.65 - Math.PI / 2; queso.add(cara); }); nev.add(queso); pudre(queso, '#8a8a4a', 0.6); }
+moho(nev, -0.14, y3 + 0.072, zf + 0.02, 0.05, 31); marca('queso', nev, -0.14, y3 + 0.05, zf + 0.02);
 pon('jug_01', { alto: 0.17 }, -0.2, y2, -0.08, 0.5, nev); marca('leche', nev, -0.2, y2 + 0.09, -0.08);
 const vetaTx = (() => { const cv = document.createElement('canvas'); cv.width = cv.height = 256; const c2 = cv.getContext('2d'); c2.fillStyle = '#8c1a22'; c2.fillRect(0, 0, 256, 256);
   for (let k = 0; k < 900; k++) { c2.fillStyle = `rgba(${150 + R(k) * 60 | 0},${20 + R(k + 1) * 30 | 0},${30 + R(k + 2) * 20 | 0},0.5)`; c2.fillRect(R(k + 3) * 256, R(k + 4) * 256, 3, 3); }
@@ -153,22 +153,22 @@ moho(nev, -0.18, 0.15 + 0.08, 0.02, 0.035, 51); moho(nev, 0.07, 0.15 + 0.06, 0.0
 marca('fruta', nev, 0.0, 0.2, 0.04); marca('verduras', nev, 0.0, 0.2, 0.04);
 marca('interior', nev, 0, 0.75, 0.05); marca('nevera', nev, 0, 0.95, ND / 2);
 const con = new THREE.Group(); con.position.y = FY + 0.03; nev.add(con);
-const hielo = new THREE.MeshPhysicalMaterial({ color: '#eaf6ff', roughness: 0.15, transparent: true, opacity: 0.8 }); hielo.defines = { PQ_LISO: 1 };
-const escarcha = lisa('#f4fbff', { roughness: 0.9 });
+const hielo = new THREE.MeshPhysicalMaterial({ color: '#cfeeff', roughness: 0.1, transparent: true, opacity: 0.75, emissive: '#8fd0ff', emissiveIntensity: 0.35, clearcoat: 1 }); hielo.defines = { PQ_LISO: 1 };
+const escarcha = lisa('#f4fbff', { roughness: 0.9, emissive: '#dff0ff', emissiveIntensity: 0.35 });
 const fundido = cl((Dm - 0.6) / 1.6) * (roto ? 1 : 0);
 const bloques = []; for (let k = 0; k < 10; k++) { const b = caja(con, 0.035, 0.035, 0.035, hielo, -0.26 + (k % 5) * 0.045, 0.02, 0.12 + Math.floor(k / 5) * 0.045); b.rotation.y = R(k) * 0.6; bloques.push(b); }
 const bolsa = (txt, col, x, z, w, hb) => { const cv = document.createElement('canvas'); cv.width = 256; cv.height = 160; const c2 = cv.getContext('2d'); c2.fillStyle = col; c2.fillRect(0, 0, 256, 160); c2.fillStyle = '#fff'; c2.font = '900 34px Archivo Black, Inter, sans-serif'; c2.textAlign = 'center'; c2.fillText(txt, 128, 92); const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace; const m = new THREE.MeshStandardMaterial({ map: tx, roughness: 0.35 }); m.defines = { PQ_LISO: 1 }; const b = caja(con, w, hb, 0.1, m, x, hb / 2, z); return b; };
 const bg1 = bolsa('GUISANTES', '#2e8b3e', 0.12, -0.05, 0.24, 0.12); const bg2 = bolsa('HELADO', '#7a3fc0', -0.16, -0.1, 0.2, 0.1); bg2.position.y = 0.05;
 const pizza = bolsa('PIZZA', '#d9472b', 0.05, -0.18, 0.4, 0.03); pizza.position.y = 0.135;
 const capa = caja(con, NW - 0.1, 0.03, ND - 0.12, escarcha, 0, 0.43, -0.02);
-const escM = lisa('#f2f9ff', { roughness: 1, transparent: true, opacity: 0.85, emissive: '#cfe6ff', emissiveIntensity: 0.5 }); const esc2 = []; for (let k = 0; k < 40; k++) { const sp = h.malla(new THREE.SphereGeometry(0.012 + R(k + 300) * 0.02, 8, 6), escM, (R(k + 200) - 0.5) * (NW - 0.14), 0.41, (R(k + 250) - 0.5) * (ND - 0.16)); sp.scale.y = 0.4; con.add(sp); esc2.push(sp); }
+const escM = lisa('#f2f9ff', { roughness: 1, transparent: true, opacity: 0.85, emissive: '#cfe6ff', emissiveIntensity: 0.5 }); const esc2 = []; for (let k = 0; k < 0; k++) { const sp = h.malla(new THREE.SphereGeometry(0.012 + R(k + 300) * 0.02, 8, 6), escM, (R(k + 200) - 0.5) * (NW - 0.14), 0.41, (R(k + 250) - 0.5) * (ND - 0.16)); sp.scale.y = 0.4; con.add(sp); esc2.push(sp); }
 const aguaC = h.malla(new THREE.PlaneGeometry(NW - 0.1, ND - 0.12), new THREE.MeshPhysicalMaterial({ color: '#a8d4ea', roughness: 0.02, metalness: 0.3, transparent: true, opacity: 0.7, clearcoat: 1 }), 0, 0.004, -0.02); aguaC.rotation.x = -Math.PI / 2; con.add(aguaC);
 const gC = []; for (let k = 0; k < 4; k++) { const gd = h.malla(new THREE.SphereGeometry(0.008, 8, 6), aguaC.material, -0.25 + k * 0.15, -0.02, ND / 2 - 0.08); gd.scale.y = 1.7; con.add(gd); gC.push(gd); }
 tick(con, x => { const d = L2(dias, sm(x)); const f = roto ? cl((d - 0.6) / 1.6) : 0; bloques.forEach((b, k) => { const s2 = Math.max(0.05, 1 - f * (0.8 + R(k) * 0.3)); b.scale.set(s2, s2 * 0.8, s2); b.position.y = 0.0175 * s2; }); capa.scale.y = Math.max(0.05, 1 - f); capa.visible = f < 0.95; esc2.forEach((sp, k) => { const v = Math.max(0.001, 1 - f * (1 + R(k))); sp.scale.set(v, v * 0.4, v); });
   aguaC.visible = f > 0.05; aguaC.material.opacity = 0.25 + f * 0.5; gC.forEach((gd, k) => { gd.visible = f > 0.2 && f < 1.2; const ph = (x * 2.5 + R(k + 9)) % 1; gd.position.y = -0.01 - ph * 0.25; }); }); con.userData.tick(0);
 marca('congelador', nev, 0, FY + 0.2, 0.05); marca('hielo', nev, -0.1, FY + 0.06, 0);
 const charcoN = cl((Dm - 1.2) / 2.5) * (roto ? 1 : 0);
-const agua = new THREE.MeshPhysicalMaterial({ color: '#9cc8e0', roughness: 0.02, metalness: 0.3, transparent: true, opacity: 0.75, clearcoat: 1 }); agua.defines = { PQ_LISO: 1 };
+const agua = new THREE.MeshPhysicalMaterial({ color: '#8cc4ea', roughness: 0.02, metalness: 0.3, transparent: true, opacity: 0.8, clearcoat: 1, emissive: '#3a7ab0', emissiveIntensity: 0.35 }); agua.defines = { PQ_LISO: 1 };
 const charco = h.malla(new THREE.CircleGeometry(0.5, 40), agua, NX + 0.25, 0.004, NZ + ND / 2 + 0.35); charco.rotation.x = -Math.PI / 2; g.add(charco);
 tick(charco, x => { const d = L2(dias, sm(x)); const c2 = roto ? cl((d - 1.2) / 2.5) : 0; charco.visible = c2 > 0.01; charco.scale.set(0.3 + c2 * 1.4, 0.2 + c2 * 1.0, 1); }); charco.userData.tick(0);
 marca('charco', g, NX + 0.25, 0.05, NZ + ND / 2 + 0.35);
