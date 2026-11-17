@@ -113,3 +113,4 @@
 2026-11-16|18:00|La Inundación de Cerveza de Londres|sabias|YO 6afa75d606e1675856c25bb6 IN 6afa75d7ff465c57dacccec4 TI 6afa75d8d7e5fee6389989ba|img=mixto|18:34
 2026-11-16|21:00|El misterio de Bella en el olmo|consecuencia|YO 6afa76d4ff465c57dacd1573 IN 6afa76d560a910801c65eaa3 TI 6afa76d6d7e5fee63899c6f5|img=mixto|21:39
 2026-11-17|08:00|La muerte de Allan Pinkerton|final|YO 6afbc35d797935b975d947b6 IN 6afbc35edf36f4d825640f7c TI 6afbc35e3e42cd001e497eab|img=mixto|08:37
+2026-11-17|12:00|El caso de Michael Malloy|cuenta|YO 6afbc472797935b975d9b602 IN 6afbc473f83aaca8f3a57a0e TI 6afbc4733e42cd001e49d7a2|img=mixto|11:20
