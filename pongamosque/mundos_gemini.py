@@ -18,6 +18,7 @@ N, SAL = int(sys.argv[1]), sys.argv[2]
 DIAS = int(os.environ.get('PQ_MUNDO_DIAS', '7'))
 HOY = datetime.date.today()
 ESCALERA = ['SEGUNDO 0', 'MINUTO 1', 'HORA 1', 'DÍA 1', 'SEMANA 1', 'MES 1', 'AÑO 1', 'AÑO 100']
+UNIDADES = ['SEGUNDO', 'MINUTO', 'HORA', 'DÍA', 'SEMANA', 'MES', 'AÑO']
 CIELOS = ['dia', 'atardecer', 'amanecer', 'noche', 'tormenta']
 MODELOS = ['gemini-3.5-flash', 'gemini-3.8-flash'] * 3
 
@@ -49,7 +50,7 @@ def prompt(W, hechos, error=''):
     estado = {k: v for k, v in W['opciones'].items() if k != 'vista'}
     return f"""Eres guionista del canal de TikTok/YouTube «Pongamos que…» (español de España, tono cercano, datos reales y sorprendentes).
 Cada vídeo es un ESCENARIO HIPOTÉTICO: la primera frase empieza literalmente por «Pongamos que…» y el vídeo avanza por la escalera de tiempo
-{' → '.join(ESCALERA)} con consecuencias cada vez mayores (no hace falta usar todos los peldaños, pero siempre en ese orden), y termina con una pregunta al espectador.
+{' → '.join(ESCALERA)} con consecuencias cada vez mayores (no hace falta usar todos los peldaños y puedes usar intermedios como «HORA 6» o «DÍA 3», pero siempre hacia delante), y termina con una pregunta al espectador.
 
 Este vídeo pasa ENTERO dentro de este mundo 3D (ya construido; no se puede añadir nada que no esté en él):
 MUNDO: {W['nombre']}. {W['descripcion']}
@@ -82,15 +83,16 @@ def validar(W, G):
     if not str(E[-1].get('hablado', '')).strip().endswith('?'): return 'la última frase no es una pregunta'
     pal = sum(len(str(e.get('hablado', '')).split()) for e in E)
     if not 75 <= pal <= 150: return f'el guion tiene {pal} palabras (tienen que ser 90-130)'
-    nivel = -1
+    nivel = (-1, 0)
     for i, e in enumerate(E):
         if e.get('toma') not in ids: return f'la escena {i + 1} usa la toma «{e.get("toma")}», que no existe'
         if i and e['toma'] == E[i - 1]['toma']: return f'las escenas {i} y {i + 1} repiten la misma toma'
         if not isinstance(e.get('estado', {}), dict) or set(e.get('estado') or {}) - est: return f'la escena {i + 1} usa estados que no existen'
         v = e.get('visual') or {}
         if v.get('tipo') == 'dia':
-            if v.get('texto') not in ESCALERA: return f'la escena {i + 1} tiene un peldaño que no es de la escalera: {v.get("texto")}'
-            k = ESCALERA.index(v['texto'])
+            mm = re.fullmatch(r'(SEGUNDO|MINUTO|HORA|DÍA|SEMANA|MES|AÑO)S? (\d+)', str(v.get('texto', '')).strip().upper())
+            if not mm: return f'la escena {i + 1} tiene un peldaño que no es de la escalera: {v.get("texto")}'
+            k = (UNIDADES.index(mm.group(1)), int(mm.group(2)))
             if k < nivel: return f'la escalera de tiempo va hacia atrás en la escena {i + 1}'
             nivel = k
         elif v.get('tipo') != 'cifra': return f'la escena {i + 1} tiene un visual raro'
