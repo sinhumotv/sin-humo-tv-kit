@@ -97,6 +97,9 @@ jobs:
         with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor || ''claude/kind-brown-9clxsm'' }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
       - uses: actions/download-artifact@v4
         with: { name: temas }
+      - name: Recursos 3D reales (modelos, texturas y cielos HDR libres, rama pq-recursos)
+        run: git clone -q --depth=1 -b pq-recursos "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" explicalo/plataforma/v2/recursos || echo "sin recursos 3D"
+
       - uses: actions/setup-node@v4
         with: { node-version: '22' }
       - uses: actions/setup-python@v5

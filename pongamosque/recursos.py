@@ -40,3 +40,8 @@ for p in PED:
         print('ok', p, flush=True)
     except Exception as x:
         print('FALLO', p, str(x)[:200], flush=True)
+# índice de lo que hay (el motor solo precarga los nombres que estén aquí)
+ind = {'modelos': sorted(os.listdir(f'{D}/modelos')) if os.path.isdir(f'{D}/modelos') else [],
+       'texturas': sorted(os.listdir(f'{D}/texturas')) if os.path.isdir(f'{D}/texturas') else [],
+       'hdri': sorted(f[:-4] for f in os.listdir(f'{D}/hdri')) if os.path.isdir(f'{D}/hdri') else []}
+json.dump(ind, open(f'{D}/indice.json', 'w'), indent=0); print('índice:', {k: len(v) for k, v in ind.items()})
