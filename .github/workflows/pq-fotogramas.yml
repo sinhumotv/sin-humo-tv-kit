@@ -1,0 +1,35 @@
+# (17-nov-2026) PONGAMOS QUE · fotogramas de prueba (uno por plano) de un vídeo de Claude, en el mismo entorno que la fábrica.
+name: Pongamos Que · fotogramas de prueba
+on:
+  workflow_dispatch:
+    inputs:
+      video: { description: 'ruta del vN.json (p. ej. pongamosque/claude/demo-real/v1.json)', required: true }
+      motor: { description: 'rama del motor de Explícalo', default: 'claude/kind-brown-9clxsm' }
+permissions: { contents: write }
+jobs:
+  fotogramas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: { repository: sinhumotv/Explicalo, ref: '${{ inputs.motor }}', token: '${{ secrets.GH_SECRETOS }}', path: explicalo }
+      - name: Recursos 3D
+        run: git clone -q --depth=1 -b pq-recursos "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" explicalo/plataforma/v2/recursos && ls explicalo/plataforma/v2/recursos
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji >/dev/null
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          pip install -q numpy pillow soundfile
+      - name: Fotogramas
+        env: { NODE_PATH: /opt/npm-tools/node_modules }
+        run: python3 pongamosque/prueba_fotogramas.py "${{ inputs.video }}" explicalo salida
+      - name: Guardar en la rama pq-fotos
+        run: |
+          mkdir pub && cp salida/d/pruebas/*.png pub/ && cd pub && git init -q -b pq-fotos && git add -A
+          git -c user.name=github-actions -c user.email=github-actions@users.noreply.github.com commit -qm "fotogramas ${{ inputs.video }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:pq-fotos
