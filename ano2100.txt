@@ -115,3 +115,4 @@
 2026-11-17|08:00|Guerra híbrida en Europa|cuenta|YO 6afbc374f83aaca8f3a5256a IN 6afbc37585dca6b14a185647 TI 6afbc3763e42cd001e4985f4|img=mixto|07:55
 2026-11-17|12:00|IA local sin servidores|error|YO 6afbc528f83aaca8f3a5b5f6 IN 6afbc5294b26315855b8f52f TI 6afbc5294b26315855b8f559|img=mixto|12:31
 2026-11-17|15:00|Predicción de terremotos con IA|nadie|YO 6afbc6e0797935b975da7cd8 IN 6afbc6e1df36f4d825656069 TI 6afbc6e285dca6b14a199041|img=mixto|14:31
+2026-11-17|18:00|Captura de carbono en 2100|sabias|YO 6afbc7e7f83aaca8f3a6a1de IN 6afbc7e8f83aaca8f3a6a26b TI 6afbc7e84b26315855b9e5ef|img=mixto|18:00
