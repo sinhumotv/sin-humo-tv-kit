@@ -126,3 +126,4 @@
 2026-11-17|12:00|La venganza de Hécuba|final|YO 6afbc7064b26315855b99a61 IN 6afbc7073e42cd001e4acb3c TI 6afbc7074b26315855b99afe|img=mixto|12:39
 2026-11-17|15:00|Filoctetes en Lemnos|increible|YO 6afbc88e85dca6b14a19fdea IN 6afbc88f4b26315855ba1208 TI 6afbc8903e42cd001e4b40f9|img=mixto|14:33
 2026-11-17|18:00|La huida de Eneas|nadie|YO 6afbc99f4b26315855ba64f9 IN 6afbc9a0f83aaca8f3a71683 TI 6afbc9a0df36f4d82566370e|img=mixto|17:46
+2026-11-17|21:00|La locura de Licurgo|sabias|YO 6afbcac9797935b975dbb8b8 IN 6afbcaca797935b975dbb8f1 TI 6afbcacadf36f4d8256687cf|img=mixto|20:52
