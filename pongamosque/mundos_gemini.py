@@ -111,7 +111,8 @@ def construir(W, G):
         if e.get('cielo') in CIELOS and d.get('cielo') != 'espacio': d['cielo'] = e['cielo']
         r = d.get('ruta')
         if r and bool(e.get('alejar')) != tomas[e['toma']].get('aleja', False):   # se invierte el recorrido de la toma
-            d['ruta'] = {'de': r['a'], 'a': r['de'], 'mira': r.get('mira2', r.get('mira')), 'mira2': r.get('mira')}
+            inv = lambda q: dict(q, de=q['a'], a=q['de'], mira=q.get('mira2', q.get('mira')), mira2=q.get('mira'))
+            d['ruta'] = [inv(q) for q in r] if isinstance(r, list) else inv(r)   # (17-nov-2026) una toma puede tener varios planos
         if not r: d['camara'] = 'alejar' if e.get('alejar') else (d.get('camara') if d.get('camara') not in (None, 'alejar') else 'acercar')
         if d.get('cielo') != 'tormenta': d.pop('efecto', None)
         h = str(e['hablado']).strip()
