@@ -120,3 +120,4 @@
 2026-11-18|08:00|El error de Sarajevo|error|YO 6afd188793fa11d37d028a6f IN 6afd1887bb12698d1593b431 TI 6afd18889f3765f6ab2a635d|img=mixto|07:41
 2026-11-18|12:00|El jinete Frank Hayes|increible|YO 6afd19abfc933ac285beca4a IN 6afd19acaa3b065dd96cf103 TI 6afd19acaa3b065dd96cf134|img=mixto|12:18
 2026-11-18|15:00|El robo del Duque de Wellington|pregunta|YO 6afd1ab4aa3b065dd96d330f IN 6afd1ab49f3765f6ab2b0ffe TI 6afd1ab593fa11d37d03338e|img=mixto|14:42
+2026-11-18|18:00|La letrina de Érfurt|sabias|YO 6afd1c05fc933ac285bf768f IN 6afd1c0639777dd13e11bd4d TI 6afd1c06aa3b065dd96d994a|img=ia|18:38
