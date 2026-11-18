@@ -127,7 +127,7 @@ def main():
     mundos = []
     for f in glob.glob(os.path.join(MUNDOS, '*.json')):
         W = json.load(open(f)); W['_f'] = f
-        if (HOY - ultimo_uso(W)).days >= DIAS: mundos.append(W)
+        if (HOY - ultimo_uso(W)).days >= DIAS and W.get('tomas'): mundos.append(W)   # (18-nov-2026) los mundos del estilo nuevo (sin tomas) los usará el generador nuevo
     random.shuffle(mundos); mundos.sort(key=ultimo_uso)
     print(f'mundos libres: {[W["id"] for W in mundos]} (de {len(glob.glob(os.path.join(MUNDOS, "*.json")))})', flush=True)
     hechos_n = 0
