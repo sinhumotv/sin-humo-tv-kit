@@ -117,3 +117,4 @@
 2026-11-17|15:00|La autopsia de Julio César|nadie|YO 6afbc59e85dca6b14a191f0b IN 6afbc59e3e42cd001e4a4924 TI 6afbc59f797935b975da1e14|img=mixto|14:54
 2026-11-17|18:00|El caso de Eben Byers|sabias|YO 6afbc697df36f4d825654be5 IN 6afbc698797935b975da669c TI 6afbc698f83aaca8f3a64bad|img=mixto|18:32
 2026-11-17|21:00|La muerte de Sigurd el Poderoso|consecuencia|YO 6afbc7983e42cd001e4af636 IN 6afbc799df36f4d825658982 TI 6afbc79adf36f4d8256589c9|img=mixto|21:21
+2026-11-18|08:00|El error de Sarajevo|error|YO 6afd188793fa11d37d028a6f IN 6afd1887bb12698d1593b431 TI 6afd18889f3765f6ab2a635d|img=mixto|07:41
