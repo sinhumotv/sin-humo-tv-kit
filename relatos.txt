@@ -128,3 +128,4 @@
 2026-11-17|18:00|La huida de Eneas|nadie|YO 6afbc99f4b26315855ba64f9 IN 6afbc9a0f83aaca8f3a71683 TI 6afbc9a0df36f4d82566370e|img=mixto|17:46
 2026-11-17|21:00|La locura de Licurgo|sabias|YO 6afbcac9797935b975dbb8b8 IN 6afbcaca797935b975dbb8f1 TI 6afbcacadf36f4d8256687cf|img=mixto|20:52
 2026-11-18|08:00|La Gigantomaquia|cuenta|YO 6afd29c8f38e9cc54862c531 IN 6afd29c9fc933ac285c3d8ac TI 6afd29cabb12698d15990ef3|img=mixto|08:07
+2026-11-18|12:00|Salmacis y Hermafrodito|error|YO 6afd2b349f3765f6ab3049cd IN 6afd2b35f38e9cc548632f2e TI 6afd2b35f38e9cc548632f6e|img=mixto|11:43
