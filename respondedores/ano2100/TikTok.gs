@@ -65,6 +65,16 @@ function ttComentarios_(t, videoId) {
   return d.comments || d.list || [];
 }
 
+/** (18-nov-2026) Hora en minutos desde que se escribió (TikTok la da en segundos o en milisegundos, como número o texto). */
+function ttEdadMin_(ct) { let n = Number(ct); if (!n) return 999; if (n > 1e12) n = n / 1000; return (Date.now() / 1000 - n) / 60; }
+/** Por qué un comentario no se responde: 'propio' (lo escribió el canal), 'respuesta' (contesta a otro comentario) u '' (se responde). */
+function ttMotivo_(c, t, vid) {
+  if (c.owner === true || c.owner === 'true' || (c.user_id && c.user_id === t.open_id)) return 'propio';
+  const p = String(c.parent_comment_id || ''), cid = String(c.comment_id || c.id || '');
+  if (p && p !== '0' && p !== cid && p !== String(vid)) return 'respuesta';
+  return '';
+}
+
 /** La llama revisarComentarios() cada 5 minutos. */
 function revisarTikTok_(estado, cupo) {
   if (cupo <= 0) return 0;
@@ -78,8 +88,9 @@ function revisarTikTok_(estado, cupo) {
       if (hechas >= cupo || !quedaCupoDiario_(estado)) break;
       const id = 'tt:' + (c.comment_id || c.id);
       if (estado.hechos.indexOf(id) >= 0) continue;
-      if (c.owner || c.user_id === t.open_id || c.parent_comment_id && c.parent_comment_id !== '0' && c.parent_comment_id !== c.comment_id) { marcar_(estado, id); continue; }
-      const edadMin = c.create_time ? (Date.now() / 1000 - c.create_time) / 60 : 999;
+      const mot = ttMotivo_(c, t, vid);
+      if (mot === 'propio' || mot === 'respuesta') { marcar_(estado, id); continue; }
+      const edadMin = ttEdadMin_(c.create_time);
       if (edadMin < AJUSTES.esperaMinutos) continue;
       if (edadMin > AJUSTES.diasAtras * 1440) { marcar_(estado, id); continue; }
       const respuesta = crearRespuesta_(c.text || '', v.caption || '');
@@ -102,3 +113,13 @@ function probarTikTok() {
   const vs = ttVideos_(t); console.log('Vídeos leídos: ' + vs.length);
   vs.slice(0, 3).forEach(v => { const cs = ttComentarios_(t, v.item_id || v.video_id); console.log('· ' + (v.caption || '').slice(0, 60) + ' → ' + cs.length + ' comentarios'); cs.slice(0, 3).forEach(c => console.log('   - ' + (c.text || '').slice(0, 80))); });
 }
+
+/** (18-nov-2026) Muestra, para los comentarios recientes, los datos que da TikTok y si se van a responder (no responde nada). */
+function diagnosticarTikTok() {
+  const t = ttToken_(), e = leerEstado_();
+  ttVideos_(t).slice(0, 3).forEach(v => { const vid = v.item_id || v.video_id;
+    ttComentarios_(t, vid).slice(0, 5).forEach(c => { const id = 'tt:' + (c.comment_id || c.id);
+      console.log((c.text || '').slice(0, 40) + ' | ya visto: ' + (e.hechos.indexOf(id) >= 0) + ' | motivo: ' + (ttMotivo_(c, t, vid) || 'se responde') + ' | minutos: ' + Math.round(ttEdadMin_(c.create_time)) + ' | datos: ' + JSON.stringify(c).slice(0, 300)); }); });
+}
+/** Vuelve a mirar los comentarios de TikTok que se dieron por vistos (por si se saltaron por error). */
+function reintentarTikTok() { const e = leerEstado_(); e.hechos = e.hechos.filter(x => x.indexOf('tt:') !== 0); guardarEstado_(e); console.log('Listo: en la próxima ronda se revisan otra vez los comentarios de TikTok.'); }
