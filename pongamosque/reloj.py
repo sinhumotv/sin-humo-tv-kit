@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """(14-nov-2026) PONGAMOS QUE · RELOJ. GitHub retrasa las tareas programadas hasta 7-8 horas, así que no se usa su hora:
 este proceso se queda despierto (~5 h 40 min), mira la hora de Madrid cada minuto y
-  · desde las 9:37, si aún no hay tanda de hoy y no se está fabricando, lanza «Pongamos Que · fabricar tanda»;
-  · cada 2 minutos intenta publicar (publicar.py solo publica cuando empieza una franja nueva: 11:43, 13:17, 15:47, 18:13, 20:41);
+  · desde las 5:37 (18-nov-2026: misma sintonía que los otros canales), si aún no hay tanda de hoy y no se está fabricando, lanza «Pongamos Que · fabricar tanda»;
+  · cada 2 minutos intenta publicar (publicar.py solo publica cuando empieza una franja nueva: 8:13, 12:13, 15:13, 18:13, 21:13);
 y antes de acabar se vuelve a lanzar a sí mismo. Una alarma de GitHub cada 20 min lo rearranca si la cadena se corta.
 Necesita GH_TOKEN (permiso actions: write), BUFFER_KEY y GITHUB_REPOSITORY."""
 import json, os, subprocess, sys, time, urllib.request
@@ -34,7 +34,7 @@ while time.time() < FIN:
             hoy = ahora.date().isoformat()
             hay_tanda = bool(d) and open(f'{d}/fecha.txt').read().strip() == hoy if d and os.path.exists(f'{d}/fecha.txt') else False
             # 1) fabricación del día
-            if hm >= 9 * 60 + 37 and not hay_tanda and not fabricando():
+            if hm >= 5 * 60 + 37 and not hay_tanda and not fabricando():
                 api('actions/workflows/pongamosque-diario.yml/dispatches', 'POST', {'ref': 'main', 'inputs': {'cuantos': '5'}})
                 print(ahora.strftime('%H:%M'), 'lanzada la tanda de hoy', flush=True)
             # 2) publicación (publicar.py decide si toca)
