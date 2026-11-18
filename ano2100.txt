@@ -121,3 +121,4 @@
 2026-11-18|12:00|IA ejecutada en disquete|increible|YO 6afd2b62fc933ac285c44fa5 IN 6afd2b62aa3b065dd9724a90 TI 6afd2b63aa3b065dd9724ac0|img=mixto|11:40
 2026-11-18|15:00|Carreteras magnéticas en 2100|final|YO 6afd2c609f3765f6ab30a752 IN 6afd2c60fc933ac285c494c8 TI 6afd2c6193fa11d37d088ebc|img=mixto|14:47
 2026-11-18|18:00|Traductor de lenguaje animal con IA|sabias|YO 6afd2d37f38e9cc54863bc2b IN 6afd2d389f3765f6ab30d982 TI 6afd2d389f3765f6ab30d9e7|img=mixto|17:48
+2026-11-18|21:00|El fin de las pantallas físicas|consecuencia|YO 6afd2e0eaa3b065dd9730835 IN 6afd2e0ebb12698d159a4a0c TI 6afd2e0f93fa11d37d0901f3|img=mixto|20:25
