@@ -9,7 +9,7 @@ videos = json.load(open(f'{D}/videos.json'))
 from datetime import datetime
 from zoneinfo import ZoneInfo
 ahora = datetime.now(ZoneInfo('Europe/Madrid')); hm = ahora.hour * 60 + ahora.minute
-FRANJAS = [(11, 43), (13, 17), (15, 47), (18, 13), (20, 41)]   # (14-nov-2026) horas exactas: el «reloj» llama cada pocos minutos
+FRANJAS = [(8, 13), (12, 13), (15, 13), (18, 13), (21, 13)]   # (18-nov-2026) misma sintonía que los otros canales (8, 12, 15, 18 y 21 h); el «reloj» llama cada pocos minutos
 franja = sum(hm >= h * 60 + m for h, m in FRANJAS)
 if franja == 0: print('fuera de horario: no se publica'); sys.exit(0)
 dia = ahora.date().isoformat()   # (14-nov-2026) la franja cuenta solo dentro del mismo día
