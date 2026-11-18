@@ -72,6 +72,7 @@ function revisarComentarios() {
     let hechas = 0;
     try { hechas += revisarYouTube_(estado, AJUSTES.maxPorRonda - hechas); } catch (e) { anotarError_('YouTube', e); }
     try { hechas += revisarInstagram_(estado, AJUSTES.maxPorRonda - hechas); } catch (e) { anotarError_('Instagram', e); }
+    try { if (typeof revisarTikTok_ === 'function') hechas += revisarTikTok_(estado, AJUSTES.maxPorRonda - hechas); } catch (e) { anotarError_('TikTok', e); }   // (18-nov-2026) archivo TikTok.gs
     guardarEstado_(estado);
   } finally {
     lock.releaseLock();
