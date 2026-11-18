@@ -10,7 +10,8 @@ const brillo = (col, it) => { const m = new THREE.MeshStandardMaterial({ color: 
 const g = new THREE.Group();
 const LUZ = o.luz === undefined ? 0 : o.luz, VEL = o.velas === undefined ? 0 : o.velas, BAT = o.bateria === undefined ? 1 : o.bateria, LIN = o.linternas === undefined ? 0 : o.linternas;
 const FH = 3.0, BW = 9, BD = 6, NP = 4;
-const luzPiso = (x, k) => { const v = L2(LUZ, 0); if (!Array.isArray(LUZ)) return LUZ; const t0 = 0.15 + (NP - 1 - k) * 0.14; return x < t0 ? LUZ[0] : x < t0 + 0.06 ? (Math.sin(x * 300 + k) > 0 ? LUZ[0] : LUZ[1]) : LUZ[1]; };
+const parpa = (x, x0) => x < x0 ? 1 : x < x0 + 0.06 ? (Math.sin(x * 300) > 0 ? 1 : 0.15) : 0;
+const luzPiso = (x, k) => { if (o.ultimo === k) return parpa(x, 0.42); if (o.queda === k) return 1; if (!Array.isArray(LUZ)) return LUZ; const t0 = 0.15 + (NP - 1 - k) * 0.14; return x < t0 ? LUZ[0] : x < t0 + 0.06 ? (Math.sin(x * 300 + k) > 0 ? LUZ[0] : LUZ[1]) : LUZ[1]; };
 const lienzo = (w, hh, f) => { const cv = document.createElement('canvas'); cv.width = w; cv.height = hh; f(cv.getContext('2d'), w, hh); const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; return t; };
 const cieloTx = lienzo(256, 256, (c2, w, hh) => { const gr = c2.createLinearGradient(0, 0, 0, hh); gr.addColorStop(0, '#07122a'); gr.addColorStop(1, '#22365e'); c2.fillStyle = gr; c2.fillRect(0, 0, w, hh); for (let k = 0; k < 60; k++) { c2.fillStyle = 'rgba(255,255,255,' + (0.3 + R(k) * 0.6) + ')'; c2.fillRect(R(k + 1) * w, R(k + 2) * hh * 0.7, 2, 2); }
   for (let k = 0; k < 7; k++) { const bx = k * 40 - 10, bh = 60 + R(k + 40) * 90; c2.fillStyle = '#0c1424'; c2.fillRect(bx, hh - bh, 36, bh); } });
@@ -25,17 +26,17 @@ const persona = (p, x, y, z, ry, ropa, pose) => { const pp = new THREE.Group(); 
   const cab = new THREE.Group(); cab.position.y = sent ? 1.5 : 1.68; cab.add(h.malla(new THREE.SphereGeometry(0.12, 18, 14), piel, 0, 0, 0)); cab.add(h.malla(new THREE.SphereGeometry(0.125, 18, 14, 0, 6.283, 0, 1.6), pelo, 0, 0.02, -0.01)); pp.add(cab);
   pp.position.set(x, y, z); pp.rotation.y = ry || 0; p.add(pp); const b0 = pp.rotation.y, k0 = R(x * 3 + z);
   tick(pp, (xx, u, L, t) => { t = t || 0; tor.scale.y = 1 + 0.015 * Math.sin(t * 2.3 + k0 * 6); cab.rotation.y = Math.sin(t * 0.4 + k0 * 5) * 0.25; pp.rotation.y = b0 + Math.sin(t * 0.25 + k0) * 0.06; }); pp.userData.tick(0, 0, 1, 0); return pp; };
-const movil = (p, x, y, z, ry, k) => { const q = new THREE.Group(); caja(q, 0.08, 0.15, 0.012, lisa('#111'), 0, 0, 0); const pm = brillo('#9fd0ff', 1.2); const pa = caja(q, 0.07, 0.13, 0.002, pm, 0, 0, 0.007);
+const movil = (p, x, y, z, ry, k) => { const q = new THREE.Group(); caja(q, 0.08, 0.15, 0.012, lisa('#111'), 0, 0, 0); const pm = brillo('#9fd0ff', 1.2); const pa = caja(q, 0.07, 0.13, 0.002, pm, 0, 0, 0.007); const bmar = caja(q, 0.04, 0.018, 0.001, lisa('#ffffff'), 0, 0.02, 0.009); const bfM = brillo('#3cff6a', 2); const bf = caja(q, 0.034, 0.012, 0.001, bfM, 0, 0.02, 0.0095);
   const conoM = new THREE.MeshBasicMaterial({ color: '#fff6dc', transparent: true, opacity: 0.0, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide }); const cono = h.malla(new THREE.ConeGeometry(0.7, 2.2, 20, 1, true), conoM, 0, 0, -1.1); cono.rotation.x = -Math.PI / 2; q.add(cono);
   const foco = new THREE.SpotLight('#fff6dc', 0, 7, 0.45, 0.6, 1.2); foco.position.set(0, 0, 0); const obj = new THREE.Object3D(); obj.position.set(0, -0.3, -3); q.add(obj); foco.target = obj; q.add(foco);
   q.position.set(x, y, z); q.rotation.set(-0.3, ry || 0, 0); p.add(q);
-  tick(q, (xx, u, L, t) => { t = t || 0; const lin = L2(LIN, sm(xx)), bat = L2(BAT, sm(xx)); conoM.opacity = 0.35 * lin; cono.visible = lin > 0.02; foco.intensity = 16 * lin; pm.emissiveIntensity = 1.4 * bat; q.rotation.y = (ry || 0) + Math.sin(t * 0.8 + k) * 0.3 * lin; q.rotation.x = -0.3 + Math.sin(t * 0.6 + k * 2) * 0.12 * lin; }); q.userData.tick(0, 0, 1, 0); return q; };
+  tick(q, (xx, u, L, t) => { t = t || 0; const lin = Array.isArray(LIN) ? (LIN[1] > LIN[0] ? sm((xx - 0.1 - (k % 4) * 0.08) * 5) : 1 - sm((xx - 0.3) * 3)) : LIN, bat = L2(BAT, sm(xx)); bf.scale.x = Math.max(0.02, bat); bf.position.x = -0.017 * (1 - bat); bfM.emissive.set(bat > 0.5 ? '#3cff6a' : bat > 0.2 ? '#ffb53c' : '#ff3b2c'); bf.visible = bat > 0.03; bmar.visible = bat > 0.03; conoM.opacity = 0.35 * lin; cono.visible = lin > 0.02; foco.intensity = 16 * lin; pm.emissiveIntensity = 1.4 * bat; q.rotation.y = (ry || 0) + Math.sin(t * 0.8 + k) * 0.3 * lin; q.rotation.x = -0.3 + Math.sin(t * 0.6 + k * 2) * 0.12 * lin; }); q.userData.tick(0, 0, 1, 0); return q; };
 const vela = (p, x, y, z, k) => { const q = new THREE.Group(); q.add(h.malla(new THREE.CylinderGeometry(0.035, 0.035, 0.16, 14), lisa('#f4ecd8'), 0, 0.08, 0)); const ll = h.malla(new THREE.SphereGeometry(0.02, 10, 8), brillo('#ffb340', 4), 0, 0.19, 0); ll.scale.y = 1.8; q.add(ll);
   const pl = new THREE.PointLight('#ffad4a', 0, 4, 1.5); pl.position.y = 0.3; q.add(pl); q.position.set(x, y, z); p.add(q);
   tick(q, (xx, u, L, t) => { t = t || 0; const v = L2(VEL, sm(xx)); q.visible = v > 0.02; const f = 0.85 + Math.sin(t * 9 + k * 3) * 0.08 + Math.sin(t * 23 + k) * 0.06; pl.intensity = 3.2 * v * f; ll.scale.set(f, 1.8 * f, f); }); q.userData.tick(0, 0, 1, 0); return q; };
 const ED = new THREE.Group(); g.add(ED);
 for (let k = 0; k < NP; k++) { const y0 = k * FH, P = new THREE.Group(); P.position.y = y0; ED.add(P);
-  { const lu = new THREE.PointLight('#7f9be0', 4.5, 12, 1.2); lu.position.set(0, FH * 0.7, 1.5); P.add(lu); }
+  { const lu = new THREE.PointLight('#7f9be0', 6.5, 12, 1.2); lu.position.set(0, FH * 0.7, 1.5); P.add(lu); }
   caja(P, BW, 0.25, BD, forjado, 0, -0.125, 0); caja(P, BW - 0.2, 0.02, BD - 0.2, sueloM[k], 0, 0.01, 0);
   caja(P, BW, FH, 0.25, lisa(paredes[k], { roughness: 0.85 }), 0, FH / 2, -BD / 2); caja(P, 0.3, FH, BD, muroExt, -BW / 2, FH / 2, 0); caja(P, 0.3, FH, BD, muroExt, BW / 2, FH / 2, 0);
   caja(P, 0.15, FH, BD - 1, muro, 0.5, FH / 2, -0.5); caja(P, 0.15, FH, BD - 1, muro, 1.7, FH / 2, -0.5);
@@ -52,8 +53,8 @@ for (let k = 0; k < NP; k++) { const y0 = k * FH, P = new THREE.Group(); P.posit
     const grifo = new THREE.Group(); grifo.position.set(2.6, 0.92, -BD / 2 + 0.3); P.add(grifo); const gc = h.malla(new THREE.TorusGeometry(0.12, 0.02, 8, 16, Math.PI), lisa('#c9ced6', { metalness: 0.8, roughness: 0.2 }), 0, 0.2, 0.05); grifo.add(gc); grifo.add(h.malla(new THREE.CylinderGeometry(0.02, 0.02, 0.2, 8), lisa('#c9ced6', { metalness: 0.8, roughness: 0.2 }), -0.12, 0.1, 0.05));
     const chorro = h.malla(new THREE.CylinderGeometry(0.012, 0.012, 0.3, 8), new THREE.MeshStandardMaterial({ color: '#bfe6ff', emissive: '#6ab0e0', emissiveIntensity: 0.5, transparent: true, opacity: 0.8 }), 0.12, 0.05, 0.05); grifo.add(chorro);
     marca('salon' + k, P, -2.4, 1.3, 0.4); marca('tv' + k, P, -2.6, 1.15, -BD / 2 + 0.35); marca('cocina' + k, P, 3.0, 1.2, -1.5); marca('nevera' + k, P, 4.0, 1.0, -BD / 2 + 0.9); marca('grifo' + k, P, 2.6, 1.05, -BD / 2 + 0.35);
-    tick(P, (x, u, L, t) => { const v = luzPiso(x, k); pl.intensity = 16 * v; pl2.intensity = 8 * v; bm.emissiveIntensity = 3 * v; tvM.emissiveIntensity = 0.9 * v * (0.85 + 0.15 * Math.sin((t || 0) * 5 + k)); chorro.visible = !(o.sinAgua && k === NP - 1) && (o.grifo === k);
-      chorro.scale.y = 1; }); P.userData.tick(0, 0, 1, 0);
+    tick(P, (x, u, L, t) => { const v = luzPiso(x, k); pl.intensity = 16 * v; pl2.intensity = 8 * v; bm.emissiveIntensity = 3 * v; tvM.emissiveIntensity = 0.9 * v * (0.85 + 0.15 * Math.sin((t || 0) * 5 + k)); const corta = typeof o.corta === 'number' ? o.corta : -1; chorro.visible = o.grifo === k && (corta < 0 || x < corta + 0.08); chorro.scale.y = corta >= 0 ? Math.max(0.05, 1 - sm((x - corta) * 12)) : 1;
+      }); P.userData.tick(0, 0, 1, 0);
   } else {
     caja(P, 0.15, FH, BD - 1, muro, -1.5, FH / 2, -0.5);
     const buz = lisa('#8a8f96', { metalness: 0.5, roughness: 0.4 }); for (let a = 0; a < 3; a++) for (let b = 0; b < 4; b++) caja(P, 0.32, 0.22, 0.25, buz, -3.9 + b * 0.36, 1.2 + a * 0.26, -BD / 2 + 0.3);
@@ -73,12 +74,14 @@ const emer = brillo('#ff3b2c', 0); caja(asc, 0.25, 0.05, 0.1, emer, 1.1, AY + 1.
 for (let k = 0; k < 3; k++) caja(asc, 0.03, NP * FH, 0.03, lisa('#555'), 0.75 + k * 0.35, NP * FH / 2, -1.85);
 persona(asc, 1.1, AY - 1.1, -1.2, 0, '#7a5ab0');
 marca('ascensor', ED, 1.1, AY, -0.6);
-tick(asc, (x, u, L, t) => { const v = Array.isArray(LUZ) ? luzPiso(x, 1) : LUZ; const e = (1 - v) * (0.6 + 0.4 * Math.sin((t || 0) * 3)); emer.emissiveIntensity = 3 * e; pe.intensity = 3 * e; }); asc.userData.tick(0, 0, 1, 0);
+tick(asc, (x, u, L, t) => { const xc = typeof o.cae === 'number' ? o.cae : null; const dcae = xc !== null ? sm((x - xc) * 7) : (o.caido ? 1 : 0); asc.position.y = -0.3 * dcae + (xc !== null && x > xc && x < xc + 0.1 ? Math.sin(x * 500) * 0.04 : 0); const v = Array.isArray(LUZ) ? luzPiso(x, 1) : LUZ; const e = (1 - v) * (0.6 + 0.4 * Math.sin((t || 0) * 3)); emer.emissiveIntensity = 3 * e; pe.intensity = 3 * e; }); asc.userData.tick(0, 0, 1, 0);
 persona(ED, -2.0, 1 * FH + 0.02, 0.6, -0.2, '#4a6fa8', 'sentado'); movil(ED, -1.8, 1 * FH + 1.0, 0.25, 0.1, 1);
-persona(ED, 2.6, 2 * FH, -0.6, Math.PI, '#c9873a'); movil(ED, 2.75, 2 * FH + 1.25, -0.95, 0.0, 2);
-persona(ED, -3.0, 2 * FH, 0.4, 0.4, '#3a8a6a'); movil(ED, -2.85, 2 * FH + 1.2, 0.1, 0.4, 3);
+persona(ED, 2.6, 2 * FH, -0.6, Math.PI, '#c9873a'); movil(ED, 2.75, 2 * FH + 1.25, -0.95, -2.0, 2);
+persona(ED, -3.0, 2 * FH, 0.4, 0.4, '#3a8a6a'); movil(ED, -2.75, 2 * FH + 1.25, 0.75, 0.9, 3);
 persona(ED, 1.95, 3 * FH, -1.3, -2.2, '#b04a5a'); persona(ED, -2.6, 3 * FH + 0.02, 0.6, 0.2, '#5a5a8a', 'sentado'); movil(ED, -2.4, 3 * FH + 1.0, 0.3, 0.2, 4);
-marca('movil1', ED, -1.8, 1 * FH + 1.0, 0.25); marca('piso2', ED, 0, 2 * FH + 1.4, 0); marca('piso3', ED, 0, 3 * FH + 1.4, 0);
+marca('movil1', ED, -1.8, 1 * FH + 1.0, 0.25); { const lk = new THREE.PointLight('#fff1d0', 5, 4, 1.4); lk.position.set(2.2, 3 * FH + 1.9, -1.6); ED.add(lk); }
+{ const ch = h.malla(new THREE.CircleGeometry(0.6, 32), new THREE.MeshStandardMaterial({ color: '#8cc4ea', roughness: 0.05, metalness: 0.3, transparent: true, opacity: 0.8, emissive: '#3a7ab0', emissiveIntensity: 0.5 }), 3.9, 3 * FH + 0.03, -BD / 2 + 1.25); ch.rotation.x = -Math.PI / 2; ED.add(ch);
+  tick(ch, (xx) => { const c2 = L2(o.charco || 0, sm(xx)); ch.visible = c2 > 0.02; ch.scale.set(0.2 + c2, 0.15 + c2 * 0.8, 1); }); ch.userData.tick(0, 0, 1, 0); } marca('piso2', ED, 0, 2 * FH + 1.4, 0); marca('piso3', ED, 0, 3 * FH + 1.4, 0);
 [[-2.2, FH + 0.45, -0.4], [-2.6, 0.45 + 2 * FH, -0.4], [-2.2, 3 * FH + 0.45, -0.4], [3.2, 2 * FH + 0.92, -BD / 2 + 0.35], [2.4, 3 * FH + 0.92, -BD / 2 + 0.35]].forEach(([x, y, z], k) => vela(ED, x, y, z, k));
 const PG = o.portal ? 1 : 0; if (PG) { const mesa = new THREE.Group(); mesa.position.set(-2.6, 0, 0.6); ED.add(mesa); caja(mesa, 1.4, 0.06, 0.8, lisa('#7a5236'), 0, 0.75, 0); [[-1, -1], [1, -1], [-1, 1], [1, 1]].forEach(([a, b]) => caja(mesa, 0.05, 0.75, 0.05, lisa('#5a3a22'), a * 0.6, 0.37, b * 0.32));
   [0, 1, 2].forEach(k => vela(mesa, -0.4 + k * 0.4, 0.78, 0, 10 + k));
