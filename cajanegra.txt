@@ -118,3 +118,4 @@
 2026-11-17|18:00|El caso de Eben Byers|sabias|YO 6afbc697df36f4d825654be5 IN 6afbc698797935b975da669c TI 6afbc698f83aaca8f3a64bad|img=mixto|18:32
 2026-11-17|21:00|La muerte de Sigurd el Poderoso|consecuencia|YO 6afbc7983e42cd001e4af636 IN 6afbc799df36f4d825658982 TI 6afbc79adf36f4d8256589c9|img=mixto|21:21
 2026-11-18|08:00|El error de Sarajevo|error|YO 6afd188793fa11d37d028a6f IN 6afd1887bb12698d1593b431 TI 6afd18889f3765f6ab2a635d|img=mixto|07:41
+2026-11-18|12:00|El jinete Frank Hayes|increible|YO 6afd19abfc933ac285beca4a IN 6afd19acaa3b065dd96cf103 TI 6afd19acaa3b065dd96cf134|img=mixto|12:18
