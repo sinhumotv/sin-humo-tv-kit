@@ -131,3 +131,4 @@
 2026-11-18|12:00|Salmacis y Hermafrodito|error|YO 6afd2b349f3765f6ab3049cd IN 6afd2b35f38e9cc548632f2e TI 6afd2b35f38e9cc548632f6e|img=mixto|11:43
 2026-11-18|18:00|Las hijas de Minio|sabias|YO 6afd2df493fa11d37d08f909 IN 6afd2df4aa3b065dd972fd81 TI 6afd2df5f38e9cc54863f3b0|img=mixto|17:54
 2026-11-18|21:00|La muerte del rey Egeo|nadie|YO 6afd2f5fbb12698d159a9370 IN 6afd2f60bb12698d159a93ae TI 6afd2f61fc933ac285c577f0|img=mixto|20:36
+2026-11-18|15:00|Aquiles en Esciros|final|YO 6afd3e8afc933ac285c9f49c IN 6afd3e8b93fa11d37d0ddb81 TI 6afd3e8b93fa11d37d0ddbe7|img=mixto|15:31
