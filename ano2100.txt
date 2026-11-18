@@ -119,3 +119,4 @@
 2026-11-17|21:00|Pintura solar fotovoltaica|consecuencia|YO 6afbc9293e42cd001e4b824a IN 6afbc92a797935b975db3e7f TI 6afbc92bdf36f4d825660e3f|img=mixto|21:05
 2026-11-18|08:00|Burocracia de IA en Minecraft|pregunta|YO 6afd29fdbb12698d1599347c IN 6afd29fdaa3b065dd971eeb2 TI 6afd29fe9f3765f6ab2ff6d7|img=mixto|08:11
 2026-11-18|12:00|IA ejecutada en disquete|increible|YO 6afd2b62fc933ac285c44fa5 IN 6afd2b62aa3b065dd9724a90 TI 6afd2b63aa3b065dd9724ac0|img=mixto|11:40
+2026-11-18|15:00|Carreteras magnéticas en 2100|final|YO 6afd2c609f3765f6ab30a752 IN 6afd2c60fc933ac285c494c8 TI 6afd2c6193fa11d37d088ebc|img=mixto|14:47
