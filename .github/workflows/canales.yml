@@ -24,8 +24,10 @@ jobs:
         with: { path: ~/.cache/huggingface, key: hf-qwen3-tts-base-1.7b }
       - name: Programas
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji fonts-dejavu-core espeak-ng >/dev/null
-          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0 && npx playwright install --with-deps chromium >/dev/null
+          # (19-nov-2026) los servidores de Ubuntu fallan a veces: hasta 4 intentos antes de dar el vídeo por perdido
+          for i in 1 2 3 4; do sudo apt-get update -qq && sudo apt-get install -y -qq --fix-missing ffmpeg fonts-noto-color-emoji fonts-dejavu-core espeak-ng >/dev/null && break; echo "apt falló (intento $i)"; sleep 30; done
+          mkdir -p /opt/npm-tools && cd /opt/npm-tools && npm init -y >/dev/null && npm install -s playwright@1.63.0
+          for i in 1 2 3 4; do npx playwright install --with-deps chromium >/dev/null && break; echo "playwright falló (intento $i)"; sleep 30; done
           pip install -q modal==1.6.2 numpy pillow soundfile num2words faster-whisper==1.2.1 onnxruntime six
           pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
           pip install -q qwen-tts librosa
@@ -43,4 +45,13 @@ jobs:
           CF_TOKEN_IA: ${{ secrets.EXPLICALO_CF_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.EXPLICALO_CF_ACCOUNT }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.EXPLICALO_CF_TOKEN }}
-        run: cd explicalo && python3 plataforma/servidor/en_github.py "${{ inputs.trabajo }}"
+        # (19-nov-2026) si un corto de sin humo TV falla (Gemini no encuentra noticia, falla el montaje…), se reintenta hasta 2
+        # veces con otra noticia dentro de la misma franja, en vez de dejar la franja vacía
+        run: |
+          cd explicalo
+          intentos=1; [ "${{ inputs.trabajo }}" = sinhumo ] && intentos=3
+          for i in $(seq 1 $intentos); do
+            python3 plataforma/servidor/en_github.py "${{ inputs.trabajo }}" && exit 0
+            [ $i -lt $intentos ] && { echo "::warning::intento $i fallido; se reintenta"; python3 ../reloj/olvidar_franja_sinhumo.py; sleep 20; }
+          done
+          exit 1
