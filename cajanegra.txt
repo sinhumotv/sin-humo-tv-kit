@@ -122,3 +122,4 @@
 2026-11-18|15:00|El robo del Duque de Wellington|pregunta|YO 6afd1ab4aa3b065dd96d330f IN 6afd1ab49f3765f6ab2b0ffe TI 6afd1ab593fa11d37d03338e|img=mixto|14:42
 2026-11-18|18:00|La letrina de Érfurt|sabias|YO 6afd1c05fc933ac285bf768f IN 6afd1c0639777dd13e11bd4d TI 6afd1c06aa3b065dd96d994a|img=ia|18:38
 2026-11-18|21:00|La mordedura del mono|consecuencia|YO 6afd1ceb9f3765f6ab2ba2c9 IN 6afd1cec9f3765f6ab2ba2fc TI 6afd1cec39777dd13e11efa2|img=mixto|21:40
+2026-11-19|08:00|El extraviado de las catacumbas|nadie|YO 6afe6f8e46636f319e851dec IN 6afe6f8f59eff0b616d9837c TI 6afe6f8f59eff0b616d983b6|img=mixto|07:44
