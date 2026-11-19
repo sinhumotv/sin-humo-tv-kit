@@ -125,3 +125,4 @@
 2026-11-19|08:00|La dimisión del líder de los microchips|error|YO 6afe6c83749099bdc7086577 IN 6afe6c8459eff0b616d881d1 TI 6afe6c853802f5b9fc641649|img=ia|07:32
 2026-11-19|12:00|Robots humanoides en la fábrica|cuenta|YO 6afe6de33802f5b9fc649194 IN 6afe6de4749099bdc708cfb8 TI 6afe6de446636f319e849f87|img=mixto|12:39
 2026-11-19|15:00|Vuelos suborbitales de pasajeros en 2100|nadie|YO 6afe6ed8f6b6aa0cd49b4929 IN 6afe6ed946636f319e84dfb8 TI 6afe6edab16549e9b81f9d91|img=mixto|15:02
+2026-11-19|18:00|Úteros artificiales en 2100|sabias|YO 6afe701d59eff0b616d9c10f IN 6afe701e749099bdc7098d40 TI 6afe701e59eff0b616d9c140|img=mixto|17:30
