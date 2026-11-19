@@ -125,3 +125,4 @@
 2026-11-19|08:00|El extraviado de las catacumbas|nadie|YO 6afe6f8e46636f319e851dec IN 6afe6f8f59eff0b616d9837c TI 6afe6f8f59eff0b616d983b6|img=mixto|07:44
 2026-11-19|12:00|El misterio del Joyita|final|YO 6afe7112f6b6aa0cd49c0019 IN 6afe7113749099bdc709db6a TI 6afe711459eff0b616da0dba|img=mixto|11:46
 2026-11-19|15:00|El desastre del Hindenburg|cuenta|YO 6afe727d46636f319e86019a IN 6afe727e3802f5b9fc65f698 TI 6afe727f46636f319e86020d|img=mixto|14:35
+2026-11-19|18:00|El enigma de George Mallory|sabias|YO 6afe73d83802f5b9fc664a91 IN 6afe73d946636f319e864f53 TI 6afe73da59eff0b616dada59|img=mixto|17:58
