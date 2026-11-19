@@ -133,3 +133,4 @@
 2026-11-18|21:00|La muerte del rey Egeo|nadie|YO 6afd2f5fbb12698d159a9370 IN 6afd2f60bb12698d159a93ae TI 6afd2f61fc933ac285c577f0|img=mixto|20:36
 2026-11-18|15:00|Aquiles en Esciros|final|YO 6afd3e8afc933ac285c9f49c IN 6afd3e8b93fa11d37d0ddb81 TI 6afd3e8b93fa11d37d0ddbe7|img=mixto|15:31
 2026-11-19|08:00|Cleobis y Bitón|consecuencia|YO 6afe7061b16549e9b82022df IN 6afe7062f6b6aa0cd49bc6f9 TI 6afe706259eff0b616d9d631|img=mixto|08:23
+2026-11-19|12:00|Melampo y los animales|pregunta|YO 6afe71efb16549e9b8209efa IN 6afe71f0749099bdc70a15ab TI 6afe71f1f6b6aa0cd49c45ac|img=mixto|12:05
