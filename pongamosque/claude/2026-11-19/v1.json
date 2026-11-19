@@ -1,0 +1,1708 @@
+{
+ "titulo": "¿Y si nevara toda la noche en tu ciudad? ❄️",
+ "meta": {
+  "tema": "¿Qué pasaría si empezara a nevar en tu ciudad y no parara en toda la noche?",
+  "titulo": "¿Y si nevara toda la noche en tu ciudad? ❄️",
+  "gancho": "Lo más difícil no es la nieve. Es salir del portal.",
+  "pregunta": "¿Tú qué harías con un día así?",
+  "hashtags": [
+   "nieve",
+   "nevada",
+   "invierno",
+   "quepasariasi",
+   "curiosidades"
+  ]
+ },
+ "escenas": [
+  {
+   "hablado": "Pongamos que esta noche empieza a nevar en tu ciudad, y no para.",
+   "subtitulo": "Pongamos que esta noche empieza a nevar en tu ciudad, y no para.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEGUNDO 0",
+    "detalle": "Nieve"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": [
+       0,
+       0.12
+      ]
+     }
+    ],
+    "ruta": {
+     "de": [
+      "calle",
+      [
+       0.0,
+       0.06,
+       0.95
+      ]
+     ],
+     "a": [
+      "tejados",
+      [
+       0.06,
+       0.14,
+       0.85
+      ]
+     ],
+     "mira": "calle",
+     "mira2": "tejados",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 0,
+     "t1": 0.5
+    },
+    "sonidos": [
+     [
+      0.1,
+      "viento"
+     ]
+    ],
+    "luz": "nocturna",
+    "efecto": "nieve"
+   }
+  },
+  {
+   "hablado": "En una hora, los tejados ya están blancos.",
+   "subtitulo": "En una hora, los tejados ya están blancos.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 1",
+    "detalle": "Todo blanco"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": [
+       0.12,
+       0.35
+      ]
+     }
+    ],
+    "ruta": {
+     "de": [
+      "tejados",
+      [
+       0.06,
+       0.14,
+       0.85
+      ]
+     ],
+     "a": [
+      "coche",
+      [
+       0.06,
+       0.06,
+       0.32
+      ]
+     ],
+     "mira": "tejados",
+     "mira2": "coche",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 0.5,
+     "t1": 1.5
+    },
+    "sonidos": [
+     [
+      0.2,
+      "viento"
+     ]
+    ],
+    "luz": "nocturna",
+    "efecto": "nieve"
+   }
+  },
+  {
+   "hablado": "Los coches desaparecen poco a poco bajo la nieve.",
+   "subtitulo": "Los coches desaparecen poco a poco bajo la nieve.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 6",
+    "detalle": "Coches"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": [
+       0.35,
+       0.6
+      ]
+     }
+    ],
+    "ruta": {
+     "de": [
+      "coche",
+      [
+       0.06,
+       0.06,
+       0.32
+      ]
+     ],
+     "a": [
+      "semaforo",
+      [
+       0.07,
+       0.0,
+       0.3
+      ]
+     ],
+     "mira": "coche",
+     "mira2": "semaforo",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 1.5,
+     "t1": 2.5
+    },
+    "sonidos": [
+     [
+      0.4,
+      "crujido"
+     ]
+    ],
+    "luz": "nocturna",
+    "efecto": "nieve"
+   }
+  },
+  {
+   "hablado": "Los semáforos siguen cambiando, pero ya no pasa nadie.",
+   "subtitulo": "Los semáforos siguen cambiando, pero ya no pasa nadie.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "HORA 8",
+    "detalle": "Calles vacías"
+   },
+   "escena3d": {
+    "cielo": "noche",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": [
+       0.6,
+       0.7
+      ]
+     }
+    ],
+    "ruta": {
+     "de": [
+      "semaforo",
+      [
+       0.07,
+       0.0,
+       0.3
+      ]
+     ],
+     "a": [
+      "portal",
+      [
+       0.03,
+       0.02,
+       0.32
+      ]
+     ],
+     "mira": "semaforo",
+     "mira2": "portal",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 2.5,
+     "t1": 3.5
+    },
+    "sonidos": [
+     [
+      0.3,
+      "tictac"
+     ]
+    ],
+    "luz": "nocturna",
+    "efecto": "nieve"
+   }
+  },
+  {
+   "hablado": "Al amanecer, medio metro de nieve bloquea los portales.",
+   "subtitulo": "Al amanecer, medio metro de nieve bloquea los portales.",
+   "visual": {
+    "tipo": "cifra",
+    "valor": "50 cm",
+    "etiqueta": "de nieve en la calle"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": [
+       0.7,
+       0.85
+      ],
+      "empuja": true,
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "portal",
+      [
+       0.03,
+       0.02,
+       0.32
+      ]
+     ],
+     "a": [
+      "palas",
+      [
+       0.06,
+       0.05,
+       0.45
+      ]
+     ],
+     "mira": "portal",
+     "mira2": "palas",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 3.5,
+     "t1": 4.5
+    },
+    "sonidos": [
+     [
+      0.35,
+      "golpe"
+     ],
+     [
+      0.55,
+      "golpe"
+     ]
+    ],
+    "efecto": "nieve"
+   }
+  },
+  {
+   "hablado": "Los vecinos salen con palas para abrir un camino.",
+   "subtitulo": "Los vecinos salen con palas para abrir un camino.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 1",
+    "detalle": "Palas"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": 0.85,
+      "vecinos": true,
+      "palas": [
+       0,
+       1
+      ],
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "palas",
+      [
+       0.06,
+       0.05,
+       0.45
+      ]
+     ],
+     "a": [
+      "arbol",
+      [
+       0.04,
+       0.02,
+       0.4
+      ]
+     ],
+     "mira": "palas",
+     "mira2": "arbol",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 4.5,
+     "t1": 5.5
+    },
+    "sonidos": [
+     [
+      0.2,
+      "crujido"
+     ],
+     [
+      0.5,
+      "crujido"
+     ],
+     [
+      0.8,
+      "crujido"
+     ]
+    ]
+   }
+  },
+  {
+   "hablado": "Las ramas se doblan por el peso, y alguna se rompe.",
+   "subtitulo": "Las ramas se doblan por el peso, y alguna se rompe.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 2",
+    "detalle": "Peso"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": 0.85,
+      "vecinos": true,
+      "palas": 1,
+      "rama": [
+       0,
+       1
+      ],
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "arbol",
+      [
+       0.04,
+       0.02,
+       0.4
+      ]
+     ],
+     "a": [
+      "carretera",
+      [
+       0.0,
+       0.1,
+       0.55
+      ]
+     ],
+     "mira": "arbol",
+     "mira2": "carretera",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 5.5,
+     "t1": 6.5
+    },
+    "sonidos": [
+     [
+      0.6,
+      "crujido"
+     ],
+     [
+      0.65,
+      "impacto"
+     ]
+    ]
+   }
+  },
+  {
+   "hablado": "Por fin llega la quitanieves y abre la calle.",
+   "subtitulo": "Por fin llega la quitanieves y abre la calle.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "DÍA 3",
+    "detalle": "Quitanieves"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": 0.85,
+      "vecinos": true,
+      "palas": 1,
+      "rama": 1,
+      "quita": [
+       0,
+       1
+      ],
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "carretera",
+      [
+       0.0,
+       0.1,
+       0.55
+      ]
+     ],
+     "a": [
+      "muneco",
+      [
+       -0.04,
+       0.03,
+       0.35
+      ]
+     ],
+     "mira": "carretera",
+     "mira2": "muneco",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 6.5,
+     "t1": 7.5
+    },
+    "sonidos": [
+     [
+      0.1,
+      "motor"
+     ],
+     [
+      0.5,
+      "motor"
+     ]
+    ]
+   }
+  },
+  {
+   "hablado": "Y los niños levantan el muñeco de nieve más grande del barrio.",
+   "subtitulo": "Y los niños levantan el muñeco de nieve más grande del barrio.",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Muñeco"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": 0.85,
+      "vecinos": true,
+      "palas": 1,
+      "rama": 1,
+      "quita": true,
+      "muneco": [
+       0,
+       1
+      ],
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "muneco",
+      [
+       -0.04,
+       0.03,
+       0.35
+      ]
+     ],
+     "a": [
+      "calle",
+      [
+       0.0,
+       0.08,
+       1.05
+      ]
+     ],
+     "mira": "muneco",
+     "mira2": "calle",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 7.5,
+     "t1": 8.5
+    },
+    "sonidos": [
+     [
+      0.3,
+      "pop"
+     ],
+     [
+      0.6,
+      "pop"
+     ],
+     [
+      0.85,
+      "ding"
+     ]
+    ]
+   }
+  },
+  {
+   "hablado": "¿Tú qué harías con un día así?",
+   "subtitulo": "¿Tú qué harías con un día así?",
+   "visual": {
+    "tipo": "dia",
+    "texto": "SEMANA 1",
+    "detalle": "Muñeco"
+   },
+   "escena3d": {
+    "cielo": "amanecer",
+    "contorno": false,
+    "suelo": "ninguno",
+    "plano": "detalle",
+    "foco": 0,
+    "camara": "acercar",
+    "continua": true,
+    "objetos": [
+     {
+      "tipo": "nueva",
+      "codigo": "\nconst g = new THREE.Group(), K = window.PQ3_KIT(h, THREE, o), L2 = K.L2, sm = K.sm, cl = K.cl, R = K.R, lisa = K.lisa, brillo = K.brillo, tick = K.tick;\nconst caja = (p, w, hh, d, m, x, y, z) => h.caja(p, w, hh, d, m, x, y, z), marca = K.marca;\nconst dia = !!o.dia, NV = o.nieve === undefined ? 0 : o.nieve;\nconst nieveM = new THREE.MeshStandardMaterial({ color: '#f4f8ff', roughness: 0.85, emissive: '#cfe0ff', emissiveIntensity: 0.12 }); nieveM.defines = { PQ_LISO: 1 };\nconst aceraM = lisa('#7d7a76'), asfalto = lisa('#2a2c31');\ncaja(g, 30, 0.2, 3, aceraM, 0, 0.1, 2.6); caja(g, 30, 0.1, 7, asfalto, 0, 0.05, 7.5); caja(g, 30, 0.2, 3, aceraM, 0, 0.1, 12.4);\nfor (let k = -6; k <= 6; k++) caja(g, 1.4, 0.01, 0.18, lisa('#d9d4c8'), k * 2.5, 0.11, 7.5);\n/* edificios con ventanas encendidas (se apagan de día) */\nconst fach = ['#b8634a', '#c9a46a', '#6a7f8f'], vents = [];\n[-8, 0, 8].forEach((x, b) => { const H = 9 + b % 2 * 2; caja(g, 7.6, H, 3, lisa(fach[b], { roughness: 0.85 }), x, H / 2, -0.4);\n  for (let f = 0; f < 3; f++) for (let c = 0; c < 3; c++) { if (b === 1 && f === 0 && c === 1) continue; const on = R(b * 9 + f * 3 + c) > 0.3; const m = brillo(on ? '#ffc874' : '#30384a', on ? 1.6 : 0.2);\n    caja(g, 1.3, 1.5, 0.05, lisa('#e8e1d4'), x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.12); const vm = caja(g, 1.1, 1.3, 0.05, m, x - 2.3 + c * 2.3, 2.2 + f * 2.8, 1.15); vents.push([m, on]); }\n  const cap = caja(g, 7.8, 0.6, 3.2, nieveM, x, H + 0.3, -0.4); cap.userData.base = H; tick(cap, xx => { const n = L2(NV, sm(xx)); cap.visible = n > 0.03; cap.scale.y = Math.max(0.05, n * 1.2); cap.position.y = H + 0.3 * cap.scale.y; });\n  if (b === 1) marca(g, 'tejados', x, H, -0.4); });\nconst luzVent = new THREE.PointLight('#ffc874', dia ? 0 : 6, 18, 1.2); luzVent.position.set(0, 4, 4); g.add(luzVent);\n/* portal con puerta y luz; la nieve lo bloquea; la puerta empuja y no abre */\nconst portal = new THREE.Group(); portal.position.set(0, 0.2, 1.1); g.add(portal); caja(portal, 1.6, 2.6, 0.2, lisa('#3a2a1c'), 0, 1.3, 0.05);\nconst puerta = new THREE.Group(); puerta.position.set(-0.7, 0, 0.2); portal.add(puerta); caja(puerta, 1.4, 2.4, 0.08, lisa('#5a3a22'), 0.7, 1.2, 0); caja(puerta, 0.06, 0.25, 0.06, lisa('#c9a64a', { metalness: 0.8, roughness: 0.3 }), 1.25, 1.1, 0.06);\nconst lp = brillo('#ffd28a', 3); caja(portal, 0.5, 0.12, 0.2, lp, 0, 2.8, 0.25); const lpl = new THREE.PointLight('#ffd28a', 6, 6, 1.3); lpl.position.set(0, 2.6, 1); portal.add(lpl);\nconst monton = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, 0, 0.2, 2.1); monton.scale.set(1.6, 0.1, 0.9); g.add(monton);\ntick(puerta, (xx, u, L, t) => { const emp = o.empuja ? Math.max(0, Math.sin(xx * 18)) * 0.12 * (xx > 0.25 && xx < 0.8 ? 1 : 0) : 0; puerta.rotation.y = -emp; const n = L2(NV, sm(xx)), pal = L2(o.palas || 0, sm(xx)); monton.scale.y = Math.max(0.01, n * 1.1 * (1 - pal * 0.85)); });\nmarca(g, 'portal', 0, 1.4, 1.6);\n/* nieve en el suelo: aceras y calzada (la calzada la limpia la quitanieves) */\nconst sueloN = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 2.6); const sueloN2 = caja(g, 30, 0.1, 3, nieveM, 0, 0.2, 12.4); const calN = caja(g, 30, 0.1, 7, nieveM, 0, 0.1, 7.5);\nconst QX = x => -15 + 30 * sm(x);\ntick(sueloN, (xx) => { const n = L2(NV, sm(xx)); [sueloN, sueloN2].forEach(s => { s.visible = n > 0.01; s.scale.y = Math.max(0.1, n * 5); s.position.y = 0.2 + 0.05 * s.scale.y; });\n  calN.visible = n > 0.01; calN.scale.y = Math.max(0.1, n * 4); calN.position.y = 0.1 + 0.05 * calN.scale.y;\n  const q = o.quita === undefined ? 0 : (Array.isArray(o.quita) ? QX(L2([0, 1], xx)) + 15 : (o.quita ? 30 : 0)); calN.scale.x = Math.max(0.001, (30 - q) / 30); calN.position.x = q / 2; });\n/* farola, semáforo y coche (caja de piezas), con la nieve encima del coche */\nK.farola(g, { x: -4.5, y: 0.2, z: 3.4, luz: dia ? 0 : 1 }); K.farola(g, { x: 11, y: 0.2, z: 3.4, luz: dia ? 0 : 1 });\nK.semaforo(g, { x: 3.2, y: 0.2, z: 3.6 }); marca(g, 'semaforo', 3.2, 3.2, 3.6);\nconst coche = K.coche(g, { x: -1.5, y: 0.1, z: 5.2, color: '#2f6fb0' }); marca(g, 'coche', -1.5, 1.0, 5.2);\nconst capC = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 1.12, 5.2); capC.scale.set(1.25, 0.1, 0.6); g.add(capC);\nconst capC2 = h.malla(new THREE.SphereGeometry(1, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), nieveM, -1.5, 0.66, 5.2); capC2.scale.set(1.2, 0.1, 0.62); g.add(capC2);\ntick(capC, (xx) => { const n = L2(NV, sm(xx)); capC.visible = capC2.visible = n > 0.02; capC.scale.y = Math.max(0.01, n * 0.9); capC2.scale.y = Math.max(0.01, n * 0.9); capC2.scale.x = 1.2 + n * 0.3; });\n/* árbol con una rama que se dobla y se rompe */\nconst arbol = new THREE.Group(); arbol.position.set(6.5, 0.2, 3.0); g.add(arbol); const madera = lisa('#4a3426');\narbol.add(h.malla(new THREE.CylinderGeometry(0.16, 0.24, 4.2, 10), madera, 0, 2.1, 0));\nconst ramas = []; [[0.6, 3.0, 0.7], [-0.7, 3.4, -0.6], [0.2, 3.9, 2.4], [-0.3, 2.6, 3.6]].forEach(([dx, y, ry], k) => { const r = new THREE.Group(); r.position.set(0, y, 0); r.rotation.y = ry; arbol.add(r);\n  const b = h.malla(new THREE.CylinderGeometry(0.05, 0.09, 1.8, 8), madera, 0.9, 0, 0); b.rotation.z = Math.PI / 2 - 0.35; r.add(b); const nb = h.malla(new THREE.CapsuleGeometry(0.1, 1.4, 4, 8), nieveM, 0.9, 0.36, 0); nb.rotation.z = Math.PI / 2 - 0.35; r.add(nb); ramas.push([r, nb]); });\ntick(arbol, (xx, u, L, t) => { const n = L2(NV, sm(xx)), rot = o.rama === undefined ? 0 : L2(o.rama, xx); ramas.forEach(([r, nb], k) => { nb.visible = n > 0.1; nb.scale.set(1, 0.4 + n * 1.2, 1 + n);\n  const dobla = n * 0.25 + (k === 0 ? (rot < 0.55 ? rot * 0.5 : 1.4) : 0); r.rotation.z = -dobla; if (k === 0 && rot >= 0.55) { const f = cl((rot - 0.55) / 0.3); r.position.y = 3.0 - f * 2.6; r.position.x = f * 0.8; } else if (k === 0) { r.position.set(0, 3.0, 0); } });\n  arbol.rotation.z = Math.sin((t || 0) * 0.7) * 0.01; });\nmarca(g, 'arbol', 6.5, 3.0, 3.0);\n/* vecinos con palas */\nconst palas = new THREE.Group(); g.add(palas);\n[[-2.2, 2.6, 0.4], [1.8, 2.8, -0.5]].forEach(([x, z, ry], k) => { K.persona(palas, { x, y: 0.2, z, ry, ropa: ['#c43a2c', '#2f6f4a'][k] }); const pa = new THREE.Group(); pa.position.set(x + 0.3, 0.9, z + 0.35); palas.add(pa);\n  pa.add(h.malla(new THREE.CylinderGeometry(0.025, 0.025, 1.3, 6), madera, 0, 0, 0)); caja(pa, 0.35, 0.03, 0.3, lisa('#3a6fb0'), 0, -0.68, 0.08);\n  tick(pa, (xx, u, L, t) => { const s = Math.sin((t || 0) * 3 + k * 2); pa.rotation.x = 0.5 + s * 0.35; pa.position.y = 0.9 + s * 0.08; }); });\ntick(palas, (xx) => { palas.visible = !!o.vecinos; });\nmarca(g, 'palas', 0, 1.2, 2.6);\n/* quitanieves con luz naranja que gira */\nconst qn = new THREE.Group(); g.add(qn); caja(qn, 3.2, 1.6, 2.0, lisa('#e8a21c', { roughness: 0.4 }), 0, 1.2, 0); caja(qn, 1.3, 1.1, 1.9, lisa('#e8a21c', { roughness: 0.4 }), 0.9, 2.4, 0); caja(qn, 1.2, 0.8, 1.92, lisa('#20303c', { roughness: 0.1 }), 0.95, 2.5, 0);\nconst pala = caja(qn, 0.25, 0.9, 2.8, lisa('#c9ced6', { metalness: 0.6, roughness: 0.3 }), 1.85, 0.55, 0); pala.rotation.y = 0.3;\n[[-1, 0.9], [1, 0.9], [-1, -0.9], [1, -0.9]].forEach(([a, b2]) => { const rr = h.malla(new THREE.CylinderGeometry(0.45, 0.45, 0.3, 16), lisa('#111'), a, 0.45, b2); rr.rotation.x = Math.PI / 2; qn.add(rr); });\nconst bm = brillo('#ff8a1a', 4); qn.add(h.malla(new THREE.SphereGeometry(0.16, 12, 10), bm, 0.9, 3.05, 0)); const bl = new THREE.PointLight('#ff8a1a', 0, 9, 1.3); bl.position.set(0.9, 3.3, 0); qn.add(bl);\nconst chorro = []; for (let k = 0; k < 14; k++) { const s = h.malla(new THREE.SphereGeometry(0.18 + R(k) * 0.15, 8, 6), nieveM, 2.1 + R(k + 3) * 0.8, 0.4 + R(k + 5) * 0.8, 1.3 + R(k + 7) * 0.8); qn.add(s); chorro.push(s); }\ntick(qn, (xx, u, L, t) => { t = t || 0; const on = Array.isArray(o.quita); qn.visible = on; if (!on) return; qn.position.set(QX(xx), 0.1, 7.6); bl.intensity = 8 * (0.5 + 0.5 * Math.sin(t * 9)); bm.emissiveIntensity = 2 + 2 * Math.sin(t * 9);\n  chorro.forEach((s, k) => { const ph = (t * 1.5 + R(k)) % 1; s.position.y = 0.4 + ph * 1.2 - ph * ph * 1.0; s.position.z = 1.3 + ph * 1.6; }); });\nmarca(g, 'carretera', 0, 1.2, 7.6);\n/* niños y muñeco de nieve que crece */\nconst mu = new THREE.Group(); mu.position.set(10, 0.2, 2.6); g.add(mu); const bolas = [[0.75, 0.75], [0.52, 1.95], [0.36, 2.75]].map(([r2, y]) => { const b = h.malla(new THREE.SphereGeometry(r2, 22, 16), nieveM, 0, y, 0); mu.add(b); return b; });\nconst nariz = h.malla(new THREE.ConeGeometry(0.06, 0.35, 10), lisa('#ff7a1a'), 0, 2.75, 0.45); nariz.rotation.x = Math.PI / 2; mu.add(nariz); const gorro = new THREE.Group(); gorro.position.y = 3.05; mu.add(gorro); gorro.add(h.malla(new THREE.CylinderGeometry(0.42, 0.42, 0.05, 20), lisa('#1a1a1a'), 0, 0, 0)); gorro.add(h.malla(new THREE.CylinderGeometry(0.28, 0.28, 0.45, 20), lisa('#1a1a1a'), 0, 0.24, 0));\n[[-0.13, 2.85], [0.13, 2.85]].forEach(([x, y]) => mu.add(h.malla(new THREE.SphereGeometry(0.045, 8, 6), lisa('#111'), x, y, 0.33)));\nconst bufM = lisa('#d6322f'); const buf = h.malla(new THREE.TorusGeometry(0.42, 0.09, 8, 20), bufM, 0, 2.35, 0); buf.rotation.x = Math.PI / 2; mu.add(buf);\n[[-1.2, 0.6, 0.9, '#7a5ab0'], [1.1, 0.5, -0.8, '#2f8fb0']].forEach(([x, z, ry, c2]) => { const ni = K.persona(mu, { x, y: 0, z, ry, ropa: c2 }); ni.scale.setScalar(0.65); });\ntick(mu, (xx) => { const m2 = o.muneco === undefined ? 0 : L2(o.muneco, xx); mu.visible = o.muneco !== undefined; bolas.forEach((b, k) => b.scale.setScalar(Math.max(0.001, cl(m2 * 3 - k)))); const fin = cl(m2 * 3 - 2.5) * 2; nariz.visible = gorro.visible = buf.visible = fin > 0.5; mu.children.forEach(c2 => { if (c2.geometry && c2.geometry.type === 'SphereGeometry' && c2.scale.x < 0.1 && bolas.indexOf(c2) < 0) c2.visible = fin > 0.5; }); });\nmarca(g, 'muneco', 10, 1.6, 2.6);\ntick(g, () => { vents.forEach(([m, on]) => { m.emissiveIntensity = on && !dia ? 1.6 : 0.15; }); });\nmarca(g, 'calle', 0, 3.5, 4);\nreturn g;\n",
+      "tam": 20,
+      "reserva": "bloque",
+      "nieve": 0.85,
+      "vecinos": true,
+      "palas": 1,
+      "rama": 1,
+      "quita": true,
+      "muneco": 1,
+      "dia": true
+     }
+    ],
+    "ruta": {
+     "de": [
+      "calle",
+      [
+       0.0,
+       0.08,
+       1.05
+      ]
+     ],
+     "a": [
+      "calle",
+      [
+       0.0,
+       0.12,
+       1.25
+      ]
+     ],
+     "mira": "calle",
+     "mira2": "calle",
+     "continua": true,
+     "mantener": 2.4,
+     "camino": [
+      [
+       "calle",
+       [
+        0.0,
+        0.06,
+        0.95
+       ]
+      ],
+      [
+       "tejados",
+       [
+        0.06,
+        0.14,
+        0.85
+       ]
+      ],
+      [
+       "coche",
+       [
+        0.06,
+        0.06,
+        0.32
+       ]
+      ],
+      [
+       "semaforo",
+       [
+        0.07,
+        0.0,
+        0.3
+       ]
+      ],
+      [
+       "portal",
+       [
+        0.03,
+        0.02,
+        0.32
+       ]
+      ],
+      [
+       "palas",
+       [
+        0.06,
+        0.05,
+        0.45
+       ]
+      ],
+      [
+       "arbol",
+       [
+        0.04,
+        0.02,
+        0.4
+       ]
+      ],
+      [
+       "carretera",
+       [
+        0.0,
+        0.1,
+        0.55
+       ]
+      ],
+      [
+       "muneco",
+       [
+        -0.04,
+        0.03,
+        0.35
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.08,
+        1.05
+       ]
+      ],
+      [
+       "calle",
+       [
+        0.0,
+        0.12,
+        1.25
+       ]
+      ]
+     ],
+     "miras": [
+      "calle",
+      "tejados",
+      "coche",
+      "semaforo",
+      "portal",
+      "palas",
+      "arbol",
+      "carretera",
+      "muneco",
+      "calle",
+      "calle"
+     ],
+     "t0": 8.5,
+     "t1": 10
+    },
+    "sonidos": [
+     [
+      0.2,
+      "ding"
+     ]
+    ]
+   }
+  }
+ ]
+}
