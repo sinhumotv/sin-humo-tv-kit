@@ -95,7 +95,7 @@ function revisarTikTok_(estado, cupo) {
       if (edadMin > AJUSTES.diasAtras * 1440) { marcar_(estado, id); continue; }
       const respuesta = crearRespuesta_(c.text || '', v.caption || '');
       if (respuesta === undefined) continue;
-      marcar_(estado, id);
+      marcar_(estado, id); guardarEstado_(estado);   // (19-nov-2026) se guarda YA: si la ronda se corta, no se responde dos veces
       if (!respuesta) { registrar_('TikTok', c.username || c.display_name || '', c.text, '(ignorado)'); continue; }
       ttLlamar_('post', '/business/comment/reply/create/', { business_id: t.open_id, video_id: vid, comment_id: c.comment_id || c.id, text: respuesta }, t.access);
       contarDia_(estado);
