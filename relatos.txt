@@ -136,3 +136,4 @@
 2026-11-19|12:00|Melampo y los animales|pregunta|YO 6afe71efb16549e9b8209efa IN 6afe71f0749099bdc70a15ab TI 6afe71f1f6b6aa0cd49c45ac|img=mixto|12:05
 2026-11-19|15:00|Éaco y los mirmidones|increible|YO 6afe73c659eff0b616dad214 IN 6afe73c6f6b6aa0cd49cc2a3 TI 6afe73c7f6b6aa0cd49cc2cd|img=mixto|14:38
 2026-11-19|18:00|Deméter y Demofonte|sabias|YO 6afe75ba3802f5b9fc67414d IN 6afe75bbb16549e9b8220190 TI 6afe75bcb16549e9b82201ed|img=mixto|17:37
+2026-11-19|21:00|Erictonio y las hijas de Cécrope|nadie|YO 6afe7754f6b6aa0cd49e5cfd IN 6afe775559eff0b616dc705a TI 6afe7756749099bdc70c49f0|img=mixto|20:31
