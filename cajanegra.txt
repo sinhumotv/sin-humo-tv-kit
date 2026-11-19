@@ -123,3 +123,4 @@
 2026-11-18|18:00|La letrina de Érfurt|sabias|YO 6afd1c05fc933ac285bf768f IN 6afd1c0639777dd13e11bd4d TI 6afd1c06aa3b065dd96d994a|img=ia|18:38
 2026-11-18|21:00|La mordedura del mono|consecuencia|YO 6afd1ceb9f3765f6ab2ba2c9 IN 6afd1cec9f3765f6ab2ba2fc TI 6afd1cec39777dd13e11efa2|img=mixto|21:40
 2026-11-19|08:00|El extraviado de las catacumbas|nadie|YO 6afe6f8e46636f319e851dec IN 6afe6f8f59eff0b616d9837c TI 6afe6f8f59eff0b616d983b6|img=mixto|07:44
+2026-11-19|12:00|El misterio del Joyita|final|YO 6afe7112f6b6aa0cd49c0019 IN 6afe7113749099bdc709db6a TI 6afe711459eff0b616da0dba|img=mixto|11:46
