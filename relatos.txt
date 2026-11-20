@@ -138,3 +138,4 @@
 2026-11-19|18:00|Deméter y Demofonte|sabias|YO 6afe75ba3802f5b9fc67414d IN 6afe75bbb16549e9b8220190 TI 6afe75bcb16549e9b82201ed|img=mixto|17:37
 2026-11-19|21:00|Erictonio y las hijas de Cécrope|nadie|YO 6afe7754f6b6aa0cd49e5cfd IN 6afe775559eff0b616dc705a TI 6afe7756749099bdc70c49f0|img=mixto|20:31
 2026-11-20|08:00|El collar de Harmonía|cuenta|YO 6affb9dc4c1afd05dee97a3a IN 6affb9ddd5f8acdd0d68625f TI 6affb9de4c1afd05dee97ab7|img=ia|07:21
+2026-11-20|12:00|Las Piérides y las Musas|error|YO 6affbadfd5f8acdd0d68c9d5 IN 6affbae07b0a126ceba2d755 TI 6affbae0d5f8acdd0d68ca27|img=mixto|12:07
