@@ -139,3 +139,4 @@
 2026-11-19|21:00|Erictonio y las hijas de Cécrope|nadie|YO 6afe7754f6b6aa0cd49e5cfd IN 6afe775559eff0b616dc705a TI 6afe7756749099bdc70c49f0|img=mixto|20:31
 2026-11-20|08:00|El collar de Harmonía|cuenta|YO 6affb9dc4c1afd05dee97a3a IN 6affb9ddd5f8acdd0d68625f TI 6affb9de4c1afd05dee97ab7|img=ia|07:21
 2026-11-20|12:00|Las Piérides y las Musas|error|YO 6affbadfd5f8acdd0d68c9d5 IN 6affbae07b0a126ceba2d755 TI 6affbae0d5f8acdd0d68ca27|img=mixto|12:07
+2026-11-20|15:00|Heracles y la reina Onfalia|final|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbbfdca85ebefb0f0f512 TI 6affbbfe0f5eda1a57b9b84d|img=mixto|15:34
