@@ -39,7 +39,13 @@
  ],
  "creado": "2026-11-17",
  "autor": "claude",
- "usos": [],
+ "usos": [
+  {
+   "fecha": "2026-11-20",
+   "tema": "¿Qué pasaría si una gran presa de hormigón colapsara de golpe?",
+   "por": "gemini"
+  }
+ ],
  "tomas": [
   {
    "id": "t1",
