@@ -130,3 +130,4 @@
 2026-11-20|08:00|Veto a los robotaxis en autopistas|increible|YO 6affb8494c1afd05dee8b6f6 IN 6affb84aca85ebefb0ef2ae8 TI 6affb84b0f5eda1a57b81bc2|img=mixto|08:11
 2026-11-20|12:00|El negocio circular de la IA|pregunta|YO 6affb9e0738ce4635f80a556 IN 6affb9e1ca85ebefb0eff99d TI 6affb9e1738ce4635f80a5ab|img=ia|12:02
 2026-11-20|15:00|Agua potable del aire desértico|final|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbb1e738ce4635f810b99 TI 6affbb1e7b0a126ceba2e6d2|img=mixto|15:07
+2026-11-20|18:00|Interfaces musculares silenciosas|sabias|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbc7cd5f8acdd0d6989bf TI 6affbc7d0f5eda1a57ba034e|img=mixto|18:29
