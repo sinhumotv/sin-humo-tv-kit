@@ -128,3 +128,4 @@
 2026-11-19|18:00|Úteros artificiales en 2100|sabias|YO 6afe701d59eff0b616d9c10f IN 6afe701e749099bdc7098d40 TI 6afe701e59eff0b616d9c140|img=mixto|17:30
 2026-11-19|21:00|Agricultura molecular en 2100|consecuencia|YO 6afe70fbb16549e9b820538c IN 6afe70fb749099bdc709d310 TI 6afe70fc46636f319e859120|img=mixto|21:26
 2026-11-20|08:00|Veto a los robotaxis en autopistas|increible|YO 6affb8494c1afd05dee8b6f6 IN 6affb84aca85ebefb0ef2ae8 TI 6affb84b0f5eda1a57b81bc2|img=mixto|08:11
+2026-11-20|12:00|El negocio circular de la IA|pregunta|YO 6affb9e0738ce4635f80a556 IN 6affb9e1ca85ebefb0eff99d TI 6affb9e1738ce4635f80a5ab|img=ia|12:02
