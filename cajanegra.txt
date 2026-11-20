@@ -127,3 +127,4 @@
 2026-11-19|15:00|El desastre del Hindenburg|cuenta|YO 6afe727d46636f319e86019a IN 6afe727e3802f5b9fc65f698 TI 6afe727f46636f319e86020d|img=mixto|14:35
 2026-11-19|18:00|El enigma de George Mallory|sabias|YO 6afe73d83802f5b9fc664a91 IN 6afe73d946636f319e864f53 TI 6afe73da59eff0b616dada59|img=mixto|17:58
 2026-11-19|21:00|El experimento de Aleksandr Bogdánov|consecuencia|YO 6afe757a46636f319e871f42 IN 6afe757bb16549e9b821e8be TI 6afe757b3802f5b9fc672ed6|img=mixto|21:37
+2026-11-20|08:00|El misterio del Carroll A. Deering|pregunta|YO 6affb9ce0f5eda1a57b8e8aa IN 6affb9cfca85ebefb0eff3a0 TI 6affb9d0ca85ebefb0eff3d8|img=ia|07:58
