@@ -131,3 +131,4 @@
 2026-11-20|12:00|La muerte de Felipe el Hermoso|error|YO 6affbb07ca85ebefb0f0771c IN 6affbb08738ce4635f81048c TI 6affbb094c1afd05dee9e9fa|img=mixto|11:44
 2026-11-20|15:00|La momia de Elmer McCurdy|increible|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbca8d5f8acdd0d6995a2 TI 6affbca8d5f8acdd0d6995ec|img=mixto|14:20
 2026-11-20|18:00|María Tifoidea|sabias|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbe54738ce4635f825d94 TI 6affbe55ca85ebefb0f1d62a|img=ia|18:13
+2026-11-20|21:00|El robo de la Copa del Mundo de 1966|consecuencia|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbfa00f5eda1a57bb069d TI 6affbfa1ca85ebefb0f230c3|img=mixto|21:20
