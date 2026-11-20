@@ -141,3 +141,4 @@
 2026-11-20|12:00|Las Piérides y las Musas|error|YO 6affbadfd5f8acdd0d68c9d5 IN 6affbae07b0a126ceba2d755 TI 6affbae0d5f8acdd0d68ca27|img=mixto|12:07
 2026-11-20|15:00|Heracles y la reina Onfalia|final|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbbfdca85ebefb0f0f512 TI 6affbbfe0f5eda1a57b9b84d|img=mixto|15:34
 2026-11-20|18:00|La ninfa Cirene|sabias|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbd13ca85ebefb0f15dc2 TI 6affbd14738ce4635f81e6dd|img=mixto|18:37
+2026-11-20|21:00|Pentesilea y Aquiles|consecuencia|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbe90738ce4635f826793 TI 6affbe914c1afd05deeb546e|img=ia|21:03
