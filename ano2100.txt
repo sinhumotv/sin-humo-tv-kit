@@ -134,3 +134,4 @@
 2026-11-20|21:00|Reforestación estratosférica|consecuencia|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbda6738ce4635f822420 TI 6affbda7ca85ebefb0f196e3|img=mixto|20:29
 2026-11-21|08:00|Los empleos que resistirán a la IA|nadie|YO 6b010bc29ffbc8503cf42bed IN 6b010bc3d9cbb430a115dc6b TI 6b010bc3d9cbb430a115dccc|img=mixto|08:25
 2026-11-21|15:00|Arqueología LiDAR con IA|cuenta|YO 6b010deddd205ed779b5e8c6 IN 6b010ded5102766245f1774a TI 6b010deed9cbb430a1167cdf|img=mixto|14:40
+2026-11-21|18:00|Desalinización cuántica en 2100|sabias|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6b010f2ed9cbb430a116e195 TI 6b010f2f20a2d09a0acd7ef5|img=mixto|18:17
