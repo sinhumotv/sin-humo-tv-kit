@@ -132,3 +132,4 @@
 2026-11-20|15:00|La momia de Elmer McCurdy|increible|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbca8d5f8acdd0d6995a2 TI 6affbca8d5f8acdd0d6995ec|img=mixto|14:20
 2026-11-20|18:00|María Tifoidea|sabias|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbe54738ce4635f825d94 TI 6affbe55ca85ebefb0f1d62a|img=ia|18:13
 2026-11-20|21:00|El robo de la Copa del Mundo de 1966|consecuencia|YO ERROR: You have already scheduled the maximum number of posts YouTube allows in a day (2). Please consider scheduling this post for another day. IN 6affbfa00f5eda1a57bb069d TI 6affbfa1ca85ebefb0f230c3|img=mixto|21:20
+2026-11-21|08:00|El pan maldito de Pont-Saint-Esprit|cuenta|YO 6b010aea20a2d09a0acc2d51 IN 6b010aeb20a2d09a0acc2d95 TI 6b010aec5e993799d849e63f|img=mixto|07:58
