@@ -16,8 +16,14 @@
   "escenas": 11,
   "animadas": 0,
   "publicable": true,
-  "publicado": {},
-  "archivo": "r55-v1.mp4"
+  "publicado": {
+   "instagram": "6b0144c351027662450362bb",
+   "tiktok": "6b0144ce5102766245036466",
+   "youtube": "6b0144d95e993799d85c47f2"
+  },
+  "archivo": "r55-v1.mp4",
+  "franja": 1,
+  "dia": "2026-11-21"
  },
  {
   "id": "r55-v2",
