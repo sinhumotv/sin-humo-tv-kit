@@ -1,0 +1,574 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "El enigma del SS Ourang Medan",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/01_full.mp4",
+  "1": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/02_full.mp4",
+  "2": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/03_full.mp4",
+  "3": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/04_full.mp4",
+  "4": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/05_full.mp4",
+  "5": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/06_full.mp4",
+  "6": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/07_full.mp4",
+  "7": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/08_full.mp4",
+  "8": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/09_full.mp4",
+  "9": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/10_full.mp4",
+  "10": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/11_full.mp4",
+  "11": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/12_full.mp4",
+  "12": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/13_full.mp4",
+  "13": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/14_full.mp4",
+  "14": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/15_full.mp4",
+  "15": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/16_full.mp4",
+  "16": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/17_full.mp4",
+  "17": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/18_full.mp4",
+  "18": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/19_full.mp4",
+  "19": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/20_full.mp4",
+  "20": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/21_full.mp4",
+  "21": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/22_full.mp4",
+  "22": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/23_full.mp4",
+  "23": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/24_full.mp4",
+  "24": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/25_full.mp4",
+  "25": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/26_full.mp4",
+  "26": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/27_full.mp4",
+  "27": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/28_full.mp4",
+  "28": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/29_full.mp4",
+  "29": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/30_full.mp4",
+  "30": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/31_full.mp4",
+  "31": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/32_full.mp4",
+  "32": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/33_full.mp4",
+  "33": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/34_full.mp4",
+  "34": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/35_full.mp4",
+  "35": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/36_full.mp4",
+  "36": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/37_full.mp4",
+  "37": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/38_full.mp4",
+  "38": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/39_full.mp4",
+  "39": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/40_full.mp4",
+  "40": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/41_full.mp4",
+  "41": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/42_full.mp4",
+  "42": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/43_full.mp4",
+  "43": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/44_full.mp4",
+  "44": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/45_full.mp4",
+  "45": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/46_full.mp4",
+  "46": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/47_full.mp4",
+  "47": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/48_full.mp4",
+  "48": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/49_full.mp4",
+  "49": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/50_full.mp4",
+  "50": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/51_full.mp4",
+  "51": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/52_full.mp4",
+  "52": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/53_full.mp4",
+  "53": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/54_full.mp4",
+  "54": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/55_full.mp4",
+  "55": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/56_full.mp4",
+  "56": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/57_full.mp4",
+  "57": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/58_full.mp4",
+  "58": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/59_full.mp4",
+  "59": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/60_full.mp4",
+  "60": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/61_full.mp4",
+  "61": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/62_full.mp4",
+  "62": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/63_full.mp4",
+  "63": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/64_full.mp4",
+  "64": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/65_full.mp4",
+  "65": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/66_full.mp4",
+  "66": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/67_full.mp4",
+  "67": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/68.mp4",
+  "68": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/69_full.mp4",
+  "69": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/70_full.mp4",
+  "70": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/71_full.mp4",
+  "71": "/tmp/largo-cajanegra-kbndvr7d/proyecto/clips/72_full.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "El código de la muerte"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "Respuesta en alta mar"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "Abordaje al silencio"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "Rostros congelados"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "Fuego en las profundidades"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "El rastro documental"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "Hipótesis del gas invisible"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "Cargas peligrosas y contrabando"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "Sombras en el océano"
+  }
+ ],
+ "color": [
+  230,
+  38,
+  38
+ ],
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "«Todos los oficiales han muerto. Yo también muero». En junio de mil novecientos cuarenta y siete, este agónico mensaje en código Morse estremeció los receptores de radio en el estrecho de Malaca.",
+   "subtitulo": "«Todos los oficiales han muerto. Yo también muero». En junio de mil novecientos cuarenta y siete, este agónico mensaje en código Morse estremeció los receptores de radio en el estrecho de Malaca."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras unos minutos de impulsos erráticos, la señal se apagó para siempre. A bordo del buque mercante Ourang Medan, una muerte simultánea e invisible acababa de exterminar a toda la tripulación.",
+   "subtitulo": "Tras unos minutos de impulsos erráticos, la señal se apagó para siempre. A bordo del buque mercante Ourang Medan, una muerte simultánea e invisible acababa de exterminar a toda la tripulación."
+  },
+  {
+   "titulo": "",
+   "hablado": "¿Qué desencadenó una tragedia tan devastadora en mitad del océano? Hoy examinarás los hechos documentados y los testimonios reales que desafiaron toda lógica científica y forense.",
+   "subtitulo": "¿Qué desencadenó una tragedia tan devastadora en mitad del océano? Hoy examinarás los hechos documentados y los testimonios reales que desafiaron toda lógica científica y forense."
+  },
+  {
+   "titulo": "",
+   "hablado": "Descubre la aterradora verdad oculta tras el naufragio del buque fantasma más famoso de la historia marítima y los secretos que quedaron sumergidos para siempre.",
+   "subtitulo": "Descubre la aterradora verdad oculta tras el naufragio del buque fantasma más famoso de la historia marítima y los secretos que quedaron sumergidos para siempre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel día, tanto las estaciones receptoras holandesas como barcos británicos y estadounidenses captaron la misma llamada de socorro. El mensaje no pedía rescate técnico, sino que advertía de algo mucho más siniestro.",
+   "subtitulo": "Aquel día, tanto las estaciones receptoras holandesas como barcos británicos y estadounidenses captaron la misma llamada de socorro. El mensaje no pedía rescate técnico, sino que advertía de algo mucho más siniestro."
+  },
+  {
+   "titulo": "",
+   "hablado": "El radiotelegrafista detalló con precisión aterradora que el capitán y los oficiales yacían inmóviles en el puente de mando y en la sala de mapas. Toda la tripulación visible parecía haber colapsado.",
+   "subtitulo": "El radiotelegrafista detalló con precisión aterradora que el capitán y los oficiales yacían inmóviles en el puente de mando y en la sala de mapas. Toda la tripulación visible parecía haber colapsado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Siguieron varios minutos de pulsaciones caóticas, puntos y rayas sin sentido que reflejaban la desesperada agonía de quien intentaba mantener la transmisión mientras perdía el conocimiento en la soledad del cuarto de radio.",
+   "subtitulo": "Siguieron varios minutos de pulsaciones caóticas, puntos y rayas sin sentido que reflejaban la desesperada agonía de quien intentaba mantener la transmisión mientras perdía el conocimiento en la soledad del cuarto de radio."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las coordenadas aproximadas ubicaban al carguero a la deriva en una zona estratégica. Varios navíos alteraron de inmediato su rumbo, ignorando que se dirigían hacia un barco fantasma repleto de enigmas incomprendidos.",
+   "subtitulo": "Las coordenadas aproximadas ubicaban al carguero a la deriva en una zona estratégica. Varios navíos alteraron de inmediato su rumbo, ignorando que se dirigían hacia un barco fantasma repleto de enigmas incomprendidos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El carguero estadounidense Silver Star capitaneado por Thomas Cullen navegaba cerca del estrecho de Malaca cuando su operador de radio logró triangular la llamada de auxilio. Sin dudarlo la tripulación cambió de rumbo inmediatamente.",
+   "subtitulo": "El carguero estadounidense Silver Star capitaneado por Thomas Cullen navegaba cerca del estrecho de Malaca cuando su operador de radio logró triangular la llamada de auxilio. Sin dudarlo la tripulación cambió de rumbo inmediatamente."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante las dos horas de travesía la tensión a bordo del navío norteamericano fue en aumento. El capitán ordenó preparar los equipos de rescate ante la posibilidad de enfrentarse a piratas o a una catástrofe.",
+   "subtitulo": "Durante las dos horas de travesía la tensión a bordo del navío norteamericano fue en aumento. El capitán ordenó preparar los equipos de rescate ante la posibilidad de enfrentarse a piratas o a una catástrofe."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al romper el día la silueta del buque holandés apareció recortada en el horizonte. La embarcación se encontraba flotando a la deriva en aguas tranquilas aparentemente intacta y sin presentar ningún tipo de daño visible.",
+   "subtitulo": "Al romper el día la silueta del buque holandés apareció recortada en el horizonte. La embarcación se encontraba flotando a la deriva en aguas tranquilas aparentemente intacta y sin presentar ningún tipo de daño visible."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo los marineros del Silver Star notaron de inmediato algo profundamente anómalo. De la chimenea principal del barco no salía ni una sola columna de humo lo que indicaba que las calderas estaban apagadas.",
+   "subtitulo": "Sin embargo los marineros del Silver Star notaron de inmediato algo profundamente anómalo. De la chimenea principal del barco no salía ni una sola columna de humo lo que indicaba que las calderas estaban apagadas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los oficiales observaron la cubierta con prismáticos buscando cualquier señal de vida. La estructura permanecía quieta pero no había tripulantes a la vista moviéndose por las pasarelas ni haciendo ninguna señal de socorro.",
+   "subtitulo": "Los oficiales observaron la cubierta con prismáticos buscando cualquier señal de vida. La estructura permanecía quieta pero no había tripulantes a la vista moviéndose por las pasarelas ni haciendo ninguna señal de socorro."
+  },
+  {
+   "titulo": "",
+   "hablado": "El buque norteamericano se aproximó a corta distancia e hizo sonar sus sirenas de niebla repetidamente. Los potentes avisos sonoros retumbaron en el mar pero el navío holandés no ofreció ninguna respuesta ni movimiento.",
+   "subtitulo": "El buque norteamericano se aproximó a corta distancia e hizo sonar sus sirenas de niebla repetidamente. Los potentes avisos sonoros retumbaron en el mar pero el navío holandés no ofreció ninguna respuesta ni movimiento."
+  },
+  {
+   "titulo": "",
+   "hablado": "Intentaron establecer contacto por radio en varias frecuencias de emergencia buscando cualquier voz humana o código Morse. La respuesta fue un absoluto y helado silencio que desconcertó por completo a los marineros estadounidenses.",
+   "subtitulo": "Intentaron establecer contacto por radio en varias frecuencias de emergencia buscando cualquier voz humana o código Morse. La respuesta fue un absoluto y helado silencio que desconcertó por completo a los marineros estadounidenses."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin otra opción el capitán ordenó arriar una lancha con un pequeño grupo de abordaje para inspeccionar el mercante. Nada podía prepararlos para la siniestra calma que descubrirían al poner un pie en la cubierta.",
+   "subtitulo": "Sin otra opción el capitán ordenó arriar una lancha con un pequeño grupo de abordaje para inspeccionar el mercante. Nada podía prepararlos para la siniestra calma que descubrirían al poner un pie en la cubierta."
+  },
+  {
+   "titulo": "",
+   "hablado": "La pequeña embarcación de rescate cruzó las aguas tranquilas del estrecho hasta alcanzar el costado del carguero holandés. Los marineros estadounidenses treparon por la escala de cuerda con suma precaución esperando encontrar daños estructurales o señales de un ataque pirata.",
+   "subtitulo": "La pequeña embarcación de rescate cruzó las aguas tranquilas del estrecho hasta alcanzar el costado del carguero holandés. Los marineros estadounidenses treparon por la escala de cuerda con suma precaución esperando encontrar daños estructurales o señales de un ataque pirata."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo la estructura exterior del buque se encontraba totalmente intacta. No había impactos de proyectiles grietas en el casco ni muestras de incendio reciente. Las chimeneas permanecían frías pero los cabos y las grúas de carga conservaban una alineación impecable.",
+   "subtitulo": "Sin embargo la estructura exterior del buque se encontraba totalmente intacta. No había impactos de proyectiles grietas en el casco ni muestras de incendio reciente. Las chimeneas permanecían frías pero los cabos y las grúas de carga conservaban una alineación impecable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tan pronto como los marineros pisaron la madera de la cubierta un detalle físico heló su ánimo. A pesar del sofocante calor tropical característico de aquella latitud todos coincidieron en que el ambiente dentro del carguero se sentía extrañamente gélido e insoportable.",
+   "subtitulo": "Tan pronto como los marineros pisaron la madera de la cubierta un detalle físico heló su ánimo. A pesar del sofocante calor tropical característico de aquella latitud todos coincidieron en que el ambiente dentro del carguero se sentía extrañamente gélido e insoportable."
+  },
+  {
+   "titulo": "",
+   "hablado": "El silencio era absoluto y estremecedor. Los motores se habían detenido por completo y solo se escuchaba el leve crujido del metal contra las olas. El equipo avanzó lentamente hacia el puente de mando atentos a cualquier movimiento o sonido sospechoso.",
+   "subtitulo": "El silencio era absoluto y estremecedor. Los motores se habían detenido por completo y solo se escuchaba el leve crujido del metal contra las olas. El equipo avanzó lentamente hacia el puente de mando atentos a cualquier movimiento o sonido sospechoso."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al aproximarse a las escotillas principales notaron que todo el equipamiento de navegación permanecía en su lugar correspondiente. Los mapas sobre las mesas de control no mostraban signos de desorden y la rueda del timón continuaba fijada en su rumbo original.",
+   "subtitulo": "Al aproximarse a las escotillas principales notaron que todo el equipamiento de navegación permanecía en su lugar correspondiente. Los mapas sobre las mesas de control no mostraban signos de desorden y la rueda del timón continuaba fijada en su rumbo original."
+  },
+  {
+   "titulo": "",
+   "hablado": "Todo indicaba que la tripulación había continuado con sus tareas habituales hasta el preciso instante de la tragedia. Nada en el puente sugería una lucha violenta o una evacuación apresurada de urgencia hacia los botes salvavidas que seguían asegurados.",
+   "subtitulo": "Todo indicaba que la tripulación había continuado con sus tareas habituales hasta el preciso instante de la tragedia. Nada en el puente sugería una lucha violenta o una evacuación apresurada de urgencia hacia los botes salvavidas que seguían asegurados."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las escotillas hacia las zonas inferiores estaban entreabiertas permitiendo la circulación del aire pero el hedor de las profundidades resultaba inquietante. Con cada paso que daban hacia las entrañas del navío la sensación de peligro invisible aumentaba de forma drástica.",
+   "subtitulo": "Las escotillas hacia las zonas inferiores estaban entreabiertas permitiendo la circulación del aire pero el hedor de las profundidades resultaba inquietante. Con cada paso que daban hacia las entrañas del navío la sensación de peligro invisible aumentaba de forma drástica."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los marineros encendieron sus linternas e iniciaron el descenso por los estrechos pasillos metálicos. Lo que estaban a punto de contemplar en las dependencias interiores desafiaría cualquier explicación lógica y cambiaría el rescate por un escenario verdaderamente dantesco.",
+   "subtitulo": "Los marineros encendieron sus linternas e iniciaron el descenso por los estrechos pasillos metálicos. Lo que estaban a punto de contemplar en las dependencias interiores desafiaría cualquier explicación lógica y cambiaría el rescate por un escenario verdaderamente dantesco."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al cruzar el umbral del puente de mando, la linterna del primer oficial iluminó una escena estremecedora. El capitán yacía de espaldas sobre el suelo de madera, con los ojos completamente abiertos y fijos en un punto invisible.",
+   "subtitulo": "Al cruzar el umbral del puente de mando, la linterna del primer oficial iluminó una escena estremecedora. El capitán yacía de espaldas sobre el suelo de madera, con los ojos completamente abiertos y fijos en un punto invisible."
+  },
+  {
+   "titulo": "",
+   "hablado": "A su lado, el oficial de comunicaciones permanecía inclinado sobre la mesa del telégrafo, exactamente en la misma postura en la que había emitido aquellos angustiosos impulsos en código Morse minutos antes de su muerte.",
+   "subtitulo": "A su lado, el oficial de comunicaciones permanecía inclinado sobre la mesa del telégrafo, exactamente en la misma postura en la que había emitido aquellos angustiosos impulsos en código Morse minutos antes de su muerte."
+  },
+  {
+   "titulo": "",
+   "hablado": "La inspección inicial reveló un detalle fascinante y aterrador a la vez. Ninguno de los marineros caídos presentaba heridas sangrientas, puñaladas ni señales de lucha contra intrusos. Tampoco había signos de haber sufrido un ataque pirata.",
+   "subtitulo": "La inspección inicial reveló un detalle fascinante y aterrador a la vez. Ninguno de los marineros caídos presentaba heridas sangrientas, puñaladas ni señales de lucha contra intrusos. Tampoco había signos de haber sufrido un ataque pirata."
+  },
+  {
+   "titulo": "",
+   "hablado": "Todos los rostros de los fallecidos compartían una mueca común de petrificado terror. Sus brazos estaban extendidos hacia el cielo, como si intentaran protegerse de alguna amenaza invisible que descendió repentinamente desde las alturas.",
+   "subtitulo": "Todos los rostros de los fallecidos compartían una mueca común de petrificado terror. Sus brazos estaban extendidos hacia el cielo, como si intentaran protegerse de alguna amenaza invisible que descendió repentinamente desde las alturas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al descender hacia la sala de máquinas, el equipo descubrió a los ingenieros en sus puestos de trabajo habituales. Las calderas continuaban generando calor, pero los operarios yacían rígidos en el suelo junto a sus herramientas.",
+   "subtitulo": "Al descender hacia la sala de máquinas, el equipo descubrió a los ingenieros en sus puestos de trabajo habituales. Las calderas continuaban generando calor, pero los operarios yacían rígidos en el suelo junto a sus herramientas."
+  },
+  {
+   "titulo": "",
+   "hablado": "En la cubierta principal, el hallazgo del perro guardián del barco confirmó la naturaleza extraordinaria del suceso. El animal fue encontrado enseñando los dientes en una postura de agresión petrificada hacia el aire enrarecido.",
+   "subtitulo": "En la cubierta principal, el hallazgo del perro guardián del barco confirmó la naturaleza extraordinaria del suceso. El animal fue encontrado enseñando los dientes en una postura de agresión petrificada hacia el aire enrarecido."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los rescatistas del Silver Star notaron además que los cuerpos se descomponían a una velocidad inusualmente rápida. La rigidez cadavérica era completa, a pesar de que el suceso había ocurrido apenas un par de horas antes.",
+   "subtitulo": "Los rescatistas del Silver Star notaron además que los cuerpos se descomponían a una velocidad inusualmente rápida. La rigidez cadavérica era completa, a pesar de que el suceso había ocurrido apenas un par de horas antes."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante la insólita falta de supervivientes y el ambiente opresivo de la nave, el capitán dio la orden de remolcar el barco misterioso hacia puerto seguro. Pero el océano guardaba aún un último e inesperado giro.",
+   "subtitulo": "Ante la insólita falta de supervivientes y el ambiente opresivo de la nave, el capitán dio la orden de remolcar el barco misterioso hacia puerto seguro. Pero el océano guardaba aún un último e inesperado giro."
+  },
+  {
+   "titulo": "",
+   "hablado": "El capitán del mercante estadounidense ordenó amarrar un grueso cable de remolque a la proa del buque holandés. Los marineros trabajaron con rapidez para abandonar aquella cubierta helada y regresar al calor protector de su propia nave.",
+   "subtitulo": "El capitán del mercante estadounidense ordenó amarrar un grueso cable de remolque a la proa del buque holandés. Los marineros trabajaron con rapidez para abandonar aquella cubierta helada y regresar al calor protector de su propia nave."
+  },
+  {
+   "titulo": "",
+   "hablado": "Justo cuando la maniobra estaba por concluir, una densa columna de humo negro comenzó a brotar de las escotillas de la bodega número cuatro. Un calor sofocante e inexplicable empezó a emanar desde las profundidades del casco.",
+   "subtitulo": "Justo cuando la maniobra estaba por concluir, una densa columna de humo negro comenzó a brotar de las escotillas de la bodega número cuatro. Un calor sofocante e inexplicable empezó a emanar desde las profundidades del casco."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los marineros del Silver Star detectaron un fuego abrasador devorando los compartimentos inferiores. La temperatura aumentó drásticamente en cuestión de segundos, convirtiendo el metal bajo sus pies en una superficie incandescente e insoportable para la tripulación.",
+   "subtitulo": "Los marineros del Silver Star detectaron un fuego abrasador devorando los compartimentos inferiores. La temperatura aumentó drásticamente en cuestión de segundos, convirtiendo el metal bajo sus pies en una superficie incandescente e insoportable para la tripulación."
+  },
+  {
+   "titulo": "",
+   "hablado": "Con el peligro inminente de una deflagración, la partida de abordaje corrió hacia su bote de salvamento. El capitán estadounidense ordenó cortar de inmediato las marras de remolque para distanciar su embarcación del inminente desastre.",
+   "subtitulo": "Con el peligro inminente de una deflagración, la partida de abordaje corrió hacia su bote de salvamento. El capitán estadounidense ordenó cortar de inmediato las marras de remolque para distanciar su embarcación del inminente desastre."
+  },
+  {
+   "titulo": "",
+   "hablado": "El hacha cortó la gruesa soga justo a tiempo. El Silver Star puso sus motores a máxima potencia, alejándose desesperadamente mientras el barco misterioso se envolvía en crecientes llamaradas y una niebla tóxica e impenetrable.",
+   "subtitulo": "El hacha cortó la gruesa soga justo a tiempo. El Silver Star puso sus motores a máxima potencia, alejándose desesperadamente mientras el barco misterioso se envolvía en crecientes llamaradas y una niebla tóxica e impenetrable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Segundos después de alcanzar una distancia prudencial, una tremenda explosión retumbó en la quietud del océano. El estallido fue tan violento que levantó la estructura completa del buque antes de quebrarlo en dos partes sobre el agua.",
+   "subtitulo": "Segundos después de alcanzar una distancia prudencial, una tremenda explosión retumbó en la quietud del océano. El estallido fue tan violento que levantó la estructura completa del buque antes de quebrarlo en dos partes sobre el agua."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las aguas embravecidas del estrecho tragaron la nave en cuestión de escasos minutos. El carguero se hundió verticalmente hacia las profundidades del mar, sumergiéndose con los cuerpos intactos de toda su tripulación y sus misteriosos secretos.",
+   "subtitulo": "Las aguas embravecidas del estrecho tragaron la nave en cuestión de escasos minutos. El carguero se hundió verticalmente hacia las profundidades del mar, sumergiéndose con los cuerpos intactos de toda su tripulación y sus misteriosos secretos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El océano devoró la única prueba física de aquella tragedia espantosa. En la superficie solo quedaron burbujas y restos de madera flotando a la deriva, dejando a los investigadores sin respuestas directas. Pero la verdadera investigación apenas comenzaba.",
+   "subtitulo": "El océano devoró la única prueba física de aquella tragedia espantosa. En la superficie solo quedaron burbujas y restos de madera flotando a la deriva, dejando a los investigadores sin respuestas directas. Pero la verdadera investigación apenas comenzaba."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin restos físicos en el fondo marino la única forma de resolver el misterio era rastrear el origen del buque Los investigadores recurrieron de inmediato a los minuciosos archivos navales de la firma de seguros Lloyds en Londres",
+   "subtitulo": "Sin restos físicos en el fondo marino la única forma de resolver el misterio era rastrear el origen del buque Los investigadores recurrieron de inmediato a los minuciosos archivos navales de la firma de seguros Lloyds en Londres"
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras revisar miles de folios oficiales saltó la primera gran alarma El nombre Ourang Medan no figuraba en el registro mercante holandés ni en los catálogos internacionales de transporte marítimo de aquellos años",
+   "subtitulo": "Tras revisar miles de folios oficiales saltó la primera gran alarma El nombre Ourang Medan no figuraba en el registro mercante holandés ni en los catálogos internacionales de transporte marítimo de aquellos años"
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella ausencia sugería que el barco operaba de forma clandestina Era habitual que navíos de contrabando usaran banderas de conveniencia o nombres falsos grabados en el casco para esquivar los controles de las autoridades aduaneras",
+   "subtitulo": "Aquella ausencia sugería que el barco operaba de forma clandestina Era habitual que navíos de contrabando usaran banderas de conveniencia o nombres falsos grabados en el casco para esquivar los controles de las autoridades aduaneras"
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo las menciones en prensa sí existían En mil novecientos cuarenta y ocho varios periódicos holandeses publicaron detalladas crónicas sobre la tragedia del navío basándose en declaraciones del equipo del barco rescate Silver Star",
+   "subtitulo": "Sin embargo las menciones en prensa sí existían En mil novecientos cuarenta y ocho varios periódicos holandeses publicaron detalladas crónicas sobre la tragedia del navío basándose en declaraciones del equipo del barco rescate Silver Star"
+  },
+  {
+   "titulo": "",
+   "hablado": "Años después en mil novecientos cincuenta y dos la Guardia Costera de los Estados Unidos incluyó una narración oficial del incidente en sus publicaciones del Consejo de la Marina Mercante aportando credibilidad a los testimonios",
+   "subtitulo": "Años después en mil novecientos cincuenta y dos la Guardia Costera de los Estados Unidos incluyó una narración oficial del incidente en sus publicaciones del Consejo de la Marina Mercante aportando credibilidad a los testimonios"
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero la documentación mostraba profundas contradicciones Las fechas bailaban entre mil novecientos cuarenta y siete y mil novecientos cuarenta y ocho y las coordenadas náuticas citadas en las actas no coincidían en los distintos informes",
+   "subtitulo": "Pero la documentación mostraba profundas contradicciones Las fechas bailaban entre mil novecientos cuarenta y siete y mil novecientos cuarenta y ocho y las coordenadas náuticas citadas en las actas no coincidían en los distintos informes"
+  },
+  {
+   "titulo": "",
+   "hablado": "Además nunca apareció una lista formal de tripulantes ni de carga depositada en puerto Oficialmente ningún marinero había embarcado y ninguna empresa reclamó el valor monetario del navío destruido tras la posterior detonación",
+   "subtitulo": "Además nunca apareció una lista formal de tripulantes ni de carga depositada en puerto Oficialmente ningún marinero había embarcado y ninguna empresa reclamó el valor monetario del navío destruido tras la posterior detonación"
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta opacidad documental reforzó la idea de que la nave transportaba un cargamento ilegal y altamente peligroso Si nadie reclamaba el barco era porque su contenido oculto no debía salir a la luz jamás",
+   "subtitulo": "Esta opacidad documental reforzó la idea de que la nave transportaba un cargamento ilegal y altamente peligroso Si nadie reclamaba el barco era porque su contenido oculto no debía salir a la luz jamás"
+  },
+  {
+   "titulo": "",
+   "hablado": "Ante la falta de pruebas físicas supervivientes, los expertos forenses comenzaron a formular hipótesis basadas en la ciencia náutica. Era necesario explicar cómo toda una tripulación pudo sucumbir en cuestión de minutos sin presentar heridas ni violencia.",
+   "subtitulo": "Ante la falta de pruebas físicas supervivientes, los expertos forenses comenzaron a formular hipótesis basadas en la ciencia náutica. Era necesario explicar cómo toda una tripulación pudo sucumbir en cuestión de minutos sin presentar heridas ni violencia."
+  },
+  {
+   "titulo": "",
+   "hablado": "La primera gran teoría apuntaba a una avería grave en el sistema de calderas del buque. Un escape masivo de monóxido de carbono habría intoxicado silenciosamente a los marineros antes de que pudieran reaccionar o evacuar.",
+   "subtitulo": "La primera gran teoría apuntaba a una avería grave en el sistema de calderas del buque. Un escape masivo de monóxido de carbono habría intoxicado silenciosamente a los marineros antes de que pudieran reaccionar o evacuar."
+  },
+  {
+   "titulo": "",
+   "hablado": "Este gas inodoro e incoloro induce una pérdida de conocimiento casi instantánea sin causar dolor visible. Eso explicaría por qué los cuerpos mantenían posturas de tensión rígida y miradas atónitas fijadas hacia el cielo al desplomarse.",
+   "subtitulo": "Este gas inodoro e incoloro induce una pérdida de conocimiento casi instantánea sin causar dolor visible. Eso explicaría por qué los cuerpos mantenían posturas de tensión rígida y miradas atónitas fijadas hacia el cielo al desplomarse."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, varios analistas señalaron una falla fundamental en esta hipótesis. El monóxido de carbono se habría disipado rápidamente en los espacios abiertos de la cubierta exterior donde también aparecieron marineros sin vida.",
+   "subtitulo": "Sin embargo, varios analistas señalaron una falla fundamental en esta hipótesis. El monóxido de carbono se habría disipado rápidamente en los espacios abiertos de la cubierta exterior donde también aparecieron marineros sin vida."
+  },
+  {
+   "titulo": "",
+   "hablado": "Surgió entonces una explicación geológica más inquietante y repentina. La zona del estrecho de Malaca registra actividad sísmica submarina capaz de liberar bolsas gigantescas de gases metánicos u otros compuestos nocivos atrapados bajo el lecho marino.",
+   "subtitulo": "Surgió entonces una explicación geológica más inquietante y repentina. La zona del estrecho de Malaca registra actividad sísmica submarina capaz de liberar bolsas gigantescas de gases metánicos u otros compuestos nocivos atrapados bajo el lecho marino."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al emerger a la superficie, una burbuja masiva de gas desplazaría el oxígeno de forma drástica e inmediata. Cualquier ser vivo en el perímetro sofocaría instantáneamente sin percatarse del peligro hasta sentir la parálisis respiratoria completa.",
+   "subtitulo": "Al emerger a la superficie, una burbuja masiva de gas desplazaría el oxígeno de forma drástica e inmediata. Cualquier ser vivo en el perímetro sofocaría instantáneamente sin percatarse del peligro hasta sentir la parálisis respiratoria completa."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta hipótesis geológica también daba respuesta al extraño frío reportado por los marineros del Silver Star. La rápida expansión de estos gases despresurizados absorbe la temperatura ambiental de forma brusca en un fenómeno de congelación súbita.",
+   "subtitulo": "Esta hipótesis geológica también daba respuesta al extraño frío reportado por los marineros del Silver Star. La rápida expansión de estos gases despresurizados absorbe la temperatura ambiental de forma brusca en un fenómeno de congelación súbita."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pese al rigor de estas explicaciones ambientales, la misteriosa deflagración posterior sembró dudas imborrables. Existía otra posibilidad mucho más oscura vinculada a experimentos militares y sustancias químicas clandestinas que no podían quedar al descubierto.",
+   "subtitulo": "Pese al rigor de estas explicaciones ambientales, la misteriosa deflagración posterior sembró dudas imborrables. Existía otra posibilidad mucho más oscura vinculada a experimentos militares y sustancias químicas clandestinas que no podían quedar al descubierto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras el final de la Segunda Guerra Mundial, toneladas de armamento químico peligroso quedaron almacenadas en depósitos asiáticos sin control oficial. Muchas redes de contrabando trasladaban cianuro de potasio o gas mostaza mediante embarcaciones fantasma sin bandera.",
+   "subtitulo": "Tras el final de la Segunda Guerra Mundial, toneladas de armamento químico peligroso quedaron almacenadas en depósitos asiáticos sin control oficial. Muchas redes de contrabando trasladaban cianuro de potasio o gas mostaza mediante embarcaciones fantasma sin bandera."
+  },
+  {
+   "titulo": "",
+   "hablado": "Varios historiadores navales sugirieron que el buque llevaba un cargamento mortal de nitroglicerina y cianuro potásico no declarado. Si el agua marina se filtró a las bodegas, la reacción química liberó gases tóxicos letales al instante.",
+   "subtitulo": "Varios historiadores navales sugirieron que el buque llevaba un cargamento mortal de nitroglicerina y cianuro potásico no declarado. Si el agua marina se filtró a las bodegas, la reacción química liberó gases tóxicos letales al instante."
+  },
+  {
+   "titulo": "",
+   "hablado": "La inhalación inadvertida de cianuro inhibe el oxígeno celular en cuestión de segundos. Esto causaría la asfixia agónica, el colapso muscular inmediato y los rostros desencajados por el pavor que aterraron a los marineros del carguero de rescate.",
+   "subtitulo": "La inhalación inadvertida de cianuro inhibe el oxígeno celular en cuestión de segundos. Esto causaría la asfixia agónica, el colapso muscular inmediato y los rostros desencajados por el pavor que aterraron a los marineros del carguero de rescate."
+  },
+  {
+   "titulo": "",
+   "hablado": "Por su parte, la nitroglicerina líquida o inestable es extremadamente vulnerable al agua y a los cambios térmicos. Una pequeña infiltración en el cargamento oculto desencadenaría una combustión interna progresiva e imparable antes de la gran explosión.",
+   "subtitulo": "Por su parte, la nitroglicerina líquida o inestable es extremadamente vulnerable al agua y a los cambios térmicos. Una pequeña infiltración en el cargamento oculto desencadenaría una combustión interna progresiva e imparable antes de la gran explosión."
+  },
+  {
+   "titulo": "",
+   "hablado": "Esta peligrosa mercancía ilegal explicaba también la prisa con la que el capitán intentaba cruzar el estrecho. Evitaba los controles aduaneros internacionales navegando con documentos falsos o bajo una identidad ficticia que no figuraba en registros oficiales.",
+   "subtitulo": "Esta peligrosa mercancía ilegal explicaba también la prisa con la que el capitán intentaba cruzar el estrecho. Evitaba los controles aduaneros internacionales navegando con documentos falsos o bajo una identidad ficticia que no figuraba en registros oficiales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Si potencias internacionales trasladaban armamentos prohibidos de forma secreta, el silencio absoluto resultaba imprescindible. Ningún gobierno asumiría jamás la propiedad de una nave hundida con materiales biológicos o químicos que violaban tratados de guerra firmados.",
+   "subtitulo": "Si potencias internacionales trasladaban armamentos prohibidos de forma secreta, el silencio absoluto resultaba imprescindible. Ningún gobierno asumiría jamás la propiedad de una nave hundida con materiales biológicos o químicos que violaban tratados de guerra firmados."
+  },
+  {
+   "titulo": "",
+   "hablado": "El investigador alemán Otto Mielke halló rastros de un panfleto publicado en mil novecientos cincuenta y tres que mencionaba el cargamento letal. Aquella publicación apuntaba directamente a una operación de contrabando militar fallida en las Indias Orientales.",
+   "subtitulo": "El investigador alemán Otto Mielke halló rastros de un panfleto publicado en mil novecientos cincuenta y tres que mencionaba el cargamento letal. Aquella publicación apuntaba directamente a una operación de contrabando militar fallida en las Indias Orientales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la destrucción total del barco sepultó el misterio en el fondo oceánico para siempre. Aunque la teoría del contrabando tóxico ofrece respuestas lógicas, la ausencia del pecio impide verificar si las pruebas reales existieron alguna vez.",
+   "subtitulo": "Sin embargo, la destrucción total del barco sepultó el misterio en el fondo oceánico para siempre. Aunque la teoría del contrabando tóxico ofrece respuestas lógicas, la ausencia del pecio impide verificar si las pruebas reales existieron alguna vez."
+  },
+  {
+   "titulo": "",
+   "hablado": "Décadas después del trágico suceso, el dilema entre un simple mito náutico y un incidente real verificado sigue dividiendo a los historiadores marítimos. Los registros de socorro captados por múltiples estaciones confirman que la señal existió.",
+   "subtitulo": "Décadas después del trágico suceso, el dilema entre un simple mito náutico y un incidente real verificado sigue dividiendo a los historiadores marítimos. Los registros de socorro captados por múltiples estaciones confirman que la señal existió."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la completa desaparición del barco bajo las profundidades del lecho marino eliminó cualquier posibilidad de análisis forense directo. La última y estremecedora transmisión en código morse permanece helada en el tiempo como un enigma impenetrable.",
+   "subtitulo": "Sin embargo, la completa desaparición del barco bajo las profundidades del lecho marino eliminó cualquier posibilidad de análisis forense directo. La última y estremecedora transmisión en código morse permanece helada en el tiempo como un enigma impenetrable."
+  },
+  {
+   "titulo": "",
+   "hablado": "La tragedia del barco misterioso perdura como un frío recordatorio sobre los incalculables riesgos del comercio marítimo a mediados del siglo veinte, donde barcos sin registro oficial transportaban cargas altamente peligrosas en la penumbra.",
+   "subtitulo": "La tragedia del barco misterioso perdura como un frío recordatorio sobre los incalculables riesgos del comercio marítimo a mediados del siglo veinte, donde barcos sin registro oficial transportaban cargas altamente peligrosas en la penumbra."
+  },
+  {
+   "titulo": "",
+   "hablado": "Entre la asfixia repentina por monóxido de carbono y el colapso pulmonar provocado por sustancias químicas prohibidas de contrabando, la ciencia busca encajar las piezas de una catástrofe que ocurrió en cuestión de minutos.",
+   "subtitulo": "Entre la asfixia repentina por monóxido de carbono y el colapso pulmonar provocado por sustancias químicas prohibidas de contrabando, la ciencia busca encajar las piezas de una catástrofe que ocurrió en cuestión de minutos."
+  },
+  {
+   "titulo": "",
+   "hablado": "El detalle más perturbador no fue la rápida explosión del carguero, sino el estado intacto de la tripulación congelada en el espanto, sugerencia de que presenciaron algo letal e inaudito antes del silencio final.",
+   "subtitulo": "El detalle más perturbador no fue la rápida explosión del carguero, sino el estado intacto de la tripulación congelada en el espanto, sugerencia de que presenciaron algo letal e inaudito antes del silencio final."
+  },
+  {
+   "titulo": "",
+   "hablado": "Las profundidades oceánicas han guardado celosamente sus secretos durante generaciones, demostrando que algunos enigmas históricos nunca tendrán una sentencia definitiva ni una verdad absoluta confirmada por la justicia o la ciencia.",
+   "subtitulo": "Las profundidades oceánicas han guardado celosamente sus secretos durante generaciones, demostrando que algunos enigmas históricos nunca tendrán una sentencia definitiva ni una verdad absoluta confirmada por la justicia o la ciencia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para ti cuál de las hipótesis explica mejor este misterio. ¿Crees que un vertido químico clandestino acabó con los marineros o consideras que el caso fue un mito amplificado por la prensa de la época.",
+   "subtitulo": "Para ti cuál de las hipótesis explica mejor este misterio. ¿Crees que un vertido químico clandestino acabó con los marineros o consideras que el caso fue un mito amplificado por la prensa de la época."
+  },
+  {
+   "titulo": "",
+   "hablado": "Deja tu opinión en la sección de comentarios y suscríbete para acompañarnos en el próximo expediente de Caja Negra, donde exploraremos otro caso insólito que la historia no ha podido resolver.",
+   "subtitulo": "Deja tu opinión en la sección de comentarios y suscríbete para acompañarnos en el próximo expediente de Caja Negra, donde exploraremos otro caso insólito que la historia no ha podido resolver."
+  }
+ ]
+}

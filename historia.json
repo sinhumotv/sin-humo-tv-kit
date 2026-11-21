@@ -1,0 +1,2094 @@
+{
+ "titulo": "El enigma del SS Ourang Medan",
+ "titulos": [
+  "El barco fantasma que envió un SOS escalofriante",
+  "La llamada final del Ourang Medan: ¿qué ocurrió?",
+  "Todos han muerto: la tragedia del SS Ourang Medan",
+  "El misterio marítimo más inquietante del siglo XX",
+  "La verdad oculta tras el naufragio del Ourang Medan",
+  "SS Ourang Medan: la tripulación hallada sin vida",
+  "El mensaje en Morse que aterrorizó al océano",
+  "¿Qué acabó con la tripulación del Ourang Medan?",
+  "El barco fantasma y su tripulación petrificada",
+  "Misterio en el mar: el enigma del Ourang Medan"
+ ],
+ "miniatura": {
+  "texto": "ÚLTIMO MENSAJE MORSE",
+  "clave": "MORSE",
+  "prompt": "A massive classic 1940s merchant ship drifting silently in the middle of a glowing turquoise ocean under a dramatic golden hour sky. Cinematic wide angle shot, sunlight breaking through sea mist, high contrast, vibrant cinematic lighting, epic atmospheric tension, photorealistic documentary style, vivid details, no text, no blood, no visible corpses."
+ },
+ "descripcion": "En junio de 1947, una serie de agónicos mensajes en código Morse estremecieron a los operadores de radio en el estrecho de Malaca. Las palabras eran devastadoras: «Todos los oficiales han muerto. Yo también muero». Cuando los rescatistas abordaron el buque mercante SS Ourang Medan, encontraron una escena que desafiaba toda lógica científica y forense.\n\nEn este documental examinamos los hechos documentados, los testimonios de los marineros del Silver Star y las principales hipótesis oficiales y científicas. Descubre qué ocurrió realmente a bordo del buque fantasma más famoso de la historia marítima y los secretos que quedaron sumergidos para siempre.",
+ "etiquetas": [
+  "caja negra",
+  "ourang medan",
+  "barco fantasma",
+  "misterios del mar",
+  "casos reales",
+  "documental crimen",
+  "misterios sin resolver",
+  "estrecho de malaca",
+  "silver star",
+  "enigmas historicos",
+  "historias del mar",
+  "sucesos extraños"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El código de la muerte"
+  },
+  {
+   "escena": 8,
+   "titulo": "Respuesta en alta mar"
+  },
+  {
+   "escena": 16,
+   "titulo": "Abordaje al silencio"
+  },
+  {
+   "escena": 24,
+   "titulo": "Rostros congelados"
+  },
+  {
+   "escena": 32,
+   "titulo": "Fuego en las profundidades"
+  },
+  {
+   "escena": 40,
+   "titulo": "El rastro documental"
+  },
+  {
+   "escena": 48,
+   "titulo": "Hipótesis del gas invisible"
+  },
+  {
+   "escena": 56,
+   "titulo": "Cargas peligrosas y contrabando"
+  },
+  {
+   "escena": 64,
+   "titulo": "Sombras en el océano"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "«Todos los oficiales han muerto. Yo también muero». En junio de mil novecientos cuarenta y siete, este agónico mensaje en código Morse estremeció los receptores de radio en el estrecho de Malaca.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship radio room",
+    "otras": [
+     "vintage radio receiver",
+     "ocean boat radio"
+    ],
+    "descripcion": "A dimly lit ship radio room with old communications equipment operating",
+    "clip": "https://assets.mixkit.co/videos/30979/30979-720.mp4",
+    "clip_id": "mixkit:30979",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/17/26968-361107935_large.mp4",
+      "clip_id": 26968
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/09/179775-862771690_small.mp4",
+      "clip_id": 179775
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/06/210910_large.mp4",
+      "clip_id": 210910
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "«Todos los oficiales han muerto. Yo también muero». En junio de mil novecientos cuarenta y siete, este agónico mensaje en código Morse estremeció los receptores de radio en el estrecho de Malaca."
+  },
+  {
+   "hablado": "Tras unos minutos de impulsos erráticos, la señal se apagó para siempre. A bordo del buque mercante Ourang Medan, una muerte simultánea e invisible acababa de exterminar a toda la tripulación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "morse code telegraph",
+    "otras": [
+     "vintage telegraph key",
+     "old radio transmitter"
+    ],
+    "descripcion": "Close up of a vintage Morse code telegraph key keying a message",
+    "clip": "https://cdn.pixabay.com/video/2020/05/10/38626-418875137_large.mp4",
+    "clip_id": 38626,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/12/11/1657-148614496_medium.mp4",
+      "clip_id": 1657
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/1007-142621179_large.mp4",
+      "clip_id": 1007
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/25/60332-495376754_large.mp4",
+      "clip_id": 60332
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tras unos minutos de impulsos erráticos, la señal se apagó para siempre. A bordo del buque mercante Ourang Medan, una muerte simultánea e invisible acababa de exterminar a toda la tripulación."
+  },
+  {
+   "hablado": "¿Qué desencadenó una tragedia tan devastadora en mitad del océano? Hoy examinarás los hechos documentados y los testimonios reales que desafiaron toda lógica científica y forense.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "stormy ocean sea",
+    "otras": [
+     "dark ocean night",
+     "sea waves fog"
+    ],
+    "descripcion": "Dark stormy sea at dusk with heavy waves",
+    "clip": "https://cdn.pixabay.com/video/2022/07/11/123839-729019798_small.mp4",
+    "clip_id": 123839,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/03/43776-436252305_small.mp4",
+      "clip_id": 43776
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/21/59914-493983328_large.mp4",
+      "clip_id": 59914
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "¿Qué desencadenó una tragedia tan devastadora en mitad del océano? Hoy examinarás los hechos documentados y los testimonios reales que desafiaron toda lógica científica y forense."
+  },
+  {
+   "hablado": "Descubre la aterradora verdad oculta tras el naufragio del buque fantasma más famoso de la historia marítima y los secretos que quedaron sumergidos para siempre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship ocean",
+    "otras": [
+     "cargo ship sea",
+     "vintage cargo ship"
+    ],
+    "descripcion": "A large cargo ship navigating across calm ocean waters",
+    "clip": "https://cdn.pixabay.com/video/2023/11/16/189290-885321799_small.mp4",
+    "clip_id": 189290,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/27/32941-395456389_large.mp4",
+      "clip_id": 32941
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/14/110723-688648638_medium.mp4",
+      "clip_id": 110723
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Descubre la aterradora verdad oculta tras el naufragio del buque fantasma más famoso de la historia marítima y los secretos que quedaron sumergidos para siempre."
+  },
+  {
+   "hablado": "Aquel día, tanto las estaciones receptoras holandesas como barcos británicos y estadounidenses captaron la misma llamada de socorro. El mensaje no pedía rescate técnico, sino que advertía de algo mucho más siniestro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old map room",
+    "otras": [
+     "vintage navigation map",
+     "nautical map compass"
+    ],
+    "descripcion": "Nautical map on a wooden table with compasses and measuring tools",
+    "clip": "https://cdn.pixabay.com/video/2020/05/25/40154-424912072_small.mp4",
+    "clip_id": 40154,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/19/1110-142930245_medium.mp4",
+      "clip_id": 1110
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/08/127-135736713_large.mp4",
+      "clip_id": 127
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/08/225462_small.mp4",
+      "clip_id": 225462
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquel día, tanto las estaciones receptoras holandesas como barcos británicos y estadounidenses captaron la misma llamada de socorro. El mensaje no pedía rescate técnico, sino que advertía de algo mucho más siniestro."
+  },
+  {
+   "hablado": "El radiotelegrafista detalló con precisión aterradora que el capitán y los oficiales yacían inmóviles en el puente de mando y en la sala de mapas. Toda la tripulación visible parecía haber colapsado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship bridge interior",
+    "otras": [
+     "vintage ship interior",
+     "empty ship hallway"
+    ],
+    "descripcion": "Empty interior hallway of a ship dark and silent",
+    "clip": "https://cdn.pixabay.com/video/2024/01/21/197564-905005767_small.mp4",
+    "clip_id": 197564,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/29/209901_large.mp4",
+      "clip_id": 209901
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/07/32052-390497749_small.mp4",
+      "clip_id": 32052
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/04/123161-727211232_small.mp4",
+      "clip_id": 123161
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El radiotelegrafista detalló con precisión aterradora que el capitán y los oficiales yacían inmóviles en el puente de mando y en la sala de mapas. Toda la tripulación visible parecía haber colapsado."
+  },
+  {
+   "hablado": "Siguieron varios minutos de pulsaciones caóticas, puntos y rayas sin sentido que reflejaban la desesperada agonía de quien intentaba mantener la transmisión mientras perdía el conocimiento en la soledad del cuarto de radio.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark empty room vintage",
+    "otras": [
+     "dim light room",
+     "shadowy hallway"
+    ],
+    "descripcion": "Dark room lit by dim light flickering quietly",
+    "clip": "https://cdn.pixabay.com/video/2023/11/21/190011-887054228_small.mp4",
+    "clip_id": 190011,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/03/43749-436252236_large.mp4",
+      "clip_id": 43749
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/22/190164-887495596_small.mp4",
+      "clip_id": 190164
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Siguieron varios minutos de pulsaciones caóticas, puntos y rayas sin sentido que reflejaban la desesperada agonía de quien intentaba mantener la transmisión mientras perdía el conocimiento en la soledad del cuarto de radio."
+  },
+  {
+   "hablado": "Las coordenadas aproximadas ubicaban al carguero a la deriva en una zona estratégica. Varios navíos alteraron de inmediato su rumbo, ignorando que se dirigían hacia un barco fantasma repleto de enigmas incomprendidos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship sailing ocean night",
+    "otras": [
+     "cargo ship night",
+     "sea vessel dark"
+    ],
+    "descripcion": "A vessel navigating dark waters under a moonlit sky",
+    "clip": "https://cdn.pixabay.com/video/2015/11/12/1335-145564309_large.mp4",
+    "clip_id": 1335,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/11/220753_large.mp4",
+      "clip_id": 220753
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/12/91783-636709200_small.mp4",
+      "clip_id": 91783
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/18/147026-790648786_large.mp4",
+      "clip_id": 147026
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Las coordenadas aproximadas ubicaban al carguero a la deriva en una zona estratégica. Varios navíos alteraron de inmediato su rumbo, ignorando que se dirigían hacia un barco fantasma repleto de enigmas incomprendidos."
+  },
+  {
+   "hablado": "El carguero estadounidense Silver Star capitaneado por Thomas Cullen navegaba cerca del estrecho de Malaca cuando su operador de radio logró triangular la llamada de auxilio. Sin dudarlo la tripulación cambió de rumbo inmediatamente.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship radio communication",
+    "otras": [
+     "cargo ship ocean",
+     "nautical navigation"
+    ],
+    "descripcion": "Marineros trabajando en la sala de radio de un barco en medio del mar.",
+    "clip": "https://cdn.pixabay.com/video/2023/09/15/180776-865216724_large.mp4",
+    "clip_id": 180776,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/03/169894-842039558_large.mp4",
+      "clip_id": 169894
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/30/133079-755697265_large.mp4",
+      "clip_id": 133079
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/07/03/169893-842039551_large.mp4",
+      "clip_id": 169893
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El carguero estadounidense Silver Star capitaneado por Thomas Cullen navegaba cerca del estrecho de Malaca cuando su operador de radio logró triangular la llamada de auxilio. Sin dudarlo la tripulación cambió de rumbo inmediatamente."
+  },
+  {
+   "hablado": "Durante las dos horas de travesía la tensión a bordo del navío norteamericano fue en aumento. El capitán ordenó preparar los equipos de rescate ante la posibilidad de enfrentarse a piratas o a una catástrofe.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship captain ocean",
+    "otras": [
+     "cargo ship deck",
+     "sailor on ship"
+    ],
+    "descripcion": "Capitán de barco observando el horizonte con preocupación desde el puente.",
+    "clip_id": "ia-10",
+    "clip_ini": 3,
+    "clip": "ia",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.75
+   },
+   "efecto": "nada",
+   "subtitulo": "Durante las dos horas de travesía la tensión a bordo del navío norteamericano fue en aumento. El capitán ordenó preparar los equipos de rescate ante la posibilidad de enfrentarse a piratas o a una catástrofe."
+  },
+  {
+   "hablado": "Al romper el día la silueta del buque holandés apareció recortada en el horizonte. La embarcación se encontraba flotando a la deriva en aguas tranquilas aparentemente intacta y sin presentar ningún tipo de daño visible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship ocean",
+    "otras": [
+     "ship floating sea",
+     "ocean horizon boat"
+    ],
+    "descripcion": "Un gran carguero flotando en aguas tranquilas en alta mar.",
+    "clip": "https://cdn.pixabay.com/video/2021/11/09/95241-645704327_small.mp4",
+    "clip_id": 95241,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/03/40982-427854563_large.mp4",
+      "clip_id": 40982
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/03/40984-427854579_large.mp4",
+      "clip_id": 40984
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/26/1384-147055500_large.mp4",
+      "clip_id": 1384
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Al romper el día la silueta del buque holandés apareció recortada en el horizonte. La embarcación se encontraba flotando a la deriva en aguas tranquilas aparentemente intacta y sin presentar ningún tipo de daño visible."
+  },
+  {
+   "hablado": "Sin embargo los marineros del Silver Star notaron de inmediato algo profundamente anómalo. De la chimenea principal del barco no salía ni una sola columna de humo lo que indicaba que las calderas estaban apagadas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship chimney smoke",
+    "otras": [
+     "cargo ship sea",
+     "smokestack boat"
+    ],
+    "descripcion": "La estructura superior y chimenea de un barco en la inmensidad del océano.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/27/48345-454346550_small.mp4",
+    "clip_id": 48345,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/26/209562_small.mp4",
+      "clip_id": 209562
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/11/207658_small.mp4",
+      "clip_id": 207658
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/16/36078-410587624_large.mp4",
+      "clip_id": 36078
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo los marineros del Silver Star notaron de inmediato algo profundamente anómalo. De la chimenea principal del barco no salía ni una sola columna de humo lo que indicaba que las calderas estaban apagadas."
+  },
+  {
+   "hablado": "Los oficiales observaron la cubierta con prismáticos buscando cualquier señal de vida. La estructura permanecía quieta pero no había tripulantes a la vista moviéndose por las pasarelas ni haciendo ninguna señal de socorro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "looking through binoculars",
+    "otras": [
+     "binoculars sea ship",
+     "sailor looking ocean"
+    ],
+    "descripcion": "Un oficial de barco observando a lo lejos utilizando unos prismáticos.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/27/213945_small.mp4",
+    "clip_id": 213945,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/21/71835-540475378_large.mp4",
+      "clip_id": 71835
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/28/129455-744370687_small.mp4",
+      "clip_id": 129455
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/04/09/271135_small.mp4",
+      "clip_id": 271135
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los oficiales observaron la cubierta con prismáticos buscando cualquier señal de vida. La estructura permanecía quieta pero no había tripulantes a la vista moviéndose por las pasarelas ni haciendo ninguna señal de socorro."
+  },
+  {
+   "hablado": "El buque norteamericano se aproximó a corta distancia e hizo sonar sus sirenas de niebla repetidamente. Los potentes avisos sonoros retumbaron en el mar pero el navío holandés no ofreció ninguna respuesta ni movimiento.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship water",
+    "otras": [
+     "ocean horizon ship",
+     "sea vessel waves"
+    ],
+    "descripcion": "Proa de un carguero navegando cerca de otra embarcación en el agua.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/10/31140-384523216_large.mp4",
+    "clip_id": 31140,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198982-909251580_small.mp4",
+      "clip_id": 198982
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/28/79303-569096017_small.mp4",
+      "clip_id": 79303
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/28/79304-569096026_small.mp4",
+      "clip_id": 79304
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El buque norteamericano se aproximó a corta distancia e hizo sonar sus sirenas de niebla repetidamente. Los potentes avisos sonoros retumbaron en el mar pero el navío holandés no ofreció ninguna respuesta ni movimiento."
+  },
+  {
+   "hablado": "Intentaron establecer contacto por radio en varias frecuencias de emergencia buscando cualquier voz humana o código Morse. La respuesta fue un absoluto y helado silencio que desconcertó por completo a los marineros estadounidenses.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "radio telegraph machine",
+    "otras": [
+     "vintage radio equipment",
+     "old radio transmitter"
+    ],
+    "descripcion": "Equipo de comunicaciones de radio marítimo antiguo completamente inactivo.",
+    "clip": "https://cdn.pixabay.com/video/2025/12/09/320787_small.mp4",
+    "clip_id": 320787,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/11/88223-606079076_small.mp4",
+      "clip_id": 88223
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/12/200274-912384787_small.mp4",
+      "clip_id": 200274
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/13/44563-439940132_medium.mp4",
+      "clip_id": 44563
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Intentaron establecer contacto por radio en varias frecuencias de emergencia buscando cualquier voz humana o código Morse. La respuesta fue un absoluto y helado silencio que desconcertó por completo a los marineros estadounidenses."
+  },
+  {
+   "hablado": "Sin otra opción el capitán ordenó arriar una lancha con un pequeño grupo de abordaje para inspeccionar el mercante. Nada podía prepararlos para la siniestra calma que descubrirían al poner un pie en la cubierta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rowboat ocean sea",
+    "otras": [
+     "lowering lifeboat ship",
+     "sailors boat rescue"
+    ],
+    "descripcion": "Marineros descendiendo en un bote de remo para acercarse a un navío.",
+    "clip": "https://cdn.pixabay.com/video/2025/03/09/263561_small.mp4",
+    "clip_id": 263561,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/12/70796-538877060_small.mp4",
+      "clip_id": 70796
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/16/176303-855196335_small.mp4",
+      "clip_id": 176303
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/08/35427-407130886_large.mp4",
+      "clip_id": 35427
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin otra opción el capitán ordenó arriar una lancha con un pequeño grupo de abordaje para inspeccionar el mercante. Nada podía prepararlos para la siniestra calma que descubrirían al poner un pie en la cubierta."
+  },
+  {
+   "hablado": "La pequeña embarcación de rescate cruzó las aguas tranquilas del estrecho hasta alcanzar el costado del carguero holandés. Los marineros estadounidenses treparon por la escala de cuerda con suma precaución esperando encontrar daños estructurales o señales de un ataque pirata.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship sea water rowboat rescue",
+    "otras": [
+     "boat sailing sea",
+     "ocean ship view"
+    ],
+    "descripcion": "Un pequeño bote acercándose a la estructura de un gran buque mercante en el océano.",
+    "clip": "ia",
+    "clip_id": "ia-17",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 18.19
+   },
+   "efecto": "niebla",
+   "subtitulo": "La pequeña embarcación de rescate cruzó las aguas tranquilas del estrecho hasta alcanzar el costado del carguero holandés. Los marineros estadounidenses treparon por la escala de cuerda con suma precaución esperando encontrar daños estructurales o señales de un ataque pirata."
+  },
+  {
+   "hablado": "Sin embargo la estructura exterior del buque se encontraba totalmente intacta. No había impactos de proyectiles grietas en el casco ni muestras de incendio reciente. Las chimeneas permanecían frías pero los cabos y las grúas de carga conservaban una alineación impecable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "merchant ship deck empty vintage",
+    "otras": [
+     "cargo ship ocean deck",
+     "old vessel sailing"
+    ],
+    "descripcion": "Vista de la cubierta desierta de un antiguo barco de carga sin actividad.",
+    "clip": "https://cdn.pixabay.com/video/2020/02/11/32231-390923700_large.mp4",
+    "clip_id": 32231,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/02/24/14484-257440745_small.mp4",
+      "clip_id": 14484
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/14/138959-770800074_small.mp4",
+      "clip_id": 138959
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/08/184009-872413500_small.mp4",
+      "clip_id": 184009
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo la estructura exterior del buque se encontraba totalmente intacta. No había impactos de proyectiles grietas en el casco ni muestras de incendio reciente. Las chimeneas permanecían frías pero los cabos y las grúas de carga conservaban una alineación impecable."
+  },
+  {
+   "hablado": "Tan pronto como los marineros pisaron la madera de la cubierta un detalle físico heló su ánimo. A pesar del sofocante calor tropical característico de aquella latitud todos coincidieron en que el ambiente dentro del carguero se sentía extrañamente gélido e insoportable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "foggy ocean ship deck mist",
+    "otras": [
+     "mist sea boat deck",
+     "cold misty port"
+    ],
+    "descripcion": "Cubierta de un barco envuelta en una densa bruma con sombras y atmósfera fría.",
+    "clip": "https://cdn.pixabay.com/video/2025/08/20/298643_large.mp4",
+    "clip_id": 298643,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/07/16/25283-348661329_small.mp4",
+      "clip_id": 25283
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/04/28707-371213524_small.mp4",
+      "clip_id": 28707
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/24/182082-867762198_small.mp4",
+      "clip_id": 182082
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Tan pronto como los marineros pisaron la madera de la cubierta un detalle físico heló su ánimo. A pesar del sofocante calor tropical característico de aquella latitud todos coincidieron en que el ambiente dentro del carguero se sentía extrañamente gélido e insoportable."
+  },
+  {
+   "hablado": "El silencio era absoluto y estremecedor. Los motores se habían detenido por completo y solo se escuchaba el leve crujido del metal contra las olas. El equipo avanzó lentamente hacia el puente de mando atentos a cualquier movimiento o sonido sospechoso.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship control room helm vintage",
+    "otras": [
+     "ship cabin interior old",
+     "ship navigation room"
+    ],
+    "descripcion": "Interior del puente de mando de un navío antiguo, totalmente vacío y en calma.",
+    "clip": "https://cdn.pixabay.com/video/2022/05/05/116105-706674457_small.mp4",
+    "clip_id": 116105,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/07/44129-438329137_small.mp4",
+      "clip_id": 44129
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/09/23/12181-246623002_large.mp4",
+      "clip_id": 12181
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198939-909336004_large.mp4",
+      "clip_id": 198939
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El silencio era absoluto y estremecedor. Los motores se habían detenido por completo y solo se escuchaba el leve crujido del metal contra las olas. El equipo avanzó lentamente hacia el puente de mando atentos a cualquier movimiento o sonido sospechoso."
+  },
+  {
+   "hablado": "Al aproximarse a las escotillas principales notaron que todo el equipamiento de navegación permanecía en su lugar correspondiente. Los mapas sobre las mesas de control no mostraban signos de desorden y la rueda del timón continuaba fijada en su rumbo original.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage nautical map compass table",
+    "otras": [
+     "old ship chart room",
+     "nautical compass boat"
+    ],
+    "descripcion": "Planos navegacionales y mapas sobre una mesa de madera dentro de un barco.",
+    "clip": "ia",
+    "clip_id": "ia-21",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 17.81
+   },
+   "efecto": "polvo",
+   "subtitulo": "Al aproximarse a las escotillas principales notaron que todo el equipamiento de navegación permanecía en su lugar correspondiente. Los mapas sobre las mesas de control no mostraban signos de desorden y la rueda del timón continuaba fijada en su rumbo original."
+  },
+  {
+   "hablado": "Todo indicaba que la tripulación había continuado con sus tareas habituales hasta el preciso instante de la tragedia. Nada en el puente sugería una lucha violenta o una evacuación apresurada de urgencia hacia los botes salvavidas que seguían asegurados.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lifeboat ship deck old ocean",
+    "otras": [
+     "cargo ship lifeboats side",
+     "vessel deck detail"
+    ],
+    "descripcion": "Botes salvavidas colgados limpiamente en los pescantes de la cubierta.",
+    "clip": "ia",
+    "clip_id": "ia-22",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.89
+   },
+   "efecto": "niebla",
+   "subtitulo": "Todo indicaba que la tripulación había continuado con sus tareas habituales hasta el preciso instante de la tragedia. Nada en el puente sugería una lucha violenta o una evacuación apresurada de urgencia hacia los botes salvavidas que seguían asegurados."
+  },
+  {
+   "hablado": "Las escotillas hacia las zonas inferiores estaban entreabiertas permitiendo la circulación del aire pero el hedor de las profundidades resultaba inquietante. Con cada paso que daban hacia las entrañas del navío la sensación de peligro invisible aumentaba de forma drástica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ship hallway stairs interior",
+    "otras": [
+     "dark corridor industrial vessel",
+     "metal hallway boat interior"
+    ],
+    "descripcion": "Pasillo oscuro de un barco antiguo descendiendo hacia las zonas de bodega.",
+    "clip": "https://cdn.pixabay.com/video/2017/08/30/11721-231759067_large.mp4",
+    "clip_id": 11721,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119442-717712220_small.mp4",
+      "clip_id": 119442
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119436-717695346_small.mp4",
+      "clip_id": 119436
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/14/216729_medium.mp4",
+      "clip_id": 216729
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las escotillas hacia las zonas inferiores estaban entreabiertas permitiendo la circulación del aire pero el hedor de las profundidades resultaba inquietante. Con cada paso que daban hacia las entrañas del navío la sensación de peligro invisible aumentaba de forma drástica."
+  },
+  {
+   "hablado": "Los marineros encendieron sus linternas e iniciaron el descenso por los estrechos pasillos metálicos. Lo que estaban a punto de contemplar en las dependencias interiores desafiaría cualquier explicación lógica y cambiaría el rescate por un escenario verdaderamente dantesco.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "flashlight dark corridor inspection",
+    "otras": [
+     "flashlight darkness walk corridor",
+     "dark industrial passage"
+    ],
+    "descripcion": "Haz de linterna iluminando un pasillo oscuro y metálico en penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2024/02/17/200941-914521062_small.mp4",
+    "clip_id": 200941,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/16/21472-318172509_large.mp4",
+      "clip_id": 21472
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/13/84973-587646755_small.mp4",
+      "clip_id": 84973
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/04/130175-746395232_large.mp4",
+      "clip_id": 130175
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los marineros encendieron sus linternas e iniciaron el descenso por los estrechos pasillos metálicos. Lo que estaban a punto de contemplar en las dependencias interiores desafiaría cualquier explicación lógica y cambiaría el rescate por un escenario verdaderamente dantesco."
+  },
+  {
+   "hablado": "Al cruzar el umbral del puente de mando, la linterna del primer oficial iluminó una escena estremecedora. El capitán yacía de espaldas sobre el suelo de madera, con los ojos completamente abiertos y fijos en un punto invisible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship bridge interior night",
+    "otras": [
+     "dark vessel interior",
+     "old boat cockpit"
+    ],
+    "descripcion": "Interior oscuro del puente de mando de un barco con luces tenues.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/20/247893_small.mp4",
+    "clip_id": 247893,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/16/110936-689949679_medium.mp4",
+      "clip_id": 110936
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/08/235285_small.mp4",
+      "clip_id": 235285
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/17/241802_small.mp4",
+      "clip_id": 241802
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Al cruzar el umbral del puente de mando, la linterna del primer oficial iluminó una escena estremecedora. El capitán yacía de espaldas sobre el suelo de madera, con los ojos completamente abiertos y fijos en un punto invisible."
+  },
+  {
+   "hablado": "A su lado, el oficial de comunicaciones permanecía inclinado sobre la mesa del telégrafo, exactamente en la misma postura en la que había emitido aquellos angustiosos impulsos en código Morse minutos antes de su muerte.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage radio communication device",
+    "otras": [
+     "old telegraph equipment",
+     "maritime radio room"
+    ],
+    "descripcion": "Equipo de telégrafo y radio antiguo sobre una mesa de madera.",
+    "clip": "https://cdn.pixabay.com/video/2017/04/04/8573-211524870_large.mp4",
+    "clip_id": 8573,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/08/90-135735293_large.mp4",
+      "clip_id": 90
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/14/134872-760691010_large.mp4",
+      "clip_id": 134872
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/09/09/736-138808023_large.mp4",
+      "clip_id": 736
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "A su lado, el oficial de comunicaciones permanecía inclinado sobre la mesa del telégrafo, exactamente en la misma postura en la que había emitido aquellos angustiosos impulsos en código Morse minutos antes de su muerte."
+  },
+  {
+   "hablado": "La inspección inicial reveló un detalle fascinante y aterrador a la vez. Ninguno de los marineros caídos presentaba heridas sangrientas, puñaladas ni señales de lucha contra intrusos. Tampoco había signos de haber sufrido un ataque pirata.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ship corridor flashlight",
+    "otras": [
+     "old ship interior hallway",
+     "vessel passageway"
+    ],
+    "descripcion": "Pasillo metálico de un barco antiguo iluminado tenuemente.",
+    "clip": "https://cdn.pixabay.com/video/2023/03/14/154679-808044470_small.mp4",
+    "clip_id": 154679,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119445-717712231_small.mp4",
+      "clip_id": 119445
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119437-717695349_small.mp4",
+      "clip_id": 119437
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/10/05/5802-185634843_large.mp4",
+      "clip_id": 5802
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La inspección inicial reveló un detalle fascinante y aterrador a la vez. Ninguno de los marineros caídos presentaba heridas sangrientas, puñaladas ni señales de lucha contra intrusos. Tampoco había signos de haber sufrido un ataque pirata."
+  },
+  {
+   "hablado": "Todos los rostros de los fallecidos compartían una mueca común de petrificado terror. Sus brazos estaban extendidos hacia el cielo, como si intentaran protegerse de alguna amenaza invisible que descendió repentinamente desde las alturas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "shadow silhouette person standing",
+    "otras": [
+     "dark room silhouette",
+     "figure in darkness"
+    ],
+    "descripcion": "Silueta de una persona entre las sombras en un espacio cerrado.",
+    "clip": "https://cdn.pixabay.com/video/2019/01/04/20459-309694545_large.mp4",
+    "clip_id": 20459,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/27/213936_small.mp4",
+      "clip_id": 213936
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/23/205283-926665334_small.mp4",
+      "clip_id": 205283
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/31/126184-735667233_small.mp4",
+      "clip_id": 126184
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Todos los rostros de los fallecidos compartían una mueca común de petrificado terror. Sus brazos estaban extendidos hacia el cielo, como si intentaran protegerse de alguna amenaza invisible que descendió repentinamente desde las alturas."
+  },
+  {
+   "hablado": "Al descender hacia la sala de máquinas, el equipo descubrió a los ingenieros en sus puestos de trabajo habituales. Las calderas continuaban generando calor, pero los operarios yacían rígidos en el suelo junto a sus herramientas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship engine room vintage",
+    "otras": [
+     "steampunk engine room",
+     "old boiler room"
+    ],
+    "descripcion": "Sala de máquinas e instalaciones metálicas de un navío antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2026/09/06/374656_large.mp4",
+    "clip_id": 374656,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/17/155020-809859664_large.mp4",
+      "clip_id": 155020
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/06/4270-178210412_large.mp4",
+      "clip_id": 4270
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Al descender hacia la sala de máquinas, el equipo descubrió a los ingenieros en sus puestos de trabajo habituales. Las calderas continuaban generando calor, pero los operarios yacían rígidos en el suelo junto a sus herramientas."
+  },
+  {
+   "hablado": "En la cubierta principal, el hallazgo del perro guardián del barco confirmó la naturaleza extraordinaria del suceso. El animal fue encontrado enseñando los dientes en una postura de agresión petrificada hacia el aire enrarecido.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ship deck night",
+    "otras": [
+     "empty wooden boat deck",
+     "misty ship exterior"
+    ],
+    "descripcion": "Cubierta de madera de un barco de noche bañado por la penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/09/110240-688187419_small.mp4",
+    "clip_id": 110240,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/12/3170-166338949_large.mp4",
+      "clip_id": 3170
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/09/11/130908-749667830_large.mp4",
+      "clip_id": 130908
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/04/23/23011-332483109_small.mp4",
+      "clip_id": 23011
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "En la cubierta principal, el hallazgo del perro guardián del barco confirmó la naturaleza extraordinaria del suceso. El animal fue encontrado enseñando los dientes en una postura de agresión petrificada hacia el aire enrarecido."
+  },
+  {
+   "hablado": "Los rescatistas del Silver Star notaron además que los cuerpos se descomponían a una velocidad inusualmente rápida. La rigidez cadavérica era completa, a pesar de que el suceso había ocurrido apenas un par de horas antes.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage pocket watch ticking",
+    "otras": [
+     "old clock face time",
+     "antique clock movement"
+    ],
+    "descripcion": "Reloj antiguo marcando el paso acelerado del tiempo.",
+    "clip": "https://cdn.pixabay.com/video/2024/04/14/207982_medium.mp4",
+    "clip_id": 207982,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/12/88335-606079325_small.mp4",
+      "clip_id": 88335
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/29/3652-173062442_large.mp4",
+      "clip_id": 3652
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/19/111286-691216280_small.mp4",
+      "clip_id": 111286
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Los rescatistas del Silver Star notaron además que los cuerpos se descomponían a una velocidad inusualmente rápida. La rigidez cadavérica era completa, a pesar de que el suceso había ocurrido apenas un par de horas antes."
+  },
+  {
+   "hablado": "Ante la insólita falta de supervivientes y el ambiente opresivo de la nave, el capitán dio la orden de remolcar el barco misterioso hacia puerto seguro. Pero el océano guardaba aún un último e inesperado giro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean waves tugboat sea",
+    "otras": [
+     "ship sailing dark ocean",
+     "vessel stormy sea night"
+    ],
+    "descripcion": "Un barco navegando en medio de aguas sombrías y agitadas.",
+    "clip": "https://cdn.pixabay.com/video/2018/01/06/13704-250154065_large.mp4",
+    "clip_id": 13704,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/12/339840_small.mp4",
+      "clip_id": 339840
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/11/32232-390923701_large.mp4",
+      "clip_id": 32232
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/18/147025-790648782_large.mp4",
+      "clip_id": 147025
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Ante la insólita falta de supervivientes y el ambiente opresivo de la nave, el capitán dio la orden de remolcar el barco misterioso hacia puerto seguro. Pero el océano guardaba aún un último e inesperado giro."
+  },
+  {
+   "hablado": "El capitán del mercante estadounidense ordenó amarrar un grueso cable de remolque a la proa del buque holandés. Los marineros trabajaron con rapidez para abandonar aquella cubierta helada y regresar al calor protector de su propia nave.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship tow rope ocean",
+    "otras": [
+     "ship deck crew working",
+     "vintage cargo ship"
+    ],
+    "descripcion": "Marineros trabajando en la cubierta de un carguero antiguo ajustando cuerdas gruesas de amarre.",
+    "clip": "https://cdn.pixabay.com/video/2024/07/21/222294_small.mp4",
+    "clip_id": 222294,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/03/4913-181329602_medium.mp4",
+      "clip_id": 4913
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/19/47616-451695597_medium.mp4",
+      "clip_id": 47616
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/30/99385-653120176_small.mp4",
+      "clip_id": 99385
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El capitán del mercante estadounidense ordenó amarrar un grueso cable de remolque a la proa del buque holandés. Los marineros trabajaron con rapidez para abandonar aquella cubierta helada y regresar al calor protector de su propia nave."
+  },
+  {
+   "hablado": "Justo cuando la maniobra estaba por concluir, una densa columna de humo negro comenzó a brotar de las escotillas de la bodega número cuatro. Un calor sofocante e inexplicable empezó a emanar desde las profundidades del casco.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "smoke from ship deck",
+    "otras": [
+     "vintage ship smoke ocean",
+     "industrial ship deck smoke"
+    ],
+    "descripcion": "Humo denso saliendo del interior de un barco en mar abierto.",
+    "clip": "https://cdn.pixabay.com/video/2023/06/19/167889-837765454_large.mp4",
+    "clip_id": 167889,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/22/13047-244747059_large.mp4",
+      "clip_id": 13047
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/28000/28000-720.mp4",
+      "clip_id": "mixkit:28000",
+      "clip_ini": 0
+     },
+     {
+      "clip": "https://assets.mixkit.co/videos/23378/23378-720.mp4",
+      "clip_id": "mixkit:23378",
+      "clip_ini": 0
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Justo cuando la maniobra estaba por concluir, una densa columna de humo negro comenzó a brotar de las escotillas de la bodega número cuatro. Un calor sofocante e inexplicable empezó a emanar desde las profundidades del casco."
+  },
+  {
+   "hablado": "Los marineros del Silver Star detectaron un fuego abrasador devorando los compartimentos inferiores. La temperatura aumentó drásticamente en cuestión de segundos, convirtiendo el metal bajo sus pies en una superficie incandescente e insoportable para la tripulación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire hazard vintage ship",
+    "otras": [
+     "ship deck smoke rescue",
+     "sailors running ship deck"
+    ],
+    "descripcion": "Tripulantes alejándose rápidamente por la cubierta de un barco mientras el humo se extiende.",
+    "clip": "https://cdn.pixabay.com/video/2023/06/04/165790-833532137_large.mp4",
+    "clip_id": 165790,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/04/10/8624-212638591_large.mp4",
+      "clip_id": 8624
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/01/9487-220088145_large.mp4",
+      "clip_id": 9487
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/22/15748-266043652_large.mp4",
+      "clip_id": 15748
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Los marineros del Silver Star detectaron un fuego abrasador devorando los compartimentos inferiores. La temperatura aumentó drásticamente en cuestión de segundos, convirtiendo el metal bajo sus pies en una superficie incandescente e insoportable para la tripulación."
+  },
+  {
+   "hablado": "Con el peligro inminente de una deflagración, la partida de abordaje corrió hacia su bote de salvamento. El capitán estadounidense ordenó cortar de inmediato las marras de remolque para distanciar su embarcación del inminente desastre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "lifeboat ocean emergency",
+    "otras": [
+     "vintage boat ocean water",
+     "ship evacuation ocean"
+    ],
+    "descripcion": "Un bote de rescate moviéndose rápidamente por el agua del mar alejándose de una gran embarcación.",
+    "clip": "https://cdn.pixabay.com/video/2022/10/19/135658-764361528_small.mp4",
+    "clip_id": 135658,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/23/47895-452144070_large.mp4",
+      "clip_id": 47895
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/22/266770_large.mp4",
+      "clip_id": 266770
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/03/22/266771_large.mp4",
+      "clip_id": 266771
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Con el peligro inminente de una deflagración, la partida de abordaje corrió hacia su bote de salvamento. El capitán estadounidense ordenó cortar de inmediato las marras de remolque para distanciar su embarcación del inminente desastre."
+  },
+  {
+   "hablado": "El hacha cortó la gruesa soga justo a tiempo. El Silver Star puso sus motores a máxima potencia, alejándose desesperadamente mientras el barco misterioso se envolvía en crecientes llamaradas y una niebla tóxica e impenetrable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship sailing away sea",
+    "otras": [
+     "vintage ocean ship moving",
+     "dark sea cargo vessel"
+    ],
+    "descripcion": "Un buque navegando a toda velocidad en mar abierto dejando una estela en el agua.",
+    "clip_id": 186950,
+    "clip": "https://cdn.pixabay.com/video/2023/10/29/186950-879230768_small.mp4",
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/08/908-141851680_medium.mp4",
+      "clip_id": 908
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/08/338901_small.mp4",
+      "clip_id": 338901
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/10/70628-535363251_small.mp4",
+      "clip_id": 70628
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "El hacha cortó la gruesa soga justo a tiempo. El Silver Star puso sus motores a máxima potencia, alejándose desesperadamente mientras el barco misterioso se envolvía en crecientes llamaradas y una niebla tóxica e impenetrable."
+  },
+  {
+   "hablado": "Segundos después de alcanzar una distancia prudencial, una tremenda explosión retumbó en la quietud del océano. El estallido fue tan violento que levantó la estructura completa del buque antes de quebrarlo en dos partes sobre el agua.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "explosion at sea smoke",
+    "otras": [
+     "fire smoke ocean night",
+     "sea water splash fire"
+    ],
+    "descripcion": "Gran humareda y agitación en la superficie del agua simulando el impacto de una explosión náutica.",
+    "clip": "https://cdn.pixabay.com/video/2022/12/29/144678-785264939_large.mp4",
+    "clip_id": 144678,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/08/345244_large.mp4",
+      "clip_id": 345244
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/14/24415-342401522_large.mp4",
+      "clip_id": 24415
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/14/44699-439982630_large.mp4",
+      "clip_id": 44699
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Segundos después de alcanzar una distancia prudencial, una tremenda explosión retumbó en la quietud del océano. El estallido fue tan violento que levantó la estructura completa del buque antes de quebrarlo en dos partes sobre el agua."
+  },
+  {
+   "hablado": "Las aguas embravecidas del estrecho tragaron la nave en cuestión de escasos minutos. El carguero se hundió verticalmente hacia las profundidades del mar, sumergiéndose con los cuerpos intactos de toda su tripulación y sus misteriosos secretos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep ocean sea water",
+    "otras": [
+     "dark water ocean waves",
+     "underwater deep sea vintage"
+    ],
+    "descripcion": "Vista del agua del océano oscura y agitada donde se hunden los restos flotantes.",
+    "clip": "https://cdn.pixabay.com/video/2021/10/02/90544-623004704_medium.mp4",
+    "clip_id": 90544,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/29/31722-388997376_large.mp4",
+      "clip_id": 31722
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/09/67427-522170579_small.mp4",
+      "clip_id": 67427
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/09/127256-738105411_large.mp4",
+      "clip_id": 127256
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Las aguas embravecidas del estrecho tragaron la nave en cuestión de escasos minutos. El carguero se hundió verticalmente hacia las profundidades del mar, sumergiéndose con los cuerpos intactos de toda su tripulación y sus misteriosos secretos."
+  },
+  {
+   "hablado": "El océano devoró la única prueba física de aquella tragedia espantosa. En la superficie solo quedaron burbujas y restos de madera flotando a la deriva, dejando a los investigadores sin respuestas directas. Pero la verdadera investigación apenas comenzaba.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "maritime newspaper article vintage",
+    "otras": [
+     "vintage maritime document archive",
+     "newspaper clipping 1940s"
+    ],
+    "descripcion": "Archivo periodístico o documento histórico antiguo donde se relata una tragedia en el mar.",
+    "prompt": "Archivo periodístico o documento histórico antiguo donde se relata una tragedia en el mar.",
+    "clip": "https://cdn.pixabay.com/video/2022/01/07/103723-664328178_large.mp4",
+    "clip_id": 103723,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/15/26881-361107808_small.mp4",
+      "clip_id": 26881
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/15/59269-492700378_small.mp4",
+      "clip_id": 59269
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/15/59268-492700375_small.mp4",
+      "clip_id": 59268
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El océano devoró la única prueba física de aquella tragedia espantosa. En la superficie solo quedaron burbujas y restos de madera flotando a la deriva, dejando a los investigadores sin respuestas directas. Pero la verdadera investigación apenas comenzaba."
+  },
+  {
+   "hablado": "Sin restos físicos en el fondo marino la única forma de resolver el misterio era rastrear el origen del buque Los investigadores recurrieron de inmediato a los minuciosos archivos navales de la firma de seguros Lloyds en Londres",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old archive papers",
+    "otras": [
+     "vintage library books",
+     "researcher looking files"
+    ],
+    "descripcion": "Una mano hojalleando documentos antiguos y carpetas de registro en un archivo histórico",
+    "clip": "https://cdn.pixabay.com/video/2022/02/08/107189-678129960_large.mp4",
+    "clip_id": 107189,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/22/13053-244747066_large.mp4",
+      "clip_id": 13053
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/03/08/8256-207598612_large.mp4",
+      "clip_id": 8256
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/28/140806-776043756_small.mp4",
+      "clip_id": 140806
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin restos físicos en el fondo marino la única forma de resolver el misterio era rastrear el origen del buque Los investigadores recurrieron de inmediato a los minuciosos archivos navales de la firma de seguros Lloyds en Londres"
+  },
+  {
+   "hablado": "Tras revisar miles de folios oficiales saltó la primera gran alarma El nombre Ourang Medan no figuraba en el registro mercante holandés ni en los catálogos internacionales de transporte marítimo de aquellos años",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "typing machine old",
+    "otras": [
+     "vintage magnifying glass paper",
+     "detective investigating documents"
+    ],
+    "descripcion": "Un investigador examinando folios con una lupa bajo una luz tenue de oficina",
+    "clip": "https://cdn.pixabay.com/video/2024/02/11/200157-912127896_large.mp4",
+    "clip_id": 200157,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/20/62456-504238951_small.mp4",
+      "clip_id": 62456
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/07/23/293084_large.mp4",
+      "clip_id": 293084
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/01/112542-695117343_large.mp4",
+      "clip_id": 112542
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Tras revisar miles de folios oficiales saltó la primera gran alarma El nombre Ourang Medan no figuraba en el registro mercante holandés ni en los catálogos internacionales de transporte marítimo de aquellos años"
+  },
+  {
+   "hablado": "Aquella ausencia sugería que el barco operaba de forma clandestina Era habitual que navíos de contrabando usaran banderas de conveniencia o nombres falsos grabados en el casco para esquivar los controles de las autoridades aduaneras",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship ocean night",
+    "otras": [
+     "old vessel sailing ocean",
+     "dark port harbor"
+    ],
+    "descripcion": "Un antiguo barco de carga navegando en aguas oscuras y solitarias a contraluz",
+    "clip": "https://cdn.pixabay.com/video/2024/02/14/200571-913040195_small.mp4",
+    "clip_id": 200571,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/05/219596_small.mp4",
+      "clip_id": 219596
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/987-142612102_large.mp4",
+      "clip_id": 987
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/27/1412-147170125_medium.mp4",
+      "clip_id": 1412
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Aquella ausencia sugería que el barco operaba de forma clandestina Era habitual que navíos de contrabando usaran banderas de conveniencia o nombres falsos grabados en el casco para esquivar los controles de las autoridades aduaneras"
+  },
+  {
+   "hablado": "Sin embargo las menciones en prensa sí existían En mil novecientos cuarenta y ocho varios periódicos holandeses publicaron detalladas crónicas sobre la tragedia del navío basándose en declaraciones del equipo del barco rescate Silver Star",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage Dutch newspaper headline archive",
+    "otras": [
+     "historic newspaper clipping maritime",
+     "old newspaper 1940s"
+    ],
+    "descripcion": "Página impresa de un periódico de época con columnas de noticias antiguas",
+    "prompt": "Página impresa de un periódico de época con columnas de noticias antiguas",
+    "clip": "https://cdn.pixabay.com/video/2022/11/03/137596-767056157_large.mp4",
+    "clip_id": 137596,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/21/128624-741747791_large.mp4",
+      "clip_id": 128624
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/17/217063_small.mp4",
+      "clip_id": 217063
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/09/119727-719283165_large.mp4",
+      "clip_id": 119727
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo las menciones en prensa sí existían En mil novecientos cuarenta y ocho varios periódicos holandeses publicaron detalladas crónicas sobre la tragedia del navío basándose en declaraciones del equipo del barco rescate Silver Star"
+  },
+  {
+   "hablado": "Años después en mil novecientos cincuenta y dos la Guardia Costera de los Estados Unidos incluyó una narración oficial del incidente en sus publicaciones del Consejo de la Marina Mercante aportando credibilidad a los testimonios",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage typewriter typing",
+    "otras": [
+     "official military paper close up",
+     "stamp on official document"
+    ],
+    "descripcion": "Una máquina de escribir antigua redactando un informe gubernamental oficial",
+    "clip": "https://cdn.pixabay.com/video/2018/12/01/19685-304076066_large.mp4",
+    "clip_id": 19685,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/25/50826-462033971_large.mp4",
+      "clip_id": 50826
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/11/150250-798230305_large.mp4",
+      "clip_id": 150250
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/04/28/15872-267515595_small.mp4",
+      "clip_id": 15872
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Años después en mil novecientos cincuenta y dos la Guardia Costera de los Estados Unidos incluyó una narración oficial del incidente en sus publicaciones del Consejo de la Marina Mercante aportando credibilidad a los testimonios"
+  },
+  {
+   "hablado": "Pero la documentación mostraba profundas contradicciones Las fechas bailaban entre mil novecientos cuarenta y siete y mil novecientos cuarenta y ocho y las coordenadas náuticas citadas en las actas no coincidían en los distintos informes",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "nautical map compass",
+    "otras": [
+     "old navigation chart",
+     "hands measuring map"
+    ],
+    "descripcion": "Un compás midiendo distancias sobre un mapa náutico antiguo con rutas marcadas",
+    "clip": "https://cdn.pixabay.com/video/2024/01/20/197437-904825213_small.mp4",
+    "clip_id": 197437,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/27/10320-223692902_large.mp4",
+      "clip_id": 10320
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/13/26840-361092121_large.mp4",
+      "clip_id": 26840
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/09/22/5645-183850522_large.mp4",
+      "clip_id": 5645
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Pero la documentación mostraba profundas contradicciones Las fechas bailaban entre mil novecientos cuarenta y siete y mil novecientos cuarenta y ocho y las coordenadas náuticas citadas en las actas no coincidían en los distintos informes"
+  },
+  {
+   "hablado": "Además nunca apareció una lista formal de tripulantes ni de carga depositada en puerto Oficialmente ningún marinero había embarcado y ninguna empresa reclamó el valor monetario del navío destruido tras la posterior detonación",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "empty port dock fog",
+    "otras": [
+     "dark empty ship deck",
+     "wooden pier fog"
+    ],
+    "descripcion": "Un muelle portuario completamente desierto y envuelto en niebla durante la madrugada",
+    "clip": "https://cdn.pixabay.com/video/2019/02/01/21113-315137061_medium.mp4",
+    "clip_id": 21113,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/07/84220-586575101_small.mp4",
+      "clip_id": 84220
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/11/84740-588566432_large.mp4",
+      "clip_id": 84740
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/29/214214_small.mp4",
+      "clip_id": 214214
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Además nunca apareció una lista formal de tripulantes ni de carga depositada en puerto Oficialmente ningún marinero había embarcado y ninguna empresa reclamó el valor monetario del navío destruido tras la posterior detonación"
+  },
+  {
+   "hablado": "Esta opacidad documental reforzó la idea de que la nave transportaba un cargamento ilegal y altamente peligroso Si nadie reclamaba el barco era porque su contenido oculto no debía salir a la luz jamás",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark warehouse crates",
+    "otras": [
+     "wooden boxes cargo hold",
+     "mysterious shadow corridor"
+    ],
+    "descripcion": "Cajas de madera almacenadas en la bodega a oscuras de una nave de carga",
+    "clip": "https://cdn.pixabay.com/video/2024/01/18/197209-904265123_small.mp4",
+    "clip_id": 197209,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/06/28/79302-569096014_small.mp4",
+      "clip_id": 79302
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta opacidad documental reforzó la idea de que la nave transportaba un cargamento ilegal y altamente peligroso Si nadie reclamaba el barco era porque su contenido oculto no debía salir a la luz jamás"
+  },
+  {
+   "hablado": "Ante la falta de pruebas físicas supervivientes, los expertos forenses comenzaron a formular hipótesis basadas en la ciencia náutica. Era necesario explicar cómo toda una tripulación pudo sucumbir en cuestión de minutos sin presentar heridas ni violencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship deck sea",
+    "otras": [
+     "cargo ship ocean",
+     "sailing sea night"
+    ],
+    "descripcion": "Cubierta de un buque navegando en mar abierto bajo un cielo plomizo",
+    "clip": "https://www.filmportal.de/sites/default/files/video/BA_Hochseefischerei_der_deutschen_Marine_1918_ColourInRGB.mp4",
+    "clip_id": "eu:/08626/1037479000000107021",
+    "clip_ini": 3,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/22/24590-344099880_large.mp4",
+      "clip_id": 24590
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/27/32943-395456391_large.mp4",
+      "clip_id": 32943
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/10/230781_large.mp4",
+      "clip_id": 230781
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Ante la falta de pruebas físicas supervivientes, los expertos forenses comenzaron a formular hipótesis basadas en la ciencia náutica. Era necesario explicar cómo toda una tripulación pudo sucumbir en cuestión de minutos sin presentar heridas ni violencia."
+  },
+  {
+   "hablado": "La primera gran teoría apuntaba a una avería grave en el sistema de calderas del buque. Un escape masivo de monóxido de carbono habría intoxicado silenciosamente a los marineros antes de que pudieran reaccionar o evacuar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ship engine room",
+    "otras": [
+     "steampunk pipe steam",
+     "vintage factory machine"
+    ],
+    "descripcion": "Tuberías de vapor y maquinaria antigua de la sala de máquinas de un barco",
+    "clip": "https://cdn.pixabay.com/video/2023/08/13/175923-854230287_large.mp4",
+    "clip_id": 175923,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/08/123536-728283034_small.mp4",
+      "clip_id": 123536
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/09/22/181864-867378698_large.mp4",
+      "clip_id": 181864
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/22/197758-905360240_small.mp4",
+      "clip_id": 197758
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "La primera gran teoría apuntaba a una avería grave en el sistema de calderas del buque. Un escape masivo de monóxido de carbono habría intoxicado silenciosamente a los marineros antes de que pudieran reaccionar o evacuar."
+  },
+  {
+   "hablado": "Este gas inodoro e incoloro induce una pérdida de conocimiento casi instantánea sin causar dolor visible. Eso explicaría por qué los cuerpos mantenían posturas de tensión rígida y miradas atónitas fijadas hacia el cielo al desplomarse.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "nautical compass map",
+    "otras": [
+     "ship wheel navigation",
+     "vintage captain cabin"
+    ],
+    "descripcion": "Instrumentos de navegación abandonados sobre la mesa de puente de mando",
+    "clip": "https://cdn.pixabay.com/video/2020/06/27/43273-435970595_large.mp4",
+    "clip_id": 43273,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/14/110737-688648674_small.mp4",
+      "clip_id": 110737
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/07/41354-429396534_large.mp4",
+      "clip_id": 41354
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/21/42788-432152614_large.mp4",
+      "clip_id": 42788
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Este gas inodoro e incoloro induce una pérdida de conocimiento casi instantánea sin causar dolor visible. Eso explicaría por qué los cuerpos mantenían posturas de tensión rígida y miradas atónitas fijadas hacia el cielo al desplomarse."
+  },
+  {
+   "hablado": "Sin embargo, varios analistas señalaron una falla fundamental en esta hipótesis. El monóxido de carbono se habría disipado rápidamente en los espacios abiertos de la cubierta exterior donde también aparecieron marineros sin vida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ocean storm wave",
+    "otras": [
+     "rough sea boat",
+     "foggy ocean deck"
+    ],
+    "descripcion": "Olas de mar batiendo contra el casco de madera de un navío a la deriva",
+    "clip": "https://cdn.pixabay.com/video/2026/07/23/365704_small.mp4",
+    "clip_id": 365704,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/23/201574-916080284_small.mp4",
+      "clip_id": 201574
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/05/210804_small.mp4",
+      "clip_id": 210804
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/12/203974-923133846_small.mp4",
+      "clip_id": 203974
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, varios analistas señalaron una falla fundamental en esta hipótesis. El monóxido de carbono se habría disipado rápidamente en los espacios abiertos de la cubierta exterior donde también aparecieron marineros sin vida."
+  },
+  {
+   "hablado": "Surgió entonces una explicación geológica más inquietante y repentina. La zona del estrecho de Malaca registra actividad sísmica submarina capaz de liberar bolsas gigantescas de gases metánicos u otros compuestos nocivos atrapados bajo el lecho marino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underwater ocean bubbles",
+    "otras": [
+     "deep sea water",
+     "ocean floor vent"
+    ],
+    "descripcion": "Burbujas de gas ascendiendo desde el fondo del océano hacia la superficie",
+    "clip": "ia",
+    "clip_id": "ia-53",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 19.62
+   },
+   "efecto": "nada",
+   "subtitulo": "Surgió entonces una explicación geológica más inquietante y repentina. La zona del estrecho de Malaca registra actividad sísmica submarina capaz de liberar bolsas gigantescas de gases metánicos u otros compuestos nocivos atrapados bajo el lecho marino."
+  },
+  {
+   "hablado": "Al emerger a la superficie, una burbuja masiva de gas desplazaría el oxígeno de forma drástica e inmediata. Cualquier ser vivo en el perímetro sofocaría instantáneamente sin percatarse del peligro hasta sentir la parálisis respiratoria completa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sea fog mist",
+    "otras": [
+     "foggy ocean water",
+     "boat in mist"
+    ],
+    "descripcion": "Densa capa de niebla y vapor cubriendo la superficie del agua del mar",
+    "clip": "ia",
+    "clip_id": "ia-54",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 18.02
+   },
+   "efecto": "niebla",
+   "subtitulo": "Al emerger a la superficie, una burbuja masiva de gas desplazaría el oxígeno de forma drástica e inmediata. Cualquier ser vivo en el perímetro sofocaría instantáneamente sin percatarse del peligro hasta sentir la parálisis respiratoria completa."
+  },
+  {
+   "hablado": "Esta hipótesis geológica también daba respuesta al extraño frío reportado por los marineros del Silver Star. La rápida expansión de estos gases despresurizados absorbe la temperatura ambiental de forma brusca en un fenómeno de congelación súbita.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "frost cold ice",
+    "otras": [
+     "cold ocean sea",
+     "misty water winter"
+    ],
+    "descripcion": "Escarcha y vapor helado sobre barandillas métálicas de una embarcación",
+    "clip": "https://cdn.pixabay.com/video/2026/02/25/336603_large.mp4",
+    "clip_id": 336603,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/10/91545-635675488_small.mp4",
+      "clip_id": 91545
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/30/255499_small.mp4",
+      "clip_id": 255499
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/30/255501_small.mp4",
+      "clip_id": 255501
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta hipótesis geológica también daba respuesta al extraño frío reportado por los marineros del Silver Star. La rápida expansión de estos gases despresurizados absorbe la temperatura ambiental de forma brusca en un fenómeno de congelación súbita."
+  },
+  {
+   "hablado": "Pese al rigor de estas explicaciones ambientales, la misteriosa deflagración posterior sembró dudas imborrables. Existía otra posibilidad mucho más oscura vinculada a experimentos militares y sustancias químicas clandestinas que no podían quedar al descubierto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old ocean map",
+    "otras": [
+     "cargo ship night",
+     "vintage navy file"
+    ],
+    "descripcion": "Documentos antiguos y mapas navales iluminados por una luz tenue de noche",
+    "clip": "https://cdn.pixabay.com/video/2020/03/03/33194-396036988_small.mp4",
+    "clip_id": 33194,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/11/44415-439384138_small.mp4",
+      "clip_id": 44415
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/27/32948-395456400_large.mp4",
+      "clip_id": 32948
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/12/15/59267-492700370_small.mp4",
+      "clip_id": 59267
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pese al rigor de estas explicaciones ambientales, la misteriosa deflagración posterior sembró dudas imborrables. Existía otra posibilidad mucho más oscura vinculada a experimentos militares y sustancias químicas clandestinas que no podían quedar al descubierto."
+  },
+  {
+   "hablado": "Tras el final de la Segunda Guerra Mundial, toneladas de armamento químico peligroso quedaron almacenadas en depósitos asiáticos sin control oficial. Muchas redes de contrabando trasladaban cianuro de potasio o gas mostaza mediante embarcaciones fantasma sin bandera.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage cargo ship sea",
+    "otras": [
+     "old ocean freighter",
+     "ship at sea sunset"
+    ],
+    "descripcion": "Un carguero mercante antiguo navegando en mar abierto bajo un cielo plomizo.",
+    "clip": "ia",
+    "clip_id": "ia-57",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 20.35
+   },
+   "efecto": "niebla",
+   "subtitulo": "Tras el final de la Segunda Guerra Mundial, toneladas de armamento químico peligroso quedaron almacenadas en depósitos asiáticos sin control oficial. Muchas redes de contrabando trasladaban cianuro de potasio o gas mostaza mediante embarcaciones fantasma sin bandera."
+  },
+  {
+   "hablado": "Varios historiadores navales sugirieron que el buque llevaba un cargamento mortal de nitroglicerina y cianuro potásico no declarado. Si el agua marina se filtró a las bodegas, la reacción química liberó gases tóxicos letales al instante.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "chemical laboratory vintage",
+    "otras": [
+     "old science lab",
+     "chemist working flasks"
+    ],
+    "descripcion": "Primer plano de tubos de ensayo y frascos de vidrio en un laboratorio químico de mediados del siglo veinte.",
+    "clip": "https://cdn.pixabay.com/video/2021/06/03/76395-559159183_small.mp4",
+    "clip_id": 76395,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/01/20/197483-905015011_small.mp4",
+      "clip_id": 197483
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/28/122329-725513211_small.mp4",
+      "clip_id": 122329
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/09/207436_small.mp4",
+      "clip_id": 207436
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Varios historiadores navales sugirieron que el buque llevaba un cargamento mortal de nitroglicerina y cianuro potásico no declarado. Si el agua marina se filtró a las bodegas, la reacción química liberó gases tóxicos letales al instante."
+  },
+  {
+   "hablado": "La inhalación inadvertida de cianuro inhibe el oxígeno celular en cuestión de segundos. Esto causaría la asfixia agónica, el colapso muscular inmediato y los rostros desencajados por el pavor que aterraron a los marineros del carguero de rescate.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark corridor misty ship",
+    "otras": [
+     "vintage hallway shadow",
+     "abandoned ship interior"
+    ],
+    "descripcion": "Un pasillo interior oscuro y brumoso de un barco con luces tenues parpadeando.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/14/110735-688648667_small.mp4",
+    "clip_id": 110735,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382581_small.mp4",
+      "clip_id": 382581
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382585_small.mp4",
+      "clip_id": 382585
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/14/382578_small.mp4",
+      "clip_id": 382578
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "La inhalación inadvertida de cianuro inhibe el oxígeno celular en cuestión de segundos. Esto causaría la asfixia agónica, el colapso muscular inmediato y los rostros desencajados por el pavor que aterraron a los marineros del carguero de rescate."
+  },
+  {
+   "hablado": "Por su parte, la nitroglicerina líquida o inestable es extremadamente vulnerable al agua y a los cambios térmicos. Una pequeña infiltración en el cargamento oculto desencadenaría una combustión interna progresiva e imparable antes de la gran explosión.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire burning smoke dark",
+    "otras": [
+     "smoke coming from hatch",
+     "industrial smoke dark"
+    ],
+    "descripcion": "Humo denso y oscuro saliendo entre grietas de metal de una estructura industrial.",
+    "clip": "https://cdn.pixabay.com/video/2022/02/11/107431-678258669_large.mp4",
+    "clip_id": 107431,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/25/366345_medium.mp4",
+      "clip_id": 366345
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/10/15/52471-468806616_large.mp4",
+      "clip_id": 52471
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/22/89377-614062351_small.mp4",
+      "clip_id": 89377
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Por su parte, la nitroglicerina líquida o inestable es extremadamente vulnerable al agua y a los cambios térmicos. Una pequeña infiltración en el cargamento oculto desencadenaría una combustión interna progresiva e imparable antes de la gran explosión."
+  },
+  {
+   "hablado": "Esta peligrosa mercancía ilegal explicaba también la prisa con la que el capitán intentaba cruzar el estrecho. Evitaba los controles aduaneros internacionales navegando con documentos falsos o bajo una identidad ficticia que no figuraba en registros oficiales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "man writing vintage documents",
+    "otras": [
+     "old typewriter desk stamp",
+     "vintage office files search"
+    ],
+    "descripcion": "Manos de un oficial estampando documentos antiguos sobre una mesa de madera.",
+    "clip": "https://cdn.pixabay.com/video/2022/02/09/107240-678130070_small.mp4",
+    "clip_id": 107240,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198890-909564521_small.mp4",
+      "clip_id": 198890
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Esta peligrosa mercancía ilegal explicaba también la prisa con la que el capitán intentaba cruzar el estrecho. Evitaba los controles aduaneros internacionales navegando con documentos falsos o bajo una identidad ficticia que no figuraba en registros oficiales."
+  },
+  {
+   "hablado": "Si potencias internacionales trasladaban armamentos prohibidos de forma secreta, el silencio absoluto resultaba imprescindible. Ningún gobierno asumiría jamás la propiedad de una nave hundida con materiales biológicos o químicos que violaban tratados de guerra firmados.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "classified files archival document",
+    "otras": [
+     "vintage police files",
+     "old paper archive storage"
+    ],
+    "descripcion": "Estantes de archivo militar repletos de carpetas de documentos clasificados en penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/20/189941-886645784_small.mp4",
+    "clip_id": 189941,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/14/124122-730195451_large.mp4",
+      "clip_id": 124122
+     }
+    ],
+    "necesita": 21.7
+   },
+   "efecto": "nada",
+   "subtitulo": "Si potencias internacionales trasladaban armamentos prohibidos de forma secreta, el silencio absoluto resultaba imprescindible. Ningún gobierno asumiría jamás la propiedad de una nave hundida con materiales biológicos o químicos que violaban tratados de guerra firmados."
+  },
+  {
+   "hablado": "El investigador alemán Otto Mielke halló rastros de un panfleto publicado en mil novecientos cincuenta y tres que mencionaba el cargamento letal. Aquella publicación apuntaba directamente a una operación de contrabando militar fallida en las Indias Orientales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "vintage newspaper archive search",
+    "otras": [
+     "old headline paper microfilms",
+     "historical text reader"
+    ],
+    "descripcion": "Primer plano de recortes de periódicos antiguos e informes de época siendo examinados.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/28/129424-744370601_large.mp4",
+    "clip_id": 129424,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/17/204527-924780715_small.mp4",
+      "clip_id": 204527
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/20/208770_large.mp4",
+      "clip_id": 208770
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/17/204526-924780709_small.mp4",
+      "clip_id": 204526
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El investigador alemán Otto Mielke halló rastros de un panfleto publicado en mil novecientos cincuenta y tres que mencionaba el cargamento letal. Aquella publicación apuntaba directamente a una operación de contrabando militar fallida en las Indias Orientales."
+  },
+  {
+   "hablado": "Sin embargo, la destrucción total del barco sepultó el misterio en el fondo oceánico para siempre. Aunque la teoría del contrabando tóxico ofrece respuestas lógicas, la ausencia del pecio impide verificar si las pruebas reales existieron alguna vez.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "underwater deep sea ocean",
+    "otras": [
+     "dark ocean abyss waves",
+     "deep ocean current blue"
+    ],
+    "descripcion": "Toma submarina de las profundidades oscuras del océano donde el azul se pierde en la nada.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/29/63427-506377691_small.mp4",
+    "clip_id": 63427,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/26/218364_small.mp4",
+      "clip_id": 218364
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/11/347-136022054_medium.mp4",
+      "clip_id": 347
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/09/67431-522170586_small.mp4",
+      "clip_id": 67431
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Sin embargo, la destrucción total del barco sepultó el misterio en el fondo oceánico para siempre. Aunque la teoría del contrabando tóxico ofrece respuestas lógicas, la ausencia del pecio impide verificar si las pruebas reales existieron alguna vez."
+  },
+  {
+   "hablado": "Décadas después del trágico suceso, el dilema entre un simple mito náutico y un incidente real verificado sigue dividiendo a los historiadores marítimos. Los registros de socorro captados por múltiples estaciones confirman que la señal existió.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark ocean night",
+    "otras": [
+     "vintage radio equipment",
+     "ocean waves night"
+    ],
+    "descripcion": "Océano nocturno bajo una niebla ligera con olas suaves.",
+    "clip": "ia",
+    "clip_id": "ia-65",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 19.01
+   },
+   "efecto": "niebla",
+   "subtitulo": "Décadas después del trágico suceso, el dilema entre un simple mito náutico y un incidente real verificado sigue dividiendo a los historiadores marítimos. Los registros de socorro captados por múltiples estaciones confirman que la señal existió."
+  },
+  {
+   "hablado": "Sin embargo, la completa desaparición del barco bajo las profundidades del lecho marino eliminó cualquier posibilidad de análisis forense directo. La última y estremecedora transmisión en código morse permanece helada en el tiempo como un enigma impenetrable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "telegraph machine vintage",
+    "otras": [
+     "old typewriter desk",
+     "vintage paper document"
+    ],
+    "descripcion": "Un manipulador de telégrafo antiguo iluminado tenue sobre una mesa.",
+    "clip": "https://cdn.pixabay.com/video/2023/01/30/148540-794355630_small.mp4",
+    "clip_id": 148540,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/08/21233-316116300_large.mp4",
+      "clip_id": 21233
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/21/85898-591840759_small.mp4",
+      "clip_id": 85898
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/30/30704-383980332_large.mp4",
+      "clip_id": 30704
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, la completa desaparición del barco bajo las profundidades del lecho marino eliminó cualquier posibilidad de análisis forense directo. La última y estremecedora transmisión en código morse permanece helada en el tiempo como un enigma impenetrable."
+  },
+  {
+   "hablado": "La tragedia del barco misterioso perdura como un frío recordatorio sobre los incalculables riesgos del comercio marítimo a mediados del siglo veinte, donde barcos sin registro oficial transportaban cargas altamente peligrosas en la penumbra.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "cargo ship sea",
+    "otras": [
+     "old vessel ocean",
+     "sea horizon dark"
+    ],
+    "descripcion": "Silueta de un navío carguero navegando hacia el horizonte en penumbra.",
+    "clip": "https://cdn.pixabay.com/video/2022/08/27/129249-744370394_small.mp4",
+    "clip_id": 129249,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/13/370271_small.mp4",
+      "clip_id": 370271
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/22/260159_large.mp4",
+      "clip_id": 260159
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/30/244088_medium.mp4",
+      "clip_id": 244088
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La tragedia del barco misterioso perdura como un frío recordatorio sobre los incalculables riesgos del comercio marítimo a mediados del siglo veinte, donde barcos sin registro oficial transportaban cargas altamente peligrosas en la penumbra."
+  },
+  {
+   "hablado": "Entre la asfixia repentina por monóxido de carbono y el colapso pulmonar provocado por sustancias químicas prohibidas de contrabando, la ciencia busca encajar las piezas de una catástrofe que ocurrió en cuestión de minutos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old documents archives",
+    "otras": [
+     "vintage report paper",
+     "investigation desk lights"
+    ],
+    "descripcion": "Expedientes y carpetas con sellos sobre una mesa de investigación.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/18/212509_large.mp4",
+    "clip_id": 212509,
+    "extra": [],
+    "necesita": 16.5
+   },
+   "efecto": "polvo",
+   "subtitulo": "Entre la asfixia repentina por monóxido de carbono y el colapso pulmonar provocado por sustancias químicas prohibidas de contrabando, la ciencia busca encajar las piezas de una catástrofe que ocurrió en cuestión de minutos."
+  },
+  {
+   "hablado": "El detalle más perturbador no fue la rápida explosión del carguero, sino el estado intacto de la tripulación congelada en el espanto, sugerencia de que presenciaron algo letal e inaudito antes del silencio final.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark hallway shadows",
+    "otras": [
+     "empty ship corridor",
+     "flashlight dark room"
+    ],
+    "descripcion": "Un pasillo de barco o pasaje estrecho iluminado en penumbras.",
+    "clip": "https://cdn.pixabay.com/video/2023/11/22/190162-887495589_small.mp4",
+    "clip_id": 190162,
+    "extra": [],
+    "necesita": 17.0
+   },
+   "efecto": "niebla",
+   "subtitulo": "El detalle más perturbador no fue la rápida explosión del carguero, sino el estado intacto de la tripulación congelada en el espanto, sugerencia de que presenciaron algo letal e inaudito antes del silencio final."
+  },
+  {
+   "hablado": "Las profundidades oceánicas han guardado celosamente sus secretos durante generaciones, demostrando que algunos enigmas históricos nunca tendrán una sentencia definitiva ni una verdad absoluta confirmada por la justicia o la ciencia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "deep water underwater",
+    "otras": [
+     "dark blue ocean",
+     "sea abyss dark"
+    ],
+    "descripcion": "Vista submarina en aguas profundas y oscuras con reflejos tenues.",
+    "clip": "https://cdn.pixabay.com/video/2017/12/17/13448-248520512_small.mp4",
+    "clip_id": 13448,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/09/67428-522170576_small.mp4",
+      "clip_id": 67428
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/09/67424-522170573_small.mp4",
+      "clip_id": 67424
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/09/67433-522170592_small.mp4",
+      "clip_id": 67433
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Las profundidades oceánicas han guardado celosamente sus secretos durante generaciones, demostrando que algunos enigmas históricos nunca tendrán una sentencia definitiva ni una verdad absoluta confirmada por la justicia o la ciencia."
+  },
+  {
+   "hablado": "Para ti cuál de las hipótesis explica mejor este misterio. ¿Crees que un vertido químico clandestino acabó con los marineros o consideras que el caso fue un mito amplificado por la prensa de la época.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "old nautical map",
+    "otras": [
+     "compass antique map",
+     "vintage globe desk"
+    ],
+    "descripcion": "Un mapa náutico antiguo inspeccionado con una lupa y una brújula.",
+    "clip": "https://cdn.pixabay.com/video/2022/01/29/106037-671587271_small.mp4",
+    "clip_id": 106037,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/06/157741-815445160_small.mp4",
+      "clip_id": 157741
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/19/89066-613200185_large.mp4",
+      "clip_id": 89066
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/28/43341-436408207_large.mp4",
+      "clip_id": 43341
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Para ti cuál de las hipótesis explica mejor este misterio. ¿Crees que un vertido químico clandestino acabó con los marineros o consideras que el caso fue un mito amplificado por la prensa de la época."
+  },
+  {
+   "hablado": "Deja tu opinión en la sección de comentarios y suscríbete para acompañarnos en el próximo expediente de Caja Negra, donde exploraremos otro caso insólito que la historia no ha podido resolver.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "police archives room",
+    "otras": [
+     "vintage library desk",
+     "old file cabinets"
+    ],
+    "descripcion": "Estanterías de archivo antiguo con expedientes en penumbra dramática.",
+    "clip": "https://cdn.pixabay.com/video/2017/07/29/11018-227573544_large.mp4",
+    "clip_id": 11018,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/20/139802-773444492_small.mp4",
+      "clip_id": 139802
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/20/139804-773444500_small.mp4",
+      "clip_id": 139804
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/28/140809-776043767_small.mp4",
+      "clip_id": 140809
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Deja tu opinión en la sección de comentarios y suscríbete para acompañarnos en el próximo expediente de Caja Negra, donde exploraremos otro caso insólito que la historia no ha podido resolver."
+  }
+ ],
+ "titulo_youtube": "«Todos han muerto»: El enigma del SS Ourang Medan",
+ "voz": "Algenib",
+ "estilo_imagen": "Analog film photograph, shot on 35mm Kodak Tri-X or Portra, visible film grain, muted desaturated colors, soft vignette, slight light leaks, documentary realism, period-accurate clothing and places, moody low-key lighting, vintage archival newspaper-era atmosphere. "
+}
