@@ -1,0 +1,1994 @@
+{
+ "titulo": "Ares: El dios odiado",
+ "titulos": [
+  "¿Por qué TODOS odiaban a Ares en el Olimpo?",
+  "El dios más humillado de la mitología: ARES",
+  "ARES: La historia del dios de la guerra que fue vencido",
+  "Las 5 grandes HUMILLACIONES de Ares en la mitología",
+  "¿Por qué Zeus repudió a ARES, su propio hijo?",
+  "Ares vs Atenea: La verdad sobre el dios ODIADO",
+  "El trágico destino de ARES, el dios rechazado",
+  "ARES: El misterio del primer juicio de los dioses",
+  "De temido a humillado: El mito completo de ARES",
+  "¿Cómo fue derrotado ARES por un humano mortal?"
+ ],
+ "miniatura": {
+  "texto": "REPUDIADO POR ZEUS",
+  "clave": "REPUDIADO",
+  "prompt": "A cinematic epic wide shot of Ares, the Greek god of war, standing in a golden-lit battlefield under a dramatic burning sky. He wears glowing golden-bronze armor and a helmet with a crimson plume, looking fierce with sparks and ember floating around. Cinematic warm lighting, intense contrast, hyper-detailed, epic composition, high saturation, full frame, no text."
+ },
+ "descripcion": "Descubre la historia completa de Ares, el dios griego de la guerra sanguinaria y el conflicto, a quien ni sus propios padres en el Olimpo podían soportar. A través de las fuentes clásicas de Homero y Hesíodo, analizamos cómo el dios del combate violento sufrió la humillación a manos de mortales, la traición divina y el juicio de sus iguales.\n\nRepasamos su eterna rivalidad con Atenea, su encierro por los gigantes Aloadas, el sonado escándalo de su romance secreto con Afrodita descubierto por Hefesto, y el motivo exacto por el que Zeus consideraba a Ares el más detestable de todos los inmortales. Un recorrido épico por los episodios más reveladores de la mitología griega.",
+ "etiquetas": [
+  "mitologia griega",
+  "ares dios de la guerra",
+  "mitos griegos",
+  "ares",
+  "olimpo",
+  "zeus y ares",
+  "ares vs atenea",
+  "historias de la mitologia griega",
+  "mitologia para dormir",
+  "dioses olimpicos",
+  "guerra de troya ares",
+  "leyendas griegas"
+ ],
+ "capitulos": [
+  {
+   "escena": 0,
+   "titulo": "El dios que nadie quería"
+  },
+  {
+   "escena": 8,
+   "titulo": "Un nacimiento marcado por el rechazo"
+  },
+  {
+   "escena": 16,
+   "titulo": "Trece meses en una vasija de bronce"
+  },
+  {
+   "escena": 24,
+   "titulo": "Furia contra estrategia: Ares frente a Atenea"
+  },
+  {
+   "escena": 32,
+   "titulo": "El mortal que hirió a un dios"
+  },
+  {
+   "escena": 40,
+   "titulo": "La red invisible de Hefesto"
+  },
+  {
+   "escena": 48,
+   "titulo": "Derrotado por el hijo de Zeus"
+  },
+  {
+   "escena": 56,
+   "titulo": "El primer juicio por asesinato de la historia"
+  },
+  {
+   "escena": 64,
+   "titulo": "La lección de Ares y la verdadera victoria"
+  }
+ ],
+ "escenas": [
+  {
+   "hablado": "Imagina poseer un poder devastador e inmortal y, al mismo tiempo, ser despreciado por tu propia familia. Ares no encarnaba la estrategia táctica, sino la brutalidad ciega, el caos y la sed de sangre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue marble",
+    "otras": [
+     "ancient greek statue",
+     "olympus statue"
+    ],
+    "descripcion": "Estatua de mármol de un dios griego bajo iluminación dramática.",
+    "clip": "https://cdn.pixabay.com/video/2020/06/15/42084-431423022_large.mp4",
+    "clip_id": 42084,
+    "extra": [],
+    "necesita": 21.1
+   },
+   "efecto": "niebla",
+   "subtitulo": "Imagina poseer un poder devastador e inmortal y, al mismo tiempo, ser despreciado por tu propia familia. Ares no encarnaba la estrategia táctica, sino la brutalidad ciega, el caos y la sed de sangre."
+  },
+  {
+   "hablado": "Mientras los demás dioses recibían majestuosos templos y alabanzas en Grecia, a él únicamente le reservaban el temor y el rechazo. Era la divinidad más temida y repudiada del Olimpo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient temple ruins",
+    "otras": [
+     "parthenon ruins greece",
+     "greek columns sunset"
+    ],
+    "descripcion": "Ruinas de un antiguo templo griego con columnas al atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2024/08/07/225245_small.mp4",
+    "clip_id": 225245,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/04/18/71443-538476094_medium.mp4",
+      "clip_id": 71443
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/23/365737_large.mp4",
+      "clip_id": 365737
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Mientras los demás dioses recibían majestuosos templos y alabanzas en Grecia, a él únicamente le reservaban el temor y el rechazo. Era la divinidad más temida y repudiada del Olimpo."
+  },
+  {
+   "hablado": "El mismo Zeus le dedicó el insulto más humillante de la mitología, llamándolo el ser más odioso de todos. Descubrirás cómo este dios rechazado terminó creando el primer tribunal de la historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Ares Ludovisi sculpture",
+    "otras": [
+     "Ares statue museum",
+     "Mars statue marble"
+    ],
+    "descripcion": "Escultura clásica de Ares descansando con su casco y escudo.",
+    "prompt": "Escultura clásica de Ares descansando con su casco y escudo.",
+    "clip": "https://cdn.pixabay.com/video/2024/11/03/239705_small.mp4",
+    "clip_id": 239705,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/10/127428-738466669_small.mp4",
+      "clip_id": 127428
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/10/127432-738466672_small.mp4",
+      "clip_id": 127432
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "El mismo Zeus le dedicó el insulto más humillante de la mitología, llamándolo el ser más odioso de todos. Descubrirás cómo este dios rechazado terminó creando el primer tribunal de la historia."
+  },
+  {
+   "hablado": "Tras ser gravemente herido en Troya, el guerrero regresó al trono celestial esperando consuelo. Pero su padre lo recibió con unas palabras heladas que revelarían su definitivo y oscuro destino.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark clouds storm",
+    "otras": [
+     "lightning storm sky",
+     "dramatic clouds mountain"
+    ],
+    "descripcion": "Cielo tormentoso y nubes oscuras sobre montañas griegas.",
+    "clip": "https://cdn.pixabay.com/video/2026/03/20/341292_small.mp4",
+    "clip_id": 341292,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/05/9604-220523809_small.mp4",
+      "clip_id": 9604
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/09/25/50844-462034003_large.mp4",
+      "clip_id": 50844
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/04/344590_small.mp4",
+      "clip_id": 344590
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Tras ser gravemente herido en Troya, el guerrero regresó al trono celestial esperando consuelo. Pero su padre lo recibió con unas palabras heladas que revelarían su definitivo y oscuro destino."
+  },
+  {
+   "hablado": "En las polis griegas, los ciudadanos preferían encomendarse a divinidades más sabias y protectoras. Los altares dedicados a Ares solían levantarse fuera de las murallas de las ciudades, considerándolo una amenaza constante y peligrosa.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek pottery",
+    "otras": [
+     "greek vase museum",
+     "ancient amphora art"
+    ],
+    "descripcion": "Vasijas y ánforas griegas antiguas expuestas con detalles de guerreros.",
+    "clip": "https://cdn.pixabay.com/video/2024/01/23/197798-905439987_small.mp4",
+    "clip_id": 197798,
+    "extra": [],
+    "necesita": 19.7
+   },
+   "efecto": "polvo",
+   "subtitulo": "En las polis griegas, los ciudadanos preferían encomendarse a divinidades más sabias y protectoras. Los altares dedicados a Ares solían levantarse fuera de las murallas de las ciudades, considerándolo una amenaza constante y peligrosa."
+  },
+  {
+   "hablado": "Su verdadero hogar no estaba en las cumbres iluminadas, sino en las salvajes tierras de Tracia. Un territorio bárbaro donde habitaba rodeado por criaturas aterradoras que personificaban el miedo, el terror y el pánico.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient fire torch",
+    "otras": [
+     "fire flame night",
+     "ancient torch burning"
+    ],
+    "descripcion": "Una antorcha de fuego ardiendo en la oscuridad de ruinas antiguas.",
+    "clip": "https://cdn.pixabay.com/video/2023/12/09/192651-892970395_small.mp4",
+    "clip_id": 192651,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/06/04/165790-833532137_large.mp4",
+      "clip_id": 165790
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/07/225244_small.mp4",
+      "clip_id": 225244
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/02/13/150540-798555688_large.mp4",
+      "clip_id": 150540
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Su verdadero hogar no estaba en las cumbres iluminadas, sino en las salvajes tierras de Tracia. Un territorio bárbaro donde habitaba rodeado por criaturas aterradoras que personificaban el miedo, el terror y el pánico."
+  },
+  {
+   "hablado": "A pesar de poseer una fuerza física colosal y una armadura impenetrable, su carácter impulsivo lo convirtió en blanco de constantes humillaciones, tanto por parte de mortales como de sus propios hermanos divinos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Greek bronze helmet",
+    "otras": [
+     "ancient warrior helmet",
+     "corinthian helmet museum"
+    ],
+    "descripcion": "Casco griego de bronce corintio en un museo.",
+    "prompt": "Casco griego de bronce corintio en un museo.",
+    "clip": "https://cdn.pixabay.com/video/2019/09/28/27312-363287646_large.mp4",
+    "clip_id": 27312,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/15/7376-199627588_large.mp4",
+      "clip_id": 7376
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "A pesar de poseer una fuerza física colosal y una armadura impenetrable, su carácter impulsivo lo convirtió en blanco de constantes humillaciones, tanto por parte de mortales como de sus propios hermanos divinos."
+  },
+  {
+   "hablado": "Nacido del matrimonio regio entre Zeus y Hera, su llegada al mundo debería haber sido motivo de gran celebración. Sin embargo, su infancia demostró desde el primer instante que la tragedia apenas acababa de comenzar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greece mountain clouds",
+    "otras": [
+     "mount olympus greece",
+     "greek landscape scenery"
+    ],
+    "descripcion": "Vista panorámica de la cima de una montaña en Grecia rodeada de nubes.",
+    "clip": "https://cdn.pixabay.com/video/2023/04/28/160858-822206550_small.mp4",
+    "clip_id": 160858,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/28/160862-822213555_small.mp4",
+      "clip_id": 160862
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/28/160857-822206546_small.mp4",
+      "clip_id": 160857
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/04/28/160859-822206552_small.mp4",
+      "clip_id": 160859
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Nacido del matrimonio regio entre Zeus y Hera, su llegada al mundo debería haber sido motivo de gran celebración. Sin embargo, su infancia demostró desde el primer instante que la tragedia apenas acababa de comenzar."
+  },
+  {
+   "hablado": "A pesar de ser hijo legítimo de los reyes del Olimpo, el nacimiento de Ares jamás trajo paz al trono divino. Desde sus primeros días, el pequeño dios mostró una marcada inclinación hacia la violencia desmedida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statue zeus",
+    "otras": [
+     "greek god sculpture marble",
+     "zeus temple ruins"
+    ],
+    "descripcion": "Escultura clásica de mármol de un dios griego",
+    "clip": "https://cdn.pixabay.com/video/2017/04/10/8623-212638552_large.mp4",
+    "clip_id": 8623,
+    "extra": []
+   },
+   "efecto": "niebla",
+   "subtitulo": "A pesar de ser hijo legítimo de los reyes del Olimpo, el nacimiento de Ares jamás trajo paz al trono divino. Desde sus primeros días, el pequeño dios mostró una marcada inclinación hacia la violencia desmedida."
+  },
+  {
+   "hablado": "Mientras su padre Zeus intentaba mantener la armonía cosmogónica mediante la ley y la justicia, Ares disfrutaba rompiendo las normas. No le interesaba la estrategia militar ni el honor, únicamente el sufrimiento ajeno y el caos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "acropolis athens columns",
+     "ancient ruins sunset"
+    ],
+    "descripcion": "Columnas de un antiguo templo griego bajo el cielo",
+    "clip": "https://cdn.pixabay.com/video/2019/09/27/27285-363279736_large.mp4",
+    "clip_id": 27285,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/10/30/137089-766326074_small.mp4",
+      "clip_id": 137089
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/03/19/68418-528670683_small.mp4",
+      "clip_id": 68418
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/18/117407-711479061_small.mp4",
+      "clip_id": 117407
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Mientras su padre Zeus intentaba mantener la armonía cosmogónica mediante la ley y la justicia, Ares disfrutaba rompiendo las normas. No le interesaba la estrategia militar ni el honor, únicamente el sufrimiento ajeno y el caos."
+  },
+  {
+   "hablado": "Para alejarlo de la corte celestial, fue enviado a crecer en las salvajes tierras de Tracia. Aquella región montañosa y agreste, considerada bárbara por los griegos, se convirtió en el escenario perfecto para moldear su carácter indomable.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "stormy mountains landscape",
+    "otras": [
+     "rocky mountains clouds",
+     "dark nature landscape"
+    ],
+    "descripcion": "Paisaje montañoso salvaje y nublado",
+    "clip": "https://cdn.pixabay.com/video/2024/12/01/244294_small.mp4",
+    "clip_id": 244294,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/21/92814-637690783_medium.mp4",
+      "clip_id": 92814
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/09/199958-911694865_medium.mp4",
+      "clip_id": 199958
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/17/241802_small.mp4",
+      "clip_id": 241802
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Para alejarlo de la corte celestial, fue enviado a crecer en las salvajes tierras de Tracia. Aquella región montañosa y agreste, considerada bárbara por los griegos, se convirtió en el escenario perfecto para moldear su carácter indomable."
+  },
+  {
+   "hablado": "Allí perfeccionó el arte del combate brutal, convirtiendo el estruendo de las armas en su mayor fascinación. No caminaba solo por los campos de batalla, pues pronto se le unieron terribles entidades que compartían su oscura sed.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient bronze sword shield",
+    "otras": [
+     "ancient armor museum",
+     "ancient weapon close up"
+    ],
+    "descripcion": "Detalle de una espada y casco de bronce antiguo",
+    "clip": "https://cdn.pixabay.com/video/2022/05/30/118669-715412194_small.mp4",
+    "clip_id": 118669,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/08/28/372983_small.mp4",
+      "clip_id": 372983
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/07/29/4079-176873177_large.mp4",
+      "clip_id": 4079
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/11/13/189018-884234917_large.mp4",
+      "clip_id": 189018
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Allí perfeccionó el arte del combate brutal, convirtiendo el estruendo de las armas en su mayor fascinación. No caminaba solo por los campos de batalla, pues pronto se le unieron terribles entidades que compartían su oscura sed."
+  },
+  {
+   "hablado": "A su lado marchaban constantemente Fobo y Deimo, personificaciones divinas del miedo visceral y del terror pánico. Juntos formaban un séquito temible que hacía temblar a los mortales antes de que la primera espada fuera desenvainada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Ares Phobos Deimos mosaic",
+    "otras": [
+     "ares ancient statue",
+     "greek red figure pottery war"
+    ],
+    "descripcion": "Relieve o cerámica griega antigua representando guerreros e iconos de la guerra",
+    "prompt": "Relieve o cerámica griega antigua representando guerreros e iconos de la guerra",
+    "clip": "https://cdn.pixabay.com/video/2025/10/24/311704_small.mp4",
+    "clip_id": 311704,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/15/382921_small.mp4",
+      "clip_id": 382921
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/28/324588_large.mp4",
+      "clip_id": 324588
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/21/329388_large.mp4",
+      "clip_id": 329388
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "A su lado marchaban constantemente Fobo y Deimo, personificaciones divinas del miedo visceral y del terror pánico. Juntos formaban un séquito temible que hacía temblar a los mortales antes de que la primera espada fuera desenvainada."
+  },
+  {
+   "hablado": "Aunque poseía una presencia imponente y una fuerza física colosal, su falta de autocontrol y su temperamento caprichoso le ganaron la antipatía de los demás dioses. Nadie en el Olimpo toleraba su constante arrogancia sin sentido.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue warrior helmet",
+    "otras": [
+     "marble bust warrior",
+     "ancient greek sculpture"
+    ],
+    "descripcion": "Busto de mármol clásico representando a un guerrero con casco",
+    "clip": "https://cdn.pixabay.com/video/2018/04/12/15549-264716014_large.mp4",
+    "clip_id": 15549,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/11/46873-449573525_large.mp4",
+      "clip_id": 46873
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/05/13/23592-337668424_large.mp4",
+      "clip_id": 23592
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/08/07/84221-584891440_small.mp4",
+      "clip_id": 84221
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Aunque poseía una presencia imponente y una fuerza física colosal, su falta de autocontrol y su temperamento caprichoso le ganaron la antipatía de los demás dioses. Nadie en el Olimpo toleraba su constante arrogancia sin sentido."
+  },
+  {
+   "hablado": "Ares creía que su condición de dios inmortal lo hacía invulnerable a cualquier humillación. Sin embargo, su incapacidad para calcular los riesgos y su ciega impulsividad estaban a punto de pasarle una factura dolorosa e inesperada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire torch burning dark",
+    "otras": [
+     "flame night ancient",
+     "fire burning close up"
+    ],
+    "descripcion": "Antorcha encendida ardiendo en la oscuridad",
+    "clip": "https://cdn.pixabay.com/video/2022/12/18/143419-782363231_small.mp4",
+    "clip_id": 143419,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/11/21/29316-374747498_large.mp4",
+      "clip_id": 29316
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/02/141440-777708125_small.mp4",
+      "clip_id": 141440
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/30/218906_small.mp4",
+      "clip_id": 218906
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Ares creía que su condición de dios inmortal lo hacía invulnerable a cualquier humillación. Sin embargo, su incapacidad para calcular los riesgos y su ciega impulsividad estaban a punto de pasarle una factura dolorosa e inesperada."
+  },
+  {
+   "hablado": "Dos voraces gigantes conocidos como los Aloadas decidieron desafiar la autoridad divina y poner a prueba los límites del dios guerrero. Pero lo peor aún no había llegado para el señor de la guerra.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient amphitheater ruins",
+    "otras": [
+     "ancient stone ruins",
+     "ancient greece theatre"
+    ],
+    "descripcion": "Ruinas de piedra de un antiguo anfiteatro griego",
+    "clip": "https://cdn.pixabay.com/video/2025/02/04/256387_small.mp4",
+    "clip_id": 256387,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/27/32976-394513989_large.mp4",
+      "clip_id": 32976
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/13/32295-391427169_large.mp4",
+      "clip_id": 32295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/04/256388_small.mp4",
+      "clip_id": 256388
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Dos voraces gigantes conocidos como los Aloadas decidieron desafiar la autoridad divina y poner a prueba los límites del dios guerrero. Pero lo peor aún no había llegado para el señor de la guerra."
+  },
+  {
+   "hablado": "Otos y Efialtes, los colosales hermanos Aloadas, crecían cada año a un ritmo aterrador. Cegados por una ambición sin límites, juraron asaltar las alturas del Olimpo y humillar a los mismísimos dioses inmortales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "greek columns ancient ruins",
+     "greece historical landmarks"
+    ],
+    "descripcion": "Vista panorámica de majestuosas ruinas de un templo griego con grandes columnas de piedra al atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/12/360-136069328_large.mp4",
+    "clip_id": 360,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/08/12/296958_large.mp4",
+      "clip_id": 296958
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/11/13/315766_small.mp4",
+      "clip_id": 315766
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/09/08/230334_small.mp4",
+      "clip_id": 230334
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Otos y Efialtes, los colosales hermanos Aloadas, crecían cada año a un ritmo aterrador. Cegados por una ambición sin límites, juraron asaltar las alturas del Olimpo y humillar a los mismísimos dioses inmortales."
+  },
+  {
+   "hablado": "Sin dudarlo un segundo, interceptaron a Ares en pleno combate. A pesar de su furia y su fuerza descomunal, el joven dios de la guerra fue sorprendido, reducido y encadenado con gruesos eslabones de hierro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient warrior statue marble",
+    "otras": [
+     "greek warrior statue museum",
+     "ancient marble sculpture"
+    ],
+    "descripcion": "Estatua clásica de mármol que representa a un fiero guerrero de la antigüedad griega.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/11/46872-449573522_large.mp4",
+    "clip_id": 46872,
+    "extra": [],
+    "necesita": 17.8
+   },
+   "efecto": "brasas",
+   "subtitulo": "Sin dudarlo un segundo, interceptaron a Ares en pleno combate. A pesar de su furia y su fuerza descomunal, el joven dios de la guerra fue sorprendido, reducido y encadenado con gruesos eslabones de hierro."
+  },
+  {
+   "hablado": "Los gigantes encerraron al inmortal dentro de una colosal vasija de bronce labrado. Sellaron el recipiente con una pesada tapa, dejando al soberbio dios guerrero sepultado en la más absoluta y asfixiante oscuridad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek bronze vessel amphora",
+    "otras": [
+     "ancient greek pottery museum",
+     "ancient bronze jar greece"
+    ],
+    "descripcion": "Fotografía de una gran vasija de bronce y cerámica de la antigua Grecia expuesta en un museo.",
+    "prompt": "Fotografía de una gran vasija de bronce y cerámica de la antigua Grecia expuesta en un museo.",
+    "clip": "https://cdn.pixabay.com/video/2020/01/17/31359-385863230_large.mp4",
+    "clip_id": 31359,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/19/1103-143052501_medium.mp4",
+      "clip_id": 1103
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/27/1193-143842661_large.mp4",
+      "clip_id": 1193
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/11/22/140075-774012939_large.mp4",
+      "clip_id": 140075
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Los gigantes encerraron al inmortal dentro de una colosal vasija de bronce labrado. Sellaron el recipiente con una pesada tapa, dejando al soberbio dios guerrero sepultado en la más absoluta y asfixiante oscuridad."
+  },
+  {
+   "hablado": "Durante trece largos meses, Ares permaneció aprisionado en aquel pozo de metal, consumiéndose en su propia impotencia. Ninguno de sus familiares en el Olimpo acudió a buscarlo, dejando que el sufrimiento quebrantara su orgullo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark cave fire torch light",
+    "otras": [
+     "stone dungeon dark room",
+     "ancient stone cell"
+    ],
+    "descripcion": "Interior de una fosa o celda de piedra en penumbra iluminada levemente por una antorcha tenue.",
+    "clip": "https://cdn.pixabay.com/video/2022/03/09/110238-688187414_small.mp4",
+    "clip_id": 110238,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/08/20/227567_large.mp4",
+      "clip_id": 227567
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/09/110255-688187481_small.mp4",
+      "clip_id": 110255
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/03/7012-197962781_large.mp4",
+      "clip_id": 7012
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante trece largos meses, Ares permaneció aprisionado en aquel pozo de metal, consumiéndose en su propia impotencia. Ninguno de sus familiares en el Olimpo acudió a buscarlo, dejando que el sufrimiento quebrantara su orgullo."
+  },
+  {
+   "hablado": "La agonía del dios parecía no tener fin, hasta que Eriboea, la madrastra de los gigantes, sintió piedad. En secreto, la mujer contactó con el astuto Hermes para revelarle el paradero exacto de la prisión.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek woman statue",
+    "otras": [
+     "greek sculpture female museum",
+     "ancient marble bust female"
+    ],
+    "descripcion": "Escultura de mármol de una noble mujer de la Grecia clásica en un encuadre detallado.",
+    "clip": "https://cdn.pixabay.com/video/2024/05/01/210283_small.mp4",
+    "clip_id": 210283,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/01/30/148597-794221559_large.mp4",
+      "clip_id": 148597
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/07/23/293085_large.mp4",
+      "clip_id": 293085
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/13/445-136216234_medium.mp4",
+      "clip_id": 445
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "La agonía del dios parecía no tener fin, hasta que Eriboea, la madrastra de los gigantes, sintió piedad. En secreto, la mujer contactó con el astuto Hermes para revelarle el paradero exacto de la prisión."
+  },
+  {
+   "hablado": "Hermes descendió sigilosamente en la penumbra de la noche. Usando su maestría con el sigilo, rompió las cadenas invisibles y liberó a un Ares exhausto, desnutrido y al borde de la desesperación absoluta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "hermes statue ancient greece",
+    "otras": [
+     "god hermes sculpture marble",
+     "greek god statue museum"
+    ],
+    "descripcion": "Estatua clásica del dios Hermes en mármol blanco destacada sobre fondo oscuro.",
+    "clip": "https://cdn.pixabay.com/video/2018/11/13/19315-300877524_medium.mp4",
+    "clip_id": 19315,
+    "extra": [],
+    "necesita": 16.7
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hermes descendió sigilosamente en la penumbra de la noche. Usando su maestría con el sigilo, rompió las cadenas invisibles y liberó a un Ares exhausto, desnutrido y al borde de la desesperación absoluta."
+  },
+  {
+   "hablado": "Aquella primera gran humillación pública dejó al descubierto una amarga verdad sobre el señor del combate. La bruta fuerza sin inteligencia resultaba ser completamente inútil frente a la astucia y la planificación estratégica.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek mosaic battle",
+    "otras": [
+     "greek pottery battle scene",
+     "ancient greek relief sculpture"
+    ],
+    "descripcion": "Relieve clásico esculpido en piedra representando una encarnizada escena de combate griego.",
+    "clip": "https://cdn.pixabay.com/video/2025/09/24/306155_large.mp4",
+    "clip_id": 306155,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/10/88010-602074647_large.mp4",
+      "clip_id": 88010
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/05/22/117747-713017111_small.mp4",
+      "clip_id": 117747
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/08/13/175933-854230298_small.mp4",
+      "clip_id": 175933
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aquella primera gran humillación pública dejó al descubierto una amarga verdad sobre el señor del combate. La bruta fuerza sin inteligencia resultaba ser completamente inútil frente a la astucia y la planificación estratégica."
+  },
+  {
+   "hablado": "Ares regresó al monte Olimpo con el ego profundamente maltrecho y sin haber aprendido la lección. Y muy pronto, su calculadora hermana Atenea se lo recordaría de la forma más dolorosa posible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athena statue ancient greece",
+    "otras": [
+     "goddess athena marble sculpture",
+     "athena parthenos statue"
+    ],
+    "descripcion": "Imponente estatua de mármol de la diosa Atenea portando casco militar y lanza.",
+    "clip": "https://cdn.pixabay.com/video/2020/03/31/34667-402634362_large.mp4",
+    "clip_id": 34667,
+    "extra": []
+   },
+   "efecto": "nada",
+   "subtitulo": "Ares regresó al monte Olimpo con el ego profundamente maltrecho y sin haber aprendido la lección. Y muy pronto, su calculadora hermana Atenea se lo recordaría de la forma más dolorosa posible."
+  },
+  {
+   "hablado": "El Olimpo presenciaba el constante choque entre dos visiones de la guerra. Mientras Ares encarnaba la violencia desmedida y el descontrol sangriento, su hermana Atenea personificaba la astucia táctica, la disciplina y el honor en el combate.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athena statue marble",
+    "otras": [
+     "ancient greek statue",
+     "greece ruins temple"
+    ],
+    "descripcion": "Estatua clásica de mármol de Atenea iluminada solemnemente en un museo antiguo.",
+    "clip": "https://cdn.pixabay.com/video/2022/07/31/126220-735976606_large.mp4",
+    "clip_id": 126220,
+    "extra": []
+   },
+   "efecto": "polvo",
+   "subtitulo": "El Olimpo presenciaba el constante choque entre dos visiones de la guerra. Mientras Ares encarnaba la violencia desmedida y el descontrol sangriento, su hermana Atenea personificaba la astucia táctica, la disciplina y el honor en el combate."
+  },
+  {
+   "hablado": "Para los griegos, esta diferencia no era solo teórica. En cada polis adoraban a Atenea como protectora de las murallas y las cosechas, reservando para Ares un temeroso desprecio que solo se invocaba en momentos de pura desesperación militar.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "acropolis athens ruins",
+    "otras": [
+     "ancient greek temple",
+     "parthenon athens columns"
+    ],
+    "descripcion": "Vista panorámica de las ruinas de la Acrópolis de Atenas bajo el sol mediterráneo.",
+    "clip": "https://cdn.pixabay.com/video/2020/05/01/37735-415142681_small.mp4",
+    "clip_id": 37735,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/12/26/20266-308335565_large.mp4",
+      "clip_id": 20266
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/24/213450_small.mp4",
+      "clip_id": 213450
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/05/24/213447_small.mp4",
+      "clip_id": 213447
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Para los griegos, esta diferencia no era solo teórica. En cada polis adoraban a Atenea como protectora de las murallas y las cosechas, reservando para Ares un temeroso desprecio que solo se invocaba en momentos de pura desesperación militar."
+  },
+  {
+   "hablado": "La furia desatada del dios de la batalla carecía de planificación. Ares irrumpía en los campos empuñando su lanza con sed de sangre, pero Atenea medía cada movimiento, anticipando los errores brutos de su hermano antes de ejecutar su respuesta.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient spear shield museum",
+    "otras": [
+     "ancient armor weapons",
+     "greek helmet bronze"
+    ],
+    "descripcion": "Detalle de cascos y armas de bronce antiguas exhibidas en una vitrina histórica.",
+    "clip": "https://cdn.pixabay.com/video/2021/02/13/65139-512069359_large.mp4",
+    "clip_id": 65139,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/07/61413-498529688_large.mp4",
+      "clip_id": 61413
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/07/61412-498529684_large.mp4",
+      "clip_id": 61412
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/01/07/61415-498529691_large.mp4",
+      "clip_id": 61415
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "La furia desatada del dios de la batalla carecía de planificación. Ares irrumpía en los campos empuñando su lanza con sed de sangre, pero Atenea medía cada movimiento, anticipando los errores brutos de su hermano antes de ejecutar su respuesta."
+  },
+  {
+   "hablado": "En cada enfrentamiento directo relatado por los poetas antiguos, la mente calculadora de la diosa humilló la fuerza ciega del guerrero. Atenea jamás necesitó usar la brutalidad desmedida para doblegar la rabia incontrolada del señor del caos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Athena vs Ares classical painting",
+    "otras": [
+     "Athena goddess Greek painting",
+     "goddess Athena classical art"
+    ],
+    "descripcion": "Pintura clásica que representa la confrontación de Atenea vistiendo su armadura de guerra.",
+    "prompt": "Pintura clásica que representa la confrontación de Atenea vistiendo su armadura de guerra.",
+    "clip": "https://cdn.pixabay.com/video/2021/08/10/84530-585553713_small.mp4",
+    "clip_id": 84530,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/07/13/44575-439924989_large.mp4",
+      "clip_id": 44575
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "En cada enfrentamiento directo relatado por los poetas antiguos, la mente calculadora de la diosa humilló la fuerza ciega del guerrero. Atenea jamás necesitó usar la brutalidad desmedida para doblegar la rabia incontrolada del señor del caos."
+  },
+  {
+   "hablado": "Sin embargo, la rivalidad entre ambos hermanos alcanzaría su punto más tenso y sangriento en las llanuras de Troya. Las divinidades se dividieron para apoyar a mortales y el destino de dos imperios quedó en juego.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "mediterranean sea stormy sky",
+    "otras": [
+     "ancient coastal cliff",
+     "greece sea coast"
+    ],
+    "descripcion": "Olas rompiendo contra acantilados de la costa griega bajo un cielo nublado y épico.",
+    "clip": "https://cdn.pixabay.com/video/2016/11/15/6417-191719633_large.mp4",
+    "clip_id": 6417,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/03/03/33194-396036988_small.mp4",
+      "clip_id": 33194
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/03/17/22059-325253411_large.mp4",
+      "clip_id": 22059
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/07/23/10784-226624893_large.mp4",
+      "clip_id": 10784
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Sin embargo, la rivalidad entre ambos hermanos alcanzaría su punto más tenso y sangriento en las llanuras de Troya. Las divinidades se dividieron para apoyar a mortales y el destino de dos imperios quedó en juego."
+  },
+  {
+   "hablado": "Ares eligió bando movido por la masacre, ofreciendo su poder sin rodeos a los defensores troyanos. Al mismo tiempo, Atenea guió en secreto a las tropas aqueas, tejiendo estratagemas que cambiarían para siempre el curso de la gran contienda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "fire torches night ancient",
+    "otras": [
+     "ancient fire torch",
+     "night camp fire"
+    ],
+    "descripcion": "Fuego de antorchas encendidas iluminando estructuras de piedra por la noche.",
+    "clip": "https://assets.mixkit.co/videos/11028/11028-720.mp4",
+    "clip_id": "mixkit:11028",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/07/35241-407130670_large.mp4",
+      "clip_id": 35241
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/12/17/143319-782178544_large.mp4",
+      "clip_id": 143319
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/07/22/3945-175860884_medium.mp4",
+      "clip_id": 3945
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Ares eligió bando movido por la masacre, ofreciendo su poder sin rodeos a los defensores troyanos. Al mismo tiempo, Atenea guió en secreto a las tropas aqueas, tejiendo estratagemas que cambiarían para siempre el curso de la gran contienda."
+  },
+  {
+   "hablado": "El choque inevitable se preparaba entre el rugido de la carnicería mortal. Ares avanzaba destruyendo cuanto tocaba, ignorando que la diosa con yelmo de oro ya tenía preparado el golpe que aplastaría de nuevo su desmedido orgullo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins clouds",
+    "otras": [
+     "greece ruins storm",
+     "old columns sky"
+    ],
+    "descripcion": "Nubes oscuras pasantes sobre las columnas de un templo griego en ruinas.",
+    "clip": "https://assets.mixkit.co/videos/7792/7792-720.mp4",
+    "clip_id": "mixkit:7792",
+    "clip_ini": 0,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/22/3520-171835413_large.mp4",
+      "clip_id": 3520
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/12/15/30224-380473802_large.mp4",
+      "clip_id": 30224
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/10/21/92769-637690710_small.mp4",
+      "clip_id": 92769
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "El choque inevitable se preparaba entre el rugido de la carnicería mortal. Ares avanzaba destruyendo cuanto tocaba, ignorando que la diosa con yelmo de oro ya tenía preparado el golpe que aplastaría de nuevo su desmedido orgullo."
+  },
+  {
+   "hablado": "La diosa sabia no actuaría directamente con sus propias manos, sino utilizando la lanza de un simple guerrero mortal. Pero lo peor para el dios de la guerra aún estaba por llegar en el mismísimo campo de batalla.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient spear museum bronze",
+    "otras": [
+     "ancient warrior shield",
+     "greek museum artifacts"
+    ],
+    "descripcion": "Punta de lanza metálica antigua enfocada de cerca en un museo de historia.",
+    "clip": "ia",
+    "clip_id": "ia-32",
+    "necesita": 17.5,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.49
+   },
+   "efecto": "niebla",
+   "subtitulo": "La diosa sabia no actuaría directamente con sus propias manos, sino utilizando la lanza de un simple guerrero mortal. Pero lo peor para el dios de la guerra aún estaba por llegar en el mismísimo campo de batalla."
+  },
+  {
+   "hablado": "Durante el sangriento sitio de Troya, Ares descendió en persona sobre el polvo de la batalla. Incansable y feroz, el dios masacraba a los guerreros aqueos sin piedad, sembrando el terror absoluto entre las filas humanas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient warrior battle",
+    "otras": [
+     "ancient greece warfare",
+     "greek ruins dust"
+    ],
+    "descripcion": "Siluetas de guerreros antiguos luchando en un campo de batalla con polvo y humo.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/11/46876-449573541_large.mp4",
+    "clip_id": 46876,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/22/39812-423345548_small.mp4",
+      "clip_id": 39812
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/11/09/1295-145209438_large.mp4",
+      "clip_id": 1295
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/03/18/2496-159568806_large.mp4",
+      "clip_id": 2496
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Durante el sangriento sitio de Troya, Ares descendió en persona sobre el polvo de la batalla. Incansable y feroz, el dios masacraba a los guerreros aqueos sin piedad, sembrando el terror absoluto entre las filas humanas."
+  },
+  {
+   "hablado": "Sin embargo, la diosa Atenea no pensaba contemplar la matanza en silencio. La deidad de la sabiduría otorgó una visión divina al héroe mortal Diomedes, permitiéndole distinguir a los inmortales entre el denso humo de la contienda.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Statue of Athena marble",
+    "otras": [
+     "Athena ancient sculpture",
+     "Goddess Athena statue"
+    ],
+    "descripcion": "Escultura clásica de mármol de la diosa Atenea con casco y lanza.",
+    "prompt": "Escultura clásica de mármol de la diosa Atenea con casco y lanza.",
+    "clip": "ia",
+    "clip_id": "ia-34",
+    "necesita": 18.8,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 17.77
+   },
+   "efecto": "nada",
+   "subtitulo": "Sin embargo, la diosa Atenea no pensaba contemplar la matanza en silencio. La deidad de la sabiduría otorgó una visión divina al héroe mortal Diomedes, permitiéndole distinguir a los inmortales entre el denso humo de la contienda."
+  },
+  {
+   "hablado": "Atenea fortaleció los brazos de Diomedes con una fuerza sobrehumana y guió cada uno de sus movimientos. El mortal, armado con una pesada lanza de bronce, avanzó firmemente hacia el temible dios de la guerra sin mostrar vacilación.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient spear soldier",
+    "otras": [
+     "bronze age warrior",
+     "ancient greek armor"
+    ],
+    "descripcion": "Un guerrero antiguo empuñando una lanza de bronce preparado para el combate.",
+    "clip": "https://cdn.pixabay.com/video/2020/12/01/58013-486853042_small.mp4",
+    "clip_id": 58013,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/05/10/23501-335833080_large.mp4",
+      "clip_id": 23501
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/22/201528-915698783_small.mp4",
+      "clip_id": 201528
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/06/119452-717695375_large.mp4",
+      "clip_id": 119452
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Atenea fortaleció los brazos de Diomedes con una fuerza sobrehumana y guió cada uno de sus movimientos. El mortal, armado con una pesada lanza de bronce, avanzó firmemente hacia el temible dios de la guerra sin mostrar vacilación."
+  },
+  {
+   "hablado": "Diomedes arrojó su arma con una precisión impecable, impulsada por la mano invisible de Atenea. La punta de bronce atravesó la gruesa armadura de Ares, clavándose profundamente en su costado y haciendo brotar la sagrada sangre divina.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient battle spear",
+    "otras": [
+     "ancient warrior attack",
+     "greek helmet bronze"
+    ],
+    "descripcion": "Detalle de una lanza de bronce antigua en medio de un combate heroico.",
+    "clip": "https://cdn.pixabay.com/video/2021/01/07/61418-498529700_large.mp4",
+    "clip_id": 61418,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/10/29/28412-369533724_large.mp4",
+      "clip_id": 28412
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/15/7375-199627582_large.mp4",
+      "clip_id": 7375
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/08/12/375-136120054_large.mp4",
+      "clip_id": 375
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Diomedes arrojó su arma con una precisión impecable, impulsada por la mano invisible de Atenea. La punta de bronce atravesó la gruesa armadura de Ares, clavándose profundamente en su costado y haciendo brotar la sagrada sangre divina."
+  },
+  {
+   "hablado": "Al sentir el metal desgarrar su carne inmortal, Ares lanzó un rugido de dolor tan escalofriante que retumbó como el grito de diez mil hombres juntos. El pánico se apoderó del dios, abandonando el campo de batalla.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark stormy sky",
+    "otras": [
+     "dramatic storm clouds",
+     "lightning dark sky"
+    ],
+    "descripcion": "Cielo tormentoso con nubes oscuras agitadas que reflejan gran tensión.",
+    "clip": "https://cdn.pixabay.com/video/2015/08/10/248-135871101_large.mp4",
+    "clip_id": 248,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/10/16/988-142612116_large.mp4",
+      "clip_id": 988
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/30/37697-414754642_small.mp4",
+      "clip_id": 37697
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/10/127468-738466697_small.mp4",
+      "clip_id": 127468
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Al sentir el metal desgarrar su carne inmortal, Ares lanzó un rugido de dolor tan escalofriante que retumbó como el grito de diez mil hombres juntos. El pánico se apoderó del dios, abandonando el campo de batalla."
+  },
+  {
+   "hablado": "Humillado y sangrando icor brillante, Ares huyó a toda prisa hacia las alturas celestiales del monte Olimpo. El orgulloso señor de la guerra se presentó ante el trono de su padre Zeus esperando consuelo y una pronta venganza.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple",
+    "otras": [
+     "mount olympus ruins",
+     "acropolis columns sun"
+    ],
+    "descripcion": "Columnas de un templo griego antiguo alzándose hacia las nubes bajo el sol.",
+    "clip": "https://cdn.pixabay.com/video/2022/04/30/115543-704906258_small.mp4",
+    "clip_id": 115543,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/03/23/205345-926737185_small.mp4",
+      "clip_id": 205345
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/02/16/258656_small.mp4",
+      "clip_id": 258656
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/03/25/342229_large.mp4",
+      "clip_id": 342229
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Humillado y sangrando icor brillante, Ares huyó a toda prisa hacia las alturas celestiales del monte Olimpo. El orgulloso señor de la guerra se presentó ante el trono de su padre Zeus esperando consuelo y una pronta venganza."
+  },
+  {
+   "hablado": "Pero Zeus lo recibió con una mirada helada y despectiva. El rey de los dioses le recordó que era el ser más odioso del Olimpo, pues solo disfrutaba de las discordias, las sangrientas guerras y las masacres innecesarias.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Zeus marble statue bust",
+    "otras": [
+     "Zeus ancient sculpture",
+     "King Zeus statue"
+    ],
+    "descripcion": "Busto clásico de mármol del dios Zeus con expresión severa y regia.",
+    "prompt": "Busto clásico de mármol del dios Zeus con expresión severa y regia.",
+    "clip": "https://cdn.pixabay.com/video/2020/08/25/48115-452601294_small.mp4",
+    "clip_id": 48115,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/11/27/19600-303877318_small.mp4",
+      "clip_id": 19600
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/04/17/114145-700585495_large.mp4",
+      "clip_id": 114145
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/09/28/89985-620432901_large.mp4",
+      "clip_id": 89985
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Pero Zeus lo recibió con una mirada helada y despectiva. El rey de los dioses le recordó que era el ser más odioso del Olimpo, pues solo disfrutaba de las discordias, las sangrientas guerras y las masacres innecesarias."
+  },
+  {
+   "hablado": "Aquel amargo rechazo confirmó la profunda soledad de Ares entre su propia familia divina. Incapaz de hallar consuelo en el Olimpo, el dios repudiado buscaría cobijo en los brazos de un amor prohibido. Pero esa pasión desataría un nuevo desastre.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "parthenon sunset Greece",
+    "otras": [
+     "ancient ruins evening",
+     "greek columns sunset"
+    ],
+    "descripcion": "Vista crepuscular de ruinas y columnas griegas al atardecer.",
+    "clip": "https://cdn.pixabay.com/video/2025/11/28/318540_small.mp4",
+    "clip_id": 318540,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/21/222229_small.mp4",
+      "clip_id": 222229
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/09/12/26790-361092012_large.mp4",
+      "clip_id": 26790
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/04/319751_small.mp4",
+      "clip_id": 319751
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aquel amargo rechazo confirmó la profunda soledad de Ares entre su propia familia divina. Incapaz de hallar consuelo en el Olimpo, el dios repudiado buscaría cobijo en los brazos de un amor prohibido. Pero esa pasión desataría un nuevo desastre."
+  },
+  {
+   "hablado": "Tras la humillación sufrida en Troya y el desprecio de su propio padre, el solitario dios de la guerra buscó refugio en los brazos de Afrodita, la venerada diosa de la belleza y el deseo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek statues marble goddess",
+    "otras": [
+     "greek statue museum",
+     "ancient ruins Greece"
+    ],
+    "descripcion": "Estatua clásica de mármol que representa a Afrodita en un entorno monumental griego",
+    "clip": "https://cdn.pixabay.com/video/2015/11/07/1279-145116951_medium.mp4",
+    "clip_id": 1279,
+    "extra": []
+   },
+   "efecto": "polvo",
+   "subtitulo": "Tras la humillación sufrida en Troya y el desprecio de su propio padre, el solitario dios de la guerra buscó refugio en los brazos de Afrodita, la venerada diosa de la belleza y el deseo."
+  },
+  {
+   "hablado": "Sin embargo, aquel apasionado romance era profundamente prohibido. La diosa del amor estaba legítimamente casada con Hefesto, el brillante pero marginado dios de la forja, el fuego y los metales.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Vulcan forge painting classic",
+    "otras": [
+     "Hephaestus forge painting",
+     "Vulcan mythology art"
+    ],
+    "descripcion": "Pintura clásica que muestra al dios Hefesto trabajando en su forja divina",
+    "prompt": "Pintura clásica que muestra al dios Hefesto trabajando en su forja divina",
+    "clip": "https://cdn.pixabay.com/video/2022/07/09/123572-728487630_small.mp4",
+    "clip_id": 123572,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/03/30852-382770816_large.mp4",
+      "clip_id": 30852
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/19/124714-731575499_large.mp4",
+      "clip_id": 124714
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/07/19/124711-731575487_large.mp4",
+      "clip_id": 124711
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Sin embargo, aquel apasionado romance era profundamente prohibido. La diosa del amor estaba legítimamente casada con Hefesto, el brillante pero marginado dios de la forja, el fuego y los metales."
+  },
+  {
+   "hablado": "Durante meses, los dos amantes se reunieron en la penumbra para consumar su traición, confiados en que la oscuridad ocultaría sus actos de los ojos inquisitivos del resto de los olímpicos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "night sky ancient temple ruins",
+    "otras": [
+     "starry night ruins",
+     "greece night columns"
+    ],
+    "descripcion": "Ruinas de un templo griego bajo un cielo nocturno estrellado",
+    "clip": "https://cdn.pixabay.com/video/2024/06/24/218016_small.mp4",
+    "clip_id": 218016,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/28/202368-918049003_large.mp4",
+      "clip_id": 202368
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/07/46637-448480646_large.mp4",
+      "clip_id": 46637
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/01/10/7215-198992418_large.mp4",
+      "clip_id": 7215
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Durante meses, los dos amantes se reunieron en la penumbra para consumar su traición, confiados en que la oscuridad ocultaría sus actos de los ojos inquisitivos del resto de los olímpicos."
+  },
+  {
+   "hablado": "Pero nada escapaba al dios Helios, la personificación del sol que todo lo contempla desde su carro dorado. Al descubrir el romance clandestino, corrió a informarle de inmediato al engañado esposo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "sun shining golden sky clouds",
+    "otras": [
+     "bright sun sky horizon",
+     "sun flare ancient ruins"
+    ],
+    "descripcion": "Un sol radiante iluminando el horizonte y nubes doradas",
+    "clip": "https://cdn.pixabay.com/video/2023/03/10/154049-806987955_large.mp4",
+    "clip_id": 154049,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/10/22/237672_small.mp4",
+      "clip_id": 237672
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/01/12/31180-384523319_small.mp4",
+      "clip_id": 31180
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/06/26/24746-344986280_large.mp4",
+      "clip_id": 24746
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Pero nada escapaba al dios Helios, la personificación del sol que todo lo contempla desde su carro dorado. Al descubrir el romance clandestino, corrió a informarle de inmediato al engañado esposo."
+  },
+  {
+   "hablado": "Lleno de una fría ira, el dios herrero no buscó la violencia directa. En lugar de eso, acudió a su taller divino y forjó en secreto una sutil red de bronce completamente indestructible.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "blacksmith forge fire sparks hammer",
+    "otras": [
+     "fire sparks anvil iron",
+     "metal forge flames"
+    ],
+    "descripcion": "Manos trabajando el metal ardiente en una forja tradicional con chispas brotando",
+    "clip": "https://cdn.pixabay.com/video/2022/12/17/143326-782178564_large.mp4",
+    "clip_id": 143326,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/10/05/12334-237438720_large.mp4",
+      "clip_id": 12334
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/06/22/3522-171841303_medium.mp4",
+      "clip_id": 3522
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Lleno de una fría ira, el dios herrero no buscó la violencia directa. En lugar de eso, acudió a su taller divino y forjó en secreto una sutil red de bronce completamente indestructible."
+  },
+  {
+   "hablado": "Aquella malla era tan fina como el hilo de una araña e invisible para cualquier ojo. Hefesto la colocó pacientemente sobre el lecho nupcial y fingió marchar hacia la isla de Lemnos.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient room temple ruins Greece",
+    "otras": [
+     "ancient columns interior",
+     "greece historic ruins"
+    ],
+    "descripcion": "Interior de un antiguo palacio de piedra con columnas iluminadas por la luz solar",
+    "clip": "https://cdn.pixabay.com/video/2020/05/17/39292-422630811_large.mp4",
+    "clip_id": 39292,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/12/26/20269-308335571_large.mp4",
+      "clip_id": 20269
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2015/12/11/1623-148613540_medium.mp4",
+      "clip_id": 1623
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquella malla era tan fina como el hilo de una araña e invisible para cualquier ojo. Hefesto la colocó pacientemente sobre el lecho nupcial y fingió marchar hacia la isla de Lemnos."
+  },
+  {
+   "hablado": "Ares acudió presto a la cita clandestina. Pero al tenderse en el lecho con Afrodita, la trampa cayó sobre ellos, dejándolos completamente inmovilizados, expuestos e incapaces de liberarse de la celada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Mars and Venus net painting",
+    "otras": [
+     "Ares Aphrodite Hephaestus art",
+     "Vulcan catching Mars Venus"
+    ],
+    "descripcion": "Cuadro clásico que representa a Ares y Afrodita atrapados en la red forjada por Hefesto",
+    "prompt": "Cuadro clásico que representa a Ares y Afrodita atrapados en la red forjada por Hefesto",
+    "clip": "https://cdn.pixabay.com/video/2021/11/25/98951-650523368_small.mp4",
+    "clip_id": 98951,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/04/18/208442_small.mp4",
+      "clip_id": 208442
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/03/12/8348-208046381_small.mp4",
+      "clip_id": 8348
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/05/30/75860-557029975_small.mp4",
+      "clip_id": 75860
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Ares acudió presto a la cita clandestina. Pero al tenderse en el lecho con Afrodita, la trampa cayó sobre ellos, dejándolos completamente inmovilizados, expuestos e incapaces de liberarse de la celada."
+  },
+  {
+   "hablado": "Hefesto abrió las puertas del palacio y convocó a todos los dioses celestiales para presenciar la escena. La humillante visión desató una carcajada generalizada que resonó por los confines del Olimpo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "pantheon ancient temple pillars ruins",
+    "otras": [
+     "acropolis athens greece",
+     "greek ruin pillars sky"
+    ],
+    "descripcion": "Grandiosas columnas de un templo griego bajo la luz del sol simbolizando el Olimpo",
+    "clip": "https://cdn.pixabay.com/video/2022/03/02/109337-684065423_large.mp4",
+    "clip_id": 109337,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2021/11/11/95507-645084552_small.mp4",
+      "clip_id": 95507
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/06/11/9825-221185540_large.mp4",
+      "clip_id": 9825
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/14/221180_small.mp4",
+      "clip_id": 221180
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Hefesto abrió las puertas del palacio y convocó a todos los dioses celestiales para presenciar la escena. La humillante visión desató una carcajada generalizada que resonó por los confines del Olimpo."
+  },
+  {
+   "hablado": "Aquella ridícula trampa no detuvo la furia impetuosa del dios de la guerra. Tiempo después, el destino volvió a poner a prueba el honor de Ares, al cruzar sus pasos con el gran héroe Heracles.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek ruins",
+    "otras": [
+     "greek temple column",
+     "statue of marble"
+    ],
+    "descripcion": "Columnas de un templo griego antiguo bajo la luz del sol",
+    "clip": "https://cdn.pixabay.com/video/2020/12/01/58011-486853033_small.mp4",
+    "clip_id": 58011,
+    "extra": []
+   },
+   "efecto": "nada",
+   "subtitulo": "Aquella ridícula trampa no detuvo la furia impetuosa del dios de la guerra. Tiempo después, el destino volvió a poner a prueba el honor de Ares, al cruzar sus pasos con el gran héroe Heracles."
+  },
+  {
+   "hablado": "Todo comenzó en el camino hacia Delfos, donde Cicno, un violento hijo de Ares, asaltaba a los peregrinos. El desalmado joven pretendía construir un templo sangriento con los cráneos de sus víctimas indefensas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "rocky mountain greece",
+    "otras": [
+     "ancient greek landscape",
+     "olive trees ruins"
+    ],
+    "descripcion": "Camino empedrado y rocoso entre colinas de la antigua Grecia",
+    "clip": "https://cdn.pixabay.com/video/2024/03/10/203681-921832588_small.mp4",
+    "clip_id": 203681,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/11/22/242613_small.mp4",
+      "clip_id": 242613
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/04/15/346571_small.mp4",
+      "clip_id": 346571
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/02/11/2119-155244112_large.mp4",
+      "clip_id": 2119
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Todo comenzó en el camino hacia Delfos, donde Cicno, un violento hijo de Ares, asaltaba a los peregrinos. El desalmado joven pretendía construir un templo sangriento con los cráneos de sus víctimas indefensas."
+  },
+  {
+   "hablado": "Cuando el invencible Heracles cruzó por aquel paso sagrado, se enfrentó a Cicno sin vacilar. En un brutal combate justo, la maza del semidiós abatió al hijo de Ares, dejando su cuerpo inerte.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Heracles and Cycnus",
+    "otras": [
+     "Heracles Hercules vase",
+     "ancient greek pottery"
+    ],
+    "descripcion": "Pintura en vasija griega clásica que representa el combate entre Heracles y Cicno",
+    "prompt": "Pintura en vasija griega clásica que representa el combate entre Heracles y Cicno",
+    "clip": "https://cdn.pixabay.com/video/2016/06/27/3628-172488402_large.mp4",
+    "clip_id": 3628,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/11/08/12853-242215673_large.mp4",
+      "clip_id": 12853
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/09/30/380038_small.mp4",
+      "clip_id": 380038
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/05/01/276043_large.mp4",
+      "clip_id": 276043
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Cuando el invencible Heracles cruzó por aquel paso sagrado, se enfrentó a Cicno sin vacilar. En un brutal combate justo, la maza del semidiós abatió al hijo de Ares, dejando su cuerpo inerte."
+  },
+  {
+   "hablado": "Desde lo alto de los cielos, Ares presenció la muerte de su descendiente y enloqueció de ira. El dios guerrero descendió envuelto en una nube de tormenta, dispuesto a destrozar al asesino de su hijo.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dark storm clouds",
+    "otras": [
+     "lightning storm sky",
+     "dramatic clouds ocean"
+    ],
+    "descripcion": "Nubes oscuras de tormenta sobre las montañas de Grecia",
+    "clip": "https://cdn.pixabay.com/video/2024/08/10/225775_small.mp4",
+    "clip_id": 225775,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/07/08/362759_large.mp4",
+      "clip_id": 362759
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/08/06/295599_small.mp4",
+      "clip_id": 295599
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/12/327239_small.mp4",
+      "clip_id": 327239
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Desde lo alto de los cielos, Ares presenció la muerte de su descendiente y enloqueció de ira. El dios guerrero descendió envuelto en una nube de tormenta, dispuesto a destrozar al asesino de su hijo."
+  },
+  {
+   "hablado": "Ares lanzó su mortal lanza de bronce con toda la fuerza divina que poseía. Sin embargo, antes de que el arma tocara al héroe, la diosa Atenea se interpuso en el aire desviando el impacto.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athena statue marble",
+    "otras": [
+     "ancient parthenon athens",
+     "greek goddess statue"
+    ],
+    "descripcion": "Estatua de mármol de la diosa Atenea frente al cielo azul",
+    "clip": "ia",
+    "clip_id": "ia-53",
+    "necesita": 15.7,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 14.66
+   },
+   "efecto": "nada",
+   "subtitulo": "Ares lanzó su mortal lanza de bronce con toda la fuerza divina que poseía. Sin embargo, antes de que el arma tocara al héroe, la diosa Atenea se interpuso en el aire desviando el impacto."
+  },
+  {
+   "hablado": "Aprovechando la confusión del dios de la guerra, Heracles embistió con determinación mortal. El semidiós clavó su formidable lanza en el muslo de Ares, haciendo brotar una corriente de sangriento icor divino sobre la tierra.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek armor",
+    "otras": [
+     "bronze spear helmet",
+     "ancient greek museum"
+    ],
+    "descripcion": "Casco de bronce y lanza de la antigua Grecia en una vitrina histórica",
+    "clip": "https://cdn.pixabay.com/video/2025/04/07/270300_small.mp4",
+    "clip_id": 270300,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/05/24/40053-424371550_large.mp4",
+      "clip_id": 40053
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/07/31/11048-227790769_large.mp4",
+      "clip_id": 11048
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/06/23/42959-434300986_large.mp4",
+      "clip_id": 42959
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Aprovechando la confusión del dios de la guerra, Heracles embistió con determinación mortal. El semidiós clavó su formidable lanza en el muslo de Ares, haciendo brotar una corriente de sangriento icor divino sobre la tierra."
+  },
+  {
+   "hablado": "El señor de la batalla cayó desplomado sobre el polvo, rugiendo de dolor y humillación absoluta. Un dios olímpico inmortal acababa de ser vencido y malherido en combate por un héroe mortal creado de barro.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "dusty ancient ruins",
+    "otras": [
+     "pantheon ruins greece",
+     "ancient marble columns"
+    ],
+    "descripcion": "Polvo y luz solar iluminando las ruinas de un santuario griego",
+    "clip": "ia",
+    "clip_id": "ia-55",
+    "necesita": 17.7,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.69
+   },
+   "efecto": "polvo",
+   "subtitulo": "El señor de la batalla cayó desplomado sobre el polvo, rugiendo de dolor y humillación absoluta. Un dios olímpico inmortal acababa de ser vencido y malherido en combate por un héroe mortal creado de barro."
+  },
+  {
+   "hablado": "Sus horrorizados hijos, Fobo y Deimo, tuvieron que descender apresuradamente para subirlo a su carro de combate y huir. Pero una grave afrenta sagrada estaba a punto de desatar el primer juicio divino de la historia.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "Ares chariot relief",
+    "otras": [
+     "ancient greek relief chariot",
+     "greek vase chariot"
+    ],
+    "descripcion": "Relieve antiguo de mármol con un carro de combate de la mitología griega",
+    "prompt": "Relieve antiguo de mármol con un carro de combate de la mitología griega",
+    "clip": "https://cdn.pixabay.com/video/2020/08/31/48684-454879683_large.mp4",
+    "clip_id": 48684,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/01/12/252149_small.mp4",
+      "clip_id": 252149
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/09/16/304556_large.mp4",
+      "clip_id": 304556
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/12/07/320349_small.mp4",
+      "clip_id": 320349
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Sus horrorizados hijos, Fobo y Deimo, tuvieron que descender apresuradamente para subirlo a su carro de combate y huir. Pero una grave afrenta sagrada estaba a punto de desatar el primer juicio divino de la historia."
+  },
+  {
+   "hablado": "Humillado en la guerra, Ares demostró un rostro inesperado cuando se trató de proteger a los suyos. En Atenas, Halirrotio, un hijo del poderoso Poseidón, intentó ultrajar a la joven Alcipe, la amada hija del dios guerrero.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "athens ruins ancient",
+     "greek columns sun"
+    ],
+    "descripcion": "Ruinas de un templo griego antiguo bajo la luz del sol",
+    "clip": "https://cdn.pixabay.com/video/2021/02/18/65621-515085097_small.mp4",
+    "clip_id": 65621,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/08/22/4753-179739298_large.mp4",
+      "clip_id": 4753
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/31/313145_small.mp4",
+      "clip_id": 313145
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/07/27/223459_small.mp4",
+      "clip_id": 223459
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Humillado en la guerra, Ares demostró un rostro inesperado cuando se trató de proteger a los suyos. En Atenas, Halirrotio, un hijo del poderoso Poseidón, intentó ultrajar a la joven Alcipe, la amada hija del dios guerrero."
+  },
+  {
+   "hablado": "La furia de Ares no nació esta vez del deseo insensato de destrucción, sino del amor paternal más absoluto. Al enterarse de la terrible afrenta, el dios descendió del Olimpo y ejecutó sin piedad al agresor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek statue marble warrior",
+    "otras": [
+     "ancient statue museum",
+     "greek sculpture closeup"
+    ],
+    "descripcion": "Estatua de mármol de un guerrero griego clásico",
+    "clip": "https://cdn.pixabay.com/video/2023/02/15/150875-799327606_large.mp4",
+    "clip_id": 150875,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/10/09/381617_small.mp4",
+      "clip_id": 381617
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2017/08/01/11066-228113758_large.mp4",
+      "clip_id": 11066
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/02/109413-684053766_small.mp4",
+      "clip_id": 109413
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "La furia de Ares no nació esta vez del deseo insensato de destrucción, sino del amor paternal más absoluto. Al enterarse de la terrible afrenta, el dios descendió del Olimpo y ejecutó sin piedad al agresor."
+  },
+  {
+   "hablado": "Poseidón, enloquecido por el dolor y la rabia tras la muerte de su hijo, no podía dejar impune aquel acto. Exigió la muerte del dios de la guerra y convocó a toda la corte olímpica para juzgar el crimen.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "stormy ocean sea waves",
+    "otras": [
+     "dramatic sea storm",
+     "ocean waves rocks"
+    ],
+    "descripcion": "Mar embravecido golpeando rocas en una tormenta",
+    "clip": "https://cdn.pixabay.com/video/2016/04/01/2633-161442806_large.mp4",
+    "clip_id": 2633,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/02/26/336926_large.mp4",
+      "clip_id": 336926
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/08/30/300774_large.mp4",
+      "clip_id": 300774
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/12/327241_small.mp4",
+      "clip_id": 327241
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Poseidón, enloquecido por el dolor y la rabia tras la muerte de su hijo, no podía dejar impune aquel acto. Exigió la muerte del dios de la guerra y convocó a toda la corte olímpica para juzgar el crimen."
+  },
+  {
+   "hablado": "Los dioses principales descendieron sobre una colina rocosa cerca de la acrópolis ateniense. Por primera vez en la eternidad, un inmortal debía responder ante un tribunal sagrado por haber derramado sangre y quitado una vida.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "acropolis hill athens sunset",
+    "otras": [
+     "greece rocky hill landscape",
+     "athens ancient site"
+    ],
+    "descripcion": "Vista de la colina rocosa cerca de la Acrópolis de Atenas al atardecer",
+    "clip": "https://cdn.pixabay.com/video/2022/07/16/124339-730756652_small.mp4",
+    "clip_id": 124339,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2018/05/18/16288-271024158_large.mp4",
+      "clip_id": 16288
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/12/120125-719677702_medium.mp4",
+      "clip_id": 120125
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2025/10/13/309587_small.mp4",
+      "clip_id": 309587
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "Los dioses principales descendieron sobre una colina rocosa cerca de la acrópolis ateniense. Por primera vez en la eternidad, un inmortal debía responder ante un tribunal sagrado por haber derramado sangre y quitado una vida."
+  },
+  {
+   "hablado": "Poseidón acusó a Ares de asesinato con palabras llenas de rencor, exigiendo un castigo ejemplar. Pero Ares, con firmeza y solemnidad, expuso la atrocidad cometida contra su hija Alcipe, defendiendo que actuó para proteger su honor.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek columns ruin",
+    "otras": [
+     "parthenon athens greece",
+     "greek heritage stone"
+    ],
+    "descripcion": "Columnas clásicas griegas erigidas contra el cielo",
+    "clip": "https://cdn.pixabay.com/video/2020/12/01/58010-486853030_small.mp4",
+    "clip_id": 58010,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/09/326739_large.mp4",
+      "clip_id": 326739
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2026/01/13/327388_small.mp4",
+      "clip_id": 327388
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/06/26/218358_small.mp4",
+      "clip_id": 218358
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Poseidón acusó a Ares de asesinato con palabras llenas de rencor, exigiendo un castigo ejemplar. Pero Ares, con firmeza y solemnidad, expuso la atrocidad cometida contra su hija Alcipe, defendiendo que actuó para proteger su honor."
+  },
+  {
+   "hablado": "Los jueces divinos escucharon minuciosamente los argumentos de ambas partes y deliberaron en silencio. Al comprender la gravedad del ultraje original, decidieron absolver a Ares de todos los cargos, reconociendo que su venganza estaba plenamente justificada.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient Greek sculpture detail",
+    "otras": [
+     "classical marble art",
+     "ancient gods relief"
+    ],
+    "descripcion": "Detalle de una escultura clásica en relieve de los dioses olímpicos",
+    "clip": "ia",
+    "clip_id": "ia-62",
+    "necesita": 20.1,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 19.09
+   },
+   "efecto": "nada",
+   "subtitulo": "Los jueces divinos escucharon minuciosamente los argumentos de ambas partes y deliberaron en silencio. Al comprender la gravedad del ultraje original, decidieron absolver a Ares de todos los cargos, reconociendo que su venganza estaba plenamente justificada."
+  },
+  {
+   "hablado": "Aquel juicio legendario cambió la historia jurídica del mundo mortal. La colina rocosa donde se celebró el proceso fue bautizada como el Areópago, el monte de Ares, convirtiéndose para siempre en el tribunal supremo de Atenas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athens acropolis ruins sky",
+    "otras": [
+     "ancient parthenon greece",
+     "historical ruins sunset"
+    ],
+    "descripcion": "Panorámica de las ruinas históricas de Atenas",
+    "clip": "https://cdn.pixabay.com/video/2023/03/11/154227-807166897_small.mp4",
+    "clip_id": 154227,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/03/18/111179-689949805_large.mp4",
+      "clip_id": 111179
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2016/05/03/2995-165221451_large.mp4",
+      "clip_id": 2995
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/13/154549-808146329_small.mp4",
+      "clip_id": 154549
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquel juicio legendario cambió la historia jurídica del mundo mortal. La colina rocosa donde se celebró el proceso fue bautizada como el Areópago, el monte de Ares, convirtiéndose para siempre en el tribunal supremo de Atenas."
+  },
+  {
+   "hablado": "Ares había logrado su única victoria moral frente a toda su familia, pero la percepción de su verdadera naturaleza jamás cambiaría entre los hombres. El mito escondía una lección aún más profunda que estaba a punto de revelarse.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient torch fire night",
+    "otras": [
+     "flame torch dark",
+     "fire temple night"
+    ],
+    "descripcion": "Llama de una antorcha antigua ardiendo en la noche",
+    "clip": "https://cdn.pixabay.com/video/2024/04/17/208326_small.mp4",
+    "clip_id": 208326,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/03/10/154140-807166727_small.mp4",
+      "clip_id": 154140
+     }
+    ]
+   },
+   "efecto": "brasas",
+   "subtitulo": "Ares había logrado su única victoria moral frente a toda su familia, pero la percepción de su verdadera naturaleza jamás cambiaría entre los hombres. El mito escondía una lección aún más profunda que estaba a punto de revelarse."
+  },
+  {
+   "hablado": "Aquí llegamos al punto culminante de nuestra historia y a la promesa que hicimos al principio sobre el papel real de Ares. A diferencia de lo que podríamos pensar, este dios nunca representó la victoria.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek temple ruins",
+    "otras": [
+     "greek architecture columns",
+     "ancient acropolis ruins"
+    ],
+    "descripcion": "Ruinas de un templo griego antiguo con columnas de piedra bajo un cielo nublado.",
+    "clip": "https://cdn.pixabay.com/video/2015/11/07/1280-145116955_medium.mp4",
+    "clip_id": 1280,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2019/02/16/21472-318172509_large.mp4",
+      "clip_id": 21472
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2023/10/02/183271-870457542_small.mp4",
+      "clip_id": 183271
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/02/05/31956-389724705_small.mp4",
+      "clip_id": 31956
+     }
+    ]
+   },
+   "efecto": "polvo",
+   "subtitulo": "Aquí llegamos al punto culminante de nuestra historia y a la promesa que hicimos al principio sobre el papel real de Ares. A diferencia de lo que podríamos pensar, este dios nunca representó la victoria."
+  },
+  {
+   "hablado": "En la mente de los antiguos griegos, el señor del Olimpo encarnaba el coste más trágico, la destrucción completamente absurda y el sufrimiento inevitable que deja tras de sí cualquier conflicto armado.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek sculpture museum",
+    "otras": [
+     "marble statue greece",
+     "classical sculpture face"
+    ],
+    "descripcion": "Estatua de mármol de la antigua Grecia en el interior de un museo iluminado.",
+    "clip": "https://cdn.pixabay.com/video/2026/11/04/386934_large.mp4",
+    "clip_id": 386934,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2024/02/02/198887-909564506_small.mp4",
+      "clip_id": 198887
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/08/03/126560-736345309_large.mp4",
+      "clip_id": 126560
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/08/13/47064-450094991_large.mp4",
+      "clip_id": 47064
+     }
+    ]
+   },
+   "efecto": "nada",
+   "subtitulo": "En la mente de los antiguos griegos, el señor del Olimpo encarnaba el coste más trágico, la destrucción completamente absurda y el sufrimiento inevitable que deja tras de sí cualquier conflicto armado."
+  },
+  {
+   "hablado": "Por esa misma razón profundamente práctica, los ciudadanos de las polis jamás le construían grandes templos en el centro de sus ciudades, donde la vida civilizada y el orden debían florecer.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek pottery art",
+    "otras": [
+     "greek vase amphora",
+     "classical pottery museum"
+    ],
+    "descripcion": "Cerámica griega antigua decorada con motivos clásicos en una vitrina.",
+    "clip": "ia",
+    "clip_id": "ia-67",
+    "necesita": 16.9,
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 15.86
+   },
+   "efecto": "brasas",
+   "subtitulo": "Por esa misma razón profundamente práctica, los ciudadanos de las polis jamás le construían grandes templos en el centro de sus ciudades, donde la vida civilizada y el orden debían florecer."
+  },
+  {
+   "hablado": "Muy al contrario, sus altares se colocaban siempre fuera de las murallas protectoras, sirviendo como una severa advertencia sobre lo que ocurre cuando la barbarie amenaza a la comunidad.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek stone wall",
+    "otras": [
+     "old fortress ruins",
+     "stone architecture europe"
+    ],
+    "descripcion": "Muralla de piedra antigua construida con grandes bloques rocosos.",
+    "clip": "https://cdn.pixabay.com/video/2024/12/15/246846_small.mp4",
+    "clip_id": 246846,
+    "extra": [
+     {
+      "clip": "https://cdn.pixabay.com/video/2020/04/25/37131-413256539_large.mp4",
+      "clip_id": 37131
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/06/02/119078-716970673_small.mp4",
+      "clip_id": 119078
+     },
+     {
+      "clip": "https://cdn.pixabay.com/video/2022/01/07/103732-664328213_small.mp4",
+      "clip_id": 103732
+     }
+    ]
+   },
+   "efecto": "niebla",
+   "subtitulo": "Muy al contrario, sus altares se colocaban siempre fuera de las murallas protectoras, sirviendo como una severa advertencia sobre lo que ocurre cuando la barbarie amenaza a la comunidad."
+  },
+  {
+   "hablado": "La mitología clásica nos enseña con cada uno de estos relatos que la furia completamente descontrolada siempre termina cayendo ante la sabiduría y el prudente autocontrol que personificaba Atenea.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek theater ruins",
+    "otras": [
+     "amphitheater greece",
+     "historic stone stairs"
+    ],
+    "descripcion": "Gradas de un antiguo teatro griego excavado en la piedra.",
+    "clip": "ia",
+    "clip_id": "ia-69",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.01
+   },
+   "efecto": "polvo",
+   "subtitulo": "La mitología clásica nos enseña con cada uno de estos relatos que la furia completamente descontrolada siempre termina cayendo ante la sabiduría y el prudente autocontrol que personificaba Atenea."
+  },
+  {
+   "hablado": "La brutalidad ciega necesita límites estrictos para no devorar a la propia civilización que dice defender, un mensaje que resonaba en los festivales y en las tragedias representadas en Atenas.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "greek columns architecture",
+    "otras": [
+     "historic building pillars",
+     "temple ruins exterior"
+    ],
+    "descripcion": "Columnas clásicas de un templo antiguo con luz natural lateral.",
+    "clip": "ia",
+    "clip_id": "ia-70",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 15.01
+   },
+   "efecto": "nada",
+   "subtitulo": "La brutalidad ciega necesita límites estrictos para no devorar a la propia civilización que dice defender, un mensaje que resonaba en los festivales y en las tragedias representadas en Atenas."
+  },
+  {
+   "hablado": "Ahora que conoces toda la verdad sobre este temible olímpico, responde con sinceridad a nuestra gran incógnita final para cerrar este viaje por los mitos más profundos de la Hélade.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "athens acropolis sunset",
+    "otras": [
+     "parthenon greece ruins",
+     "ancient ruins sunset"
+    ],
+    "descripcion": "Atardecer sobre las ruinas de la Acrópolis de Atenas con tonos dorados.",
+    "clip": "ia",
+    "clip_id": "ia-71",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 14.3
+   },
+   "efecto": "brasas",
+   "subtitulo": "Ahora que conoces toda la verdad sobre este temible olímpico, responde con sinceridad a nuestra gran incógnita final para cerrar este viaje por los mitos más profundos de la Hélade."
+  },
+  {
+   "hablado": "Crees que el desprecio constante del Olimpo hacia Ares estaba totalmente justificado, o fue simplemente la trágica víctima de la propia violencia destructiva que personificaba. Déjamelo en los comentarios.",
+   "imagen": {
+    "tipo": "video",
+    "busqueda": "ancient greek museum exhibition",
+    "otras": [
+     "classical art gallery",
+     "historic sculpture display"
+    ],
+    "descripcion": "Exposición en un museo con esculturas y restos arqueológicos griegos.",
+    "clip": "ia",
+    "clip_id": "ia-72",
+    "fuente": "",
+    "rescate_ia": true,
+    "rescate_seg": 16.05
+   },
+   "efecto": "nada",
+   "subtitulo": "Crees que el desprecio constante del Olimpo hacia Ares estaba totalmente justificado, o fue simplemente la trágica víctima de la propia violencia destructiva que personificaba. Déjamelo en los comentarios."
+  }
+ ],
+ "titulo_youtube": "¿Por qué TODOS odiaban a Ares en el Olimpo?",
+ "voz": "Algenib",
+ "estilo_imagen": "Cinematic photorealistic film still, ancient Greece, dramatic lighting, shallow depth of field, ultra detailed, 35mm film grain. "
+}

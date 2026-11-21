@@ -1,0 +1,570 @@
+{
+ "formato": "YOUTUBE",
+ "duracion_max": 1500,
+ "duracion_min": 0,
+ "fecha": "",
+ "fuentes": "",
+ "titulo_noticia": "Ares: El dios odiado",
+ "tono": "grave",
+ "mencion": 0,
+ "zum": [],
+ "efectos": [
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada",
+  "nada"
+ ],
+ "fuego": [],
+ "clips": {
+  "0": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/01_full.mp4",
+  "1": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/02_full.mp4",
+  "2": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/03_full.mp4",
+  "3": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/04_full.mp4",
+  "4": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/05_full.mp4",
+  "5": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/06_full.mp4",
+  "6": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/07_full.mp4",
+  "7": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/08_full.mp4",
+  "8": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/09.mp4",
+  "9": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/10_full.mp4",
+  "10": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/11_full.mp4",
+  "11": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/12_full.mp4",
+  "12": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/13_full.mp4",
+  "13": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/14_full.mp4",
+  "14": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/15_full.mp4",
+  "15": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/16_full.mp4",
+  "16": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/17_full.mp4",
+  "17": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/18_full.mp4",
+  "18": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/19_full.mp4",
+  "19": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/20_full.mp4",
+  "20": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/21_full.mp4",
+  "21": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/22_full.mp4",
+  "22": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/23_full.mp4",
+  "23": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/24.mp4",
+  "24": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/25.mp4",
+  "25": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/26_full.mp4",
+  "26": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/27_full.mp4",
+  "27": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/28_full.mp4",
+  "28": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/29_full.mp4",
+  "29": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/30_full.mp4",
+  "30": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/31_full.mp4",
+  "31": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/32_full.mp4",
+  "32": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/33_full.mp4",
+  "33": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/34_full.mp4",
+  "34": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/35_full.mp4",
+  "35": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/36_full.mp4",
+  "36": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/37_full.mp4",
+  "37": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/38_full.mp4",
+  "38": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/39_full.mp4",
+  "39": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/40_full.mp4",
+  "40": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/41.mp4",
+  "41": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/42_full.mp4",
+  "42": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/43_full.mp4",
+  "43": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/44_full.mp4",
+  "44": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/45_full.mp4",
+  "45": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/46_full.mp4",
+  "46": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/47_full.mp4",
+  "47": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/48_full.mp4",
+  "48": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/49.mp4",
+  "49": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/50_full.mp4",
+  "50": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/51_full.mp4",
+  "51": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/52_full.mp4",
+  "52": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/53_full.mp4",
+  "53": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/54_full.mp4",
+  "54": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/55_full.mp4",
+  "55": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/56_full.mp4",
+  "56": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/57_full.mp4",
+  "57": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/58_full.mp4",
+  "58": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/59_full.mp4",
+  "59": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/60_full.mp4",
+  "60": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/61_full.mp4",
+  "61": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/62_full.mp4",
+  "62": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/63_full.mp4",
+  "63": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/64_full.mp4",
+  "64": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/65_full.mp4",
+  "65": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/66_full.mp4",
+  "66": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/67_full.mp4",
+  "67": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/68_full.mp4",
+  "68": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/69_full.mp4",
+  "69": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/70_full.mp4",
+  "70": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/71_full.mp4",
+  "71": "/tmp/largo-relatos-mj75uvsw/proyecto/clips/72_full.mp4"
+ },
+ "capitulos": [
+  {
+   "desde": 0,
+   "escena": 0,
+   "titulo": "El dios que nadie quería"
+  },
+  {
+   "desde": 8,
+   "escena": 8,
+   "titulo": "Un nacimiento marcado por el rechazo"
+  },
+  {
+   "desde": 16,
+   "escena": 16,
+   "titulo": "Trece meses en una vasija de bronce"
+  },
+  {
+   "desde": 24,
+   "escena": 24,
+   "titulo": "Furia contra estrategia: Ares frente a Atenea"
+  },
+  {
+   "desde": 32,
+   "escena": 32,
+   "titulo": "El mortal que hirió a un dios"
+  },
+  {
+   "desde": 40,
+   "escena": 40,
+   "titulo": "La red invisible de Hefesto"
+  },
+  {
+   "desde": 48,
+   "escena": 48,
+   "titulo": "Derrotado por el hijo de Zeus"
+  },
+  {
+   "desde": 56,
+   "escena": 56,
+   "titulo": "El primer juicio por asesinato de la historia"
+  },
+  {
+   "desde": 64,
+   "escena": 64,
+   "titulo": "La lección de Ares y la verdadera victoria"
+  }
+ ],
+ "color": null,
+ "escenas": [
+  {
+   "titulo": "",
+   "hablado": "Imagina poseer un poder devastador e inmortal y, al mismo tiempo, ser despreciado por tu propia familia. Ares no encarnaba la estrategia táctica, sino la brutalidad ciega, el caos y la sed de sangre.",
+   "subtitulo": "Imagina poseer un poder devastador e inmortal y, al mismo tiempo, ser despreciado por tu propia familia. Ares no encarnaba la estrategia táctica, sino la brutalidad ciega, el caos y la sed de sangre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Mientras los demás dioses recibían majestuosos templos y alabanzas en Grecia, a él únicamente le reservaban el temor y el rechazo. Era la divinidad más temida y repudiada del Olimpo.",
+   "subtitulo": "Mientras los demás dioses recibían majestuosos templos y alabanzas en Grecia, a él únicamente le reservaban el temor y el rechazo. Era la divinidad más temida y repudiada del Olimpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "El mismo Zeus le dedicó el insulto más humillante de la mitología, llamándolo el ser más odioso de todos. Descubrirás cómo este dios rechazado terminó creando el primer tribunal de la historia.",
+   "subtitulo": "El mismo Zeus le dedicó el insulto más humillante de la mitología, llamándolo el ser más odioso de todos. Descubrirás cómo este dios rechazado terminó creando el primer tribunal de la historia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras ser gravemente herido en Troya, el guerrero regresó al trono celestial esperando consuelo. Pero su padre lo recibió con unas palabras heladas que revelarían su definitivo y oscuro destino.",
+   "subtitulo": "Tras ser gravemente herido en Troya, el guerrero regresó al trono celestial esperando consuelo. Pero su padre lo recibió con unas palabras heladas que revelarían su definitivo y oscuro destino."
+  },
+  {
+   "titulo": "",
+   "hablado": "En las polis griegas, los ciudadanos preferían encomendarse a divinidades más sabias y protectoras. Los altares dedicados a Ares solían levantarse fuera de las murallas de las ciudades, considerándolo una amenaza constante y peligrosa.",
+   "subtitulo": "En las polis griegas, los ciudadanos preferían encomendarse a divinidades más sabias y protectoras. Los altares dedicados a Ares solían levantarse fuera de las murallas de las ciudades, considerándolo una amenaza constante y peligrosa."
+  },
+  {
+   "titulo": "",
+   "hablado": "Su verdadero hogar no estaba en las cumbres iluminadas, sino en las salvajes tierras de Tracia. Un territorio bárbaro donde habitaba rodeado por criaturas aterradoras que personificaban el miedo, el terror y el pánico.",
+   "subtitulo": "Su verdadero hogar no estaba en las cumbres iluminadas, sino en las salvajes tierras de Tracia. Un territorio bárbaro donde habitaba rodeado por criaturas aterradoras que personificaban el miedo, el terror y el pánico."
+  },
+  {
+   "titulo": "",
+   "hablado": "A pesar de poseer una fuerza física colosal y una armadura impenetrable, su carácter impulsivo lo convirtió en blanco de constantes humillaciones, tanto por parte de mortales como de sus propios hermanos divinos.",
+   "subtitulo": "A pesar de poseer una fuerza física colosal y una armadura impenetrable, su carácter impulsivo lo convirtió en blanco de constantes humillaciones, tanto por parte de mortales como de sus propios hermanos divinos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Nacido del matrimonio regio entre Zeus y Hera, su llegada al mundo debería haber sido motivo de gran celebración. Sin embargo, su infancia demostró desde el primer instante que la tragedia apenas acababa de comenzar.",
+   "subtitulo": "Nacido del matrimonio regio entre Zeus y Hera, su llegada al mundo debería haber sido motivo de gran celebración. Sin embargo, su infancia demostró desde el primer instante que la tragedia apenas acababa de comenzar."
+  },
+  {
+   "titulo": "",
+   "hablado": "A pesar de ser hijo legítimo de los reyes del Olimpo, el nacimiento de Ares jamás trajo paz al trono divino. Desde sus primeros días, el pequeño dios mostró una marcada inclinación hacia la violencia desmedida.",
+   "subtitulo": "A pesar de ser hijo legítimo de los reyes del Olimpo, el nacimiento de Ares jamás trajo paz al trono divino. Desde sus primeros días, el pequeño dios mostró una marcada inclinación hacia la violencia desmedida."
+  },
+  {
+   "titulo": "",
+   "hablado": "Mientras su padre Zeus intentaba mantener la armonía cosmogónica mediante la ley y la justicia, Ares disfrutaba rompiendo las normas. No le interesaba la estrategia militar ni el honor, únicamente el sufrimiento ajeno y el caos.",
+   "subtitulo": "Mientras su padre Zeus intentaba mantener la armonía cosmogónica mediante la ley y la justicia, Ares disfrutaba rompiendo las normas. No le interesaba la estrategia militar ni el honor, únicamente el sufrimiento ajeno y el caos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para alejarlo de la corte celestial, fue enviado a crecer en las salvajes tierras de Tracia. Aquella región montañosa y agreste, considerada bárbara por los griegos, se convirtió en el escenario perfecto para moldear su carácter indomable.",
+   "subtitulo": "Para alejarlo de la corte celestial, fue enviado a crecer en las salvajes tierras de Tracia. Aquella región montañosa y agreste, considerada bárbara por los griegos, se convirtió en el escenario perfecto para moldear su carácter indomable."
+  },
+  {
+   "titulo": "",
+   "hablado": "Allí perfeccionó el arte del combate brutal, convirtiendo el estruendo de las armas en su mayor fascinación. No caminaba solo por los campos de batalla, pues pronto se le unieron terribles entidades que compartían su oscura sed.",
+   "subtitulo": "Allí perfeccionó el arte del combate brutal, convirtiendo el estruendo de las armas en su mayor fascinación. No caminaba solo por los campos de batalla, pues pronto se le unieron terribles entidades que compartían su oscura sed."
+  },
+  {
+   "titulo": "",
+   "hablado": "A su lado marchaban constantemente Fobo y Deimo, personificaciones divinas del miedo visceral y del terror pánico. Juntos formaban un séquito temible que hacía temblar a los mortales antes de que la primera espada fuera desenvainada.",
+   "subtitulo": "A su lado marchaban constantemente Fobo y Deimo, personificaciones divinas del miedo visceral y del terror pánico. Juntos formaban un séquito temible que hacía temblar a los mortales antes de que la primera espada fuera desenvainada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aunque poseía una presencia imponente y una fuerza física colosal, su falta de autocontrol y su temperamento caprichoso le ganaron la antipatía de los demás dioses. Nadie en el Olimpo toleraba su constante arrogancia sin sentido.",
+   "subtitulo": "Aunque poseía una presencia imponente y una fuerza física colosal, su falta de autocontrol y su temperamento caprichoso le ganaron la antipatía de los demás dioses. Nadie en el Olimpo toleraba su constante arrogancia sin sentido."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares creía que su condición de dios inmortal lo hacía invulnerable a cualquier humillación. Sin embargo, su incapacidad para calcular los riesgos y su ciega impulsividad estaban a punto de pasarle una factura dolorosa e inesperada.",
+   "subtitulo": "Ares creía que su condición de dios inmortal lo hacía invulnerable a cualquier humillación. Sin embargo, su incapacidad para calcular los riesgos y su ciega impulsividad estaban a punto de pasarle una factura dolorosa e inesperada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Dos voraces gigantes conocidos como los Aloadas decidieron desafiar la autoridad divina y poner a prueba los límites del dios guerrero. Pero lo peor aún no había llegado para el señor de la guerra.",
+   "subtitulo": "Dos voraces gigantes conocidos como los Aloadas decidieron desafiar la autoridad divina y poner a prueba los límites del dios guerrero. Pero lo peor aún no había llegado para el señor de la guerra."
+  },
+  {
+   "titulo": "",
+   "hablado": "Otos y Efialtes, los colosales hermanos Aloadas, crecían cada año a un ritmo aterrador. Cegados por una ambición sin límites, juraron asaltar las alturas del Olimpo y humillar a los mismísimos dioses inmortales.",
+   "subtitulo": "Otos y Efialtes, los colosales hermanos Aloadas, crecían cada año a un ritmo aterrador. Cegados por una ambición sin límites, juraron asaltar las alturas del Olimpo y humillar a los mismísimos dioses inmortales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin dudarlo un segundo, interceptaron a Ares en pleno combate. A pesar de su furia y su fuerza descomunal, el joven dios de la guerra fue sorprendido, reducido y encadenado con gruesos eslabones de hierro.",
+   "subtitulo": "Sin dudarlo un segundo, interceptaron a Ares en pleno combate. A pesar de su furia y su fuerza descomunal, el joven dios de la guerra fue sorprendido, reducido y encadenado con gruesos eslabones de hierro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los gigantes encerraron al inmortal dentro de una colosal vasija de bronce labrado. Sellaron el recipiente con una pesada tapa, dejando al soberbio dios guerrero sepultado en la más absoluta y asfixiante oscuridad.",
+   "subtitulo": "Los gigantes encerraron al inmortal dentro de una colosal vasija de bronce labrado. Sellaron el recipiente con una pesada tapa, dejando al soberbio dios guerrero sepultado en la más absoluta y asfixiante oscuridad."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante trece largos meses, Ares permaneció aprisionado en aquel pozo de metal, consumiéndose en su propia impotencia. Ninguno de sus familiares en el Olimpo acudió a buscarlo, dejando que el sufrimiento quebrantara su orgullo.",
+   "subtitulo": "Durante trece largos meses, Ares permaneció aprisionado en aquel pozo de metal, consumiéndose en su propia impotencia. Ninguno de sus familiares en el Olimpo acudió a buscarlo, dejando que el sufrimiento quebrantara su orgullo."
+  },
+  {
+   "titulo": "",
+   "hablado": "La agonía del dios parecía no tener fin, hasta que Eriboea, la madrastra de los gigantes, sintió piedad. En secreto, la mujer contactó con el astuto Hermes para revelarle el paradero exacto de la prisión.",
+   "subtitulo": "La agonía del dios parecía no tener fin, hasta que Eriboea, la madrastra de los gigantes, sintió piedad. En secreto, la mujer contactó con el astuto Hermes para revelarle el paradero exacto de la prisión."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hermes descendió sigilosamente en la penumbra de la noche. Usando su maestría con el sigilo, rompió las cadenas invisibles y liberó a un Ares exhausto, desnutrido y al borde de la desesperación absoluta.",
+   "subtitulo": "Hermes descendió sigilosamente en la penumbra de la noche. Usando su maestría con el sigilo, rompió las cadenas invisibles y liberó a un Ares exhausto, desnutrido y al borde de la desesperación absoluta."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella primera gran humillación pública dejó al descubierto una amarga verdad sobre el señor del combate. La bruta fuerza sin inteligencia resultaba ser completamente inútil frente a la astucia y la planificación estratégica.",
+   "subtitulo": "Aquella primera gran humillación pública dejó al descubierto una amarga verdad sobre el señor del combate. La bruta fuerza sin inteligencia resultaba ser completamente inútil frente a la astucia y la planificación estratégica."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares regresó al monte Olimpo con el ego profundamente maltrecho y sin haber aprendido la lección. Y muy pronto, su calculadora hermana Atenea se lo recordaría de la forma más dolorosa posible.",
+   "subtitulo": "Ares regresó al monte Olimpo con el ego profundamente maltrecho y sin haber aprendido la lección. Y muy pronto, su calculadora hermana Atenea se lo recordaría de la forma más dolorosa posible."
+  },
+  {
+   "titulo": "",
+   "hablado": "El Olimpo presenciaba el constante choque entre dos visiones de la guerra. Mientras Ares encarnaba la violencia desmedida y el descontrol sangriento, su hermana Atenea personificaba la astucia táctica, la disciplina y el honor en el combate.",
+   "subtitulo": "El Olimpo presenciaba el constante choque entre dos visiones de la guerra. Mientras Ares encarnaba la violencia desmedida y el descontrol sangriento, su hermana Atenea personificaba la astucia táctica, la disciplina y el honor en el combate."
+  },
+  {
+   "titulo": "",
+   "hablado": "Para los griegos, esta diferencia no era solo teórica. En cada polis adoraban a Atenea como protectora de las murallas y las cosechas, reservando para Ares un temeroso desprecio que solo se invocaba en momentos de pura desesperación militar.",
+   "subtitulo": "Para los griegos, esta diferencia no era solo teórica. En cada polis adoraban a Atenea como protectora de las murallas y las cosechas, reservando para Ares un temeroso desprecio que solo se invocaba en momentos de pura desesperación militar."
+  },
+  {
+   "titulo": "",
+   "hablado": "La furia desatada del dios de la batalla carecía de planificación. Ares irrumpía en los campos empuñando su lanza con sed de sangre, pero Atenea medía cada movimiento, anticipando los errores brutos de su hermano antes de ejecutar su respuesta.",
+   "subtitulo": "La furia desatada del dios de la batalla carecía de planificación. Ares irrumpía en los campos empuñando su lanza con sed de sangre, pero Atenea medía cada movimiento, anticipando los errores brutos de su hermano antes de ejecutar su respuesta."
+  },
+  {
+   "titulo": "",
+   "hablado": "En cada enfrentamiento directo relatado por los poetas antiguos, la mente calculadora de la diosa humilló la fuerza ciega del guerrero. Atenea jamás necesitó usar la brutalidad desmedida para doblegar la rabia incontrolada del señor del caos.",
+   "subtitulo": "En cada enfrentamiento directo relatado por los poetas antiguos, la mente calculadora de la diosa humilló la fuerza ciega del guerrero. Atenea jamás necesitó usar la brutalidad desmedida para doblegar la rabia incontrolada del señor del caos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la rivalidad entre ambos hermanos alcanzaría su punto más tenso y sangriento en las llanuras de Troya. Las divinidades se dividieron para apoyar a mortales y el destino de dos imperios quedó en juego.",
+   "subtitulo": "Sin embargo, la rivalidad entre ambos hermanos alcanzaría su punto más tenso y sangriento en las llanuras de Troya. Las divinidades se dividieron para apoyar a mortales y el destino de dos imperios quedó en juego."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares eligió bando movido por la masacre, ofreciendo su poder sin rodeos a los defensores troyanos. Al mismo tiempo, Atenea guió en secreto a las tropas aqueas, tejiendo estratagemas que cambiarían para siempre el curso de la gran contienda.",
+   "subtitulo": "Ares eligió bando movido por la masacre, ofreciendo su poder sin rodeos a los defensores troyanos. Al mismo tiempo, Atenea guió en secreto a las tropas aqueas, tejiendo estratagemas que cambiarían para siempre el curso de la gran contienda."
+  },
+  {
+   "titulo": "",
+   "hablado": "El choque inevitable se preparaba entre el rugido de la carnicería mortal. Ares avanzaba destruyendo cuanto tocaba, ignorando que la diosa con yelmo de oro ya tenía preparado el golpe que aplastaría de nuevo su desmedido orgullo.",
+   "subtitulo": "El choque inevitable se preparaba entre el rugido de la carnicería mortal. Ares avanzaba destruyendo cuanto tocaba, ignorando que la diosa con yelmo de oro ya tenía preparado el golpe que aplastaría de nuevo su desmedido orgullo."
+  },
+  {
+   "titulo": "",
+   "hablado": "La diosa sabia no actuaría directamente con sus propias manos, sino utilizando la lanza de un simple guerrero mortal. Pero lo peor para el dios de la guerra aún estaba por llegar en el mismísimo campo de batalla.",
+   "subtitulo": "La diosa sabia no actuaría directamente con sus propias manos, sino utilizando la lanza de un simple guerrero mortal. Pero lo peor para el dios de la guerra aún estaba por llegar en el mismísimo campo de batalla."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante el sangriento sitio de Troya, Ares descendió en persona sobre el polvo de la batalla. Incansable y feroz, el dios masacraba a los guerreros aqueos sin piedad, sembrando el terror absoluto entre las filas humanas.",
+   "subtitulo": "Durante el sangriento sitio de Troya, Ares descendió en persona sobre el polvo de la batalla. Incansable y feroz, el dios masacraba a los guerreros aqueos sin piedad, sembrando el terror absoluto entre las filas humanas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, la diosa Atenea no pensaba contemplar la matanza en silencio. La deidad de la sabiduría otorgó una visión divina al héroe mortal Diomedes, permitiéndole distinguir a los inmortales entre el denso humo de la contienda.",
+   "subtitulo": "Sin embargo, la diosa Atenea no pensaba contemplar la matanza en silencio. La deidad de la sabiduría otorgó una visión divina al héroe mortal Diomedes, permitiéndole distinguir a los inmortales entre el denso humo de la contienda."
+  },
+  {
+   "titulo": "",
+   "hablado": "Atenea fortaleció los brazos de Diomedes con una fuerza sobrehumana y guió cada uno de sus movimientos. El mortal, armado con una pesada lanza de bronce, avanzó firmemente hacia el temible dios de la guerra sin mostrar vacilación.",
+   "subtitulo": "Atenea fortaleció los brazos de Diomedes con una fuerza sobrehumana y guió cada uno de sus movimientos. El mortal, armado con una pesada lanza de bronce, avanzó firmemente hacia el temible dios de la guerra sin mostrar vacilación."
+  },
+  {
+   "titulo": "",
+   "hablado": "Diomedes arrojó su arma con una precisión impecable, impulsada por la mano invisible de Atenea. La punta de bronce atravesó la gruesa armadura de Ares, clavándose profundamente en su costado y haciendo brotar la sagrada sangre divina.",
+   "subtitulo": "Diomedes arrojó su arma con una precisión impecable, impulsada por la mano invisible de Atenea. La punta de bronce atravesó la gruesa armadura de Ares, clavándose profundamente en su costado y haciendo brotar la sagrada sangre divina."
+  },
+  {
+   "titulo": "",
+   "hablado": "Al sentir el metal desgarrar su carne inmortal, Ares lanzó un rugido de dolor tan escalofriante que retumbó como el grito de diez mil hombres juntos. El pánico se apoderó del dios, abandonando el campo de batalla.",
+   "subtitulo": "Al sentir el metal desgarrar su carne inmortal, Ares lanzó un rugido de dolor tan escalofriante que retumbó como el grito de diez mil hombres juntos. El pánico se apoderó del dios, abandonando el campo de batalla."
+  },
+  {
+   "titulo": "",
+   "hablado": "Humillado y sangrando icor brillante, Ares huyó a toda prisa hacia las alturas celestiales del monte Olimpo. El orgulloso señor de la guerra se presentó ante el trono de su padre Zeus esperando consuelo y una pronta venganza.",
+   "subtitulo": "Humillado y sangrando icor brillante, Ares huyó a toda prisa hacia las alturas celestiales del monte Olimpo. El orgulloso señor de la guerra se presentó ante el trono de su padre Zeus esperando consuelo y una pronta venganza."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero Zeus lo recibió con una mirada helada y despectiva. El rey de los dioses le recordó que era el ser más odioso del Olimpo, pues solo disfrutaba de las discordias, las sangrientas guerras y las masacres innecesarias.",
+   "subtitulo": "Pero Zeus lo recibió con una mirada helada y despectiva. El rey de los dioses le recordó que era el ser más odioso del Olimpo, pues solo disfrutaba de las discordias, las sangrientas guerras y las masacres innecesarias."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel amargo rechazo confirmó la profunda soledad de Ares entre su propia familia divina. Incapaz de hallar consuelo en el Olimpo, el dios repudiado buscaría cobijo en los brazos de un amor prohibido. Pero esa pasión desataría un nuevo desastre.",
+   "subtitulo": "Aquel amargo rechazo confirmó la profunda soledad de Ares entre su propia familia divina. Incapaz de hallar consuelo en el Olimpo, el dios repudiado buscaría cobijo en los brazos de un amor prohibido. Pero esa pasión desataría un nuevo desastre."
+  },
+  {
+   "titulo": "",
+   "hablado": "Tras la humillación sufrida en Troya y el desprecio de su propio padre, el solitario dios de la guerra buscó refugio en los brazos de Afrodita, la venerada diosa de la belleza y el deseo.",
+   "subtitulo": "Tras la humillación sufrida en Troya y el desprecio de su propio padre, el solitario dios de la guerra buscó refugio en los brazos de Afrodita, la venerada diosa de la belleza y el deseo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sin embargo, aquel apasionado romance era profundamente prohibido. La diosa del amor estaba legítimamente casada con Hefesto, el brillante pero marginado dios de la forja, el fuego y los metales.",
+   "subtitulo": "Sin embargo, aquel apasionado romance era profundamente prohibido. La diosa del amor estaba legítimamente casada con Hefesto, el brillante pero marginado dios de la forja, el fuego y los metales."
+  },
+  {
+   "titulo": "",
+   "hablado": "Durante meses, los dos amantes se reunieron en la penumbra para consumar su traición, confiados en que la oscuridad ocultaría sus actos de los ojos inquisitivos del resto de los olímpicos.",
+   "subtitulo": "Durante meses, los dos amantes se reunieron en la penumbra para consumar su traición, confiados en que la oscuridad ocultaría sus actos de los ojos inquisitivos del resto de los olímpicos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Pero nada escapaba al dios Helios, la personificación del sol que todo lo contempla desde su carro dorado. Al descubrir el romance clandestino, corrió a informarle de inmediato al engañado esposo.",
+   "subtitulo": "Pero nada escapaba al dios Helios, la personificación del sol que todo lo contempla desde su carro dorado. Al descubrir el romance clandestino, corrió a informarle de inmediato al engañado esposo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Lleno de una fría ira, el dios herrero no buscó la violencia directa. En lugar de eso, acudió a su taller divino y forjó en secreto una sutil red de bronce completamente indestructible.",
+   "subtitulo": "Lleno de una fría ira, el dios herrero no buscó la violencia directa. En lugar de eso, acudió a su taller divino y forjó en secreto una sutil red de bronce completamente indestructible."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella malla era tan fina como el hilo de una araña e invisible para cualquier ojo. Hefesto la colocó pacientemente sobre el lecho nupcial y fingió marchar hacia la isla de Lemnos.",
+   "subtitulo": "Aquella malla era tan fina como el hilo de una araña e invisible para cualquier ojo. Hefesto la colocó pacientemente sobre el lecho nupcial y fingió marchar hacia la isla de Lemnos."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares acudió presto a la cita clandestina. Pero al tenderse en el lecho con Afrodita, la trampa cayó sobre ellos, dejándolos completamente inmovilizados, expuestos e incapaces de liberarse de la celada.",
+   "subtitulo": "Ares acudió presto a la cita clandestina. Pero al tenderse en el lecho con Afrodita, la trampa cayó sobre ellos, dejándolos completamente inmovilizados, expuestos e incapaces de liberarse de la celada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Hefesto abrió las puertas del palacio y convocó a todos los dioses celestiales para presenciar la escena. La humillante visión desató una carcajada generalizada que resonó por los confines del Olimpo.",
+   "subtitulo": "Hefesto abrió las puertas del palacio y convocó a todos los dioses celestiales para presenciar la escena. La humillante visión desató una carcajada generalizada que resonó por los confines del Olimpo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquella ridícula trampa no detuvo la furia impetuosa del dios de la guerra. Tiempo después, el destino volvió a poner a prueba el honor de Ares, al cruzar sus pasos con el gran héroe Heracles.",
+   "subtitulo": "Aquella ridícula trampa no detuvo la furia impetuosa del dios de la guerra. Tiempo después, el destino volvió a poner a prueba el honor de Ares, al cruzar sus pasos con el gran héroe Heracles."
+  },
+  {
+   "titulo": "",
+   "hablado": "Todo comenzó en el camino hacia Delfos, donde Cicno, un violento hijo de Ares, asaltaba a los peregrinos. El desalmado joven pretendía construir un templo sangriento con los cráneos de sus víctimas indefensas.",
+   "subtitulo": "Todo comenzó en el camino hacia Delfos, donde Cicno, un violento hijo de Ares, asaltaba a los peregrinos. El desalmado joven pretendía construir un templo sangriento con los cráneos de sus víctimas indefensas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Cuando el invencible Heracles cruzó por aquel paso sagrado, se enfrentó a Cicno sin vacilar. En un brutal combate justo, la maza del semidiós abatió al hijo de Ares, dejando su cuerpo inerte.",
+   "subtitulo": "Cuando el invencible Heracles cruzó por aquel paso sagrado, se enfrentó a Cicno sin vacilar. En un brutal combate justo, la maza del semidiós abatió al hijo de Ares, dejando su cuerpo inerte."
+  },
+  {
+   "titulo": "",
+   "hablado": "Desde lo alto de los cielos, Ares presenció la muerte de su descendiente y enloqueció de ira. El dios guerrero descendió envuelto en una nube de tormenta, dispuesto a destrozar al asesino de su hijo.",
+   "subtitulo": "Desde lo alto de los cielos, Ares presenció la muerte de su descendiente y enloqueció de ira. El dios guerrero descendió envuelto en una nube de tormenta, dispuesto a destrozar al asesino de su hijo."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares lanzó su mortal lanza de bronce con toda la fuerza divina que poseía. Sin embargo, antes de que el arma tocara al héroe, la diosa Atenea se interpuso en el aire desviando el impacto.",
+   "subtitulo": "Ares lanzó su mortal lanza de bronce con toda la fuerza divina que poseía. Sin embargo, antes de que el arma tocara al héroe, la diosa Atenea se interpuso en el aire desviando el impacto."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aprovechando la confusión del dios de la guerra, Heracles embistió con determinación mortal. El semidiós clavó su formidable lanza en el muslo de Ares, haciendo brotar una corriente de sangriento icor divino sobre la tierra.",
+   "subtitulo": "Aprovechando la confusión del dios de la guerra, Heracles embistió con determinación mortal. El semidiós clavó su formidable lanza en el muslo de Ares, haciendo brotar una corriente de sangriento icor divino sobre la tierra."
+  },
+  {
+   "titulo": "",
+   "hablado": "El señor de la batalla cayó desplomado sobre el polvo, rugiendo de dolor y humillación absoluta. Un dios olímpico inmortal acababa de ser vencido y malherido en combate por un héroe mortal creado de barro.",
+   "subtitulo": "El señor de la batalla cayó desplomado sobre el polvo, rugiendo de dolor y humillación absoluta. Un dios olímpico inmortal acababa de ser vencido y malherido en combate por un héroe mortal creado de barro."
+  },
+  {
+   "titulo": "",
+   "hablado": "Sus horrorizados hijos, Fobo y Deimo, tuvieron que descender apresuradamente para subirlo a su carro de combate y huir. Pero una grave afrenta sagrada estaba a punto de desatar el primer juicio divino de la historia.",
+   "subtitulo": "Sus horrorizados hijos, Fobo y Deimo, tuvieron que descender apresuradamente para subirlo a su carro de combate y huir. Pero una grave afrenta sagrada estaba a punto de desatar el primer juicio divino de la historia."
+  },
+  {
+   "titulo": "",
+   "hablado": "Humillado en la guerra, Ares demostró un rostro inesperado cuando se trató de proteger a los suyos. En Atenas, Halirrotio, un hijo del poderoso Poseidón, intentó ultrajar a la joven Alcipe, la amada hija del dios guerrero.",
+   "subtitulo": "Humillado en la guerra, Ares demostró un rostro inesperado cuando se trató de proteger a los suyos. En Atenas, Halirrotio, un hijo del poderoso Poseidón, intentó ultrajar a la joven Alcipe, la amada hija del dios guerrero."
+  },
+  {
+   "titulo": "",
+   "hablado": "La furia de Ares no nació esta vez del deseo insensato de destrucción, sino del amor paternal más absoluto. Al enterarse de la terrible afrenta, el dios descendió del Olimpo y ejecutó sin piedad al agresor.",
+   "subtitulo": "La furia de Ares no nació esta vez del deseo insensato de destrucción, sino del amor paternal más absoluto. Al enterarse de la terrible afrenta, el dios descendió del Olimpo y ejecutó sin piedad al agresor."
+  },
+  {
+   "titulo": "",
+   "hablado": "Poseidón, enloquecido por el dolor y la rabia tras la muerte de su hijo, no podía dejar impune aquel acto. Exigió la muerte del dios de la guerra y convocó a toda la corte olímpica para juzgar el crimen.",
+   "subtitulo": "Poseidón, enloquecido por el dolor y la rabia tras la muerte de su hijo, no podía dejar impune aquel acto. Exigió la muerte del dios de la guerra y convocó a toda la corte olímpica para juzgar el crimen."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los dioses principales descendieron sobre una colina rocosa cerca de la acrópolis ateniense. Por primera vez en la eternidad, un inmortal debía responder ante un tribunal sagrado por haber derramado sangre y quitado una vida.",
+   "subtitulo": "Los dioses principales descendieron sobre una colina rocosa cerca de la acrópolis ateniense. Por primera vez en la eternidad, un inmortal debía responder ante un tribunal sagrado por haber derramado sangre y quitado una vida."
+  },
+  {
+   "titulo": "",
+   "hablado": "Poseidón acusó a Ares de asesinato con palabras llenas de rencor, exigiendo un castigo ejemplar. Pero Ares, con firmeza y solemnidad, expuso la atrocidad cometida contra su hija Alcipe, defendiendo que actuó para proteger su honor.",
+   "subtitulo": "Poseidón acusó a Ares de asesinato con palabras llenas de rencor, exigiendo un castigo ejemplar. Pero Ares, con firmeza y solemnidad, expuso la atrocidad cometida contra su hija Alcipe, defendiendo que actuó para proteger su honor."
+  },
+  {
+   "titulo": "",
+   "hablado": "Los jueces divinos escucharon minuciosamente los argumentos de ambas partes y deliberaron en silencio. Al comprender la gravedad del ultraje original, decidieron absolver a Ares de todos los cargos, reconociendo que su venganza estaba plenamente justificada.",
+   "subtitulo": "Los jueces divinos escucharon minuciosamente los argumentos de ambas partes y deliberaron en silencio. Al comprender la gravedad del ultraje original, decidieron absolver a Ares de todos los cargos, reconociendo que su venganza estaba plenamente justificada."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquel juicio legendario cambió la historia jurídica del mundo mortal. La colina rocosa donde se celebró el proceso fue bautizada como el Areópago, el monte de Ares, convirtiéndose para siempre en el tribunal supremo de Atenas.",
+   "subtitulo": "Aquel juicio legendario cambió la historia jurídica del mundo mortal. La colina rocosa donde se celebró el proceso fue bautizada como el Areópago, el monte de Ares, convirtiéndose para siempre en el tribunal supremo de Atenas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ares había logrado su única victoria moral frente a toda su familia, pero la percepción de su verdadera naturaleza jamás cambiaría entre los hombres. El mito escondía una lección aún más profunda que estaba a punto de revelarse.",
+   "subtitulo": "Ares había logrado su única victoria moral frente a toda su familia, pero la percepción de su verdadera naturaleza jamás cambiaría entre los hombres. El mito escondía una lección aún más profunda que estaba a punto de revelarse."
+  },
+  {
+   "titulo": "",
+   "hablado": "Aquí llegamos al punto culminante de nuestra historia y a la promesa que hicimos al principio sobre el papel real de Ares. A diferencia de lo que podríamos pensar, este dios nunca representó la victoria.",
+   "subtitulo": "Aquí llegamos al punto culminante de nuestra historia y a la promesa que hicimos al principio sobre el papel real de Ares. A diferencia de lo que podríamos pensar, este dios nunca representó la victoria."
+  },
+  {
+   "titulo": "",
+   "hablado": "En la mente de los antiguos griegos, el señor del Olimpo encarnaba el coste más trágico, la destrucción completamente absurda y el sufrimiento inevitable que deja tras de sí cualquier conflicto armado.",
+   "subtitulo": "En la mente de los antiguos griegos, el señor del Olimpo encarnaba el coste más trágico, la destrucción completamente absurda y el sufrimiento inevitable que deja tras de sí cualquier conflicto armado."
+  },
+  {
+   "titulo": "",
+   "hablado": "Por esa misma razón profundamente práctica, los ciudadanos de las polis jamás le construían grandes templos en el centro de sus ciudades, donde la vida civilizada y el orden debían florecer.",
+   "subtitulo": "Por esa misma razón profundamente práctica, los ciudadanos de las polis jamás le construían grandes templos en el centro de sus ciudades, donde la vida civilizada y el orden debían florecer."
+  },
+  {
+   "titulo": "",
+   "hablado": "Muy al contrario, sus altares se colocaban siempre fuera de las murallas protectoras, sirviendo como una severa advertencia sobre lo que ocurre cuando la barbarie amenaza a la comunidad.",
+   "subtitulo": "Muy al contrario, sus altares se colocaban siempre fuera de las murallas protectoras, sirviendo como una severa advertencia sobre lo que ocurre cuando la barbarie amenaza a la comunidad."
+  },
+  {
+   "titulo": "",
+   "hablado": "La mitología clásica nos enseña con cada uno de estos relatos que la furia completamente descontrolada siempre termina cayendo ante la sabiduría y el prudente autocontrol que personificaba Atenea.",
+   "subtitulo": "La mitología clásica nos enseña con cada uno de estos relatos que la furia completamente descontrolada siempre termina cayendo ante la sabiduría y el prudente autocontrol que personificaba Atenea."
+  },
+  {
+   "titulo": "",
+   "hablado": "La brutalidad ciega necesita límites estrictos para no devorar a la propia civilización que dice defender, un mensaje que resonaba en los festivales y en las tragedias representadas en Atenas.",
+   "subtitulo": "La brutalidad ciega necesita límites estrictos para no devorar a la propia civilización que dice defender, un mensaje que resonaba en los festivales y en las tragedias representadas en Atenas."
+  },
+  {
+   "titulo": "",
+   "hablado": "Ahora que conoces toda la verdad sobre este temible olímpico, responde con sinceridad a nuestra gran incógnita final para cerrar este viaje por los mitos más profundos de la Hélade.",
+   "subtitulo": "Ahora que conoces toda la verdad sobre este temible olímpico, responde con sinceridad a nuestra gran incógnita final para cerrar este viaje por los mitos más profundos de la Hélade."
+  },
+  {
+   "titulo": "",
+   "hablado": "Crees que el desprecio constante del Olimpo hacia Ares estaba totalmente justificado, o fue simplemente la trágica víctima de la propia violencia destructiva que personificaba. Déjamelo en los comentarios.",
+   "subtitulo": "Crees que el desprecio constante del Olimpo hacia Ares estaba totalmente justificado, o fue simplemente la trágica víctima de la propia violencia destructiva que personificaba. Déjamelo en los comentarios."
+  }
+ ]
+}
